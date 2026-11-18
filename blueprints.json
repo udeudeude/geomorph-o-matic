@@ -1,0 +1,1281 @@
+{
+  "schema_version": 1,
+  "cell_units": "Each tile has 20 by 20 half-square cells; the conventional printed grid is 10 by 10 squares.",
+  "portal_cells": [
+    [
+      4,
+      0
+    ],
+    [
+      15,
+      0
+    ],
+    [
+      0,
+      4
+    ],
+    [
+      19,
+      4
+    ],
+    [
+      0,
+      15
+    ],
+    [
+      19,
+      15
+    ],
+    [
+      4,
+      19
+    ],
+    [
+      15,
+      19
+    ]
+  ],
+  "door_kinds": [
+    "door",
+    "locked",
+    "secret"
+  ],
+  "rule": "Walls are always present at boundaries of rooms, except for explicit doors. Carve named orthogonal routes separately. Reject any room-corridor overlap and any accidental boundary openings. 4 and 15 are rotation invariant: 19-4=15.",
+  "tiles": [
+    {
+      "id": "salt_cloister",
+      "title": "Cloister of Salt",
+      "family": "Drowned monastery",
+      "description": "A ritual circuit surrounding an obstructed brine court, with a locked north reliquary and concealed west chapel.",
+      "rooms": [
+        [
+          "west_chapel",
+          "Penitent chapel",
+          [
+            2,
+            2,
+            4,
+            4
+          ]
+        ],
+        [
+          "east_chapel",
+          "Scourged chapel",
+          [
+            15,
+            2,
+            17,
+            4
+          ]
+        ],
+        [
+          "reliquary",
+          "Salt reliquary",
+          [
+            8,
+            2,
+            11,
+            4
+          ]
+        ],
+        [
+          "west_cell",
+          "Monastic cell",
+          [
+            2,
+            15,
+            4,
+            17
+          ]
+        ],
+        [
+          "east_cell",
+          "Sacristy",
+          [
+            15,
+            15,
+            17,
+            17
+          ]
+        ]
+      ],
+      "routes": [
+        {
+          "id": "north_walk",
+          "points": [
+            [
+              6,
+              6
+            ],
+            [
+              13,
+              6
+            ]
+          ],
+          "reason": "cloister circuit"
+        },
+        {
+          "id": "east_walk",
+          "points": [
+            [
+              13,
+              6
+            ],
+            [
+              13,
+              13
+            ]
+          ],
+          "reason": "cloister circuit"
+        },
+        {
+          "id": "south_walk",
+          "points": [
+            [
+              13,
+              13
+            ],
+            [
+              6,
+              13
+            ]
+          ],
+          "reason": "cloister circuit"
+        },
+        {
+          "id": "west_walk",
+          "points": [
+            [
+              6,
+              13
+            ],
+            [
+              6,
+              6
+            ]
+          ],
+          "reason": "cloister circuit"
+        },
+        {
+          "id": "northwest_entry",
+          "points": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              6
+            ]
+          ],
+          "reason": "pilgrim entry"
+        },
+        {
+          "id": "northeast_entry",
+          "points": [
+            [
+              15,
+              0
+            ],
+            [
+              15,
+              1
+            ],
+            [
+              14,
+              1
+            ],
+            [
+              14,
+              6
+            ],
+            [
+              13,
+              6
+            ]
+          ],
+          "reason": "monastic service"
+        },
+        {
+          "id": "westupper_entry",
+          "points": [
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              6,
+              5
+            ],
+            [
+              6,
+              6
+            ]
+          ],
+          "reason": "western entry"
+        },
+        {
+          "id": "eastupper_entry",
+          "points": [
+            [
+              19,
+              4
+            ],
+            [
+              18,
+              4
+            ],
+            [
+              18,
+              5
+            ],
+            [
+              13,
+              5
+            ],
+            [
+              13,
+              6
+            ]
+          ],
+          "reason": "eastern entry"
+        },
+        {
+          "id": "westlower_entry",
+          "points": [
+            [
+              0,
+              15
+            ],
+            [
+              1,
+              15
+            ],
+            [
+              1,
+              14
+            ],
+            [
+              6,
+              14
+            ],
+            [
+              6,
+              13
+            ]
+          ],
+          "reason": "procession"
+        },
+        {
+          "id": "eastlower_entry",
+          "points": [
+            [
+              19,
+              15
+            ],
+            [
+              18,
+              15
+            ],
+            [
+              18,
+              14
+            ],
+            [
+              13,
+              14
+            ],
+            [
+              13,
+              13
+            ]
+          ],
+          "reason": "procession"
+        },
+        {
+          "id": "southwest_entry",
+          "points": [
+            [
+              4,
+              19
+            ],
+            [
+              4,
+              18
+            ],
+            [
+              5,
+              18
+            ],
+            [
+              5,
+              13
+            ],
+            [
+              6,
+              13
+            ]
+          ],
+          "reason": "pilgrim stair"
+        },
+        {
+          "id": "southeast_entry",
+          "points": [
+            [
+              15,
+              19
+            ],
+            [
+              15,
+              18
+            ],
+            [
+              14,
+              18
+            ],
+            [
+              14,
+              13
+            ],
+            [
+              13,
+              13
+            ]
+          ],
+          "reason": "service route"
+        },
+        {
+          "id": "reliquary_approach",
+          "points": [
+            [
+              9,
+              5
+            ],
+            [
+              9,
+              6
+            ]
+          ],
+          "reason": "treasure threshold"
+        }
+      ],
+      "doors": [
+        [
+          "west_chapel",
+          "E",
+          3,
+          "secret"
+        ],
+        [
+          "east_chapel",
+          "W",
+          3,
+          "door"
+        ],
+        [
+          "reliquary",
+          "S",
+          9,
+          "locked"
+        ],
+        [
+          "west_cell",
+          "N",
+          3,
+          "door"
+        ],
+        [
+          "east_cell",
+          "N",
+          16,
+          "door"
+        ]
+      ],
+      "features": [
+        [
+          "pool",
+          [
+            7,
+            7,
+            12,
+            12
+          ]
+        ],
+        [
+          "columns",
+          [
+            [
+              6,
+              6
+            ],
+            [
+              13,
+              6
+            ],
+            [
+              6,
+              13
+            ],
+            [
+              13,
+              13
+            ]
+          ]
+        ],
+        [
+          "sarcophagus",
+          [
+            9,
+            2,
+            10,
+            3
+          ]
+        ],
+        [
+          "stairs",
+          [
+            5,
+            16,
+            5,
+            18
+          ]
+        ],
+        [
+          "altar",
+          [
+            15,
+            2,
+            17,
+            4
+          ]
+        ],
+        [
+          "altar",
+          [
+            2,
+            2,
+            4,
+            4
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "postern_bastion",
+      "title": "Postern Bastion",
+      "family": "Border fortification",
+      "description": "Multiple bypass corridors surround a defended gate and magazine complex.",
+      "rooms": [
+        [
+          "toll",
+          "Toll chamber",
+          [
+            3,
+            2,
+            7,
+            6
+          ]
+        ],
+        [
+          "barracks",
+          "Watch barracks",
+          [
+            11,
+            2,
+            16,
+            5
+          ]
+        ],
+        [
+          "stores",
+          "Supply magazines",
+          [
+            2,
+            12,
+            6,
+            17
+          ]
+        ],
+        [
+          "captain",
+          "Captain quarters",
+          [
+            13,
+            13,
+            17,
+            17
+          ]
+        ],
+        [
+          "gate",
+          "Portcullis control",
+          [
+            8,
+            12,
+            11,
+            15
+          ]
+        ]
+      ],
+      "routes": [
+        {
+          "id": "northwest_entry",
+          "points": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              8,
+              1
+            ],
+            [
+              8,
+              9
+            ]
+          ],
+          "reason": "watchtower access"
+        },
+        {
+          "id": "northeast_entry",
+          "points": [
+            [
+              15,
+              0
+            ],
+            [
+              15,
+              1
+            ],
+            [
+              18,
+              1
+            ],
+            [
+              18,
+              9
+            ]
+          ],
+          "reason": "east rampart"
+        },
+        {
+          "id": "westupper_entry",
+          "points": [
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              9
+            ]
+          ],
+          "reason": "sally port"
+        },
+        {
+          "id": "eastupper_entry",
+          "points": [
+            [
+              19,
+              4
+            ],
+            [
+              18,
+              4
+            ],
+            [
+              18,
+              9
+            ]
+          ],
+          "reason": "east sally port"
+        },
+        {
+          "id": "westlower_entry",
+          "points": [
+            [
+              0,
+              15
+            ],
+            [
+              1,
+              15
+            ],
+            [
+              1,
+              9
+            ]
+          ],
+          "reason": "postern path"
+        },
+        {
+          "id": "eastlower_entry",
+          "points": [
+            [
+              19,
+              15
+            ],
+            [
+              18,
+              15
+            ],
+            [
+              18,
+              9
+            ]
+          ],
+          "reason": "east retreat"
+        },
+        {
+          "id": "southwest_entry",
+          "points": [
+            [
+              4,
+              19
+            ],
+            [
+              4,
+              18
+            ],
+            [
+              7,
+              18
+            ],
+            [
+              7,
+              9
+            ]
+          ],
+          "reason": "muster passage"
+        },
+        {
+          "id": "southeast_entry",
+          "points": [
+            [
+              15,
+              19
+            ],
+            [
+              15,
+              18
+            ],
+            [
+              12,
+              18
+            ],
+            [
+              12,
+              9
+            ]
+          ],
+          "reason": "armory passage"
+        },
+        {
+          "id": "murder_passage",
+          "points": [
+            [
+              1,
+              9
+            ],
+            [
+              18,
+              9
+            ]
+          ],
+          "reason": "central defensive sightline"
+        },
+        {
+          "id": "upper_bypass",
+          "points": [
+            [
+              1,
+              7
+            ],
+            [
+              18,
+              7
+            ]
+          ],
+          "reason": "upper bypass"
+        },
+        {
+          "id": "lower_bypass",
+          "points": [
+            [
+              1,
+              18
+            ],
+            [
+              18,
+              18
+            ]
+          ],
+          "reason": "southern bypass"
+        },
+        {
+          "id": "barracks_walk",
+          "points": [
+            [
+              10,
+              1
+            ],
+            [
+              10,
+              7
+            ]
+          ],
+          "reason": "watch gallery"
+        },
+        {
+          "id": "control_approach",
+          "points": [
+            [
+              7,
+              11
+            ],
+            [
+              12,
+              11
+            ]
+          ],
+          "reason": "gatehouse approach"
+        }
+      ],
+      "doors": [
+        [
+          "toll",
+          "E",
+          4,
+          "door"
+        ],
+        [
+          "toll",
+          "S",
+          6,
+          "secret"
+        ],
+        [
+          "barracks",
+          "W",
+          4,
+          "door"
+        ],
+        [
+          "stores",
+          "E",
+          14,
+          "door"
+        ],
+        [
+          "captain",
+          "W",
+          15,
+          "door"
+        ],
+        [
+          "gate",
+          "W",
+          13,
+          "locked"
+        ],
+        [
+          "gate",
+          "E",
+          13,
+          "door"
+        ]
+      ],
+      "features": [
+        [
+          "portcullis",
+          [
+            10,
+            9
+          ]
+        ],
+        [
+          "table",
+          [
+            4,
+            3,
+            6,
+            4
+          ]
+        ],
+        [
+          "beds",
+          [
+            12,
+            3,
+            15,
+            4
+          ]
+        ],
+        [
+          "barrels",
+          [
+            [
+              3,
+              13
+            ],
+            [
+              5,
+              13
+            ],
+            [
+              3,
+              16
+            ],
+            [
+              5,
+              16
+            ]
+          ]
+        ],
+        [
+          "wheel",
+          [
+            9,
+            13
+          ]
+        ],
+        [
+          "stairs",
+          [
+            7,
+            16,
+            7,
+            18
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "bone_galleries",
+      "title": "Bone Galleries",
+      "family": "Dynastic catacomb",
+      "description": "Multiple funerary galleries with alternate approaches to the royal sepulcher.",
+      "rooms": [
+        [
+          "kings",
+          "Hall of Kings",
+          [
+            3,
+            3,
+            9,
+            6
+          ]
+        ],
+        [
+          "shelves",
+          "Ossuary shelves",
+          [
+            13,
+            2,
+            17,
+            7
+          ]
+        ],
+        [
+          "unquiet",
+          "Unquiet tomb",
+          [
+            2,
+            11,
+            5,
+            16
+          ]
+        ],
+        [
+          "royal",
+          "Royal sepulcher",
+          [
+            9,
+            13,
+            14,
+            17
+          ]
+        ]
+      ],
+      "routes": [
+        {
+          "id": "northwest_entry",
+          "points": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              10,
+              1
+            ],
+            [
+              10,
+              9
+            ]
+          ],
+          "reason": "upper gallery"
+        },
+        {
+          "id": "northeast_entry",
+          "points": [
+            [
+              15,
+              0
+            ],
+            [
+              15,
+              1
+            ],
+            [
+              12,
+              1
+            ],
+            [
+              12,
+              12
+            ]
+          ],
+          "reason": "north shaft"
+        },
+        {
+          "id": "westupper_entry",
+          "points": [
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              9
+            ]
+          ],
+          "reason": "processional passage"
+        },
+        {
+          "id": "westlower_entry",
+          "points": [
+            [
+              0,
+              15
+            ],
+            [
+              1,
+              15
+            ],
+            [
+              1,
+              9
+            ]
+          ],
+          "reason": "servants passage"
+        },
+        {
+          "id": "eastupper_entry",
+          "points": [
+            [
+              19,
+              4
+            ],
+            [
+              18,
+              4
+            ],
+            [
+              18,
+              11
+            ]
+          ],
+          "reason": "shelf gallery"
+        },
+        {
+          "id": "eastlower_entry",
+          "points": [
+            [
+              19,
+              15
+            ],
+            [
+              18,
+              15
+            ],
+            [
+              18,
+              11
+            ]
+          ],
+          "reason": "royal corridor"
+        },
+        {
+          "id": "southwest_entry",
+          "points": [
+            [
+              4,
+              19
+            ],
+            [
+              4,
+              18
+            ],
+            [
+              6,
+              18
+            ],
+            [
+              6,
+              10
+            ]
+          ],
+          "reason": "ossuary approach"
+        },
+        {
+          "id": "southeast_entry",
+          "points": [
+            [
+              15,
+              19
+            ],
+            [
+              15,
+              10
+            ]
+          ],
+          "reason": "burial descent"
+        },
+        {
+          "id": "spine",
+          "points": [
+            [
+              1,
+              9
+            ],
+            [
+              12,
+              9
+            ]
+          ],
+          "reason": "east-west burial passage"
+        },
+        {
+          "id": "east_cross",
+          "points": [
+            [
+              12,
+              10
+            ],
+            [
+              18,
+              10
+            ]
+          ],
+          "reason": "catafalque passage"
+        },
+        {
+          "id": "southern_cross",
+          "points": [
+            [
+              6,
+              11
+            ],
+            [
+              18,
+              11
+            ]
+          ],
+          "reason": "processional return"
+        },
+        {
+          "id": "southern_return",
+          "points": [
+            [
+              6,
+              18
+            ],
+            [
+              15,
+              18
+            ]
+          ],
+          "reason": "royal bypass"
+        },
+        {
+          "id": "king_approach",
+          "points": [
+            [
+              7,
+              7
+            ],
+            [
+              7,
+              9
+            ]
+          ],
+          "reason": "tomb vestibule"
+        }
+      ],
+      "doors": [
+        [
+          "kings",
+          "E",
+          4,
+          "door"
+        ],
+        [
+          "kings",
+          "S",
+          7,
+          "door"
+        ],
+        [
+          "shelves",
+          "W",
+          4,
+          "door"
+        ],
+        [
+          "shelves",
+          "E",
+          5,
+          "door"
+        ],
+        [
+          "unquiet",
+          "W",
+          14,
+          "door"
+        ],
+        [
+          "unquiet",
+          "E",
+          14,
+          "secret"
+        ],
+        [
+          "royal",
+          "N",
+          12,
+          "locked"
+        ],
+        [
+          "royal",
+          "E",
+          15,
+          "door"
+        ]
+      ],
+      "features": [
+        [
+          "sarcophagus",
+          [
+            4,
+            4,
+            5,
+            5
+          ]
+        ],
+        [
+          "sarcophagus",
+          [
+            7,
+            4,
+            8,
+            5
+          ]
+        ],
+        [
+          "tombrows",
+          [
+            14,
+            3,
+            16,
+            6
+          ]
+        ],
+        [
+          "tombrows",
+          [
+            3,
+            12,
+            4,
+            16
+          ]
+        ],
+        [
+          "sarcophagus",
+          [
+            10,
+            14,
+            12,
+            16
+          ]
+        ],
+        [
+          "columns",
+          [
+            [
+              9,
+              13
+            ],
+            [
+              14,
+              13
+            ],
+            [
+              9,
+              17
+            ],
+            [
+              14,
+              17
+            ]
+          ]
+        ],
+        [
+          "stairs",
+          [
+            6,
+            16,
+            6,
+            18
+          ]
+        ]
+      ]
+    }
+  ]
+}
