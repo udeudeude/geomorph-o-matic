@@ -1,0 +1,12 @@
+"use strict";
+const test=require("node:test"),assert=require("node:assert/strict"),fs=require("node:fs"),path=require("node:path");
+const a=require("../assemble"),q=require("../audit");
+const data=JSON.parse(fs.readFileSync(path.join(__dirname,"../blueprints.json"),"utf8"));
+const plan=JSON.parse(fs.readFileSync(path.join(__dirname,"../examples/assembly_3x3.json"),"utf8"));
+test("quarter turn portal coordinates survive four rotations",()=>{for(const p of [[0,4],[4,0],[19,15],[9,9]])assert.deepEqual(a.rotateCell(p,4),p)});
+test("all nine rotated joins have matching floor masks",()=>assert.equal(a.verifyLayout(plan,data).length,3));
+test("assembly SVG has nine editable children and separate clipping IDs",()=>{const s=a.assemble(plan,data,id=>fs.readFileSync(path.join(__dirname,"../tiles",id+".svg"),"utf8"));assert.equal((s.match(/<g id="assembly-/g)||[]).length,9);assert.equal((s.match(/<svg x="0" y="0"/g)||[]).length,9);assert.match(s,/clip-path="url\\(#/)});
+test("edge mismatch fails fast",()=>{const d=JSON.parse(JSON.stringify(data));d.tiles[0].routes=d.tiles[0].routes.filter(r=>!r.points.some(p=>p[0]===19&&p[1]===4));assert.throws(()=>a.verifyLayout(plan,d),/mismatch/)});
+test("existing rooms and exits are accessible with applicable doors",()=>{for(const t of data.tiles){const r=q.audit(t);assert.equal(r.fully_connected,true);assert.equal(r.normal_portals_reachable,8)}});
+test("a loop has cycle rank one and a chain has zero",()=>{const g=new Map([["a",new Set(["b"])],["b",new Set(["a","c"])],["c",new Set(["b"])]]);assert.equal(q.cycleRank(g),0);g.get("a").add("c");g.get("c").add("a");assert.equal(q.cycleRank(g),1)});
+test("one-entrance secret is distinguished from a bypass",()=>assert.ok(q.audit(data.tiles.find(t=>t.id==="salt_cloister")).notes.some(x=>x.includes("west_chapel"))));

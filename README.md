@@ -36,3 +36,15 @@ All three tiles currently have eight standard edge openings, plus explicitly aut
 4. Build meaningful scenario keys and alternate routes, then validate with actual playtesting.
 
 Research comparisons and design decisions: [design notes](research/design-notes.md).
+
+## Assemble and inspect larger dungeons
+
+```sh
+node assemble.js examples/assembly_3x3.json examples/assembly_3x3.svg
+node audit.js
+node --test tests/*.test.js
+```
+
+The [nine-tile original survey](examples/assembly_3x3.svg) is a single standalone editable SVG. Its clipping identifiers are unique across repeated tiles. Every quarter-turn seam is checked against its actual edge-floor cells, not merely an assumed portal convention. The [circulation audit](reports/topology.json) distinguishes freely accessible floor, secret-only discoveries, corridor cycles, and exit-separating choke cells.
+
+These audits do not establish artistic excellence; use them to identify where to improve the underlying architecture. [Design criteria](research/2026-11-18-architecture-audit.md).

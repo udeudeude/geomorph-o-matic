@@ -1,0 +1,159 @@
+[
+  {
+    "id": "salt_cloister",
+    "floor_cells": 137,
+    "corridor_cells": 89,
+    "doors": 5,
+    "standard_doors": 3,
+    "locked_doors": 1,
+    "secret_doors": 1,
+    "hall_cycle_rank": 5,
+    "hall_chokepoint_count": 48,
+    "normal_portals_reachable": 8,
+    "fully_connected": true,
+    "normally_accessible_floor_fraction": 0.847,
+    "chambers": [
+      {
+        "room": "west_chapel",
+        "doors": [
+          "secret"
+        ],
+        "normally_accessible": false
+      },
+      {
+        "room": "east_chapel",
+        "doors": [
+          "door"
+        ],
+        "normally_accessible": true
+      },
+      {
+        "room": "reliquary",
+        "doors": [
+          "locked"
+        ],
+        "normally_accessible": false
+      },
+      {
+        "room": "west_cell",
+        "doors": [
+          "door"
+        ],
+        "normally_accessible": true
+      },
+      {
+        "room": "east_cell",
+        "doors": [
+          "door"
+        ],
+        "normally_accessible": true
+      }
+    ],
+    "notes": [
+      "Secret-only chamber west_chapel is a discovery, not an alternative circulation route"
+    ]
+  },
+  {
+    "id": "postern_bastion",
+    "floor_cells": 245,
+    "corridor_cells": 125,
+    "doors": 7,
+    "standard_doors": 5,
+    "locked_doors": 1,
+    "secret_doors": 1,
+    "hall_cycle_rank": 4,
+    "hall_chokepoint_count": 47,
+    "normal_portals_reachable": 8,
+    "fully_connected": true,
+    "normally_accessible_floor_fraction": 1,
+    "chambers": [
+      {
+        "room": "toll",
+        "doors": [
+          "door",
+          "secret"
+        ],
+        "normally_accessible": true
+      },
+      {
+        "room": "barracks",
+        "doors": [
+          "door"
+        ],
+        "normally_accessible": true
+      },
+      {
+        "room": "stores",
+        "doors": [
+          "door"
+        ],
+        "normally_accessible": true
+      },
+      {
+        "room": "captain",
+        "doors": [
+          "door"
+        ],
+        "normally_accessible": true
+      },
+      {
+        "room": "gate",
+        "doors": [
+          "locked",
+          "door"
+        ],
+        "normally_accessible": true
+      }
+    ],
+    "notes": []
+  },
+  {
+    "id": "bone_galleries",
+    "floor_cells": 226,
+    "corridor_cells": 114,
+    "doors": 8,
+    "standard_doors": 6,
+    "locked_doors": 1,
+    "secret_doors": 1,
+    "hall_cycle_rank": 8,
+    "hall_chokepoint_count": 60,
+    "normal_portals_reachable": 8,
+    "fully_connected": true,
+    "normally_accessible_floor_fraction": 1,
+    "chambers": [
+      {
+        "room": "kings",
+        "doors": [
+          "door",
+          "door"
+        ],
+        "normally_accessible": true
+      },
+      {
+        "room": "shelves",
+        "doors": [
+          "door",
+          "door"
+        ],
+        "normally_accessible": true
+      },
+      {
+        "room": "unquiet",
+        "doors": [
+          "door",
+          "secret"
+        ],
+        "normally_accessible": true
+      },
+      {
+        "room": "royal",
+        "doors": [
+          "locked",
+          "door"
+        ],
+        "normally_accessible": true
+      }
+    ],
+    "notes": []
+  }
+]
