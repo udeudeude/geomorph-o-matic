@@ -1,22 +1,38 @@
 # Geomorph-o-matic
 
-Original modular dungeon cartography research and software development.
+Original, modular, editable dungeon cartography. **Architectural studies, not yet a finished collection.**
 
-## Status
-Three architectural study maps have been generated, rendered, and checked locally. The project is **not** a finished collection; route diversity, physically credible architectural detail, and cartographic treatment still need refinement.
+## Browse the three original tiles
 
-## Canonical map data
-[Three author-designed map blueprints](blueprints.json) specify named rooms, room bounds, purposeful corridor routes, explicitly permitted doors (including locked and secret), and landmarks. The blueprints deliberately avoid automatic doorway insertion.
+- [Cloister of Salt](tiles/salt_cloister.svg): enclosed processional circuit around a brine pool, a locked reliquary, and a hidden chapel.
+- [Postern Bastion](tiles/postern_bastion.svg): defensive passageways, alternate routes, gate control, magazine and barracks.
+- [Bone Galleries](tiles/bone_galleries.svg): two approaches to a royal sepulcher, ossuary galleries, a concealed tomb entrance.
 
-**Format:** 10 x 10 full squares, modeled as 20 x 20 fine-grid cells. Openings are one half-square wide, exactly at edge cell indices 4 and 15. Previous 5/15 openings were invalid under 90-degree rotation. This is now corrected.
+These are editable vector drawings, not flattened images. The separate floor, grid, rock, doors, structural walls and architectural features are grouped in the SVG document.
 
-## Validation carried out in the development checkpoint
-12 automated tests passed: exact edge masks, quarter-turn portal invariance, connected interiors, connected corridors with rooms closed, controlled door counts, meaningful corridor cycles, parseable layered SVGs, absence of walls across portals, rejection of diagonal paths, and 60 randomly composed 3 x 3 arrangements with rotations.
+## Build locally
 
-## Design priorities
-1. Commit fully browseable SVG masters and the Python renderer from the development checkpoint.
-2. Improve architectural realism and art quality through individual room design, not random glyphs.
-3. Extend interface masks for edge and corner pieces, caves, stairs, elevation, and multi-level relationships.
-4. Validate 2 x 2 and larger assemblies visually, not only geometrically.
+Requirements: Python 3 and Node.js. No third-party packages.
 
-See [research notes](research/design-notes.md).
+```sh
+python3 validate.py
+node render.js
+git diff --exit-code -- tiles/
+```
+
+The canonical architectural data is in [blueprints.json](blueprints.json). The [JavaScript renderer](render.js) creates the three SVG masters reproducibly, and [validate.py](validate.py) rejects incompatible edge openings, invented doorways, unconnected halls and disconnected floors. [GitHub Actions](.github/workflows/validate.yml) checks these commands after pushes.
+
+## Geometry
+
+Each morph covers **10 x 10 full squares** subdivided into 20 x 20 half-square cells. A 5-foot-wide opening occupies one half-cell inside the 3rd and 8th full squares on each side. The exact fine-grid opening positions are **4 and 15**; unlike the earlier 5/15 pair they remain aligned through all quarter-turn rotations.
+
+All three tiles currently have eight standard edge openings, plus explicitly authored rooms, passages, secret doors and locked doors. They contain 5, 4 and 8 independently closed corridor loops respectively. These are circulation loops rather than spurious cycles inside large rooms.
+
+## Next major work
+
+1. Critically examine actual assembled maps at print scale; improve density and architectural plausibility rather than adding superficial furniture.
+2. Introduce irregular chambers, changing elevation, underground waterways, and purposeful dead ends.
+3. Add edge/corner interface masks and validate matched openings instead of assuming eight for every tile.
+4. Build meaningful scenario keys and alternate routes, then validate with actual playtesting.
+
+Research comparisons and design decisions: [design notes](research/design-notes.md).
