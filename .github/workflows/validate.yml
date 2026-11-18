@@ -1,0 +1,15 @@
+name: Validate geomorphs
+on:
+  push:
+  pull_request:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Geometry and circulation
+        run: python3 validate.py
+      - name: Regenerate original SVGs
+        run: node render.js
+      - name: Verify SVG masters are reproducible
+        run: git diff --exit-code -- tiles/
