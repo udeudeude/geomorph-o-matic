@@ -1,9 +1,9 @@
 "use strict";
 const fs=require("node:fs"),path=require("node:path");
 const CELL=20,UNIT=24,SIDE=CELL*UNIT;
-([x,y])=>x>=0&&y>=0&&x<CELL&&y<CELL
+const inBounds=([x,y])=>x>=0&&y>=0&&x<CELL&&y<CELL;
 
-([x,y])=>`${x},${y}`
+const key=([x,y])=>`${x},${y}`;
 
 function rotateCell(p,turns){let [x,y]=p;for(let n=0;n<turns;n++)[x,y]=[CELL-1-y,x];return[x,y]}
 
