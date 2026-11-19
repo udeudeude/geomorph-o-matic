@@ -101,8 +101,11 @@ function profileDrawing(profile){
   roof+='Q'+f(x+step*.33)+','+f(y-4+(i%2)*5)+' '+f(x+step*.65)+','+f(y+2)+' ';
   roof+='L'+f(next)+','+f(i+1<samples.length?ceilY(i+1):y)+' ';
  }
+ let roofFill='M'+x0+',12H'+f(x0+total)+'V'+f(ceilY(samples.length-1));
+ for(let i=samples.length-1;i>=0;i--)roofFill+='L'+f(xp(i))+','+f(ceilY(i));
+ roofFill+='Z';
+ parts.push('<path d="'+roofFill+'" fill="#ddd7c9" fill-opacity=".42" stroke="none"/>');
  parts.push('<path d="'+roof+'" fill="none" stroke="#333c37" stroke-width="3" stroke-linejoin="round"/>');
- parts.push('<path d="M'+x0+',12H'+f(x0+total)+'V'+f(ceilY(samples.length-1))+' '+roof.slice(1)+'L'+x0+',12Z" fill="#ddd7c9" fill-opacity=".36" stroke="none"/>');
  // Each occupied half-cell represents 2.5 feet along the cut.
  for(let i=0;i<samples.length;i++){
   const s=samples[i],x=xp(i),floor=y0-s.level*35+(s.wet?19:0);
