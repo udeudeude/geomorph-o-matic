@@ -27,6 +27,20 @@ jobs:
           node measured-section.js examples/riftwater_profile.svg
           node tailrace-plate.js examples/riftwater_tailrace_plate.svg
           node print-review.js examples/riftwater_print_letter.svg
+      - name: Check editable vector XML and complete generated plate set
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from xml.etree import ElementTree as ET
+          paths = sorted(Path("tiles").glob("*.svg"))
+          paths += sorted(Path("examples").glob("*.svg"))
+          assert len(paths) >= 13, f"Missing generated vector artifacts: {len(paths)}"
+          for path in paths:
+              root = ET.parse(path).getroot()
+              assert root.tag == "{http://www.w3.org/2000/svg}svg", path
+              assert root.find("{http://www.w3.org/2000/svg}title") is not None, path
+          print(f"Validated {len(paths)} XML vector drawings")
+          PY
       - name: Commit verified generated assets on same-repository push
         if: github.event_name == 'push'
         run: |
