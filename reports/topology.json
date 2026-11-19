@@ -3422,5 +3422,489 @@
         ]
       }
     }
+  },
+  {
+    "id": "hollow_causeway",
+    "floor_cells": 200,
+    "corridor_cells": 103,
+    "doors": 11,
+    "standard_doors": 0,
+    "open_passages": 10,
+    "locked_doors": 0,
+    "secret_doors": 1,
+    "hall_cycle_rank": 9,
+    "hall_chokepoint_count": 49,
+    "normal_portals_reachable": 8,
+    "fully_connected": true,
+    "normally_accessible_floor_fraction": 1,
+    "chambers": [
+      {
+        "room": "great_rift",
+        "doors": [
+          "opening",
+          "opening",
+          "opening",
+          "opening"
+        ],
+        "normally_accessible": true
+      },
+      {
+        "room": "dry_lung",
+        "doors": [
+          "opening"
+        ],
+        "normally_accessible": true
+      },
+      {
+        "room": "organ_shaft",
+        "doors": [
+          "opening"
+        ],
+        "normally_accessible": true
+      },
+      {
+        "room": "lost_channel",
+        "doors": [
+          "opening"
+        ],
+        "normally_accessible": true
+      },
+      {
+        "room": "pearl_pool",
+        "doors": [
+          "opening",
+          "secret"
+        ],
+        "normally_accessible": true
+      },
+      {
+        "room": "blind_fissure",
+        "doors": [
+          "opening",
+          "opening"
+        ],
+        "normally_accessible": true
+      }
+    ],
+    "notes": [],
+    "substantial_hall_circuits": 1,
+    "minor_hall_islands": 0,
+    "hall_encircled_obstacles": [
+      {
+        "area": 49,
+        "bounding_box": [
+          6,
+          6,
+          12,
+          13
+        ],
+        "adjacent_hall_cells": 26,
+        "chamber_ids": [
+          "great_rift"
+        ],
+        "substantial": true
+      }
+    ],
+    "access_profiles": {
+      "ordinary": {
+        "accessible_floor_cells": 184,
+        "accessible_chambers": [
+          "blind_fissure",
+          "dry_lung",
+          "great_rift",
+          "lost_channel",
+          "organ_shaft",
+          "pearl_pool"
+        ],
+        "reachable_portals": 8,
+        "connected_portal_pairs": 28,
+        "inaccessible_portal_pairs": 0,
+        "mean_portal_distance": 26.5,
+        "longest_shortest_portal_distance": 40
+      },
+      "unlocked": {
+        "accessible_floor_cells": 184,
+        "accessible_chambers": [
+          "blind_fissure",
+          "dry_lung",
+          "great_rift",
+          "lost_channel",
+          "organ_shaft",
+          "pearl_pool"
+        ],
+        "reachable_portals": 8,
+        "connected_portal_pairs": 28,
+        "inaccessible_portal_pairs": 0,
+        "mean_portal_distance": 26.5,
+        "longest_shortest_portal_distance": 40
+      },
+      "all": {
+        "accessible_floor_cells": 184,
+        "accessible_chambers": [
+          "blind_fissure",
+          "dry_lung",
+          "great_rift",
+          "lost_channel",
+          "organ_shaft",
+          "pearl_pool"
+        ],
+        "reachable_portals": 8,
+        "connected_portal_pairs": 28,
+        "inaccessible_portal_pairs": 0,
+        "mean_portal_distance": 26.5,
+        "longest_shortest_portal_distance": 40
+      }
+    },
+    "chamber_route_roles": [
+      {
+        "room": "blind_fissure",
+        "door_count": 2,
+        "door_kinds": [
+          "opening",
+          "opening"
+        ],
+        "role": "no_portal_shortcut",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      },
+      {
+        "room": "dry_lung",
+        "door_count": 1,
+        "door_kinds": [
+          "opening"
+        ],
+        "role": "destination",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      },
+      {
+        "room": "great_rift",
+        "door_count": 4,
+        "door_kinds": [
+          "opening",
+          "opening",
+          "opening",
+          "opening"
+        ],
+        "role": "ordinary_through_route",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 2,
+            "maximum_detour": 2
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 2,
+            "maximum_detour": 2
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 2,
+            "maximum_detour": 2
+          }
+        }
+      },
+      {
+        "room": "lost_channel",
+        "door_count": 1,
+        "door_kinds": [
+          "opening"
+        ],
+        "role": "destination",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      },
+      {
+        "room": "organ_shaft",
+        "door_count": 1,
+        "door_kinds": [
+          "opening"
+        ],
+        "role": "destination",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      },
+      {
+        "room": "pearl_pool",
+        "door_count": 2,
+        "door_kinds": [
+          "opening",
+          "secret"
+        ],
+        "role": "no_portal_shortcut",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      }
+    ],
+    "ordinary_through_rooms": [
+      "great_rift"
+    ],
+    "gated_through_rooms": [],
+    "water_cells": 13,
+    "bridged_water_cells": 1,
+    "elevated_cells": 0,
+    "ramp_edges": 0,
+    "barrier_edges": 0,
+    "ruined_wall_edges": 0,
+    "travel": {
+      "dry": {
+        "accessible_floor_cells": 184,
+        "reachable_portals": 8
+      },
+      "wading": {
+        "accessible_floor_cells": 200,
+        "reachable_portals": 8
+      }
+    },
+    "stacked_decks": 1,
+    "stacked_floor_cells": 3,
+    "vertical_connections": 2,
+    "reachable_stacked_cells": 3,
+    "improved_portal_pairs": 0,
+    "newly_connected_portal_pairs": 0,
+    "largest_portal_distance_saving": 0,
+    "route_resilience": {
+      "ordinary": {
+        "reachable_pairs": 28,
+        "meaningful_reroute_pairs": 22,
+        "reroute_fraction": 0.786,
+        "examples": [
+          {
+            "from": "4,0",
+            "to": "15,0",
+            "distance": 31,
+            "resilient": true,
+            "alternate": {
+              "distance": 35,
+              "extra_steps": 4,
+              "separated_cells": 8,
+              "obstruction": "8,5"
+            }
+          },
+          {
+            "from": "4,0",
+            "to": "4,19",
+            "distance": 25,
+            "resilient": true,
+            "alternate": {
+              "distance": 37,
+              "extra_steps": 12,
+              "separated_cells": 20,
+              "obstruction": "6,14"
+            }
+          },
+          {
+            "from": "4,0",
+            "to": "15,19",
+            "distance": 30,
+            "resilient": true,
+            "alternate": {
+              "distance": 32,
+              "extra_steps": 2,
+              "separated_cells": 13,
+              "obstruction": "13,9"
+            }
+          },
+          {
+            "from": "4,0",
+            "to": "0,15",
+            "distance": 29,
+            "resilient": true,
+            "alternate": {
+              "distance": 41,
+              "extra_steps": 12,
+              "separated_cells": 20,
+              "obstruction": "6,14"
+            }
+          }
+        ]
+      },
+      "unlocked": {
+        "reachable_pairs": 28,
+        "meaningful_reroute_pairs": 22,
+        "reroute_fraction": 0.786,
+        "examples": [
+          {
+            "from": "4,0",
+            "to": "15,0",
+            "distance": 31,
+            "resilient": true,
+            "alternate": {
+              "distance": 35,
+              "extra_steps": 4,
+              "separated_cells": 8,
+              "obstruction": "8,5"
+            }
+          },
+          {
+            "from": "4,0",
+            "to": "4,19",
+            "distance": 25,
+            "resilient": true,
+            "alternate": {
+              "distance": 37,
+              "extra_steps": 12,
+              "separated_cells": 20,
+              "obstruction": "6,14"
+            }
+          },
+          {
+            "from": "4,0",
+            "to": "15,19",
+            "distance": 30,
+            "resilient": true,
+            "alternate": {
+              "distance": 32,
+              "extra_steps": 2,
+              "separated_cells": 13,
+              "obstruction": "13,9"
+            }
+          },
+          {
+            "from": "4,0",
+            "to": "0,15",
+            "distance": 29,
+            "resilient": true,
+            "alternate": {
+              "distance": 41,
+              "extra_steps": 12,
+              "separated_cells": 20,
+              "obstruction": "6,14"
+            }
+          }
+        ]
+      },
+      "all": {
+        "reachable_pairs": 28,
+        "meaningful_reroute_pairs": 22,
+        "reroute_fraction": 0.786,
+        "examples": [
+          {
+            "from": "4,0",
+            "to": "15,0",
+            "distance": 31,
+            "resilient": true,
+            "alternate": {
+              "distance": 35,
+              "extra_steps": 4,
+              "separated_cells": 8,
+              "obstruction": "8,5"
+            }
+          },
+          {
+            "from": "4,0",
+            "to": "4,19",
+            "distance": 25,
+            "resilient": true,
+            "alternate": {
+              "distance": 37,
+              "extra_steps": 12,
+              "separated_cells": 20,
+              "obstruction": "6,14"
+            }
+          },
+          {
+            "from": "4,0",
+            "to": "15,19",
+            "distance": 30,
+            "resilient": true,
+            "alternate": {
+              "distance": 32,
+              "extra_steps": 2,
+              "separated_cells": 13,
+              "obstruction": "13,9"
+            }
+          },
+          {
+            "from": "4,0",
+            "to": "0,15",
+            "distance": 29,
+            "resilient": true,
+            "alternate": {
+              "distance": 41,
+              "extra_steps": 12,
+              "separated_cells": 20,
+              "obstruction": "6,14"
+            }
+          }
+        ]
+      }
+    }
   }
 ]
