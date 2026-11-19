@@ -3510,6 +3510,7 @@
         "isolated_shutters": true,
         "tailrace": {
           "level": -1,
+          "hydraulic_separation": "vented_free_fall",
           "cells": [
             [
               9,
