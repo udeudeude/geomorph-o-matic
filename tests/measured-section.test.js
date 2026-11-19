@@ -29,7 +29,7 @@ test("section includes independent negative and stacked positive floor levels",(
  assert.match(svg,/watch_platform/);
  assert.match(svg,/\+2 \(20 ft\)/);
  assert.match(svg,/-1 \(-10 ft\)/);
- assert.match(svg,/M390 75h24/); // watch platform at x7, level +2
+ assert.match(svg,/M258 75h24/); // watch platform at x7, level +2
  assert.equal(svg,measuredSection(owner,terrain,vertical,{row:10,title:"Test survey"}));
 });
 test("section uses equal plan and nominal vertical length units, never inventing a cave roof",()=>{
