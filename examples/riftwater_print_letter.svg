@@ -65,8 +65,8 @@
 <path d="M216,216v24" stroke="#596461" stroke-width="2.2"/>
 <path d="M216,216h24" stroke="#596461" stroke-width="2.2"/>
 </g><g id="intake-and-outfall" font-family="sans-serif" font-size="9" font-weight="700" text-anchor="middle">
-<g data-hydraulic-terminal="intake"><title>Uncharted upstream intake adit</title><circle cx="252" cy="228" r="6.4" fill="#f3eadd" stroke="#344e52" stroke-width="1.1"/><text x="252" y="231.1" fill="#344e52">I</text></g>
-<g data-hydraulic-terminal="outfall"><title>Uncharted downstream tailrace outfall</title><circle cx="252" cy="276" r="6.4" fill="#f3eadd" stroke="#344e52" stroke-width="1.1"/><text x="252" y="279.1" fill="#344e52">T</text></g>
+<g data-hydraulic-terminal="intake"><title>Uncharted upstream intake adit</title><circle cx="228" cy="228" r="6.4" fill="#f3eadd" stroke="#344e52" stroke-width="1.1"/><text x="228" y="231.1" fill="#344e52">I</text></g>
+<g data-hydraulic-terminal="outfall"><title>Uncharted downstream tailrace outfall</title><circle cx="276" cy="276" r="6.4" fill="#f3eadd" stroke="#344e52" stroke-width="1.1"/><text x="276" y="279.1" fill="#344e52">T</text></g>
 </g>
 <g id="sluice-control-stations" fill="none" stroke="#3e4945" stroke-linecap="round">
 <g data-controls-gate="west_shutter" data-control-id="west_winch"><title>west winch operates west shutter</title><circle cx="252" cy="345.6" r="8" fill="#e5dbc7" stroke-width="1.6"/><circle cx="252" cy="345.6" r="2.1" fill="#586764"/>
