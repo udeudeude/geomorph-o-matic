@@ -115,5 +115,18 @@
     "minimum_type_mm": 2.646,
     "minimum_stroke_mm": 0.198,
     "requires_visual_review": true
+  },
+  {
+    "tile": "lantern_sink",
+    "full_square_inches": 0.5,
+    "tile_width_mm": 127,
+    "millimetres_per_vector_unit": 0.265,
+    "font_samples": 1,
+    "type_below_2_2_mm": 0,
+    "stroke_samples": 117,
+    "strokes_below_0_15_mm": 0,
+    "minimum_type_mm": 2.646,
+    "minimum_stroke_mm": 0.198,
+    "requires_visual_review": true
   }
 ]
