@@ -39,8 +39,8 @@ Riftwater Lock's three independently shut upper sumps now drop into a separate
 **ordered, lower-level collection race**. Its ten half-cell stations are
 connected by a directed drain path, with one distinct drop shaft per shutter.
 The lower collector now reaches an **exact special subfloor seam** into Postern
-Bastion. The receiving relay ends inside the next tile, so an actual outfall is
-still uncharted. Assumed invert heights are checked against an authored tailwater
+Bastion. The Postern receiving relay reaches a mapped eastern lower-level outfall lip;
+its exterior receiving channel and discharge capacity remain uncharted. Assumed invert heights are checked against an authored tailwater
 envelope, **not** surveyed or calculated flow physics.
 
 - [Two-plan lower-race technical plate](examples/riftwater_tailrace_plate.svg):
@@ -239,3 +239,15 @@ The south service gallery has three individually assigned handwheel stations. Th
 
 This remains a small functional **map study**, not a complete power facility: an actual headrace, separate turbine pit, penstock, discharge culvert, hydraulic gradient, operating transmissions, and calibrated gate heights have not yet been designed. See [engineering research and design constraints](research/2026-11-19-bounded-waterworks-architecture.md). Inspect the [Riftwater Lock vector master](tiles/riftwater_lock.svg) and [surge study](examples/riftwater_surge.svg) at full size before evaluating their architectural legibility.
 
+
+## Exterior outfall lip and high-water scenarios (19 November 2026)
+
+Postern Bastion now has a two-foot nominal masonry outlet at its **east level -1
+boundary (19,9)**. The routed receiver has 23 stations, an added dry-gallery
+cleanout, and a provisional 1.10-foot total grade drop. Its discharge exits the
+visible tile, but the receiving watercourse remains unmapped. The
+[outfall plan and sectional SVG](examples/postern_outfall_section.svg) distinguishes
+ordinary water from a high-water case that drowns the modeled crown. In a
+hydraulic assembly the outlet must face an exterior boundary, never an
+arbitrary adjoining tile. This is a high-water *risk flag*, not calculated flow
+or proof that the turbine remains vented. [Evidence and limitations](research/2026-11-19-outfall-backwater.md).

@@ -11,13 +11,13 @@ RECEIVER=next(t for t in DATA['tiles'] if t['id']=='postern_bastion')
 
 
 class MaintenanceEngineeringTests(unittest.TestCase):
-    def test_authored_sluice_drives_and_five_bend_cleanouts(self):
+    def test_authored_sluice_drives_and_six_bend_cleanouts(self):
         a=validate(SOURCE)
         b=validate(RECEIVER)
         self.assertEqual(a['maintenance_drives'],3)
         self.assertEqual(a['gearboxes'],5)
         self.assertEqual(a['inspection_covers'],3)
-        self.assertEqual(b['inspection_covers'],2)
+        self.assertEqual(b['inspection_covers'],3)
         self.assertEqual(a['service_spurs_ft'],15.0)
         self.assertGreater(b['floor_cells'],0)
 

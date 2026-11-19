@@ -204,12 +204,13 @@ def validate_lower_grade(route, grade, vented=False):
 
 
 def validate_subfloor_relay(tile):
+    """A mapped outfall lip is not evidence of a functioning external watercourse."""
     lower = tile.get('hydrology', {}).get('subfloor_relay')
     if lower is None:
         return 0
     assert (isinstance(lower, dict) and type(lower.get('level')) is int and lower['level'] == -1
             and lower.get('role') == 'receiving_relay'
-            and lower.get('discharge_status') == 'unmapped_internal_outfall'), 'unproven lower discharge'
+            and lower.get('discharge_status') == 'external_lip_receiver_unmapped'), 'unproven lower discharge'
     entry = lower_edge_point(lower.get('entry_edge'))
     route = lower.get('cells')
     assert isinstance(route, list) and len(route) >= 3, 'receiving conduit path'
@@ -217,14 +218,33 @@ def validate_subfloor_relay(tile):
     for i, p in enumerate(route):
         assert (isinstance(p, list) and len(p) == 2 and all(type(n) is int for n in p)), 'relay coordinate'
         p = tuple(p)
-        assert (p == entry if i == 0 else all(0 < n < 19 for n in p)), 'relay must enter through seam only'
+        assert (p == entry if i == 0 else
+                all(0 <= n <= 19 for n in p) if i == len(route)-1 else
+                all(0 < n < 19 for n in p)), 'relay must enter and leave through specified boundaries only'
         points.append(p)
     assert len(points) == len(set(points)), 'relay loops'
     assert all(sum(abs(a-b) for a,b in zip(p,q)) == 1 for p,q in zip(points,points[1:])), 'relay is disconnected'
-    assert tuple(lower.get('terminus', [])) == points[-1] and all(0 < n < 19 for n in points[-1]), 'relay outfall unmapped'
-    validate_lower_grade(points, lower.get('grade'))
+    assert tuple(lower.get('terminus', [])) == points[-1], 'relay terminus'
+    z = validate_lower_grade(points, lower.get('grade'))
+    o = lower.get('outfall')
+    assert isinstance(o, dict) and o.get('kind') == 'masonry_arch_lip', 'missing masonry outfall'
+    edge = o.get('exit_edge')
+    assert isinstance(edge, dict) and edge.get('kind') == 'subfloor_outfall', 'outfall edge type'
+    side, offset = edge.get('side'), edge.get('offset')
+    assert side in ('N', 'E', 'S', 'W') and type(offset) is int and 0 < offset < 19, 'outfall offset'
+    boundary = {'N': (offset, 0), 'S': (offset, 19),
+                'W': (0, offset), 'E': (19, offset)}[side]
+    assert points[-1] == boundary == tuple(o.get('at', [])), 'outfall not on boundary lip'
+    assert o.get('receiver_documentation') == 'unmapped_external_watercourse', 'unjustified receiver'
+    width = o.get('nominal_clear_width_ft')
+    assert type(width) in (int, float) and math.isfinite(width) and 0 < width <= 2.5, 'lip too wide for half cell'
+    levels = o.get('water_levels_ft')
+    assert isinstance(levels, dict), 'missing receiver water assumptions'
+    ordinary, high = levels.get('ordinary'), levels.get('high')
+    assert all(type(v) in (int,float) and math.isfinite(v) for v in (ordinary,high)), 'invalid receiver levels'
+    g = lower['grade']
+    assert (z[-1] < ordinary < g['max_tailwater_ft'] < g['crown_ft'] < high), 'normal versus drowned-lip envelope'
     return len(points)
-
 
 
 def validate_buried_foundations(tile):

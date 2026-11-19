@@ -25,7 +25,7 @@ function makeSubfloorAssemblyPlate(layout,data){
  const out=[
   '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 990" role="img" aria-label="Matched two-tile lower collector and assumed invert survey">',
   '<title>'+esc(upper.title)+' to '+esc(lower.title)+' | subfloor interface study</title>',
-  '<rect width="1100" height="990" fill="#f5f1e8"/>',
+  '<rect width="1280" height="990" fill="#f5f1e8"/>',
   '<text x="74" y="46" font-size="25" font-family="Georgia,serif" fill="#263b3a">UNDERFLOOR CONNECTION / TWO-TILE STUDY</text>',
   '<text x="74" y="72" font-size="12" font-family="sans-serif" fill="#4c605c">Exact specialized lower-level seam, independent of the eight standard surface entrances.</text>',
   '<text x="74" y="126" font-size="17" font-weight="700" font-family="sans-serif" fill="#294c53">01  SUBFLOOR / FOUNDATION PLAN</text>',
@@ -81,14 +81,17 @@ function makeSubfloorAssemblyPlate(layout,data){
  out.push('</g><g id="lower-termination-labels" font-size="11" font-family="sans-serif" fill="#253f44">');
  const [ex,ey]=local(receiver.at(-1),1);
  out.push('<circle cx="'+ex+'" cy="'+ey+'" r="9" fill="#f8eee0" stroke="#9d582e" stroke-width="2"/>');
- out.push('<text x="'+(ex+13)+'" y="'+(ey+4)+'">Uncharted outfall</text>');
+ out.push('<g id="mapped-outfall-lip" data-boundary="'+relay.outfall.edge.side+':'+relay.outfall.edge.offset+'">'+
+  '<path d="M'+(ex-5)+','+(ey-10)+'v20 M'+(ex+5)+','+(ey-10)+'v20" stroke="#a0552f" stroke-width="3"/>'+
+  '<title>2-foot nominal masonry outlet lip; external receiving channel unmapped</title></g>');
+ out.push('<text x="'+(ex+13)+'" y="'+(ey+4)+'">Outfall lip / exterior uncharted</text>');
  out.push('</g></g>');
  out.push(
  '<text x="'+LEFT+'" y="938" font-size="11" font-family="sans-serif" fill="#4d5f5b">Dark blue = buried water conduit (NOT a walking route). Brown seam = matched special opening.</text>',
  '<text x="'+LEFT+'" y="958" font-size="11" font-family="sans-serif" fill="#695b49">Direct room-footprint overlaps: 0. Adjacent stations: '+nearbyCount+'. Orange rings: unverified setbacks, NOT proven clearances.</text>'
  );
  const all=[...src.grade.inverts_ft,...relay.grade.inverts_ft];
- const chartX=520,chartW=22,sourceEdge=source.length-1,relayEdge=source.length;
+ const chartX=520,chartW=16,sourceEdge=source.length-1,relayEdge=source.length;
  const zy=z=>380+(-8-z)*70;
  out.push('<g id="longitudinal-grade-profile" font-family="sans-serif">');
  out.push('<path d="M'+chartX+','+zy(src.grade.crown_ft)+'h'+(all.length-1)*chartW+
@@ -100,11 +103,21 @@ function makeSubfloorAssemblyPlate(layout,data){
  out.push('<path id="grade-seam" data-seam-fall-ft="'+seam.seam_fall_ft.toFixed(2)+
   '" d="M'+(chartX+sourceEdge*chartW)+','+zy(all[sourceEdge])+'L'+(chartX+relayEdge*chartW)+','+zy(all[relayEdge])+
   '" stroke="#a0552f" stroke-width="6"/>');
- for(const [i,label] of [[0,"UPSTREAM"],[sourceEdge,"SOURCE EDGE"],[relayEdge,"RELAY EDGE"],[all.length-1,"UNMAPPED OUTFALL"]]){
+ for(const [i,label] of [[0,"UPSTREAM"],[sourceEdge,"SOURCE EDGE"],[relayEdge,"RELAY EDGE"],[all.length-1,"OUTFALL LIP"]]){
   const x=chartX+i*chartW,y=zy(all[i]);
   out.push('<circle cx="'+x+'" cy="'+y+'" r="4" fill="#fffaf1" stroke="#305d64" stroke-width="2"/>');
   out.push('<text x="'+x+'" y="'+(i===relayEdge?y+30:y-13)+'" text-anchor="'+(i===all.length-1?"end":"middle")+'" font-size="9" fill="#4c5350">'+label+'</text>');
  }
+ const outfall=relay.outfall,tipX=chartX+(all.length-1)*chartW;
+ out.push('<g id="receiving-water-scenarios" font-family="sans-serif">');
+ for(const state of outfall.states){
+  const yy=zy(state.water_surface_ft),high=state.crown_drowned;
+  out.push('<path data-receiver-state="'+state.id+'" d="M'+(tipX-14)+','+yy+'h53" fill="none" stroke="'+
+   (high?'#a2543b':'#3a879c')+'" stroke-width="3" stroke-dasharray="'+(high?'9 3':'4 4')+'"/>');
+ }
+ out.push('<text x="875" y="316" font-size="11" fill="#99543d">High external water -7.50 ft: crown drowned</text>');
+ out.push('<text x="875" y="470" font-size="11" fill="#397989">Ordinary external water -9.00 ft: partly submerged</text>');
+ out.push('</g>');
  out.push('<text x="520" y="351" font-size="11" fill="#554e42">Collector crown = '+src.grade.crown_ft+' ft (assumed)</text>');
  out.push('<text x="520" y="416" font-size="11" fill="#346b7e">Maximum tailwater = '+src.grade.max_tailwater_ft+' ft (assumed)</text>');
  out.push('<text x="520" y="738" font-size="12" fill="#304945">Source fall '+src.grade.total_fall_ft.toFixed(2)+
@@ -114,7 +127,7 @@ function makeSubfloorAssemblyPlate(layout,data){
   ' ft. Source freeboard '+src.grade.min_freeboard_ft.toFixed(2)+
   ' ft; declared air gap '+src.grade.available_air_gap_ft.toFixed(2)+' ft.</text>');
  out.push('<text x="520" y="800" font-size="12" fill="#695b49">Vertical scale exaggerated for invert comparison.</text>');
- out.push('<text x="520" y="820" font-size="12" fill="#695b49">No discharge, flood duration, ventilation or foundation stability proven.</text>');
+ out.push('<text x="520" y="820" font-size="12" fill="#695b49">No discharge, high-water backflow, exterior riverbed or foundation stability proven.</text>');
  out.push('</g></svg>');
  return out.join("\n")+"\n";
 }

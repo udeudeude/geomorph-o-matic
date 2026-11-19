@@ -44,10 +44,10 @@ test("independent gate drives fail on swaps, shared cells, disconnected segments
 test("every genuine conduit turn has a dry inspectable, nontraversable cleanout",()=>{
  const upper=inspectionModel(src),lower=inspectionModel(dst);
  assert.deepEqual(bendKeys(src.hydrology.tailrace.cells),["11,11","11,14","6,14"]);
- assert.deepEqual(bendKeys(dst.hydrology.subfloor_relay.cells),["6,1","9,1"]);
+ assert.deepEqual(bendKeys(dst.hydrology.subfloor_relay.cells),["6,1","9,1","9,9"]);
  assert.deepEqual(upper.map(a=>a.branch_length_ft),[7.5,7.5,0]);
- assert.deepEqual(lower.map(a=>a.branch_length_ft),[0,0]);
- assert.deepEqual(lower.map(a=>a.surface.join(",")),["6,1","9,1"]);
+ assert.deepEqual(lower.map(a=>a.branch_length_ft),[0,0,0]);
+ assert.deepEqual(lower.map(a=>a.surface.join(",")),["6,1","9,1","9,9"]);
  assert.equal(buildCells(dst).get("9,1"),"hall","the Postern shaft now has a real dry access niche");
  assert.equal(maintenanceSymbolsSvg(src).filter(s=>s.includes("buried-inspection-hatches")).length,1);
 });
@@ -88,7 +88,7 @@ test("deterministic editable technical plate identifies bores, vertical racks, i
  assert.equal((a.match(/data-bevel-box=/g)||[]).length,5);
  assert.equal((a.match(/data-service-panel=/g)||[]).length,5);
  assert.equal((a.match(/data-shutdown-required="true"/g)||[]).length,2);
- assert.equal((a.match(/lateral branch/g)||[]).length,5);
- assert.match(a,/unmapped outfall/i);
+ assert.equal((a.match(/lateral branch/g)||[]).length,6);
+ assert.match(a,/receiving channel unmapped/i);
  assert.match(a,/not a construction drawing/i);
 });
