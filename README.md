@@ -33,12 +33,31 @@ Each morph covers **10 x 10 full squares** subdivided into 20 x 20 half-square c
 
 All six studies currently have eight standard edge openings, plus explicitly authored rooms, passages, secret doors and locked doors. Corridor loops are diagnostic, not proof of meaningful alternatives; see the separate route-resilience and chamber-journey audits.
 
+## Two-level waterworks study (November 19, 2026)
+
+Riftwater Lock's three independently shut upper sumps now drop into a separate
+**ordered, lower-level collection race**. Its ten half-cell stations are
+connected by a directed drain path, with one distinct drop shaft per shutter.
+The lower race terminates **inside the tile**: its onward outfall is not built,
+and its assumed level -1 has no surveyed height or proven hydraulic grade.
+
+- [Two-plan lower-race technical plate](examples/riftwater_tailrace_plate.svg):
+  separately editable upper and lower hydraulic vectors, exact plan coordinates,
+  three drop shafts, directional arrows, and an explicitly unmapped terminus.
+- [Canonical lower-tailrace model](tailrace.js):
+  verifies contiguous path, unique downstream pickups and closed-gate isolation.
+- [Historic evidence and unresolved structural dimensions](research/2026-11-19-underfloor-tailrace.md):
+  real winch/penstock precedents, missing invert elevations and vault foundations.
+
+The main [Riftwater Lock SVG](tiles/riftwater_lock.svg) displays only drop symbols,
+not a misleading surface tunnel. The existing standard eight exits are unchanged.
+
 ## Next major work
 
-1. Critically examine actual assembled maps at print scale; improve density and architectural plausibility rather than adding superficial furniture.
-2. Extend the existing irregular chambers and overlapping elevation model with connected waterways, flood stages, and purposeful dead ends.
-3. Add edge/corner interface masks and validate matched openings instead of assuming eight for every tile.
-4. Build meaningful scenario keys and alternate routes, then validate with actual playtesting.
+1. Research and dimension sluice transmissions, lower-shaft access, invert elevations and the pressure vault's foundations before drawing claimed working machinery.
+2. Develop compatible specialized *lower-level* edge interfaces and a defended tailrace continuation; a collector ending at an internal datum is not an outfall.
+3. Critically review nine-tile map assemblies and the two-level technical plate at print size, correcting visual hierarchy and architecture rather than adding generic furniture.
+4. Add edge/corner interface masks and test matched surface and lower-level openings through rotated assemblies, then playtest meaningful gate-operation choices.
 
 Research comparisons and design decisions: [design notes](research/design-notes.md).
 
