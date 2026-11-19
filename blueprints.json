@@ -3765,6 +3765,36 @@
               "kind": "bolted_cleanout_riser",
               "at": [
                 11,
+                11
+              ],
+              "surface": [
+                13,
+                12
+              ],
+              "branch": [
+                [
+                  11,
+                  11
+                ],
+                [
+                  12,
+                  11
+                ],
+                [
+                  12,
+                  12
+                ],
+                [
+                  13,
+                  12
+                ]
+              ],
+              "nominal_clear_diameter_ft": 1.5
+            },
+            {
+              "kind": "bolted_cleanout_riser",
+              "at": [
+                11,
                 14
               ],
               "surface": [
