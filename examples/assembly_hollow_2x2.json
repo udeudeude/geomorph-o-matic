@@ -1,0 +1,25 @@
+{
+  "title": "The Hollow Causeway: Caverns and Ruined Masonry, Mixed Four-Tile Proof",
+  "rows": [
+    [
+      {
+        "id": "basalt_rift",
+        "turn": 1
+      },
+      {
+        "id": "hollow_causeway",
+        "turn": 0
+      }
+    ],
+    [
+      {
+        "id": "fallen_choir",
+        "turn": 2
+      },
+      {
+        "id": "sunken_orrery",
+        "turn": 3
+      }
+    ]
+  ]
+}
