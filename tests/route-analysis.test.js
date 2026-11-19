@@ -74,7 +74,12 @@ test("real tiles expose staged access and room route roles without inventing con
   const {audit}=require("../audit");
   const a=audit(tile);
   assert.equal(a.access_profiles.ordinary.reachable_portals,8);
-  assert.equal(a.access_profiles.all.accessible_floor_cells,a.floor_cells);
+  // All doors open is not the same as swimming through unbridged water.
+  const {terrainGraph}=require("../terrain");
+  const {doorEdges,ownerMap}=require("../audit");
+  const allTerrain=terrainGraph(ownerMap(tile),doorEdges(tile),tile.terrain||{},"all","wading");
+  assert.equal(distances(allTerrain,"4,0").size,a.floor_cells);
+  assert.ok(a.access_profiles.all.accessible_floor_cells<=a.floor_cells);
   assert.equal(a.chamber_route_roles.length,tile.rooms.length);
   assert.ok(a.chamber_route_roles.every(r=>r.door_count>=1));
  }
