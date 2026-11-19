@@ -48,7 +48,7 @@
     "stroke_samples": 115,
     "strokes_below_0_15_mm": 0,
     "minimum_type_mm": null,
-    "minimum_stroke_mm": 0.212,
+    "minimum_stroke_mm": 0.185,
     "requires_visual_review": true
   },
   {
@@ -74,7 +74,7 @@
     "stroke_samples": 170,
     "strokes_below_0_15_mm": 0,
     "minimum_type_mm": 2.381,
-    "minimum_stroke_mm": 0.212,
+    "minimum_stroke_mm": 0.185,
     "requires_visual_review": true
   },
   {
@@ -100,7 +100,7 @@
     "stroke_samples": 116,
     "strokes_below_0_15_mm": 0,
     "minimum_type_mm": null,
-    "minimum_stroke_mm": 0.198,
+    "minimum_stroke_mm": 0.185,
     "requires_visual_review": true
   },
   {
@@ -113,7 +113,7 @@
     "stroke_samples": 122,
     "strokes_below_0_15_mm": 0,
     "minimum_type_mm": 2.646,
-    "minimum_stroke_mm": 0.198,
+    "minimum_stroke_mm": 0.185,
     "requires_visual_review": true
   },
   {
@@ -126,7 +126,7 @@
     "stroke_samples": 117,
     "strokes_below_0_15_mm": 0,
     "minimum_type_mm": 2.646,
-    "minimum_stroke_mm": 0.198,
+    "minimum_stroke_mm": 0.185,
     "requires_visual_review": true
   }
 ]
