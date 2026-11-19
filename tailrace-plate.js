@@ -21,11 +21,11 @@ function makeTailracePlate(tile){
  const out=[
   '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 735" role="img" aria-label="Two-level hydraulic works technical plate">',
   '<title>'+esc(tile.title)+' | Controlled underfloor drainage study</title>',
-  '<rect width="1080" height="675" fill="#f5f1e8"/>',
+  '<rect width="1080" height="735" fill="#f5f1e8"/>',
   '<text x="66" y="43" font-family="Georgia,serif" font-size="25" fill="#293837">'+esc(tile.title)+' / LOWER RACE</text>',
   '<text x="66" y="69" font-family="sans-serif" font-size="13" fill="#515d5a">Plan coordinates: 2.5 feet per half-cell. Panels crop tile columns 6–15 and rows 7–19.</text>',
   '<text x="66" y="100" font-family="sans-serif" font-size="16" font-weight="700" fill="#344846">01   UPPER SLUICE CHANNEL · level 0</text>',
-  '<text x="590" y="100" font-family="sans-serif" font-size="16" font-weight="700" fill="#344846">02   SUBFLOOR TAILRACE · assumed level −1</text>',
+  '<text x="590" y="100" font-family="sans-serif" font-size="16" font-weight="700" fill="#344846">02   SUBFLOOR TAILRACE · assumed level -1</text>',
   '<g id="plan-scale" fill="none" stroke="#344846" stroke-width="1.4"><path d="M944 61h68 M944 56v10 M1012 56v10"/><text x="944" y="51" fill="#344846" stroke="none" font-family="sans-serif" font-size="10">0</text><text x="987" y="51" fill="#344846" stroke="none" font-family="sans-serif" font-size="10">5 ft</text></g>',
   '<defs><marker id="downstream-arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6Z" fill="#315e6c"/></marker></defs>'
  ];
