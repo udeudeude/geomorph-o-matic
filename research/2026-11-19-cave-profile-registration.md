@@ -25,6 +25,12 @@
 - An actual cave-style transverse section through the keyhole, passage width, flowstone and solutional features is a worthwhile next design study. It should not be invented by rotating an unmeasured profile.
 - Both physical-size print inspection and navigational playtesting remain outstanding. The present plate should be evaluated for label collisions, hatch density, visibility of cut markers and whether the gallery reads as a plausible geological shelf.
 
+## Cartographic refinement: rock-facing cavern wall sculpting
+
+The former organic wall renderer used a cubic control-point wobble but left every vertex on an integer cell corner. Even after smoothing, those repeated corner anchors exposed the underlying grid. The revised cavern contour system moves **interior wall vertices only toward the recorded rock-facing outward normals**, with a deterministic, bounded sub-cell offset; curve controls also bulge into the rock rather than indiscriminately to either side. Exact exterior-boundary anchors, including the eight rotation-compatible mouths, remain untouched. Distinct cave and worked masonry renderers remain separate.
+
+This is deliberately restrained surface art, not a modification to actual traversable floor, route data, water or elevations. Geometry tests verify which side of a simple chamber the displaced ink occupies, maximum deviation below four vector units at default scale, border invariance, invalid-normal rejection, determinism and canonical cavern generation. **Visual print scrutiny is still required**, particularly at concave rock corners and narrow natural throats where safe mathematical offsets do not automatically guarantee artistic clarity.
+
 ## Reproduction
 
     node render.js
