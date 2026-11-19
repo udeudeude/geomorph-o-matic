@@ -72,6 +72,7 @@ test("separate technical plate traces physical coordinates without implying surv
  assert.equal(svg,makeTailracePlate(rift));
  for(const tag of ["upper-hydraulic-plan","subfloor-collection-plan",
   "subfloor-directed-tailrace","lower-discharge-shafts",
+  "upper-floor-context","vault-foundation-conflict","plan-scale",
   'data-level="-1"','data-continuation="unmapped"'])
   assert.ok(svg.includes(tag),tag);
  assert.equal((svg.match(/data-drain-from=/g)||[]).length,3);
