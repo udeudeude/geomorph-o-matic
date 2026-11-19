@@ -767,6 +767,20 @@
             ]
           ],
           "reason": "gatehouse approach"
+        },
+        {
+          "id": "north_service_cleanout_niche",
+          "points": [
+            [
+              8,
+              1
+            ],
+            [
+              9,
+              1
+            ]
+          ],
+          "reason": "Dry service access to buried northern bend, bolted inspection hatch"
         }
       ],
       "doors": [
@@ -958,7 +972,45 @@
             ],
             "crown_ft": -8,
             "max_tailwater_ft": -8.75
-          }
+          },
+          "inspections": [
+            {
+              "kind": "bolted_cleanout_riser",
+              "at": [
+                6,
+                1
+              ],
+              "surface": [
+                6,
+                1
+              ],
+              "branch": [
+                [
+                  6,
+                  1
+                ]
+              ],
+              "nominal_clear_diameter_ft": 1.5
+            },
+            {
+              "kind": "bolted_cleanout_riser",
+              "at": [
+                9,
+                1
+              ],
+              "surface": [
+                9,
+                1
+              ],
+              "branch": [
+                [
+                  9,
+                  1
+                ]
+              ],
+              "nominal_clear_diameter_ft": 1.5
+            }
+          ]
         }
       }
     },
@@ -3707,8 +3759,210 @@
             "max_tailwater_ft": -8.75,
             "drop_lip_ft": -1,
             "minimum_air_gap_ft": 4
+          },
+          "inspections": [
+            {
+              "kind": "bolted_cleanout_riser",
+              "at": [
+                11,
+                14
+              ],
+              "surface": [
+                13,
+                13
+              ],
+              "branch": [
+                [
+                  11,
+                  14
+                ],
+                [
+                  12,
+                  14
+                ],
+                [
+                  13,
+                  14
+                ],
+                [
+                  13,
+                  13
+                ]
+              ],
+              "nominal_clear_diameter_ft": 1.5
+            },
+            {
+              "kind": "bolted_cleanout_riser",
+              "at": [
+                6,
+                14
+              ],
+              "surface": [
+                6,
+                14
+              ],
+              "branch": [
+                [
+                  6,
+                  14
+                ]
+              ],
+              "nominal_clear_diameter_ft": 1.5
+            }
+          ]
+        },
+        "transmissions": [
+          {
+            "id": "west_drive",
+            "kind": "ceiling_shaft_rack",
+            "control": "west_winch",
+            "gate": "west_shutter",
+            "shaft_axis_ft": 8,
+            "shaft_diameter_in": 1.5,
+            "path": [
+              [
+                10,
+                14
+              ],
+              [
+                9,
+                14
+              ],
+              [
+                9,
+                13
+              ],
+              [
+                9,
+                12
+              ],
+              [
+                9,
+                11
+              ]
+            ],
+            "bored_at": [
+              [
+                9,
+                14
+              ],
+              [
+                9,
+                13
+              ]
+            ],
+            "bearings": [
+              [
+                9,
+                14
+              ],
+              [
+                9,
+                12
+              ]
+            ]
+          },
+          {
+            "id": "center_drive",
+            "kind": "ceiling_shaft_rack",
+            "control": "center_winch",
+            "gate": "center_shutter",
+            "shaft_axis_ft": 8,
+            "shaft_diameter_in": 1.5,
+            "path": [
+              [
+                11,
+                14
+              ],
+              [
+                11,
+                13
+              ],
+              [
+                10,
+                13
+              ],
+              [
+                10,
+                12
+              ],
+              [
+                10,
+                11
+              ]
+            ],
+            "bored_at": [
+              [
+                11,
+                13
+              ]
+            ],
+            "bearings": [
+              [
+                11,
+                13
+              ],
+              [
+                10,
+                12
+              ]
+            ]
+          },
+          {
+            "id": "east_drive",
+            "kind": "ceiling_shaft_rack",
+            "control": "east_winch",
+            "gate": "east_shutter",
+            "shaft_axis_ft": 8,
+            "shaft_diameter_in": 1.5,
+            "path": [
+              [
+                12,
+                14
+              ],
+              [
+                12,
+                13
+              ],
+              [
+                12,
+                12
+              ],
+              [
+                11,
+                12
+              ],
+              [
+                11,
+                11
+              ]
+            ],
+            "bored_at": [
+              [
+                12,
+                13
+              ],
+              [
+                12,
+                12
+              ],
+              [
+                11,
+                12
+              ]
+            ],
+            "bearings": [
+              [
+                12,
+                12
+              ],
+              [
+                11,
+                12
+              ]
+            ]
           }
-        }
+        ]
       },
       "vertical": {
         "decks": [
