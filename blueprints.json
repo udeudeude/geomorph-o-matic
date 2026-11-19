@@ -6678,6 +6678,830 @@
           ]
         ]
       }
+    },
+    {
+      "id": "lantern_sink",
+      "title": "The Lantern Sink",
+      "family": "Pilgrim ruin meeting joint-controlled limestone",
+      "geometry": "hand-shaped chambers with a flooded collapse, dual-grade eastern rock bench and hidden calcite reliquary",
+      "description": "A deserted pilgrimage stair enters a drowned collapse chamber. Two horizontal routes skirt the sink, the stone plankwork crosses its water, and the eastern bedrock bench rises by two natural approaches with a third descent into the central chamber. A western breakdown obstructs a formerly direct cleft. The calcite reliquary is optional.",
+      "wall_style": "cavern",
+      "rooms": [
+        [
+          "lantern",
+          "Drowned lantern sink",
+          {
+            "rows": [
+              [
+                7,
+                8,
+                10
+              ],
+              [
+                8,
+                7,
+                12
+              ],
+              [
+                9,
+                7,
+                12
+              ],
+              [
+                10,
+                8,
+                13
+              ],
+              [
+                11,
+                9,
+                13
+              ],
+              [
+                12,
+                10,
+                12
+              ]
+            ]
+          }
+        ],
+        [
+          "dry_vestibule",
+          "Wind-etched antechamber",
+          {
+            "rows": [
+              [
+                3,
+                2,
+                5
+              ],
+              [
+                4,
+                2,
+                5
+              ],
+              [
+                5,
+                3,
+                5
+              ]
+            ]
+          }
+        ],
+        [
+          "ribbed_gallery",
+          "Ribbed limestone hall",
+          {
+            "rows": [
+              [
+                2,
+                14,
+                16
+              ],
+              [
+                3,
+                13,
+                17
+              ],
+              [
+                4,
+                14,
+                17
+              ]
+            ]
+          }
+        ],
+        [
+          "hush",
+          "Blind listening niche",
+          {
+            "rows": [
+              [
+                2,
+                8,
+                11
+              ],
+              [
+                3,
+                8,
+                11
+              ],
+              [
+                4,
+                9,
+                10
+              ]
+            ]
+          }
+        ],
+        [
+          "broken_steps",
+          "Shattered pilgrim descent",
+          {
+            "rows": [
+              [
+                14,
+                2,
+                5
+              ],
+              [
+                15,
+                2,
+                5
+              ],
+              [
+                16,
+                3,
+                5
+              ]
+            ]
+          }
+        ],
+        [
+          "low_cistern",
+          "Silted cul-de-sac",
+          {
+            "rows": [
+              [
+                14,
+                15,
+                17
+              ],
+              [
+                15,
+                15,
+                17
+              ],
+              [
+                16,
+                14,
+                17
+              ]
+            ]
+          }
+        ],
+        [
+          "sealed_cell",
+          "Calcite-sealed reliquary",
+          {
+            "rows": [
+              [
+                16,
+                9,
+                11
+              ],
+              [
+                17,
+                9,
+                11
+              ]
+            ]
+          }
+        ]
+      ],
+      "routes": [
+        {
+          "id": "nw",
+          "points": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              6,
+              8
+            ]
+          ],
+          "reason": "Hand-authored passage following a distinct geological joint or reused pilgrim approach"
+        },
+        {
+          "id": "ne",
+          "points": [
+            [
+              15,
+              0
+            ],
+            [
+              15,
+              1
+            ],
+            [
+              18,
+              1
+            ],
+            [
+              18,
+              6
+            ],
+            [
+              13,
+              6
+            ],
+            [
+              13,
+              9
+            ]
+          ],
+          "reason": "Hand-authored passage following a distinct geological joint or reused pilgrim approach"
+        },
+        {
+          "id": "wu",
+          "points": [
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              6,
+              9
+            ]
+          ],
+          "reason": "Hand-authored passage following a distinct geological joint or reused pilgrim approach"
+        },
+        {
+          "id": "eu",
+          "points": [
+            [
+              19,
+              4
+            ],
+            [
+              18,
+              4
+            ],
+            [
+              18,
+              6
+            ]
+          ],
+          "reason": "Hand-authored passage following a distinct geological joint or reused pilgrim approach"
+        },
+        {
+          "id": "wl",
+          "points": [
+            [
+              0,
+              15
+            ],
+            [
+              1,
+              15
+            ],
+            [
+              1,
+              12
+            ],
+            [
+              7,
+              12
+            ],
+            [
+              7,
+              10
+            ]
+          ],
+          "reason": "Hand-authored passage following a distinct geological joint or reused pilgrim approach"
+        },
+        {
+          "id": "el",
+          "points": [
+            [
+              19,
+              15
+            ],
+            [
+              18,
+              15
+            ],
+            [
+              18,
+              11
+            ],
+            [
+              14,
+              11
+            ],
+            [
+              14,
+              10
+            ]
+          ],
+          "reason": "Hand-authored passage following a distinct geological joint or reused pilgrim approach"
+        },
+        {
+          "id": "sw",
+          "points": [
+            [
+              4,
+              19
+            ],
+            [
+              4,
+              18
+            ],
+            [
+              7,
+              18
+            ],
+            [
+              7,
+              13
+            ],
+            [
+              9,
+              13
+            ]
+          ],
+          "reason": "Hand-authored passage following a distinct geological joint or reused pilgrim approach"
+        },
+        {
+          "id": "se",
+          "points": [
+            [
+              15,
+              19
+            ],
+            [
+              15,
+              17
+            ],
+            [
+              13,
+              17
+            ],
+            [
+              13,
+              13
+            ],
+            [
+              12,
+              13
+            ]
+          ],
+          "reason": "Hand-authored passage following a distinct geological joint or reused pilgrim approach"
+        },
+        {
+          "id": "north",
+          "points": [
+            [
+              6,
+              6
+            ],
+            [
+              7,
+              6
+            ],
+            [
+              7,
+              5
+            ],
+            [
+              12,
+              5
+            ],
+            [
+              12,
+              6
+            ],
+            [
+              13,
+              6
+            ]
+          ],
+          "reason": "Hand-authored passage following a distinct geological joint or reused pilgrim approach"
+        },
+        {
+          "id": "west",
+          "points": [
+            [
+              6,
+              7
+            ],
+            [
+              6,
+              12
+            ],
+            [
+              7,
+              12
+            ]
+          ],
+          "reason": "Hand-authored passage following a distinct geological joint or reused pilgrim approach"
+        },
+        {
+          "id": "east",
+          "points": [
+            [
+              14,
+              7
+            ],
+            [
+              14,
+              13
+            ],
+            [
+              13,
+              13
+            ]
+          ],
+          "reason": "Hand-authored passage following a distinct geological joint or reused pilgrim approach"
+        },
+        {
+          "id": "south",
+          "points": [
+            [
+              7,
+              13
+            ],
+            [
+              13,
+              13
+            ]
+          ],
+          "reason": "Hand-authored passage following a distinct geological joint or reused pilgrim approach"
+        },
+        {
+          "id": "wellnorth",
+          "points": [
+            [
+              9,
+              5
+            ],
+            [
+              9,
+              6
+            ]
+          ],
+          "reason": "Hand-authored passage following a distinct geological joint or reused pilgrim approach"
+        },
+        {
+          "id": "wellwest",
+          "points": [
+            [
+              6,
+              8
+            ],
+            [
+              6,
+              10
+            ],
+            [
+              7,
+              10
+            ]
+          ],
+          "reason": "Hand-authored passage following a distinct geological joint or reused pilgrim approach"
+        },
+        {
+          "id": "southwest",
+          "points": [
+            [
+              4,
+              18
+            ],
+            [
+              4,
+              17
+            ]
+          ],
+          "reason": "Hand-authored passage following a distinct geological joint or reused pilgrim approach"
+        },
+        {
+          "id": "southeast",
+          "points": [
+            [
+              18,
+              15
+            ],
+            [
+              18,
+              17
+            ],
+            [
+              15,
+              17
+            ]
+          ],
+          "reason": "Hand-authored passage following a distinct geological joint or reused pilgrim approach"
+        },
+        {
+          "id": "southcell",
+          "points": [
+            [
+              8,
+              17
+            ],
+            [
+              8,
+              16
+            ]
+          ],
+          "reason": "Hand-authored passage following a distinct geological joint or reused pilgrim approach"
+        },
+        {
+          "id": "eastwest",
+          "points": [
+            [
+              7,
+              15
+            ],
+            [
+              6,
+              15
+            ]
+          ],
+          "reason": "Hand-authored passage following a distinct geological joint or reused pilgrim approach"
+        },
+        {
+          "id": "lowc",
+          "points": [
+            [
+              18,
+              15
+            ],
+            [
+              18,
+              14
+            ]
+          ],
+          "reason": "Hand-authored passage following a distinct geological joint or reused pilgrim approach"
+        }
+      ],
+      "doors": [
+        [
+          "lantern",
+          "N",
+          9,
+          "opening"
+        ],
+        [
+          "lantern",
+          "W",
+          8,
+          "opening"
+        ],
+        [
+          "lantern",
+          "E",
+          10,
+          "opening"
+        ],
+        [
+          "lantern",
+          "S",
+          11,
+          "opening"
+        ],
+        [
+          "dry_vestibule",
+          "E",
+          4,
+          "opening"
+        ],
+        [
+          "ribbed_gallery",
+          "N",
+          15,
+          "opening"
+        ],
+        [
+          "hush",
+          "S",
+          9,
+          "secret"
+        ],
+        [
+          "broken_steps",
+          "S",
+          4,
+          "opening"
+        ],
+        [
+          "broken_steps",
+          "E",
+          15,
+          "opening"
+        ],
+        [
+          "low_cistern",
+          "E",
+          15,
+          "opening"
+        ],
+        [
+          "sealed_cell",
+          "W",
+          16,
+          "secret"
+        ]
+      ],
+      "features": [
+        [
+          "rubble",
+          [
+            [
+              4,
+              15
+            ],
+            [
+              15,
+              15
+            ]
+          ]
+        ],
+        [
+          "columns",
+          [
+            [
+              8,
+              8
+            ],
+            [
+              12,
+              11
+            ]
+          ]
+        ]
+      ],
+      "terrain": {
+        "water": [
+          [
+            9,
+            9
+          ],
+          [
+            10,
+            9
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            10
+          ]
+        ],
+        "bridges": [
+          [
+            10,
+            9
+          ],
+          [
+            10,
+            10
+          ]
+        ],
+        "elevations": [
+          [
+            1,
+            [
+              [
+                14,
+                8
+              ],
+              [
+                14,
+                9
+              ],
+              [
+                14,
+                10
+              ],
+              [
+                14,
+                11
+              ]
+            ]
+          ]
+        ],
+        "ramps": [
+          [
+            [
+              14,
+              7
+            ],
+            [
+              14,
+              8
+            ]
+          ],
+          [
+            [
+              14,
+              11
+            ],
+            [
+              14,
+              12
+            ]
+          ],
+          [
+            [
+              13,
+              10
+            ],
+            [
+              14,
+              10
+            ]
+          ]
+        ],
+        "chokes": [
+          [
+            [
+              6,
+              10
+            ],
+            [
+              6,
+              11
+            ]
+          ]
+        ]
+      },
+      "cave_details": {
+        "flowstone": [
+          [
+            15,
+            3
+          ],
+          [
+            16,
+            3
+          ],
+          [
+            15,
+            4
+          ]
+        ],
+        "breakdown": [
+          [
+            3,
+            14
+          ],
+          [
+            4,
+            14
+          ],
+          [
+            4,
+            16
+          ]
+        ],
+        "scallops": [
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "gravel": [
+          [
+            9,
+            17
+          ],
+          [
+            10,
+            17
+          ],
+          [
+            11,
+            17
+          ]
+        ]
+      }
     }
   ]
 }

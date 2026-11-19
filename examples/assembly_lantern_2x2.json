@@ -1,0 +1,25 @@
+{
+  "title": "Lantern Sink: karst and ruined architecture, quarter-turn assembly",
+  "rows": [
+    [
+      {
+        "id": "lantern_sink",
+        "turn": 3
+      },
+      {
+        "id": "fallen_choir",
+        "turn": 1
+      }
+    ],
+    [
+      {
+        "id": "scoured_siphon",
+        "turn": 2
+      },
+      {
+        "id": "hollow_causeway",
+        "turn": 0
+      }
+    ]
+  ]
+}
