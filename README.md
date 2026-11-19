@@ -10,8 +10,14 @@ Original, modular, editable dungeon cartography. **Architectural studies, not ye
 - [Basalt Rift](tiles/basalt_rift.svg): seven irregular cavern chambers and natural rock contours.
 - [Sunken Orrery](tiles/sunken_orrery.svg): a ruined observatory court with two guarded approaches.
 - [Riftwater Lock](tiles/riftwater_lock.svg): partitioned subterranean sluice basin with three independently consequential shutters, separate crossing routes, and sealed discoveries.
+- [The Fallen Choir](tiles/fallen_choir.svg): a hand-composed ruined abbey with an irregular four-door bell nave, alternative ambulatories, a sealed vestry and optional discoveries. [Mixed four-tile composition](examples/assembly_fallen_choir_2x2.svg) · [true-size print sheet](examples/fallen_choir_print_letter.svg).
 
 These are editable vector drawings, not flattened images. The separate floor, grid, rock, doors, structural walls and architectural features are grouped in the SVG document.
+
+
+## Cartographic reset: priority on imaginative dungeon architecture
+
+The new [Fallen Choir](tiles/fallen_choir.svg) deliberately redirects development from machinery modeling to compositional strength: a distinctive bell landmark, a direct four-door crossing, secret discoveries that do not isolate the ordinary network, and fine etching **outside** stone walls. The new [masonry hatch generator](ink-hatching.js) is independent of floor geometry and retains editable vector layers. See the [research, references, tests and admitted design weaknesses](research/2026-11-19-ink-cartography-reset.md). The [curated assembly](examples/assembly_fallen_choir_2x2.svg) and [letter print proof](examples/fallen_choir_print_letter.svg) are for inspection; physical print review is not complete.
 
 ## Build locally
 
@@ -25,13 +31,13 @@ node render.js
 git diff --exit-code -- tiles/
 ```
 
-The canonical architectural data is in [blueprints.json](blueprints.json). The [JavaScript renderer](render.js) creates the six SVG masters reproducibly, and [validate.py](validate.py) rejects incompatible edge openings, invented doorways, unconnected halls and disconnected floors. [GitHub Actions](.github/workflows/validate.yml) checks these commands after pushes.
+The canonical architectural data is in [blueprints.json](blueprints.json). The [JavaScript renderer](render.js) creates the seven SVG masters reproducibly, and [validate.py](validate.py) rejects incompatible edge openings, invented doorways, unconnected halls and disconnected floors. [GitHub Actions](.github/workflows/validate.yml) checks these commands after pushes.
 
 ## Geometry
 
 Each morph covers **10 x 10 full squares** subdivided into 20 x 20 half-square cells. A 5-foot-wide opening occupies one half-cell inside the 3rd and 8th full squares on each side. The exact fine-grid opening positions are **4 and 15**; unlike the earlier 5/15 pair they remain aligned through all quarter-turn rotations.
 
-All six studies currently have eight standard edge openings, plus explicitly authored rooms, passages, secret doors and locked doors. Corridor loops are diagnostic, not proof of meaningful alternatives; see the separate route-resilience and chamber-journey audits.
+All seven studies currently have eight standard edge openings, plus explicitly authored rooms, passages, secret doors and locked doors. Corridor loops are diagnostic, not proof of meaningful alternatives; see the separate route-resilience and chamber-journey audits.
 
 ## Two-level waterworks study (November 19, 2026)
 
