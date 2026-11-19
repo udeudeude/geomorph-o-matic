@@ -23,20 +23,9 @@
 <path d="M384,0V480 M0,384H480" stroke="#b9b6ae" stroke-width=".95"/>
 <path d="M432,0V480 M0,432H480" stroke="#b9b6ae" stroke-width=".95"/>
 </g>
-<g id="water-terrain" fill="#86b8c3" fill-opacity=".64" stroke="none">
-<rect x="240" y="216" width="24" height="24"/>
-<rect x="264" y="240" width="24" height="24"/>
-<rect x="264" y="216" width="24" height="24"/>
-<rect x="288" y="240" width="24" height="24"/>
-<rect x="288" y="216" width="24" height="24"/>
-<rect x="360" y="312" width="24" height="24"/>
-<rect x="360" y="336" width="24" height="24"/>
-<rect x="384" y="312" width="24" height="24"/>
-<rect x="384" y="336" width="24" height="24"/>
-<rect x="144" y="216" width="24" height="24"/>
-<rect x="168" y="216" width="24" height="24"/>
-<rect x="192" y="216" width="24" height="24"/>
-<rect x="216" y="216" width="24" height="24"/>
+<g id="water-terrain" fill="#a6cbd0" fill-opacity=".8" stroke="#6b959b" stroke-width="1.1" fill-rule="evenodd">
+<path d="M252,216L264,216L288,216L307.68,216Q312,216 312,220.32L312,240L312,259.68Q312,264 307.68,264L288,264L268.32,264Q264,264 264,259.68L264,244.32Q264,240 259.68,240L240,240L216,240L192,240L168,240L148.32,240Q144,240 144,235.68L144,220.32Q144,216 148.32,216L168,216L192,216L216,216L240,216L252,216Z"/>
+<path d="M372,312L384,312L403.68,312Q408,312 408,316.32L408,336L408,355.68Q408,360 403.68,360L384,360L364.32,360Q360,360 360,355.68L360,336L360,316.32Q360,312 364.32,312L372,312Z"/>
 </g>
 <g id="dry-bridges" fill="#d5c6a4" stroke="#635f54" stroke-width=".9">
 <rect x="264" y="220.32" width="24" height="15.36"/>

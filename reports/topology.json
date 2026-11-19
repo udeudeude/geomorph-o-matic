@@ -248,6 +248,7 @@
     "ramp_edges": 0,
     "barrier_edges": 0,
     "ruined_wall_edges": 0,
+    "cave_choke_edges": 0,
     "travel": {
       "dry": {
         "accessible_floor_cells": 116,
@@ -730,6 +731,7 @@
     "ramp_edges": 0,
     "barrier_edges": 0,
     "ruined_wall_edges": 0,
+    "cave_choke_edges": 0,
     "travel": {
       "dry": {
         "accessible_floor_cells": 246,
@@ -1149,6 +1151,7 @@
     "ramp_edges": 0,
     "barrier_edges": 0,
     "ruined_wall_edges": 0,
+    "cave_choke_edges": 0,
     "travel": {
       "dry": {
         "accessible_floor_cells": 226,
@@ -1684,6 +1687,7 @@
     "ramp_edges": 0,
     "barrier_edges": 0,
     "ruined_wall_edges": 0,
+    "cave_choke_edges": 0,
     "travel": {
       "dry": {
         "accessible_floor_cells": 173,
@@ -2155,6 +2159,7 @@
     "ramp_edges": 0,
     "barrier_edges": 0,
     "ruined_wall_edges": 0,
+    "cave_choke_edges": 0,
     "travel": {
       "dry": {
         "accessible_floor_cells": 163,
@@ -2725,6 +2730,7 @@
     "ramp_edges": 1,
     "barrier_edges": 2,
     "ruined_wall_edges": 0,
+    "cave_choke_edges": 0,
     "travel": {
       "dry": {
         "accessible_floor_cells": 151,
@@ -3238,6 +3244,7 @@
     "ramp_edges": 0,
     "barrier_edges": 5,
     "ruined_wall_edges": 5,
+    "cave_choke_edges": 0,
     "travel": {
       "dry": {
         "accessible_floor_cells": 157,
@@ -3722,6 +3729,7 @@
     "ramp_edges": 0,
     "barrier_edges": 0,
     "ruined_wall_edges": 0,
+    "cave_choke_edges": 0,
     "travel": {
       "dry": {
         "accessible_floor_cells": 184,
