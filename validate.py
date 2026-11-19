@@ -223,6 +223,19 @@ def validate_waterworks(tile, cells):
     walls |= {e for e in partitions if e[0] in channels and e[1] in channels}
     # With every shutter opened, the intake must lead to the receiving sump.
     assert outlet in connected(channels, walls-culverts, inlet), (tile['id'], 'disconnected race')
+    isolated = spec.get('isolated_shutters', False)
+    assert type(isolated) is bool, (tile['id'], 'bad isolated-shutter flag')
+    if isolated:
+        assert len(gates) >= 2, (tile['id'], 'insufficient shutter branches')
+        claimed = set()
+        for gate_id in gates:
+            blocked = (walls-culverts) | {
+                pair(tuple(g['a']), tuple(g['b']))
+                for k, g in gates.items() if k != gate_id
+            }
+            freshly_reached = connected(channels, blocked, inlet) - water
+            assert freshly_reached and not (freshly_reached & claimed), (tile['id'], 'not independent shutter pockets')
+            claimed |= freshly_reached
     assigned, locations, control_ids = set(), set(), set()
     for station in spec.get('controls', []):
         at = tuple(station['at'])
