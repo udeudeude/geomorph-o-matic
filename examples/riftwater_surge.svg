@@ -723,7 +723,7 @@
 <g data-inspection-cover="13,13" data-bend="11,14"><title>Bolted dry gallery inspection cover over a non-walkable buried cleanout; dimensions provisional</title><rect x="318" y="318" width="12" height="12" fill="#d6ccb7" stroke-width="1.8"/><path d="M321,324h6 M324,321v6" stroke-width="1.5"/></g>
 <g data-inspection-cover="6,14" data-bend="6,14"><title>Bolted dry gallery inspection cover over a non-walkable buried cleanout; dimensions provisional</title><rect x="150" y="342" width="12" height="12" fill="#d6ccb7" stroke-width="1.8"/><path d="M153,348h6 M156,345v6" stroke-width="1.5"/></g>
 </g>
-<g id="overhead-decks" fill="#d6b88e" fill-opacity=".52" stroke="none">
+<g id="overhead-decks" fill="#ebe4d3" fill-opacity=".88" stroke="none">
 <rect x="192" y="240" width="24" height="24"/>
 <rect x="216" y="240" width="24" height="24"/>
 <rect x="240" y="240" width="24" height="24"/>
@@ -742,10 +742,10 @@
 <path d="M312,240v24"/>
 <path d="M288,264h24"/>
 <path d="M288,240h24"/>
-</g><g id="vertical-connections" font-family="sans-serif" text-anchor="middle">
-<circle cx="204" cy="252" r="7.68" fill="#fff9e9" stroke="#4f443b" stroke-width="1.6"/>
-<text x="204" y="255.7" font-size="9" font-weight="bold" fill="#473b32">L</text>
-<circle cx="300" cy="252" r="7.68" fill="#fff9e9" stroke="#4f443b" stroke-width="1.6"/>
-<text x="300" y="255.7" font-size="9" font-weight="bold" fill="#473b32">L</text>
+</g><g id="vertical-connections" fill="none" stroke="#383d3a" stroke-width="1.6" stroke-linecap="square">
+<circle cx="204" cy="252" r="8.879999999999999" fill="#fff9e9" stroke="#4f443b" stroke-width="1.6"/>
+<g data-vertical-symbol="ladder"><path d="M199.3,245.5v13 M208.7,245.5v13 M199.3,247.5h9.4 M199.3,252h9.4 M199.3,256.5h9.4"/></g>
+<circle cx="300" cy="252" r="8.879999999999999" fill="#fff9e9" stroke="#4f443b" stroke-width="1.6"/>
+<g data-vertical-symbol="ladder"><path d="M295.3,245.5v13 M304.7,245.5v13 M295.3,247.5h9.4 M295.3,252h9.4 M295.3,256.5h9.4"/></g>
 </g>
 </svg>

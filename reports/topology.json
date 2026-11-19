@@ -246,6 +246,7 @@
     "elevated_cells": 0,
     "ramp_edges": 0,
     "barrier_edges": 0,
+    "ruined_wall_edges": 0,
     "travel": {
       "dry": {
         "accessible_floor_cells": 116,
@@ -726,6 +727,7 @@
     "elevated_cells": 0,
     "ramp_edges": 0,
     "barrier_edges": 0,
+    "ruined_wall_edges": 0,
     "travel": {
       "dry": {
         "accessible_floor_cells": 246,
@@ -1143,6 +1145,7 @@
     "elevated_cells": 0,
     "ramp_edges": 0,
     "barrier_edges": 0,
+    "ruined_wall_edges": 0,
     "travel": {
       "dry": {
         "accessible_floor_cells": 226,
@@ -1676,6 +1679,7 @@
     "elevated_cells": 0,
     "ramp_edges": 0,
     "barrier_edges": 0,
+    "ruined_wall_edges": 0,
     "travel": {
       "dry": {
         "accessible_floor_cells": 173,
@@ -2145,6 +2149,7 @@
     "elevated_cells": 0,
     "ramp_edges": 0,
     "barrier_edges": 0,
+    "ruined_wall_edges": 0,
     "travel": {
       "dry": {
         "accessible_floor_cells": 163,
@@ -2713,6 +2718,7 @@
     "elevated_cells": 12,
     "ramp_edges": 1,
     "barrier_edges": 2,
+    "ruined_wall_edges": 0,
     "travel": {
       "dry": {
         "accessible_floor_cells": 151,
@@ -2900,17 +2906,17 @@
   },
   {
     "id": "fallen_choir",
-    "floor_cells": 177,
-    "corridor_cells": 97,
+    "floor_cells": 179,
+    "corridor_cells": 99,
     "doors": 10,
     "standard_doors": 7,
     "locked_doors": 1,
     "secret_doors": 2,
-    "hall_cycle_rank": 6,
-    "hall_chokepoint_count": 47,
+    "hall_cycle_rank": 7,
+    "hall_chokepoint_count": 48,
     "normal_portals_reachable": 8,
     "fully_connected": true,
-    "normally_accessible_floor_fraction": 0.876,
+    "normally_accessible_floor_fraction": 0.877,
     "chambers": [
       {
         "room": "bell_nave",
@@ -2973,14 +2979,14 @@
     "minor_hall_islands": 0,
     "hall_encircled_obstacles": [
       {
-        "area": 54,
+        "area": 50,
         "bounding_box": [
           6,
           6,
           13,
           13
         ],
-        "adjacent_hall_cells": 29,
+        "adjacent_hall_cells": 27,
         "chamber_ids": [
           "bell_nave"
         ],
@@ -2989,7 +2995,7 @@
     ],
     "access_profiles": {
       "ordinary": {
-        "accessible_floor_cells": 155,
+        "accessible_floor_cells": 157,
         "accessible_chambers": [
           "bell_nave",
           "chime_room",
@@ -2999,11 +3005,11 @@
         "reachable_portals": 8,
         "connected_portal_pairs": 28,
         "inaccessible_portal_pairs": 0,
-        "mean_portal_distance": 22.86,
+        "mean_portal_distance": 23.43,
         "longest_shortest_portal_distance": 30
       },
       "unlocked": {
-        "accessible_floor_cells": 166,
+        "accessible_floor_cells": 168,
         "accessible_chambers": [
           "bell_nave",
           "chime_room",
@@ -3014,11 +3020,11 @@
         "reachable_portals": 8,
         "connected_portal_pairs": 28,
         "inaccessible_portal_pairs": 0,
-        "mean_portal_distance": 22.86,
+        "mean_portal_distance": 23.43,
         "longest_shortest_portal_distance": 30
       },
       "all": {
-        "accessible_floor_cells": 177,
+        "accessible_floor_cells": 179,
         "accessible_chambers": [
           "bell_nave",
           "chime_room",
@@ -3031,7 +3037,7 @@
         "reachable_portals": 8,
         "connected_portal_pairs": 28,
         "inaccessible_portal_pairs": 0,
-        "mean_portal_distance": 22.86,
+        "mean_portal_distance": 23.43,
         "longest_shortest_portal_distance": 30
       }
     },
@@ -3045,22 +3051,22 @@
           "door",
           "door"
         ],
-        "role": "no_portal_shortcut",
+        "role": "ordinary_through_route",
         "impact": {
           "ordinary": {
             "essential_pairs": 0,
-            "shortcut_pairs": 0,
-            "maximum_detour": 0
+            "shortcut_pairs": 2,
+            "maximum_detour": 2
           },
           "unlocked": {
             "essential_pairs": 0,
-            "shortcut_pairs": 0,
-            "maximum_detour": 0
+            "shortcut_pairs": 2,
+            "maximum_detour": 2
           },
           "all": {
             "essential_pairs": 0,
-            "shortcut_pairs": 0,
-            "maximum_detour": 0
+            "shortcut_pairs": 2,
+            "maximum_detour": 2
           }
         }
       },
@@ -3215,23 +3221,33 @@
         }
       }
     ],
-    "ordinary_through_rooms": [],
+    "ordinary_through_rooms": [
+      "bell_nave"
+    ],
     "gated_through_rooms": [],
     "water_cells": 0,
     "bridged_water_cells": 0,
     "elevated_cells": 0,
     "ramp_edges": 0,
-    "barrier_edges": 0,
+    "barrier_edges": 5,
+    "ruined_wall_edges": 5,
     "travel": {
       "dry": {
-        "accessible_floor_cells": 155,
+        "accessible_floor_cells": 157,
         "reachable_portals": 8
       },
       "wading": {
-        "accessible_floor_cells": 155,
+        "accessible_floor_cells": 157,
         "reachable_portals": 8
       }
     },
+    "stacked_decks": 1,
+    "stacked_floor_cells": 4,
+    "vertical_connections": 2,
+    "reachable_stacked_cells": 4,
+    "improved_portal_pairs": 0,
+    "newly_connected_portal_pairs": 0,
+    "largest_portal_distance_saving": 0,
     "route_resilience": {
       "ordinary": {
         "reachable_pairs": 28,
@@ -3244,22 +3260,22 @@
             "distance": 23,
             "resilient": true,
             "alternate": {
-              "distance": 29,
-              "extra_steps": 6,
-              "separated_cells": 12,
+              "distance": 35,
+              "extra_steps": 12,
+              "separated_cells": 16,
               "obstruction": "8,5"
             }
           },
           {
             "from": "4,0",
             "to": "4,19",
-            "distance": 21,
+            "distance": 25,
             "resilient": true,
             "alternate": {
               "distance": 31,
-              "extra_steps": 10,
-              "separated_cells": 14,
-              "obstruction": "5,8"
+              "extra_steps": 6,
+              "separated_cells": 12,
+              "obstruction": "5,9"
             }
           },
           {
@@ -3270,20 +3286,20 @@
             "alternate": {
               "distance": 30,
               "extra_steps": 0,
-              "separated_cells": 9,
+              "separated_cells": 12,
               "obstruction": "8,5"
             }
           },
           {
             "from": "4,0",
             "to": "0,15",
-            "distance": 21,
+            "distance": 25,
             "resilient": true,
             "alternate": {
               "distance": 31,
-              "extra_steps": 10,
-              "separated_cells": 14,
-              "obstruction": "5,8"
+              "extra_steps": 6,
+              "separated_cells": 12,
+              "obstruction": "5,9"
             }
           }
         ]
@@ -3299,22 +3315,22 @@
             "distance": 23,
             "resilient": true,
             "alternate": {
-              "distance": 29,
-              "extra_steps": 6,
-              "separated_cells": 12,
+              "distance": 35,
+              "extra_steps": 12,
+              "separated_cells": 16,
               "obstruction": "8,5"
             }
           },
           {
             "from": "4,0",
             "to": "4,19",
-            "distance": 21,
+            "distance": 25,
             "resilient": true,
             "alternate": {
               "distance": 31,
-              "extra_steps": 10,
-              "separated_cells": 14,
-              "obstruction": "5,8"
+              "extra_steps": 6,
+              "separated_cells": 12,
+              "obstruction": "5,9"
             }
           },
           {
@@ -3325,20 +3341,20 @@
             "alternate": {
               "distance": 30,
               "extra_steps": 0,
-              "separated_cells": 9,
+              "separated_cells": 12,
               "obstruction": "8,5"
             }
           },
           {
             "from": "4,0",
             "to": "0,15",
-            "distance": 21,
+            "distance": 25,
             "resilient": true,
             "alternate": {
               "distance": 31,
-              "extra_steps": 10,
-              "separated_cells": 14,
-              "obstruction": "5,8"
+              "extra_steps": 6,
+              "separated_cells": 12,
+              "obstruction": "5,9"
             }
           }
         ]
@@ -3354,22 +3370,22 @@
             "distance": 23,
             "resilient": true,
             "alternate": {
-              "distance": 29,
-              "extra_steps": 6,
-              "separated_cells": 12,
+              "distance": 35,
+              "extra_steps": 12,
+              "separated_cells": 16,
               "obstruction": "8,5"
             }
           },
           {
             "from": "4,0",
             "to": "4,19",
-            "distance": 21,
+            "distance": 25,
             "resilient": true,
             "alternate": {
               "distance": 31,
-              "extra_steps": 10,
-              "separated_cells": 14,
-              "obstruction": "5,8"
+              "extra_steps": 6,
+              "separated_cells": 12,
+              "obstruction": "5,9"
             }
           },
           {
@@ -3380,20 +3396,20 @@
             "alternate": {
               "distance": 30,
               "extra_steps": 0,
-              "separated_cells": 9,
+              "separated_cells": 12,
               "obstruction": "8,5"
             }
           },
           {
             "from": "4,0",
             "to": "0,15",
-            "distance": 21,
+            "distance": 25,
             "resilient": true,
             "alternate": {
               "distance": 31,
-              "extra_steps": 10,
-              "separated_cells": 14,
-              "obstruction": "5,8"
+              "extra_steps": 6,
+              "separated_cells": 12,
+              "obstruction": "5,9"
             }
           }
         ]
