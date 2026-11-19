@@ -41,7 +41,7 @@ function tailraceModel(owner,doors=[],hydrology={},terrain={}){
  for(const p of spec.pickups){
   const k=point(p,"pickup");
   if(pickups.has(k)||!upper.canal.has(k)||!visited.has(k)||
-     k===terminus||wet.has(k)||headwater.has(k))
+     k===terminus||(wet.has(k)&&!hydrology.render_gate_states)||headwater.has(k))
    throw Error("Tailrace pickups must be unique dry downstream sumps above the lower path");
   pickups.add(k);
  }
