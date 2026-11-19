@@ -33,3 +33,7 @@ node --test tests/*.test.js
 node assemble.js examples/assembly_scoured_2x2.json examples/assembly_scoured_2x2.svg
 node print-review.js examples/scoured_siphon_print_letter.svg scoured_siphon
 ```
+
+## Cartographic correction: uphill ramps
+
+Earlier maps drew ramps as unoriented straight strokes, leaving the viewer to infer uphill direction from a tiny elevation label. Following standard cave-map slope annotations, ramp glyphs now use a short directional arrow **toward the higher canonical floor cell**, regardless of edge ordering. This improves the Scoured Siphon's two separate approaches and applies to existing maps. The geometry, not the arrow, determines travel legality; tests check reversed and below-datum slopes.

@@ -197,9 +197,22 @@ function terrainSvg(owner,spec={},cellSize=24,style="masonry"){
   out.push('</g>');
  }
  if(model.ramps.size){
-  out.push('<g id="level-ramps" fill="none" stroke="#87664e" stroke-width="2.2" stroke-linecap="round">');
-  for(const e of model.ramps){const [a,b]=e.split("|").map(xy);
-   out.push('<path d="M'+(a[0]+.5)*cellSize+','+(a[1]+.5)*cellSize+'L'+(b[0]+.5)*cellSize+','+(b[1]+.5)*cellSize+'"/>');
+  // A ramp is directional. The former plain stroke did not show uphill.
+  out.push('<g id="level-ramps" fill="none" stroke="#87664e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">');
+  const n=v=>Number(v.toFixed(2));
+  for(const e of [...model.ramps].sort()){
+   const [a,b]=e.split("|").map(xy);
+   const [lower,upper]=(model.heights.get(POS(a))||0)<(model.heights.get(POS(b))||0)?[a,b]:[b,a];
+   const lx=(lower[0]+.5)*cellSize,ly=(lower[1]+.5)*cellSize;
+   const hx=(upper[0]+.5)*cellSize,hy=(upper[1]+.5)*cellSize;
+   const length=Math.hypot(hx-lx,hy-ly),ux=(hx-lx)/length,uy=(hy-ly)/length;
+   const tip=[hx-ux*cellSize*.12,hy-uy*cellSize*.12];
+   const tail=[lx+ux*cellSize*.18,ly+uy*cellSize*.18];
+   const head=[tip[0]-ux*cellSize*.24,tip[1]-uy*cellSize*.24];
+   const left=[head[0]-uy*cellSize*.14,head[1]+ux*cellSize*.14];
+   const right=[head[0]+uy*cellSize*.14,head[1]-ux*cellSize*.14];
+   const point=p=>n(p[0])+","+n(p[1]);
+   out.push('<path data-uphill-cell="'+POS(upper)+'" d="M'+point(tail)+'L'+point(tip)+' M'+point(left)+'L'+point(tip)+'L'+point(right)+'"/>');
   }
   out.push("</g>");
  }
