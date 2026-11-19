@@ -160,6 +160,7 @@ function makeSvg(tile,{grid="full"}={}) {
   }
   parts.push(cave?`<g id="explicit-doors" fill="none" stroke="#484743">`:`</g><g id="explicit-doors" fill="none" stroke="#484743">`);
   for(const {a,b,kind} of doors.values()){
+    if(kind==="opening")continue; // An unframed natural passage needs no door glyph.
     const vertical=a[0]!==b[0];
     const X=(vertical?Math.max(a[0],b[0]):a[0])*S,Y=(vertical?a[1]:Math.max(a[1],b[1]))*S;
     if(kind==="secret"){parts.push(vertical?`<path d="M${X},${Y}v${S}" stroke="#303332" stroke-width="2.7" stroke-dasharray="6,2"/>`:`<path d="M${X},${Y}h${S}" stroke="#303332" stroke-width="2.7" stroke-dasharray="6,2"/>`);continue;}

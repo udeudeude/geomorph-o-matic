@@ -30,7 +30,7 @@ function reachable(start,adj){
 }
 
 function adjacency(owner,doors,mode="full"){
- const opens=new Set(doors.filter(d=>mode==="full"||d.kind==="door").map(d=>[d.a,d.b].sort().join("|")));
+ const opens=new Set(doors.filter(d=>mode==="full"||d.kind==="door"||d.kind==="opening").map(d=>[d.a,d.b].sort().join("|")));
  const adj=new Map([...owner.keys()].map(p=>[p,new Set()]));
  for(const[a,z]of owner)for(const b of neighbors(a)){
   if(!owner.has(b))continue;
@@ -73,7 +73,7 @@ function audit(tile){
  const visibility=tile.rooms.map(([id])=>({room:id,doors:doors.filter(d=>d.id===id).map(d=>d.kind),
   normally_accessible:[...owner].some(([p,z])=>z===id&&ordinarily.has(p))}));
  return{id:tile.id,floor_cells:owner.size,corridor_cells:hall.size,doors:doors.length,
-  standard_doors:doors.filter(d=>d.kind==="door").length,locked_doors:doors.filter(d=>d.kind==="locked").length,secret_doors:doors.filter(d=>d.kind==="secret").length,
+  standard_doors:doors.filter(d=>d.kind==="door").length,open_passages:doors.filter(d=>d.kind==="opening").length,locked_doors:doors.filter(d=>d.kind==="locked").length,secret_doors:doors.filter(d=>d.kind==="secret").length,
   hall_cycle_rank:cycleRank(hall),hall_chokepoint_count:chokepoints(hall).length,
   normal_portals_reachable:[...portals].filter(p=>ordinarily.has(p)).length,fully_connected:fully.size===owner.size,
   normally_accessible_floor_fraction:Number((ordinarily.size/owner.size).toFixed(3)),

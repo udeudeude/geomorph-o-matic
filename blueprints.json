@@ -38,9 +38,10 @@
   "door_kinds": [
     "door",
     "locked",
-    "secret"
+    "secret",
+    "opening"
   ],
-  "rule": "Walls are always present at boundaries of rooms, except for explicit doors. Carve named orthogonal routes separately. Reject any room-corridor overlap and any accidental boundary openings. 4 and 15 are rotation invariant: 19-4=15. Rooms may use a rectangular 4-number footprint or contiguous run-length rows [y,xStart,xEnd].",
+  "rule": "Walls are always present at boundaries of rooms, except for explicit doors. Carve named orthogonal routes separately. Reject any room-corridor overlap and any accidental boundary openings. 4 and 15 are rotation invariant: 19-4=15. Rooms may use a rectangular 4-number footprint or contiguous run-length rows [y,xStart,xEnd]. Natural passages may use 'opening' to connect room footprints to galleries without inventing hinged doors.",
   "tiles": [
     {
       "id": "salt_cloister",
@@ -5063,6 +5064,745 @@
           }
         ]
       }
+    },
+    {
+      "id": "hollow_causeway",
+      "title": "The Hollow Causeway",
+      "family": "Fractured limestone cave",
+      "geometry": "hand-composed natural passage and mine-era intervention",
+      "description": "A split subterranean stream divides a collapsed limestone hall. A narrow plank crossing is outflanked by a higher calcite traverse reached by two fixed ladders; a dry outer circuit and several alcoves supply alternative approaches.",
+      "wall_style": "cavern",
+      "rooms": [
+        [
+          "great_rift",
+          "The forked chamber",
+          {
+            "rows": [
+              [
+                6,
+                8,
+                10
+              ],
+              [
+                7,
+                7,
+                11
+              ],
+              [
+                8,
+                6,
+                12
+              ],
+              [
+                9,
+                6,
+                12
+              ],
+              [
+                10,
+                7,
+                12
+              ],
+              [
+                11,
+                8,
+                11
+              ],
+              [
+                12,
+                9,
+                10
+              ]
+            ]
+          }
+        ],
+        [
+          "dry_lung",
+          "Dried resurgence",
+          {
+            "rows": [
+              [
+                2,
+                3,
+                5
+              ],
+              [
+                3,
+                2,
+                5
+              ],
+              [
+                4,
+                2,
+                5
+              ],
+              [
+                5,
+                3,
+                4
+              ]
+            ]
+          }
+        ],
+        [
+          "organ_shaft",
+          "Curtain of flowstone",
+          {
+            "rows": [
+              [
+                2,
+                13,
+                16
+              ],
+              [
+                3,
+                13,
+                17
+              ],
+              [
+                4,
+                14,
+                17
+              ],
+              [
+                5,
+                15,
+                16
+              ]
+            ]
+          }
+        ],
+        [
+          "lost_channel",
+          "Abandoned flood tube",
+          {
+            "rows": [
+              [
+                12,
+                2,
+                4
+              ],
+              [
+                13,
+                2,
+                5
+              ],
+              [
+                14,
+                2,
+                5
+              ],
+              [
+                15,
+                3,
+                5
+              ]
+            ]
+          }
+        ],
+        [
+          "pearl_pool",
+          "Pearl-water pocket",
+          {
+            "rows": [
+              [
+                12,
+                15,
+                17
+              ],
+              [
+                13,
+                14,
+                17
+              ],
+              [
+                14,
+                14,
+                16
+              ]
+            ]
+          }
+        ],
+        [
+          "blind_fissure",
+          "The fossil cleft",
+          {
+            "rows": [
+              [
+                16,
+                8,
+                10
+              ],
+              [
+                17,
+                8,
+                12
+              ],
+              [
+                18,
+                9,
+                11
+              ]
+            ]
+          }
+        ]
+      ],
+      "routes": [
+        {
+          "id": "northwest_mouth",
+          "points": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              6,
+              5
+            ],
+            [
+              8,
+              5
+            ]
+          ],
+          "reason": "Hand-composed exploration route; survey-grade concept, not surveyed dimensions"
+        },
+        {
+          "id": "northeast_mouth",
+          "points": [
+            [
+              15,
+              0
+            ],
+            [
+              15,
+              1
+            ],
+            [
+              18,
+              1
+            ],
+            [
+              18,
+              7
+            ],
+            [
+              13,
+              7
+            ]
+          ],
+          "reason": "Hand-composed exploration route; survey-grade concept, not surveyed dimensions"
+        },
+        {
+          "id": "west_upper_mouth",
+          "points": [
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              5,
+              8
+            ]
+          ],
+          "reason": "Hand-composed exploration route; survey-grade concept, not surveyed dimensions"
+        },
+        {
+          "id": "east_upper_mouth",
+          "points": [
+            [
+              19,
+              4
+            ],
+            [
+              18,
+              4
+            ],
+            [
+              18,
+              7
+            ],
+            [
+              13,
+              7
+            ],
+            [
+              13,
+              8
+            ]
+          ],
+          "reason": "Hand-composed exploration route; survey-grade concept, not surveyed dimensions"
+        },
+        {
+          "id": "west_lower_mouth",
+          "points": [
+            [
+              0,
+              15
+            ],
+            [
+              1,
+              15
+            ],
+            [
+              1,
+              17
+            ],
+            [
+              6,
+              17
+            ],
+            [
+              6,
+              14
+            ]
+          ],
+          "reason": "Hand-composed exploration route; survey-grade concept, not surveyed dimensions"
+        },
+        {
+          "id": "east_lower_mouth",
+          "points": [
+            [
+              19,
+              15
+            ],
+            [
+              18,
+              15
+            ],
+            [
+              18,
+              17
+            ],
+            [
+              13,
+              17
+            ],
+            [
+              13,
+              8
+            ]
+          ],
+          "reason": "Hand-composed exploration route; survey-grade concept, not surveyed dimensions"
+        },
+        {
+          "id": "southwest_mouth",
+          "points": [
+            [
+              4,
+              19
+            ],
+            [
+              4,
+              18
+            ],
+            [
+              6,
+              18
+            ],
+            [
+              6,
+              17
+            ]
+          ],
+          "reason": "Hand-composed exploration route; survey-grade concept, not surveyed dimensions"
+        },
+        {
+          "id": "southeast_mouth",
+          "points": [
+            [
+              15,
+              19
+            ],
+            [
+              15,
+              18
+            ],
+            [
+              13,
+              18
+            ],
+            [
+              13,
+              17
+            ]
+          ],
+          "reason": "Hand-composed exploration route; survey-grade concept, not surveyed dimensions"
+        },
+        {
+          "id": "north_bypass",
+          "points": [
+            [
+              6,
+              5
+            ],
+            [
+              7,
+              5
+            ],
+            [
+              7,
+              6
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              5,
+              7
+            ]
+          ],
+          "reason": "Hand-composed exploration route; survey-grade concept, not surveyed dimensions"
+        },
+        {
+          "id": "high_dry_lintel",
+          "points": [
+            [
+              7,
+              5
+            ],
+            [
+              12,
+              5
+            ],
+            [
+              12,
+              6
+            ],
+            [
+              13,
+              6
+            ],
+            [
+              13,
+              7
+            ]
+          ],
+          "reason": "Hand-composed exploration route; survey-grade concept, not surveyed dimensions"
+        },
+        {
+          "id": "western_cleft",
+          "points": [
+            [
+              5,
+              8
+            ],
+            [
+              5,
+              12
+            ],
+            [
+              6,
+              12
+            ],
+            [
+              6,
+              14
+            ]
+          ],
+          "reason": "Hand-composed exploration route; survey-grade concept, not surveyed dimensions"
+        },
+        {
+          "id": "southern_scramble",
+          "points": [
+            [
+              6,
+              14
+            ],
+            [
+              10,
+              14
+            ],
+            [
+              10,
+              13
+            ]
+          ],
+          "reason": "Hand-composed exploration route; survey-grade concept, not surveyed dimensions"
+        },
+        {
+          "id": "lower_eastern_shelf",
+          "points": [
+            [
+              10,
+              14
+            ],
+            [
+              13,
+              14
+            ]
+          ],
+          "reason": "Hand-composed exploration route; survey-grade concept, not surveyed dimensions"
+        },
+        {
+          "id": "fossil_approach",
+          "points": [
+            [
+              7,
+              17
+            ],
+            [
+              7,
+              14
+            ],
+            [
+              9,
+              14
+            ],
+            [
+              9,
+              15
+            ]
+          ],
+          "reason": "Hand-composed exploration route; survey-grade concept, not surveyed dimensions"
+        },
+        {
+          "id": "pearl_secret_approach",
+          "points": [
+            [
+              15,
+              15
+            ],
+            [
+              15,
+              17
+            ],
+            [
+              13,
+              17
+            ]
+          ],
+          "reason": "Hand-composed exploration route; survey-grade concept, not surveyed dimensions"
+        }
+      ],
+      "doors": [
+        [
+          "great_rift",
+          "N",
+          8,
+          "opening"
+        ],
+        [
+          "great_rift",
+          "W",
+          8,
+          "opening"
+        ],
+        [
+          "great_rift",
+          "E",
+          8,
+          "opening"
+        ],
+        [
+          "great_rift",
+          "S",
+          10,
+          "opening"
+        ],
+        [
+          "dry_lung",
+          "E",
+          3,
+          "opening"
+        ],
+        [
+          "organ_shaft",
+          "E",
+          3,
+          "opening"
+        ],
+        [
+          "lost_channel",
+          "E",
+          13,
+          "opening"
+        ],
+        [
+          "pearl_pool",
+          "W",
+          13,
+          "opening"
+        ],
+        [
+          "pearl_pool",
+          "S",
+          15,
+          "secret"
+        ],
+        [
+          "blind_fissure",
+          "W",
+          17,
+          "opening"
+        ],
+        [
+          "blind_fissure",
+          "N",
+          9,
+          "opening"
+        ]
+      ],
+      "terrain": {
+        "water": [
+          [
+            6,
+            9
+          ],
+          [
+            7,
+            9
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            9,
+            9
+          ],
+          [
+            10,
+            9
+          ],
+          [
+            11,
+            9
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            10
+          ],
+          [
+            11,
+            10
+          ],
+          [
+            15,
+            13
+          ],
+          [
+            16,
+            13
+          ],
+          [
+            15,
+            14
+          ],
+          [
+            16,
+            14
+          ]
+        ],
+        "bridges": [
+          [
+            11,
+            9
+          ]
+        ]
+      },
+      "vertical": {
+        "decks": [
+          {
+            "id": "calcite_arch",
+            "level": 1,
+            "cells": [
+              [
+                8,
+                8
+              ],
+              [
+                8,
+                9
+              ],
+              [
+                8,
+                10
+              ]
+            ]
+          }
+        ],
+        "links": [
+          {
+            "at": [
+              8,
+              8
+            ],
+            "from": 0,
+            "to": 1,
+            "kind": "ladder"
+          },
+          {
+            "at": [
+              8,
+              10
+            ],
+            "from": 0,
+            "to": 1,
+            "kind": "ladder"
+          }
+        ]
+      },
+      "features": [
+        [
+          "rubble",
+          [
+            [
+              3,
+              3
+            ],
+            [
+              3,
+              14
+            ],
+            [
+              16,
+              4
+            ]
+          ]
+        ],
+        [
+          "columns",
+          [
+            [
+              9,
+              7
+            ],
+            [
+              10,
+              11
+            ]
+          ]
+        ]
+      ]
     }
   ]
 }
