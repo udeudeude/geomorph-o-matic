@@ -72,7 +72,6 @@
 <path d="M216,216h24" stroke="#596461" stroke-width="2.2"/>
 </g><g id="intake-and-outfall" font-family="sans-serif" font-size="9" font-weight="700" text-anchor="middle">
 <g data-hydraulic-terminal="intake"><title>Uncharted upstream intake adit</title><circle cx="228" cy="228" r="6.4" fill="#f3eadd" stroke="#344e52" stroke-width="1.1"/><text x="228" y="231.1" fill="#344e52">I</text></g>
-<g data-hydraulic-terminal="outfall"><title>Uncharted downstream tailrace outfall</title><circle cx="276" cy="276" r="6.4" fill="#f3eadd" stroke="#344e52" stroke-width="1.1"/><text x="276" y="279.1" fill="#344e52">T</text></g>
 </g>
 <g id="sluice-control-stations" fill="none" stroke="#3e4945" stroke-linecap="round">
 <g data-controls-gate="west_shutter" data-control-id="west_winch"><title>west winch operates west shutter</title><circle cx="252" cy="345.6" r="8" fill="#e5dbc7" stroke-width="1.6"/><circle cx="252" cy="345.6" r="2.1" fill="#586764"/>
@@ -99,6 +98,11 @@
 <path d="M298.80,343.52L296.50,339.54" stroke-width="1.3"/>
 <path d="M301.20,343.52L303.50,339.54" stroke-width="1.3"/>
 </g>
+</g>
+<g id="tailrace-drop-shafts" fill="none" stroke="#365c68" stroke-width="1.8">
+<g data-tailrace-drop="10,11" data-level="-1"><title>Vertical water drop into assumed lower collection race; not walkable</title><circle cx="252" cy="276" r="8" fill="#f6f4e9" stroke-width="1.8"/><path d="M248,274l4,5 4,-5 M252,271v7" stroke-linejoin="round"/></g>
+<g data-tailrace-drop="11,11" data-level="-1"><title>Vertical water drop into assumed lower collection race; not walkable</title><circle cx="276" cy="276" r="8" fill="#f6f4e9" stroke-width="1.8"/><path d="M272,274l4,5 4,-5 M276,271v7" stroke-linejoin="round"/></g>
+<g data-tailrace-drop="9,11" data-level="-1"><title>Vertical water drop into assumed lower collection race; not walkable</title><circle cx="228" cy="276" r="8" fill="#f6f4e9" stroke-width="1.8"/><path d="M224,274l4,5 4,-5 M228,271v7" stroke-linejoin="round"/></g>
 </g>
 <g id="features">
 <circle cx="228" cy="84" r="7" fill="#e2ddcd" stroke="#41413c" stroke-width="2"/><circle cx="228" cy="84" r="3" fill="none" stroke="#777166"/>
