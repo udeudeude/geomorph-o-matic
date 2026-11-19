@@ -73,3 +73,7 @@ test("four distinct geological deposits are authored on traversable dry floor",(
   assert.throws(()=>caveDetailSvg(owner,model,cave.vertical,invalid));
  }
 });
+
+test("diagonal-only wet contact is rejected as a non-manifold shoreline",()=>{
+ assert.throws(()=>shorelinePaths(new Set(["4,4","5,5"])),/non-manifold/);
+});
