@@ -114,7 +114,7 @@ function makeReceivingAnnexPlate(data,spec){
  '</g><path d="M65 706H1135" stroke="#a6a393" stroke-width="1.2"/>',
  '<text x="65" y="729" font-family="sans-serif" font-size="11" fill="#6c6b5e">SPECIALIST ATTACHMENT, NOT A STANDARD DUNGEON TILE. The external channel beyond the east edge is still unmapped.</text>',
  '</svg>'
- ];
+ );
  return out.join("\n")+"\n";
 }
 if(require.main===module){
