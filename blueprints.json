@@ -2484,7 +2484,7 @@
       "family": "Floodworks",
       "geometry": "row-runs",
       "wall_style": "cavern",
-      "description": "Abandoned floodworks: a deep turbine sump spanned by a dry footbridge, a raised chart archive served by a single ramp, a hidden settling cellar, pressure vault, and two inspection circuits. Wet access opens additional pool cells. A suspended five-cell inspection catwalk spans the sump above the water, reached from side-service doors and opposite dry ladders. A three-part shutter bank closes the downstream turbine apron, with the center shutter raised by machinery from the south operating gallery during a surge.",
+      "description": "Abandoned floodworks: a six-cell upstream turbine pool meets a three-shutter bank above a receiving sump; the center gate admits a three-cell surge. The canal is sealed against neighboring pedestrian corridors. Its upstream intake adit and downstream tailrace are labeled but continue beyond the mapped level, not invented as surveyed passages. Three handwheels occupy the dry south operating gallery. A dry lower bridge, independent overhead gantry and two inspection circuits offer alternate crossings.",
       "rooms": [
         [
           "office",
@@ -3156,13 +3156,6 @@
       ],
       "features": [
         [
-          "wheel",
-          [
-            10,
-            14
-          ]
-        ],
-        [
           "columns",
           [
             [
@@ -3396,6 +3389,81 @@
             "b": [
               11,
               11
+            ]
+          }
+        ],
+        "channels": [
+          [
+            9,
+            9
+          ],
+          [
+            10,
+            9
+          ],
+          [
+            11,
+            9
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            10
+          ],
+          [
+            11,
+            10
+          ],
+          [
+            9,
+            11
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            11,
+            11
+          ]
+        ],
+        "intake": [
+          9,
+          9
+        ],
+        "outlet": [
+          11,
+          11
+        ],
+        "controls": [
+          {
+            "id": "west_winch",
+            "gate": "west_shutter",
+            "kind": "handwheel",
+            "at": [
+              10,
+              14
+            ]
+          },
+          {
+            "id": "center_winch",
+            "gate": "center_shutter",
+            "kind": "handwheel",
+            "at": [
+              11,
+              14
+            ]
+          },
+          {
+            "id": "east_winch",
+            "gate": "east_shutter",
+            "kind": "handwheel",
+            "at": [
+              12,
+              14
             ]
           }
         ]
