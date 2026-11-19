@@ -31,7 +31,7 @@ class HollowCausewayTests(unittest.TestCase):
         outcome=validate(self.tile)
         self.assertEqual(outcome["rooms"],6)
         self.assertEqual(outcome["water_cells"],13)
-        self.assertEqual(outcome["bridged_water_cells"],1)
+        self.assertEqual(outcome["bridges"],1)
         self.assertEqual(outcome["stacked_floor_cells"],3)
         self.assertEqual(outcome["vertical_connections"],2)
 
