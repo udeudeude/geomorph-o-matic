@@ -52,6 +52,15 @@ class WaterworksValidationTests(unittest.TestCase):
             with self.assertRaises(AssertionError):
                 validate_waterworks(tile, self.cells)
 
+    def test_masonry_boundary_requires_explicit_culvert(self):
+        tile = copy.deepcopy(self.tile)
+        cells = dict(self.cells)
+        cells[(3, 5)] = "hall"
+        with self.assertRaises(AssertionError):
+            validate_waterworks(tile, cells)
+        tile["hydrology"]["culverts"] = [[[2, 5], [3, 5]]]
+        self.assertEqual(validate_waterworks(tile, cells)["engineered_channel_cells"], 2)
+
     def test_real_riftwater_blueprint_passes_independent_full_validation(self):
         tiles = json.loads((ROOT / "blueprints.json").read_text())["tiles"]
         result = validate(next(t for t in tiles if t["id"] == "riftwater_lock"))
