@@ -19,6 +19,8 @@ Requirements: Python 3 and Node.js. No third-party packages.
 
 ```sh
 python3 validate.py
+PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_*.py'
+node --test tests/*.test.js
 node render.js
 git diff --exit-code -- tiles/
 ```
@@ -29,7 +31,7 @@ The canonical architectural data is in [blueprints.json](blueprints.json). The [
 
 Each morph covers **10 x 10 full squares** subdivided into 20 x 20 half-square cells. A 5-foot-wide opening occupies one half-cell inside the 3rd and 8th full squares on each side. The exact fine-grid opening positions are **4 and 15**; unlike the earlier 5/15 pair they remain aligned through all quarter-turn rotations.
 
-All six studies currently have eight standard edge openings, plus explicitly authored rooms, passages, secret doors and locked doors. They contain 5, 4 and 8 independently closed corridor loops respectively. These are circulation loops rather than spurious cycles inside large rooms.
+All six studies currently have eight standard edge openings, plus explicitly authored rooms, passages, secret doors and locked doors. Corridor loops are diagnostic, not proof of meaningful alternatives; see the separate route-resilience and chamber-journey audits.
 
 ## Next major work
 
@@ -68,3 +70,13 @@ The topology audit now separately records `substantial_hall_circuits` (large ful
 
 The cavern rendering now uses reproducible, bounded cubic contours with tile-boundary coordinates fixed exactly. As before, the SVG geometry is visual presentation layered over canonical traversable cells, not an independent freeform navigation mesh. Read the [floodworks research and current limitations](research/2026-11-18-floodworks-room-routes.md) before treating this collection as finished.
 
+
+## Environmental geometry and meaningful reroutes (November 2026)
+
+The [terrain model](terrain.js) adds canonical water cells, dry bridge cells, signed elevation levels and explicit ramps. Unlike the original decorative pool/stair symbols, these affect traversal. An explorer on foot cannot walk through submerged cells except on bridge spans, and adjacent levels require an authored ramp. Wading access is audited independently of ordinary dry traversal. The [Python validator](validate.py) and [independent Python tests](tests/test_terrain_validation.py) verify bridge/elevation geometry, in addition to the renderer's JavaScript contract tests.
+
+[Riftwater Lock](tiles/riftwater_lock.svg) is the first worked example: six wet cells, a two-cell continuous footbridge, a twelve-cell raised archive and one level transition. Its editable vector output separates water, bridge planking, elevation markers and stairs from the rock and floor drawing. No new tile-border connection is altered.
+
+The [resilience analyzer](route-resilience.js) tests substantial geographic detours after a sampled corridor obstruction. It requires the replacement journey to diverge at least three cells from the original for at least three cells. Outputs are tracked by ordinary, unlocked and all-door policies and use the same dry-terrain graph as the chamber audit. This is a conservative diagnostic, not an assertion that every route has been playtested. Read the [research and limitations](research/2026-11-18-terrain-resilience.md).
+
+The [automated build](.github/workflows/validate.yml) validates both languages, regenerates the complete vector collection and assembled surveys, and publishes the studies as a downloadable workflow artifact. On main-branch builds, verified generated SVG masters and topology reports are synchronized into the repository if they changed.
