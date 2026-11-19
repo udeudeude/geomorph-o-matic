@@ -7,6 +7,7 @@ import json
 import math
 import sys
 from pathlib import Path
+from maintenance_validation import check_maintenance
 
 SIZE = 20
 PORTALS = {(4,0),(15,0),(0,4),(19,4),(0,15),(19,15),(4,19),(15,19)}
@@ -450,7 +451,8 @@ def validate(tile):
     loops=links-len(hall)+1
     assert loops>=3,(name,'insufficient alternate routes',loops)
     waterworks_report = validate_waterworks(tile, cells)
-    return {'id':name,'rooms':len(chambers),'doors':len(doors),'corridor_cycles':loops,'floor_cells':len(cells),**terrain_report,**vertical_report,**waterworks_report}
+    maintenance_report = check_maintenance(tile, cells)
+    return {'id':name,'rooms':len(chambers),'doors':len(doors),'corridor_cycles':loops,'floor_cells':len(cells),**terrain_report,**vertical_report,**waterworks_report,**maintenance_report}
 
 def main():
     data=json.loads(Path(sys.argv[1] if len(sys.argv)>1 else Path(__file__).with_name('blueprints.json')).read_text())
