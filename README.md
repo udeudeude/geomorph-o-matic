@@ -98,9 +98,31 @@ node subfloor-assembly-plate.js examples/subfloor_pair_plate.svg
 node --test tests/foundation-clearance.test.js tests/subfloor-interfaces.test.js
 ```
 
+## Maintenance architecture and sluice transmissions (November 19, 2026)
+
+Riftwater now has **three separate modeled overhead shaft-and-rack transmissions** from
+its existing dry handwheels to the three independent shutters. Six intentional
+rock penetrations and six assumed bearings are validated, but **8-foot shaft
+height and 1.5-inch shaft diameter are design assumptions**, not measurements.
+Non-walkable mechanisms appear only on the new [editable technical plate](examples/riftwater_maintenance_plate.svg),
+not as false walkable passages in the main map.
+
+Both lower watercourses now have **inspectable sealed cleanouts at every turn**.
+The crowded Riftwater gallery requires a 7.5-foot lateral buried service spur
+to place one dry hatch clear of the center winch. Postern gains a real one-cell
+corridor niche to reach its previously inaccessible buried cleanout. These are
+**bolted covers, not traversable shafts**. The [design record](research/2026-11-19-mechanical-access.md)
+cites historic three-gate rack drives and actual mill penstock inspection work.
+
+```sh
+node maintenance-plate.js examples/riftwater_maintenance_plate.svg
+node --test tests/maintenance-works.test.js
+PYTHONPATH=. python3 -m unittest tests.test_maintenance_validation
+```
+
 ## Next major work
 
-1. Research and dimension sluice transmissions, lower-shaft access, invert elevations and the pressure vault's foundations before drawing claimed working machinery.
+1. Research and dimension actual historic gear trains, shaft torque, bearing supports, sleeves, lower cleanout depth and the pressure vault's foundations before claiming working machinery.
 2. Map the real receiver outfall and verify the tailwater envelope. The detour eliminates modeled direct room-footprint clashes, not unknown footing and crown clearances.
 3. Critically review nine-tile map assemblies and the two-level technical plate at print size, correcting visual hierarchy and architecture rather than adding generic furniture.
 4. Add edge/corner interface masks and test matched surface and lower-level openings through rotated assemblies, then playtest meaningful gate-operation choices.
