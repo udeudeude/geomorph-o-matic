@@ -83,7 +83,7 @@ function waterwayModel(owner,doors=[],hydrology={},terrain={}) {
   for(const gate of gates){
    const states=new Map(gates.map(g=>[g.id,g.id===gate.id?"open":"closed"]));
    const reached=distances(hydraulicCanalGraph(canal,gates,states,walls),inlet);
-   const fresh=[...reached].filter(p=>!water.has(p));
+   const fresh=[...reached.keys()].filter(p=>!water.has(p));
    if(!fresh.length||fresh.some(p=>claimed.has(p)))
     throw Error("Sluices do not isolate independent downstream receiving pockets");
    for(const p of fresh)claimed.add(p);
@@ -105,7 +105,7 @@ function sluiceImpact(owner,doors=[],hydrology={},terrain={}) {
   const states=new Map(gates.map(g=>[g.id,g.id===gate.id?"open":"closed"]));
   const graph=hydraulicCanalGraph(model.canal,gates,states,model.walls);
   const seen=distances(graph,model.inlet);
-  const newlyAccessible=[...seen].filter(p=>!baseline.has(p)).sort();
+  const newlyAccessible=[...seen.keys()].filter(p=>!baseline.has(p)).sort();
   result.push({gate:gate.id,newly_accessible_canals:newlyAccessible,
    potential_new_cells:newlyAccessible.length});
  }
