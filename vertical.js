@@ -35,6 +35,10 @@ function verticalModel(owner,terrain={},vertical={}){
    for(const [dx,dy] of NEIGHBORS){const q=POS([x+dx,y+dy]);if(cells.has(q)&&!reached.has(q))queue.push(q)}
   }
   if(reached.size!==cells.size)throw Error("Disconnected deck: "+deck.id);
+  // A shared grid edge between two lower rooms is not automatically an
+  // upper doorway. Multi-room galleries require explicit upper-wall modeling.
+  if(new Set([...cells].map(p=>owner.get(p))).size!==1)
+   throw Error("Elevated deck crosses an unmodeled upper-level wall: "+deck.id);
   decks.set(deck.id,{level:deck.level,cells});
  }
  const unique=new Set();
@@ -115,7 +119,7 @@ function verticalAudit(owner,doors,terrain={},vertical={}){
 function verticalSvg(owner,terrain={},vertical={},cellSize=24){
  const model=verticalModel(owner,terrain,vertical),out=[];
  if(!model.decks.size)return out;
- out.push('<g id="overhead-decks" fill="#d6b88e" fill-opacity=".52" stroke="none">');
+ out.push('<g id="overhead-decks" fill="#ebe4d3" fill-opacity=".88" stroke="none">');
  for(const [,deck] of model.decks)for(const p of deck.cells){const [x,y]=p.split(",").map(Number);
   out.push(`<rect x="${x*cellSize}" y="${y*cellSize}" width="${cellSize}" height="${cellSize}"/>`);
  }
@@ -126,10 +130,15 @@ function verticalSvg(owner,terrain={},vertical={},cellSize=24){
    out.push(`<path d="M${x1},${y1}${dx?`v${cellSize}`:`h${cellSize}`}"/>`);
   }
  }
- out.push('</g><g id="vertical-connections" font-family="sans-serif" text-anchor="middle">');
- for(const link of model.links){const [x,y]=link.at.split(",").map(Number),cx=(x+.5)*cellSize,cy=(y+.5)*cellSize;
-  out.push(`<circle cx="${cx}" cy="${cy}" r="${cellSize*.32}" fill="#fff9e9" stroke="#4f443b" stroke-width="1.6"/>`);
-  out.push(`<text x="${cx}" y="${cy+3.7}" font-size="9" font-weight="bold" fill="#473b32">${link.kind==="ladder"?"L":"S"}</text>`);
+ out.push('</g><g id="vertical-connections" fill="none" stroke="#383d3a" stroke-width="1.6" stroke-linecap="square">');
+ for(const link of model.links){
+  const [x,y]=link.at.split(",").map(Number),cx=(x+.5)*cellSize,cy=(y+.5)*cellSize;
+  out.push(`<circle cx="${cx}" cy="${cy}" r="${cellSize*.37}" fill="#fff9e9" stroke="#4f443b" stroke-width="1.6"/>`);
+  if(link.kind==="ladder"){
+   out.push(`<g data-vertical-symbol="ladder"><path d="M${cx-4.7},${cy-6.5}v13 M${cx+4.7},${cy-6.5}v13 M${cx-4.7},${cy-4.5}h9.4 M${cx-4.7},${cy}h9.4 M${cx-4.7},${cy+4.5}h9.4"/></g>`);
+  }else{
+   out.push(`<g data-vertical-symbol="stair"><path d="M${cx-7},${cy-5}h14 M${cx-7},${cy}h14 M${cx-7},${cy+5}h14 M${cx},${cy+7}v-14 m-3,3 3,-3 3,3"/></g>`);
+  }
  }
  out.push('</g>');return out;
 }

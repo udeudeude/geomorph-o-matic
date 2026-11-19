@@ -4217,7 +4217,7 @@
       "title": "The Fallen Choir",
       "family": "Ruinous bell abbey",
       "geometry": "row-runs",
-      "description": "A fractured bell nave offers a direct four-sided crossing, while its staggered vestry walk, western ambulatory, eastern watch and crypt form longer alternative journeys. Sealed undertaker's cache and listening cell reward searching rather than blocking ordinary traversal.",
+      "description": "A fallen masonry arcade divides the nave at floor level. The surviving upper triforium crosses it by two ladders, creating an exposed shortcut over the bell; western processional passages meander through the ruin. Heights and clearances are provisional.",
       "rooms": [
         [
           "bell_nave",
@@ -4571,6 +4571,30 @@
               6
             ],
             [
+              6,
+              6
+            ],
+            [
+              6,
+              8
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              5,
+              12
+            ],
+            [
+              6,
+              12
+            ],
+            [
+              6,
+              14
+            ],
+            [
               5,
               14
             ]
@@ -4886,7 +4910,159 @@
             17
           ]
         ]
-      ]
+      ],
+      "terrain": {
+        "barriers": [
+          [
+            [
+              9,
+              7
+            ],
+            [
+              10,
+              7
+            ]
+          ],
+          [
+            [
+              9,
+              8
+            ],
+            [
+              10,
+              8
+            ]
+          ],
+          [
+            [
+              9,
+              9
+            ],
+            [
+              10,
+              9
+            ]
+          ],
+          [
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              10
+            ]
+          ],
+          [
+            [
+              9,
+              11
+            ],
+            [
+              10,
+              11
+            ]
+          ]
+        ],
+        "ruins": [
+          [
+            [
+              9,
+              7
+            ],
+            [
+              10,
+              7
+            ]
+          ],
+          [
+            [
+              9,
+              8
+            ],
+            [
+              10,
+              8
+            ]
+          ],
+          [
+            [
+              9,
+              9
+            ],
+            [
+              10,
+              9
+            ]
+          ],
+          [
+            [
+              9,
+              10
+            ],
+            [
+              10,
+              10
+            ]
+          ],
+          [
+            [
+              9,
+              11
+            ],
+            [
+              10,
+              11
+            ]
+          ]
+        ]
+      },
+      "vertical": {
+        "decks": [
+          {
+            "id": "fallen_triforium",
+            "level": 1,
+            "cells": [
+              [
+                8,
+                9
+              ],
+              [
+                9,
+                9
+              ],
+              [
+                10,
+                9
+              ],
+              [
+                11,
+                9
+              ]
+            ]
+          }
+        ],
+        "links": [
+          {
+            "at": [
+              8,
+              9
+            ],
+            "from": 0,
+            "to": 1,
+            "kind": "ladder"
+          },
+          {
+            "at": [
+              11,
+              9
+            ],
+            "from": 0,
+            "to": 1,
+            "kind": "ladder"
+          }
+        ]
+      }
     }
   ]
 }

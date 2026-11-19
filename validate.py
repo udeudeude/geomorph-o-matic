@@ -89,6 +89,13 @@ def validate_terrain(tile, cells):
         assert (abs(a[0]-b[0])+abs(a[1]-b[1]) == 1 and a not in PORTALS
                 and b not in PORTALS and edge not in barriers and edge not in ramps), (tile['id'], 'invalid partition edge')
         barriers.add(edge)
+    ruins = set()
+    for item in spec.get('ruins', []):
+        assert isinstance(item, list) and len(item) == 2, (tile['id'], 'invalid fallen masonry')
+        a, b = (next(iter(coords([p], 'ruin'))) for p in item)
+        edge = pair(a, b)
+        assert edge in barriers and edge not in ruins, (tile['id'], 'fallen masonry must block a unique edge')
+        ruins.add(edge)
     assert not ((water | set(levels)) & PORTALS), (tile['id'], 'terrain changes tile edge')
     remaining = set(bridge)
     while remaining:
@@ -107,7 +114,7 @@ def validate_terrain(tile, cells):
         ys = {p[1] for p in group}
         assert len(xs) == 1 or len(ys) == 1, (tile['id'], 'bent bridge span')
         assert len(group) == max(len(xs), len(ys)), (tile['id'], 'disconnected bridge span')
-    return {'water_cells': len(water), 'bridges': len(bridge), 'raised_cells': len(levels), 'ramps': len(ramps), 'barriers': len(barriers)}
+    return {'water_cells': len(water), 'bridges': len(bridge), 'raised_cells': len(levels), 'ramps': len(ramps), 'barriers': len(barriers), 'ruined_wall_edges':len(ruins)}
 
 
 def validate_vertical(tile, cells):
@@ -141,6 +148,7 @@ def validate_vertical(tile, cells):
             points.add((x,y))
             stacked.add((x,y,z))
         assert connected(points,set(),next(iter(points))) == points, (tile['id'], 'disconnected deck')
+        assert len({cells[p] for p in points}) == 1, (tile['id'], 'upper deck crosses unmodeled room wall')
     graph = collections.defaultdict(set)
     for x,y,z in stacked:
         for dx,dy in NEIGHBORS:
