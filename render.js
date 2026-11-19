@@ -8,6 +8,7 @@ const {verticalSvg}=require("./vertical");
 const {gateSvg}=require("./hydraulic-control");
 const {waterworksSvg}=require("./waterworks");
 const {tailraceSymbolsSvg}=require("./tailrace");
+const {maintenanceSymbolsSvg,transmissionModel}=require("./maintenance-works");
 function makeSvg(tile,{grid="full"}={}) {
   if(!["full","half"].includes(grid))throw Error("Invalid map grid");
   const N=20,S=24,L=N*S,portal=new Set(["4,0","15,0","0,4","19,4","0,15","19,15","4,19","15,19"]);
@@ -164,6 +165,10 @@ function makeSvg(tile,{grid="full"}={}) {
   }
   parts.push(`</g>`);
   for(const layer of gateSvg(owner,[...doors.values()],tile.hydrology||{}))parts.push(layer);
+  // Validate overhead transmissions but draw them only in the technical plan,
+  // not misleadingly as accessible corridors in the surface geomorph.
+  transmissionModel(tile,owner,[...doors.values()]);
+  for(const layer of maintenanceSymbolsSvg(tile,S))parts.push(layer);
   for(const layer of verticalSvg(owner,tile.terrain||{},tile.vertical||{}))parts.push(layer);
   parts.push(`</svg>`);
   return parts.join("\n")+"\n";
