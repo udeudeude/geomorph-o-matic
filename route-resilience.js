@@ -1,7 +1,7 @@
 "use strict";
 // Nontrivial detours: require a usable route at least three cells away
 // from the primary route after a three-cell-wide obstruction.
-const {accessGraph}=require("./route-analysis");
+const {terrainGraph}=require("./terrain");
 const POS=(p)=>p.split(",").map(Number);
 const SEP=(a,b)=>{const x=POS(a),y=POS(b);return Math.abs(x[0]-y[0])+Math.abs(x[1]-y[1])};
 function route(graph,start,goal,blocked=new Set()){
@@ -39,11 +39,11 @@ function alternatives(graph,owner,a,b){
  }
  return {distance:direct.length-1,resilient:!!best,alternate:best};
 }
-function routeDiversity(owner,doors,portals){
+function routeDiversity(owner,doors,portals,terrain={}){
  if(!Array.isArray(portals)||portals.length<2)throw Error("Need at least two portals");
  const results={};
  for(const mode of ["ordinary","unlocked","all"]){
-  const graph=accessGraph(owner,doors,mode);
+  const graph=terrainGraph(owner,doors,terrain,mode,"dry");
   let reachable=0,reroutable=0;const examples=[];
   for(let i=0;i<portals.length;i++)for(let j=i+1;j<portals.length;j++){
    const result=alternatives(graph,owner,portals[i],portals[j]);
