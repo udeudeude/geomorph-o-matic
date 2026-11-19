@@ -98,16 +98,53 @@ function rockHachurePaths(segments,{cellSize=24,gridSize=20}={}){
 // Catmull-Rom-inspired cubic contours with deterministic sub-cell curvature.
 // This is an illustrative wall layer: validated traversable floor and door
 // edges remain unchanged. Any segment touching the outside boundary is exact.
+function rockFacingOffsets(segments,{cellSize=24,gridSize=20,irregularity=.13}={}){
+ if(!(cellSize>0)||!Number.isInteger(gridSize)||gridSize<2||irregularity<0||irregularity>.18)
+  throw Error("Unsafe cave wall offset controls");
+ const normals=new Map();
+ const add=(p,n)=>{
+  const k=coordinate(p);
+  if(!normals.has(k))normals.set(k,{point:p,vectors:[]});
+  normals.get(k).vectors.push(n);
+ };
+ for(const segment of segments){
+  if(segment.length<6)continue;
+  const [x1,y1,x2,y2,nx,ny]=segment;
+  if(![x1,y1,x2,y2].every(Number.isFinite)||
+     !Number.isInteger(nx)||!Number.isInteger(ny)||Math.abs(nx)+Math.abs(ny)!==1)
+   throw Error("Rock-facing cave wall requires unit outward normal");
+  add([x1,y1],[nx,ny]);add([x2,y2],[nx,ny]);
+ }
+ const moved=new Map();
+ for(const [key,{point:[x,y],vectors}] of normals){
+  const X=x*cellSize,Y=y*cellSize;
+  if(x===0||y===0||x===gridSize||y===gridSize){moved.set(key,[X,Y]);continue;}
+  const sx=vectors.reduce((sum,v)=>sum+v[0],0),sy=vectors.reduce((sum,v)=>sum+v[1],0);
+  const length=Math.hypot(sx,sy);
+  if(!length){moved.set(key,[X,Y]);continue;}
+  let hash=2166136261;
+  for(let i=0;i<key.length;i++)hash=Math.imul(hash^key.charCodeAt(i),16777619)>>>0;
+  const amount=cellSize*Math.min(irregularity*.85,.15)*(.4+.6*(hash/4294967295));
+  moved.set(key,[X+sx/length*amount,Y+sy/length*amount]);
+ }
+ return moved;
+}
+
 function organicWallPaths(segments,{cellSize=24,gridSize=20,curvature=0.16,irregularity=0.13}={}){
  if(!(cellSize>0)||!Number.isInteger(gridSize)||gridSize<2||
     curvature<0||curvature>0.22||irregularity<0||irregularity>0.18)throw Error("Unsafe organic wall controls");
  const border=([x,y])=>x===0||y===0||x===gridSize||y===gridSize;
- const cp=p=>[p[0]*cellSize,p[1]*cellSize];
+ const moved=rockFacingOffsets(segments,{cellSize,gridSize,irregularity});
+ const cp=p=>moved.get(coordinate(p))||[p[0]*cellSize,p[1]*cellSize];
+ const edgeKey=(a,b)=>[coordinate(a),coordinate(b)].sort().join("|");
+ const facing=new Map();
+ for(const segment of segments)if(segment.length>=6)
+  facing.set(edgeKey(segment.slice(0,2),segment.slice(2,4)),segment.slice(4,6));
  const hash=(a,b)=>{
-  const keys=[coordinate(a),coordinate(b)].sort().join("|");
+  const keys=edgeKey(a,b);
   let h=2166136261;
-  for(let i=0;i<keys.length;i++){h=Math.imul(h^keys.charCodeAt(i),16777619)>>>0;}
-  return 2*(h/4294967295)-1;
+  for(let i=0;i<keys.length;i++)h=Math.imul(h^keys.charCodeAt(i),16777619)>>>0;
+  return h/4294967295;
  };
  return chainsFromEdges(segments).map(chain=>{
   const closed=coordinate(chain[0])===coordinate(chain[chain.length-1]);
@@ -120,10 +157,10 @@ function organicWallPaths(segments,{cellSize=24,gridSize=20,curvature=0.16,irreg
    if(border(a)||border(b)){d+="L"+commands(B);continue;}
    const prev=cp(pts[i===0?(closed?n-1:0):i-1]);
    const next=cp(pts[i+2<n?i+2:(closed?(i+2)%n:n-1)]);
+   const outward=facing.get(edgeKey(a,b));
    const length=Math.hypot(B[0]-A[0],B[1]-A[1]);
-   const sign=hash(a,b);
-   const wobble=irregularity*cellSize*sign;
-   const normal=[-(B[1]-A[1])/length,(B[0]-A[0])/length];
+   const wobble=irregularity*cellSize*(.25+.55*hash(a,b));
+   const normal=outward||[-(B[1]-A[1])/length,(B[0]-A[0])/length];
    const p=[A[0]+curvature*(B[0]-prev[0])+normal[0]*wobble,
     A[1]+curvature*(B[1]-prev[1])+normal[1]*wobble];
    const q=[B[0]-curvature*(next[0]-A[0])+normal[0]*wobble,
@@ -133,5 +170,4 @@ function organicWallPaths(segments,{cellSize=24,gridSize=20,curvature=0.16,irreg
   return d+(closed?"Z":"");
  }).filter(Boolean);
 }
-
-module.exports={chainsFromEdges,naturalWallPaths,organicWallPaths,rockHachurePaths};
+module.exports={chainsFromEdges,naturalWallPaths,organicWallPaths,rockFacingOffsets,rockHachurePaths};
