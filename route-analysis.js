@@ -64,10 +64,10 @@ function roomContribution(graph,owner,portals,room){
  }
  return result;
 }
-function analyzeRoutes(owner,doors,portals){
+function analyzeRoutes(owner,doors,portals,graphFactory=(mode)=>accessGraph(owner,doors,mode)){
  if(!Array.isArray(portals)||portals.length<2||new Set(portals).size!==portals.length||
     portals.some(p=>!owner.has(p)))throw Error("Invalid portal sample");
- const graphs=Object.fromEntries(modes.map(mode=>[mode,accessGraph(owner,doors,mode)]));
+ const graphs=Object.fromEntries(modes.map(mode=>[mode,graphFactory(mode)]));
  const accessibility=Object.fromEntries(modes.map(mode=>[mode,profile(graphs[mode],owner,portals)]));
  const rooms=[...new Set(owner.values())].filter(z=>z!=="hall").sort();
  const chamberRoutes=rooms.map(room=>{
