@@ -8,6 +8,7 @@ const {doorEdges}=require("./audit");
 const {tailraceModel}=require("./tailrace");
 const {waterwayModel}=require("./waterworks");
 const {gateModel}=require("./hydraulic-control");
+const {requireBuriedFoundationClearance}=require("./foundation-clearance");
 const S=34,X0=6,Y0=7;
 const xy=p=>p.split(",").map(Number);
 const esc=v=>String(v).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
@@ -18,6 +19,7 @@ function makeTailracePlate(tile){
  const low=tailraceModel(owner,doors,h,tile.terrain||{});
  if(!low)throw Error("Technical lower-tailrace plate requires authored lower drainage");
  const upper=waterwayModel(owner,doors,h,tile.terrain||{}),gates=gateModel(owner,doors,h.gates||[]);
+ const structural=requireBuriedFoundationClearance(tile);
  const out=[
   '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 735" role="img" aria-label="Two-level hydraulic works technical plate">',
   '<title>'+esc(tile.title)+' | Controlled underfloor drainage study</title>',
@@ -57,7 +59,7 @@ function makeTailracePlate(tile){
   }else{
    // The lower collector intersects the plan footprint of a pressure vault.
    // Display it as a structural clearance conflict, not an invisible success.
-   out.push('<g id="vault-foundation-conflict" fill="#dbc3a6" fill-opacity=".4" stroke="#b18a5e" stroke-width=".65">');
+   out.push('<g id="vault-foundation-context" fill="#dbc3a6" fill-opacity=".4" stroke="#b18a5e" stroke-width=".65">');
    for(let y=Y0;y<Y0+13;y++)for(let x=X0;x<X0+10;x++){
     if(owner.get(x+","+y)==="vault"){
      out.push('<rect data-overhead-vault="'+x+","+y+'" x="'+px(x)+'" y="'+py(y)+
@@ -112,6 +114,11 @@ function makeTailracePlate(tile){
   const [x1,y1]=center(low.cells[i]),[x2,y2]=center(low.cells[i+1]);
   out.push('<path d="M'+x1+','+y1+'L'+x2+','+y2+'"/>');
  }
+ out.push('</g><g id="unverified-foundation-setbacks" fill="#fbf5e9" stroke="#a16038" stroke-width="2">');
+ for(const warning of structural.adjacent){
+  const [x,y]=center(warning.at);
+  out.push('<circle data-near-foundation="'+warning.at+'" cx="'+x+'" cy="'+y+'" r="4" />');
+ }
  out.push('</g><g id="lower-discharge-shafts" font-family="sans-serif" font-size="12" text-anchor="middle">');
  const initial=Object.entries(low.gatePickups);
  for(const [gate,p] of initial){
@@ -126,8 +133,8 @@ function makeTailracePlate(tile){
  out.push(
   '<text x="66" y="644" font-family="sans-serif" font-size="12" fill="#444d49">Blue = existing headwater; tan = dry sumps; dark = closed gates/partitions. Pale ochre on lower plan = vault overhead.</text>',
   '<text x="66" y="666" font-family="sans-serif" font-size="12" fill="#444d49">W / C / E: separate vertical drop shafts from west / center / east shutter pockets; S: matched seam into Postern relay; true outfall remains uncharted.</text>',
-  '<text x="66" y="690" font-family="sans-serif" font-size="12" fill="#685c4c">Lower line is a centerline, not tunnel width; invert levels are assumed, foundations and discharge unverified.</text>',
-  '<text x="66" y="713" font-family="sans-serif" font-size="11" fill="#685c4c">Vented drops require unsurcharged tailwater; no flow rate modeled. Eight surface exits unchanged.</text>',
+  '<text x="66" y="690" font-family="sans-serif" font-size="12" fill="#685c4c">Lower line is a centerline, not tunnel width. 0 direct room-footprint clashes; '+structural.adjacent.length+' adjacent stations need setbacks.</text>',
+  '<text x="66" y="713" font-family="sans-serif" font-size="11" fill="#685c4c">Vault and other footings have unmeasured depth. Vented drops and discharge capacities unverified; eight exits unchanged.</text>',
   '</svg>');
  return out.join("\n")+"\n";
 }

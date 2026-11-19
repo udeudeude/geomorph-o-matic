@@ -107,7 +107,7 @@ class WaterworksValidationTests(unittest.TestCase):
         tiles = json.loads((ROOT / "blueprints.json").read_text())["tiles"]
         rift = next(t for t in tiles if t["id"] == "riftwater_lock")
         report = validate(rift)
-        self.assertEqual(report["lower_tailrace_cells"], 11)
+        self.assertEqual(report["lower_tailrace_cells"], 16)
         self.assertEqual(report["lower_tailrace_pickups"], 3)
         for kind in ("missing_drop", "headwater_bypass", "loop", "jump",
                      "false_level", "backflow", "wrong_outfall", "boundary"):

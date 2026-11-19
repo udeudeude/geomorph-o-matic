@@ -72,6 +72,9 @@ test("matched architectural plate is editable and identifies the unfinished down
   "longitudinal-grade-profile","grade-seam","foundation-context-0","foundation-context-1"])
   assert.ok(a.includes('id="'+id+'"'),id);
  assert.match(a,/data-seam-fall-ft="0.05"/);
+ assert.match(a,/data-seam-offset="6"/);
+ assert.match(a,/id="foundation-adjacency-flags"/);
+ assert.match(a,/Direct room-footprint overlaps: 0/);
  assert.match(a,/Uncharted outfall/);
  assert.match(a,/NOT a walking route/);
  assert.match(a,/air gap 7.75 ft/);

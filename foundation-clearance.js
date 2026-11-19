@@ -40,4 +40,17 @@ function requireBuriedFoundationClearance(tile){
  if(result?.overlaps.length)throw Error("Buried conduit under room foundation: "+result.overlaps.map(o=>o.room+"@"+o.at).join(", "));
  return result;
 }
+if(require.main===module){
+ const fs=require("node:fs"),path=require("node:path");
+ const tiles=JSON.parse(fs.readFileSync(path.join(__dirname,"blueprints.json"),"utf8")).tiles;
+ const assessments=tiles.map(t=>({id:t.id,assessment:requireBuriedFoundationClearance(t)})).filter(a=>a.assessment);
+ const target=path.resolve(process.argv[2]||path.join(__dirname,"reports/buried-clearance.json"));
+ fs.mkdirSync(path.dirname(target),{recursive:true});
+ fs.writeFileSync(target,JSON.stringify({
+  title:"Plan-only buried conduit versus room footprint screening",
+  caveat:"Room outlines are not measured footings; zero overlap does not prove clearance or invert engineering.",
+  assessments
+ },null,2)+"\n");
+ console.log("Buried plan-footprint audit written to "+target);
+}
 module.exports={auditBuriedFoundations,requireBuriedFoundationClearance};

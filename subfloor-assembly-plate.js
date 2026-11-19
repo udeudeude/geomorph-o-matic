@@ -6,6 +6,7 @@ const {buildCells}=require("./assemble");
 const {tailraceModel}=require("./tailrace");
 const {doorEdges}=require("./audit");
 const {relayModel,verifySubfloorLayout}=require("./subfloor-interfaces");
+const {requireBuriedFoundationClearance}=require("./foundation-clearance");
 const WIDTH=19,LEFT=74,TOP=153;
 const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
 function makeSubfloorAssemblyPlate(layout,data){
@@ -19,8 +20,10 @@ function makeSubfloorAssemblyPlate(layout,data){
  const relay=relayModel(lower);
  if(!src||!relay)throw Error("Hydraulic plate requires a releasing tile above its receiver");
  const seam=matched_seams[0];
+ const structural=[requireBuriedFoundationClearance(upper),requireBuriedFoundationClearance(lower)];
+ const nearbyCount=structural.reduce((sum,a)=>sum+a.adjacent.length,0);
  const out=[
-  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 990" role="img" aria-label="Matched two-tile lower collector and assumed invert survey">',
+  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 990" role="img" aria-label="Matched two-tile lower collector and assumed invert survey">',
   '<title>'+esc(upper.title)+' to '+esc(lower.title)+' | subfloor interface study</title>',
   '<rect width="1100" height="990" fill="#f5f1e8"/>',
   '<text x="74" y="46" font-size="25" font-family="Georgia,serif" fill="#263b3a">UNDERFLOOR CONNECTION / TWO-TILE STUDY</text>',
@@ -68,6 +71,13 @@ function makeSubfloorAssemblyPlate(layout,data){
    out.push('<path d="M'+x1+','+y1+'L'+x2+','+y2+'"/>');
   }
  }
+ out.push('</g><g id="foundation-adjacency-flags" fill="#f5f1e8" stroke="#a16038" stroke-width="1.8">');
+ structural.forEach((assessment,which)=>{
+  assessment.adjacent.forEach(mark=>{
+   const [x,y]=mark.at.split(",").map(Number),[X,Y]=local([x,y],which);
+   out.push('<circle data-near-foundation="'+which+':'+mark.at+'" cx="'+X+'" cy="'+Y+'" r="3.8"><title>Plan adjacency to '+esc(mark.rooms.join(", "))+'; actual foundation clearance unverified</title></circle>');
+  });
+ });
  out.push('</g><g id="lower-termination-labels" font-size="11" font-family="sans-serif" fill="#253f44">');
  const [ex,ey]=local(receiver.at(-1),1);
  out.push('<circle cx="'+ex+'" cy="'+ey+'" r="9" fill="#f8eee0" stroke="#9d582e" stroke-width="2"/>');
@@ -75,10 +85,10 @@ function makeSubfloorAssemblyPlate(layout,data){
  out.push('</g></g>');
  out.push(
  '<text x="'+LEFT+'" y="938" font-size="11" font-family="sans-serif" fill="#4d5f5b">Dark blue = buried water conduit (NOT a walking route). Brown seam = matched special opening.</text>',
- '<text x="'+LEFT+'" y="958" font-size="11" font-family="sans-serif" fill="#695b49">Foundation overlaps are unverified. Neither a tunnel diameter nor a safe access shaft has been established.</text>'
+ '<text x="'+LEFT+'" y="958" font-size="11" font-family="sans-serif" fill="#695b49">Direct room-footprint overlaps: 0. Adjacent stations: '+nearbyCount+'. Orange rings: unverified setbacks, NOT proven clearances.</text>'
  );
  const all=[...src.grade.inverts_ft,...relay.grade.inverts_ft];
- const chartX=520,chartW=26;
+ const chartX=520,chartW=22,sourceEdge=source.length-1,relayEdge=source.length;
  const zy=z=>380+(-8-z)*70;
  out.push('<g id="longitudinal-grade-profile" font-family="sans-serif">');
  out.push('<path d="M'+chartX+','+zy(src.grade.crown_ft)+'h'+(all.length-1)*chartW+
@@ -88,12 +98,12 @@ function makeSubfloorAssemblyPlate(layout,data){
  out.push('<polyline points="'+all.map((z,i)=>(chartX+i*chartW)+','+zy(z)).join(" ")+
   '" fill="none" stroke="#285c67" stroke-width="4" stroke-linejoin="round"/>');
  out.push('<path id="grade-seam" data-seam-fall-ft="'+seam.seam_fall_ft.toFixed(2)+
-  '" d="M'+(chartX+10*chartW)+','+zy(all[10])+'L'+(chartX+11*chartW)+','+zy(all[11])+
+  '" d="M'+(chartX+sourceEdge*chartW)+','+zy(all[sourceEdge])+'L'+(chartX+relayEdge*chartW)+','+zy(all[relayEdge])+
   '" stroke="#a0552f" stroke-width="6"/>');
- for(const [i,label] of [[0,"UPSTREAM"],[10,"SOURCE EDGE"],[11,"RELAY EDGE"],[all.length-1,"UNMAPPED OUTFALL"]]){
+ for(const [i,label] of [[0,"UPSTREAM"],[sourceEdge,"SOURCE EDGE"],[relayEdge,"RELAY EDGE"],[all.length-1,"UNMAPPED OUTFALL"]]){
   const x=chartX+i*chartW,y=zy(all[i]);
   out.push('<circle cx="'+x+'" cy="'+y+'" r="4" fill="#fffaf1" stroke="#305d64" stroke-width="2"/>');
-  out.push('<text x="'+x+'" y="'+(i===11?y+30:y-13)+'" text-anchor="middle" font-size="9" fill="#4c5350">'+label+'</text>');
+  out.push('<text x="'+x+'" y="'+(i===relayEdge?y+30:y-13)+'" text-anchor="'+(i===all.length-1?"end":"middle")+'" font-size="9" fill="#4c5350">'+label+'</text>');
  }
  out.push('<text x="520" y="351" font-size="11" fill="#554e42">Collector crown = '+src.grade.crown_ft+' ft (assumed)</text>');
  out.push('<text x="520" y="416" font-size="11" fill="#346b7e">Maximum tailwater = '+src.grade.max_tailwater_ft+' ft (assumed)</text>');
