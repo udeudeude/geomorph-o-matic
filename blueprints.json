@@ -3506,7 +3506,8 @@
               14
             ]
           }
-        ]
+        ],
+        "isolated_shutters": true
       },
       "vertical": {
         "decks": [
