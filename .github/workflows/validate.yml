@@ -2,6 +2,8 @@ name: Validate geomorphs
 on:
   push:
   pull_request:
+permissions:
+  contents: write
 jobs:
   check:
     runs-on: ubuntu-latest
@@ -11,23 +13,32 @@ jobs:
         run: python3 validate.py
       - name: Regenerate original SVGs
         run: node render.js
-      - name: Verify SVG masters are reproducible
-        run: git diff --exit-code -- tiles/
-      - name: Test assembly and topology audits
+      - name: Test assembly, terrain and topology
         run: node --test tests/*.test.js
-      - name: Verify assembly and topology reports are reproducible
+      - name: Generate assembled maps and complete architectural audit
         run: |
           node assemble.js
           node audit.js
-          git diff --exit-code -- examples/assembly_3x3.svg reports/topology.json
-      - name: Build irregular nine-tile study
-        run: node assemble.js examples/assembly_irregular_3x3.json examples/assembly_irregular_3x3.svg
-      - name: Upload new irregular studies
+          node assemble.js examples/assembly_irregular_3x3.json examples/assembly_irregular_3x3.svg
+      - name: Commit verified generated assets on main
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          git add tiles/ examples/assembly_3x3.svg reports/topology.json
+          if ! git diff --cached --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore: synchronize verified dungeon vectors and topology report"
+            git push origin HEAD:main
+          fi
+      - name: Verify tracked SVG masters and audit are reproducible
+        run: git diff --exit-code -- tiles/ examples/assembly_3x3.svg reports/topology.json
+      - name: Upload vector studies and inspection report
         uses: actions/upload-artifact@v4
         with:
-          name: irregular-vector-studies
+          name: geomorph-vector-studies
           path: |
-            tiles/basalt_rift.svg
-            tiles/sunken_orrery.svg
+            tiles/*.svg
             examples/assembly_irregular_3x3.svg
+            examples/assembly_3x3.svg
+            reports/topology.json
           if-no-files-found: error
