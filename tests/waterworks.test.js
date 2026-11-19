@@ -67,6 +67,10 @@ test("three stone-partitioned sluice branches produce distinct useful flood stat
  const model=waterwayModel(owner,doors,tile.hydrology,tile.terrain);
  assert.equal(model.partitions.size,2);
  for(const barrier of model.partitions)assert.ok(model.walls.has(barrier));
+ assert.throws(()=>waterwayModel(owner,doors,tile.hydrology,
+  {...tile.terrain,barriers:[]}),/do not isolate independent/);
+ assert.throws(()=>waterwayModel(owner,doors,
+  {...tile.hydrology,isolated_shutters:"definitely"},tile.terrain),/Invalid isolated-shutter/);
  const normal=makeSvg(tile);
  assert.match(normal,/id="masonry-partitions"/);
  assert.equal((normal.match(/data-blocks-edge=/g)||[]).length,2);
