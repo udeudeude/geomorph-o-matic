@@ -31,6 +31,7 @@ test("lower river is an ordered, simple path ending at its declared terminus",()
   t=>t.cells[1]=[0,11], // boundary and discontinuity
   t=>t.terminus=[10,18],
   t=>t.level=0,
+  t=>t.hydraulic_separation="direct_piped",
   t=>t.cells.reverse()
  ]){
   const bad=modify(f);
