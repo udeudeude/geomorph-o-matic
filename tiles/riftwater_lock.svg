@@ -34,21 +34,21 @@
 <rect x="216" y="216" width="24" height="24"/>
 </g>
 <g id="dry-bridges" fill="#d5c6a4" stroke="#635f54" stroke-width=".9">
-<rect x="243" y="242" width="18" height="20"/>
-<path d="M243,246h18"/>
-<path d="M243,252h18"/>
-<path d="M243,258h18"/>
-<rect x="243" y="218" width="18" height="20"/>
-<path d="M243,222h18"/>
-<path d="M243,228h18"/>
-<path d="M243,234h18"/>
+<rect x="244.32" y="216" width="15.36" height="48"/>
+<path d="M244.32,222h15.36"/>
+<path d="M244.32,228h15.36"/>
+<path d="M244.32,234h15.36"/>
+<path d="M244.32,240h15.36"/>
+<path d="M244.32,246h15.36"/>
+<path d="M244.32,252h15.36"/>
+<path d="M244.32,258h15.36"/>
 </g>
 <g id="elevation-edges" fill="none" stroke="#8f7562" stroke-width="2" stroke-dasharray="2 3">
 <path d="M216,120h24"/>
 <path d="M264,120h24"/>
 </g>
-<g id="elevation-labels" fill="#705b47" font-family="sans-serif" font-size="12" text-anchor="middle">
-<text x="248.0" y="82.0">+1 level</text>
+<g id="elevation-labels" fill="#705b47" font-family="sans-serif" font-size="10" font-weight="600" text-anchor="middle">
+<text x="240.0" y="64.6">+1</text>
 </g>
 <g id="level-ramps" fill="none" stroke="#87664e" stroke-width="2.2" stroke-linecap="round">
 <path d="M252,108L252,132"/>
