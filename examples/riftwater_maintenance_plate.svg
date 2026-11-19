@@ -298,7 +298,7 @@
 </g>
 <g id="drive-elevations" font-family="sans-serif">
 <g data-section-drive="west_drive">
-<text x="555" y="190" font-size="15" font-weight="700" fill="#285d69">1. WEST_WINCH → WEST_SHUTTER</text>
+<text x="555" y="190" font-size="15" font-weight="700" fill="#285d69">1. WEST_WINCH to WEST_SHUTTER</text>
 <path d="M558 265H1110" stroke="#8e948a" stroke-width="2.1"/>
 <text x="564" y="283" font-size="10" fill="#59635e">walking floor / local zero</text>
 <path d="M588 210H1010" stroke="#285d69" stroke-width="5"/>
@@ -315,7 +315,7 @@
 <text x="1040" y="241" font-size="11" fill="#424e4b">vertical rack</text>
 </g>
 <g data-section-drive="center_drive">
-<text x="555" y="325" font-size="15" font-weight="700" fill="#556576">2. CENTER_WINCH → CENTER_SHUTTER</text>
+<text x="555" y="325" font-size="15" font-weight="700" fill="#556576">2. CENTER_WINCH to CENTER_SHUTTER</text>
 <path d="M558 400H1110" stroke="#8e948a" stroke-width="2.1"/>
 <text x="564" y="418" font-size="10" fill="#59635e">walking floor / local zero</text>
 <path d="M588 345H1010" stroke="#556576" stroke-width="5"/>
@@ -332,7 +332,7 @@
 <text x="1040" y="376" font-size="11" fill="#424e4b">vertical rack</text>
 </g>
 <g data-section-drive="east_drive">
-<text x="555" y="460" font-size="15" font-weight="700" fill="#775a45">3. EAST_WINCH → EAST_SHUTTER</text>
+<text x="555" y="460" font-size="15" font-weight="700" fill="#775a45">3. EAST_WINCH to EAST_SHUTTER</text>
 <path d="M558 535H1110" stroke="#8e948a" stroke-width="2.1"/>
 <text x="564" y="553" font-size="10" fill="#59635e">walking floor / local zero</text>
 <path d="M588 480H1010" stroke="#775a45" stroke-width="5"/>
@@ -353,17 +353,17 @@
 <path d="M540 652H1138" stroke="#adb0a7" stroke-width="1"/>
 <text x="553" y="684" font-size="16" font-weight="700" fill="#284a4f">03  BURIED BENDS / SEALED CLEANOUTS</text>
 <circle cx="567" cy="703" r="5" fill="#a46a45"/>
-<text x="585" y="707" font-size="12" fill="#293c39">RIFTWATER bend 11,11 → dry cover 13,12 · 7.5 ft lateral branch</text>
+<text x="585" y="707" font-size="12" fill="#293c39">RIFTWATER bend 11,11 to dry cover 13,12 · 7.5 ft lateral branch</text>
 <circle cx="567" cy="737" r="5" fill="#a46a45"/>
-<text x="585" y="741" font-size="12" fill="#293c39">RIFTWATER bend 11,14 → dry cover 13,13 · 7.5 ft lateral branch</text>
+<text x="585" y="741" font-size="12" fill="#293c39">RIFTWATER bend 11,14 to dry cover 13,13 · 7.5 ft lateral branch</text>
 <circle cx="567" cy="771" r="5" fill="#a46a45"/>
-<text x="585" y="775" font-size="12" fill="#293c39">RIFTWATER bend 6,14 → dry cover 6,14 · 0.0 ft lateral branch</text>
+<text x="585" y="775" font-size="12" fill="#293c39">RIFTWATER bend 6,14 to dry cover 6,14 · 0.0 ft lateral branch</text>
 <circle cx="567" cy="805" r="5" fill="#a46a45"/>
-<text x="585" y="809" font-size="12" fill="#293c39">POSTERN bend 6,1 → dry cover 6,1 · 0.0 ft lateral branch</text>
+<text x="585" y="809" font-size="12" fill="#293c39">POSTERN bend 6,1 to dry cover 6,1 · 0.0 ft lateral branch</text>
 <circle cx="567" cy="839" r="5" fill="#a46a45"/>
-<text x="585" y="843" font-size="12" fill="#293c39">POSTERN bend 9,1 → dry cover 9,1 · 0.0 ft lateral branch</text>
+<text x="585" y="843" font-size="12" fill="#293c39">POSTERN bend 9,1 to dry cover 9,1 · 0.0 ft lateral branch</text>
 <circle cx="567" cy="873" r="5" fill="#a46a45"/>
-<text x="585" y="877" font-size="12" fill="#293c39">POSTERN bend 9,9 → dry cover 9,9 · 0.0 ft lateral branch</text>
+<text x="585" y="877" font-size="12" fill="#293c39">POSTERN bend 9,9 to dry cover 9,9 · 0.0 ft lateral branch</text>
 </g>
 <path d="M70 918H1140" stroke="#87918a" stroke-width="1"/>
 <text x="72" y="941" font-family="sans-serif" font-size="11" fill="#5f6059">DESIGN LIMITS  |  Not measured: shaft torque, bevel ratios, gearbox recesses, masonry bore sleeves, ceiling support, manhole depth, hydraulic capacity, outfall or backwater.</text>
