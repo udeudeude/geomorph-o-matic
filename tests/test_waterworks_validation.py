@@ -61,6 +61,42 @@ class WaterworksValidationTests(unittest.TestCase):
         tile["hydrology"]["culverts"] = [[[2, 5], [3, 5]]]
         self.assertEqual(validate_waterworks(tile, cells)["engineered_channel_cells"], 2)
 
+    def test_partitions_reject_short_circuits_and_closed_shutter_bypass(self):
+        tile = copy.deepcopy(self.tile)
+        tile["hydrology"]["channels"].append([3, 6])
+        tile["hydrology"]["channels"].append([2, 6])
+        tile["hydrology"]["outlet"] = [3, 6]
+        cells = dict(self.cells)
+        cells[(3, 6)] = cells[(2, 6)] = "turbine"
+        cells[(2, 5)] = cells[(3, 5)] = "turbine"
+        tile["hydrology"]["stages"] = [{
+            "id": "release", "add_water": [[3, 5]],
+            "gate_states": {"sluice": "open"}, "surface_level": 1
+        }]
+        # First baseline tests valid under separate masonry partitions.
+        tile["terrain"]["barriers"] = [[[2, 5], [2, 6]], [[3, 5], [3, 6]]]
+        # The subchannel endpoint becomes disconnected when its only top access is partitioned.
+        with self.assertRaises(AssertionError):
+            validate_waterworks(tile, cells)
+        # The actual Riftwater partitions allow each shutter to fill only its own pocket.
+        tiles = json.loads((ROOT / "blueprints.json").read_text())["tiles"]
+        rift = next(t for t in tiles if t["id"] == "riftwater_lock")
+        self.assertEqual(validate(rift)["hydraulic_partitions"], 2)
+        for corrupt in ("no_partitions", "gate_overlap", "wrong_first_gate"):
+            bad = copy.deepcopy(rift)
+            if corrupt == "no_partitions":
+                bad["terrain"]["barriers"] = []
+                # No masonry makes individually sealed downstream sumps a false claim:
+                # the independently computed gate-reachability test below catches that.
+                self.assertEqual(validate(bad)["hydraulic_partitions"], 0)
+                continue
+            if corrupt == "gate_overlap":
+                bad["terrain"]["barriers"][0] = [[9, 10], [9, 11]]
+            else:
+                bad["hydrology"]["stages"][0]["gate_states"] = {"east_shutter": "open"}
+            with self.assertRaises(AssertionError):
+                validate(bad)
+
     def test_real_riftwater_blueprint_passes_independent_full_validation(self):
         tiles = json.loads((ROOT / "blueprints.json").read_text())["tiles"]
         result = validate(next(t for t in tiles if t["id"] == "riftwater_lock"))
