@@ -1,0 +1,25 @@
+{
+  "title": "Scoured Siphon: cave / masonry alternate routes",
+  "rows": [
+    [
+      {
+        "id": "scoured_siphon",
+        "turn": 1
+      },
+      {
+        "id": "fallen_choir",
+        "turn": 3
+      }
+    ],
+    [
+      {
+        "id": "hollow_causeway",
+        "turn": 2
+      },
+      {
+        "id": "scoured_siphon",
+        "turn": 0
+      }
+    ]
+  ]
+}

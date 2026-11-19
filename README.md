@@ -10,12 +10,17 @@ Original, modular, editable dungeon cartography. **Architectural studies, not ye
 - [Basalt Rift](tiles/basalt_rift.svg): seven irregular cavern chambers and natural rock contours.
 - [Sunken Orrery](tiles/sunken_orrery.svg): a ruined observatory court with two guarded approaches.
 - [Riftwater Lock](tiles/riftwater_lock.svg): partitioned subterranean sluice basin with three independently consequential shutters, separate crossing routes, and sealed discoveries.
+- [Scoured Siphon](tiles/scoured_siphon.svg): an original joint-guided cave with a submerged gorge, two separately traversable ascents to a limestone shelf, and a truly blocked western throat. [Mixed assembly](examples/assembly_scoured_2x2.svg) · [true-size print proof](examples/scoured_siphon_print_letter.svg).
 - [Hollow Causeway](tiles/hollow_causeway.svg): an original solution-cave study with open natural throats, two distinct dry crossings of a flooded limestone fissure, and an optional concealed pocket. [Mixed four-morph assembly](examples/assembly_hollow_2x2.svg) · [true-size print proof](examples/hollow_causeway_print_letter.svg).
 - [The Fallen Choir](tiles/fallen_choir.svg): a hand-composed ruined abbey with an irregular four-door bell nave, alternative ambulatories, a sealed vestry and optional discoveries. [Mixed four-tile composition](examples/assembly_fallen_choir_2x2.svg) · [true-size print sheet](examples/fallen_choir_print_letter.svg).
 
 These are editable vector drawings, not flattened images. The separate floor, grid, rock, doors, structural walls and architectural features are grouped in the SVG document.
 
 
+
+## Scoured Siphon: dry keyhole and wet canyon (November 19, 2026)
+
+Original unequal limestone chambers and the meeting of two underground watercourses. The collapsed western throat demonstrably lengthens a dry portal route, while a short timber bridge and a twice-accessible raised limestone shelf create different exploration opportunities. See [the main SVG](tiles/scoured_siphon.svg), [mixed four-tile assembly](examples/assembly_scoured_2x2.svg), [true-size print proof](examples/scoured_siphon_print_letter.svg), and [research and unresolved structural questions](research/2026-11-19-scoured-siphon.md). The study has not been physically printed or playtested.
 
 ## Natural cave geomorph: Hollow Causeway (November 19, 2026)
 
@@ -74,13 +79,13 @@ node render.js
 git diff --exit-code -- tiles/
 ```
 
-The canonical architectural data is in [blueprints.json](blueprints.json). The [JavaScript renderer](render.js) creates the eight SVG masters reproducibly, and [validate.py](validate.py) rejects incompatible edge openings, invented doorways, unconnected halls and disconnected floors. [GitHub Actions](.github/workflows/validate.yml) checks these commands after pushes.
+The canonical architectural data is in [blueprints.json](blueprints.json). The [JavaScript renderer](render.js) creates the nine SVG masters reproducibly, and [validate.py](validate.py) rejects incompatible edge openings, invented doorways, unconnected halls and disconnected floors. [GitHub Actions](.github/workflows/validate.yml) checks these commands after pushes.
 
 ## Geometry
 
 Each morph covers **10 x 10 full squares** subdivided into 20 x 20 half-square cells. A 5-foot-wide opening occupies one half-cell inside the 3rd and 8th full squares on each side. The exact fine-grid opening positions are **4 and 15**; unlike the earlier 5/15 pair they remain aligned through all quarter-turn rotations.
 
-All eight studies currently have eight standard edge openings, plus explicitly authored rooms, passages, secret doors and locked doors. Corridor loops are diagnostic, not proof of meaningful alternatives; see the separate route-resilience and chamber-journey audits.
+All nine studies currently have eight standard edge openings, plus explicitly authored rooms, passages, secret doors and locked doors. Corridor loops are diagnostic, not proof of meaningful alternatives; see the separate route-resilience and chamber-journey audits.
 
 ## Two-level waterworks study (November 19, 2026)
 
