@@ -49,7 +49,8 @@ test("printed five-foot grids omit drafting hairlines; half-grid remains optiona
   const standard=makeSvg(t),draft=makeSvg(t,{grid:"half"});
   assert.match(standard,/id="grid" data-grid="full"/);
   assert.match(draft,/id="grid" data-grid="half"/);
-  assert.ok((draft.match(/stroke-width=".5"/g)||[]).length>(standard.match(/stroke-width=".5"/g)||[]).length);
+  const gridLayer=(svg)=>svg.match(/<g id="grid"[^>]*>([\s\S]*?)<\/g>/)[1];
+  assert.ok((gridLayer(draft).match(/<path /g)||[]).length>(gridLayer(standard).match(/<path /g)||[]).length);
   assert.equal(printScaleAudit(t).strokes_below_0_15_mm,0,t.id);
  }
  assert.throws(()=>makeSvg(rift,{grid:"none"}),/Invalid map grid/);

@@ -1,6 +1,6 @@
 "use strict";
 const test=require("node:test"),assert=require("node:assert/strict");
-const {organicWallPaths,rockFacingOffsets}=require("../cave-contours");
+const {organicWallPaths,rockFacingOffsets,rockHachurePaths}=require("../cave-contours");
 const fs=require("node:fs"),path=require("node:path");
 const {makeSvg}=require("../render");
 const tiles=JSON.parse(fs.readFileSync(path.join(__dirname,"../blueprints.json"),"utf8")).tiles;
@@ -39,4 +39,21 @@ test("all canonical cave and mixed tiles render with editable rock contours",()=
   assert.match(svg,/id="rock-hachures"/);
   assert.equal(svg,makeSvg(tile));
  }
+});
+
+test("irregular cave hachures lean into rock instead of making uniform fenceposts",()=>{
+ const paths=rockHachurePaths(square);
+ assert.equal(paths.length,8);
+ assert.deepEqual(paths,rockHachurePaths(square));
+ const top=paths.slice(0,2).map(s=>{
+  const m=s.match(/^M([-0-9.]+),([-0-9.]+)L([-0-9.]+),([-0-9.]+)$/);
+  assert.ok(m,"each needle is an independent editable straight SVG segment");
+  return m.slice(1).map(Number);
+ });
+ for(const [x1,y1,x2,y2] of top){
+  assert.ok(y2<y1 && y1<120 && y2>108,"top cave needles must stay in exterior rock");
+  assert.ok(Math.abs(x2-x1)>1,"needles must lean rather than form repeating perpendicular ticks");
+ }
+ assert.ok(new Set(paths.map(p=>p.slice(0,9))).size>2);
+ assert.throws(()=>rockHachurePaths(square,{cellSize:0}),/scale/);
 });

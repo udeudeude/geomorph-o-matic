@@ -25,6 +25,7 @@ jobs:
           node assemble.js examples/assembly_fallen_choir_2x2.json examples/assembly_fallen_choir_2x2.svg
           node assemble.js examples/assembly_hollow_2x2.json examples/assembly_hollow_2x2.svg
           node assemble.js examples/assembly_scoured_2x2.json examples/assembly_scoured_2x2.svg
+          node assemble.js examples/assembly_lantern_2x2.json examples/assembly_lantern_2x2.svg
           node section-plates.js examples/riftwater_section.svg
           node flood-stages.js examples/riftwater_surge.svg
           node measured-section.js examples/riftwater_profile.svg
@@ -39,6 +40,7 @@ jobs:
           node print-review.js examples/fallen_choir_print_letter.svg fallen_choir
           node print-review.js examples/hollow_causeway_print_letter.svg hollow_causeway
           node print-review.js examples/scoured_siphon_print_letter.svg scoured_siphon
+          node print-review.js examples/lantern_sink_print_letter.svg lantern_sink
           node choir-levels-plate.js examples/fallen_choir_levels.svg
           node cave-profile.js examples/scoured_siphon_profiles.svg
       - name: Check editable vector XML and complete generated plate set
@@ -48,7 +50,7 @@ jobs:
           from xml.etree import ElementTree as ET
           paths = sorted(Path("tiles").glob("*.svg"))
           paths += sorted(Path("examples").glob("*.svg"))
-          assert len(paths) >= 28, f"Missing generated vector artifacts: {len(paths)}"
+          assert len(paths) >= 31, f"Missing generated vector artifacts: {len(paths)}"
           for path in paths:
               root = ET.parse(path).getroot()
               assert root.tag == "{http://www.w3.org/2000/svg}svg", path
@@ -58,7 +60,7 @@ jobs:
       - name: Commit verified generated assets on same-repository push
         if: github.event_name == 'push'
         run: |
-          git add tiles/ examples/assembly_fallen_choir_2x2.svg examples/fallen_choir_print_letter.svg examples/assembly_hollow_2x2.svg examples/hollow_causeway_print_letter.svg examples/assembly_scoured_2x2.svg examples/scoured_siphon_print_letter.svg examples/fallen_choir_levels.svg examples/scoured_siphon_profiles.svg examples/assembly_3x3.svg examples/riftwater_section.svg examples/riftwater_surge.svg examples/riftwater_profile.svg examples/riftwater_tailrace_plate.svg examples/subfloor_pair_plate.svg examples/postern_outfall_section.svg examples/receiving_annex_plate.svg examples/riftwater_maintenance_plate.svg examples/riftwater_print_letter.svg reports/topology.json reports/print-scale.json reports/buried-clearance.json reports/gearbox-access.json
+          git add tiles/ examples/assembly_fallen_choir_2x2.svg examples/fallen_choir_print_letter.svg examples/assembly_hollow_2x2.svg examples/hollow_causeway_print_letter.svg examples/assembly_scoured_2x2.svg examples/assembly_lantern_2x2.svg examples/scoured_siphon_print_letter.svg examples/lantern_sink_print_letter.svg examples/fallen_choir_levels.svg examples/scoured_siphon_profiles.svg examples/assembly_3x3.svg examples/riftwater_section.svg examples/riftwater_surge.svg examples/riftwater_profile.svg examples/riftwater_tailrace_plate.svg examples/subfloor_pair_plate.svg examples/postern_outfall_section.svg examples/receiving_annex_plate.svg examples/riftwater_maintenance_plate.svg examples/riftwater_print_letter.svg reports/topology.json reports/print-scale.json reports/buried-clearance.json reports/gearbox-access.json
           if ! git diff --cached --quiet; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -66,7 +68,7 @@ jobs:
             git push origin HEAD:${GITHUB_REF_NAME}
           fi
       - name: Verify tracked SVG masters and audit are reproducible
-        run: git diff --exit-code -- tiles/ examples/assembly_fallen_choir_2x2.svg examples/fallen_choir_print_letter.svg examples/assembly_hollow_2x2.svg examples/hollow_causeway_print_letter.svg examples/assembly_scoured_2x2.svg examples/scoured_siphon_print_letter.svg examples/fallen_choir_levels.svg examples/scoured_siphon_profiles.svg examples/assembly_3x3.svg examples/riftwater_section.svg examples/riftwater_surge.svg examples/riftwater_profile.svg examples/riftwater_tailrace_plate.svg examples/subfloor_pair_plate.svg examples/postern_outfall_section.svg examples/riftwater_maintenance_plate.svg examples/riftwater_print_letter.svg reports/topology.json reports/print-scale.json reports/buried-clearance.json reports/gearbox-access.json
+        run: git diff --exit-code -- tiles/ examples/assembly_fallen_choir_2x2.svg examples/fallen_choir_print_letter.svg examples/assembly_hollow_2x2.svg examples/hollow_causeway_print_letter.svg examples/assembly_scoured_2x2.svg examples/assembly_lantern_2x2.svg examples/scoured_siphon_print_letter.svg examples/lantern_sink_print_letter.svg examples/fallen_choir_levels.svg examples/scoured_siphon_profiles.svg examples/assembly_3x3.svg examples/riftwater_section.svg examples/riftwater_surge.svg examples/riftwater_profile.svg examples/riftwater_tailrace_plate.svg examples/subfloor_pair_plate.svg examples/postern_outfall_section.svg examples/riftwater_maintenance_plate.svg examples/riftwater_print_letter.svg reports/topology.json reports/print-scale.json reports/buried-clearance.json reports/gearbox-access.json
       - name: Upload vector studies and inspection report
         uses: actions/upload-artifact@v4
         with:
@@ -77,7 +79,9 @@ jobs:
             examples/assembly_fallen_choir_2x2.svg
             examples/assembly_hollow_2x2.svg
             examples/assembly_scoured_2x2.svg
+            examples/assembly_lantern_2x2.svg
             examples/scoured_siphon_print_letter.svg
+            examples/lantern_sink_print_letter.svg
             examples/hollow_causeway_print_letter.svg
             examples/fallen_choir_print_letter.svg
             examples/fallen_choir_levels.svg
