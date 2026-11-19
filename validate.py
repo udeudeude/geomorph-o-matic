@@ -227,13 +227,15 @@ def validate_waterworks(tile, cells):
     assert type(isolated) is bool, (tile['id'], 'bad isolated-shutter flag')
     if isolated:
         assert len(gates) >= 2, (tile['id'], 'insufficient shutter branches')
+        shut_edges = {pair(tuple(g['a']), tuple(g['b'])) for g in gates.values()}
+        upstream = connected(channels, (walls-culverts) | shut_edges, inlet)
         claimed = set()
         for gate_id in gates:
             blocked = (walls-culverts) | {
                 pair(tuple(g['a']), tuple(g['b']))
                 for k, g in gates.items() if k != gate_id
             }
-            freshly_reached = connected(channels, blocked, inlet) - water
+            freshly_reached = connected(channels, blocked, inlet) - upstream
             assert freshly_reached and not (freshly_reached & claimed), (tile['id'], 'not independent shutter pockets')
             claimed |= freshly_reached
     assigned, locations, control_ids = set(), set(), set()
