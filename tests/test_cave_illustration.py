@@ -4,8 +4,22 @@ import json
 import unittest
 from pathlib import Path
 
-from validate import validate, validate_terrain
-from tests.test_hollow_causeway import floor
+from validate import validate, validate_terrain, footprint
+
+
+def floor(tile):
+    occupied = {}
+    for name, _, shape in tile["rooms"]:
+        for position in footprint(shape):
+            assert position not in occupied
+            occupied[position] = name
+    for route in tile["routes"]:
+        for a, b in zip(route["points"], route["points"][1:]):
+            for x in range(min(a[0], b[0]), max(a[0], b[0]) + 1):
+                for y in range(min(a[1], b[1]), max(a[1], b[1]) + 1):
+                    assert occupied.get((x, y), "hall") == "hall"
+                    occupied[(x, y)] = "hall"
+    return occupied
 
 DATA = json.loads((Path(__file__).resolve().parents[1] / "blueprints.json").read_text())
 CAVE = next(tile for tile in DATA["tiles"] if tile["id"] == "hollow_causeway")
