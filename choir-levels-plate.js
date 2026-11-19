@@ -28,7 +28,7 @@ function choirLevelsPlate(tile){
   '<g opacity=".18">',ghost,'</g>',
   '<svg x="0" y="0" width="480" height="480" viewBox="0 0 480 480">',upper,'</svg></g>',
   '<g fill="#3d4743" font-family="sans-serif" font-size="14">',
-  '<text x="48" y="642">Five shattered arcade edges interrupt the lower nave.</text>',
+  '<text x="48" y="642">Five collapsed arcade edges interrupt the lower nave.</text>',
   '<text x="644" y="642">Four upper cells and two ladders form a separate walk.</text>',
   '<text x="48" y="668" font-size="12">Schematic comparison; doors and edge portals remain at canonical locations.</text>',
   '<text x="48" y="689" font-size="12">Triforium height, fallen-masonry stability and headroom are provisional. Not a construction survey.</text>',
