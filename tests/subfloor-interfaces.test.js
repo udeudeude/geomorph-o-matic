@@ -13,11 +13,11 @@ const copy=v=>JSON.parse(JSON.stringify(v));
 const grid=(top,bottom,ta=0,tb=0)=>({rows:[[{id:top,turn:ta}],[{id:bottom,turn:tb}]]});
 test("dimensioned *assumption* envelope has strictly downhill inverts, roof freeboard and air break",()=>{
  const m=tailraceModel(buildCells(rift),doorEdges(rift),rift.hydrology,rift.terrain);
- assert.equal(m.cells.length,11);
- assert.equal(m.terminus,"11,19");
+ assert.equal(m.cells.length,16);
+ assert.equal(m.terminus,"6,19");
  assert.equal(m.boundary_edge.side,"S");
- assert.equal(m.grade.total_fall_ft,.5);
- assert.equal(m.grade.horizontal_run_ft,25);
+ assert.equal(m.grade.total_fall_ft,.75);
+ assert.equal(m.grade.horizontal_run_ft,37.5);
  assert.equal(m.grade.min_freeboard_ft,.75);
  assert.equal(m.grade.available_air_gap_ft,7.75);
  for(const change of [
@@ -39,20 +39,20 @@ test("postern lower conduit is an actual paired continuation, not an invented ni
  const source=interfaceForTile(rift),sink=interfaceForTile(postern);
  assert.equal(source.role,"out");
  assert.equal(sink.role,"in");
- assert.equal(relayModel(postern).terminus,"11,8");
+ assert.equal(relayModel(postern).terminus,"9,8");
  const measured=verifySubfloorLayout(grid("riftwater_lock","postern_bastion"),data);
  assert.equal(measured.matched_seams.length,1);
  assert.equal(measured.matched_seams[0].seam_fall_ft.toFixed(2),"0.05");
- assert.equal(measured.matched_seams[0].offset,11);
+ assert.equal(measured.matched_seams[0].offset,6);
 });
 test("quarter-turn lower openings mate only at the rotated physical coordinate",()=>{
  const reverse=verifySubfloorLayout(grid("postern_bastion","riftwater_lock",2,2),data);
- assert.equal(reverse.matched_seams[0].offset,8);
+ assert.equal(reverse.matched_seams[0].offset,13);
  const horizontal={rows:[[{id:"riftwater_lock",turn:3},{id:"postern_bastion",turn:3}]]};
- assert.equal(verifySubfloorLayout(horizontal,data).matched_seams[0].offset,8);
+ assert.equal(verifySubfloorLayout(horizontal,data).matched_seams[0].offset,13);
  const direct=turnInterface(interfaceForTile(rift),1);
  assert.equal(direct.side,"W");
- assert.equal(direct.offset,11);
+ assert.equal(direct.offset,6);
 });
 test("independently reject missing, misaligned, reversed and rising lower seams",()=>{
  assert.throws(()=>verifySubfloorLayout(grid("riftwater_lock","bone_galleries"),data),/mismatch/);
@@ -72,6 +72,9 @@ test("matched architectural plate is editable and identifies the unfinished down
   "longitudinal-grade-profile","grade-seam","foundation-context-0","foundation-context-1"])
   assert.ok(a.includes('id="'+id+'"'),id);
  assert.match(a,/data-seam-fall-ft="0.05"/);
+ assert.match(a,/data-seam-offset="6"/);
+ assert.match(a,/id="foundation-adjacency-flags"/);
+ assert.match(a,/Direct room-footprint overlaps: 0/);
  assert.match(a,/Uncharted outfall/);
  assert.match(a,/NOT a walking route/);
  assert.match(a,/air gap 7.75 ft/);

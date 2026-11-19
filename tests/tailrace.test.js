@@ -14,8 +14,8 @@ const modify=fn=>{const t=copy(rift);fn(t.hydrology.tailrace);return t};
 test("three separately gated sumps drop into one directed lower collection race",()=>{
  const m=tailraceModel(owner,doors,rift.hydrology,rift.terrain);
  assert.equal(m.level,-1);
- assert.equal(m.cells.length,11);
- assert.equal(m.terminus,"11,19");
+ assert.equal(m.cells.length,16);
+ assert.equal(m.terminus,"6,19");
  assert.deepEqual([...m.pickups].sort(),["10,11","11,11","9,11"]);
  assert.deepEqual(m.gatePickups,{
   west_shutter:"9,11",center_shutter:"10,11",east_shutter:"11,11"
@@ -72,11 +72,12 @@ test("separate technical plate traces physical coordinates without implying surv
  assert.equal(svg,makeTailracePlate(rift));
  for(const tag of ["upper-hydraulic-plan","subfloor-collection-plan",
   "subfloor-directed-tailrace","lower-discharge-shafts",
-  "upper-floor-context","vault-foundation-conflict","plan-scale",
+  "upper-floor-context","vault-foundation-context","unverified-foundation-setbacks","plan-scale",
   'data-level="-1"','data-continuation="matched-underfloor-seam"'])
   assert.ok(svg.includes(tag),tag);
  assert.equal((svg.match(/data-drain-from=/g)||[]).length,3);
  assert.equal((svg.match(/data-gate=/g)||[]).length,3);
- assert.match(svg,/centerline, not tunnel width/); // dimensionally honest technical map legend
+ assert.match(svg,/centerline, not tunnel width/);
+ assert.match(svg,/0 direct room-footprint clashes/); // dimensionally honest technical map legend
  assert.equal((svg.match(/data-direction="toward-terminus"/g)||[]).length,1);
 });
