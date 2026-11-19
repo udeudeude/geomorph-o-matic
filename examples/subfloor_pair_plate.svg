@@ -465,6 +465,7 @@
 <rect x="171" y="209" width="19" height="19" fill="#f9f6ef"/>
 <rect x="190" y="209" width="19" height="19" fill="#f9f6ef"/>
 <rect x="209" y="209" width="19" height="19" fill="#f9f6ef"/>
+<rect x="171" y="19" width="19" height="19" fill="#f9f6ef"/>
 </g><g fill="none" stroke="#8c9189" stroke-width=".6" opacity=".35">
 <path d="M19,0v380 M0,19h380"/>
 <path d="M38,0v380 M0,38h380"/>

@@ -715,6 +715,11 @@
 <path d="M5 -1.2H19 M5 1.2H19" stroke="#c4bcab" stroke-width=".85"/>
 </g>
 </g>
+<g id="buried-inspection-hatches" fill="none" stroke="#594b3d" stroke-width="1.8">
+<g data-inspection-cover="13,12" data-bend="11,11"><title>Bolted dry gallery inspection cover over a non-walkable buried cleanout; dimensions provisional</title><rect x="318" y="294" width="12" height="12" fill="#d6ccb7" stroke-width="1.8"/><path d="M321,300h6 M324,297v6" stroke-width="1.5"/></g>
+<g data-inspection-cover="13,13" data-bend="11,14"><title>Bolted dry gallery inspection cover over a non-walkable buried cleanout; dimensions provisional</title><rect x="318" y="318" width="12" height="12" fill="#d6ccb7" stroke-width="1.8"/><path d="M321,324h6 M324,321v6" stroke-width="1.5"/></g>
+<g data-inspection-cover="6,14" data-bend="6,14"><title>Bolted dry gallery inspection cover over a non-walkable buried cleanout; dimensions provisional</title><rect x="150" y="342" width="12" height="12" fill="#d6ccb7" stroke-width="1.8"/><path d="M153,348h6 M156,345v6" stroke-width="1.5"/></g>
+</g>
 <g id="overhead-decks" fill="#d6b88e" fill-opacity=".52" stroke="none">
 <rect x="192" y="240" width="24" height="24"/>
 <rect x="216" y="240" width="24" height="24"/>
