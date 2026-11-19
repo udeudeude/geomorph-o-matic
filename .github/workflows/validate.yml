@@ -53,7 +53,7 @@ jobs:
             git push origin HEAD:${GITHUB_REF_NAME}
           fi
       - name: Verify tracked SVG masters and audit are reproducible
-        run: git diff --exit-code -- tiles/ examples/assembly_3x3.svg examples/riftwater_section.svg examples/riftwater_surge.svg examples/riftwater_profile.svg examples/riftwater_tailrace_plate.svg examples/riftwater_print_letter.svg reports/topology.json reports/print-scale.json
+        run: git diff --exit-code -- tiles/ examples/assembly_3x3.svg examples/riftwater_section.svg examples/riftwater_surge.svg examples/riftwater_profile.svg examples/riftwater_tailrace_plate.svg examples/subfloor_pair_plate.svg examples/riftwater_print_letter.svg reports/topology.json reports/print-scale.json
       - name: Upload vector studies and inspection report
         uses: actions/upload-artifact@v4
         with:
