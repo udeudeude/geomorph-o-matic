@@ -6,7 +6,7 @@ const {makeSvg}=require("../render");
 const {audit}=require("../audit");
 const {edgeMask,verifyLayout}=require("../assemble");
 const data=JSON.parse(fs.readFileSync(path.join(__dirname,"../blueprints.json"),"utf8"));
-const newcomers=data.tiles.filter(t=>t.geometry==="row-runs");
+const newcomers=data.tiles.filter(t=>["basalt_rift","sunken_orrery","riftwater_lock"].includes(t.id));
 test("row-run footprints are connected and reject malformed and duplicate runs",()=>{
  assert.deepEqual(shapeBounds({rows:[[4,4,5],[5,3,6],[6,4,5]]}),[3,4,6,6]);
  assert.throws(()=>shapeCells({rows:[[3,3,3],[7,7,7]]}),/Disconnected/);
