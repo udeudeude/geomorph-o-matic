@@ -104,3 +104,17 @@ node flood-stages.js examples/riftwater_surge.svg
 ```
 
 Both vector studies are published by the validation workflow. The [research and implementation limits](research/2026-11-19-sections-flood-stages.md) distinguish these deliberately authored scenarios from physical fluid simulation and identify print-scale work remaining.
+
+## Controlled sluices, multi-level profiles, and true-size print proofs
+
+The new [hydraulic-control.js](hydraulic-control.js) validates watertight sluices on real interior connections. A flood scenario may optionally specify `hydrology.gates`, `stage.gate_states` and `stage.surface_level` to test whether its authored inundation can travel across open gates and overtop floor heights. This is a scenario validator, **not** a pressure- or time-based fluid simulator.
+
+[measured-section.js](measured-section.js) exports an editable [longitudinal profile](examples/riftwater_profile.svg) that supports both negative elevations and stacked positive levels. Horizontal distance is based on 2.5 feet per half-cell; vertical distance is proportional to the explicitly **assumed** 10 feet per floor level. It does not invent ceiling or water depths.
+
+[print-review.js](print-review.js) generates a [US Letter vector proof](examples/riftwater_print_letter.svg) at 1/2 inch per standard five-foot square and the [print-scale inspection report](reports/print-scale.json) for all tile masters. Print the sheet at 100% actual size; not fit-to-page. Readability warnings are measurements, not proof of legibility. [Research and limitations](research/2026-11-19-controlled-hydraulics-print.md).
+
+```sh
+node measured-section.js examples/riftwater_profile.svg
+node print-review.js examples/riftwater_print_letter.svg
+node --test tests/*.test.js
+```

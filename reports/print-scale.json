@@ -1,0 +1,80 @@
+[
+  {
+    "tile": "salt_cloister",
+    "full_square_inches": 0.5,
+    "tile_width_mm": 127,
+    "millimetres_per_vector_unit": 0.265,
+    "font_samples": 0,
+    "type_below_2_2_mm": 0,
+    "stroke_samples": 197,
+    "strokes_below_0_15_mm": 10,
+    "minimum_type_mm": null,
+    "minimum_stroke_mm": 0.132,
+    "requires_visual_review": true
+  },
+  {
+    "tile": "postern_bastion",
+    "full_square_inches": 0.5,
+    "tile_width_mm": 127,
+    "millimetres_per_vector_unit": 0.265,
+    "font_samples": 0,
+    "type_below_2_2_mm": 0,
+    "stroke_samples": 186,
+    "strokes_below_0_15_mm": 10,
+    "minimum_type_mm": null,
+    "minimum_stroke_mm": 0.132,
+    "requires_visual_review": true
+  },
+  {
+    "tile": "bone_galleries",
+    "full_square_inches": 0.5,
+    "tile_width_mm": 127,
+    "millimetres_per_vector_unit": 0.265,
+    "font_samples": 0,
+    "type_below_2_2_mm": 0,
+    "stroke_samples": 173,
+    "strokes_below_0_15_mm": 10,
+    "minimum_type_mm": null,
+    "minimum_stroke_mm": 0.132,
+    "requires_visual_review": true
+  },
+  {
+    "tile": "basalt_rift",
+    "full_square_inches": 0.5,
+    "tile_width_mm": 127,
+    "millimetres_per_vector_unit": 0.265,
+    "font_samples": 0,
+    "type_below_2_2_mm": 0,
+    "stroke_samples": 125,
+    "strokes_below_0_15_mm": 10,
+    "minimum_type_mm": null,
+    "minimum_stroke_mm": 0.132,
+    "requires_visual_review": true
+  },
+  {
+    "tile": "sunken_orrery",
+    "full_square_inches": 0.5,
+    "tile_width_mm": 127,
+    "millimetres_per_vector_unit": 0.265,
+    "font_samples": 0,
+    "type_below_2_2_mm": 0,
+    "stroke_samples": 269,
+    "strokes_below_0_15_mm": 10,
+    "minimum_type_mm": null,
+    "minimum_stroke_mm": 0.132,
+    "requires_visual_review": true
+  },
+  {
+    "tile": "riftwater_lock",
+    "full_square_inches": 0.5,
+    "tile_width_mm": 127,
+    "millimetres_per_vector_unit": 0.265,
+    "font_samples": 3,
+    "type_below_2_2_mm": 0,
+    "stroke_samples": 127,
+    "strokes_below_0_15_mm": 10,
+    "minimum_type_mm": 2.381,
+    "minimum_stroke_mm": 0.132,
+    "requires_visual_review": true
+  }
+]
