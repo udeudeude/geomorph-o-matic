@@ -46,14 +46,50 @@
 <g id="level-ramps" fill="none" stroke="#87664e" stroke-width="2.2" stroke-linecap="round">
 <path d="M252,108L252,132"/>
 </g>
+<g id="engineered-canal-banks" fill="none" stroke-linejoin="miter">
+<path d="M240,288h24" stroke="#596461" stroke-width="2.2"/>
+<path d="M240,216h24" stroke="#596461" stroke-width="2.2"/>
+<path d="M288,240v24" stroke="#596461" stroke-width="2.2"/>
+<path d="M288,264v24" stroke="#596461" stroke-width="2.2"/>
+<path d="M264,288h24" stroke="#596461" stroke-width="2.2"/>
+<path d="M288,216v24" stroke="#596461" stroke-width="2.2"/>
+<path d="M264,216h24" stroke="#596461" stroke-width="2.2"/>
+<path d="M216,240v24" stroke="#596461" stroke-width="2.2"/>
+<path d="M216,264v24" stroke="#596461" stroke-width="2.2"/>
+<path d="M216,288h24" stroke="#596461" stroke-width="2.2"/>
+<path d="M216,216v24" stroke="#596461" stroke-width="2.2"/>
+<path d="M216,216h24" stroke="#596461" stroke-width="2.2"/>
+</g><g id="intake-and-outfall" font-family="sans-serif" font-size="9" font-weight="700" text-anchor="middle">
+<g data-hydraulic-terminal="intake"><title>Uncharted upstream intake adit</title><circle cx="252" cy="228" r="6.4" fill="#f3eadd" stroke="#344e52" stroke-width="1.1"/><text x="252" y="231.1" fill="#344e52">I</text></g>
+<g data-hydraulic-terminal="outfall"><title>Uncharted downstream tailrace outfall</title><circle cx="252" cy="276" r="6.4" fill="#f3eadd" stroke="#344e52" stroke-width="1.1"/><text x="252" y="279.1" fill="#344e52">T</text></g>
+</g>
+<g id="sluice-control-stations" fill="none" stroke="#3e4945" stroke-linecap="round">
+<g data-controls-gate="west_shutter" data-control-id="west_winch"><title>west winch operates west shutter</title><circle cx="252" cy="345.6" r="8" fill="#e5dbc7" stroke-width="1.6"/><circle cx="252" cy="345.6" r="2.1" fill="#586764"/>
+<path d="M254.40,345.60L259.00,345.60" stroke-width="1.3"/>
+<path d="M253.20,347.68L255.50,351.66" stroke-width="1.3"/>
+<path d="M250.80,347.68L248.50,351.66" stroke-width="1.3"/>
+<path d="M249.60,345.60L245.00,345.60" stroke-width="1.3"/>
+<path d="M250.80,343.52L248.50,339.54" stroke-width="1.3"/>
+<path d="M253.20,343.52L255.50,339.54" stroke-width="1.3"/>
+</g>
+<g data-controls-gate="center_shutter" data-control-id="center_winch"><title>center winch operates center shutter</title><circle cx="276" cy="345.6" r="8" fill="#e5dbc7" stroke-width="1.6"/><circle cx="276" cy="345.6" r="2.1" fill="#586764"/>
+<path d="M278.40,345.60L283.00,345.60" stroke-width="1.3"/>
+<path d="M277.20,347.68L279.50,351.66" stroke-width="1.3"/>
+<path d="M274.80,347.68L272.50,351.66" stroke-width="1.3"/>
+<path d="M273.60,345.60L269.00,345.60" stroke-width="1.3"/>
+<path d="M274.80,343.52L272.50,339.54" stroke-width="1.3"/>
+<path d="M277.20,343.52L279.50,339.54" stroke-width="1.3"/>
+</g>
+<g data-controls-gate="east_shutter" data-control-id="east_winch"><title>east winch operates east shutter</title><circle cx="300" cy="345.6" r="8" fill="#e5dbc7" stroke-width="1.6"/><circle cx="300" cy="345.6" r="2.1" fill="#586764"/>
+<path d="M302.40,345.60L307.00,345.60" stroke-width="1.3"/>
+<path d="M301.20,347.68L303.50,351.66" stroke-width="1.3"/>
+<path d="M298.80,347.68L296.50,351.66" stroke-width="1.3"/>
+<path d="M297.60,345.60L293.00,345.60" stroke-width="1.3"/>
+<path d="M298.80,343.52L296.50,339.54" stroke-width="1.3"/>
+<path d="M301.20,343.52L303.50,339.54" stroke-width="1.3"/>
+</g>
+</g>
 <g id="features">
-<circle cx="252" cy="348" r="11" fill="none" stroke="#303331" stroke-width="2.4"/>
-<path d="M252,348L262.00,348.00" stroke="#303331" stroke-width="1.3"/>
-<path d="M252,348L257.00,356.66" stroke="#303331" stroke-width="1.3"/>
-<path d="M252,348L247.00,356.66" stroke="#303331" stroke-width="1.3"/>
-<path d="M252,348L242.00,348.00" stroke="#303331" stroke-width="1.3"/>
-<path d="M252,348L247.00,339.34" stroke="#303331" stroke-width="1.3"/>
-<path d="M252,348L257.00,339.34" stroke="#303331" stroke-width="1.3"/>
 <circle cx="228" cy="84" r="7" fill="#e2ddcd" stroke="#41413c" stroke-width="2"/><circle cx="228" cy="84" r="3" fill="none" stroke="#777166"/>
 <circle cx="276" cy="84" r="7" fill="#e2ddcd" stroke="#41413c" stroke-width="2"/><circle cx="276" cy="84" r="3" fill="none" stroke="#777166"/>
 <path d="M51,256l5,-10 9,4 3,8 -9,3z" fill="#bbb8ad" stroke="#6d6a61"/>
