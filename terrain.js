@@ -1,6 +1,7 @@
 "use strict";
 // Canonical environmental traversal. Geometry, not furnishings, determines access.
 const {accessGraph,distances}=require("./route-analysis");
+const {naturalWaterSvg}=require("./cave-illustration");
 const POS=(p)=>p.join(",");
 const EDGE=(a,b)=>[a,b].sort().join("|");
 const PORTALS=["4,0","15,0","4,19","15,19","0,4","0,15","19,4","19,15"];
@@ -8,7 +9,7 @@ const PORTALS=["4,0","15,0","4,19","15,19","0,4","0,15","19,4","19,15"];
 function terrainModel(owner,spec={}){
  if(!(owner instanceof Map))throw Error("Terrain requires occupied floor Map");
  if(!spec||Array.isArray(spec)||typeof spec!=="object")throw Error("Invalid terrain definition");
- const water=new Set(),bridges=new Set(),heights=new Map(),ramps=new Set(),barriers=new Set();
+ const water=new Set(),bridges=new Set(),heights=new Map(),ramps=new Set(),barriers=new Set(),chokes=new Set();
  const coordinate=(p,description)=>{
   if(!Array.isArray(p)||p.length!==2||p.some(n=>!Number.isInteger(n))||
      p.some(n=>n<0||n>=20)||!owner.has(POS(p)))throw Error("Invalid "+description+" coordinate");
@@ -47,8 +48,21 @@ function terrainModel(owner,spec={}){
   if(!barriers.has(k)||ruins.has(k))throw Error("Fallen masonry must be a unique blocked wall edge");
   ruins.add(k);
  }
+ // Cave breakdown chokes are real, dry, completely blocked edges, not
+ // decorative floor rocks. They must not masquerade as worked masonry.
+ if(!Array.isArray(spec.chokes||[]))throw Error("Cave chokes must be an array");
+ for(const e of spec.chokes||[]){
+  if(!Array.isArray(e)||e.length!==2)throw Error("Invalid cave choke");
+  const a=coordinate(e[0],"choke"),b=coordinate(e[1],"choke"),k=EDGE(a,b);
+  if(Math.abs(e[0][0]-e[1][0])+Math.abs(e[0][1]-e[1][1])!==1||
+     PORTALS.includes(a)||PORTALS.includes(b)||chokes.has(k)||
+     barriers.has(k)||ramps.has(k)||water.has(a)||water.has(b)||
+     (heights.get(a)||0)!==(heights.get(b)||0))
+   throw Error("Cave choke must block a unique dry interior edge");
+  chokes.add(k);
+ }
  for(const p of PORTALS)if(owner.has(p)&&(water.has(p)||heights.has(p)))throw Error("Terrain cannot change standard edge portal");
- return {water,bridges,heights,ramps,barriers,ruins};
+ return {water,bridges,heights,ramps,barriers,ruins,chokes};
 }
 function terrainGraph(owner,doors,spec={},access="ordinary",travel="dry"){
  if(!["dry","wading"].includes(travel))throw Error("Unknown terrain travel mode");
@@ -56,7 +70,7 @@ function terrainGraph(owner,doors,spec={},access="ordinary",travel="dry"){
  for(const [p,adj] of graph){
   if(travel==="dry"&&model.water.has(p)&&!model.bridges.has(p)){graph.set(p,[]);continue}
   graph.set(p,adj.filter(q=>{
-   if(model.barriers.has(EDGE(p,q)))return false;
+   if(model.barriers.has(EDGE(p,q))||model.chokes.has(EDGE(p,q)))return false;
    if(travel==="dry"&&model.water.has(q)&&!model.bridges.has(q))return false;
    return (model.heights.get(p)||0)===(model.heights.get(q)||0)||model.ramps.has(EDGE(p,q));
   }));
@@ -71,13 +85,14 @@ function terrainAudit(owner,doors,spec={},portals=PORTALS){
   results[travel]={accessible_floor_cells:seen.size,reachable_portals:portals.filter(p=>seen.has(p)).length};
  }
  return {water_cells:model.water.size,bridged_water_cells:model.bridges.size,
-  elevated_cells:model.heights.size,ramp_edges:model.ramps.size,barrier_edges:model.barriers.size,ruined_wall_edges:model.ruins.size,travel:results};
+  elevated_cells:model.heights.size,ramp_edges:model.ramps.size,barrier_edges:model.barriers.size,ruined_wall_edges:model.ruins.size,cave_choke_edges:model.chokes.size,travel:results};
 }
 // Each layer is independently editable in exported SVG.
-function terrainSvg(owner,spec={},cellSize=24){
+function terrainSvg(owner,spec={},cellSize=24,style="masonry"){
  const model=terrainModel(owner,spec),out=[];
  const xy=(s)=>s.split(",").map(Number);
- if(model.water.size){
+ if(model.water.size&&style==="cavern")out.push(...naturalWaterSvg(model.water,cellSize));
+ if(model.water.size&&style!=="cavern"){
   out.push('<g id="water-terrain" fill="#86b8c3" fill-opacity=".64" stroke="none">');
   for(const p of [...model.water].sort()){const [x,y]=xy(p);out.push('<rect x="'+x*cellSize+'" y="'+y*cellSize+'" width="'+cellSize+'" height="'+cellSize+'"/>')}
   out.push("</g>");
@@ -160,6 +175,26 @@ function terrainSvg(owner,spec={},cellSize=24){
   }
   if(intact.length)out.push('<g id="masonry-partitions" fill="none" stroke-linecap="square">',...intact,'</g>');
   if(fallen.length)out.push('<g id="collapsed-masonry" stroke-linejoin="round">',...fallen,'</g>');
+ }
+ if(model.chokes.size){
+  out.push('<g id="cave-breakdown-chokes" stroke-linejoin="round" stroke-linecap="round">');
+  for(const e of [...model.chokes].sort()){
+   const [a,b]=e.split("|").map(xy),vertical=a[0]!==b[0];
+   const x=(vertical?Math.max(a[0],b[0]):a[0])*cellSize;
+   const y=(vertical?a[1]:Math.max(a[1],b[1]))*cellSize;
+   const n=v=>Number(v.toFixed(2)),pt=(t,offset)=>vertical?
+      [n(x+offset*cellSize),n(y+t*cellSize)]:[n(x+t*cellSize),n(y+offset*cellSize)];
+   // A broad rubble fan actually blocks travel across the recorded edge.
+   const points=[[0,0],[.18,-.14],[.35,.12],[.54,-.16],[.73,.12],[.88,-.09],[1,0]].map(([t,o])=>pt(t,o));
+   const d="M"+points.map(p=>p.join(",")).join("L");
+   out.push('<path data-blocks-edge="'+e+'" d="'+d+'" fill="none" stroke="#e8e1d4" stroke-width="8"/>');
+   out.push('<path d="'+d+'" fill="none" stroke="#424541" stroke-width="3"/>');
+   for(const [t,o] of [[.22,.24],[.48,-.3],[.76,.27]]){
+    const [cx,cy]=pt(t,o),sz=cellSize*.1;
+    out.push('<path d="M'+n(cx-sz)+','+n(cy+sz/2)+'l'+n(sz*.7)+','+n(-sz*1.5)+' '+n(sz*1.2)+','+n(sz)+'z" fill="#b8b5ab" stroke="#77766c" stroke-width=".85"/>');
+   }
+  }
+  out.push('</g>');
  }
  if(model.ramps.size){
   out.push('<g id="level-ramps" fill="none" stroke="#87664e" stroke-width="2.2" stroke-linecap="round">');
