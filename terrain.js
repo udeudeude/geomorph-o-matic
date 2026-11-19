@@ -64,9 +64,28 @@ function terrainSvg(owner,spec={},cellSize=24){
  }
  if(model.bridges.size){
   out.push('<g id="dry-bridges" fill="#d5c6a4" stroke="#635f54" stroke-width=".9">');
-  for(const p of [...model.bridges].sort()){const [x,y]=xy(p),X=x*cellSize,Y=y*cellSize;
-   out.push('<rect x="'+(X+3)+'" y="'+(Y+2)+'" width="'+(cellSize-6)+'" height="'+(cellSize-4)+'"/>');
-   for(let i=6;i<cellSize-2;i+=6)out.push('<path d="M'+(X+3)+','+(Y+i)+'h'+(cellSize-6)+'"/>');
+  const visited=new Set();
+  for(const first of [...model.bridges].sort()){
+   if(visited.has(first))continue;
+   const component=[],queue=[first];visited.add(first);
+   while(queue.length){
+    const p=queue.pop();component.push(p);const [x,y]=xy(p);
+    for(const [dx,dy] of [[1,0],[-1,0],[0,1],[0,-1]]){
+     const q=POS([x+dx,y+dy]);if(model.bridges.has(q)&&!visited.has(q)){visited.add(q);queue.push(q)}
+    }
+   }
+   const coords=component.map(xy),xs=coords.map(p=>p[0]),ys=coords.map(p=>p[1]);
+   const x1=Math.min(...xs),x2=Math.max(...xs),y1=Math.min(...ys),y2=Math.max(...ys);
+   if(component.length!==(x2-x1+1)*(y2-y1+1)||x1!==x2&&y1!==y2)
+    throw Error("Bridges must form straight contiguous spans");
+   const vertical=y2>y1,X=x1*cellSize,Y=y1*cellSize;
+   const w=(x2-x1+1)*cellSize,h=(y2-y1+1)*cellSize,margin=cellSize*.18;
+   const rx=X+(vertical?margin:0),ry=Y+(vertical?0:margin);
+   const rw=w-(vertical?2*margin:0),rh=h-(vertical?0:2*margin);
+   out.push('<rect x="'+rx+'" y="'+ry+'" width="'+rw+'" height="'+rh+'"/>');
+   for(let offset=6;offset<(vertical?rh:rw);offset+=6)
+    out.push(vertical?'<path d="M'+rx+','+(ry+offset)+'h'+rw+'"/>':
+      '<path d="M'+(rx+offset)+','+ry+'v'+rh+'"/>');
   }
   out.push("</g>");
  }
@@ -84,11 +103,12 @@ function terrainSvg(owner,spec={},cellSize=24){
    }
   }
   out.push("</g>");
-  out.push('<g id="elevation-labels" fill="#705b47" font-family="sans-serif" font-size="12" text-anchor="middle">');
+  out.push('<g id="elevation-labels" fill="#705b47" font-family="sans-serif" font-size="10" font-weight="600" text-anchor="middle">');
   for(const [level,cells] of spec.elevations||[]){
-   const cx=cells.reduce((n,p)=>n+p[0]+.5,0)/cells.length*cellSize;
-   const cy=cells.reduce((n,p)=>n+p[1]+.5,0)/cells.length*cellSize;
-   out.push('<text x="'+cx.toFixed(1)+'" y="'+cy.toFixed(1)+'">'+(level>0?"+":"")+level+' level</text>');
+   const top=Math.min(...cells.map(p=>p[1])),topRow=cells.filter(p=>p[1]===top);
+   const cx=topRow.reduce((n,p)=>n+p[0]+.5,0)/topRow.length*cellSize;
+   const cy=(top+.69)*cellSize;
+   out.push('<text x="'+cx.toFixed(1)+'" y="'+cy.toFixed(1)+'">'+(level>0?"+":"")+level+'</text>');
   }
   out.push("</g>");
  }
