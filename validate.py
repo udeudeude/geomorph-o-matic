@@ -194,17 +194,31 @@ def validate_waterworks(tile, cells):
         gates[gate['id']] = gate
         edges.add(edge)
 
+    # Channels do not transmit water through unrelated room walls. A cut-through
+    # must be an explicit culvert edge, never implicitly a pedestrian doorway.
+    walls = {pair(p, (p[0]+dx, p[1]+dy))
+             for p in channels for dx, dy in NEIGHBORS
+             if (p[0]+dx, p[1]+dy) in channels
+             and cells[p] != cells[(p[0]+dx, p[1]+dy)]}
+    culverts = set()
+    for item in spec.get('culverts', []):
+        assert isinstance(item, list) and len(item) == 2, (tile['id'], 'invalid culvert')
+        a, b = tuple(item[0]), tuple(item[1])
+        edge = pair(a, b)
+        assert edge in walls and edge not in culverts, (tile['id'], 'invalid culvert edge')
+        culverts.add(edge)
     # With every shutter opened, the intake must lead to the receiving sump.
-    assert outlet in connected(channels, set(), inlet), (tile['id'], 'disconnected race')
-    assigned, locations = set(), set()
+    assert outlet in connected(channels, walls-culverts, inlet), (tile['id'], 'disconnected race')
+    assigned, locations, control_ids = set(), set(), set()
     for station in spec.get('controls', []):
         at = tuple(station['at'])
         assert (station.get('kind') == 'handwheel'
                 and station.get('gate') in gates and station['gate'] not in assigned
-                and at in cells and cells[at] == 'hall'
+                and station['id'] not in control_ids and at in cells and cells[at] == 'hall'
                 and at not in water and at not in locations and at not in PORTALS), (tile['id'], 'invalid gate station')
         assigned.add(station['gate'])
         locations.add(at)
+        control_ids.add(station['id'])
     if 'controls' in spec:
         assert assigned == set(gates), (tile['id'], 'uncontrolled shutter')
     return {'engineered_channel_cells': len(channels), 'sluice_controls': len(locations)}
