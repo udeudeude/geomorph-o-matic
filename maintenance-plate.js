@@ -74,7 +74,29 @@ function makeMaintenancePlate(data){
   out.push('<rect x="'+(X(gate[0])-7)+'" y="'+(Y(gate[1])-7)+'" width="14" height="14" fill="#e5e4dc" stroke="'+colors[i]+'" stroke-width="2.3"/>');
   out.push('<title>'+esc(m.control)+' through sleeved rock penetrations to '+esc(m.gate)+' (vertical rack assumed)</title></g>');
  });
- out.push('</g><g id="inspection-floor-hatches" fill="none" stroke="#775a3d" stroke-width="2">');
+ // Every planar direction change now has a housed bevel pair and an
+ // explicit service panel facing an already-carved dry corridor.
+ out.push('</g><g id="bevel-gear-housings" font-family="sans-serif">');
+ drives.forEach((drive,i)=>{
+  for(const box of drive.gearboxes){
+   const px=X(box.at[0]),py=Y(box.at[1]);
+   const dx=box.service_from[0]-box.at[0],dy=box.service_from[1]-box.at[1];
+   const wx=px+dx*S/2,wy=py+dy*S/2;
+   out.push('<g data-bevel-box="'+esc(drive.id)+':'+K(box.at)+'" data-service-from="'+K(box.service_from)+'" data-shutdown-required="'+box.shutdown_required+'">');
+   out.push('<title>Right-angle bevel gear '+esc(drive.id)+' at '+K(box.at)+
+    '; assumed '+box.housing_width_ft+' ft recess; dry service from '+K(box.service_from)+
+    (box.shutdown_required?'; isolate and lock out handwheel first':'')+'; actual clearance and structure unresolved</title>');
+   out.push('<rect x="'+(px-12)+'" y="'+(py-12)+'" width="24" height="24" rx="1" fill="#f2e3c9" stroke="#a15c30" stroke-width="2.4"/>');
+   out.push('<circle cx="'+px+'" cy="'+py+'" r="6.5" fill="none" stroke="'+colors[i]+'" stroke-width="1.5"/>');
+   out.push('<path d="M'+(px-5)+','+(py-5)+'l10,10 M'+(px+5)+','+(py-5)+'l-10,10" stroke="'+colors[i]+'" stroke-width="1.4"/>');
+   out.push('<path d="M'+(px+dx*12)+','+(py+dy*12)+'L'+wx+','+wy+'" fill="none" stroke="#ad673c" stroke-width="2"/>');
+   out.push('<path data-service-panel="'+K(box.at)+'" d="M'+(wx+(dy?5:0))+','+(wy+(dx?5:0))+
+    'L'+(wx-(dy?5:0))+','+(wy-(dx?5:0))+'" fill="none" stroke="#8e472d" stroke-width="3"/>');
+   out.push('</g>');
+  }
+ });
+ out.push('</g>');
+ out.push('<g id="inspection-floor-hatches" fill="none" stroke="#775a3d" stroke-width="2">');
  sourceAccess.forEach(a=>{
   const [x,y]=a.surface;
   out.push('<rect data-cover="'+K(a.surface)+'" x="'+(X(x)-8)+'" y="'+(Y(y)-8)+'" width="16" height="16" fill="#f3dfbf"/>');
@@ -87,9 +109,9 @@ function makeMaintenancePlate(data){
  });
  out.push('</g>');
  out.push('<g id="plan-key" font-size="12" font-family="sans-serif" fill="#485954">');
- out.push('<text x="74" y="600">2.5 ft per grid cell · colored paths are ABOVE walking floor.</text>');
- out.push('<text x="74" y="618">Orange circles: sleeved bores through UNCARVED stone.</text>');
- out.push('<text x="74" y="636">Diamonds: assumed bearings. Crossed squares: cleanout covers.</text>');
+ out.push('<text x="74" y="600">2.5 ft per cell. Drives above walking floor; not traversable corridors.</text>');
+ out.push('<text x="74" y="618">Dashed rings: rock bores; amber squares: 90-degree bevel housings.</text>');
+ out.push('<text x="74" y="636">Panel ticks: wall service. Diamonds: bearings; crosses: cleanouts.</text>');
  out.push('</g>');
  // Sections intentionally schematic: the length and height are NOT to scale.
  out.push('<g id="drive-elevations" font-family="sans-serif">');
@@ -105,7 +127,7 @@ function makeMaintenancePlate(data){
   out.push('<path d="M1010 '+(y+20)+'v55" stroke="'+colors[i]+'" stroke-width="5"/>');
   for(let n=0;n<4;n++)out.push('<path d="M1010 '+(y+36+n*10)+'l7,5" stroke="'+colors[i]+'" stroke-width="1.5"/>');
   out.push('<path d="M780 '+(y+14)+'v12 M785 '+(y+14)+'v12" stroke="#343e3b" stroke-width="2"/>');
-  out.push('<text x="835" y="'+(y+10)+'" font-size="12" fill="#424e4b">'+m.bores.length+' rock bores; '+m.bearings.length+' bearings</text>');
+  out.push('<text x="835" y="'+(y+10)+'" font-size="12" fill="#424e4b">'+m.bores.length+' bores / '+m.gearboxes.length+' bevel boxes / '+m.bearings.length+' bearings</text>');
   out.push('<text x="842" y="'+(y+63)+'" font-size="12" fill="#424e4b">shaft axis +'+m.axis_ft+' ft (assumed)</text>');
   out.push('<text x="1040" y="'+(y+51)+'" font-size="11" fill="#424e4b">vertical rack</text>');
   out.push('</g>');
@@ -124,7 +146,7 @@ function makeMaintenancePlate(data){
  });
  out.push('</g>');
  out.push('<path d="M70 874H1140" stroke="#87918a" stroke-width="1"/>');
- out.push('<text x="72" y="896" font-family="sans-serif" font-size="11" fill="#5f6059">DESIGN LIMITS  |  Not measured: shaft torque, gearing, masonry bore sleeves, ceiling support, manhole depth, hydraulic capacity, outfall or backwater.</text>');
+ out.push('<text x="72" y="896" font-family="sans-serif" font-size="11" fill="#5f6059">DESIGN LIMITS  |  Not measured: shaft torque, bevel ratios, gearbox recesses, masonry bore sleeves, ceiling support, manhole depth, hydraulic capacity, outfall or backwater.</text>');
  out.push('<text x="72" y="914" font-family="sans-serif" font-size="11" fill="#5f6059">A sealed 1.5 ft nominal cleanout is not a traversable access shaft; the Postern terminal is still an unmapped outfall.</text>');
  out.push('</svg>');
  return out.join("\n")+"\n";

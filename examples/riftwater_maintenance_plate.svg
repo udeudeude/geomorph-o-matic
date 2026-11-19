@@ -237,7 +237,49 @@
 <path d="M325,433h14 M332,426v14" stroke="#775a45" stroke-width="1.4"/>
 <rect x="285" y="306" width="14" height="14" fill="#e5e4dc" stroke="#775a45" stroke-width="2.3"/>
 <title>east_winch through sleeved rock penetrations to east_shutter (vertical rack assumed)</title></g>
-</g><g id="inspection-floor-hatches" fill="none" stroke="#775a3d" stroke-width="2">
+</g><g id="bevel-gear-housings" font-family="sans-serif">
+<g data-bevel-box="west_drive:9,14" data-service-from="10,14" data-shutdown-required="true">
+<title>Right-angle bevel gear west_drive at 9,14; assumed 1.5 ft recess; dry service from 10,14; isolate and lock out handwheel first; actual clearance and structure unresolved</title>
+<rect x="200" y="421" width="24" height="24" rx="1" fill="#f2e3c9" stroke="#a15c30" stroke-width="2.4"/>
+<circle cx="212" cy="433" r="6.5" fill="none" stroke="#285d69" stroke-width="1.5"/>
+<path d="M207,428l10,10 M217,428l-10,10" stroke="#285d69" stroke-width="1.4"/>
+<path d="M224,433L232,433" fill="none" stroke="#ad673c" stroke-width="2"/>
+<path data-service-panel="9,14" d="M232,438L232,428" fill="none" stroke="#8e472d" stroke-width="3"/>
+</g>
+<g data-bevel-box="center_drive:11,13" data-service-from="11,14" data-shutdown-required="true">
+<title>Right-angle bevel gear center_drive at 11,13; assumed 1.5 ft recess; dry service from 11,14; isolate and lock out handwheel first; actual clearance and structure unresolved</title>
+<rect x="280" y="381" width="24" height="24" rx="1" fill="#f2e3c9" stroke="#a15c30" stroke-width="2.4"/>
+<circle cx="292" cy="393" r="6.5" fill="none" stroke="#556576" stroke-width="1.5"/>
+<path d="M287,388l10,10 M297,388l-10,10" stroke="#556576" stroke-width="1.4"/>
+<path d="M292,405L292,413" fill="none" stroke="#ad673c" stroke-width="2"/>
+<path data-service-panel="11,13" d="M297,413L287,413" fill="none" stroke="#8e472d" stroke-width="3"/>
+</g>
+<g data-bevel-box="center_drive:10,13" data-service-from="10,12" data-shutdown-required="false">
+<title>Right-angle bevel gear center_drive at 10,13; assumed 1.5 ft recess; dry service from 10,12; actual clearance and structure unresolved</title>
+<rect x="240" y="381" width="24" height="24" rx="1" fill="#f2e3c9" stroke="#a15c30" stroke-width="2.4"/>
+<circle cx="252" cy="393" r="6.5" fill="none" stroke="#556576" stroke-width="1.5"/>
+<path d="M247,388l10,10 M257,388l-10,10" stroke="#556576" stroke-width="1.4"/>
+<path d="M252,381L252,373" fill="none" stroke="#ad673c" stroke-width="2"/>
+<path data-service-panel="10,13" d="M257,373L247,373" fill="none" stroke="#8e472d" stroke-width="3"/>
+</g>
+<g data-bevel-box="east_drive:12,12" data-service-from="13,12" data-shutdown-required="false">
+<title>Right-angle bevel gear east_drive at 12,12; assumed 1.5 ft recess; dry service from 13,12; actual clearance and structure unresolved</title>
+<rect x="320" y="341" width="24" height="24" rx="1" fill="#f2e3c9" stroke="#a15c30" stroke-width="2.4"/>
+<circle cx="332" cy="353" r="6.5" fill="none" stroke="#775a45" stroke-width="1.5"/>
+<path d="M327,348l10,10 M337,348l-10,10" stroke="#775a45" stroke-width="1.4"/>
+<path d="M344,353L352,353" fill="none" stroke="#ad673c" stroke-width="2"/>
+<path data-service-panel="12,12" d="M352,358L352,348" fill="none" stroke="#8e472d" stroke-width="3"/>
+</g>
+<g data-bevel-box="east_drive:11,12" data-service-from="10,12" data-shutdown-required="false">
+<title>Right-angle bevel gear east_drive at 11,12; assumed 1.5 ft recess; dry service from 10,12; actual clearance and structure unresolved</title>
+<rect x="280" y="341" width="24" height="24" rx="1" fill="#f2e3c9" stroke="#a15c30" stroke-width="2.4"/>
+<circle cx="292" cy="353" r="6.5" fill="none" stroke="#775a45" stroke-width="1.5"/>
+<path d="M287,348l10,10 M297,348l-10,10" stroke="#775a45" stroke-width="1.4"/>
+<path d="M280,353L272,353" fill="none" stroke="#ad673c" stroke-width="2"/>
+<path data-service-panel="11,12" d="M272,358L272,348" fill="none" stroke="#8e472d" stroke-width="3"/>
+</g>
+</g>
+<g id="inspection-floor-hatches" fill="none" stroke="#775a3d" stroke-width="2">
 <rect data-cover="13,12" x="364" y="345" width="16" height="16" fill="#f3dfbf"/>
 <path d="M367,353h10 M372,348v10"/>
 <rect data-cover="13,13" x="364" y="385" width="16" height="16" fill="#f3dfbf"/>
@@ -250,9 +292,9 @@
 <polyline data-from-bend="11,14" points="292,433 332,433 372,433 372,393"/>
 </g>
 <g id="plan-key" font-size="12" font-family="sans-serif" fill="#485954">
-<text x="74" y="600">2.5 ft per grid cell · colored paths are ABOVE walking floor.</text>
-<text x="74" y="618">Orange circles: sleeved bores through UNCARVED stone.</text>
-<text x="74" y="636">Diamonds: assumed bearings. Crossed squares: cleanout covers.</text>
+<text x="74" y="600">2.5 ft per cell. Drives above walking floor; not traversable corridors.</text>
+<text x="74" y="618">Dashed rings: rock bores; amber squares: 90-degree bevel housings.</text>
+<text x="74" y="636">Panel ticks: wall service. Diamonds: bearings; crosses: cleanouts.</text>
 </g>
 <g id="drive-elevations" font-family="sans-serif">
 <g data-section-drive="west_drive">
@@ -268,7 +310,7 @@
 <path d="M1010 246l7,5" stroke="#285d69" stroke-width="1.5"/>
 <path d="M1010 256l7,5" stroke="#285d69" stroke-width="1.5"/>
 <path d="M780 204v12 M785 204v12" stroke="#343e3b" stroke-width="2"/>
-<text x="835" y="200" font-size="12" fill="#424e4b">2 rock bores; 2 bearings</text>
+<text x="835" y="200" font-size="12" fill="#424e4b">2 bores / 1 bevel boxes / 2 bearings</text>
 <text x="842" y="253" font-size="12" fill="#424e4b">shaft axis +8 ft (assumed)</text>
 <text x="1040" y="241" font-size="11" fill="#424e4b">vertical rack</text>
 </g>
@@ -285,7 +327,7 @@
 <path d="M1010 381l7,5" stroke="#556576" stroke-width="1.5"/>
 <path d="M1010 391l7,5" stroke="#556576" stroke-width="1.5"/>
 <path d="M780 339v12 M785 339v12" stroke="#343e3b" stroke-width="2"/>
-<text x="835" y="335" font-size="12" fill="#424e4b">1 rock bores; 2 bearings</text>
+<text x="835" y="335" font-size="12" fill="#424e4b">1 bores / 2 bevel boxes / 2 bearings</text>
 <text x="842" y="388" font-size="12" fill="#424e4b">shaft axis +8 ft (assumed)</text>
 <text x="1040" y="376" font-size="11" fill="#424e4b">vertical rack</text>
 </g>
@@ -302,7 +344,7 @@
 <path d="M1010 516l7,5" stroke="#775a45" stroke-width="1.5"/>
 <path d="M1010 526l7,5" stroke="#775a45" stroke-width="1.5"/>
 <path d="M780 474v12 M785 474v12" stroke="#343e3b" stroke-width="2"/>
-<text x="835" y="470" font-size="12" fill="#424e4b">3 rock bores; 2 bearings</text>
+<text x="835" y="470" font-size="12" fill="#424e4b">3 bores / 2 bevel boxes / 2 bearings</text>
 <text x="842" y="523" font-size="12" fill="#424e4b">shaft axis +8 ft (assumed)</text>
 <text x="1040" y="511" font-size="11" fill="#424e4b">vertical rack</text>
 </g>
@@ -322,6 +364,6 @@
 <text x="585" y="843" font-size="12" fill="#293c39">POSTERN bend 9,1 → dry cover 9,1 · 0.0 ft lateral branch</text>
 </g>
 <path d="M70 874H1140" stroke="#87918a" stroke-width="1"/>
-<text x="72" y="896" font-family="sans-serif" font-size="11" fill="#5f6059">DESIGN LIMITS  |  Not measured: shaft torque, gearing, masonry bore sleeves, ceiling support, manhole depth, hydraulic capacity, outfall or backwater.</text>
+<text x="72" y="896" font-family="sans-serif" font-size="11" fill="#5f6059">DESIGN LIMITS  |  Not measured: shaft torque, bevel ratios, gearbox recesses, masonry bore sleeves, ceiling support, manhole depth, hydraulic capacity, outfall or backwater.</text>
 <text x="72" y="914" font-family="sans-serif" font-size="11" fill="#5f6059">A sealed 1.5 ft nominal cleanout is not a traversable access shaft; the Postern terminal is still an unmapped outfall.</text>
 </svg>

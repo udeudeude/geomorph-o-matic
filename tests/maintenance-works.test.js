@@ -19,6 +19,8 @@ test("three distinct overhead line shafts link their own dry handwheels to sluic
  assert.equal(new Set(drives.flatMap(d=>d.path.map(p=>p.join(",")))).size,
   drives.reduce((n,d)=>n+d.path.length,0),"no intersecting transmission centerlines");
  assert.deepEqual(drives.map(d=>d.axis_ft),[8,8,8]);
+ assert.deepEqual(drives.map(d=>d.gearboxes.length),[1,2,2]);
+ assert.equal(drives.flatMap(d=>d.gearboxes).length,5);
 });
 test("independent gate drives fail on swaps, shared cells, disconnected segments and missing rock sleeves",()=>{
  for(const edit of [
@@ -28,7 +30,12 @@ test("independent gate drives fail on swaps, shared cells, disconnected segments
   t=>{t.hydrology.transmissions[2].bored_at.pop()},
   t=>{t.hydrology.transmissions[0].bearings=[[9,13],[9,13]]},
   t=>{t.hydrology.transmissions[0].shaft_axis_ft=3},
-  t=>{t.hydrology.transmissions.pop()}
+  t=>{t.hydrology.transmissions.pop()},
+  t=>{t.hydrology.transmissions[0].gearboxes=[]},
+  t=>{t.hydrology.transmissions[1].gearboxes[0].at=[10,13]},
+  t=>{t.hydrology.transmissions[2].gearboxes[0].service_from=[12,11]},
+  t=>{t.hydrology.transmissions[0].gearboxes[0].shutdown_required=false},
+  t=>{t.hydrology.transmissions[1].gearboxes[1].housing_width_ft=3}
  ]){
   const t=copy(src);edit(t);
   assert.throws(()=>transmissionModel(t),undefined,"bad drive must not validate");
@@ -77,6 +84,10 @@ test("deterministic editable technical plate identifies bores, vertical racks, i
    assert.ok(a.includes(k),k);
  assert.equal((a.match(/data-section-drive=/g)||[]).length,3);
  assert.equal((a.match(/data-rock-bore=/g)||[]).length,6);
+ assert.match(a,/id="bevel-gear-housings"/);
+ assert.equal((a.match(/data-bevel-box=/g)||[]).length,5);
+ assert.equal((a.match(/data-service-panel=/g)||[]).length,5);
+ assert.equal((a.match(/data-shutdown-required="true"/g)||[]).length,2);
  assert.equal((a.match(/lateral branch/g)||[]).length,5);
  assert.match(a,/unmapped outfall/i);
  assert.match(a,/not a construction drawing/i);

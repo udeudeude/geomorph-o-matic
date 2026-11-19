@@ -31,6 +31,7 @@ def check_maintenance(tile, cells):
         assert len(paths)==len(gates)==len(controls), 'one shaft per independently operated shutter'
     used=set()
     drive_gates=set()
+    gearboxes_count=0
     for m in paths:
         assert m.get('kind')=='ceiling_shaft_rack' and m['control'] in controls and m['gate'] in gates, 'mechanical drive kind/identifiers'
         assert controls[m['control']]['gate']==m['gate'] and m['gate'] not in drive_gates, 'misassigned gate shaft'
@@ -43,10 +44,30 @@ def check_maintenance(tile, cells):
         assert len(borings)==len(m['bored_at']) and borings=={q for q in p if q not in cells}, 'undocumented rock piercing'
         bearings={coords(q) for q in m['bearings']}
         assert len(bearings)==len(m['bearings']) and len(bearings)>=2 and bearings<=set(p[1:-1]), 'unanchored drive'
+        bends=turns(p)
+        boxes=m.get('gearboxes')
+        assert isinstance(boxes,list) and len(boxes)==len(bends), 'geared drive must house every right-angle turn'
+        boxed=set()
+        controls_at={tuple(c['at']):c['id'] for c in controls.values()}
+        wet={tuple(p) for p in tile.get('terrain',{}).get('water',[])}
+        for box in boxes:
+            assert box.get('kind')=='recessed_bevel_gearbox' and box.get('access')=='sealed_overhead_service_panel', 'unknown gearbox assembly'
+            width=box.get('housing_width_ft')
+            assert type(width) in (int,float) and 0.75 <= width <= 2, 'unbounded gearbox width'
+            assert type(box.get('shutdown_required')) is bool, 'missing service lockout state'
+            station=coords(box['at'])
+            landing=coords(box['service_from'])
+            assert station in bends and station not in boxed, 'misplaced or duplicated bevel gearbox'
+            assert abs(station[0]-landing[0])+abs(station[1]-landing[1])==1, 'service panel cannot reach gearbox'
+            assert cells.get(station) in (None,'hall') and cells.get(landing)=='hall' and landing not in wet, 'service panel has no dry hallway face'
+            occupied=controls_at.get(landing)
+            assert (occupied==m['control'] and box['shutdown_required']) if occupied else not box['shutdown_required'], 'gearbox servicing conflicts with control'
+            boxed.add(station)
+            gearboxes_count+=1
         drive_gates.add(m['gate'])
     lower=hyd.get('tailrace') or hyd.get('subfloor_relay')
     if not lower:
-        return {'maintenance_drives':len(paths),'inspection_covers':0,'service_spurs_ft':0}
+        return {'maintenance_drives':len(paths),'gearboxes':gearboxes_count,'inspection_covers':0,'service_spurs_ft':0}
     main=[tuple(p) for p in lower['cells']]
     bends=turns(main)
     inspections=lower.get('inspections')
@@ -68,4 +89,4 @@ def check_maintenance(tile, cells):
         footage+=(len(spur)-1)*2.5
         visited_bends.add(bend)
         cover_positions.add(cover)
-    return {'maintenance_drives':len(paths),'inspection_covers':len(inspections),'service_spurs_ft':footage}
+    return {'maintenance_drives':len(paths),'gearboxes':gearboxes_count,'inspection_covers':len(inspections),'service_spurs_ft':footage}

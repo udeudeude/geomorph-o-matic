@@ -120,6 +120,24 @@ node --test tests/maintenance-works.test.js
 PYTHONPATH=. python3 -m unittest tests.test_maintenance_validation
 ```
 
+## Right-angle gearing and serviceability study (November 19, 2026)
+
+Five 90-degree shaft corners previously lacked a mechanism to redirect rotation.
+They now have explicit **bevel-gear housings**, with access panels facing actual
+dry galleries. The three drives have 1, 2 and 2 gearboxes. Two require locked-out
+operating handwheels for inspection; two share a tight service landing. The
+model records unresolved rock pockets and wet proximity without claiming that
+the gearbox dimensions, torque or overhead access are feasible.
+
+- [Editable geared service engineering plate](examples/riftwater_maintenance_plate.svg)
+- [Gearbox access and risk screen](reports/gearbox-access.json)
+- [Historic evidence and engineering limitations](research/2026-11-19-geared-corner-access.md)
+
+```sh
+node gearbox-audit.js reports/gearbox-access.json
+node --test tests/gearbox-audit.test.js tests/maintenance-works.test.js
+```
+
 ## Next major work
 
 1. Research and dimension actual historic gear trains, shaft torque, bearing supports, sleeves, lower cleanout depth and the pressure vault's foundations before claiming working machinery.
