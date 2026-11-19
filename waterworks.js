@@ -166,7 +166,10 @@ function waterworksSvg(owner,doors=[],hydrology={},terrain={},cellSize=24) {
    }
   }
   out.push('</g><g id="intake-and-outfall" font-family="sans-serif" font-size="9" font-weight="700" text-anchor="middle">');
-  for (const [kind,p,letter] of [["intake",model.inlet,"I"],["outfall",model.outlet,"T"]]) {
+  // Once a lower drain is authored, its terminus is shown ONLY on the lower plan.
+  // The upper outlet cell is an inspection datum, not a downstream outfall.
+  const terminals=hydrology.tailrace?[["intake",model.inlet,"I"]]:[["intake",model.inlet,"I"],["outfall",model.outlet,"T"]];
+  for (const [kind,p,letter] of terminals) {
    const [x,y]=p.split(",").map(Number);
    const X=(x+.5)*S,Y=(y+.5)*S;
    out.push('<g data-hydraulic-terminal="'+kind+'"><title>'+ (kind==="intake"?"Uncharted upstream intake adit":"Uncharted downstream tailrace outfall")+

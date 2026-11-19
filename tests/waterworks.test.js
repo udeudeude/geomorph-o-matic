@@ -95,7 +95,7 @@ test("waterworks appears in independent reproducible vector layers",()=>{
   for(const marker of ['id="engineered-canal-banks"','id="intake-and-outfall"','id="sluice-control-stations"'])
    assert.ok(svg.includes(marker),marker);
   assert.equal((svg.match(/data-control-id=/g)||[]).length,3);
-  assert.equal((svg.match(/data-hydraulic-terminal=/g)||[]).length,2);
+  assert.equal((svg.match(/data-hydraulic-terminal=/g)||[]).length,1);
   assert.equal((svg.match(/data-controls-gate=/g)||[]).length,3);
  }
  assert.equal(normal,makeSvg(tile));

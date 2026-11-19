@@ -6,6 +6,7 @@ const {distances}=require("./route-analysis");
 const {buildVerticalGraph}=require("./vertical");
 const {gateModel,applyGateStates,hydraulicGraph}=require("./hydraulic-control");
 const {waterwayModel,hydraulicCanalGraph,controlModel,controlAudit}=require("./waterworks");
+const {tailraceModel}=require("./tailrace");
 const POS=p=>p.join(",");
 const PORTALS=["4,0","15,0","4,19","15,19","0,4","0,15","19,4","19,15"];
 const ORDER=(a,b)=>{const [ax,ay]=a.split(",").map(Number),[bx,by]=b.split(",").map(Number);return ay-by||ax-bx};
@@ -15,6 +16,7 @@ function floodStages(owner,doors=[],terrain={},hydrology={}){
  const baseline=terrainModel(owner,terrain),water=new Set(baseline.water);
  const gates=gateModel(owner,doors,hydrology.gates||[]);
  const waterway=waterwayModel(owner,doors,hydrology,terrain);
+ tailraceModel(owner,doors,hydrology,terrain);
  controlModel(owner,doors,hydrology,terrain);
  let gateState=applyGateStates(gates),lastLevel=-Infinity;
  const closed=()=>gates.filter(g=>gateState.get(g.id)==="closed").map(g=>g.id);
