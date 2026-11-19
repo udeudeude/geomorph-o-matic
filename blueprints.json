@@ -2484,7 +2484,7 @@
       "family": "Floodworks",
       "geometry": "row-runs",
       "wall_style": "cavern",
-      "description": "Abandoned underground flood control works: a water-filled broken turbine hall with an optional through-route, a secret discharge cellar, locked pressure vault and two independent inspection circuits.",
+      "description": "Abandoned floodworks: a deep turbine sump spanned by a dry footbridge, a raised chart archive served by a single ramp, a hidden settling cellar, pressure vault, and two inspection circuits. Wet access opens additional pool cells.",
       "rooms": [
         [
           "office",
@@ -3131,15 +3131,6 @@
       ],
       "features": [
         [
-          "pool",
-          [
-            9,
-            9,
-            11,
-            10
-          ]
-        ],
-        [
           "wheel",
           [
             10,
@@ -3212,7 +3203,112 @@
             18
           ]
         ]
-      ]
+      ],
+      "terrain": {
+        "water": [
+          [
+            9,
+            9
+          ],
+          [
+            10,
+            9
+          ],
+          [
+            11,
+            9
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            10
+          ],
+          [
+            11,
+            10
+          ]
+        ],
+        "bridges": [
+          [
+            10,
+            9
+          ],
+          [
+            10,
+            10
+          ]
+        ],
+        "elevations": [
+          [
+            1,
+            [
+              [
+                8,
+                2
+              ],
+              [
+                9,
+                2
+              ],
+              [
+                10,
+                2
+              ],
+              [
+                11,
+                2
+              ],
+              [
+                8,
+                3
+              ],
+              [
+                9,
+                3
+              ],
+              [
+                10,
+                3
+              ],
+              [
+                11,
+                3
+              ],
+              [
+                12,
+                3
+              ],
+              [
+                9,
+                4
+              ],
+              [
+                10,
+                4
+              ],
+              [
+                11,
+                4
+              ]
+            ]
+          ]
+        ],
+        "ramps": [
+          [
+            [
+              10,
+              4
+            ],
+            [
+              10,
+              5
+            ]
+          ]
+        ]
+      }
     }
   ]
 }
