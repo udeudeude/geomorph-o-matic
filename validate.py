@@ -461,7 +461,7 @@ def validate(tile):
             if q in cells and cells[q]!=zone:walls.add(pair((x,y),q))
     doors=set();by_room=collections.Counter()
     for room,side,offset,kind in tile['doors']:
-        assert room in chambers and kind in ('door','secret','locked')
+        assert room in chambers and kind in ('door','secret','locked','opening')
         x1,y1,x2,y2=chambers[room]
         if side=='N':a,b=(offset,y1),(offset,y1-1)
         elif side=='S':a,b=(offset,y2),(offset,y2+1)
