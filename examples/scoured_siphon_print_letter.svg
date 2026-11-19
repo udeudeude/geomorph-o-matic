@@ -48,9 +48,9 @@
 <path d="M33.12,258l1.68,-3.6 2.88,2.4z" fill="#b8b5ab" stroke="#77766c" stroke-width=".85"/>
 <path d="M39.84,271.68l1.68,-3.6 2.88,2.4z" fill="#b8b5ab" stroke="#77766c" stroke-width=".85"/>
 </g>
-<g id="level-ramps" fill="none" stroke="#87664e" stroke-width="2.2" stroke-linecap="round">
-<path d="M420,108L444,108"/>
-<path d="M348,156L348,180"/>
+<g id="level-ramps" fill="none" stroke="#87664e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+<path data-uphill-cell="14,6" d="M348,175.68L348,158.88 M351.36,164.64L348,158.88L344.64,164.64"/>
+<path data-uphill-cell="17,4" d="M439.68,108L422.88,108 M428.64,104.64L422.88,108L428.64,111.36"/>
 </g>
 <g id="cave-geomorphology">
 <g data-geology="breakdown" data-cell="9,11"><path d="M219,281L222,272 227,268 232,271 237,278 233,284 223,285Z" fill="#d5d0c4" stroke="#575b55" stroke-width="1.2"/><path d="M222,272L227,277 232,271 M227,277L233,284 M223,285L227,277" stroke="#8b877c" stroke-width=".75" fill="none"/></g>
