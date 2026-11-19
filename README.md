@@ -85,7 +85,7 @@ The canonical architectural data is in [blueprints.json](blueprints.json). The [
 
 Each morph covers **10 x 10 full squares** subdivided into 20 x 20 half-square cells. A 5-foot-wide opening occupies one half-cell inside the 3rd and 8th full squares on each side. The exact fine-grid opening positions are **4 and 15**; unlike the earlier 5/15 pair they remain aligned through all quarter-turn rotations.
 
-All nine studies currently have eight standard edge openings, plus explicitly authored rooms, passages, secret doors and locked doors. Corridor loops are diagnostic, not proof of meaningful alternatives; see the separate route-resilience and chamber-journey audits.
+All nine studies have eight standard edge openings and individually authored rooms and passages. Doors, natural openings, secret discoveries and locks vary between settings. Corridor loops are diagnostic, not proof of meaningful alternatives; see the separate route-resilience and chamber-journey audits.
 
 ## Two-level waterworks study (November 19, 2026)
 
