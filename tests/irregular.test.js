@@ -12,8 +12,8 @@ test("row-run footprints are connected and reject malformed and duplicate runs",
  assert.throws(()=>shapeCells({rows:[[3,3,3],[7,7,7]]}),/Disconnected/);
  assert.throws(()=>shapeCells({rows:[[3,3,4],[3,4,5]]}),/Overlapping/);
 });
-test("both architectural studies have nonrectangular occupancies and reproducible SVG masters",()=>{
- assert.equal(newcomers.length,2);
+test("all irregular architectural studies have nonrectangular occupancies and reproducible SVG masters",()=>{
+ assert.equal(newcomers.length,3);
  for(const tile of newcomers){
   assert.ok(tile.rooms.some(r=>typeof r[2]==="object"));
   assert.ok(tile.rooms.some(r=>new Set(r[2].rows.map(v=>v[1]+","+v[2])).size>1));
@@ -29,4 +29,19 @@ test("irregular tiles preserve all four rotation-invariant join masks",()=>{
 });
 test("irregular studies retain meaningful corridor loops and all walkable rooms",()=>{
  for(const t of newcomers){const a=audit(t);assert.equal(a.fully_connected,true);assert.equal(a.normal_portals_reachable,8);assert.ok(a.hall_cycle_rank>=3);assert.ok(a.secret_doors>=1);assert.ok(a.doors<=2*t.rooms.length)}
+});
+
+test("Riftwater Lock has deliberate floodworks, staged discoveries and a working public bypass",()=>{
+ const tile=data.tiles.find(t=>t.id==="riftwater_lock");
+ assert.ok(tile);
+ const result=audit(tile);
+ assert.equal(result.normal_portals_reachable,8);
+ assert.equal(result.fully_connected,true);
+ assert.equal(result.rooms,undefined);
+ assert.equal(result.locked_doors,2);
+ assert.equal(result.secret_doors,2);
+ assert.ok(result.hall_cycle_rank>=6);
+ assert.ok(result.substantial_hall_circuits>=1);
+ assert.ok(result.chamber_route_roles.some(r=>r.room==="office"&&r.role==="ordinary_through_route"));
+ assert.ok(makeSvg(tile).includes('id="cavern-walls"'));
 });
