@@ -11,13 +11,13 @@ RECEIVER=next(t for t in DATA['tiles'] if t['id']=='postern_bastion')
 
 
 class MaintenanceEngineeringTests(unittest.TestCase):
-    def test_authored_sluice_drives_and_four_bend_cleanouts(self):
+    def test_authored_sluice_drives_and_five_bend_cleanouts(self):
         a=validate(SOURCE)
         b=validate(RECEIVER)
         self.assertEqual(a['maintenance_drives'],3)
-        self.assertEqual(a['inspection_covers'],2)
+        self.assertEqual(a['inspection_covers'],3)
         self.assertEqual(b['inspection_covers'],2)
-        self.assertEqual(a['service_spurs_ft'],7.5)
+        self.assertEqual(a['service_spurs_ft'],15.0)
         self.assertGreater(b['floor_cells'],0)
 
     def test_reject_unrecorded_bore(self):
@@ -46,8 +46,8 @@ class MaintenanceEngineeringTests(unittest.TestCase):
 
     def test_reject_control_obstructing_service_cover(self):
         bad=copy.deepcopy(SOURCE)
-        bad['hydrology']['tailrace']['inspections'][0]['surface']=[11,14]
-        bad['hydrology']['tailrace']['inspections'][0]['branch']=[[11,14]]
+        bad['hydrology']['tailrace']['inspections'][1]['surface']=[11,14]
+        bad['hydrology']['tailrace']['inspections'][1]['branch']=[[11,14]]
         with self.assertRaises(AssertionError):
             validate(bad)
 
