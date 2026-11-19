@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16in" height="10in" viewBox="0 0 1200 760" role="img" aria-label="Specialist exterior geomorph: receiving ravine, masonry apron, sediment pocket, high-water profile">
+<title>Postern Bastion | Exterior receiving-ravine architectural annex, study 01</title>
+<defs><pattern id="stone" width="11" height="11" patternUnits="userSpaceOnUse"><path d="M0 11L11 0M-3 3L3-3" stroke="#938e78" stroke-width=".6" opacity=".48"/></pattern>
+<pattern id="riprap" width="15" height="12" patternUnits="userSpaceOnUse"><path d="M0 6L6 1L13 4L15 10L8 12L1 10Z" fill="none" stroke="#6d7468" stroke-width=".8"/></pattern>
+</defs>
+<rect width="1200" height="760" fill="#f3efe5"/>
+<text x="65" y="48" font-family="Georgia,serif" font-size="29" fill="#263c3a">THE RECEIVING RAVINE</text>
+<text x="66" y="73" font-family="sans-serif" font-size="12" fill="#5b625c">POSTERN BASTION / SPECIALIST EXTERIOR EDGE ANNEX / LEVEL -1 / ARCHITECTURAL STUDY</text>
+<path d="M65 91H1135" fill="none" stroke="#9c9b8a" stroke-width="1.4"/>
+<text x="95" y="123" font-family="sans-serif" font-size="16" font-weight="700" fill="#314f52">01  STONE CHANNEL AND SERVICE TERRACE / PLAN</text>
+<text x="631" y="123" font-family="sans-serif" font-size="16" font-weight="700" fill="#314f52">02  INVERT PROFILE / VERTICAL SCALE EXAGGERATED</text>
+<g id="natural-rock-context" transform="translate(96 160)">
+<rect width="380" height="380" fill="#d7d0bc" stroke="#495b55" stroke-width="2"/>
+<path d="M0 104C90 135 150 101 240 87S360 111 380 72M0 246C72 216 140 266 234 277S337 256 380 295" stroke="#897e67" stroke-width="2.4" fill="none"/>
+<path d="M0 74C80 97 159 75 220 57S340 69 380 36M0 288C85 257 167 308 230 311S330 295 380 339" stroke="#9e9075" stroke-width="1.3" fill="none"/>
+<path d="M30 25Q118 50 179 28T365 16M7 350Q102 317 161 355T364 360" stroke="#b6a88d" stroke-width="1" fill="none"/>
+</g>
+<g id="watercourse-masonry-and-bed" stroke-linejoin="round">
+<rect data-treatment="masonry_throat" x="96" y="329.9" width="57" height="21.2" fill="#243e42"/>
+<rect x="96" y="332.9" width="57" height="15.2" fill="#34575c"/>
+<rect data-treatment="stone_apron" x="153" y="326.1" width="95" height="28.8" fill="#4c6870"/>
+<rect x="153" y="329.1" width="95" height="22.8" fill="#608a91"/>
+<rect data-treatment="desilting_pocket" x="248" y="318.5" width="76" height="44" fill="#36545a"/>
+<rect x="248" y="321.5" width="76" height="38" fill="#316d79"/>
+<rect data-treatment="rocky_receiving_bed" x="324" y="309" width="152" height="63" fill="#435f60"/>
+<rect x="324" y="312" width="152" height="57" fill="#497984"/>
+</g>
+<g id="flagstone-apron" stroke="#dfd0ad" stroke-width="1.2" opacity=".92">
+<path d="M153 329.5v22"/>
+<path d="M172 329.5v22"/>
+<path d="M191 329.5v22"/>
+<path d="M210 329.5v22"/>
+<path d="M229 329.5v22"/>
+</g>
+<g id="sediment-pocket" stroke="#d3b78b" fill="none" stroke-width="1.6">
+<rect x="275.5" y="324.5" width="40" height="32" stroke-dasharray="4 3"/>
+<path d="M284.5 347.5l7 -6 6 4 8 -7"/>
+</g>
+<g id="rock-protection" stroke="#c8c5ad" stroke-width=".8" fill="none">
+<path d="M327.5 331.5l5 -4 7 6 -4 5 -7 -1Z M330.5 345.5l6 0 5 5 -6 3 -6 -3Z"/>
+<path d="M346.5 331.5l5 -4 7 6 -4 5 -7 -1Z M349.5 345.5l6 0 5 5 -6 3 -6 -3Z"/>
+<path d="M365.5 331.5l5 -4 7 6 -4 5 -7 -1Z M368.5 345.5l6 0 5 5 -6 3 -6 -3Z"/>
+<path d="M384.5 331.5l5 -4 7 6 -4 5 -7 -1Z M387.5 345.5l6 0 5 5 -6 3 -6 -3Z"/>
+<path d="M403.5 331.5l5 -4 7 6 -4 5 -7 -1Z M406.5 345.5l6 0 5 5 -6 3 -6 -3Z"/>
+<path d="M422.5 331.5l5 -4 7 6 -4 5 -7 -1Z M425.5 345.5l6 0 5 5 -6 3 -6 -3Z"/>
+<path d="M441.5 331.5l5 -4 7 6 -4 5 -7 -1Z M444.5 345.5l6 0 5 5 -6 3 -6 -3Z"/>
+<path d="M460.5 331.5l5 -4 7 6 -4 5 -7 -1Z M463.5 345.5l6 0 5 5 -6 3 -6 -3Z"/>
+</g>
+<g id="dry-service-route" fill="none" stroke="#eee5cf" stroke-width="9" stroke-linecap="square" stroke-linejoin="round">
+<polyline points="390.5,169.5 390.5,188.5 390.5,207.5 390.5,226.5 390.5,245.5 390.5,264.5 371.5,264.5 352.5,264.5 333.5,264.5 314.5,264.5 295.5,264.5 295.5,283.5 295.5,302.5"/>
+</g><g fill="none" stroke="#806d55" stroke-width="1.4" stroke-dasharray="3 3">
+<polyline points="390.5,169.5 390.5,188.5 390.5,207.5 390.5,226.5 390.5,245.5 390.5,264.5 371.5,264.5 352.5,264.5 333.5,264.5 314.5,264.5 295.5,264.5 295.5,283.5 295.5,302.5"/>
+</g>
+<g id="elevated-inspection-bridge" data-deck-ft="-5.5">
+<rect x="326.5" y="302.5" width="14" height="76" fill="#e1c99d" stroke="#594a3e" stroke-width="2"/>
+<path d="M323.5 302.5v76 M343.5 302.5v76" stroke="#5c4d40" stroke-width="2.2"/>
+</g>
+<g id="cleanout-landing" fill="#f4e0b9" stroke="#7f6143" stroke-width="2">
+<rect x="287.5" y="294.5" width="16" height="16"/>
+<circle cx="295.5" cy="302.5" r="4" fill="none"/>
+</g><g id="external-interface-marks" stroke-width="4" fill="none">
+<path d="M96 328.5v24" stroke="#b46b49"/>
+<path d="M476 312.5v56" stroke="#396474" stroke-dasharray="4 4"/>
+</g>
+<g id="plan-annotations" font-family="sans-serif" font-size="11" fill="#394e4c">
+<text x="100" y="145">W:9 / MATCHED POSTERN LIP</text>
+<text x="316" y="145">OPEN RAVINE BEYOND EAST EDGE</text>
+<text x="106" y="565">Dry access from north edge; not an interchangeable surface portal.</text>
+<text x="106" y="583">Bridge crosses the water above assumed high water, not through it.</text>
+</g>
+<g id="longitudinal-rock-section">
+<rect x="632" y="260" width="456" height="257.4000000000001" fill="#ddd1ba"/>
+<path d="M632 260H1088" stroke="#8e866f" stroke-width="2" stroke-dasharray="5 4"/>
+<path d="M632 314H680V477.8" stroke="#4c4c46" stroke-width="6" fill="none"/>
+<path d="M632 472.4L632 474.2" stroke="#a56643" stroke-width="3"/>
+<polyline points="632,474.2 656,476 680,477.8 704,479.6 728,481.4 752,483.2 776,485 800,486.8 824,488.6 848,490.4 872,492.2 896,494 920,495.8 944,497.6 968,499.40000000000003 992,501.2 1016,503 1040,504.8 1064,506.59999999999997 1088,508.40000000000003" fill="none" stroke="#385e68" stroke-width="4" stroke-linejoin="round"/>
+<rect x="824" y="488.6" width="96" height="36" fill="url(#stone)" stroke="#86694b" stroke-width="1.4"/>
+</g>
+<g id="erosion-treatment-section" stroke="#746e5d" stroke-width="1" fill="url(#riprap)">
+<path d="M920 498.8L1088 511.40000000000003v16H920Z"/>
+</g>
+<g id="receiving-water-levels" font-family="sans-serif" font-size="12">
+<path data-water-state="ordinary" d="M626 350H1098" fill="none" stroke="#2e839b" stroke-width="2.5" stroke-dasharray="6 5"/>
+<text x="1101" y="342" text-anchor="end" fill="#2e839b">ORDINARY -9.00 ft</text>
+<path data-water-state="high" d="M626 296H1098" fill="none" stroke="#a8583e" stroke-width="2.5" stroke-dasharray="12 4"/>
+<text x="1101" y="288" text-anchor="end" fill="#a8583e">HIGH -7.50 ft</text>
+</g>
+<g id="service-bridge-section" stroke="#756348" stroke-width="4" fill="none">
+<path d="M899 224h42"/>
+<path d="M907 224v36 M933 224v36"/>
+</g>
+<g id="section-labels" font-family="sans-serif" font-size="11" fill="#3e5353">
+<text x="636" y="194">MASONRY THROAT</text><text x="790" y="194">FLAGGED APRON</text><text x="938" y="194">OPEN ROCK REACH</text>
+<text x="635" y="568">Nominal receiving fall: 0.95 ft over 47.5 ft</text>
+<text x="635" y="586">Desilting pocket: 1-ft additional depression (assumed); access is above.</text>
+</g>
+<path d="M65 606H1134" stroke="#aaa393" stroke-width="1.1"/>
+<g id="legend-and-limits" font-family="sans-serif" font-size="12" fill="#435956">
+<text x="85" y="635" font-weight="700">ARCHITECTURAL LOGIC</text>
+<text x="85" y="656">2-ft throat / 3-ft apron / 5-ft pocket / 7.5-ft rock reach.</text>
+<text x="85" y="676">Seam drop: 0.05 ft. Continuous downstream bed.</text>
+<text x="635" y="635" font-weight="700">UNRESOLVED ENGINEERING</text>
+<text x="635" y="656">High water drowns upstream arch crown; no discharge calculation.</text>
+<text x="635" y="676">Scour, flood duration, rock strength and open-river tailwater unverified.</text>
+</g><path d="M65 706H1135" stroke="#a6a393" stroke-width="1.2"/>
+<text x="65" y="729" font-family="sans-serif" font-size="11" fill="#6c6b5e">SPECIALIST ATTACHMENT, NOT A STANDARD DUNGEON TILE. The external channel beyond the east edge is still unmapped.</text>
+</svg>
