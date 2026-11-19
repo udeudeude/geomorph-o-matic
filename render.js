@@ -4,6 +4,7 @@ const path=require("node:path");
 const {shapeCells,shapeBounds}=require("./geometry");
 const {organicWallPaths,rockHachurePaths}=require("./cave-contours");
 const {terrainSvg}=require("./terrain");
+const {verticalSvg}=require("./vertical");
 function makeSvg(tile) {
   const N=20,S=24,L=N*S,portal=new Set(["4,0","15,0","0,4","19,4","0,15","19,15","4,19","15,19"]);
   const key=(x,y)=>`${x},${y}`,edge=(a,b)=>[a,b].sort().join("|");
@@ -155,7 +156,9 @@ function makeSvg(tile) {
       if(kind==="locked")parts.push(`<path d="M${X+S/2},${Y-6}v12" stroke-width="2.3"/>`);
     }
   }
-  parts.push(`</g></svg>`);
+  parts.push(`</g>`);
+  for(const layer of verticalSvg(owner,tile.terrain||{},tile.vertical||{}))parts.push(layer);
+  parts.push(`</svg>`);
   return parts.join("\n")+"\n";
 }
 
