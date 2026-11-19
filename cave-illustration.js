@@ -18,7 +18,10 @@ function shorelinePaths(water,cellSize=24,gridSize=20){
   if(!water.has(POS([x,y+1])))segments.push([x,y+1,x+1,y+1]);
   if(!water.has(POS([x-1,y])))segments.push([x,y,x,y+1]);
  }
- return naturalWallPaths(segments,{cellSize,gridSize,radius:.18});
+ const paths=naturalWallPaths(segments,{cellSize,gridSize,radius:.18});
+ if(paths.some(path=>!path.endsWith("Z")))
+  throw Error("Natural shoreline is non-manifold: wet regions must not meet only at a corner");
+ return paths;
 }
 function naturalWaterSvg(water,cellSize=24,gridSize=20){
  if(!water.size)return [];
