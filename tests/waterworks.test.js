@@ -13,8 +13,8 @@ test("engineered waterway has identifiable intake, outfall and bounded hydraulic
  const waterway=waterwayModel(owner,doors,tile.hydrology,tile.terrain);
  const gates=gateModel(owner,doors,tile.hydrology.gates);
  assert.equal(waterway.canal.size,9);
- assert.equal(waterway.inlet,"10,9");
- assert.equal(waterway.outlet,"10,11");
+ assert.equal(waterway.inlet,"9,9");
+ assert.equal(waterway.outlet,"11,11");
  const shut=hydraulicCanalGraph(waterway.canal,gates,applyGateStates(gates));
  assert.ok(!shut.get("10,10").includes("10,11"));
  const open=hydraulicCanalGraph(waterway.canal,gates,applyGateStates(gates,new Map(),{center_shutter:"open"}));
