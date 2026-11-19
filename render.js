@@ -2,6 +2,7 @@
 const fs=require("node:fs");
 const path=require("node:path");
 const {shapeCells,shapeBounds}=require("./geometry");
+const {masonryHatchPaths}=require("./ink-hatching");
 const {organicWallPaths,rockHachurePaths}=require("./cave-contours");
 const {terrainSvg}=require("./terrain");
 const {verticalSvg}=require("./vertical");
@@ -97,6 +98,7 @@ function makeSvg(tile,{grid="full"}={}) {
   parts.push(`<g id="grid" data-grid="${grid}" clip-path="url(#${clip})" fill="none">`);
   for(let i=1;i<N;i++){if(grid==="full"&&i%2)continue;const k=i*S,stroke=i%2?"#d8d5cb":"#b9b6ae",sw=i%2?".5":".95";parts.push(`<path d="M${k},0V${L} M0,${k}H${L}" stroke="${stroke}" stroke-width="${sw}"/>`)}
   parts.push(`</g>`);
+  if(!cave)parts.push(`<g id="masonry-hachures" fill="none" stroke="#514e46" stroke-width="1.15" opacity=".68"><path d="${masonryHatchPaths(owner,S,N)}"/></g>`);
   for(const layer of terrainSvg(owner,tile.terrain||{}))parts.push(layer);
   for(const layer of waterworksSvg(owner,[...doors.values()],tile.hydrology||{},tile.terrain||{}))parts.push(layer);
   for(const layer of tailraceSymbolsSvg(owner,[...doors.values()],tile.hydrology||{},tile.terrain||{}))parts.push(layer);
@@ -130,6 +132,14 @@ function makeSvg(tile,{grid="full"}={}) {
       }
     }else if(kind==="portcullis"){
       const [x,y]=center(coord);parts.push(`<path d="M${x-4},${y-12}v24m4,-24v24m4,-24v24 M${x-6},${y-7}h12m-12,7h12m-12,7h12" fill="none" stroke="#313433" stroke-width="1.9"/>`);
+    }else if(kind==="bell"){
+      const [x,y]=center(coord);
+      parts.push(`<g id="fallen-bell" transform="translate(${x} ${y}) rotate(-18)" stroke="#363733" stroke-linejoin="round">`);
+      parts.push(`<path d="M-22,-10 C-12,-15 0,-18 19,-17 L19,17 C0,18 -12,15 -22,10 Q-27,0 -22,-10Z" fill="#d4cdc0" stroke-width="2.3"/>`);
+      parts.push(`<ellipse cx="19" cy="0" rx="8" ry="17" fill="#ede7db" stroke-width="2.3"/>`);
+      parts.push(`<ellipse cx="19" cy="0" rx="3" ry="8" fill="none" stroke="#706c64" stroke-width="1.4"/>`);
+      parts.push(`<path d="M-17,-8 Q-11,0 -17,8 M-8,-10 L-4,7 3,-5 7,8" fill="none" stroke="#777268" stroke-width="1.5"/>`);
+      parts.push(`</g>`);
     }else if(kind==="wheel"){
       const [x,y]=center(coord);parts.push(`<circle cx="${x}" cy="${y}" r="11" fill="none" stroke="#303331" stroke-width="2.4"/>`);
       for(let i=0;i<6;i++){const a=i*Math.PI/3;parts.push(`<path d="M${x},${y}L${(x+10*Math.cos(a)).toFixed(2)},${(y+10*Math.sin(a)).toFixed(2)}" stroke="#303331" stroke-width="1.3"/>`)}
