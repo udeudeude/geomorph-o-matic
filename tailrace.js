@@ -6,9 +6,10 @@
 const {waterwayModel,hydraulicCanalGraph,sluiceImpact}=require("./waterworks");
 const {gateModel}=require("./hydraulic-control");
 const {distances}=require("./route-analysis");
+const {gradeProfile}=require("./drainage-grade");
 const KEY=p=>p.join(",");
-function point(p,label){
- if(!Array.isArray(p)||p.length!==2||p.some(n=>!Number.isInteger(n)||n<=0||n>=19))
+function point(p,label,allowBoundary=false){
+ if(!Array.isArray(p)||p.length!==2||p.some(n=>!Number.isInteger(n)||(allowBoundary?n<0||n>19:n<=0||n>=19)))
   throw Error("Invalid tailrace "+label+" coordinate");
  return KEY(p);
 }
@@ -23,8 +24,9 @@ function tailraceModel(owner,doors=[],hydrology={},terrain={}){
  const upper=waterwayModel(owner,doors,hydrology,terrain);
  if(!upper)throw Error("Lower tailrace requires an engineered upper channel");
  const cells=[],visited=new Set();
- for(const p of spec.cells){
-  const k=point(p,"path");
+ for(let i=0;i<spec.cells.length;i++){
+  const p=spec.cells[i];
+  const k=point(p,"path",!!spec.boundary_edge&&i===spec.cells.length-1);
   if(visited.has(k))throw Error("Lower tailrace must be a simple, unbranched path");
   if(cells.length){
    const previous=spec.cells[cells.length-1];
@@ -33,7 +35,16 @@ function tailraceModel(owner,doors=[],hydrology={},terrain={}){
   }
   cells.push(k);visited.add(k);
  }
- const terminus=point(spec.terminus,"terminus");
+ const terminus=point(spec.terminus,"terminus",!!spec.boundary_edge);
+ if(spec.boundary_edge){
+  const edge=spec.boundary_edge,off=edge.offset;
+  if(edge.kind!=="underfloor_tailrace"||!["N","E","S","W"].includes(edge.side)||
+     !Number.isInteger(off)||off<=0||off>=19)
+   throw Error("Invalid lower race specialized edge");
+  const expected=edge.side==="N"?off+",0":edge.side==="S"?off+",19":
+    edge.side==="W"?"0,"+off:"19,"+off;
+  if(terminus!==expected)throw Error("Lower race must end on its authored seam");
+ }
  if(terminus!==cells[cells.length-1])throw Error("Tailrace terminus must end the ordered route");
  const pickups=new Set(),wet=new Set((terrain.water||[]).map(KEY));
  const gates=gateModel(owner,doors,hydrology.gates||[]);
@@ -57,9 +68,11 @@ function tailraceModel(owner,doors=[],hydrology={},terrain={}){
   if(Object.keys(gatePickups).length!==pickups.size)
    throw Error("Uncontrolled tailrace pickup bypasses the shutter bank");
  }
- // The order of cells describes a one-way descending route. All drops are
- // vertical from the upper sumps to that path, never a return water link.
- return {level:-1,cells,pickups,terminus,gatePickups};
+ // Invert heights are explicit *assumptions*, not a hydraulic computation.
+ // A positive checked air break is conditional on the collector remaining vented.
+ const grade=gradeProfile(spec.cells,spec.grade,{pickups:spec.pickups,vented:true});
+ return {level:-1,cells,pickups,terminus,gatePickups,
+  boundary_edge:spec.boundary_edge||null,grade};
 }
 // This symbol marks a change of level, NOT a walkable shaft or an upper
 // watercourse. Full subsurface route is on the separate technical plate.

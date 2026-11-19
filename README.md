@@ -38,8 +38,10 @@ All six studies currently have eight standard edge openings, plus explicitly aut
 Riftwater Lock's three independently shut upper sumps now drop into a separate
 **ordered, lower-level collection race**. Its ten half-cell stations are
 connected by a directed drain path, with one distinct drop shaft per shutter.
-The lower race terminates **inside the tile**: its onward outfall is not built,
-and its assumed level -1 has no surveyed height or proven hydraulic grade.
+The lower collector now reaches an **exact special subfloor seam** into Postern
+Bastion. The receiving relay ends inside the next tile, so an actual outfall is
+still uncharted. Assumed invert heights are checked against an authored tailwater
+envelope, **not** surveyed or calculated flow physics.
 
 - [Two-plan lower-race technical plate](examples/riftwater_tailrace_plate.svg):
   separately editable upper and lower hydraulic vectors, exact plan coordinates,
@@ -52,10 +54,32 @@ and its assumed level -1 has no surveyed height or proven hydraulic grade.
 The main [Riftwater Lock SVG](tiles/riftwater_lock.svg) displays only drop symbols,
 not a misleading surface tunnel. The existing standard eight exits are unchanged.
 
+## Specialized graded subfloor assembly (November 19, 2026)
+
+- [Paired lower-level technical survey](examples/subfloor_pair_plate.svg): buried
+  paths, exact specialized seam and assumed invert profile, with upper structural
+  footprints in faint context. The actual downstream outfall remains **unmapped**.
+- [Source and relay example](examples/subfloor_pair.json): Riftwater Lock directly
+  north of Postern Bastion, unrotated. Surface portals and the specialist lower
+  connection are audited independently.
+- [Grade-envelope validator](drainage-grade.js), [rotatable specialist seam
+  checker](subfloor-interfaces.js), and [engineering research and assumptions](research/2026-11-19-graded-subfloor-interface.md).
+
+```sh
+node subfloor-assembly-plate.js examples/subfloor_pair_plate.svg
+node --test tests/subfloor-interfaces.test.js
+```
+
+The source collector now falls 0.50 feet over 25 feet, then another 0.05 feet
+across the seam, under **explicitly assumed** datum and backwater constraints.
+It does not prove the free-fall shaft stays vented under actual flood conditions.
+The generic nine-tile compositions are surface-route studies, **not** verified
+hydraulic assemblies.
+
 ## Next major work
 
 1. Research and dimension sluice transmissions, lower-shaft access, invert elevations and the pressure vault's foundations before drawing claimed working machinery.
-2. Develop compatible specialized *lower-level* edge interfaces and a defended tailrace continuation; a collector ending at an internal datum is not an outfall.
+2. Complete the receiver's real downstream outfall and confirm hydraulic grade and foundation clearances. The specialized lower seam is paired, but discharge still ends at an internal datum.
 3. Critically review nine-tile map assemblies and the two-level technical plate at print size, correcting visual hierarchy and architecture rather than adding generic furniture.
 4. Add edge/corner interface masks and test matched surface and lower-level openings through rotated assemblies, then playtest meaningful gate-operation choices.
 

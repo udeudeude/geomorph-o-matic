@@ -19,30 +19,30 @@ function makeTailracePlate(tile){
  if(!low)throw Error("Technical lower-tailrace plate requires authored lower drainage");
  const upper=waterwayModel(owner,doors,h,tile.terrain||{}),gates=gateModel(owner,doors,h.gates||[]);
  const out=[
-  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 675" role="img" aria-label="Two-level hydraulic works technical plate">',
+  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 735" role="img" aria-label="Two-level hydraulic works technical plate">',
   '<title>'+esc(tile.title)+' | Controlled underfloor drainage study</title>',
-  '<rect width="1080" height="675" fill="#f5f1e8"/>',
+  '<rect width="1080" height="735" fill="#f5f1e8"/>',
   '<text x="66" y="43" font-family="Georgia,serif" font-size="25" fill="#293837">'+esc(tile.title)+' / LOWER RACE</text>',
-  '<text x="66" y="69" font-family="sans-serif" font-size="13" fill="#515d5a">Plan coordinates: 2.5 feet per half-cell. Panels crop tile columns 6–15 and rows 7–18.</text>',
+  '<text x="66" y="69" font-family="sans-serif" font-size="13" fill="#515d5a">Plan coordinates: 2.5 feet per half-cell. Panels crop tile columns 6–15 and rows 7–19.</text>',
   '<text x="66" y="100" font-family="sans-serif" font-size="16" font-weight="700" fill="#344846">01   UPPER SLUICE CHANNEL · level 0</text>',
-  '<text x="590" y="100" font-family="sans-serif" font-size="16" font-weight="700" fill="#344846">02   SUBFLOOR TAILRACE · assumed level −1</text>',
+  '<text x="590" y="100" font-family="sans-serif" font-size="16" font-weight="700" fill="#344846">02   SUBFLOOR TAILRACE · assumed level -1</text>',
   '<g id="plan-scale" fill="none" stroke="#344846" stroke-width="1.4"><path d="M944 61h68 M944 56v10 M1012 56v10"/><text x="944" y="51" fill="#344846" stroke="none" font-family="sans-serif" font-size="10">0</text><text x="987" y="51" fill="#344846" stroke="none" font-family="sans-serif" font-size="10">5 ft</text></g>',
   '<defs><marker id="downstream-arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6Z" fill="#315e6c"/></marker></defs>'
  ];
  function panel(left,id,upperPlan){
   out.push('<g id="'+id+'" transform="translate('+left+' 143)">');
-  out.push('<rect x="0" y="0" width="'+(10*S)+'" height="'+(12*S)+'" fill="#e9e5da" stroke="#5b655f" stroke-width="1.8"/>');
+  out.push('<rect x="0" y="0" width="'+(10*S)+'" height="'+(13*S)+'" fill="#e9e5da" stroke="#5b655f" stroke-width="1.8"/>');
   if(upperPlan){
    // Preserve plan occupancy and honest rock/corridor context, rather than
    // presenting a mechanism in a featureless grid as a finished site.
    out.push('<g id="upper-floor-context" stroke="none">');
-   for(let y=Y0;y<Y0+12;y++)for(let x=X0;x<X0+10;x++){
+   for(let y=Y0;y<Y0+13;y++)for(let x=X0;x<X0+10;x++){
     const zone=owner.get(x+","+y);
     if(zone)out.push('<rect data-zone="'+esc(zone)+'" x="'+px(x)+'" y="'+py(y)+
      '" width="'+S+'" height="'+S+'" fill="'+(zone==="hall"?"#fffdf6":"#f8f1e4")+'"/>');
    }
    out.push('</g><g id="upper-rock-boundaries" fill="none" stroke="#575b55" stroke-width="2.2">');
-   for(let y=Y0;y<Y0+12;y++)for(let x=X0;x<X0+10;x++){
+   for(let y=Y0;y<Y0+13;y++)for(let x=X0;x<X0+10;x++){
     if(!owner.has(x+","+y))continue;
     for(const [dx,dy] of [[1,0],[-1,0],[0,1],[0,-1]]){
      if(owner.has((x+dx)+","+(y+dy)))continue;
@@ -58,7 +58,7 @@ function makeTailracePlate(tile){
    // The lower collector intersects the plan footprint of a pressure vault.
    // Display it as a structural clearance conflict, not an invisible success.
    out.push('<g id="vault-foundation-conflict" fill="#dbc3a6" fill-opacity=".4" stroke="#b18a5e" stroke-width=".65">');
-   for(let y=Y0;y<Y0+12;y++)for(let x=X0;x<X0+10;x++){
+   for(let y=Y0;y<Y0+13;y++)for(let x=X0;x<X0+10;x++){
     if(owner.get(x+","+y)==="vault"){
      out.push('<rect data-overhead-vault="'+x+","+y+'" x="'+px(x)+'" y="'+py(y)+
       '" width="'+S+'" height="'+S+'"/>');
@@ -69,7 +69,7 @@ function makeTailracePlate(tile){
   }
   out.push('<g stroke="#c8c6be" stroke-width=".7" fill="none" opacity=".7">');
   for(let i=1;i<10;i++)out.push('<path d="M'+i*S+',0V'+12*S+'"/>');
-  for(let i=1;i<12;i++)out.push('<path d="M0,'+i*S+'H'+10*S+'"/>');
+  for(let i=1;i<13;i++)out.push('<path d="M0,'+i*S+'H'+10*S+'"/>');
   out.push('</g>');
  }
  panel(66,"upper-hydraulic-plan",true);
@@ -120,14 +120,14 @@ function makeTailracePlate(tile){
    '<text x="'+x+'" y="'+(y+4)+'" fill="#315e6c" font-weight="700">'+letter+'</text></g>');
  }
  const [tx,ty]=center(low.terminus);
- out.push('<g id="lower-tailrace-terminus" data-continuation="unmapped"><rect x="'+(tx-13)+'" y="'+(ty-13)+'" width="26" height="26" fill="#f4e6c9" stroke="#315e6c" stroke-width="2"/>'+
-  '<text x="'+tx+'" y="'+(ty+4)+'" fill="#315e6c" font-weight="700">T</text></g>');
+ out.push('<g id="lower-tailrace-terminus" data-continuation="matched-underfloor-seam"><rect x="'+(tx-13)+'" y="'+(ty-13)+'" width="26" height="26" fill="#f4e6c9" stroke="#315e6c" stroke-width="2"/>'+
+  '<text x="'+tx+'" y="'+(ty+4)+'" fill="#315e6c" font-weight="700">S</text></g>');
  out.push('</g></g>');
  out.push(
-  '<text x="66" y="585" font-family="sans-serif" font-size="12" fill="#444d49">Blue = existing headwater; tan = dry sumps; dark = closed gates/partitions. Pale ochre on lower plan = vault overhead.</text>',
-  '<text x="66" y="609" font-family="sans-serif" font-size="12" fill="#444d49">W / C / E: separate vertical drop shafts from west / center / east shutter pockets; T: uncharted onward outfall.</text>',
-  '<text x="66" y="637" font-family="sans-serif" font-size="12" fill="#685c4c">Lower line is a centerline, not tunnel width; level, foundation clearance, invert grade and discharge are unverified.</text>',
-  '<text x="66" y="655" font-family="sans-serif" font-size="11" fill="#685c4c">Free-fall vented drops assume an unsurcharged tailrace; no reverse flow modeled. All eight surface exits remain unchanged.</text>',
+  '<text x="66" y="644" font-family="sans-serif" font-size="12" fill="#444d49">Blue = existing headwater; tan = dry sumps; dark = closed gates/partitions. Pale ochre on lower plan = vault overhead.</text>',
+  '<text x="66" y="666" font-family="sans-serif" font-size="12" fill="#444d49">W / C / E: separate vertical drop shafts from west / center / east shutter pockets; S: matched seam into Postern relay; true outfall remains uncharted.</text>',
+  '<text x="66" y="690" font-family="sans-serif" font-size="12" fill="#685c4c">Lower line is a centerline, not tunnel width; invert levels are assumed, foundations and discharge unverified.</text>',
+  '<text x="66" y="713" font-family="sans-serif" font-size="11" fill="#685c4c">Vented drops require unsurcharged tailwater; no flow rate modeled. Eight surface exits unchanged.</text>',
   '</svg>');
  return out.join("\n")+"\n";
 }
