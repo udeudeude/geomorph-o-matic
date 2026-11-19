@@ -79,6 +79,14 @@ def validate_terrain(tile, cells):
         e = pair(a, b)
         assert e not in ramps, (tile['id'], 'duplicate ramp')
         ramps.add(e)
+    barriers = set()
+    for item in spec.get('barriers', []):
+        assert isinstance(item, list) and len(item) == 2, (tile['id'], 'invalid masonry partition')
+        a, b = (next(iter(coords([p], 'barrier'))) for p in item)
+        edge = pair(a, b)
+        assert (abs(a[0]-b[0])+abs(a[1]-b[1]) == 1 and a not in PORTALS
+                and b not in PORTALS and edge not in barriers and edge not in ramps), (tile['id'], 'invalid partition edge')
+        barriers.add(edge)
     assert not ((water | set(levels)) & PORTALS), (tile['id'], 'terrain changes tile edge')
     remaining = set(bridge)
     while remaining:
@@ -97,7 +105,7 @@ def validate_terrain(tile, cells):
         ys = {p[1] for p in group}
         assert len(xs) == 1 or len(ys) == 1, (tile['id'], 'bent bridge span')
         assert len(group) == max(len(xs), len(ys)), (tile['id'], 'disconnected bridge span')
-    return {'water_cells': len(water), 'bridges': len(bridge), 'raised_cells': len(levels), 'ramps': len(ramps)}
+    return {'water_cells': len(water), 'bridges': len(bridge), 'raised_cells': len(levels), 'ramps': len(ramps), 'barriers': len(barriers)}
 
 
 def validate_vertical(tile, cells):
@@ -207,6 +215,12 @@ def validate_waterworks(tile, cells):
         edge = pair(a, b)
         assert edge in walls and edge not in culverts, (tile['id'], 'invalid culvert edge')
         culverts.add(edge)
+    # Cell-adjacent stone partitions separate water pockets as well as walking routes.
+    partitions = {pair(tuple(a), tuple(b))
+                  for a, b in tile.get('terrain', {}).get('barriers', [])}
+    gate_edges = set(edges)
+    assert not partitions & (gate_edges | culverts), (tile['id'], 'partition overlaps gate or culvert')
+    walls |= {e for e in partitions if e[0] in channels and e[1] in channels}
     # With every shutter opened, the intake must lead to the receiving sump.
     assert outlet in connected(channels, walls-culverts, inlet), (tile['id'], 'disconnected race')
     assigned, locations, control_ids = set(), set(), set()
@@ -221,7 +235,33 @@ def validate_waterworks(tile, cells):
         control_ids.add(station['id'])
     if 'controls' in spec:
         assert assigned == set(gates), (tile['id'], 'uncontrolled shutter')
-    return {'engineered_channel_cells': len(channels), 'sluice_controls': len(locations)}
+    # Independent check of each authored stage, including partial sluice-bank openings.
+    state = {k: gate['default'] for k, gate in gates.items()}
+    submerged = set(water)
+    previous_level = float('-inf')
+    stage_ids = set()
+    for stage in spec.get('stages', []):
+        assert isinstance(stage, dict) and isinstance(stage.get('id'), str), (tile['id'], 'invalid stage')
+        assert stage['id'] not in stage_ids and stage['id'] != 'normal', (tile['id'], 'duplicate stage')
+        stage_ids.add(stage['id'])
+        changes = stage.get('gate_states', {})
+        assert isinstance(changes, dict) and all(
+            k in state and v in ('closed', 'open') for k, v in changes.items()), (tile['id'], 'invalid stage gate state')
+        state.update(changes)
+        surface = stage.get('surface_level', previous_level)
+        assert isinstance(surface, (int, float)) and surface >= previous_level and surface >= 0, (tile['id'], 'falling waterline')
+        previous_level = surface
+        added_list = [tuple(p) for p in stage.get('add_water', [])]
+        additions = set(added_list)
+        assert (additions and len(additions) == len(added_list) and additions <= channels
+                and not additions & submerged), (tile['id'], 'invalid stage inundation')
+        closed_edges = {pair(tuple(g['a']), tuple(g['b']))
+                        for k, g in gates.items() if state[k] == 'closed'}
+        seen = connected(submerged | additions, (walls - culverts) | closed_edges, inlet)
+        assert additions <= seen, (tile['id'], 'flood bypassed a closed shutter or partition')
+        submerged |= additions
+    return {'engineered_channel_cells': len(channels), 'sluice_controls': len(locations),
+            'hydraulic_partitions': len(partitions & walls), 'flood_stages': len(stage_ids)}
 
 def validate(tile):
     name=tile['id'];cells={};chambers={}
