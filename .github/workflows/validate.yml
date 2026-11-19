@@ -22,10 +22,12 @@ jobs:
           node assemble.js
           node audit.js
           node assemble.js examples/assembly_irregular_3x3.json examples/assembly_irregular_3x3.svg
+          node section-plates.js examples/riftwater_section.svg
+          node flood-stages.js examples/riftwater_surge.svg
       - name: Commit verified generated assets on same-repository push
         if: github.event_name == 'push'
         run: |
-          git add tiles/ examples/assembly_3x3.svg reports/topology.json
+          git add tiles/ examples/assembly_3x3.svg examples/riftwater_section.svg examples/riftwater_surge.svg reports/topology.json
           if ! git diff --cached --quiet; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -33,7 +35,7 @@ jobs:
             git push origin HEAD:${GITHUB_REF_NAME}
           fi
       - name: Verify tracked SVG masters and audit are reproducible
-        run: git diff --exit-code -- tiles/ examples/assembly_3x3.svg reports/topology.json
+        run: git diff --exit-code -- tiles/ examples/assembly_3x3.svg examples/riftwater_section.svg examples/riftwater_surge.svg reports/topology.json
       - name: Upload vector studies and inspection report
         uses: actions/upload-artifact@v4
         with:
@@ -42,5 +44,7 @@ jobs:
             tiles/*.svg
             examples/assembly_irregular_3x3.svg
             examples/assembly_3x3.svg
+            examples/riftwater_section.svg
+            examples/riftwater_surge.svg
             reports/topology.json
           if-no-files-found: error
