@@ -3,6 +3,7 @@ const fs=require("node:fs"),path=require("node:path");
 const {buildCells}=require("./assemble");
 const {shapeBounds}=require("./geometry");
 const {navigationSummary}=require("./topology");
+const {analyzeRoutes}=require("./route-analysis");
 const key=([x,y])=>x+","+y;const split=s=>s.split(",").map(Number);
 const portals=new Set(["4,0","15,0","4,19","15,19","0,4","0,15","19,4","19,15"]);
 function ownerMap(tile){return buildCells(tile)}
@@ -74,7 +75,8 @@ function audit(tile){
   normal_portals_reachable:[...portals].filter(p=>ordinarily.has(p)).length,fully_connected:fully.size===owner.size,
   normally_accessible_floor_fraction:Number((ordinarily.size/owner.size).toFixed(3)),
   chambers:visibility,notes:visibility.filter(r=>r.doors.length===1&&r.doors[0]==="secret").map(r=>`Secret-only chamber ${r.room} is a discovery, not an alternative circulation route`),
-  ...navigationSummary(owner)};
+  ...navigationSummary(owner),
+  ...analyzeRoutes(owner,doors,[...portals])};
 }
 if(require.main===module){const data=JSON.parse(fs.readFileSync(path.join(__dirname,"blueprints.json"),"utf8"));const results=data.tiles.map(audit);if(results.some(r=>!r.fully_connected||r.normal_portals_reachable!==8))throw Error("A tile has inaccessible floor or stranded exits");fs.mkdirSync(path.join(__dirname,"reports"),{recursive:true});fs.writeFileSync(path.join(__dirname,"reports/topology.json"),JSON.stringify(results,null,2)+"\n");for(const r of results)console.log(r.id+": "+r.hall_cycle_rank+" cycles, "+r.hall_chokepoint_count+" exit-separating cells");}
 module.exports={audit,cycleRank,adjacency,chokepoints,reachable,ownerMap};
