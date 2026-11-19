@@ -6,6 +6,7 @@ const {organicWallPaths,rockHachurePaths}=require("./cave-contours");
 const {terrainSvg}=require("./terrain");
 const {verticalSvg}=require("./vertical");
 const {gateSvg}=require("./hydraulic-control");
+const {waterworksSvg}=require("./waterworks");
 function makeSvg(tile,{grid="full"}={}) {
   if(!["full","half"].includes(grid))throw Error("Invalid map grid");
   const N=20,S=24,L=N*S,portal=new Set(["4,0","15,0","0,4","19,4","0,15","19,15","4,19","15,19"]);
@@ -95,6 +96,7 @@ function makeSvg(tile,{grid="full"}={}) {
   for(let i=1;i<N;i++){if(grid==="full"&&i%2)continue;const k=i*S,stroke=i%2?"#d8d5cb":"#b9b6ae",sw=i%2?".5":".95";parts.push(`<path d="M${k},0V${L} M0,${k}H${L}" stroke="${stroke}" stroke-width="${sw}"/>`)}
   parts.push(`</g>`);
   for(const layer of terrainSvg(owner,tile.terrain||{}))parts.push(layer);
+  for(const layer of waterworksSvg(owner,[...doors.values()],tile.hydrology||{},tile.terrain||{}))parts.push(layer);
   parts.push(`<g id="features">`);
   function rect(box,pad=0){const [x1,y1,x2,y2]=box;return [x1*S+pad,y1*S+pad,(x2-x1+1)*S-2*pad,(y2-y1+1)*S-2*pad]}
   function shape(kind,coord){
