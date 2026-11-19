@@ -78,8 +78,10 @@ jobs:
             examples/assembly_irregular_3x3.svg
             examples/assembly_fallen_choir_2x2.svg
             examples/assembly_hollow_2x2.svg
-            examples/assembly_scoured_2x2.svg examples/assembly_lantern_2x2.svg
-            examples/scoured_siphon_print_letter.svg examples/lantern_sink_print_letter.svg
+            examples/assembly_scoured_2x2.svg
+            examples/assembly_lantern_2x2.svg
+            examples/scoured_siphon_print_letter.svg
+            examples/lantern_sink_print_letter.svg
             examples/hollow_causeway_print_letter.svg
             examples/fallen_choir_print_letter.svg
             examples/fallen_choir_levels.svg
