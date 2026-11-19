@@ -18,6 +18,12 @@ These are editable vector drawings, not flattened images. The separate floor, gr
 
 
 
+## Passage profiles: verify the cave's third dimension (November 19, 2026)
+
+The [Scoured Siphon section plate](examples/scoured_siphon_profiles.svg) pairs the canonical modular plan with **two explicitly located, editable passage profiles**: one through the actual flooded plank crossing, and one along the elevated gallery and its descending ramp. The [generator](cave-profile.js) samples the real authored walkable floor, wet cells, bridge and ramp, rejecting sections that no longer match the dungeon. Read the [cave-survey research and measurement caveats](research/2026-11-19-cave-profile-registration.md). Roof contours and water depths are interpretive, not surveyed. The full collection remains unfinished.
+
+Regenerate with `node cave-profile.js examples/scoured_siphon_profiles.svg`; verify with `node --test tests/cave-profile.test.js` and the independent Python suite.
+
 ## Scoured Siphon: dry keyhole and wet canyon (November 19, 2026)
 
 Original unequal limestone chambers and the meeting of two underground watercourses. The collapsed western throat demonstrably lengthens a dry portal route, while a short timber bridge and a twice-accessible raised limestone shelf create different exploration opportunities. See [the main SVG](tiles/scoured_siphon.svg), [mixed four-tile assembly](examples/assembly_scoured_2x2.svg), [true-size print proof](examples/scoured_siphon_print_letter.svg), and [research and unresolved structural questions](research/2026-11-19-scoured-siphon.md). The study has not been physically printed or playtested.
