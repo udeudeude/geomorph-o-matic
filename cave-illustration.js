@@ -18,6 +18,14 @@ function shorelinePaths(water,cellSize=24,gridSize=20){
   if(!water.has(POS([x,y+1])))segments.push([x,y+1,x+1,y+1]);
   if(!water.has(POS([x-1,y])))segments.push([x,y,x,y+1]);
  }
+ // A diagonal corner-touch creates four shoreline segments at one point.
+ // Such a non-manifold junction cannot represent two independent pools.
+ const degree=new Map();
+ for(const [x1,y1,x2,y2] of segments)for(const p of [[x1,y1],[x2,y2]]){
+  const k=POS(p);degree.set(k,(degree.get(k)||0)+1);
+ }
+ if([...degree.values()].some(n=>n!==2))
+  throw Error("Natural shoreline is non-manifold: wet regions must not meet only at a corner");
  const paths=naturalWallPaths(segments,{cellSize,gridSize,radius:.18});
  if(paths.some(path=>!path.endsWith("Z")))
   throw Error("Natural shoreline is non-manifold: wet regions must not meet only at a corner");
