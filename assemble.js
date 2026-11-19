@@ -1,5 +1,6 @@
 "use strict";
 const fs=require("node:fs"),path=require("node:path");
+const {shapeCells}=require("./geometry");
 const CELL=20,UNIT=24,SIDE=CELL*UNIT;
 const inBounds=([x,y])=>x>=0&&y>=0&&x<CELL&&y<CELL;
 
@@ -9,7 +10,7 @@ function rotateCell(p,turns){let [x,y]=p;for(let n=0;n<turns;n++)[x,y]=[CELL-1-y
 
 function buildCells(tile){
  const map=new Map();
- for(const [id,,[x1,y1,x2,y2]] of tile.rooms)for(let y=y1;y<=y2;y++)for(let x=x1;x<=x2;x++){
+ for(const [id,,shape] of tile.rooms)for(const [x,y] of shapeCells(shape)){
   if(!inBounds([x,y])||map.has(key([x,y])))throw Error(`${tile.id}: overlapping chamber`);map.set(key([x,y]),id);
  }
  for(const r of tile.routes)for(let i=1;i<r.points.length;i++){

@@ -29,16 +29,30 @@ def connected(cells,blocked,start):
                 found.add(q);queue.append(q)
     return found
 
+def footprint(shape):
+    if isinstance(shape, dict):
+        rows = shape['rows']
+    else:
+        x1, y1, x2, y2 = shape
+        rows = [[y, x1, x2] for y in range(y1, y2 + 1)]
+    cells = set()
+    for y, x1, x2 in rows:
+        assert all(isinstance(n, int) for n in (y, x1, x2)) and 0 <= y < SIZE and 0 <= x1 <= x2 < SIZE, ('invalid chamber run', y, x1, x2)
+        for x in range(x1, x2 + 1):
+            assert (x, y) not in cells, ('overlapping chamber run', x, y)
+            cells.add((x, y))
+    assert cells and connected(cells, set(), next(iter(cells))) == cells, 'disconnected chamber footprint'
+    return cells
+
 def validate(tile):
     name=tile['id'];cells={};chambers={}
-    for key,title,(x1,y1,x2,y2) in tile['rooms']:
+    for key,title,shape in tile['rooms']:
         assert key not in chambers,(name,'duplicate chamber',key)
-        assert 0<=x1<=x2<20 and 0<=y1<=y2<20,(name,key,'out of bounds')
-        chambers[key]=(x1,y1,x2,y2)
-        for y in range(y1,y2+1):
-            for x in range(x1,x2+1):
-                assert (x,y) not in cells,(name,'overlapping rooms',x,y)
-                cells[(x,y)]=key
+        footprint_cells=footprint(shape)
+        chambers[key]=(min(x for x,y in footprint_cells),min(y for x,y in footprint_cells),max(x for x,y in footprint_cells),max(y for x,y in footprint_cells))
+        for p in footprint_cells:
+            assert p not in cells,(name,'overlapping rooms',p)
+            cells[p]=key
     for route in tile['routes']:
         points=route['points']
         assert len(points)>=2,(name,'short route',route['id'])
@@ -68,7 +82,7 @@ def validate(tile):
         e=pair(a,b)
         assert cells.get(a)==room and cells.get(b)=='hall' and e in walls and e not in doors,(name,'invalid door',room,side,offset)
         doors.add(e);by_room[room]+=1
-    assert len(doors)<=8 and all(by_room[key] for key in chambers),(name,'door budget')
+    assert len(doors)<=max(8,2*len(chambers)) and all(by_room[key] for key in chambers),(name,'door budget')
     assert connected(cells,walls-doors,(4,0))==set(cells),(name,'disconnected walkable regions')
     hall={p for p,z in cells.items() if z=='hall'}
     assert connected(hall,set(),(4,0))==hall,(name,'disconnected corridors')

@@ -40,7 +40,7 @@
     "locked",
     "secret"
   ],
-  "rule": "Walls are always present at boundaries of rooms, except for explicit doors. Carve named orthogonal routes separately. Reject any room-corridor overlap and any accidental boundary openings. 4 and 15 are rotation invariant: 19-4=15.",
+  "rule": "Walls are always present at boundaries of rooms, except for explicit doors. Carve named orthogonal routes separately. Reject any room-corridor overlap and any accidental boundary openings. 4 and 15 are rotation invariant: 19-4=15. Rooms may use a rectangular 4-number footprint or contiguous run-length rows [y,xStart,xEnd].",
   "tiles": [
     {
       "id": "salt_cloister",
@@ -1273,6 +1273,1206 @@
             16,
             6,
             18
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "basalt_rift",
+      "title": "The Basalt Rift",
+      "family": "Volcanic fault sanctuary",
+      "geometry": "row-runs",
+      "description": "Fault-cut grotto with a flood chamber, hidden connection, and shrine reached by alternative passages.",
+      "rooms": [
+        [
+          "throat",
+          "Windcut entrance grotto",
+          {
+            "rows": [
+              [
+                3,
+                3,
+                5
+              ],
+              [
+                4,
+                2,
+                5
+              ],
+              [
+                5,
+                2,
+                6
+              ],
+              [
+                6,
+                3,
+                6
+              ]
+            ]
+          }
+        ],
+        [
+          "vent",
+          "Sulphur chimney",
+          {
+            "rows": [
+              [
+                3,
+                9,
+                10
+              ],
+              [
+                4,
+                8,
+                10
+              ]
+            ]
+          }
+        ],
+        [
+          "falls",
+          "Cascade cavern",
+          {
+            "rows": [
+              [
+                4,
+                14,
+                17
+              ],
+              [
+                5,
+                13,
+                17
+              ],
+              [
+                6,
+                14,
+                17
+              ]
+            ]
+          }
+        ],
+        [
+          "fungi",
+          "Spore basin",
+          {
+            "rows": [
+              [
+                9,
+                3,
+                4
+              ],
+              [
+                10,
+                2,
+                4
+              ],
+              [
+                11,
+                2,
+                4
+              ]
+            ]
+          }
+        ],
+        [
+          "cistern",
+          "Submerged alcove",
+          {
+            "rows": [
+              [
+                10,
+                13,
+                15
+              ],
+              [
+                11,
+                13,
+                15
+              ]
+            ]
+          }
+        ],
+        [
+          "shrine",
+          "Fault-bottom shrine",
+          {
+            "rows": [
+              [
+                15,
+                9,
+                11
+              ],
+              [
+                16,
+                9,
+                11
+              ]
+            ]
+          }
+        ],
+        [
+          "lookout",
+          "Flooded sentry vault",
+          {
+            "rows": [
+              [
+                16,
+                17,
+                18
+              ],
+              [
+                17,
+                17,
+                18
+              ],
+              [
+                18,
+                17,
+                18
+              ]
+            ]
+          }
+        ]
+      ],
+      "routes": [
+        {
+          "id": "northwest",
+          "points": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              7,
+              2
+            ],
+            [
+              7,
+              5
+            ],
+            [
+              10,
+              5
+            ],
+            [
+              10,
+              9
+            ]
+          ],
+          "reason": "northwest"
+        },
+        {
+          "id": "northeast",
+          "points": [
+            [
+              15,
+              0
+            ],
+            [
+              15,
+              3
+            ],
+            [
+              12,
+              3
+            ],
+            [
+              12,
+              7
+            ],
+            [
+              10,
+              7
+            ]
+          ],
+          "reason": "northeast"
+        },
+        {
+          "id": "western_top",
+          "points": [
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              5,
+              9
+            ],
+            [
+              10,
+              9
+            ]
+          ],
+          "reason": "western top"
+        },
+        {
+          "id": "eastern_top",
+          "points": [
+            [
+              19,
+              4
+            ],
+            [
+              18,
+              4
+            ],
+            [
+              18,
+              7
+            ],
+            [
+              16,
+              7
+            ],
+            [
+              16,
+              9
+            ],
+            [
+              10,
+              9
+            ]
+          ],
+          "reason": "eastern top"
+        },
+        {
+          "id": "western_low",
+          "points": [
+            [
+              0,
+              15
+            ],
+            [
+              3,
+              15
+            ],
+            [
+              3,
+              12
+            ],
+            [
+              8,
+              12
+            ],
+            [
+              8,
+              10
+            ],
+            [
+              10,
+              10
+            ]
+          ],
+          "reason": "western low"
+        },
+        {
+          "id": "eastern_low",
+          "points": [
+            [
+              19,
+              15
+            ],
+            [
+              16,
+              15
+            ],
+            [
+              16,
+              12
+            ],
+            [
+              12,
+              12
+            ],
+            [
+              12,
+              10
+            ],
+            [
+              10,
+              10
+            ]
+          ],
+          "reason": "eastern low"
+        },
+        {
+          "id": "southern_left",
+          "points": [
+            [
+              4,
+              19
+            ],
+            [
+              4,
+              17
+            ],
+            [
+              8,
+              17
+            ],
+            [
+              8,
+              14
+            ],
+            [
+              10,
+              14
+            ]
+          ],
+          "reason": "southern left"
+        },
+        {
+          "id": "southern_right",
+          "points": [
+            [
+              15,
+              19
+            ],
+            [
+              15,
+              17
+            ],
+            [
+              12,
+              17
+            ],
+            [
+              12,
+              14
+            ],
+            [
+              10,
+              14
+            ]
+          ],
+          "reason": "southern right"
+        },
+        {
+          "id": "central",
+          "points": [
+            [
+              10,
+              9
+            ],
+            [
+              10,
+              14
+            ]
+          ],
+          "reason": "central"
+        },
+        {
+          "id": "western_loop",
+          "points": [
+            [
+              5,
+              9
+            ],
+            [
+              5,
+              12
+            ]
+          ],
+          "reason": "western loop"
+        },
+        {
+          "id": "eastern_loop",
+          "points": [
+            [
+              16,
+              9
+            ],
+            [
+              16,
+              12
+            ]
+          ],
+          "reason": "eastern loop"
+        },
+        {
+          "id": "lower_loop",
+          "points": [
+            [
+              8,
+              17
+            ],
+            [
+              12,
+              17
+            ]
+          ],
+          "reason": "lower loop"
+        }
+      ],
+      "doors": [
+        [
+          "throat",
+          "W",
+          4,
+          "door"
+        ],
+        [
+          "throat",
+          "E",
+          5,
+          "secret"
+        ],
+        [
+          "vent",
+          "S",
+          10,
+          "door"
+        ],
+        [
+          "falls",
+          "S",
+          16,
+          "door"
+        ],
+        [
+          "falls",
+          "N",
+          15,
+          "door"
+        ],
+        [
+          "fungi",
+          "S",
+          3,
+          "door"
+        ],
+        [
+          "fungi",
+          "E",
+          9,
+          "door"
+        ],
+        [
+          "cistern",
+          "E",
+          10,
+          "door"
+        ],
+        [
+          "shrine",
+          "S",
+          10,
+          "locked"
+        ],
+        [
+          "lookout",
+          "N",
+          17,
+          "door"
+        ]
+      ],
+      "features": [
+        [
+          "rubble",
+          [
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              4,
+              6
+            ]
+          ]
+        ],
+        [
+          "stairs",
+          [
+            9,
+            3,
+            10,
+            4
+          ]
+        ],
+        [
+          "pool",
+          [
+            14,
+            5,
+            16,
+            5
+          ]
+        ],
+        [
+          "rubble",
+          [
+            [
+              3,
+              10
+            ],
+            [
+              4,
+              11
+            ]
+          ]
+        ],
+        [
+          "altar",
+          [
+            9,
+            15,
+            11,
+            15
+          ]
+        ],
+        [
+          "barrels",
+          [
+            [
+              17,
+              17
+            ],
+            [
+              18,
+              17
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "sunken_orrery",
+      "title": "The Sunken Orrery",
+      "family": "Subterranean observatory",
+      "geometry": "row-runs",
+      "description": "An octagonal mechanism court within a service ring, with a hidden choir and sealed chart vault.",
+      "rooms": [
+        [
+          "engine",
+          "Octagonal instrument court",
+          {
+            "rows": [
+              [
+                7,
+                8,
+                11
+              ],
+              [
+                8,
+                7,
+                12
+              ],
+              [
+                9,
+                6,
+                13
+              ],
+              [
+                10,
+                6,
+                13
+              ],
+              [
+                11,
+                7,
+                12
+              ],
+              [
+                12,
+                8,
+                11
+              ]
+            ]
+          }
+        ],
+        [
+          "apse",
+          "Astral apse",
+          {
+            "rows": [
+              [
+                2,
+                9,
+                10
+              ],
+              [
+                3,
+                8,
+                11
+              ],
+              [
+                4,
+                9,
+                11
+              ]
+            ]
+          }
+        ],
+        [
+          "choir",
+          "Ruined choir",
+          {
+            "rows": [
+              [
+                8,
+                2,
+                3
+              ],
+              [
+                9,
+                2,
+                3
+              ],
+              [
+                10,
+                2,
+                3
+              ],
+              [
+                11,
+                3,
+                3
+              ]
+            ]
+          }
+        ],
+        [
+          "charts",
+          "Sealed chart vault",
+          {
+            "rows": [
+              [
+                9,
+                16,
+                17
+              ],
+              [
+                10,
+                16,
+                17
+              ],
+              [
+                11,
+                16,
+                17
+              ]
+            ]
+          }
+        ],
+        [
+          "descent",
+          "Sinking mechanism",
+          {
+            "rows": [
+              [
+                16,
+                9,
+                11
+              ],
+              [
+                17,
+                9,
+                11
+              ]
+            ]
+          }
+        ]
+      ],
+      "routes": [
+        {
+          "id": "ring_north",
+          "points": [
+            [
+              5,
+              5
+            ],
+            [
+              14,
+              5
+            ]
+          ],
+          "reason": "ring north"
+        },
+        {
+          "id": "ring_east",
+          "points": [
+            [
+              14,
+              5
+            ],
+            [
+              14,
+              14
+            ]
+          ],
+          "reason": "ring east"
+        },
+        {
+          "id": "ring_south",
+          "points": [
+            [
+              14,
+              14
+            ],
+            [
+              5,
+              14
+            ]
+          ],
+          "reason": "ring south"
+        },
+        {
+          "id": "ring_west",
+          "points": [
+            [
+              5,
+              14
+            ],
+            [
+              5,
+              5
+            ]
+          ],
+          "reason": "ring west"
+        },
+        {
+          "id": "nw_entry",
+          "points": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              5,
+              3
+            ],
+            [
+              5,
+              5
+            ]
+          ],
+          "reason": "nw entry"
+        },
+        {
+          "id": "ne_entry",
+          "points": [
+            [
+              15,
+              0
+            ],
+            [
+              15,
+              3
+            ],
+            [
+              14,
+              3
+            ],
+            [
+              14,
+              5
+            ]
+          ],
+          "reason": "ne entry"
+        },
+        {
+          "id": "wt_entry",
+          "points": [
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              5,
+              6
+            ]
+          ],
+          "reason": "wt entry"
+        },
+        {
+          "id": "et_entry",
+          "points": [
+            [
+              19,
+              4
+            ],
+            [
+              18,
+              4
+            ],
+            [
+              18,
+              6
+            ],
+            [
+              14,
+              6
+            ]
+          ],
+          "reason": "et entry"
+        },
+        {
+          "id": "wl_entry",
+          "points": [
+            [
+              0,
+              15
+            ],
+            [
+              1,
+              15
+            ],
+            [
+              1,
+              17
+            ],
+            [
+              5,
+              17
+            ],
+            [
+              5,
+              14
+            ]
+          ],
+          "reason": "wl entry"
+        },
+        {
+          "id": "el_entry",
+          "points": [
+            [
+              19,
+              15
+            ],
+            [
+              18,
+              15
+            ],
+            [
+              18,
+              17
+            ],
+            [
+              14,
+              17
+            ],
+            [
+              14,
+              14
+            ]
+          ],
+          "reason": "el entry"
+        },
+        {
+          "id": "sw_entry",
+          "points": [
+            [
+              4,
+              19
+            ],
+            [
+              4,
+              18
+            ],
+            [
+              5,
+              18
+            ],
+            [
+              5,
+              14
+            ]
+          ],
+          "reason": "sw entry"
+        },
+        {
+          "id": "se_entry",
+          "points": [
+            [
+              15,
+              19
+            ],
+            [
+              15,
+              18
+            ],
+            [
+              14,
+              18
+            ],
+            [
+              14,
+              14
+            ]
+          ],
+          "reason": "se entry"
+        },
+        {
+          "id": "ringwest_apse",
+          "points": [
+            [
+              5,
+              9
+            ],
+            [
+              4,
+              9
+            ]
+          ],
+          "reason": "ringwest apse"
+        },
+        {
+          "id": "ringeast_charts",
+          "points": [
+            [
+              14,
+              10
+            ],
+            [
+              15,
+              10
+            ]
+          ],
+          "reason": "ringeast charts"
+        },
+        {
+          "id": "ringsouth_machine",
+          "points": [
+            [
+              10,
+              14
+            ],
+            [
+              10,
+              15
+            ]
+          ],
+          "reason": "ringsouth machine"
+        },
+        {
+          "id": "ringnorth_engine",
+          "points": [
+            [
+              9,
+              5
+            ],
+            [
+              9,
+              6
+            ]
+          ],
+          "reason": "ringnorth engine"
+        },
+        {
+          "id": "ringsouth_engine",
+          "points": [
+            [
+              10,
+              13
+            ],
+            [
+              10,
+              14
+            ]
+          ],
+          "reason": "ringsouth engine"
+        },
+        {
+          "id": "westupper_bypass",
+          "points": [
+            [
+              5,
+              3
+            ],
+            [
+              7,
+              3
+            ],
+            [
+              7,
+              5
+            ]
+          ],
+          "reason": "westupper bypass"
+        },
+        {
+          "id": "southwest_bypass",
+          "points": [
+            [
+              5,
+              17
+            ],
+            [
+              7,
+              17
+            ],
+            [
+              7,
+              14
+            ]
+          ],
+          "reason": "southwest bypass"
+        },
+        {
+          "id": "eastupper_bypass",
+          "points": [
+            [
+              18,
+              6
+            ],
+            [
+              18,
+              8
+            ],
+            [
+              14,
+              8
+            ]
+          ],
+          "reason": "eastupper bypass"
+        }
+      ],
+      "doors": [
+        [
+          "engine",
+          "N",
+          9,
+          "locked"
+        ],
+        [
+          "engine",
+          "S",
+          10,
+          "door"
+        ],
+        [
+          "engine",
+          "W",
+          9,
+          "secret"
+        ],
+        [
+          "engine",
+          "E",
+          10,
+          "door"
+        ],
+        [
+          "apse",
+          "S",
+          10,
+          "door"
+        ],
+        [
+          "choir",
+          "E",
+          9,
+          "door"
+        ],
+        [
+          "charts",
+          "W",
+          10,
+          "locked"
+        ],
+        [
+          "descent",
+          "N",
+          10,
+          "door"
+        ]
+      ],
+      "features": [
+        [
+          "columns",
+          [
+            [
+              8,
+              9
+            ],
+            [
+              11,
+              9
+            ],
+            [
+              8,
+              10
+            ],
+            [
+              11,
+              10
+            ]
+          ]
+        ],
+        [
+          "wheel",
+          [
+            9,
+            9
+          ]
+        ],
+        [
+          "rubble",
+          [
+            [
+              2,
+              9
+            ],
+            [
+              3,
+              10
+            ],
+            [
+              3,
+              11
+            ]
+          ]
+        ],
+        [
+          "table",
+          [
+            16,
+            9,
+            17,
+            9
+          ]
+        ],
+        [
+          "stairs",
+          [
+            9,
+            16,
+            11,
+            17
           ]
         ]
       ]

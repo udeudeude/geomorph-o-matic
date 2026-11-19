@@ -1,13 +1,15 @@
 "use strict";
 const fs=require("node:fs");
 const path=require("node:path");
+const {shapeCells,shapeBounds}=require("./geometry");
 function makeSvg(tile) {
   const N=20,S=24,L=N*S,portal=new Set(["4,0","15,0","0,4","19,4","0,15","19,15","4,19","15,19"]);
   const key=(x,y)=>`${x},${y}`,edge=(a,b)=>[a,b].sort().join("|");
   const owner=new Map(),rooms=new Map();
-  for(const [id,name,[x1,y1,x2,y2]] of tile.rooms){
+  for(const [id,name,shape] of tile.rooms){
+    const [x1,y1,x2,y2]=shapeBounds(shape);
     rooms.set(id,{name,x1,y1,x2,y2});
-    for(let y=y1;y<=y2;y++)for(let x=x1;x<=x2;x++){
+    for(const [x,y] of shapeCells(shape)){
       if(owner.has(key(x,y)))throw Error("Overlapping rooms: "+tile.id);
       owner.set(key(x,y),id);
     }

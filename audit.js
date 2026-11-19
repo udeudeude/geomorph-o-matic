@@ -1,6 +1,7 @@
 "use strict";
 const fs=require("node:fs"),path=require("node:path");
 const {buildCells}=require("./assemble");
+const {shapeBounds}=require("./geometry");
 const key=([x,y])=>x+","+y;const split=s=>s.split(",").map(Number);
 const portals=new Set(["4,0","15,0","4,19","15,19","0,4","0,15","19,4","19,15"]);
 function ownerMap(tile){return buildCells(tile)}
@@ -8,7 +9,7 @@ function ownerMap(tile){return buildCells(tile)}
 function neighbors(s){const[x,y]=split(s);return[key([x-1,y]),key([x+1,y]),key([x,y-1]),key([x,y+1])]}
 
 function doorEdges(tile){
- const bounds=new Map(tile.rooms.map(r=>[r[0],r[2]]));
+ const bounds=new Map(tile.rooms.map(r=>[r[0],shapeBounds(r[2])]));
  return tile.doors.map(([id,side,p,kind])=>{
   const[x1,y1,x2,y2]=bounds.get(id);
   const a=side==="N"?[p,y1]:side==="S"?[p,y2]:side==="W"?[x1,p]:[x2,p];

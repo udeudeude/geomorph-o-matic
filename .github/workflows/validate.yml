@@ -20,3 +20,11 @@ jobs:
           node assemble.js
           node audit.js
           git diff --exit-code -- examples/assembly_3x3.svg reports/topology.json
+      - name: Upload new irregular studies
+        uses: actions/upload-artifact@v4
+        with:
+          name: irregular-vector-studies
+          path: |
+            tiles/basalt_rift.svg
+            tiles/sunken_orrery.svg
+          if-no-files-found: error

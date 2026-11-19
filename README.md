@@ -48,3 +48,7 @@ node --test tests/*.test.js
 The [nine-tile original survey](examples/assembly_3x3.svg) is a single standalone editable SVG. Its clipping identifiers are unique across repeated tiles. Every quarter-turn seam is checked against its actual edge-floor cells, not merely an assumed portal convention. The [circulation audit](reports/topology.json) distinguishes freely accessible floor, secret-only discoveries, corridor cycles, and exit-separating choke cells.
 
 These audits do not establish artistic excellence; use them to identify where to improve the underlying architecture. [Design criteria](research/2026-11-18-architecture-audit.md).
+
+## New irregular-footprint studies (November 2026)
+Two additional source blueprints are now encoded in [blueprints.json](blueprints.json): **The Basalt Rift** (seven chambers, including naturalistic lobes and two bypasses) and **The Sunken Orrery** (five chambers, an octagonal central court and surrounding service ring). [geometry.js](geometry.js) adds validated row-run room footprints shared by rendering, assembly and the audit. These remain **studies**, not finished tiles. Run `node render.js` to generate their SVG masters locally; CI also publishes both in the `irregular-vector-studies` artifact. See [research note](research/2026-11-18-irregular-chambers.md) and [new tests](tests/irregular.test.js).
+
