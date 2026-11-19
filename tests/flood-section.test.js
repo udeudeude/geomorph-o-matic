@@ -35,7 +35,8 @@ test("two plans and their section have editable groups and identical repeated ou
  const svg=sectionPlate(rift,{row:10});
  for(const id of ["lower-plan","upper-plan","lower-floor-projection","upper-deck-surfaces","upper-plan-links","section"])
   assert.ok(svg.includes('id="'+id+'"'),id);
- assert.equal((svg.match(/<circle cx=/g)||[]).length,2);
+ const markerLayer=svg.split('<g id="upper-plan-links"')[1].split("</g>")[0];
+ assert.equal((markerLayer.match(/<circle cx=/g)||[]).length,2);
  assert.match(svg,/schematic, not vertically to scale/);
  assert.ok(svg.includes('M352 54h44'));
  assert.equal(svg,sectionPlate(rift,{row:10}));
