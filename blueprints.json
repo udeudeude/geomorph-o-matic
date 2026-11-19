@@ -5873,6 +5873,811 @@
           ]
         ]
       }
+    },
+    {
+      "id": "scoured_siphon",
+      "title": "The Scoured Siphon",
+      "family": "Joint-controlled karst passage and abandoned high-water tube",
+      "geometry": "hand-composed dry keyhole, drowned slot, offset fault and elevated two-ramp rock shelf",
+      "description": "An older rounded solution tube has been incised by a younger underground stream. The water cuts across the central chamber; a narrow bridge offers the shortest dry passage. A high limestone gallery is reached by two bedrock ramps, and a western breakdown choke redirects travel through an alternative route. Six irregular chambers serve eight standard modular exits.",
+      "wall_style": "cavern",
+      "rooms": [
+        [
+          "confluence",
+          "Fork of the drowned stream",
+          {
+            "rows": [
+              [
+                7,
+                9,
+                11
+              ],
+              [
+                8,
+                8,
+                12
+              ],
+              [
+                9,
+                8,
+                13
+              ],
+              [
+                10,
+                9,
+                13
+              ],
+              [
+                11,
+                9,
+                12
+              ],
+              [
+                12,
+                10,
+                11
+              ]
+            ]
+          }
+        ],
+        [
+          "old_tube",
+          "Dry keyhole tunnel",
+          {
+            "rows": [
+              [
+                3,
+                3,
+                5
+              ],
+              [
+                4,
+                2,
+                6
+              ],
+              [
+                5,
+                3,
+                6
+              ],
+              [
+                6,
+                4,
+                5
+              ]
+            ]
+          }
+        ],
+        [
+          "shelf",
+          "The leaning gallery",
+          {
+            "rows": [
+              [
+                3,
+                12,
+                16
+              ],
+              [
+                4,
+                12,
+                17
+              ],
+              [
+                5,
+                13,
+                17
+              ],
+              [
+                6,
+                14,
+                15
+              ]
+            ]
+          }
+        ],
+        [
+          "slot",
+          "Cleaved fault pocket",
+          {
+            "rows": [
+              [
+                9,
+                2,
+                5
+              ],
+              [
+                10,
+                2,
+                5
+              ],
+              [
+                11,
+                3,
+                5
+              ]
+            ]
+          }
+        ],
+        [
+          "silt",
+          "Deadwater chamber",
+          {
+            "rows": [
+              [
+                14,
+                3,
+                6
+              ],
+              [
+                15,
+                2,
+                7
+              ],
+              [
+                16,
+                3,
+                7
+              ],
+              [
+                17,
+                4,
+                6
+              ]
+            ]
+          }
+        ],
+        [
+          "eclipse",
+          "Eye of the siphon",
+          {
+            "rows": [
+              [
+                14,
+                14,
+                16
+              ],
+              [
+                15,
+                13,
+                17
+              ],
+              [
+                16,
+                14,
+                17
+              ],
+              [
+                17,
+                15,
+                16
+              ]
+            ]
+          }
+        ]
+      ],
+      "routes": [
+        {
+          "id": "nw_exit",
+          "points": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              8,
+              1
+            ],
+            [
+              8,
+              6
+            ],
+            [
+              7,
+              6
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "reason": "Individually composed joint-guided cave link; fictional plan, not an instrument survey"
+        },
+        {
+          "id": "ne_exit",
+          "points": [
+            [
+              15,
+              0
+            ],
+            [
+              15,
+              1
+            ],
+            [
+              18,
+              1
+            ],
+            [
+              18,
+              7
+            ],
+            [
+              14,
+              7
+            ],
+            [
+              14,
+              8
+            ]
+          ],
+          "reason": "Individually composed joint-guided cave link; fictional plan, not an instrument survey"
+        },
+        {
+          "id": "wu_exit",
+          "points": [
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              8
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "reason": "Individually composed joint-guided cave link; fictional plan, not an instrument survey"
+        },
+        {
+          "id": "eu_exit",
+          "points": [
+            [
+              19,
+              4
+            ],
+            [
+              18,
+              4
+            ]
+          ],
+          "reason": "Individually composed joint-guided cave link; fictional plan, not an instrument survey"
+        },
+        {
+          "id": "wl_exit",
+          "points": [
+            [
+              0,
+              15
+            ],
+            [
+              1,
+              15
+            ],
+            [
+              1,
+              12
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "reason": "Individually composed joint-guided cave link; fictional plan, not an instrument survey"
+        },
+        {
+          "id": "el_exit",
+          "points": [
+            [
+              19,
+              15
+            ],
+            [
+              18,
+              15
+            ],
+            [
+              18,
+              12
+            ],
+            [
+              14,
+              12
+            ]
+          ],
+          "reason": "Individually composed joint-guided cave link; fictional plan, not an instrument survey"
+        },
+        {
+          "id": "sw_exit",
+          "points": [
+            [
+              4,
+              19
+            ],
+            [
+              4,
+              18
+            ],
+            [
+              8,
+              18
+            ],
+            [
+              8,
+              13
+            ]
+          ],
+          "reason": "Individually composed joint-guided cave link; fictional plan, not an instrument survey"
+        },
+        {
+          "id": "se_exit",
+          "points": [
+            [
+              15,
+              19
+            ],
+            [
+              15,
+              18
+            ],
+            [
+              12,
+              18
+            ],
+            [
+              12,
+              13
+            ]
+          ],
+          "reason": "Individually composed joint-guided cave link; fictional plan, not an instrument survey"
+        },
+        {
+          "id": "western_knuckle",
+          "points": [
+            [
+              7,
+              8
+            ],
+            [
+              7,
+              11
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "reason": "Individually composed joint-guided cave link; fictional plan, not an instrument survey"
+        },
+        {
+          "id": "eastern_bypass",
+          "points": [
+            [
+              14,
+              8
+            ],
+            [
+              14,
+              12
+            ]
+          ],
+          "reason": "Individually composed joint-guided cave link; fictional plan, not an instrument survey"
+        },
+        {
+          "id": "southern_rill",
+          "points": [
+            [
+              8,
+              13
+            ],
+            [
+              12,
+              13
+            ],
+            [
+              12,
+              12
+            ],
+            [
+              14,
+              12
+            ]
+          ],
+          "reason": "Individually composed joint-guided cave link; fictional plan, not an instrument survey"
+        },
+        {
+          "id": "north_ledge",
+          "points": [
+            [
+              7,
+              6
+            ],
+            [
+              13,
+              6
+            ],
+            [
+              13,
+              7
+            ],
+            [
+              14,
+              7
+            ]
+          ],
+          "reason": "Individually composed joint-guided cave link; fictional plan, not an instrument survey"
+        },
+        {
+          "id": "shelf_link",
+          "points": [
+            [
+              18,
+              7
+            ],
+            [
+              18,
+              8
+            ],
+            [
+              14,
+              8
+            ]
+          ],
+          "reason": "Individually composed joint-guided cave link; fictional plan, not an instrument survey"
+        },
+        {
+          "id": "western_detour",
+          "points": [
+            [
+              1,
+              8
+            ],
+            [
+              1,
+              12
+            ]
+          ],
+          "reason": "Individually composed joint-guided cave link; fictional plan, not an instrument survey"
+        },
+        {
+          "id": "spur_east",
+          "points": [
+            [
+              18,
+              12
+            ],
+            [
+              18,
+              10
+            ],
+            [
+              14,
+              10
+            ]
+          ],
+          "reason": "Individually composed joint-guided cave link; fictional plan, not an instrument survey"
+        }
+      ],
+      "doors": [
+        [
+          "confluence",
+          "N",
+          10,
+          "opening"
+        ],
+        [
+          "confluence",
+          "W",
+          8,
+          "opening"
+        ],
+        [
+          "confluence",
+          "E",
+          9,
+          "opening"
+        ],
+        [
+          "confluence",
+          "S",
+          10,
+          "opening"
+        ],
+        [
+          "old_tube",
+          "W",
+          4,
+          "opening"
+        ],
+        [
+          "shelf",
+          "E",
+          4,
+          "opening"
+        ],
+        [
+          "shelf",
+          "S",
+          14,
+          "opening"
+        ],
+        [
+          "slot",
+          "W",
+          9,
+          "opening"
+        ],
+        [
+          "silt",
+          "W",
+          15,
+          "opening"
+        ],
+        [
+          "silt",
+          "S",
+          5,
+          "opening"
+        ],
+        [
+          "eclipse",
+          "W",
+          15,
+          "opening"
+        ],
+        [
+          "eclipse",
+          "S",
+          15,
+          "secret"
+        ]
+      ],
+      "terrain": {
+        "water": [
+          [
+            8,
+            9
+          ],
+          [
+            9,
+            9
+          ],
+          [
+            10,
+            9
+          ],
+          [
+            11,
+            9
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            13,
+            9
+          ],
+          [
+            12,
+            10
+          ],
+          [
+            13,
+            10
+          ]
+        ],
+        "bridges": [
+          [
+            10,
+            9
+          ]
+        ],
+        "elevations": [
+          [
+            1,
+            [
+              [
+                12,
+                3
+              ],
+              [
+                13,
+                3
+              ],
+              [
+                14,
+                3
+              ],
+              [
+                15,
+                3
+              ],
+              [
+                16,
+                3
+              ],
+              [
+                12,
+                4
+              ],
+              [
+                13,
+                4
+              ],
+              [
+                14,
+                4
+              ],
+              [
+                15,
+                4
+              ],
+              [
+                16,
+                4
+              ],
+              [
+                17,
+                4
+              ],
+              [
+                13,
+                5
+              ],
+              [
+                14,
+                5
+              ],
+              [
+                15,
+                5
+              ],
+              [
+                16,
+                5
+              ],
+              [
+                17,
+                5
+              ],
+              [
+                14,
+                6
+              ],
+              [
+                15,
+                6
+              ]
+            ]
+          ]
+        ],
+        "ramps": [
+          [
+            [
+              17,
+              4
+            ],
+            [
+              18,
+              4
+            ]
+          ],
+          [
+            [
+              14,
+              6
+            ],
+            [
+              14,
+              7
+            ]
+          ]
+        ],
+        "chokes": [
+          [
+            [
+              1,
+              10
+            ],
+            [
+              1,
+              11
+            ]
+          ]
+        ]
+      },
+      "features": [
+        [
+          "rubble",
+          [
+            [
+              3,
+              10
+            ],
+            [
+              5,
+              15
+            ],
+            [
+              16,
+              16
+            ]
+          ]
+        ]
+      ],
+      "cave_details": {
+        "flowstone": [
+          [
+            14,
+            3
+          ],
+          [
+            15,
+            3
+          ],
+          [
+            15,
+            4
+          ]
+        ],
+        "scallops": [
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "gravel": [
+          [
+            3,
+            15
+          ],
+          [
+            4,
+            15
+          ],
+          [
+            5,
+            16
+          ]
+        ],
+        "breakdown": [
+          [
+            9,
+            11
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            11,
+            11
+          ]
+        ]
+      }
     }
   ]
 }

@@ -49,8 +49,8 @@
 <path data-blocks-edge="10,11|9,11" d="M240,264v24" stroke="#e4dfd2" stroke-width="6"/>
 <path d="M240,264v24" stroke="#3c4241" stroke-width="3.3"/>
 </g>
-<g id="level-ramps" fill="none" stroke="#87664e" stroke-width="2.2" stroke-linecap="round">
-<path d="M252,108L252,132"/>
+<g id="level-ramps" fill="none" stroke="#87664e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+<path data-uphill-cell="10,4" d="M252,127.68L252,110.88 M255.36,116.64L252,110.88L248.64,116.64"/>
 </g>
 <g id="engineered-canal-banks" fill="none" stroke-linejoin="miter">
 <path d="M240,288h24" stroke="#596461" stroke-width="2.2"/>

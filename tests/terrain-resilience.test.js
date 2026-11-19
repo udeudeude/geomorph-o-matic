@@ -99,3 +99,15 @@ test("Riftwater Lock encodes water, a walkable bridge, and genuinely raised room
  assert.ok(svg.indexOf('id="water-terrain"')<svg.indexOf('id="features"'));
  assert.equal(audit(morph).water_cells,model.water.size);
 });
+
+test("ramp arrows mark the higher cell, not arbitrary lexical edge orientation",()=>{
+ const cells=grid(3,1);
+ const rise={elevations:[[1,[[2,0]]]],ramps:[[[1,0],[2,0]]]};
+ const uphill=terrainSvg(cells,rise).join("");
+ assert.match(uphill,/data-uphill-cell="2,0"/);
+ assert.equal(uphill,terrainSvg(cells,rise).join(""));
+ const reversed={elevations:[[-1,[[2,0]]]],ramps:[[[2,0],[1,0]]]};
+ const downhill=terrainSvg(cells,reversed).join("");
+ assert.match(downhill,/data-uphill-cell="1,0"/);
+ assert.notEqual(uphill.match(/data-uphill-cell="[^"]+"/)[0],downhill.match(/data-uphill-cell="[^"]+"/)[0]);
+});
