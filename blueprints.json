@@ -2484,7 +2484,7 @@
       "family": "Floodworks",
       "geometry": "row-runs",
       "wall_style": "cavern",
-      "description": "Abandoned floodworks: a deep turbine sump spanned by a dry footbridge, a raised chart archive served by a single ramp, a hidden settling cellar, pressure vault, and two inspection circuits. Wet access opens additional pool cells. A suspended five-cell inspection catwalk spans the sump above the water, reached from opposite dry ladders.",
+      "description": "Abandoned floodworks: a deep turbine sump spanned by a dry footbridge, a raised chart archive served by a single ramp, a hidden settling cellar, pressure vault, and two inspection circuits. Wet access opens additional pool cells. A suspended five-cell inspection catwalk spans the sump above the water, reached from side-service doors and opposite dry ladders.",
       "rooms": [
         [
           "office",
@@ -3065,6 +3065,19 @@
               14
             ]
           ]
+        },
+        {
+          "id": "western_turbine_service",
+          "points": [
+            [
+              6,
+              10
+            ],
+            [
+              7,
+              10
+            ]
+          ]
         }
       ],
       "doors": [
@@ -3126,6 +3139,18 @@
           "watch",
           "W",
           17,
+          "door"
+        ],
+        [
+          "turbine",
+          "W",
+          10,
+          "door"
+        ],
+        [
+          "turbine",
+          "E",
+          10,
           "door"
         ]
       ],
