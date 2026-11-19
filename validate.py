@@ -238,6 +238,41 @@ def validate_waterworks(tile, cells):
             freshly_reached = connected(channels, blocked, inlet) - upstream
             assert freshly_reached and not (freshly_reached & claimed), (tile['id'], 'not independent shutter pockets')
             claimed |= freshly_reached
+    # Independent check of the *assumed* lower level. An ordered route gives
+    # flow direction toward an internal, explicitly unfinished terminus.
+    # Drain pickups descend one-way: they do not join upper sluice pockets.
+    lower = spec.get('tailrace')
+    lower_cells = lower_pickups = 0
+    if lower is not None:
+        assert isinstance(lower, dict) and type(lower.get('level')) is int and lower['level'] == -1, (tile['id'], 'invalid lower level')
+        raw = lower.get('cells')
+        assert isinstance(raw, list) and len(raw) >= 3, (tile['id'], 'short lower collector')
+        route = []
+        for p in raw:
+            assert (isinstance(p, list) and len(p) == 2 and all(type(v) is int and 0 < v < 19 for v in p)), (tile['id'], 'bad lower coordinate')
+            route.append(tuple(p))
+        assert len(route) == len(set(route)), (tile['id'], 'branching/looping lower race')
+        assert all(abs(a[0]-b[0])+abs(a[1]-b[1]) == 1 for a, b in zip(route, route[1:])), (tile['id'], 'disconnected lower collector')
+        assert isinstance(lower.get('terminus'), list) and tuple(lower['terminus']) == route[-1], (tile['id'], 'unmapped outlet position')
+        raw_drops = lower.get('pickups')
+        assert isinstance(raw_drops, list) and raw_drops, (tile['id'], 'no lower drain pickups')
+        assert all(isinstance(p, list) and len(p) == 2 and all(type(v) is int for v in p) for p in raw_drops), (tile['id'], 'bad drain point')
+        pickups = {tuple(p) for p in raw_drops}
+        assert len(pickups) == len(raw_drops), (tile['id'], 'repeated lower shaft')
+        headwater = connected(channels, (walls-culverts) | edges, inlet)
+        assert (pickups <= (channels & set(route)) and not pickups & water
+                and not pickups & headwater and route[-1] not in pickups), (tile['id'], 'bypassing sealed headrace')
+        if isolated:
+            checked = set()
+            for gate_id in gates:
+                blocked = (walls-culverts) | {pair(tuple(g['a']), tuple(g['b']))
+                    for k, g in gates.items() if k != gate_id}
+                pocket = connected(channels, blocked, inlet) - headwater
+                match = pickups & pocket
+                assert len(match) == 1, (tile['id'], 'gate lacks unique lower drain')
+                checked |= match
+            assert checked == pickups, (tile['id'], 'pickup outside a shutter pocket')
+        lower_cells, lower_pickups = len(route), len(pickups)
     assigned, locations, control_ids = set(), set(), set()
     for station in spec.get('controls', []):
         at = tuple(station['at'])
@@ -276,7 +311,8 @@ def validate_waterworks(tile, cells):
         assert additions <= seen, (tile['id'], 'flood bypassed a closed shutter or partition')
         submerged |= additions
     return {'engineered_channel_cells': len(channels), 'sluice_controls': len(locations),
-            'hydraulic_partitions': len(partitions & walls), 'flood_stages': len(stage_ids)}
+            'hydraulic_partitions': len(partitions & walls), 'flood_stages': len(stage_ids),
+            'lower_tailrace_cells': lower_cells, 'lower_tailrace_pickups': lower_pickups}
 
 def validate(tile):
     name=tile['id'];cells={};chambers={}
