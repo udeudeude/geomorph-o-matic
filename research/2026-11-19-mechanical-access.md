@@ -17,9 +17,9 @@ Riftwater has three dry handwheel positions at (10,14), (11,14), (12,14), and th
 
 This is a **constructability envelope**, not a calculated torque capacity, real headroom assessment, or gear design. The six sleeves require proof that the masonry can tolerate them. The transmission routes are deliberately absent from the ordinary walkable map; they appear on their own editable technical plate.
 
-### 2. Access to all four bends of the buried water race
+### 2. Access to all five bends of the buried water race
 
-The lower centerline has two changes of direction in each of Riftwater and Postern. Each now has a bolted, nominal 1.5-foot cleanout provision directly under a dry gallery hatch or connected to one by a short lower lateral service branch. In Riftwater, the bend under the middle handwheel **cannot** have a workable hatch at that same floor location. Instead, a separately authored 7.5-foot lower inspection spur leads to the accessible corridor at (13,13). The second Riftwater bend has a direct cover at (6,14).
+The lower centerline has **three** changes of direction in Riftwater, including the turning elbow beneath the eastern wet sump, and **two** in Postern. Each now has a bolted, nominal 1.5-foot cleanout provision directly under a dry gallery hatch or connected to one by a short lower lateral service branch. The eastern turbine sump's buried elbow at (11,11) needs a 7.5-foot lateral cleanout branch to the dry gallery at (13,12), with isolation and dewatering before service. In Riftwater, the downstream bend under the middle handwheel **cannot** have a workable hatch at that same floor location. Instead, a separately authored 7.5-foot lower inspection spur leads to the accessible corridor at (13,13). The second Riftwater bend has a direct cover at (6,14).
 
 Postern's turns at (6,1) and (9,1) now have direct inspection covers. The latter was originally buried under solid rock: a one-cell service niche now opens from (8,1) to (9,1), creating a real corridor approach rather than an invented access label. These covers are closed and do not create additional pedestrian portals. Inspection points are maintenance features, **not** crawlable dungeon shafts.
 
