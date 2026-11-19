@@ -225,13 +225,40 @@ def validate_subfloor_relay(tile):
     return len(points)
 
 
+
+def validate_buried_foundations(tile):
+    """Plan-only structural exclusion; no claim about actual foundation depths."""
+    hyd = tile.get('hydrology', {})
+    if 'tailrace' in hyd and 'subfloor_relay' in hyd:
+        raise AssertionError('two conduit roles on one tile')
+    spec = hyd.get('tailrace') or hyd.get('subfloor_relay')
+    if not spec:
+        return {'buried_foundation_overlaps': 0, 'buried_foundation_warnings': 0}
+    footprints = {}
+    for room_id, _, shape in tile['rooms']:
+        for p in footprint(shape):
+            assert p not in footprints, (tile['id'], 'overlapping chamber foundations')
+            footprints[p] = room_id
+    drops = {tuple(p) for p in hyd.get('tailrace', {}).get('pickups', [])}
+    near = 0
+    for station in spec['cells']:
+        p = tuple(station)
+        room = footprints.get(p)
+        if room is not None:
+            assert room == 'turbine' and p in drops, (tile['id'], 'buried route cuts room foundation', p, room)
+        elif any((p[0]+dx, p[1]+dy) in footprints for dx,dy in NEIGHBORS):
+            near += 1
+    return {'buried_foundation_overlaps': 0, 'buried_foundation_warnings': near}
+
+
 def validate_waterworks(tile, cells):
     """Independent sanity check: hydraulic canals cannot consume normal halls."""
     spec = tile.get('hydrology', {})
     lower_relay_cells = validate_subfloor_relay(tile)
+    foundation_report = validate_buried_foundations(tile)
     if 'channels' not in spec:
         return {'engineered_channel_cells': 0, 'sluice_controls': 0,
-                'lower_relay_cells': lower_relay_cells}
+                'lower_relay_cells': lower_relay_cells, **foundation_report}
     channel_positions = [tuple(p) for p in spec['channels']]
     channels = set(channel_positions)
     assert channels and len(channels) == len(channel_positions), (tile['id'], 'duplicate/empty waterway')
@@ -373,7 +400,7 @@ def validate_waterworks(tile, cells):
     return {'engineered_channel_cells': len(channels), 'sluice_controls': len(locations),
             'hydraulic_partitions': len(partitions & walls), 'flood_stages': len(stage_ids),
             'lower_tailrace_cells': lower_cells, 'lower_tailrace_pickups': lower_pickups,
-            'lower_relay_cells': lower_relay_cells}
+            'lower_relay_cells': lower_relay_cells, **foundation_report}
 
 def validate(tile):
     name=tile['id'];cells={};chambers={}

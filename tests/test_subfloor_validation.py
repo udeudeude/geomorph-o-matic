@@ -14,11 +14,11 @@ class LowerConduitContracts(unittest.TestCase):
     def test_paired_source_and_relay_pass_independent_validation(self):
         source = validate(RIFT)
         receiver = validate(POSTERN)
-        self.assertEqual(source["lower_tailrace_cells"], 11)
-        self.assertEqual(receiver["lower_relay_cells"], 9)
-        self.assertEqual(RIFT["hydrology"]["tailrace"]["terminus"], [11, 19])
-        self.assertEqual(POSTERN["hydrology"]["subfloor_relay"]["cells"][0], [11, 0])
-        # Both connect at x=11 without claiming a ninth surface doorway.
+        self.assertEqual(source["lower_tailrace_cells"], 16)
+        self.assertEqual(receiver["lower_relay_cells"], 12)
+        self.assertEqual(RIFT["hydrology"]["tailrace"]["terminus"], [6, 19])
+        self.assertEqual(POSTERN["hydrology"]["subfloor_relay"]["cells"][0], [6, 0])
+        # Both connect at x=6 without claiming a ninth surface doorway.
         self.assertEqual(RIFT["hydrology"]["tailrace"]["boundary_edge"]["offset"],
                          POSTERN["hydrology"]["subfloor_relay"]["entry_edge"]["offset"])
 
@@ -75,6 +75,18 @@ class LowerConduitContracts(unittest.TestCase):
                 m.pop("boundary_edge")
             with self.subTest(damage=damage), self.assertRaises(AssertionError):
                 validate(bad)
+
+
+    def test_reject_collector_through_vault_and_receiver_through_toll_footing(self):
+        from validate import validate_buried_foundations
+        source = copy.deepcopy(RIFT)
+        source["hydrology"]["tailrace"]["cells"][12] = [11, 17]
+        with self.assertRaises(AssertionError):
+            validate_buried_foundations(source)
+        receiver = copy.deepcopy(POSTERN)
+        receiver["hydrology"]["subfloor_relay"]["cells"][6] = [5, 4]
+        with self.assertRaises(AssertionError):
+            validate_buried_foundations(receiver)
 
 
 if __name__ == "__main__":

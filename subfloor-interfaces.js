@@ -6,6 +6,7 @@ const {buildCells,rotateCell,verifyLayout}=require("./assemble");
 const {doorEdges}=require("./audit");
 const {tailraceModel}=require("./tailrace");
 const {gradeProfile,gradeAtSeam}=require("./drainage-grade");
+const {requireBuriedFoundationClearance}=require("./foundation-clearance");
 const KEY=p=>p.join(",");
 const DIRECTIONS=["N","E","S","W"];
 const DELTA={N:[0,-1],E:[1,0],S:[0,1],W:[-1,0]};
@@ -43,6 +44,7 @@ function relayModel(tile){
  });
  if(KEY(r.terminus)!==KEY(r.cells.at(-1)))
   throw Error("Relay terminus must end the ordered lower route");
+ requireBuriedFoundationClearance(tile);
  const grade=gradeProfile(r.cells,r.grade);
  return {level:r.level,cells:r.cells.map(KEY),entry_edge:r.entry_edge,
   terminus:KEY(r.terminus),grade,discharge_status:r.discharge_status};
@@ -51,6 +53,7 @@ function interfaceForTile(tile){
  const h=tile.hydrology||{};
  if(h.tailrace&&h.subfloor_relay)throw Error("A tile cannot duplicate the same lower-level conduit role");
  if(h.tailrace){
+  requireBuriedFoundationClearance(tile);
   const m=tailraceModel(buildCells(tile),doorEdges(tile),h,tile.terrain||{});
   if(!m.boundary_edge)throw Error("Unmatched interior terminus is not a specialized seam");
   return {role:"out",edge:m.boundary_edge,grade:m.grade,level:m.level};
