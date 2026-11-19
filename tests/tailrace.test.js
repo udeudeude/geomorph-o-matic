@@ -75,6 +75,6 @@ test("separate technical plate traces physical coordinates without implying surv
   assert.ok(svg.includes(tag),tag);
  assert.equal((svg.match(/data-drain-from=/g)||[]).length,3);
  assert.equal((svg.match(/data-gate=/g)||[]).length,3);
- assert.match(svg,/vertical spacing/); // explicitly a design assumption
+ assert.match(svg,/design assumptions/); // explicitly a design assumption
  assert.equal((svg.match(/data-direction="toward-terminus"/g)||[]).length,1);
 });
