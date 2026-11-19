@@ -25,7 +25,7 @@ function measuredSection(owner,terrain={},vertical={},{row=10,feetPerLevel=10,ti
   '<title>'+esc(title)+'</title>',
   '<rect width="'+fmt(width)+'" height="'+fmt(height)+'" fill="#faf8f2"/>',
   '<text x="'+left+'" y="28" font-family="Georgia,serif" font-size="20" fill="#292b28">'+esc(title)+'</text>',
-  '<text x="'+left+'" y="48" font-family="sans-serif" font-size="11" fill="#585d58">Row '+row+' | Plan coordinates exact; vertical separation assumed '+feetPerLevel+' feet per level</text>',
+  '<text x="'+left+'" y="48" font-family="sans-serif" font-size="11" fill="#585d58">Idealized profile, row '+row+' | Plan exact; vertical separation assumed '+feetPerLevel+' feet per level</text>',
   '<g id="section-datums" fill="none" stroke="#c5c3b8" stroke-width=".8" stroke-dasharray="3 6">'
  ];
  for(let z=below;z<=above;z++){
@@ -35,6 +35,11 @@ function measuredSection(owner,terrain={},vertical={},{row=10,feetPerLevel=10,ti
  for(let z=below;z<=above;z++){
   const label=z===0?"0":(z>0?"+":"")+z;
   out.push('<text x="'+(left-12)+'" y="'+fmt(Y(z)+4)+'">'+label+' ('+fmt(z*feetPerLevel)+' ft)</text>');
+ }
+ out.push('</g><g id="section-vertical-scale" fill="none" stroke="#514b43" stroke-width="1.5">');
+ if(above>below){
+  out.push('<path d="M38 '+fmt(Y(below))+'V'+fmt(Y(below+1))+' M32 '+fmt(Y(below))+'h12 M32 '+fmt(Y(below+1))+'h12"/>',
+   '<text x="12" y="'+fmt((Y(below)+Y(below+1))/2)+'" font-family="sans-serif" font-size="10" fill="#514b43" stroke="none">'+fmt(feetPerLevel)+' ft</text>');
  }
  out.push('</g><g id="section-floor-surfaces" fill="none" stroke="#414842" stroke-width="4" stroke-linecap="square">');
  for(const [p,n] of model.nodes){
