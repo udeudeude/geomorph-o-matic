@@ -36,7 +36,7 @@ All six studies currently have eight standard edge openings, plus explicitly aut
 ## Next major work
 
 1. Critically examine actual assembled maps at print scale; improve density and architectural plausibility rather than adding superficial furniture.
-2. Introduce irregular chambers, changing elevation, underground waterways, and purposeful dead ends.
+2. Extend the existing irregular chambers and overlapping elevation model with connected waterways, flood stages, and purposeful dead ends.
 3. Add edge/corner interface masks and validate matched openings instead of assuming eight for every tile.
 4. Build meaningful scenario keys and alternate routes, then validate with actual playtesting.
 
@@ -80,3 +80,11 @@ The [terrain model](terrain.js) adds canonical water cells, dry bridge cells, si
 The [resilience analyzer](route-resilience.js) tests substantial geographic detours after a sampled corridor obstruction. It requires the replacement journey to diverge at least three cells from the original for at least three cells. Outputs are tracked by ordinary, unlocked and all-door policies and use the same dry-terrain graph as the chamber audit. This is a conservative diagnostic, not an assertion that every route has been playtested. Read the [research and limitations](research/2026-11-18-terrain-resilience.md).
 
 The [automated build](.github/workflows/validate.yml) validates both languages, regenerates the complete vector collection and assembled surveys, and publishes the studies as a downloadable workflow artifact. On main-branch builds, verified generated SVG masters and topology reports are synchronized into the repository if they changed.
+
+## Truly overlapping architectural levels
+
+The [stacked-floor engine](vertical.js) distinguishes actual upper decks from elevation labels on the lower floor. Each `vertical.decks` surface is a connected grid footprint at an explicit integer level. Each `vertical.links` entry locates a stair or ladder connecting two existing levels at the **same plan coordinate**. Level-specific nodes allow a path above a submerged cell without turning that submerged cell into dry ground. Connections and edge constraints are checked in both JavaScript and Python.
+
+[The Riftwater Lock](tiles/riftwater_lock.svg) now has a suspended turbine gantry spanning five cells above its partially submerged machine hall. Two additional service doors and two ladders reach that overhead route, while the existing north-south footbridge remains an independent lower crossing. Its separate editable layers are `overhead-decks`, `deck-parapets`, and `vertical-connections`. The architectural audit reports deck reachability and the effect on portal routes.
+
+This is not a complete multi-level presentation system: small print requires dedicated profile drawings and lower/upper plan variants. [Research, implementation and remaining problems](research/2026-11-18-overlapping-floors.md).
