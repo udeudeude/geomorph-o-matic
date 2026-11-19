@@ -7,7 +7,7 @@ const modes=["ordinary","unlocked","all"];
 function accessGraph(owner,doors,mode="ordinary"){
  if(!(owner instanceof Map))throw Error("Expected floor owner Map");
  if(!modes.includes(mode))throw Error("Unknown access mode: "+mode);
- const open=new Set(doors.filter(d=>d.kind==="door"||(mode!=="ordinary"&&d.kind==="locked")||mode==="all")
+ const open=new Set(doors.filter(d=>(d.kind==="door"||d.kind==="opening")||(mode!=="ordinary"&&d.kind==="locked")||mode==="all")
   .map(d=>edge(d.a,d.b)));
  const graph=new Map([...owner.keys()].map(k=>[k,[]]));
  for(const [p,zone] of owner){
