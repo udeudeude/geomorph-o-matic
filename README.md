@@ -70,16 +70,38 @@ node subfloor-assembly-plate.js examples/subfloor_pair_plate.svg
 node --test tests/subfloor-interfaces.test.js
 ```
 
-The source collector now falls 0.50 feet over 25 feet, then another 0.05 feet
+The rerouted source collector now falls 0.75 feet over 37.5 feet, then another 0.05 feet
 across the seam, under **explicitly assumed** datum and backwater constraints.
 It does not prove the free-fall shaft stays vented under actual flood conditions.
 The generic nine-tile compositions are surface-route studies, **not** verified
 hydraulic assemblies.
 
+## Foundation-aware buried route and profile (November 19, 2026)
+
+The original straight lower collector crossed the pressure-vault footprint.
+The new conduit turns west before the vault, reaching the specialized south
+seam at **(6,19)**; the Postern receiver enters at **(6,0)**, turns east north
+of the toll chamber, and stops internally at **(9,8)**. Its final outlet
+is still uncharted. These are **unwalkable buried waterways**.
+
+The [structural overlap audit](foundation-clearance.js) and independent Python
+checks reject buried routes under occupied chamber footprints, except three
+explicit engineered water-drop points beneath the turbine basin. Actual footing
+depths, offsets and material strength are **unmeasured**. Adjacent room cells
+therefore receive caution rings in the [technical drawing](examples/subfloor_pair_plate.svg),
+not a fictitious clearance certificate. The repeatable [audit report](reports/buried-clearance.json)
+records these warnings. [Engineering research and remaining blockers](research/2026-11-19-foundation-aware-drainage.md).
+
+```sh
+node foundation-clearance.js reports/buried-clearance.json
+node subfloor-assembly-plate.js examples/subfloor_pair_plate.svg
+node --test tests/foundation-clearance.test.js tests/subfloor-interfaces.test.js
+```
+
 ## Next major work
 
 1. Research and dimension sluice transmissions, lower-shaft access, invert elevations and the pressure vault's foundations before drawing claimed working machinery.
-2. Complete the receiver's real downstream outfall and confirm hydraulic grade and foundation clearances. The specialized lower seam is paired, but discharge still ends at an internal datum.
+2. Map the real receiver outfall and verify the tailwater envelope. The detour eliminates modeled direct room-footprint clashes, not unknown footing and crown clearances.
 3. Critically review nine-tile map assemblies and the two-level technical plate at print size, correcting visual hierarchy and architecture rather than adding generic furniture.
 4. Add edge/corner interface masks and test matched surface and lower-level openings through rotated assemblies, then playtest meaningful gate-operation choices.
 
