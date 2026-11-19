@@ -4,7 +4,7 @@ const {buildCells}=require("./assemble");
 const {shapeBounds}=require("./geometry");
 const {navigationSummary}=require("./topology");
 const {analyzeRoutes}=require("./route-analysis");
-const {terrainAudit}=require("./terrain");
+const {terrainAudit,terrainGraph}=require("./terrain");
 const {routeDiversity}=require("./route-resilience");
 const key=([x,y])=>x+","+y;const split=s=>s.split(",").map(Number);
 const portals=new Set(["4,0","15,0","4,19","15,19","0,4","0,15","19,4","19,15"]);
@@ -78,9 +78,9 @@ function audit(tile){
   normally_accessible_floor_fraction:Number((ordinarily.size/owner.size).toFixed(3)),
   chambers:visibility,notes:visibility.filter(r=>r.doors.length===1&&r.doors[0]==="secret").map(r=>`Secret-only chamber ${r.room} is a discovery, not an alternative circulation route`),
   ...navigationSummary(owner),
-  ...analyzeRoutes(owner,doors,[...portals]),
+  ...analyzeRoutes(owner,doors,[...portals],mode=>terrainGraph(owner,doors,tile.terrain||{},mode,"dry")),
   ...terrainAudit(owner,doors,tile.terrain||{}),
-  ...routeDiversity(owner,doors,[...portals])};
+  ...routeDiversity(owner,doors,[...portals],tile.terrain||{})};
 }
 if(require.main===module){const data=JSON.parse(fs.readFileSync(path.join(__dirname,"blueprints.json"),"utf8"));const results=data.tiles.map(audit);if(results.some(r=>!r.fully_connected||r.normal_portals_reachable!==8))throw Error("A tile has inaccessible floor or stranded exits");fs.mkdirSync(path.join(__dirname,"reports"),{recursive:true});fs.writeFileSync(path.join(__dirname,"reports/topology.json"),JSON.stringify(results,null,2)+"\n");for(const r of results)console.log(r.id+": "+r.hall_cycle_rank+" cycles, "+r.hall_chokepoint_count+" exit-separating cells");}
 module.exports={audit,cycleRank,adjacency,chokepoints,reachable,ownerMap,doorEdges};
