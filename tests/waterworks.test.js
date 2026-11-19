@@ -53,7 +53,20 @@ test("bad race and control geometry is rejected before vector output",()=>{
  assert.throws(()=>waterwayModel(owner,doors,{...hydro,outlet:[10,14]},tile.terrain),/Intake and outlet/);
  assert.throws(()=>controlModel(owner,doors,{...hydro,controls:[...hydro.controls,hydro.controls[0]]},tile.terrain),/repeated hydraulic control/);
  assert.throws(()=>controlModel(owner,doors,{...hydro,controls:hydro.controls.slice(0,2)},tile.terrain),/Every sluice/);
+ assert.throws(()=>controlModel(owner,doors,{...hydro,controls:hydro.controls.map((c,i)=>i===1?{...c,id:hydro.controls[0].id}:c)},tile.terrain),/repeated hydraulic control/);
  assert.throws(()=>controlModel(owner,doors,{...hydro,controls:hydro.controls.map((c,i)=>i===0?{...c,at:[10,9]}:c)},tile.terrain),/dry service-gallery/);
+});
+
+test("stone walls isolate canals unless a specific culvert cuts the boundary",()=>{
+ const zones=new Map([["2,5","pond"],["3,5","hall"]]);
+ const terrain={water:[[2,5]]};
+ const hydro={channels:[[2,5],[3,5]],intake:[2,5],outlet:[3,5]};
+ assert.throws(()=>waterwayModel(zones,[],hydro,terrain),/cannot connect intake/);
+ const cut={...hydro,culverts:[[[2,5],[3,5]]]};
+ const model=waterwayModel(zones,[],cut,terrain);
+ const graph=hydraulicCanalGraph(model.canal,[],new Map(),model.walls);
+ assert.deepEqual(graph.get("2,5"),["3,5"]);
+ assert.throws(()=>waterwayModel(zones,[],{...cut,culverts:[...cut.culverts,...cut.culverts]},terrain),/unique masonry boundary/);
 });
 
 test("waterworks appears in independent reproducible vector layers",()=>{
