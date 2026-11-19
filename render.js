@@ -2,7 +2,7 @@
 const fs=require("node:fs");
 const path=require("node:path");
 const {shapeCells,shapeBounds}=require("./geometry");
-const {naturalWallPaths,rockHachurePaths}=require("./cave-contours");
+const {organicWallPaths,rockHachurePaths}=require("./cave-contours");
 function makeSvg(tile) {
   const N=20,S=24,L=N*S,portal=new Set(["4,0","15,0","0,4","19,4","0,15","19,15","4,19","15,19"]);
   const key=(x,y)=>`${x},${y}`,edge=(a,b)=>[a,b].sort().join("|");
@@ -132,7 +132,7 @@ function makeSvg(tile) {
     parts.push(`<g id="rock-hachures" fill="none" stroke="#79776d" stroke-width="1" opacity=".65">`);
     for(const p of rockHachurePaths(naturalEdges))parts.push(`<path d="${p}"/>`);
     parts.push(`</g><g id="cavern-walls" fill="none" stroke-linecap="round" stroke-linejoin="round">`);
-    for(const p of naturalWallPaths(naturalEdges)){
+    for(const p of organicWallPaths(naturalEdges)){
       parts.push(`<path d="${p}" stroke="#8e8a80" stroke-width="5.5" opacity=".32"/><path d="${p}" stroke="#303332" stroke-width="2.8"/>`);
     }
     parts.push(`</g>`);

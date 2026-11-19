@@ -2477,6 +2477,742 @@
           ]
         ]
       ]
+    },
+    {
+      "id": "riftwater_lock",
+      "title": "The Riftwater Lock",
+      "family": "Floodworks",
+      "geometry": "row-runs",
+      "wall_style": "cavern",
+      "description": "Abandoned underground flood control works: a water-filled broken turbine hall with an optional through-route, a secret discharge cellar, locked pressure vault and two independent inspection circuits.",
+      "rooms": [
+        [
+          "office",
+          "Floodkeeper office",
+          {
+            "rows": [
+              [
+                9,
+                2,
+                4
+              ],
+              [
+                10,
+                1,
+                4
+              ],
+              [
+                11,
+                2,
+                4
+              ]
+            ]
+          }
+        ],
+        [
+          "cellar",
+          "Calcite settling cellar",
+          {
+            "rows": [
+              [
+                8,
+                16,
+                17
+              ],
+              [
+                9,
+                16,
+                18
+              ],
+              [
+                10,
+                16,
+                18
+              ],
+              [
+                11,
+                17,
+                18
+              ]
+            ]
+          }
+        ],
+        [
+          "turbine",
+          "Broken turbine pool",
+          {
+            "rows": [
+              [
+                9,
+                9,
+                11
+              ],
+              [
+                10,
+                8,
+                12
+              ],
+              [
+                11,
+                9,
+                11
+              ]
+            ]
+          }
+        ],
+        [
+          "archive",
+          "Gauges and chart archive",
+          {
+            "rows": [
+              [
+                2,
+                8,
+                11
+              ],
+              [
+                3,
+                8,
+                12
+              ],
+              [
+                4,
+                9,
+                11
+              ]
+            ]
+          }
+        ],
+        [
+          "vault",
+          "Buried pressure vault",
+          {
+            "rows": [
+              [
+                16,
+                9,
+                11
+              ],
+              [
+                17,
+                8,
+                12
+              ],
+              [
+                18,
+                9,
+                11
+              ]
+            ]
+          }
+        ],
+        [
+          "memorial",
+          "Silt memorial",
+          {
+            "rows": [
+              [
+                17,
+                1,
+                3
+              ],
+              [
+                18,
+                1,
+                3
+              ]
+            ]
+          }
+        ],
+        [
+          "watch",
+          "South watch niche",
+          {
+            "rows": [
+              [
+                17,
+                16,
+                18
+              ],
+              [
+                18,
+                16,
+                18
+              ]
+            ]
+          }
+        ]
+      ],
+      "routes": [
+        {
+          "id": "northwest_portal",
+          "points": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              5,
+              7
+            ]
+          ]
+        },
+        {
+          "id": "northeast_portal",
+          "points": [
+            [
+              15,
+              0
+            ],
+            [
+              15,
+              3
+            ],
+            [
+              17,
+              3
+            ],
+            [
+              17,
+              6
+            ],
+            [
+              14,
+              6
+            ]
+          ]
+        },
+        {
+          "id": "west_upper_portal",
+          "points": [
+            [
+              0,
+              4
+            ],
+            [
+              2,
+              4
+            ]
+          ]
+        },
+        {
+          "id": "east_upper_portal",
+          "points": [
+            [
+              19,
+              4
+            ],
+            [
+              17,
+              4
+            ]
+          ]
+        },
+        {
+          "id": "west_lower_portal",
+          "points": [
+            [
+              0,
+              15
+            ],
+            [
+              3,
+              15
+            ],
+            [
+              3,
+              12
+            ],
+            [
+              6,
+              12
+            ]
+          ]
+        },
+        {
+          "id": "east_lower_portal",
+          "points": [
+            [
+              19,
+              15
+            ],
+            [
+              17,
+              15
+            ],
+            [
+              17,
+              12
+            ],
+            [
+              14,
+              12
+            ]
+          ]
+        },
+        {
+          "id": "southwest_portal",
+          "points": [
+            [
+              4,
+              19
+            ],
+            [
+              4,
+              16
+            ],
+            [
+              6,
+              16
+            ],
+            [
+              6,
+              12
+            ]
+          ]
+        },
+        {
+          "id": "southeast_portal",
+          "points": [
+            [
+              15,
+              19
+            ],
+            [
+              15,
+              16
+            ],
+            [
+              13,
+              16
+            ],
+            [
+              13,
+              12
+            ]
+          ]
+        },
+        {
+          "id": "north_gallery",
+          "points": [
+            [
+              5,
+              7
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              14,
+              5
+            ],
+            [
+              14,
+              6
+            ]
+          ]
+        },
+        {
+          "id": "western_ramp",
+          "points": [
+            [
+              5,
+              7
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              7,
+              9
+            ],
+            [
+              6,
+              9
+            ],
+            [
+              6,
+              12
+            ]
+          ]
+        },
+        {
+          "id": "eastern_ramp",
+          "points": [
+            [
+              14,
+              6
+            ],
+            [
+              13,
+              6
+            ],
+            [
+              13,
+              12
+            ],
+            [
+              14,
+              12
+            ]
+          ]
+        },
+        {
+          "id": "southern_gallery",
+          "points": [
+            [
+              6,
+              12
+            ],
+            [
+              10,
+              12
+            ],
+            [
+              10,
+              14
+            ],
+            [
+              13,
+              14
+            ],
+            [
+              13,
+              12
+            ]
+          ]
+        },
+        {
+          "id": "raised_crossing",
+          "points": [
+            [
+              8,
+              5
+            ],
+            [
+              8,
+              7
+            ],
+            [
+              10,
+              7
+            ],
+            [
+              10,
+              8
+            ]
+          ]
+        },
+        {
+          "id": "west_office_access",
+          "points": [
+            [
+              2,
+              7
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              3,
+              8
+            ]
+          ]
+        },
+        {
+          "id": "west_office_return",
+          "points": [
+            [
+              6,
+              9
+            ],
+            [
+              5,
+              9
+            ],
+            [
+              5,
+              10
+            ],
+            [
+              6,
+              10
+            ]
+          ]
+        },
+        {
+          "id": "east_cellar_access",
+          "points": [
+            [
+              14,
+              9
+            ],
+            [
+              15,
+              9
+            ]
+          ]
+        },
+        {
+          "id": "southern_vault_access",
+          "points": [
+            [
+              10,
+              14
+            ],
+            [
+              10,
+              15
+            ]
+          ]
+        },
+        {
+          "id": "western_return",
+          "points": [
+            [
+              5,
+              10
+            ],
+            [
+              5,
+              12
+            ],
+            [
+              6,
+              12
+            ]
+          ]
+        },
+        {
+          "id": "eastern_return",
+          "points": [
+            [
+              15,
+              9
+            ],
+            [
+              15,
+              12
+            ],
+            [
+              14,
+              12
+            ]
+          ]
+        },
+        {
+          "id": "north_lookout_detour",
+          "points": [
+            [
+              7,
+              7
+            ],
+            [
+              8,
+              7
+            ]
+          ]
+        },
+        {
+          "id": "west_drain_bypass",
+          "points": [
+            [
+              4,
+              16
+            ],
+            [
+              4,
+              14
+            ],
+            [
+              6,
+              14
+            ],
+            [
+              6,
+              12
+            ]
+          ]
+        },
+        {
+          "id": "east_drain_bypass",
+          "points": [
+            [
+              15,
+              16
+            ],
+            [
+              15,
+              14
+            ],
+            [
+              13,
+              14
+            ]
+          ]
+        }
+      ],
+      "doors": [
+        [
+          "office",
+          "N",
+          3,
+          "door"
+        ],
+        [
+          "office",
+          "E",
+          10,
+          "door"
+        ],
+        [
+          "cellar",
+          "W",
+          9,
+          "door"
+        ],
+        [
+          "cellar",
+          "S",
+          17,
+          "secret"
+        ],
+        [
+          "turbine",
+          "N",
+          10,
+          "door"
+        ],
+        [
+          "turbine",
+          "S",
+          10,
+          "door"
+        ],
+        [
+          "archive",
+          "S",
+          10,
+          "locked"
+        ],
+        [
+          "vault",
+          "N",
+          10,
+          "locked"
+        ],
+        [
+          "memorial",
+          "E",
+          17,
+          "secret"
+        ],
+        [
+          "watch",
+          "W",
+          17,
+          "door"
+        ]
+      ],
+      "features": [
+        [
+          "pool",
+          [
+            9,
+            9,
+            11,
+            10
+          ]
+        ],
+        [
+          "wheel",
+          [
+            10,
+            14
+          ]
+        ],
+        [
+          "columns",
+          [
+            [
+              9,
+              3
+            ],
+            [
+              11,
+              3
+            ]
+          ]
+        ],
+        [
+          "rubble",
+          [
+            [
+              2,
+              10
+            ],
+            [
+              3,
+              11
+            ],
+            [
+              17,
+              10
+            ]
+          ]
+        ],
+        [
+          "barrels",
+          [
+            [
+              15,
+              17
+            ]
+          ]
+        ],
+        [
+          "table",
+          [
+            2,
+            10,
+            3,
+            10
+          ]
+        ],
+        [
+          "stairs",
+          [
+            5,
+            14,
+            5,
+            15
+          ]
+        ],
+        [
+          "sarcophagus",
+          [
+            1,
+            17,
+            2,
+            18
+          ]
+        ]
+      ]
     }
   ]
 }

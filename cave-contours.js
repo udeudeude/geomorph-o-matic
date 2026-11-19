@@ -94,4 +94,44 @@ function rockHachurePaths(segments,{cellSize=24,gridSize=20}={}){
  }
  return paths;
 }
-module.exports={chainsFromEdges,naturalWallPaths,rockHachurePaths};
+
+// Catmull-Rom-inspired cubic contours with deterministic sub-cell curvature.
+// This is an illustrative wall layer: validated traversable floor and door
+// edges remain unchanged. Any segment touching the outside boundary is exact.
+function organicWallPaths(segments,{cellSize=24,gridSize=20,curvature=0.16,irregularity=0.13}={}){
+ if(!(cellSize>0)||!Number.isInteger(gridSize)||gridSize<2||
+    curvature<0||curvature>0.22||irregularity<0||irregularity>0.18)throw Error("Unsafe organic wall controls");
+ const border=([x,y])=>x===0||y===0||x===gridSize||y===gridSize;
+ const cp=p=>[p[0]*cellSize,p[1]*cellSize];
+ const hash=(a,b)=>{
+  const keys=[coordinate(a),coordinate(b)].sort().join("|");
+  let h=2166136261;
+  for(let i=0;i<keys.length;i++){h=Math.imul(h^keys.charCodeAt(i),16777619)>>>0;}
+  return 2*(h/4294967295)-1;
+ };
+ return chainsFromEdges(segments).map(chain=>{
+  const closed=coordinate(chain[0])===coordinate(chain[chain.length-1]);
+  const pts=closed?chain.slice(0,-1):chain;
+  if(pts.length<2)return "";
+  const n=pts.length;
+  let d="M"+commands(cp(pts[0]));
+  for(let i=0;i<(closed?n:n-1);i++){
+   const a=pts[i],b=pts[(i+1)%n],A=cp(a),B=cp(b);
+   if(border(a)||border(b)){d+="L"+commands(B);continue;}
+   const prev=cp(pts[i===0?(closed?n-1:0):i-1]);
+   const next=cp(pts[i+2<n?i+2:(closed?(i+2)%n:n-1)]);
+   const length=Math.hypot(B[0]-A[0],B[1]-A[1]);
+   const sign=hash(a,b);
+   const wobble=irregularity*cellSize*sign;
+   const normal=[-(B[1]-A[1])/length,(B[0]-A[0])/length];
+   const p=[A[0]+curvature*(B[0]-prev[0])+normal[0]*wobble,
+    A[1]+curvature*(B[1]-prev[1])+normal[1]*wobble];
+   const q=[B[0]-curvature*(next[0]-A[0])+normal[0]*wobble,
+    B[1]-curvature*(next[1]-A[1])+normal[1]*wobble];
+   d+="C"+commands(p)+" "+commands(q)+" "+commands(B);
+  }
+  return d+(closed?"Z":"");
+ }).filter(Boolean);
+}
+
+module.exports={chainsFromEdges,naturalWallPaths,organicWallPaths,rockHachurePaths};
