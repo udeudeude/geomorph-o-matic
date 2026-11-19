@@ -58,12 +58,12 @@ function makeOutfallSection(data){
  out.push('<path d="M'+END+','+Z(receiver.grade.crown_ft)+'V'+Z(z.at(-1))+'" stroke="#a65a36" stroke-width="6"/>');
  out.push('<path d="M'+EX+','+Z(receiver.grade.max_tailwater_ft)+'H'+END+'" stroke="#5195a5" stroke-width="2" stroke-dasharray="4 5"/>');
  out.push('<text x="'+EX+'" y="'+(Z(receiver.grade.crown_ft)-14)+'" fill="#434941" font-size="11">Crown '+receiver.grade.crown_ft.toFixed(2)+' ft</text>');
- out.push('<text x="'+END+'" y="'+(Z(z.at(-1))+17)+'" text-anchor="end" fill="#2f6274" font-size="11">Lip invert '+lip.invert_ft.toFixed(2)+' ft</text>');
+ out.push('<text x="'+(END-10)+'" y="'+(Z(z.at(-1))-29)+'" text-anchor="end" fill="#2f6274" font-size="11">Lip invert '+lip.invert_ft.toFixed(2)+' ft</text>');
  out.push('</g><g id="receiver-water-envelopes" font-family="sans-serif">');
  for(const state of water){
   const yy=Z(state.water_surface_ft),col=state.crown_drowned?"#a34e37":"#2b889b";
   out.push('<path data-state="'+state.id+'" d="M'+(END-15)+','+yy+'h73" fill="none" stroke="'+col+'" stroke-width="3.5" stroke-dasharray="'+(state.crown_drowned?"9 4":"4 4")+'"/>');
-  out.push('<text x="1132" y="'+(yy-10)+'" text-anchor="end" font-size="11" fill="'+col+'">'+
+  out.push('<text x="1132" y="'+(yy+(state.crown_drowned?-13:26))+'" text-anchor="end" font-size="11" fill="'+col+'">'+
    (state.crown_drowned?"HIGH WATER / CROWN DROWNED":"ORDINARY / PARTLY SUBMERGED")+'</text>');
  }
  out.push('</g><g id="outfall-assumptions" font-family="sans-serif" font-size="12" fill="#455956">');

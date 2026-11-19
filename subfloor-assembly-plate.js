@@ -50,8 +50,9 @@ function makeSubfloorAssemblyPlate(layout,data){
   for(let i=1;i<20;i++){
    out.push('<path d="M'+i*WIDTH+',0v'+20*WIDTH+' M0,'+i*WIDTH+'h'+20*WIDTH+'"/>');
   }
-  out.push('</g><rect x="9" y="9" width="197" height="22" rx="3" fill="#f8f5ee" opacity=".96"/>'+
-   '<text x="16" y="24" font-size="11" fill="#244d55" font-weight="700" font-family="sans-serif">'+
+  const labelY=tileIndex===1?342:9;
+  out.push('</g><rect x="9" y="'+labelY+'" width="197" height="22" rx="3" fill="#f8f5ee" opacity=".96"/>'+
+   '<text x="16" y="'+(labelY+15)+'" font-size="11" fill="#244d55" font-weight="700" font-family="sans-serif">'+
    esc(t.title.toUpperCase())+' / LEVEL -1</text></g>');
  }
  out.push('<g id="lower-level-centerlines" fill="none" stroke="#1d6274" stroke-linecap="round" stroke-linejoin="round" stroke-width="8">');

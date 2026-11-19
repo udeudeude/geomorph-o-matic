@@ -118,7 +118,7 @@ function makeMaintenancePlate(data){
  drives.forEach((m,i)=>{
   const y=190+i*135;
   out.push('<g data-section-drive="'+m.id+'">');
-  out.push('<text x="555" y="'+y+'" font-size="15" font-weight="700" fill="'+colors[i]+'">'+(i+1)+'. '+esc(m.control.toUpperCase())+' → '+esc(m.gate.toUpperCase())+'</text>');
+  out.push('<text x="555" y="'+y+'" font-size="15" font-weight="700" fill="'+colors[i]+'">'+(i+1)+'. '+esc(m.control.toUpperCase())+' to '+esc(m.gate.toUpperCase())+'</text>');
   out.push('<path d="M558 '+(y+75)+'H1110" stroke="#8e948a" stroke-width="2.1"/>');
   out.push('<text x="564" y="'+(y+93)+'" font-size="10" fill="#59635e">walking floor / local zero</text>');
   out.push('<path d="M588 '+(y+20)+'H1010" stroke="'+colors[i]+'" stroke-width="5"/>');
@@ -141,7 +141,7 @@ function makeMaintenancePlate(data){
  access.forEach(([name,a],i)=>{
   const y=707+i*34;
   out.push('<circle cx="567" cy="'+(y-4)+'" r="5" fill="#a46a45"/>');
-  out.push('<text x="585" y="'+y+'" font-size="12" fill="#293c39">'+name+' bend '+K(a.at)+' → dry cover '+K(a.surface)+
+  out.push('<text x="585" y="'+y+'" font-size="12" fill="#293c39">'+name+' bend '+K(a.at)+' to dry cover '+K(a.surface)+
    ' · '+a.branch_length_ft.toFixed(1)+' ft lateral branch</text>');
  });
  out.push('</g>');
