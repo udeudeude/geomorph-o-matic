@@ -22,6 +22,9 @@ class ReceivingValidationTests(unittest.TestCase):
             lambda a:a["reaches"][2].__setitem__("clear_width_ft",2),
             lambda a:a["upper_terrace"]["path"].__setitem__(7,[9,9]),
             lambda a:a["receiving_levels_ft"].__setitem__("high",-8),
+            lambda a:a["upper_terrace"]["bridge_access"].pop(),
+            lambda a:a["upper_terrace"]["south_footpath"].__setitem__(1,[12,9]),
+            lambda a:a["desilting_pocket"]["inspection_steps"].__setitem__(1,[10,9]),
             lambda a:a.__setitem__("status","built"),
             lambda a:a["entry_edge"].__setitem__("offset",4)
         ]

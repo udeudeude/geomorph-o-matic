@@ -68,7 +68,7 @@ function validateReceivingAnnex(spec,lip){
  if(!pocket||!same(pocket.at,[10,9])||pocket.extra_depth_ft!==1||
     !same(pocket.service_landing,[10,7])||
     !terrace||!Array.isArray(terrace.path)||terrace.path.length<10||
-    !same(terrace.path[0],[15,0])||!same(terrace.path.at(-1),pocket.service_landing))
+    !same(terrace.path[0],[14,0])||!same(terrace.path.at(-1),pocket.service_landing))
   throw Error("Desilting pocket must have a specifically authored service approach");
  const dry=new Set();
  for(let i=0;i<terrace.path.length;i++){
@@ -79,6 +79,25 @@ function validateReceivingAnnex(spec,lip){
    throw Error("Dry terrace must be an uninterrupted walkable path clear of water");
   dry.add(key(p));
  }
+ // A drawn bridge is meaningless unless its landings are joined to dry paths.
+ function branch(steps,start,end,label){
+  if(!Array.isArray(steps)||steps.length<2||!same(steps[0],start)||
+     !same(steps.at(-1),end)||new Set(steps.map(key)).size!==steps.length)
+   throw Error("Disconnected "+label);
+  for(let i=0;i<steps.length;i++){
+   const p=steps[i];
+   if(!Array.isArray(p)||p.length!==2||!p.every(Number.isInteger)||
+      p.some(v=>v<0||v>19)||
+      (i&&Math.abs(p[0]-steps[i-1][0])+Math.abs(p[1]-steps[i-1][1])!==1))
+    throw Error("Broken "+label);
+  }
+  if(steps.slice(1).some(p=>used.has(key(p))))
+   throw Error(label+" crosses an unbridged wet cell");
+ }
+ if(!dry.has("12,5"))throw Error("No northern path to bridge");
+ branch(terrace.bridge_access,[12,5],[12,7],"north bridge approach");
+ branch(terrace.south_footpath,[12,11],[12,19],"south bank path");
+ branch(pocket.inspection_steps,[10,7],[10,8],"desilting steps");
  const b=terrace.bridge;
  if(!b||b.at_x!==12||b.from_y!==7||b.to_y!==11||
     !finite(b.deck_ft)||b.deck_ft<=spec.receiving_levels_ft.high)
@@ -98,6 +117,7 @@ function validateReceivingAnnex(spec,lip){
    source_high_crown_drowned:lip.states[1].crown_drowned,
    assumed_high_water_bank_freeboard_ft:Number((spec.bank_top_ft-w.high).toFixed(2)),
    service_path_cells:terrace.path.length,
+   bridge_connected_to_both_banks:true,inspection_steps_to_pocket:pocket.inspection_steps.length,
    statuses:["receiving reach authored","river beyond east boundary not mapped",
     "no demonstrated hydraulic capacity or scour protection"]};
 }

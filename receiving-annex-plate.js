@@ -10,7 +10,7 @@ function makeReceivingAnnexPlate(data,spec){
  const cx=x=>OX+(x+.5)*S,cy=y=>OY+(y+.5)*S;
  const ex=i=>SX+i*DX,zy=z=>SY+(-6-z)*36;
  const ranges=spec.reaches,states=spec.receiving_levels_ft;
- const upper=spec.upper_terrace;
+ const upper=spec.upper_terrace;const pocket=spec.desilting_pocket;
  const out=[
  '<svg xmlns="http://www.w3.org/2000/svg" width="16in" height="10in" viewBox="0 0 1200 760" role="img" aria-label="Specialist exterior geomorph: receiving ravine, masonry apron, sediment pocket, high-water profile">',
  '<title>Postern Bastion | Exterior receiving-ravine architectural annex, study 01</title>',
@@ -55,9 +55,9 @@ function makeReceivingAnnexPlate(data,spec){
  }
  out.push('</g>');
  out.push('<g id="dry-service-route" fill="none" stroke="#eee5cf" stroke-width="9" stroke-linecap="square" stroke-linejoin="round">',
- '<polyline points="'+upper.path.map(p=>cx(p[0])+","+cy(p[1])).join(" ")+'"/>',
+ ...([upper.path,upper.bridge_access,upper.south_footpath,pocket.inspection_steps].map(walk=>'<polyline points="'+walk.map(p=>cx(p[0])+","+cy(p[1])).join(" ")+'"/>')),
  '</g><g fill="none" stroke="#806d55" stroke-width="1.4" stroke-dasharray="3 3">',
- '<polyline points="'+upper.path.map(p=>cx(p[0])+","+cy(p[1])).join(" ")+'"/>',
+ ...([upper.path,upper.bridge_access,upper.south_footpath,pocket.inspection_steps].map(walk=>'<polyline points="'+walk.map(p=>cx(p[0])+","+cy(p[1])).join(" ")+'"/>')),
  '</g>');
  out.push('<g id="elevated-inspection-bridge" data-deck-ft="'+upper.bridge.deck_ft+'">',
  '<rect x="'+(cx(12)-7)+'" y="'+cy(upper.bridge.from_y)+'" width="14" height="'+((upper.bridge.to_y-upper.bridge.from_y)*S)+'" fill="#e1c99d" stroke="#594a3e" stroke-width="2"/>',
@@ -73,8 +73,8 @@ function makeReceivingAnnexPlate(data,spec){
  out.push('<g id="plan-annotations" font-family="sans-serif" font-size="11" fill="#394e4c">',
  '<text x="100" y="145">W:9 / MATCHED POSTERN LIP</text>',
  '<text x="316" y="145">OPEN RAVINE BEYOND EAST EDGE</text>',
- '<text x="106" y="565">Dry access from north edge; not an interchangeable surface portal.</text>',
- '<text x="106" y="583">Bridge crosses the water above assumed high water, not through it.</text>',
+ '<text x="106" y="565">Connected ridge paths reach both bridge banks, without standard portals.</text>',
+ '<text x="106" y="583">Pocket steps and bridge deck are above assumed high water.</text>',
  '</g>');
  const minX=ex(0),maxX=ex(19);
  out.push('<g id="longitudinal-rock-section">',

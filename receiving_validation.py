@@ -34,10 +34,23 @@ def verify_receiver(data, annex):
     pocket = annex["desilting_pocket"]
     assert pocket["at"] == [10,9] and pocket["extra_depth_ft"] == 1
     trail = annex["upper_terrace"]["path"]
-    assert trail[0] == [15,0] and trail[-1] == pocket["service_landing"] == [10,7]
+    assert trail[0] == [14,0] and trail[-1] == pocket["service_landing"] == [10,7]
     assert len({tuple(p) for p in trail}) == len(trail)
     assert not ({tuple(p) for p in trail} & {tuple(p) for p in route})
     assert all(sum(abs(a-b) for a,b in zip(x,y)) == 1 for x,y in zip(trail,trail[1:]))
+    terrace = annex["upper_terrace"]
+    assert [12,5] in trail
+    for label,start,end in (
+        ("bridge_access",[12,5],[12,7]),
+        ("south_footpath",[12,11],[12,19]),
+    ):
+        b=terrace[label]
+        assert b[0] == start and b[-1] == end
+        assert len({tuple(p) for p in b}) == len(b)
+        assert all(sum(abs(a-c) for a,c in zip(x,y)) == 1 for x,y in zip(b,b[1:]))
+        assert not ({tuple(p) for p in b[1:]} & {tuple(p) for p in route})
+    assert pocket["inspection_steps"] == [[10,7],[10,8]]
+    assert tuple(pocket["inspection_steps"][-1]) not in {tuple(p) for p in route}
     bridge = annex["upper_terrace"]["bridge"]
     levels = annex["receiving_levels_ft"]
     assert bridge["at_x"] == 12 and bridge["from_y"] == 7 and bridge["to_y"] == 11

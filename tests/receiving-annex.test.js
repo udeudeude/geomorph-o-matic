@@ -10,7 +10,9 @@ test("receiver is a distinct, dimensioned, provisional exterior architecture",()
  assert.equal(a.receiving_run_ft,47.5);
  assert.equal(a.receiving_drop_ft,.95);
  assert.equal(a.assumed_high_water_bank_freeboard_ft,1);
- assert.equal(a.service_path_cells,13);
+ assert.equal(a.service_path_cells,12);
+ assert.equal(a.bridge_connected_to_both_banks,true);
+ assert.equal(a.inspection_steps_to_pocket,2);
  assert.equal(a.source_high_crown_drowned,true);
  assert.match(a.statuses.join(" "),/not mapped/);
 });
@@ -31,6 +33,9 @@ test("adversarial route, treatment, access and water assumptions fail closed",()
   a=>a.upper_terrace.path[5]=[15,8],
   a=>a.upper_terrace.path[10]=[10,9],
   a=>a.upper_terrace.bridge.deck_ft=-7.5,
+  a=>a.upper_terrace.bridge_access.pop(),
+  a=>a.upper_terrace.south_footpath[1]=[12,9],
+  a=>a.desilting_pocket.inspection_steps[1]=[10,9],
   a=>a.desilting_pocket.service_landing=[10,8],
   a=>a.receiving_levels_ft.high=-8,
   a=>a.bank_top_ft=-8,a=>a.status="certified",

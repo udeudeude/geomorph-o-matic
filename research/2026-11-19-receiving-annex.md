@@ -41,8 +41,10 @@ from a 2-ft masonry throat (stations 0-2), through a 3-ft flagstone apron
 (3-7), 5-ft desilting reach (8-11) with an assumed 1-ft extra pocket
 depth, and 7.5-ft rock-lined receiving bed (12-19).
 
-A dry terrace, accessed from the north face of the specialist annex,
-reaches an inspection landing by the pocket. A short elevated crossing
+A dry terrace begins at **N:14**, away from the normal portal offsets,
+and reaches an inspection landing by the pocket. A northern branch reaches
+the bridge, a southern path leaves its opposite abutment at **S:12**, and
+two short steps meet the cleanout rim. None is a standard tile entrance. A short elevated crossing
 at station 12 has its deck **assumed** at -5.50 ft, 2 feet above
 the high-water envelope (-7.50 ft); bank top is -6.50 ft. These are
 cartographic relationships, not accessibility or flood-safety certificates.

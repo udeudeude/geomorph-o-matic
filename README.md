@@ -267,7 +267,7 @@ pedestrian portals. A downstream river remains unmapped.
 The [authored annex geometry](examples/receiving_annex.json) and
 [interface/grade validator](receiving-annex.js) define an ordered falling bed,
 stone-lined throat, widened flagstone apron, desilting pocket with a separate
-dry inspection terrace, overhead service crossing and rough-stone receiving
+dry inspection terrace, two-bank bridge approach, pocket cleanout steps and rough-stone receiving
 reach. A [second, independent Python check](receiving_validation.py) catches
 mismatched profiles, access routes and bank assumptions. The editable vector
 drawing keeps rock contours, channel treatments, pedestrian approach, bridge,
