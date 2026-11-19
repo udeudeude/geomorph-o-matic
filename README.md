@@ -36,12 +36,13 @@ All six studies currently have eight standard edge openings, plus explicitly aut
 ## Two-level waterworks study (November 19, 2026)
 
 Riftwater Lock's three independently shut upper sumps now drop into a separate
-**ordered, lower-level collection race**. Its ten half-cell stations are
+**ordered, lower-level collection race**. Its sixteen half-cell stations are
 connected by a directed drain path, with one distinct drop shaft per shutter.
 The lower collector now reaches an **exact special subfloor seam** into Postern
 Bastion. The Postern receiving relay reaches a mapped eastern lower-level outfall lip;
-its exterior receiving channel and discharge capacity remain uncharted. Assumed invert heights are checked against an authored tailwater
-envelope, **not** surveyed or calculated flow physics.
+its exterior receiving channel and discharge capacity remain uncharted.
+Assumed invert heights are checked against a tailwater envelope, **not**
+surveyed or calculated flow physics.
 
 - [Two-plan lower-race technical plate](examples/riftwater_tailrace_plate.svg):
   separately editable upper and lower hydraulic vectors, exact plan coordinates,
@@ -58,7 +59,8 @@ not a misleading surface tunnel. The existing standard eight exits are unchanged
 
 - [Paired lower-level technical survey](examples/subfloor_pair_plate.svg): buried
   paths, exact specialized seam and assumed invert profile, with upper structural
-  footprints in faint context. The actual downstream outfall remains **unmapped**.
+  footprints in faint context. The **outfall lip is mapped**, but the receiving
+  watercourse beyond the eastern boundary remains uncharted.
 - [Source and relay example](examples/subfloor_pair.json): Riftwater Lock directly
   north of Postern Bastion, unrotated. Surface portals and the specialist lower
   connection are audited independently.
@@ -81,8 +83,9 @@ hydraulic assemblies.
 The original straight lower collector crossed the pressure-vault footprint.
 The new conduit turns west before the vault, reaching the specialized south
 seam at **(6,19)**; the Postern receiver enters at **(6,0)**, turns east north
-of the toll chamber, and stops internally at **(9,8)**. Its final outlet
-is still uncharted. These are **unwalkable buried waterways**.
+of the toll chamber, and turns east to an exterior masonry lip at **(19,9)**.
+The receiving channel beyond that lip is uncharted. These are **unwalkable
+buried waterways**.
 
 The [structural overlap audit](foundation-clearance.js) and independent Python
 checks reject buried routes under occupied chamber footprints, except three
@@ -141,7 +144,7 @@ node --test tests/gearbox-audit.test.js tests/maintenance-works.test.js
 ## Next major work
 
 1. Research and dimension actual historic gear trains, shaft torque, bearing supports, sleeves, lower cleanout depth and the pressure vault's foundations before claiming working machinery.
-2. Map the real receiver outfall and verify the tailwater envelope. The detour eliminates modeled direct room-footprint clashes, not unknown footing and crown clearances.
+2. Research and map the receiving watercourse beyond Postern's modeled outlet lip, then verify water levels, capacity and backwater. The detour eliminates direct room-footprint clashes, not unknown footing and crown clearances.
 3. Critically review nine-tile map assemblies and the two-level technical plate at print size, correcting visual hierarchy and architecture rather than adding generic furniture.
 4. Add edge/corner interface masks and test matched surface and lower-level openings through rotated assemblies, then playtest meaningful gate-operation choices.
 

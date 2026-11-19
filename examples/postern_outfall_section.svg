@@ -290,12 +290,12 @@
 <path d="M1060,304V620.8" stroke="#a65a36" stroke-width="6"/>
 <path d="M648,358H1060" stroke="#5195a5" stroke-width="2" stroke-dasharray="4 5"/>
 <text x="648" y="290" fill="#434941" font-size="11">Crown -8.00 ft</text>
-<text x="1060" y="637.8" text-anchor="end" fill="#2f6274" font-size="11">Lip invert -12.40 ft</text>
+<text x="1050" y="591.8" text-anchor="end" fill="#2f6274" font-size="11">Lip invert -12.40 ft</text>
 </g><g id="receiver-water-envelopes" font-family="sans-serif">
 <path data-state="ordinary" d="M1045,376h73" fill="none" stroke="#2b889b" stroke-width="3.5" stroke-dasharray="4 4"/>
-<text x="1132" y="366" text-anchor="end" font-size="11" fill="#2b889b">ORDINARY / PARTLY SUBMERGED</text>
+<text x="1132" y="402" text-anchor="end" font-size="11" fill="#2b889b">ORDINARY / PARTLY SUBMERGED</text>
 <path data-state="high" d="M1045,268h73" fill="none" stroke="#a34e37" stroke-width="3.5" stroke-dasharray="9 4"/>
-<text x="1132" y="258" text-anchor="end" font-size="11" fill="#a34e37">HIGH WATER / CROWN DROWNED</text>
+<text x="1132" y="255" text-anchor="end" font-size="11" fill="#a34e37">HIGH WATER / CROWN DROWNED</text>
 </g><g id="outfall-assumptions" font-family="sans-serif" font-size="12" fill="#455956">
 <text x="641" y="642">Outfall lip: 2-ft nominal clear width.</text>
 <text x="641" y="662">High water exceeds -8.75-ft modeled tailwater envelope.</text>
