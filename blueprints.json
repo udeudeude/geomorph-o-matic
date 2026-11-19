@@ -4217,7 +4217,7 @@
       "title": "The Fallen Choir",
       "family": "Ruinous bell abbey",
       "geometry": "row-runs",
-      "description": "A fractured bell nave offers a direct four-sided crossing, while its staggered vestry walk, western ambulatory, eastern watch and crypt form longer alternative journeys. Sealed stair and listening cell reward searching rather than blocking ordinary traversal.",
+      "description": "A fractured bell nave offers a direct four-sided crossing, while its staggered vestry walk, western ambulatory, eastern watch and crypt form longer alternative journeys. Sealed undertaker's cache and listening cell reward searching rather than blocking ordinary traversal.",
       "rooms": [
         [
           "bell_nave",
@@ -4350,8 +4350,8 @@
           }
         ],
         [
-          "blind_stair",
-          "Blind stair",
+          "undertaker_cache",
+          "Undertaker's cache",
           {
             "rows": [
               [
@@ -4792,7 +4792,7 @@
           "door"
         ],
         [
-          "blind_stair",
+          "undertaker_cache",
           "E",
           11,
           "secret"
@@ -4884,24 +4884,6 @@
             17,
             10,
             17
-          ]
-        ],
-        [
-          "stairs",
-          [
-            5,
-            11,
-            5,
-            13
-          ]
-        ],
-        [
-          "stairs",
-          [
-            14,
-            11,
-            14,
-            13
           ]
         ]
       ]
