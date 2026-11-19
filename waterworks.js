@@ -79,11 +79,13 @@ function waterwayModel(owner,doors=[],hydrology={},terrain={}) {
   throw Error("Invalid isolated-shutter contract");
  if(hydrology.isolated_shutters){
   if(gates.length<2)throw Error("Isolated shutters require multiple independently controlled branches");
+  const shut=new Map(gates.map(g=>[g.id,"closed"]));
+  const headwater=new Set(distances(hydraulicCanalGraph(canal,gates,shut,walls),inlet).keys());
   const claimed=new Set();
   for(const gate of gates){
    const states=new Map(gates.map(g=>[g.id,g.id===gate.id?"open":"closed"]));
    const reached=distances(hydraulicCanalGraph(canal,gates,states,walls),inlet);
-   const fresh=[...reached.keys()].filter(p=>!water.has(p));
+   const fresh=[...reached.keys()].filter(p=>!headwater.has(p));
    if(!fresh.length||fresh.some(p=>claimed.has(p)))
     throw Error("Sluices do not isolate independent downstream receiving pockets");
    for(const p of fresh)claimed.add(p);
@@ -99,13 +101,14 @@ function sluiceImpact(owner,doors=[],hydrology={},terrain={}) {
  const model=waterwayModel(owner,doors,hydrology,terrain);
  if(!model)return [];
  const gates=gateModel(owner,doors,hydrology.gates||[]);
- const baseline=terrainModel(owner,terrain).water;
+ const shut=new Map(gates.map(g=>[g.id,"closed"]));
+ const headwater=new Set(distances(hydraulicCanalGraph(model.canal,gates,shut,model.walls),model.inlet).keys());
  const result=[];
  for(const gate of gates){
   const states=new Map(gates.map(g=>[g.id,g.id===gate.id?"open":"closed"]));
   const graph=hydraulicCanalGraph(model.canal,gates,states,model.walls);
   const seen=distances(graph,model.inlet);
-  const newlyAccessible=[...seen.keys()].filter(p=>!baseline.has(p)).sort();
+  const newlyAccessible=[...seen.keys()].filter(p=>!headwater.has(p)).sort();
   result.push({gate:gate.id,newly_accessible_canals:newlyAccessible,
    potential_new_cells:newlyAccessible.length});
  }
