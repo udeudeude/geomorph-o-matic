@@ -466,20 +466,6 @@
 <circle cx="420" cy="228" r="8" fill="#d5bb95" stroke="#6d6a61" stroke-width="1.5"/><path d="M415,228h10" stroke="#6d6a61"/>
 <rect x="222" y="414" width="36" height="12" rx="5" fill="#d8d0c0" stroke="#494843" stroke-width="1.8"/>
 <rect x="227" y="419" width="26" height="2" fill="none" stroke="#887e6b"/>
-<rect x="125" y="269" width="14" height="62" fill="#eee9df" stroke="#716b60" stroke-width=".9"/>
-<path d="M125,278h14" stroke="#716b60" stroke-width="1"/>
-<path d="M125,288h14" stroke="#716b60" stroke-width="1"/>
-<path d="M125,298h14" stroke="#716b60" stroke-width="1"/>
-<path d="M125,308h14" stroke="#716b60" stroke-width="1"/>
-<path d="M125,318h14" stroke="#716b60" stroke-width="1"/>
-<path d="M125,328h14" stroke="#716b60" stroke-width="1"/>
-<rect x="341" y="269" width="14" height="62" fill="#eee9df" stroke="#716b60" stroke-width=".9"/>
-<path d="M341,278h14" stroke="#716b60" stroke-width="1"/>
-<path d="M341,288h14" stroke="#716b60" stroke-width="1"/>
-<path d="M341,298h14" stroke="#716b60" stroke-width="1"/>
-<path d="M341,308h14" stroke="#716b60" stroke-width="1"/>
-<path d="M341,318h14" stroke="#716b60" stroke-width="1"/>
-<path d="M341,328h14" stroke="#716b60" stroke-width="1"/>
 </g><g id="stone-walls" fill="none" stroke-linecap="square" stroke-linejoin="round">
 <path d="M192,48V72" stroke="#8e8a80" opacity=".32" stroke-width="5.5"/><path d="M192,48V72" stroke="#303332" stroke-width="2.8"/>
 <path d="M192,96V120" stroke="#8e8a80" opacity=".32" stroke-width="5.5"/><path d="M192,96V120" stroke="#303332" stroke-width="2.8"/>

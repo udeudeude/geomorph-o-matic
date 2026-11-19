@@ -2951,7 +2951,7 @@
         "normally_accessible": true
       },
       {
-        "room": "blind_stair",
+        "room": "undertaker_cache",
         "doors": [
           "secret"
         ],
@@ -2966,7 +2966,7 @@
       }
     ],
     "notes": [
-      "Secret-only chamber blind_stair is a discovery, not an alternative circulation route",
+      "Secret-only chamber undertaker_cache is a discovery, not an alternative circulation route",
       "Secret-only chamber watch is a discovery, not an alternative circulation route"
     ],
     "substantial_hall_circuits": 1,
@@ -3021,11 +3021,11 @@
         "accessible_floor_cells": 177,
         "accessible_chambers": [
           "bell_nave",
-          "blind_stair",
           "chime_room",
           "crypt",
           "north_vestry",
           "pulpit",
+          "undertaker_cache",
           "watch"
         ],
         "reachable_portals": 8,
@@ -3046,31 +3046,6 @@
           "door"
         ],
         "role": "no_portal_shortcut",
-        "impact": {
-          "ordinary": {
-            "essential_pairs": 0,
-            "shortcut_pairs": 0,
-            "maximum_detour": 0
-          },
-          "unlocked": {
-            "essential_pairs": 0,
-            "shortcut_pairs": 0,
-            "maximum_detour": 0
-          },
-          "all": {
-            "essential_pairs": 0,
-            "shortcut_pairs": 0,
-            "maximum_detour": 0
-          }
-        }
-      },
-      {
-        "room": "blind_stair",
-        "door_count": 1,
-        "door_kinds": [
-          "secret"
-        ],
-        "role": "destination",
         "impact": {
           "ordinary": {
             "essential_pairs": 0,
@@ -3169,6 +3144,31 @@
         "door_count": 1,
         "door_kinds": [
           "door"
+        ],
+        "role": "destination",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      },
+      {
+        "room": "undertaker_cache",
+        "door_count": 1,
+        "door_kinds": [
+          "secret"
         ],
         "role": "destination",
         "impact": {
