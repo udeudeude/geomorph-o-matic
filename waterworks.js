@@ -13,14 +13,14 @@ function coordinate(owner,p,label) {
      !owner.has(POS(p))) throw Error("Invalid waterworks " + label + " position");
  return POS(p);
 }
-function hydraulicCanalGraph(canal,gates,states) {
+function hydraulicCanalGraph(canal,gates,states,walls=new Set()) {
  const blocked = new Set(gates.filter(g => states.get(g.id) === "closed").map(g => g.edge));
  const graph = new Map([...canal].map(p => [p,[]]));
  for (const p of canal) {
   const [x,y] = p.split(",").map(Number);
   for (const [dx,dy] of DIRS) {
    const q = POS([x+dx,y+dy]);
-   if (canal.has(q) && !blocked.has(EDGE(p,q))) graph.get(p).push(q);
+   if (canal.has(q) && !blocked.has(EDGE(p,q)) && !walls.has(EDGE(p,q))) graph.get(p).push(q);
   }
  }
  return graph;
@@ -46,28 +46,46 @@ function waterwayModel(owner,doors=[],hydrology={},terrain={}) {
   if (!canal.has(POS(gate.a)) || !canal.has(POS(gate.b)))
    throw Error("Sluice cannot straddle dry pedestrian corridors");
  }
+ const culverts=new Set();
+ for (const c of hydrology.culverts||[]) {
+  if (!Array.isArray(c) || c.length!==2) throw Error("Invalid hydraulic culvert");
+  const a=coordinate(owner,c[0],"culvert"),b=coordinate(owner,c[1],"culvert");
+  const edge=EDGE(a,b);
+  const [ax,ay]=c[0],[bx,by]=c[1];
+  if (!canal.has(a)||!canal.has(b)||Math.abs(ax-bx)+Math.abs(ay-by)!==1||
+      owner.get(a)===owner.get(b)||culverts.has(edge))throw Error("Culvert must cross one unique masonry boundary");
+  culverts.add(edge);
+ }
+ const walls=new Set();
+ for (const p of canal) {
+  const [x,y]=p.split(",").map(Number);
+  for (const [dx,dy] of DIRS) {
+   const q=POS([x+dx,y+dy]);
+   if (canal.has(q)&&owner.get(p)!==owner.get(q)&&!culverts.has(EDGE(p,q)))walls.add(EDGE(p,q));
+  }
+ }
  const allOpen = new Map(gates.map(g => [g.id,"open"]));
- if (!distances(hydraulicCanalGraph(canal,gates,allOpen),inlet).has(outlet))
+ if (!distances(hydraulicCanalGraph(canal,gates,allOpen,walls),inlet).has(outlet))
   throw Error("Engineered waterway cannot connect intake to outlet");
- return {canal,inlet,outlet};
+ return {canal,inlet,outlet,walls,culverts};
 }
 function controlModel(owner,doors=[],hydrology={},terrain={}) {
  if (hydrology.controls === undefined) return [];
  if (!Array.isArray(hydrology.controls)) throw Error("Invalid hydraulic controls");
  const gates = gateModel(owner,doors,hydrology.gates||[]);
- const ids = new Set(gates.map(g => g.id)),assigned = new Set(),occupied = new Set();
+ const ids = new Set(gates.map(g => g.id)),assigned = new Set(),occupied = new Set(),controlIds=new Set();
  const wet = terrainModel(owner,terrain).water;
  const controls = [];
  for (const control of hydrology.controls) {
   if (!control || typeof control.id !== "string" ||
       !/^[a-z][a-z0-9_-]*$/.test(control.id) ||
       control.kind !== "handwheel" || !ids.has(control.gate) ||
-      assigned.has(control.gate)) throw Error("Invalid or repeated hydraulic control");
+      assigned.has(control.gate) || controlIds.has(control.id)) throw Error("Invalid or repeated hydraulic control");
   const k = coordinate(owner,control.at,"control");
   if (owner.get(k) !== "hall" || wet.has(k) || occupied.has(k) || PORTALS.includes(k))
    throw Error("Hydraulic controls require unique dry service-gallery positions");
   controls.push({...control,key:k});
-  assigned.add(control.gate);occupied.add(k);
+  assigned.add(control.gate);occupied.add(k);controlIds.add(control.id);
  }
  if (assigned.size !== gates.length) throw Error("Every sluice requires its own control station");
  return controls;
