@@ -2484,7 +2484,7 @@
       "family": "Floodworks",
       "geometry": "row-runs",
       "wall_style": "cavern",
-      "description": "Abandoned sluice works: a six-cell upstream basin feeds three masonry-isolated receiving pockets through independently controlled shutters. Dry operating handwheels flank the southern gallery; an upper inspection gantry and a lower bridge create separate crossings. The compact basin is NOT dimensioned for a turbine. The intake adit, machinery and downstream tailrace remain uncharted beyond this tile.",
+      "description": "Abandoned sluice works: a six-cell upstream basin feeds three masonry-isolated receiving pockets through independently controlled shutters. Dry operating handwheels flank the southern gallery; an upper inspection gantry and a lower bridge create separate crossings. The compact basin is NOT dimensioned for a turbine. The intake adit, turbine machinery, and ultimate outfall remain unmapped. A separate, assumed lower collection race links the three downstream sump drops; it is not a walkable gallery or a measured vertical survey.",
       "rooms": [
         [
           "office",
@@ -3507,7 +3507,70 @@
             ]
           }
         ],
-        "isolated_shutters": true
+        "isolated_shutters": true,
+        "tailrace": {
+          "level": -1,
+          "cells": [
+            [
+              9,
+              11
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              11
+            ],
+            [
+              11,
+              12
+            ],
+            [
+              11,
+              13
+            ],
+            [
+              11,
+              14
+            ],
+            [
+              11,
+              15
+            ],
+            [
+              11,
+              16
+            ],
+            [
+              11,
+              17
+            ],
+            [
+              11,
+              18
+            ]
+          ],
+          "pickups": [
+            [
+              9,
+              11
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              11
+            ]
+          ],
+          "terminus": [
+            11,
+            18
+          ]
+        }
       },
       "vertical": {
         "decks": [
