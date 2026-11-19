@@ -4,6 +4,7 @@ Usage: python validate.py [path/to/blueprints.json]
 """
 import collections
 import json
+import math
 import sys
 from pathlib import Path
 
@@ -174,11 +175,63 @@ def validate_vertical(tile, cells):
     return {'stacked_decks':len(decks), 'stacked_floor_cells':len(stacked), 'vertical_connections':len(links)}
 
 
+
+def lower_edge_point(edge):
+    assert isinstance(edge, dict) and edge.get('kind') == 'underfloor_tailrace', 'lower interface kind'
+    side, offset = edge.get('side'), edge.get('offset')
+    assert side in ('N', 'E', 'S', 'W') and type(offset) is int and 0 < offset < 19, 'lower interface position'
+    return {'N': (offset, 0), 'S': (offset, 19),
+            'W': (0, offset), 'E': (19, offset)}[side]
+
+
+def validate_lower_grade(route, grade, vented=False):
+    """Independent envelope audit; does not claim steady-flow hydraulic capacity."""
+    def finite(value):
+        return type(value) in (int, float) and math.isfinite(value)
+    assert isinstance(grade, dict), 'lower grade missing'
+    z = grade.get('inverts_ft')
+    assert isinstance(z, list) and len(z) == len(route) and all(finite(v) for v in z), 'lower inverts'
+    assert all(0 < a-b <= .25 for a,b in zip(z,z[1:])), 'lower invert must fall at each 2.5-foot station'
+    crown, tailwater = grade.get('crown_ft'), grade.get('max_tailwater_ft')
+    assert finite(crown) and finite(tailwater) and crown > max(z) and tailwater > max(z), 'invert/roof datum'
+    assert crown-tailwater >= .5, 'insufficient collector freeboard'
+    if vented:
+        lip, minimum = grade.get('drop_lip_ft'), grade.get('minimum_air_gap_ft')
+        assert finite(lip) and finite(minimum) and minimum >= 2, 'invalid vented drop'
+        assert lip > crown and lip-tailwater >= minimum, 'assumed backwater drowns the air break'
+    return z
+
+
+def validate_subfloor_relay(tile):
+    lower = tile.get('hydrology', {}).get('subfloor_relay')
+    if lower is None:
+        return 0
+    assert (isinstance(lower, dict) and type(lower.get('level')) is int and lower['level'] == -1
+            and lower.get('role') == 'receiving_relay'
+            and lower.get('discharge_status') == 'unmapped_internal_outfall'), 'unproven lower discharge'
+    entry = lower_edge_point(lower.get('entry_edge'))
+    route = lower.get('cells')
+    assert isinstance(route, list) and len(route) >= 3, 'receiving conduit path'
+    points = []
+    for i, p in enumerate(route):
+        assert (isinstance(p, list) and len(p) == 2 and all(type(n) is int for n in p)), 'relay coordinate'
+        p = tuple(p)
+        assert (p == entry if i == 0 else all(0 < n < 19 for n in p)), 'relay must enter through seam only'
+        points.append(p)
+    assert len(points) == len(set(points)), 'relay loops'
+    assert all(sum(abs(a-b) for a,b in zip(p,q)) == 1 for p,q in zip(points,points[1:])), 'relay is disconnected'
+    assert tuple(lower.get('terminus', [])) == points[-1] and all(0 < n < 19 for n in points[-1]), 'relay outfall unmapped'
+    validate_lower_grade(points, lower.get('grade'))
+    return len(points)
+
+
 def validate_waterworks(tile, cells):
     """Independent sanity check: hydraulic canals cannot consume normal halls."""
     spec = tile.get('hydrology', {})
+    lower_relay_cells = validate_subfloor_relay(tile)
     if 'channels' not in spec:
-        return {'engineered_channel_cells': 0, 'sluice_controls': 0}
+        return {'engineered_channel_cells': 0, 'sluice_controls': 0,
+                'lower_relay_cells': lower_relay_cells}
     channel_positions = [tuple(p) for p in spec['channels']]
     channels = set(channel_positions)
     assert channels and len(channels) == len(channel_positions), (tile['id'], 'duplicate/empty waterway')
@@ -249,12 +302,18 @@ def validate_waterworks(tile, cells):
         raw = lower.get('cells')
         assert isinstance(raw, list) and len(raw) >= 3, (tile['id'], 'short lower collector')
         route = []
-        for p in raw:
-            assert (isinstance(p, list) and len(p) == 2 and all(type(v) is int and 0 < v < 19 for v in p)), (tile['id'], 'bad lower coordinate')
-            route.append(tuple(p))
+        seam = lower.get('boundary_edge')
+        seam_at = lower_edge_point(seam) if seam is not None else None
+        for index, p in enumerate(raw):
+            assert (isinstance(p, list) and len(p) == 2 and all(type(v) is int for v in p)), (tile['id'], 'bad lower coordinate')
+            q = tuple(p)
+            assert (q == seam_at if seam_at is not None and index == len(raw)-1
+                    else all(0 < v < 19 for v in q)), (tile['id'], 'lower path cannot leak through unmodeled boundary')
+            route.append(q)
         assert len(route) == len(set(route)), (tile['id'], 'branching/looping lower race')
         assert all(abs(a[0]-b[0])+abs(a[1]-b[1]) == 1 for a, b in zip(route, route[1:])), (tile['id'], 'disconnected lower collector')
         assert isinstance(lower.get('terminus'), list) and tuple(lower['terminus']) == route[-1], (tile['id'], 'unmapped outlet position')
+        validate_lower_grade(route, lower.get('grade'), vented=True)
         raw_drops = lower.get('pickups')
         assert isinstance(raw_drops, list) and raw_drops, (tile['id'], 'no lower drain pickups')
         assert all(isinstance(p, list) and len(p) == 2 and all(type(v) is int for v in p) for p in raw_drops), (tile['id'], 'bad drain point')
@@ -313,7 +372,8 @@ def validate_waterworks(tile, cells):
         submerged |= additions
     return {'engineered_channel_cells': len(channels), 'sluice_controls': len(locations),
             'hydraulic_partitions': len(partitions & walls), 'flood_stages': len(stage_ids),
-            'lower_tailrace_cells': lower_cells, 'lower_tailrace_pickups': lower_pickups}
+            'lower_tailrace_cells': lower_cells, 'lower_tailrace_pickups': lower_pickups,
+            'lower_relay_cells': lower_relay_cells}
 
 def validate(tile):
     name=tile['id'];cells={};chambers={}
