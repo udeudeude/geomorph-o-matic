@@ -86,9 +86,9 @@ class WaterworksValidationTests(unittest.TestCase):
             bad = copy.deepcopy(rift)
             if corrupt == "no_partitions":
                 bad["terrain"]["barriers"] = []
-                # No masonry makes individually sealed downstream sumps a false claim:
-                # the independently computed gate-reachability test below catches that.
-                self.assertEqual(validate(bad)["hydraulic_partitions"], 0)
+                # Each isolated shutter would now wet all three pockets.
+                with self.assertRaises(AssertionError):
+                    validate(bad)
                 continue
             if corrupt == "gate_overlap":
                 bad["terrain"]["barriers"][0] = [[9, 10], [9, 11]]
