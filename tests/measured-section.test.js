@@ -22,7 +22,7 @@ test("section includes independent negative and stacked positive floor levels",(
  const {owner,terrain,vertical}=survey();
  const svg=measuredSection(owner,terrain,vertical,{row:10,title:"Test survey"});
  for(const id of ["section-datums","section-floor-surfaces","section-overhead-surfaces",
-  "section-vertical-links","section-water","section-bridges","section-distance-ruler"])
+  "section-vertical-links","section-water","section-bridges","section-distance-ruler","section-vertical-scale"])
   assert.match(svg,new RegExp('id="'+id+'"'));
  assert.match(svg,/lower_service/);
  assert.match(svg,/upper_passage/);
