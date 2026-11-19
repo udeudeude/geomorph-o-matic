@@ -28,7 +28,7 @@ function floodStages(owner,doors=[],terrain={},hydrology={}){
       stage.surface_level<0||stage.surface_level<lastLevel)throw Error("Invalid or falling flood waterline");
    lastLevel=stage.surface_level;
   }
-  const passages=waterway?hydraulicCanalGraph(waterway.canal,gates,nextState):hydraulicGraph(owner,doors,gates,nextState);
+  const passages=waterway?hydraulicCanalGraph(waterway.canal,gates,nextState,waterway.walls):hydraulicGraph(owner,doors,gates,nextState);
   const additions=new Set();
   for(const p of stage.add_water){
    if(!Array.isArray(p)||p.length!==2||p.some(n=>!Number.isInteger(n))||
