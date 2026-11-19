@@ -110,7 +110,7 @@ class WaterworksValidationTests(unittest.TestCase):
         self.assertEqual(report["lower_tailrace_cells"], 10)
         self.assertEqual(report["lower_tailrace_pickups"], 3)
         for kind in ("missing_drop", "headwater_bypass", "loop", "jump",
-                     "false_level", "wrong_outfall", "boundary"):
+                     "false_level", "backflow", "wrong_outfall", "boundary"):
             bad = copy.deepcopy(rift)
             spec = bad["hydrology"]["tailrace"]
             if kind == "missing_drop":
@@ -123,6 +123,8 @@ class WaterworksValidationTests(unittest.TestCase):
                 spec["cells"].pop(5)
             elif kind == "false_level":
                 spec["level"] = 0
+            elif kind == "backflow":
+                spec["hydraulic_separation"] = "open_pipe"
             elif kind == "wrong_outfall":
                 spec["terminus"] = [10, 18]
             elif kind == "boundary":
