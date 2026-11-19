@@ -88,3 +88,19 @@ The [stacked-floor engine](vertical.js) distinguishes actual upper decks from el
 [The Riftwater Lock](tiles/riftwater_lock.svg) now has a suspended turbine gantry spanning five cells above its partially submerged machine hall. Two additional service doors and two ladders reach that overhead route, while the existing north-south footbridge remains an independent lower crossing. Its separate editable layers are `overhead-decks`, `deck-parapets`, and `vertical-connections`. The architectural audit reports deck reachability and the effect on portal routes.
 
 This is not a complete multi-level presentation system: small print requires dedicated profile drawings and lower/upper plan variants. [Research, implementation and remaining problems](research/2026-11-18-overlapping-floors.md).
+
+## Two-level architectural drawings and rising-water scenarios
+
+The [section-plates.js](section-plates.js) generator produces an independently editable companion sheet with a lower plan, a distinct overhead-deck plan, and an east-west sectional cut through the turbine machinery. The plate explicitly marks its schematic vertical spacing rather than implying measured clearance:
+
+```sh
+node section-plates.js examples/riftwater_section.svg
+```
+
+The [flood-stages.js](flood-stages.js) engine audits ordered, cumulative, hydraulically connected floor inundation masks. Its canonical terrain graphs measure how dry access changes; the authored **surge** scenario in Riftwater Lock covers three additional turbine-floor cells without changing the eight interface portals:
+
+```sh
+node flood-stages.js examples/riftwater_surge.svg
+```
+
+Both vector studies are published by the validation workflow. The [research and implementation limits](research/2026-11-19-sections-flood-stages.md) distinguish these deliberately authored scenarios from physical fluid simulation and identify print-scale work remaining.
