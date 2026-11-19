@@ -23,7 +23,7 @@ The tile preserves the exact eight 5-foot portals of the project's 20-by-20 half
 ## Critical objections, not completion claims
 - The outer circuit still has too much right-angle regularity; a further design pass should diversify corridor silhouettes and reduce schematic bilateral symmetry.
 - The bell is a visible object but its collapse and structural consequences are not yet modeled as barriers. Do not infer a blocked or unstable passage from the illustration alone.
-- Stair symbols suggest a change in level, but there is no surveyed elevation or vertical topology behind them yet. Either explicitly author level transitions or remove the stairs.
+- Earlier provisional stair symbols were removed because no elevation topology supports them. Future stairs must connect authored levels and have a verifiable destination.
 - No physical printed sheet or actual tabletop navigation session has been completed. Raster inspection and automated geometry cannot substitute for them.
 
 ## Next research and development
