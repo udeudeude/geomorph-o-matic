@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 675" role="img" aria-label="Two-level hydraulic works technical plate">
+<title>The Riftwater Lock | Controlled underfloor drainage study</title>
+<rect width="1080" height="675" fill="#f5f1e8"/>
+<text x="66" y="43" font-family="Georgia,serif" font-size="25" fill="#293837">The Riftwater Lock / LOWER RACE</text>
+<text x="66" y="69" font-family="sans-serif" font-size="13" fill="#515d5a">Plan coordinates: 2.5 feet per half-cell. Panels crop tile columns 6–15 and rows 7–18.</text>
+<text x="66" y="100" font-family="sans-serif" font-size="16" font-weight="700" fill="#344846">01   UPPER SLUICE CHANNEL · level 0</text>
+<text x="590" y="100" font-family="sans-serif" font-size="16" font-weight="700" fill="#344846">02   SUBFLOOR TAILRACE · assumed level −1</text>
+<defs><marker id="downstream-arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6Z" fill="#315e6c"/></marker></defs>
+<g id="upper-hydraulic-plan" transform="translate(66 143)">
+<rect x="0" y="0" width="340" height="408" fill="#fffcf4" stroke="#5b655f" stroke-width="1.8"/>
+<g stroke="#dbd7cc" stroke-width=".8" fill="none">
+<path d="M34,0V408"/>
+<path d="M68,0V408"/>
+<path d="M102,0V408"/>
+<path d="M136,0V408"/>
+<path d="M170,0V408"/>
+<path d="M204,0V408"/>
+<path d="M238,0V408"/>
+<path d="M272,0V408"/>
+<path d="M306,0V408"/>
+<path d="M0,34H340"/>
+<path d="M0,68H340"/>
+<path d="M0,102H340"/>
+<path d="M0,136H340"/>
+<path d="M0,170H340"/>
+<path d="M0,204H340"/>
+<path d="M0,238H340"/>
+<path d="M0,272H340"/>
+<path d="M0,306H340"/>
+<path d="M0,340H340"/>
+<path d="M0,374H340"/>
+</g>
+<g id="upper-water-and-sumps">
+<rect x="136" y="102" width="34" height="34" fill="#9fc8d0" stroke="#748481" stroke-width="1.1"/>
+<rect x="136" y="136" width="34" height="34" fill="#e9ded0" stroke="#748481" stroke-width="1.1"/>
+<rect x="136" y="68" width="34" height="34" fill="#9fc8d0" stroke="#748481" stroke-width="1.1"/>
+<rect x="170" y="102" width="34" height="34" fill="#9fc8d0" stroke="#748481" stroke-width="1.1"/>
+<rect x="170" y="136" width="34" height="34" fill="#e9ded0" stroke="#748481" stroke-width="1.1"/>
+<rect x="170" y="68" width="34" height="34" fill="#9fc8d0" stroke="#748481" stroke-width="1.1"/>
+<rect x="102" y="102" width="34" height="34" fill="#9fc8d0" stroke="#748481" stroke-width="1.1"/>
+<rect x="102" y="136" width="34" height="34" fill="#e9ded0" stroke="#748481" stroke-width="1.1"/>
+<rect x="102" y="68" width="34" height="34" fill="#9fc8d0" stroke="#748481" stroke-width="1.1"/>
+</g><g id="upper-masonry-partitions" stroke="#3c4541" stroke-width="4">
+<path d="M170,136v34"/>
+<path d="M136,136v34"/>
+</g><g id="upper-shutters" stroke="#343b39" stroke-width="4">
+<path data-gate="west_shutter" d="M102,136h34"/>
+<path data-gate="center_shutter" d="M136,136h34"/>
+<path data-gate="east_shutter" d="M170,136h34"/>
+</g><g id="upper-drain-pickups">
+<g data-drop="10,11"><circle cx="153" cy="153" r="9" fill="#fdfbf5" stroke="#315e6c" stroke-width="2"/><path d="M148,150l5,7 5,-7" stroke="#315e6c" stroke-width="2" fill="none"/></g>
+<g data-drop="11,11"><circle cx="187" cy="153" r="9" fill="#fdfbf5" stroke="#315e6c" stroke-width="2"/><path d="M182,150l5,7 5,-7" stroke="#315e6c" stroke-width="2" fill="none"/></g>
+<g data-drop="9,11"><circle cx="119" cy="153" r="9" fill="#fdfbf5" stroke="#315e6c" stroke-width="2"/><path d="M114,150l5,7 5,-7" stroke="#315e6c" stroke-width="2" fill="none"/></g>
+<text x="127" y="75" font-size="15" font-family="sans-serif" font-weight="700" fill="#315e6c">I</text>
+</g></g>
+<g id="subfloor-collection-plan" transform="translate(586 143)">
+<rect x="0" y="0" width="340" height="408" fill="#fffcf4" stroke="#5b655f" stroke-width="1.8"/>
+<g stroke="#dbd7cc" stroke-width=".8" fill="none">
+<path d="M34,0V408"/>
+<path d="M68,0V408"/>
+<path d="M102,0V408"/>
+<path d="M136,0V408"/>
+<path d="M170,0V408"/>
+<path d="M204,0V408"/>
+<path d="M238,0V408"/>
+<path d="M272,0V408"/>
+<path d="M306,0V408"/>
+<path d="M0,34H340"/>
+<path d="M0,68H340"/>
+<path d="M0,102H340"/>
+<path d="M0,136H340"/>
+<path d="M0,170H340"/>
+<path d="M0,204H340"/>
+<path d="M0,238H340"/>
+<path d="M0,272H340"/>
+<path d="M0,306H340"/>
+<path d="M0,340H340"/>
+<path d="M0,374H340"/>
+</g>
+<g id="subfloor-directed-tailrace" fill="none" stroke="#315e6c" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+<polyline points="119,153 153,153 187,153 187,187 187,221 187,255 187,289 187,323 187,357 187,391" data-level="-1" data-direction="toward-terminus"/>
+</g><g id="subfloor-flow-arrows" fill="none" stroke="#315e6c" stroke-width="2.2" marker-end="url(#downstream-arrow)">
+<path d="M119,153L153,153"/>
+<path d="M187,153L187,187"/>
+<path d="M187,221L187,255"/>
+<path d="M187,289L187,323"/>
+<path d="M187,357L187,391"/>
+</g><g id="lower-discharge-shafts" font-family="sans-serif" font-size="12" text-anchor="middle">
+<g data-drain-from="west_shutter"><circle cx="119" cy="153" r="12" fill="#fffdf6" stroke="#315e6c" stroke-width="2.2"/><text x="119" y="157" fill="#315e6c" font-weight="700">W</text></g>
+<g data-drain-from="center_shutter"><circle cx="153" cy="153" r="12" fill="#fffdf6" stroke="#315e6c" stroke-width="2.2"/><text x="153" y="157" fill="#315e6c" font-weight="700">C</text></g>
+<g data-drain-from="east_shutter"><circle cx="187" cy="153" r="12" fill="#fffdf6" stroke="#315e6c" stroke-width="2.2"/><text x="187" y="157" fill="#315e6c" font-weight="700">E</text></g>
+<g id="lower-tailrace-terminus" data-continuation="unmapped"><rect x="174" y="378" width="26" height="26" fill="#f4e6c9" stroke="#315e6c" stroke-width="2"/><text x="187" y="395" fill="#315e6c" font-weight="700">T</text></g>
+</g></g>
+<text x="66" y="585" font-family="sans-serif" font-size="12" fill="#444d49">Filled blue: existing headwater. Tan: initially dry sumps. Thick bars: closed shutters and full-height partitions.</text>
+<text x="66" y="609" font-family="sans-serif" font-size="12" fill="#444d49">W / C / E: separate vertical drop shafts from west / center / east shutter pockets; T: uncharted onward outfall.</text>
+<text x="66" y="637" font-family="sans-serif" font-size="12" fill="#685c4c">Lower level, shaft clearances, invert elevations, channel grade, roof structure and hydraulic discharge are design assumptions.</text>
+<text x="66" y="655" font-family="sans-serif" font-size="11" fill="#685c4c">Drainage is directed downstream only. This plate does not add pedestrian passages or change the eight modular surface exits.</text>
+</svg>
