@@ -118,3 +118,10 @@ node measured-section.js examples/riftwater_profile.svg
 node print-review.js examples/riftwater_print_letter.svg
 node --test tests/*.test.js
 ```
+
+
+## Working sluice bank and legible grid (19 November 2026)
+
+The Riftwater Lock now has three individually controlled shutters across a 7.5-foot turbine basin. Its authored surge raises the center shutter, flooding three downstream cells while the flank shutters remain closed. Normal and surge SVG drawings show their actual hydraulic states. This is an authored **connectivity scenario**, not a calibrated flow simulation.
+
+All vector masters now show only the standard five-foot grid by default, avoiding the very thin 2.5-foot construction lines on half-inch print proofs. The finer grid remains an optional drafting mode. See [research and open engineering questions](research/2026-11-19-sluice-bank-cartography.md).

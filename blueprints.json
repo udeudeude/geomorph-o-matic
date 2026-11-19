@@ -2484,7 +2484,7 @@
       "family": "Floodworks",
       "geometry": "row-runs",
       "wall_style": "cavern",
-      "description": "Abandoned floodworks: a deep turbine sump spanned by a dry footbridge, a raised chart archive served by a single ramp, a hidden settling cellar, pressure vault, and two inspection circuits. Wet access opens additional pool cells. A suspended five-cell inspection catwalk spans the sump above the water, reached from side-service doors and opposite dry ladders.",
+      "description": "Abandoned floodworks: a deep turbine sump spanned by a dry footbridge, a raised chart archive served by a single ramp, a hidden settling cellar, pressure vault, and two inspection circuits. Wet access opens additional pool cells. A suspended five-cell inspection catwalk spans the sump above the water, reached from side-service doors and opposite dry ladders. A three-part shutter bank closes the downstream turbine apron, with the center shutter raised by machinery from the south operating gallery during a surge.",
       "rooms": [
         [
           "office",
@@ -3339,9 +3339,63 @@
           {
             "id": "surge",
             "add_water": [
-              [9, 11],
-              [10, 11],
-              [11, 11]
+              [
+                9,
+                11
+              ],
+              [
+                10,
+                11
+              ],
+              [
+                11,
+                11
+              ]
+            ],
+            "surface_level": 1,
+            "gate_states": {
+              "center_shutter": "open"
+            }
+          }
+        ],
+        "gates": [
+          {
+            "id": "west_shutter",
+            "kind": "sluice",
+            "default": "closed",
+            "a": [
+              9,
+              10
+            ],
+            "b": [
+              9,
+              11
+            ]
+          },
+          {
+            "id": "center_shutter",
+            "kind": "sluice",
+            "default": "closed",
+            "a": [
+              10,
+              10
+            ],
+            "b": [
+              10,
+              11
+            ]
+          },
+          {
+            "id": "east_shutter",
+            "kind": "sluice",
+            "default": "closed",
+            "a": [
+              11,
+              10
+            ],
+            "b": [
+              11,
+              11
             ]
           }
         ]
