@@ -526,5 +526,6 @@
 <g id="buried-inspection-hatches" fill="none" stroke="#594b3d" stroke-width="1.8">
 <g data-inspection-cover="6,1" data-bend="6,1"><title>Bolted dry gallery inspection cover over a non-walkable buried cleanout; dimensions provisional</title><rect x="150" y="30" width="12" height="12" fill="#d6ccb7" stroke-width="1.8"/><path d="M153,36h6 M156,33v6" stroke-width="1.5"/></g>
 <g data-inspection-cover="9,1" data-bend="9,1"><title>Bolted dry gallery inspection cover over a non-walkable buried cleanout; dimensions provisional</title><rect x="222" y="30" width="12" height="12" fill="#d6ccb7" stroke-width="1.8"/><path d="M225,36h6 M228,33v6" stroke-width="1.5"/></g>
+<g data-inspection-cover="9,9" data-bend="9,9"><title>Bolted dry gallery inspection cover over a non-walkable buried cleanout; dimensions provisional</title><rect x="222" y="222" width="12" height="12" fill="#d6ccb7" stroke-width="1.8"/><path d="M225,228h6 M228,225v6" stroke-width="1.5"/></g>
 </g>
 </svg>

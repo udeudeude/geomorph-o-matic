@@ -6,7 +6,7 @@
       "id": "postern_bastion",
       "assessment": {
         "role": "receiving_relay",
-        "route_cells": 12,
+        "route_cells": 23,
         "overlaps": [],
         "adjacent": [
           {
