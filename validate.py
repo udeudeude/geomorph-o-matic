@@ -44,6 +44,61 @@ def footprint(shape):
     assert cells and connected(cells, set(), next(iter(cells))) == cells, 'disconnected chamber footprint'
     return cells
 
+def validate_terrain(tile, cells):
+    """Independent blueprint validation for terrain used by the vector renderer."""
+    spec = tile.get('terrain', {})
+    assert isinstance(spec, dict), (tile['id'], 'invalid terrain')
+    def coords(points, name):
+        assert isinstance(points, list), (tile['id'], name, 'not a list')
+        result = []
+        for p in points:
+            assert isinstance(p, list) and len(p) == 2, (tile['id'], name, p)
+            assert all(type(v) is int for v in p), (tile['id'], name, p)
+            q = tuple(p)
+            assert q in cells, (tile['id'], name, 'outside floor', q)
+            result.append(q)
+        assert len(result) == len(set(result)), (tile['id'], 'duplicate', name)
+        return set(result)
+    water = coords(spec.get('water', []), 'water')
+    bridge = coords(spec.get('bridges', []), 'bridges')
+    assert bridge <= water, (tile['id'], 'bridge without water')
+    levels = {}
+    for group in spec.get('elevations', []):
+        assert isinstance(group, list) and len(group) == 2, (tile['id'], 'elevation')
+        z, points = group
+        assert type(z) is int and z != 0, (tile['id'], 'elevation level')
+        for p in coords(points, 'elevation'):
+            assert p not in levels, (tile['id'], 'overlapping elevations', p)
+            levels[p] = z
+    ramps = set()
+    for pair_of_cells in spec.get('ramps', []):
+        assert isinstance(pair_of_cells, list) and len(pair_of_cells) == 2, (tile['id'], 'ramp')
+        a, b = (next(iter(coords([p], 'ramp'))) for p in pair_of_cells)
+        assert abs(a[0]-b[0])+abs(a[1]-b[1]) == 1, (tile['id'], 'nonadjacent ramp')
+        assert abs(levels.get(a, 0)-levels.get(b, 0)) == 1, (tile['id'], 'ramp must join consecutive levels')
+        e = pair(a, b)
+        assert e not in ramps, (tile['id'], 'duplicate ramp')
+        ramps.add(e)
+    assert not ((water | set(levels)) & PORTALS), (tile['id'], 'terrain changes tile edge')
+    remaining = set(bridge)
+    while remaining:
+        start = remaining.pop()
+        group = {start}
+        todo = [start]
+        while todo:
+            x, y = todo.pop()
+            for dx, dy in NEIGHBORS:
+                q = (x+dx, y+dy)
+                if q in remaining:
+                    remaining.remove(q)
+                    group.add(q)
+                    todo.append(q)
+        xs = {p[0] for p in group}
+        ys = {p[1] for p in group}
+        assert len(xs) == 1 or len(ys) == 1, (tile['id'], 'bent bridge span')
+        assert len(group) == max(len(xs), len(ys)), (tile['id'], 'disconnected bridge span')
+    return {'water_cells': len(water), 'bridges': len(bridge), 'raised_cells': len(levels), 'ramps': len(ramps)}
+
 def validate(tile):
     name=tile['id'];cells={};chambers={}
     for key,title,shape in tile['rooms']:
@@ -65,6 +120,7 @@ def validate(tile):
                     cells[(i,j)]='hall'
     boundary={p for p in cells if 0 in p or 19 in p}
     assert boundary==PORTALS,(name,'invalid edge openings',boundary^PORTALS)
+    terrain_report = validate_terrain(tile, cells)
     walls=set()
     for (x,y),zone in cells.items():
         for dx,dy in NEIGHBORS:
@@ -89,7 +145,7 @@ def validate(tile):
     links=sum(((x+dx,y+dy) in hall) for x,y in hall for dx,dy in ((1,0),(0,1)))
     loops=links-len(hall)+1
     assert loops>=3,(name,'insufficient alternate routes',loops)
-    return {'id':name,'rooms':len(chambers),'doors':len(doors),'corridor_cycles':loops,'floor_cells':len(cells)}
+    return {'id':name,'rooms':len(chambers),'doors':len(doors),'corridor_cycles':loops,'floor_cells':len(cells),**terrain_report}
 
 def main():
     data=json.loads(Path(sys.argv[1] if len(sys.argv)>1 else Path(__file__).with_name('blueprints.json')).read_text())
