@@ -75,21 +75,31 @@ function naturalWallPaths(segments,{cellSize=24,gridSize=20,radius=0.2}={}){
 }
 
 // Input is [x1,y1,x2,y2,outwardDx,outwardDy], outward from traversable floor.
+// Variable, rock-facing needle marks. Each mark starts just beyond the wall,
+// points into unoccupied rock and leans along the joint; no grid-fence ticks.
 function rockHachurePaths(segments,{cellSize=24,gridSize=20}={}){
- const paths=[];
+ if(!(cellSize>0)||!Number.isInteger(gridSize)||gridSize<2)throw Error("Invalid cave hachure scale");
+ const paths=[],N=v=>Number(v.toFixed(2)),hash=s=>{
+  let h=2166136261;
+  for(let i=0;i<s.length;i++)h=Math.imul(h^s.charCodeAt(i),16777619)>>>0;
+  return h;
+ };
  for(const[x1,y1,x2,y2,nx,ny]of segments){
   if(!Number.isInteger(nx)||!Number.isInteger(ny)||Math.abs(nx)+Math.abs(ny)!==1)throw Error("Invalid rock-facing normal");
   const cx=(x1+x2)/2,cy=(y1+y2)/2;
   if(cx<=0||cy<=0||cx>=gridSize||cy>=gridSize)continue;
-  const tangential=[y2-y1,x1-x2];
+  const dx=x2-x1,dy=y2-y1,len=Math.hypot(dx,dy);
+  if(!len)throw Error("Zero-length rock edge");
+  const tx=dx/len,ty=dy/len,h=hash([x1,y1,x2,y2,nx,ny].join(","));
   for(let j=0;j<2;j++){
-   const t=j===0?-0.26:0.26,px=cx+t*(x2-x1),py=cy+t*(y2-y1);
-   const distance=j===0?0.28:0.4;
-   const a=[px*cellSize+nx*1.6,py*cellSize+ny*1.6];
-   const b=[a[0]+nx*distance*cellSize+tangential[0]*1.4,
-    a[1]+ny*distance*cellSize+tangential[1]*1.4];
-   if(b[0]<0||b[1]<0||b[0]>gridSize*cellSize||b[1]>gridSize*cellSize)continue;
-   paths.push(`M${commands(a)}L${commands(b)}`);
+   const fraction=((h >>> (j*9))&63)/63;
+   const t=(j===0?.15:.58)+fraction*.22;
+   const length=cellSize*(.19+.17*((h>>>(j*7+4))&31)/31);
+   const lean=cellSize*((j===0?-.14:.12)+(.06*fraction));
+   const a=[(x1+t*dx)*cellSize+nx*1.6,(y1+t*dy)*cellSize+ny*1.6];
+   const b=[a[0]+nx*length+tx*lean,a[1]+ny*length+ty*lean];
+   if(b.some(v=>v<0||v>gridSize*cellSize))continue;
+   paths.push("M"+N(a[0])+","+N(a[1])+"L"+N(b[0])+","+N(b[1]));
   }
  }
  return paths;
@@ -130,7 +140,7 @@ function rockFacingOffsets(segments,{cellSize=24,gridSize=20,irregularity=.13}={
  return moved;
 }
 
-function organicWallPaths(segments,{cellSize=24,gridSize=20,curvature=0.16,irregularity=0.13}={}){
+function organicWallPaths(segments,{cellSize=24,gridSize=20,curvature=0.18,irregularity=0.17}={}){
  if(!(cellSize>0)||!Number.isInteger(gridSize)||gridSize<2||
     curvature<0||curvature>0.22||irregularity<0||irregularity>0.18)throw Error("Unsafe organic wall controls");
  const border=([x,y])=>x===0||y===0||x===gridSize||y===gridSize;

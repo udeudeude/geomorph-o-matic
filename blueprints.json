@@ -6684,7 +6684,7 @@
       "title": "The Lantern Sink",
       "family": "Pilgrim ruin meeting joint-controlled limestone",
       "geometry": "hand-shaped chambers with a flooded collapse, dual-grade eastern rock bench and hidden calcite reliquary",
-      "description": "A deserted pilgrimage stair enters a drowned collapse chamber. Two horizontal routes skirt the sink, the stone plankwork crosses its water, and the eastern bedrock bench rises by two natural approaches with a third descent into the central chamber. A western breakdown obstructs a formerly direct cleft. The calcite reliquary is optional.",
+      "description": "A deserted pilgrimage stair enters a drowned collapse chamber. Two horizontal routes skirt the sink, the stone plankwork crosses its water, and the eastern bedrock bench rises by two natural approaches with a third descent into the central chamber. A western breakdown interrupts the narrow direct cleft, forcing a twelve-half-cell detour while preserving all eight standard mouths. The calcite reliquary is optional.",
       "wall_style": "cavern",
       "rooms": [
         [
@@ -7435,11 +7435,11 @@
           [
             [
               6,
-              10
+              9
             ],
             [
               6,
-              11
+              10
             ]
           ]
         ]

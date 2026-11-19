@@ -97,7 +97,7 @@ function makeSvg(tile,{grid="full"}={}) {
   }
   parts.push(`</g><g id="floor"><path d="${floorpath}" fill="#fffcf3"/></g>`);
   parts.push(`<g id="grid" data-grid="${grid}" clip-path="url(#${clip})" fill="none">`);
-  for(let i=1;i<N;i++){if(grid==="full"&&i%2)continue;const k=i*S,stroke=i%2?"#d8d5cb":"#b9b6ae",sw=i%2?".5":".95";parts.push(`<path d="M${k},0V${L} M0,${k}H${L}" stroke="${stroke}" stroke-width="${sw}"/>`)}
+  for(let i=1;i<N;i++){if(grid==="full"&&i%2)continue;const k=i*S,stroke=cave?(i%2?"#e1ded5":"#d3d0c7"):(i%2?"#d8d5cb":"#b9b6ae"),sw=cave?(i%2?".45":".7"):(i%2?".5":".95");parts.push(`<path d="M${k},0V${L} M0,${k}H${L}" stroke="${stroke}" stroke-width="${sw}"/>`)}
   parts.push(`</g>`);
   if(!cave)parts.push(`<g id="masonry-hachures" fill="none" stroke="#514e46" stroke-width="1.15" opacity=".68"><path d="${masonryHatchPaths(owner,S,N)}"/></g>`);
   for(const layer of terrainSvg(owner,tile.terrain||{},S,cave?"cavern":"masonry"))parts.push(layer);

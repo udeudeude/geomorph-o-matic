@@ -18,7 +18,8 @@ test("drowned sink, rock bench and west collapse alter traversal, not just illus
  assert.equal(terrainAudit(owner,doors,tile.terrain).travel.dry.reachable_portals,8);
  const before=distances(terrainGraph(owner,doors,{...tile.terrain,chokes:[]}),"0,4").get("0,15");
  const after=distances(terrainGraph(owner,doors,tile.terrain),"0,4").get("0,15");
- assert.ok(after>before,JSON.stringify({before,after}));
+ assert.ok(after>=before+10,JSON.stringify({before,after}));
+ assert.equal(after,35); assert.equal(before,23);
  assert.throws(()=>terrainModel(owner,{...tile.terrain,ramps:[[[14,8],[14,10]]]}));
 });
 test("edited cave vectors, rotation assembly and print scale remain consistent",()=>{
