@@ -15,14 +15,14 @@ function makeMaintenancePlate(data){
  if(!source||!receiver)throw Error("Maintenance plate needs source and receiver");
  const owner=buildCells(source),drives=transmissionModel(source,owner);
  const sourceAccess=inspectionModel(source),sinkAccess=inspectionModel(receiver);
- if(drives.length!==3||sourceAccess.length!==3||sinkAccess.length!==2)
-  throw Error("Mechanism plate needs the three authored drives and four inspection bends");
+ if(drives.length!==3||sourceAccess.length!==3||sinkAccess.length!==3)
+  throw Error("Mechanism plate needs the three authored drives and six inspection bends");
  const footprints=new Set(source.rooms.flatMap(([,,shape])=>shapeCells(shape).map(K)));
  const canals=new Set(source.hydrology.channels.map(K));
  const out=[
-  '<svg xmlns="http://www.w3.org/2000/svg" width="11in" height="8.5in" viewBox="0 0 1210 935" role="img" aria-label="Riftwater Lock mechanism and five buried inspection access architectural study">',
+  '<svg xmlns="http://www.w3.org/2000/svg" width="11in" height="9in" viewBox="0 0 1210 985" role="img" aria-label="Riftwater Lock mechanism and six buried inspection access architectural study">',
   '<title>Riftwater Lock | Sluice transmission and lower maintenance plate</title>',
-  '<rect width="1210" height="935" fill="#f5f1e8"/>',
+  '<rect width="1210" height="985" fill="#f5f1e8"/>',
   '<text x="70" y="48" font-family="Georgia,serif" font-size="26" fill="#203f42">RIFTWATER LOCK / SERVICE ENGINEERING</text>',
   '<text x="70" y="76" font-family="sans-serif" font-size="13" fill="#52615c">Editable plan, mechanical arrangement and downstream maintenance schedule | Assumed dimensions; not a construction drawing</text>',
   '<path d="M70 94H1140" stroke="#87918a" stroke-width="1"/>',
@@ -145,9 +145,9 @@ function makeMaintenancePlate(data){
    ' · '+a.branch_length_ft.toFixed(1)+' ft lateral branch</text>');
  });
  out.push('</g>');
- out.push('<path d="M70 874H1140" stroke="#87918a" stroke-width="1"/>');
- out.push('<text x="72" y="896" font-family="sans-serif" font-size="11" fill="#5f6059">DESIGN LIMITS  |  Not measured: shaft torque, bevel ratios, gearbox recesses, masonry bore sleeves, ceiling support, manhole depth, hydraulic capacity, outfall or backwater.</text>');
- out.push('<text x="72" y="914" font-family="sans-serif" font-size="11" fill="#5f6059">A sealed 1.5 ft nominal cleanout is not a traversable access shaft; the Postern terminal is still an unmapped outfall.</text>');
+ out.push('<path d="M70 918H1140" stroke="#87918a" stroke-width="1"/>');
+ out.push('<text x="72" y="941" font-family="sans-serif" font-size="11" fill="#5f6059">DESIGN LIMITS  |  Not measured: shaft torque, bevel ratios, gearbox recesses, masonry bore sleeves, ceiling support, manhole depth, hydraulic capacity, outfall or backwater.</text>');
+ out.push('<text x="72" y="961" font-family="sans-serif" font-size="11" fill="#5f6059">A sealed 1.5 ft nominal cleanout is not a traversable access shaft; the Postern lip is mapped; its exterior receiving channel unmapped.</text>');
  out.push('</svg>');
  return out.join("\n")+"\n";
 }
