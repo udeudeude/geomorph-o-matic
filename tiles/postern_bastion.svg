@@ -429,7 +429,8 @@
 <path d="M408,0V480 M0,408H480" stroke="#d8d5cb" stroke-width=".5"/>
 <path d="M432,0V480 M0,432H480" stroke="#b9b6ae" stroke-width=".95"/>
 <path d="M456,0V480 M0,456H480" stroke="#d8d5cb" stroke-width=".5"/>
-</g><g id="features">
+</g>
+<g id="features">
 <path d="M248,216v24m4,-24v24m4,-24v24 M246,221h12m-12,7h12m-12,7h12" fill="none" stroke="#313433" stroke-width="1.9"/>
 <rect x="102" y="78" width="60" height="36" rx="2" fill="#e2caaa" stroke="#494843" stroke-width="1.8"/>
 <rect x="294" y="76" width="40" height="40" rx="3" fill="#ded7ca" stroke="#716b60" stroke-width="1.4"/><rect x="296" y="78" width="36" height="8" fill="#faf6ea" stroke="#716b60" stroke-width=".6"/>
