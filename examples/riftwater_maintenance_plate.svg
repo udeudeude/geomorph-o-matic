@@ -1,0 +1,327 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="11in" height="8.5in" viewBox="0 0 1210 935" role="img" aria-label="Riftwater Lock mechanism and five buried inspection access architectural study">
+<title>Riftwater Lock | Sluice transmission and lower maintenance plate</title>
+<rect width="1210" height="935" fill="#f5f1e8"/>
+<text x="70" y="48" font-family="Georgia,serif" font-size="26" fill="#203f42">RIFTWATER LOCK / SERVICE ENGINEERING</text>
+<text x="70" y="76" font-family="sans-serif" font-size="13" fill="#52615c">Editable plan, mechanical arrangement and downstream maintenance schedule | Assumed dimensions; not a construction drawing</text>
+<path d="M70 94H1140" stroke="#87918a" stroke-width="1"/>
+<text x="72" y="131" font-size="16" font-family="sans-serif" font-weight="700" fill="#284a4f">01  OVERHEAD TRANSMISSION PLAN</text>
+<text x="553" y="131" font-size="16" font-family="sans-serif" font-weight="700" fill="#284a4f">02  SCHEMATIC LONGITUDINAL DRIVE SECTIONS</text>
+<rect x="72" y="173" width="400" height="400" fill="#dcd8ce" stroke="#4e625f" stroke-width="1.5"/>
+<g id="mechanism-rock-context">
+<rect x="72" y="173" width="40" height="40" fill="#d9d5cc" />
+<rect x="112" y="173" width="40" height="40" fill="#fffcf4" />
+<rect x="152" y="173" width="40" height="40" fill="#d9d5cc" />
+<rect x="192" y="173" width="40" height="40" fill="#d9d5cc" />
+<rect x="232" y="173" width="40" height="40" fill="#fffcf4" />
+<rect x="272" y="173" width="40" height="40" fill="#d9d5cc" />
+<rect x="312" y="173" width="40" height="40" fill="#d9d5cc" />
+<rect x="352" y="173" width="40" height="40" fill="#fffcf4" />
+<rect x="392" y="173" width="40" height="40" fill="#d9d5cc" />
+<rect x="432" y="173" width="40" height="40" fill="#d9d5cc" />
+<rect x="72" y="213" width="40" height="40" fill="#fffcf4" />
+<rect x="112" y="213" width="40" height="40" fill="#fffcf4" />
+<rect x="152" y="213" width="40" height="40" fill="#d9d5cc" />
+<rect x="192" y="213" width="40" height="40" fill="#a9c5ca" />
+<rect x="232" y="213" width="40" height="40" fill="#a9c5ca" />
+<rect x="272" y="213" width="40" height="40" fill="#a9c5ca" />
+<rect x="312" y="213" width="40" height="40" fill="#d9d5cc" />
+<rect x="352" y="213" width="40" height="40" fill="#fffcf4" />
+<rect x="392" y="213" width="40" height="40" fill="#fffcf4" />
+<rect x="432" y="213" width="40" height="40" fill="#fffcf4" />
+<rect x="72" y="253" width="40" height="40" fill="#fffcf4" />
+<rect x="112" y="253" width="40" height="40" fill="#fffcf4" />
+<rect x="152" y="253" width="40" height="40" fill="#f0e9dd" />
+<rect x="192" y="253" width="40" height="40" fill="#a9c5ca" />
+<rect x="232" y="253" width="40" height="40" fill="#a9c5ca" />
+<rect x="272" y="253" width="40" height="40" fill="#a9c5ca" />
+<rect x="312" y="253" width="40" height="40" fill="#f0e9dd" />
+<rect x="352" y="253" width="40" height="40" fill="#fffcf4" />
+<rect x="392" y="253" width="40" height="40" fill="#d9d5cc" />
+<rect x="432" y="253" width="40" height="40" fill="#fffcf4" />
+<rect x="72" y="293" width="40" height="40" fill="#fffcf4" />
+<rect x="112" y="293" width="40" height="40" fill="#d9d5cc" />
+<rect x="152" y="293" width="40" height="40" fill="#d9d5cc" />
+<rect x="192" y="293" width="40" height="40" fill="#a9c5ca" />
+<rect x="232" y="293" width="40" height="40" fill="#a9c5ca" />
+<rect x="272" y="293" width="40" height="40" fill="#a9c5ca" />
+<rect x="312" y="293" width="40" height="40" fill="#d9d5cc" />
+<rect x="352" y="293" width="40" height="40" fill="#fffcf4" />
+<rect x="392" y="293" width="40" height="40" fill="#d9d5cc" />
+<rect x="432" y="293" width="40" height="40" fill="#fffcf4" />
+<rect x="72" y="333" width="40" height="40" fill="#fffcf4" />
+<rect x="112" y="333" width="40" height="40" fill="#fffcf4" />
+<rect x="152" y="333" width="40" height="40" fill="#fffcf4" />
+<rect x="192" y="333" width="40" height="40" fill="#fffcf4" />
+<rect x="232" y="333" width="40" height="40" fill="#fffcf4" />
+<rect x="272" y="333" width="40" height="40" fill="#d9d5cc" />
+<rect x="312" y="333" width="40" height="40" fill="#d9d5cc" />
+<rect x="352" y="333" width="40" height="40" fill="#fffcf4" />
+<rect x="392" y="333" width="40" height="40" fill="#fffcf4" />
+<rect x="432" y="333" width="40" height="40" fill="#fffcf4" />
+<rect x="72" y="373" width="40" height="40" fill="#fffcf4" />
+<rect x="112" y="373" width="40" height="40" fill="#d9d5cc" />
+<rect x="152" y="373" width="40" height="40" fill="#d9d5cc" />
+<rect x="192" y="373" width="40" height="40" fill="#d9d5cc" />
+<rect x="232" y="373" width="40" height="40" fill="#fffcf4" />
+<rect x="272" y="373" width="40" height="40" fill="#d9d5cc" />
+<rect x="312" y="373" width="40" height="40" fill="#d9d5cc" />
+<rect x="352" y="373" width="40" height="40" fill="#fffcf4" />
+<rect x="392" y="373" width="40" height="40" fill="#d9d5cc" />
+<rect x="432" y="373" width="40" height="40" fill="#d9d5cc" />
+<rect x="72" y="413" width="40" height="40" fill="#fffcf4" />
+<rect x="112" y="413" width="40" height="40" fill="#d9d5cc" />
+<rect x="152" y="413" width="40" height="40" fill="#d9d5cc" />
+<rect x="192" y="413" width="40" height="40" fill="#d9d5cc" />
+<rect x="232" y="413" width="40" height="40" fill="#fffcf4" />
+<rect x="272" y="413" width="40" height="40" fill="#fffcf4" />
+<rect x="312" y="413" width="40" height="40" fill="#fffcf4" />
+<rect x="352" y="413" width="40" height="40" fill="#fffcf4" />
+<rect x="392" y="413" width="40" height="40" fill="#fffcf4" />
+<rect x="432" y="413" width="40" height="40" fill="#fffcf4" />
+<rect x="72" y="453" width="40" height="40" fill="#fffcf4" />
+<rect x="112" y="453" width="40" height="40" fill="#d9d5cc" />
+<rect x="152" y="453" width="40" height="40" fill="#d9d5cc" />
+<rect x="192" y="453" width="40" height="40" fill="#d9d5cc" />
+<rect x="232" y="453" width="40" height="40" fill="#fffcf4" />
+<rect x="272" y="453" width="40" height="40" fill="#d9d5cc" />
+<rect x="312" y="453" width="40" height="40" fill="#d9d5cc" />
+<rect x="352" y="453" width="40" height="40" fill="#fffcf4" />
+<rect x="392" y="453" width="40" height="40" fill="#d9d5cc" />
+<rect x="432" y="453" width="40" height="40" fill="#fffcf4" />
+<rect x="72" y="493" width="40" height="40" fill="#fffcf4" />
+<rect x="112" y="493" width="40" height="40" fill="#d9d5cc" />
+<rect x="152" y="493" width="40" height="40" fill="#d9d5cc" />
+<rect x="192" y="493" width="40" height="40" fill="#f0e9dd" />
+<rect x="232" y="493" width="40" height="40" fill="#f0e9dd" />
+<rect x="272" y="493" width="40" height="40" fill="#f0e9dd" />
+<rect x="312" y="493" width="40" height="40" fill="#d9d5cc" />
+<rect x="352" y="493" width="40" height="40" fill="#fffcf4" />
+<rect x="392" y="493" width="40" height="40" fill="#fffcf4" />
+<rect x="432" y="493" width="40" height="40" fill="#fffcf4" />
+<rect x="72" y="533" width="40" height="40" fill="#d9d5cc" />
+<rect x="112" y="533" width="40" height="40" fill="#d9d5cc" />
+<rect x="152" y="533" width="40" height="40" fill="#f0e9dd" />
+<rect x="192" y="533" width="40" height="40" fill="#f0e9dd" />
+<rect x="232" y="533" width="40" height="40" fill="#f0e9dd" />
+<rect x="272" y="533" width="40" height="40" fill="#f0e9dd" />
+<rect x="312" y="533" width="40" height="40" fill="#f0e9dd" />
+<rect x="352" y="533" width="40" height="40" fill="#d9d5cc" />
+<rect x="392" y="533" width="40" height="40" fill="#d9d5cc" />
+<rect x="432" y="533" width="40" height="40" fill="#fffcf4" />
+</g><g id="mechanism-masonry-edges" fill="none" stroke="#59635c" stroke-width="2.3">
+<path d="M152,173v40"/>
+<path d="M112,173v40"/>
+<path d="M272,173v40"/>
+<path d="M232,173v40"/>
+<path d="M392,173v40"/>
+<path d="M352,173v40"/>
+<path d="M72,213h40"/>
+<path d="M152,213v40"/>
+<path d="M192,213v40"/>
+<path d="M192,213h40"/>
+<path d="M312,213v40"/>
+<path d="M272,213h40"/>
+<path d="M352,213v40"/>
+<path d="M392,253h40"/>
+<path d="M392,213h40"/>
+<path d="M432,213h40"/>
+<path d="M112,293h40"/>
+<path d="M152,293h40"/>
+<path d="M152,253h40"/>
+<path d="M312,293h40"/>
+<path d="M312,253h40"/>
+<path d="M392,253v40"/>
+<path d="M432,253v40"/>
+<path d="M112,293v40"/>
+<path d="M192,293v40"/>
+<path d="M312,293v40"/>
+<path d="M272,333h40"/>
+<path d="M392,293v40"/>
+<path d="M352,293v40"/>
+<path d="M472,293v40"/>
+<path d="M432,293v40"/>
+<path d="M112,373h40"/>
+<path d="M112,333h40"/>
+<path d="M152,373h40"/>
+<path d="M152,333h40"/>
+<path d="M192,373h40"/>
+<path d="M272,333v40"/>
+<path d="M352,333v40"/>
+<path d="M392,373h40"/>
+<path d="M392,333h40"/>
+<path d="M432,373h40"/>
+<path d="M112,373v40"/>
+<path d="M72,373v40"/>
+<path d="M272,373v40"/>
+<path d="M232,373v40"/>
+<path d="M392,373v40"/>
+<path d="M352,373v40"/>
+<path d="M112,413v40"/>
+<path d="M232,413v40"/>
+<path d="M272,453h40"/>
+<path d="M272,413h40"/>
+<path d="M312,453h40"/>
+<path d="M312,413h40"/>
+<path d="M392,453h40"/>
+<path d="M392,413h40"/>
+<path d="M472,413v40"/>
+<path d="M432,413h40"/>
+<path d="M112,453v40"/>
+<path d="M72,453v40"/>
+<path d="M272,453v40"/>
+<path d="M232,453v40"/>
+<path d="M392,453v40"/>
+<path d="M352,453v40"/>
+<path d="M472,453v40"/>
+<path d="M432,453v40"/>
+<path d="M112,493v40"/>
+<path d="M72,533h40"/>
+<path d="M192,493v40"/>
+<path d="M192,493h40"/>
+<path d="M312,493v40"/>
+<path d="M272,493h40"/>
+<path d="M352,533h40"/>
+<path d="M352,493v40"/>
+<path d="M392,533h40"/>
+<path d="M392,493h40"/>
+<path d="M472,493v40"/>
+<path d="M152,573h40"/>
+<path d="M152,533v40"/>
+<path d="M152,533h40"/>
+<path d="M352,533v40"/>
+<path d="M312,573h40"/>
+<path d="M312,533h40"/>
+<path d="M432,533v40"/>
+</g><g id="technical-half-cell-grid" stroke="#9aa09a" stroke-width=".65" opacity=".45">
+<path d="M112,173v400 M72,213h400"/>
+<path d="M152,173v400 M72,253h400"/>
+<path d="M192,173v400 M72,293h400"/>
+<path d="M232,173v400 M72,333h400"/>
+<path d="M272,173v400 M72,373h400"/>
+<path d="M312,173v400 M72,413h400"/>
+<path d="M352,173v400 M72,453h400"/>
+<path d="M392,173v400 M72,493h400"/>
+<path d="M432,173v400 M72,533h400"/>
+</g>
+<g id="separate-overhead-drives" fill="none" stroke-linejoin="round" stroke-linecap="round">
+<g data-drive="west_drive" data-axis-ft="8">
+<polyline points="252,433 212,433 212,393 212,353 212,313" stroke="#f5f1e8" stroke-width="9"/>
+<polyline points="252,433 212,433 212,393 212,353 212,313" stroke="#285d69" stroke-width="4"/>
+<circle data-rock-bore="9,14" cx="212" cy="433" r="8" stroke="#a75e32" stroke-width="2" stroke-dasharray="2 2" fill="#f2e8da"/>
+<circle data-rock-bore="9,13" cx="212" cy="393" r="8" stroke="#a75e32" stroke-width="2" stroke-dasharray="2 2" fill="#f2e8da"/>
+<path data-bearing="9,14" d="M212,427l6,6 -6,6 -6,-6z" fill="#faf7ed" stroke="#285d69" stroke-width="2"/>
+<path data-bearing="9,12" d="M212,347l6,6 -6,6 -6,-6z" fill="#faf7ed" stroke="#285d69" stroke-width="2"/>
+<circle cx="252" cy="433" r="11" fill="#f8f4e9" stroke="#285d69" stroke-width="2.5"/>
+<path d="M245,433h14 M252,426v14" stroke="#285d69" stroke-width="1.4"/>
+<rect x="205" y="306" width="14" height="14" fill="#e5e4dc" stroke="#285d69" stroke-width="2.3"/>
+<title>west_winch through sleeved rock penetrations to west_shutter (vertical rack assumed)</title></g>
+<g data-drive="center_drive" data-axis-ft="8">
+<polyline points="292,433 292,393 252,393 252,353 252,313" stroke="#f5f1e8" stroke-width="9"/>
+<polyline points="292,433 292,393 252,393 252,353 252,313" stroke="#556576" stroke-width="4"/>
+<circle data-rock-bore="11,13" cx="292" cy="393" r="8" stroke="#a75e32" stroke-width="2" stroke-dasharray="2 2" fill="#f2e8da"/>
+<path data-bearing="11,13" d="M292,387l6,6 -6,6 -6,-6z" fill="#faf7ed" stroke="#556576" stroke-width="2"/>
+<path data-bearing="10,12" d="M252,347l6,6 -6,6 -6,-6z" fill="#faf7ed" stroke="#556576" stroke-width="2"/>
+<circle cx="292" cy="433" r="11" fill="#f8f4e9" stroke="#556576" stroke-width="2.5"/>
+<path d="M285,433h14 M292,426v14" stroke="#556576" stroke-width="1.4"/>
+<rect x="245" y="306" width="14" height="14" fill="#e5e4dc" stroke="#556576" stroke-width="2.3"/>
+<title>center_winch through sleeved rock penetrations to center_shutter (vertical rack assumed)</title></g>
+<g data-drive="east_drive" data-axis-ft="8">
+<polyline points="332,433 332,393 332,353 292,353 292,313" stroke="#f5f1e8" stroke-width="9"/>
+<polyline points="332,433 332,393 332,353 292,353 292,313" stroke="#775a45" stroke-width="4"/>
+<circle data-rock-bore="12,13" cx="332" cy="393" r="8" stroke="#a75e32" stroke-width="2" stroke-dasharray="2 2" fill="#f2e8da"/>
+<circle data-rock-bore="12,12" cx="332" cy="353" r="8" stroke="#a75e32" stroke-width="2" stroke-dasharray="2 2" fill="#f2e8da"/>
+<circle data-rock-bore="11,12" cx="292" cy="353" r="8" stroke="#a75e32" stroke-width="2" stroke-dasharray="2 2" fill="#f2e8da"/>
+<path data-bearing="12,12" d="M332,347l6,6 -6,6 -6,-6z" fill="#faf7ed" stroke="#775a45" stroke-width="2"/>
+<path data-bearing="11,12" d="M292,347l6,6 -6,6 -6,-6z" fill="#faf7ed" stroke="#775a45" stroke-width="2"/>
+<circle cx="332" cy="433" r="11" fill="#f8f4e9" stroke="#775a45" stroke-width="2.5"/>
+<path d="M325,433h14 M332,426v14" stroke="#775a45" stroke-width="1.4"/>
+<rect x="285" y="306" width="14" height="14" fill="#e5e4dc" stroke="#775a45" stroke-width="2.3"/>
+<title>east_winch through sleeved rock penetrations to east_shutter (vertical rack assumed)</title></g>
+</g><g id="inspection-floor-hatches" fill="none" stroke="#775a3d" stroke-width="2">
+<rect data-cover="13,12" x="364" y="345" width="16" height="16" fill="#f3dfbf"/>
+<path d="M367,353h10 M372,348v10"/>
+<rect data-cover="13,13" x="364" y="385" width="16" height="16" fill="#f3dfbf"/>
+<path d="M367,393h10 M372,388v10"/>
+<rect data-cover="6,14" x="84" y="425" width="16" height="16" fill="#f3dfbf"/>
+<path d="M87,433h10 M92,428v10"/>
+</g>
+<g id="underground-inspection-spur" fill="none" stroke="#9a6a45" stroke-width="3.4" stroke-dasharray="5 5">
+<polyline data-from-bend="11,11" points="292,313 332,313 332,353 372,353"/>
+<polyline data-from-bend="11,14" points="292,433 332,433 372,433 372,393"/>
+</g>
+<g id="plan-key" font-size="12" font-family="sans-serif" fill="#485954">
+<text x="74" y="600">2.5 ft per grid cell · colored paths are ABOVE walking floor.</text>
+<text x="74" y="618">Orange circles: sleeved bores through UNCARVED stone.</text>
+<text x="74" y="636">Diamonds: assumed bearings. Crossed squares: cleanout covers.</text>
+</g>
+<g id="drive-elevations" font-family="sans-serif">
+<g data-section-drive="west_drive">
+<text x="555" y="190" font-size="15" font-weight="700" fill="#285d69">1. WEST_WINCH → WEST_SHUTTER</text>
+<path d="M558 265H1110" stroke="#8e948a" stroke-width="2.1"/>
+<text x="564" y="283" font-size="10" fill="#59635e">walking floor / local zero</text>
+<path d="M588 210H1010" stroke="#285d69" stroke-width="5"/>
+<circle cx="590" cy="210" r="10" fill="#ede9df" stroke="#285d69" stroke-width="2"/>
+<path d="M588 210v55" stroke="#285d69" stroke-width="2" stroke-dasharray="4 3"/>
+<path d="M1010 210v55" stroke="#285d69" stroke-width="5"/>
+<path d="M1010 226l7,5" stroke="#285d69" stroke-width="1.5"/>
+<path d="M1010 236l7,5" stroke="#285d69" stroke-width="1.5"/>
+<path d="M1010 246l7,5" stroke="#285d69" stroke-width="1.5"/>
+<path d="M1010 256l7,5" stroke="#285d69" stroke-width="1.5"/>
+<path d="M780 204v12 M785 204v12" stroke="#343e3b" stroke-width="2"/>
+<text x="835" y="200" font-size="12" fill="#424e4b">2 rock bores; 2 bearings</text>
+<text x="842" y="253" font-size="12" fill="#424e4b">shaft axis +8 ft (assumed)</text>
+<text x="1040" y="241" font-size="11" fill="#424e4b">vertical rack</text>
+</g>
+<g data-section-drive="center_drive">
+<text x="555" y="325" font-size="15" font-weight="700" fill="#556576">2. CENTER_WINCH → CENTER_SHUTTER</text>
+<path d="M558 400H1110" stroke="#8e948a" stroke-width="2.1"/>
+<text x="564" y="418" font-size="10" fill="#59635e">walking floor / local zero</text>
+<path d="M588 345H1010" stroke="#556576" stroke-width="5"/>
+<circle cx="590" cy="345" r="10" fill="#ede9df" stroke="#556576" stroke-width="2"/>
+<path d="M588 345v55" stroke="#556576" stroke-width="2" stroke-dasharray="4 3"/>
+<path d="M1010 345v55" stroke="#556576" stroke-width="5"/>
+<path d="M1010 361l7,5" stroke="#556576" stroke-width="1.5"/>
+<path d="M1010 371l7,5" stroke="#556576" stroke-width="1.5"/>
+<path d="M1010 381l7,5" stroke="#556576" stroke-width="1.5"/>
+<path d="M1010 391l7,5" stroke="#556576" stroke-width="1.5"/>
+<path d="M780 339v12 M785 339v12" stroke="#343e3b" stroke-width="2"/>
+<text x="835" y="335" font-size="12" fill="#424e4b">1 rock bores; 2 bearings</text>
+<text x="842" y="388" font-size="12" fill="#424e4b">shaft axis +8 ft (assumed)</text>
+<text x="1040" y="376" font-size="11" fill="#424e4b">vertical rack</text>
+</g>
+<g data-section-drive="east_drive">
+<text x="555" y="460" font-size="15" font-weight="700" fill="#775a45">3. EAST_WINCH → EAST_SHUTTER</text>
+<path d="M558 535H1110" stroke="#8e948a" stroke-width="2.1"/>
+<text x="564" y="553" font-size="10" fill="#59635e">walking floor / local zero</text>
+<path d="M588 480H1010" stroke="#775a45" stroke-width="5"/>
+<circle cx="590" cy="480" r="10" fill="#ede9df" stroke="#775a45" stroke-width="2"/>
+<path d="M588 480v55" stroke="#775a45" stroke-width="2" stroke-dasharray="4 3"/>
+<path d="M1010 480v55" stroke="#775a45" stroke-width="5"/>
+<path d="M1010 496l7,5" stroke="#775a45" stroke-width="1.5"/>
+<path d="M1010 506l7,5" stroke="#775a45" stroke-width="1.5"/>
+<path d="M1010 516l7,5" stroke="#775a45" stroke-width="1.5"/>
+<path d="M1010 526l7,5" stroke="#775a45" stroke-width="1.5"/>
+<path d="M780 474v12 M785 474v12" stroke="#343e3b" stroke-width="2"/>
+<text x="835" y="470" font-size="12" fill="#424e4b">3 rock bores; 2 bearings</text>
+<text x="842" y="523" font-size="12" fill="#424e4b">shaft axis +8 ft (assumed)</text>
+<text x="1040" y="511" font-size="11" fill="#424e4b">vertical rack</text>
+</g>
+</g>
+<g id="subfloor-inspection-schedule" font-family="sans-serif">
+<path d="M540 652H1138" stroke="#adb0a7" stroke-width="1"/>
+<text x="553" y="684" font-size="16" font-weight="700" fill="#284a4f">03  BURIED BENDS / SEALED CLEANOUTS</text>
+<circle cx="567" cy="703" r="5" fill="#a46a45"/>
+<text x="585" y="707" font-size="12" fill="#293c39">RIFTWATER bend 11,11 → dry cover 13,12 · 7.5 ft lateral branch</text>
+<circle cx="567" cy="737" r="5" fill="#a46a45"/>
+<text x="585" y="741" font-size="12" fill="#293c39">RIFTWATER bend 11,14 → dry cover 13,13 · 7.5 ft lateral branch</text>
+<circle cx="567" cy="771" r="5" fill="#a46a45"/>
+<text x="585" y="775" font-size="12" fill="#293c39">RIFTWATER bend 6,14 → dry cover 6,14 · 0.0 ft lateral branch</text>
+<circle cx="567" cy="805" r="5" fill="#a46a45"/>
+<text x="585" y="809" font-size="12" fill="#293c39">POSTERN bend 6,1 → dry cover 6,1 · 0.0 ft lateral branch</text>
+<circle cx="567" cy="839" r="5" fill="#a46a45"/>
+<text x="585" y="843" font-size="12" fill="#293c39">POSTERN bend 9,1 → dry cover 9,1 · 0.0 ft lateral branch</text>
+</g>
+<path d="M70 874H1140" stroke="#87918a" stroke-width="1"/>
+<text x="72" y="896" font-family="sans-serif" font-size="11" fill="#5f6059">DESIGN LIMITS  |  Not measured: shaft torque, gearing, masonry bore sleeves, ceiling support, manhole depth, hydraulic capacity, outfall or backwater.</text>
+<text x="72" y="914" font-family="sans-serif" font-size="11" fill="#5f6059">A sealed 1.5 ft nominal cleanout is not a traversable access shaft; the Postern terminal is still an unmapped outfall.</text>
+</svg>
