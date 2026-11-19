@@ -5,7 +5,9 @@ const {shapeCells,shapeBounds}=require("./geometry");
 const {organicWallPaths,rockHachurePaths}=require("./cave-contours");
 const {terrainSvg}=require("./terrain");
 const {verticalSvg}=require("./vertical");
-function makeSvg(tile) {
+const {gateSvg}=require("./hydraulic-control");
+function makeSvg(tile,{grid="full"}={}) {
+  if(!["full","half"].includes(grid))throw Error("Invalid map grid");
   const N=20,S=24,L=N*S,portal=new Set(["4,0","15,0","0,4","19,4","0,15","19,15","4,19","15,19"]);
   const key=(x,y)=>`${x},${y}`,edge=(a,b)=>[a,b].sort().join("|");
   const owner=new Map(),rooms=new Map();
@@ -89,8 +91,8 @@ function makeSvg(tile) {
     for(let n=0;n<3;n++){let X=x*S+4+n*6,Y=y*S+3+((x*7+y*3+n*5)%8);parts.push(`<path d="M${X},${Y}l6,6"/>`)}
   }
   parts.push(`</g><g id="floor"><path d="${floorpath}" fill="#fffcf3"/></g>`);
-  parts.push(`<g id="grid" clip-path="url(#${clip})" fill="none">`);
-  for(let i=1;i<N;i++){const k=i*S,stroke=i%2?"#d8d5cb":"#b9b6ae",sw=i%2?".5":".95";parts.push(`<path d="M${k},0V${L} M0,${k}H${L}" stroke="${stroke}" stroke-width="${sw}"/>`)}
+  parts.push(`<g id="grid" data-grid="${grid}" clip-path="url(#${clip})" fill="none">`);
+  for(let i=1;i<N;i++){if(grid==="full"&&i%2)continue;const k=i*S,stroke=i%2?"#d8d5cb":"#b9b6ae",sw=i%2?".5":".95";parts.push(`<path d="M${k},0V${L} M0,${k}H${L}" stroke="${stroke}" stroke-width="${sw}"/>`)}
   parts.push(`</g>`);
   for(const layer of terrainSvg(owner,tile.terrain||{}))parts.push(layer);
   parts.push(`<g id="features">`);
@@ -157,6 +159,7 @@ function makeSvg(tile) {
     }
   }
   parts.push(`</g>`);
+  for(const layer of gateSvg(owner,[...doors.values()],tile.hydrology||{}))parts.push(layer);
   for(const layer of verticalSvg(owner,tile.terrain||{},tile.vertical||{}))parts.push(layer);
   parts.push(`</svg>`);
   return parts.join("\n")+"\n";

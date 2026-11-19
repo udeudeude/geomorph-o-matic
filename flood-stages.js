@@ -15,7 +15,7 @@ function floodStages(owner,doors=[],terrain={},hydrology={}){
  const gates=gateModel(owner,doors,hydrology.gates||[]);
  let gateState=applyGateStates(gates),lastLevel=-Infinity;
  const closed=()=>gates.filter(g=>gateState.get(g.id)==="closed").map(g=>g.id);
- const stages=new Map([["normal",{id:"normal",new_cells:0,closed_gates:closed(),terrain:{...terrain,water:[...water].sort(ORDER).map(p=>p.split(",").map(Number))}}]]);
+ const stages=new Map([["normal",{id:"normal",new_cells:0,closed_gates:closed(),gate_states:Object.fromEntries(gateState),terrain:{...terrain,water:[...water].sort(ORDER).map(p=>p.split(",").map(Number))}}]]);
  for(const stage of hydrology.stages||[]){
   if(!stage||typeof stage.id!=="string"||!/^[a-z][a-z0-9_-]*$/.test(stage.id)||
    stages.has(stage.id)||!Array.isArray(stage.add_water)||!stage.add_water.length)throw Error("Invalid or duplicate flood stage");
@@ -46,7 +46,7 @@ function floodStages(owner,doors=[],terrain={},hydrology={}){
   terrainModel(owner,nextTerrain);
   gateState=nextState;
   stages.set(stage.id,{id:stage.id,new_cells:additions.size,closed_gates:closed(),
-   surface_level:stage.surface_level??null,terrain:nextTerrain});
+   gate_states:Object.fromEntries(gateState),surface_level:stage.surface_level??null,terrain:nextTerrain});
   for(const p of additions)water.add(p);
  }
  return stages;
@@ -74,7 +74,9 @@ if(require.main===module){
  if(!stages.has("surge"))throw Error("Riftwater Lock has no surge stage");
  const target=path.resolve(process.argv[2]||path.join(__dirname,"examples/riftwater_surge.svg"));
  fs.mkdirSync(path.dirname(target),{recursive:true});
- fs.writeFileSync(target,makeSvg({...tile,title:tile.title+" | Surge",terrain:stages.get("surge").terrain}));
+ const surge=stages.get("surge");
+ fs.writeFileSync(target,makeSvg({...tile,title:tile.title+" | Surge",terrain:surge.terrain,
+  hydrology:{...tile.hydrology,render_gate_states:surge.gate_states}}));
  console.log(JSON.stringify(floodAudit(owner,doors,tile.terrain,tile.vertical,tile.hydrology),null,2));
  console.log("Flood study written: "+target);
 }

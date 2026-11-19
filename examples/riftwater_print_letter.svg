@@ -12,26 +12,16 @@
 <rect width="480" height="480" fill="#e7e3d9"/>
 <g id="rock-texture" fill="none" stroke="#aaa59a" stroke-width=".8" opacity=".45">
 </g><g id="floor"><path d="M48,216h24v24h-24z M72,216h24v24h-24z M96,216h24v24h-24z M24,240h24v24h-24z M48,240h24v24h-24z M72,240h24v24h-24z M96,240h24v24h-24z M48,264h24v24h-24z M72,264h24v24h-24z M96,264h24v24h-24z M384,192h24v24h-24z M408,192h24v24h-24z M384,216h24v24h-24z M408,216h24v24h-24z M432,216h24v24h-24z M384,240h24v24h-24z M408,240h24v24h-24z M432,240h24v24h-24z M408,264h24v24h-24z M432,264h24v24h-24z M216,216h24v24h-24z M240,216h24v24h-24z M264,216h24v24h-24z M192,240h24v24h-24z M216,240h24v24h-24z M240,240h24v24h-24z M264,240h24v24h-24z M288,240h24v24h-24z M216,264h24v24h-24z M240,264h24v24h-24z M264,264h24v24h-24z M192,48h24v24h-24z M216,48h24v24h-24z M240,48h24v24h-24z M264,48h24v24h-24z M192,72h24v24h-24z M216,72h24v24h-24z M240,72h24v24h-24z M264,72h24v24h-24z M288,72h24v24h-24z M216,96h24v24h-24z M240,96h24v24h-24z M264,96h24v24h-24z M216,384h24v24h-24z M240,384h24v24h-24z M264,384h24v24h-24z M192,408h24v24h-24z M216,408h24v24h-24z M240,408h24v24h-24z M264,408h24v24h-24z M288,408h24v24h-24z M216,432h24v24h-24z M240,432h24v24h-24z M264,432h24v24h-24z M24,408h24v24h-24z M48,408h24v24h-24z M72,408h24v24h-24z M24,432h24v24h-24z M48,432h24v24h-24z M72,432h24v24h-24z M384,408h24v24h-24z M408,408h24v24h-24z M432,408h24v24h-24z M384,432h24v24h-24z M408,432h24v24h-24z M432,432h24v24h-24z M96,0h24v24h-24z M96,24h24v24h-24z M96,48h24v24h-24z M96,72h24v24h-24z M48,72h24v24h-24z M72,72h24v24h-24z M48,96h24v24h-24z M48,120h24v24h-24z M48,144h24v24h-24z M48,168h24v24h-24z M72,168h24v24h-24z M96,168h24v24h-24z M120,168h24v24h-24z M360,0h24v24h-24z M360,24h24v24h-24z M360,48h24v24h-24z M360,72h24v24h-24z M384,72h24v24h-24z M408,72h24v24h-24z M408,96h24v24h-24z M408,120h24v24h-24z M408,144h24v24h-24z M336,144h24v24h-24z M360,144h24v24h-24z M384,144h24v24h-24z M0,96h24v24h-24z M24,96h24v24h-24z M432,96h24v24h-24z M456,96h24v24h-24z M0,360h24v24h-24z M24,360h24v24h-24z M48,360h24v24h-24z M72,360h24v24h-24z M72,288h24v24h-24z M72,312h24v24h-24z M72,336h24v24h-24z M96,288h24v24h-24z M120,288h24v24h-24z M144,288h24v24h-24z M408,360h24v24h-24z M432,360h24v24h-24z M456,360h24v24h-24z M408,288h24v24h-24z M408,312h24v24h-24z M408,336h24v24h-24z M336,288h24v24h-24z M360,288h24v24h-24z M384,288h24v24h-24z M96,384h24v24h-24z M96,408h24v24h-24z M96,432h24v24h-24z M96,456h24v24h-24z M120,384h24v24h-24z M144,384h24v24h-24z M144,312h24v24h-24z M144,336h24v24h-24z M144,360h24v24h-24z M360,384h24v24h-24z M360,408h24v24h-24z M360,432h24v24h-24z M360,456h24v24h-24z M312,384h24v24h-24z M336,384h24v24h-24z M312,288h24v24h-24z M312,312h24v24h-24z M312,336h24v24h-24z M312,360h24v24h-24z M120,120h24v24h-24z M120,144h24v24h-24z M144,120h24v24h-24z M168,120h24v24h-24z M192,120h24v24h-24z M216,120h24v24h-24z M240,120h24v24h-24z M264,120h24v24h-24z M288,120h24v24h-24z M312,120h24v24h-24z M336,120h24v24h-24z M144,168h24v24h-24z M168,168h24v24h-24z M168,192h24v24h-24z M168,216h24v24h-24z M144,216h24v24h-24z M144,240h24v24h-24z M144,264h24v24h-24z M312,144h24v24h-24z M312,168h24v24h-24z M312,192h24v24h-24z M312,216h24v24h-24z M312,240h24v24h-24z M312,264h24v24h-24z M168,288h24v24h-24z M192,288h24v24h-24z M216,288h24v24h-24z M240,288h24v24h-24z M240,312h24v24h-24z M240,336h24v24h-24z M264,336h24v24h-24z M288,336h24v24h-24z M192,144h24v24h-24z M192,168h24v24h-24z M216,168h24v24h-24z M240,168h24v24h-24z M240,192h24v24h-24z M72,192h24v24h-24z M120,216h24v24h-24z M120,240h24v24h-24z M336,216h24v24h-24z M360,216h24v24h-24z M240,360h24v24h-24z M120,264h24v24h-24z M360,240h24v24h-24z M360,264h24v24h-24z M96,336h24v24h-24z M96,360h24v24h-24z M120,336h24v24h-24z M360,336h24v24h-24z M360,360h24v24h-24z M336,336h24v24h-24z M168,240h24v24h-24z" fill="#fffcf3"/></g>
-<g id="grid" clip-path="url(#walk-riftwater_lock)" fill="none">
-<path d="M24,0V480 M0,24H480" stroke="#d8d5cb" stroke-width=".5"/>
+<g id="grid" data-grid="full" clip-path="url(#walk-riftwater_lock)" fill="none">
 <path d="M48,0V480 M0,48H480" stroke="#b9b6ae" stroke-width=".95"/>
-<path d="M72,0V480 M0,72H480" stroke="#d8d5cb" stroke-width=".5"/>
 <path d="M96,0V480 M0,96H480" stroke="#b9b6ae" stroke-width=".95"/>
-<path d="M120,0V480 M0,120H480" stroke="#d8d5cb" stroke-width=".5"/>
 <path d="M144,0V480 M0,144H480" stroke="#b9b6ae" stroke-width=".95"/>
-<path d="M168,0V480 M0,168H480" stroke="#d8d5cb" stroke-width=".5"/>
 <path d="M192,0V480 M0,192H480" stroke="#b9b6ae" stroke-width=".95"/>
-<path d="M216,0V480 M0,216H480" stroke="#d8d5cb" stroke-width=".5"/>
 <path d="M240,0V480 M0,240H480" stroke="#b9b6ae" stroke-width=".95"/>
-<path d="M264,0V480 M0,264H480" stroke="#d8d5cb" stroke-width=".5"/>
 <path d="M288,0V480 M0,288H480" stroke="#b9b6ae" stroke-width=".95"/>
-<path d="M312,0V480 M0,312H480" stroke="#d8d5cb" stroke-width=".5"/>
 <path d="M336,0V480 M0,336H480" stroke="#b9b6ae" stroke-width=".95"/>
-<path d="M360,0V480 M0,360H480" stroke="#d8d5cb" stroke-width=".5"/>
 <path d="M384,0V480 M0,384H480" stroke="#b9b6ae" stroke-width=".95"/>
-<path d="M408,0V480 M0,408H480" stroke="#d8d5cb" stroke-width=".5"/>
 <path d="M432,0V480 M0,432H480" stroke="#b9b6ae" stroke-width=".95"/>
-<path d="M456,0V480 M0,456H480" stroke="#d8d5cb" stroke-width=".5"/>
 </g>
 <g id="water-terrain" fill="#86b8c3" fill-opacity=".64" stroke="none">
 <rect x="240" y="240" width="24" height="24"/>
@@ -666,6 +656,26 @@
 <path d="M192,240l17,17" stroke="#8a745f" stroke-width="1.6"/>
 <path d="M309,240h6 M309,264h6" stroke-width="2.7"/>
 <path d="M312,240l17,17" stroke="#8a745f" stroke-width="1.6"/>
+</g>
+<g id="sluice-gates" fill="none" stroke-linejoin="round" stroke-linecap="square">
+<g data-gate-id="west_shutter" data-state="closed" transform="translate(216 264)">
+<title>west shutter (closed)</title>
+<path d="M0 -6V6 M24 -6V6" stroke="#454541" stroke-width="2.6"/>
+<rect x="2" y="-3.5" width="20" height="7" fill="#585852" stroke="#272f30" stroke-width="1.5"/>
+<path d="M5 -1.2H19 M5 1.2H19" stroke="#c4bcab" stroke-width=".85"/>
+</g>
+<g data-gate-id="center_shutter" data-state="closed" transform="translate(240 264)">
+<title>center shutter (closed)</title>
+<path d="M0 -6V6 M24 -6V6" stroke="#454541" stroke-width="2.6"/>
+<rect x="2" y="-3.5" width="20" height="7" fill="#585852" stroke="#272f30" stroke-width="1.5"/>
+<path d="M5 -1.2H19 M5 1.2H19" stroke="#c4bcab" stroke-width=".85"/>
+</g>
+<g data-gate-id="east_shutter" data-state="closed" transform="translate(264 264)">
+<title>east shutter (closed)</title>
+<path d="M0 -6V6 M24 -6V6" stroke="#454541" stroke-width="2.6"/>
+<rect x="2" y="-3.5" width="20" height="7" fill="#585852" stroke="#272f30" stroke-width="1.5"/>
+<path d="M5 -1.2H19 M5 1.2H19" stroke="#c4bcab" stroke-width=".85"/>
+</g>
 </g>
 <g id="overhead-decks" fill="#d6b88e" fill-opacity=".52" stroke="none">
 <rect x="192" y="240" width="24" height="24"/>
