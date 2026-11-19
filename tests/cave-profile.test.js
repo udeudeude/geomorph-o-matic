@@ -47,6 +47,6 @@ test("editable profile plate remains coupled to canonical rendered plan",()=>{
  assert.match(plate,/data-cut="B"/);
  assert.match(plate,/id="dry-bridges"/);
  assert.match(plate,/id="level-ramps"/);
- assert.match(plate,/not measured/);
+ assert.match(plate,/no measured cave survey/);
  assert.throws(()=>sectionPlateSvg(tile,"<svg/>"),/canonical SVG/);
 });
