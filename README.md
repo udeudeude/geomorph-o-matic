@@ -15,6 +15,19 @@ Original, modular, editable dungeon cartography. **Architectural studies, not ye
 These are editable vector drawings, not flattened images. The separate floor, grid, rock, doors, structural walls and architectural features are grouped in the SVG document.
 
 
+
+## Collapsed Choir arcade and playable triforium (November 19, 2026)
+
+The Fallen Choir now has **five impassable broken-arcade edges**, not merely decorative rubble. A four-cell raised triforium provides a true alternate passage between two separately marked ladders; the southern nave bay is the ground-level detour. The western ambulatory has also been re-composed to break its original straight run.
+
+- [Two-level comparative vector survey](examples/fallen_choir_levels.svg)
+- [Revised primary map](tiles/fallen_choir.svg) and [actual-size print proof](examples/fallen_choir_print_letter.svg)
+- [Source and architectural caveats](research/2026-11-19-fallen-choir-upper-gallery.md)
+
+The new broken-masonry edges share canonical blocked navigation data with the printed symbol. The vertical validator also rejects elevated decks that silently pass through different rooms without a modeled upper doorway. Height, headroom and stability remain provisional. **This is a spatial design iteration, not a certified finished map.**
+
+Regenerate with `node render.js && node choir-levels-plate.js`; check `node --test tests/choir-collapse.test.js` and `PYTHONPATH=. python3 -m unittest tests.test_choir_ruins`.
+
 ## Cartographic reset: priority on imaginative dungeon architecture
 
 The new [Fallen Choir](tiles/fallen_choir.svg) deliberately redirects development from machinery modeling to compositional strength: a distinctive bell landmark, a direct four-door crossing, secret discoveries that do not isolate the ordinary network, and fine etching **outside** stone walls. The new [masonry hatch generator](ink-hatching.js) is independent of floor geometry and retains editable vector layers. See the [research, references, tests and admitted design weaknesses](research/2026-11-19-ink-cartography-reset.md). The [curated assembly](examples/assembly_fallen_choir_2x2.svg) and [letter print proof](examples/fallen_choir_print_letter.svg) are for inspection; physical print review is not complete.
