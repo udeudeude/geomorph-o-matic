@@ -1,0 +1,68 @@
+{
+  "tile": "riftwater_lock",
+  "gearbox_count": 5,
+  "drives": 3,
+  "service_warnings": 9,
+  "assumptions": "Centerlines and nominal 1.5 ft housings only; transmission forces, ratios, working headroom, recess excavation, panels and gear access have not been engineered.",
+  "gearboxes": [
+    {
+      "drive": "west_drive",
+      "station": "9,14",
+      "service_from": "10,14",
+      "housing_width_ft": 1.5,
+      "access": "sealed_overhead_service_panel",
+      "shutdown_required": true,
+      "warnings": [
+        "rock pocket excavation, liner and support unverified",
+        "wheel shutdown/lockout required for access"
+      ]
+    },
+    {
+      "drive": "center_drive",
+      "station": "11,13",
+      "service_from": "11,14",
+      "housing_width_ft": 1.5,
+      "access": "sealed_overhead_service_panel",
+      "shutdown_required": true,
+      "warnings": [
+        "rock pocket excavation, liner and support unverified",
+        "wheel shutdown/lockout required for access"
+      ]
+    },
+    {
+      "drive": "center_drive",
+      "station": "10,13",
+      "service_from": "10,12",
+      "housing_width_ft": 1.5,
+      "access": "sealed_overhead_service_panel",
+      "shutdown_required": false,
+      "warnings": [
+        "shared narrow service landing; access envelope unverified"
+      ]
+    },
+    {
+      "drive": "east_drive",
+      "station": "12,12",
+      "service_from": "13,12",
+      "housing_width_ft": 1.5,
+      "access": "sealed_overhead_service_panel",
+      "shutdown_required": false,
+      "warnings": [
+        "rock pocket excavation, liner and support unverified"
+      ]
+    },
+    {
+      "drive": "east_drive",
+      "station": "11,12",
+      "service_from": "10,12",
+      "housing_width_ft": 1.5,
+      "access": "sealed_overhead_service_panel",
+      "shutdown_required": false,
+      "warnings": [
+        "rock pocket excavation, liner and support unverified",
+        "shared narrow service landing; access envelope unverified",
+        "near wet hydraulic race; corrosion and enclosure unverified"
+      ]
+    }
+  ]
+}
