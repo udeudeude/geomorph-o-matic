@@ -254,3 +254,34 @@ ordinary water from a high-water case that drowns the modeled crown. In a
 hydraulic assembly the outlet must face an exterior boundary, never an
 arbitrary adjoining tile. This is a high-water *risk flag*, not calculated flow
 or proof that the turbine remains vented. [Evidence and limitations](research/2026-11-19-outfall-backwater.md).
+
+## Specialist receiving-ravine annex (November 19, 2026)
+
+The [Receiving Ravine architectural annex](examples/receiving_annex_plate.svg) now
+models the **first 50 feet of conceptual exterior watercourse** east of Postern
+Bastion's masonry lip, as a deliberately non-interchangeable attachment. It is
+**not** a seventh standard dungeon tile: it has a matched, rotatable **lower**
+watercourse interface at W:9, but does not masquerade as a complete set of
+pedestrian portals. A downstream river remains unmapped.
+
+The [authored annex geometry](examples/receiving_annex.json) and
+[interface/grade validator](receiving-annex.js) define an ordered falling bed,
+stone-lined throat, widened flagstone apron, desilting pocket with a separate
+dry inspection terrace, two-bank bridge approach, pocket cleanout steps and rough-stone receiving
+reach. A [second, independent Python check](receiving_validation.py) catches
+mismatched profiles, access routes and bank assumptions. The editable vector
+drawing keeps rock contours, channel treatments, pedestrian approach, bridge,
+water states and section elevations distinct.
+
+The source lip descends by an **assumed 0.05 feet** into the annex, followed by
+**0.95 feet over 47.5 feet** of conceptual receiving channel. High water still
+submerges the upstream masonry crown. **No discharge, energy dissipation,
+bank stability or scour sizing has been calculated**, and the actual stream
+outside the annex has not been surveyed. See
+[research and remaining tasks](research/2026-11-19-receiving-annex.md).
+
+```sh
+node receiving-annex-plate.js examples/receiving_annex_plate.svg
+node --test tests/receiving-annex*.test.js
+```
+
