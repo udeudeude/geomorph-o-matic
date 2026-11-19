@@ -99,6 +99,72 @@ def validate_terrain(tile, cells):
         assert len(group) == max(len(xs), len(ys)), (tile['id'], 'disconnected bridge span')
     return {'water_cells': len(water), 'bridges': len(bridge), 'raised_cells': len(levels), 'ramps': len(ramps)}
 
+
+def validate_vertical(tile, cells):
+    """Independent validation of real stacked floors, not height annotations."""
+    spec = tile.get('vertical', {})
+    assert isinstance(spec, dict), (tile['id'], 'invalid vertical geometry')
+    decks = spec.get('decks', [])
+    links = spec.get('links', [])
+    assert isinstance(decks, list) and isinstance(links, list), (tile['id'], 'invalid deck/link lists')
+    levels = {}
+    for z, positions in tile.get('terrain', {}).get('elevations', []):
+        for p in positions:
+            levels[tuple(p)] = z
+    base = {(x,y,levels.get((x,y),0)) for x,y in cells}
+    stacked = set()
+    deck_ids = set()
+    for deck in decks:
+        assert isinstance(deck, dict), (tile['id'], 'invalid deck')
+        name, z, coordinates = deck.get('id'), deck.get('level'), deck.get('cells')
+        assert isinstance(name, str) and name and name[0].islower() and all(
+            c.islower() or c.isdigit() or c in '_-' for c in name), (tile['id'], 'invalid deck id')
+        assert name not in deck_ids and type(z) is int and z != 0, (tile['id'], 'duplicate deck or invalid level')
+        assert isinstance(coordinates, list) and coordinates, (tile['id'], 'empty deck')
+        deck_ids.add(name)
+        points = set()
+        for p in coordinates:
+            assert isinstance(p, list) and len(p) == 2 and all(type(n) is int for n in p), (tile['id'], 'invalid deck coordinate')
+            x,y = p
+            assert (x,y) in cells and 0 < x < 19 and 0 < y < 19, (tile['id'], 'deck changes edge or leaves floor')
+            assert (x,y) not in points and (x,y,z) not in stacked and (x,y,z) not in base, (tile['id'], 'deck overlap')
+            points.add((x,y))
+            stacked.add((x,y,z))
+        assert connected(points,set(),next(iter(points))) == points, (tile['id'], 'disconnected deck')
+    graph = collections.defaultdict(set)
+    for x,y,z in stacked:
+        for dx,dy in NEIGHBORS:
+            q=(x+dx,y+dy,z)
+            if q in stacked:
+                graph[(x,y,z)].add(q)
+    seen_links=set()
+    for link in links:
+        assert isinstance(link, dict) and link.get('kind') in ('ladder','stair'), (tile['id'], 'invalid link')
+        p=link.get('at')
+        a,b=link.get('from'),link.get('to')
+        assert isinstance(p,list) and len(p)==2 and all(type(n) is int for n in p), (tile['id'], 'invalid link position')
+        assert type(a) is int and type(b) is int and a!=b, (tile['id'], 'invalid link levels')
+        assert link['kind']!='stair' or abs(a-b)==1, (tile['id'], 'impossible stair')
+        x,y=p
+        u,v=(x,y,a),(x,y,b)
+        assert (u in stacked or u in base) and (v in stacked or v in base), (tile['id'], 'link to missing floor')
+        assert u in stacked or v in stacked, (tile['id'], 'link does not serve deck')
+        e=tuple(sorted((u,v)))
+        assert e not in seen_links, (tile['id'], 'duplicate link')
+        seen_links.add(e)
+        graph[u].add(v)
+        graph[v].add(u)
+    assert not decks or links, (tile['id'], 'floating decks')
+    reached=set(base)
+    todo=list(base)
+    for u in todo:
+        for v in graph[u]:
+            if v not in reached:
+                reached.add(v)
+                todo.append(v)
+    assert stacked <= reached, (tile['id'], 'unreachable stacked cells')
+    return {'stacked_decks':len(decks), 'stacked_floor_cells':len(stacked), 'vertical_connections':len(links)}
+
 def validate(tile):
     name=tile['id'];cells={};chambers={}
     for key,title,shape in tile['rooms']:
@@ -121,6 +187,7 @@ def validate(tile):
     boundary={p for p in cells if 0 in p or 19 in p}
     assert boundary==PORTALS,(name,'invalid edge openings',boundary^PORTALS)
     terrain_report = validate_terrain(tile, cells)
+    vertical_report = validate_vertical(tile, cells)
     walls=set()
     for (x,y),zone in cells.items():
         for dx,dy in NEIGHBORS:
@@ -145,7 +212,7 @@ def validate(tile):
     links=sum(((x+dx,y+dy) in hall) for x,y in hall for dx,dy in ((1,0),(0,1)))
     loops=links-len(hall)+1
     assert loops>=3,(name,'insufficient alternate routes',loops)
-    return {'id':name,'rooms':len(chambers),'doors':len(doors),'corridor_cycles':loops,'floor_cells':len(cells),**terrain_report}
+    return {'id':name,'rooms':len(chambers),'doors':len(doors),'corridor_cycles':loops,'floor_cells':len(cells),**terrain_report,**vertical_report}
 
 def main():
     data=json.loads(Path(sys.argv[1] if len(sys.argv)>1 else Path(__file__).with_name('blueprints.json')).read_text())
