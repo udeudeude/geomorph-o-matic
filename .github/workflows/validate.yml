@@ -20,6 +20,8 @@ jobs:
           node assemble.js
           node audit.js
           git diff --exit-code -- examples/assembly_3x3.svg reports/topology.json
+      - name: Build irregular nine-tile study
+        run: node assemble.js examples/assembly_irregular_3x3.json examples/assembly_irregular_3x3.svg
       - name: Upload new irregular studies
         uses: actions/upload-artifact@v4
         with:
@@ -27,4 +29,5 @@ jobs:
           path: |
             tiles/basalt_rift.svg
             tiles/sunken_orrery.svg
+            examples/assembly_irregular_3x3.svg
           if-no-files-found: error

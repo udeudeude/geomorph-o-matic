@@ -1,0 +1,47 @@
+{
+  "title": "The Rift and the Orrery: an experimental nine-morph survey",
+  "rows": [
+    [
+      {
+        "id": "basalt_rift",
+        "turn": 0
+      },
+      {
+        "id": "sunken_orrery",
+        "turn": 1
+      },
+      {
+        "id": "salt_cloister",
+        "turn": 2
+      }
+    ],
+    [
+      {
+        "id": "postern_bastion",
+        "turn": 3
+      },
+      {
+        "id": "basalt_rift",
+        "turn": 1
+      },
+      {
+        "id": "sunken_orrery",
+        "turn": 0
+      }
+    ],
+    [
+      {
+        "id": "bone_galleries",
+        "turn": 2
+      },
+      {
+        "id": "sunken_orrery",
+        "turn": 2
+      },
+      {
+        "id": "basalt_rift",
+        "turn": 3
+      }
+    ]
+  ]
+}

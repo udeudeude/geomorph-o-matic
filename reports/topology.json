@@ -155,5 +155,129 @@
       }
     ],
     "notes": []
+  },
+  {
+    "id": "basalt_rift",
+    "floor_cells": 179,
+    "corridor_cells": 119,
+    "doors": 10,
+    "standard_doors": 8,
+    "locked_doors": 1,
+    "secret_doors": 1,
+    "hall_cycle_rank": 7,
+    "hall_chokepoint_count": 74,
+    "normal_portals_reachable": 8,
+    "fully_connected": true,
+    "normally_accessible_floor_fraction": 0.966,
+    "chambers": [
+      {
+        "room": "throat",
+        "doors": [
+          "door",
+          "secret"
+        ],
+        "normally_accessible": true
+      },
+      {
+        "room": "vent",
+        "doors": [
+          "door"
+        ],
+        "normally_accessible": true
+      },
+      {
+        "room": "falls",
+        "doors": [
+          "door",
+          "door"
+        ],
+        "normally_accessible": true
+      },
+      {
+        "room": "fungi",
+        "doors": [
+          "door",
+          "door"
+        ],
+        "normally_accessible": true
+      },
+      {
+        "room": "cistern",
+        "doors": [
+          "door"
+        ],
+        "normally_accessible": true
+      },
+      {
+        "room": "shrine",
+        "doors": [
+          "locked"
+        ],
+        "normally_accessible": false
+      },
+      {
+        "room": "lookout",
+        "doors": [
+          "door"
+        ],
+        "normally_accessible": true
+      }
+    ],
+    "notes": []
+  },
+  {
+    "id": "sunken_orrery",
+    "floor_cells": 169,
+    "corridor_cells": 105,
+    "doors": 8,
+    "standard_doors": 5,
+    "locked_doors": 2,
+    "secret_doors": 1,
+    "hall_cycle_rank": 6,
+    "hall_chokepoint_count": 39,
+    "normal_portals_reachable": 8,
+    "fully_connected": true,
+    "normally_accessible_floor_fraction": 0.964,
+    "chambers": [
+      {
+        "room": "engine",
+        "doors": [
+          "locked",
+          "door",
+          "secret",
+          "door"
+        ],
+        "normally_accessible": true
+      },
+      {
+        "room": "apse",
+        "doors": [
+          "door"
+        ],
+        "normally_accessible": true
+      },
+      {
+        "room": "choir",
+        "doors": [
+          "door"
+        ],
+        "normally_accessible": true
+      },
+      {
+        "room": "charts",
+        "doors": [
+          "locked"
+        ],
+        "normally_accessible": false
+      },
+      {
+        "room": "descent",
+        "doors": [
+          "door"
+        ],
+        "normally_accessible": true
+      }
+    ],
+    "notes": []
   }
 ]
