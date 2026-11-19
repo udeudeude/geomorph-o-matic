@@ -9,7 +9,7 @@ Original, modular, editable dungeon cartography. **Architectural studies, not ye
 - [Bone Galleries](tiles/bone_galleries.svg): two approaches to a royal sepulcher, ossuary galleries, a concealed tomb entrance.
 - [Basalt Rift](tiles/basalt_rift.svg): seven irregular cavern chambers and natural rock contours.
 - [Sunken Orrery](tiles/sunken_orrery.svg): a ruined observatory court with two guarded approaches.
-- [Riftwater Lock](tiles/riftwater_lock.svg): asymmetric subterranean floodworks with seven chambers, independent inspection circuits and sealed discoveries.
+- [Riftwater Lock](tiles/riftwater_lock.svg): partitioned subterranean sluice basin with three independently consequential shutters, separate crossing routes, and sealed discoveries.
 
 These are editable vector drawings, not flattened images. The separate floor, grid, rock, doors, structural walls and architectural features are grouped in the SVG document.
 
@@ -122,7 +122,7 @@ node --test tests/*.test.js
 
 ## Working sluice bank and legible grid (19 November 2026)
 
-The Riftwater Lock now has three individually controlled shutters across a 7.5-foot turbine basin. Its authored surge raises the center shutter, flooding three downstream cells while the flank shutters remain closed. Normal and surge SVG drawings show their actual hydraulic states. This is an authored **connectivity scenario**, not a calibrated flow simulation.
+The Riftwater Lock has three individually controlled shutters across a 7.5-foot sluice basin. Its original surge design used one raised shutter to flood an undivided receiving pool; that arrangement has since been replaced with three masonry-separated receiving compartments and progressive releases. Normal and surge SVG drawings show their actual hydraulic states. This is an authored **connectivity scenario**, not a calibrated flow simulation.
 
 All vector masters now show only the standard five-foot grid by default, avoiding the very thin 2.5-foot construction lines on half-inch print proofs. The finer grid remains an optional drafting mode. See [research and open engineering questions](research/2026-11-19-sluice-bank-cartography.md).
 
@@ -130,7 +130,7 @@ All vector masters now show only the standard five-foot grid by default, avoidin
 
 Riftwater Lock's nine-cell turbine race is now an **explicit engineered waterway**, not a subset of every traversable pedestrian corridor. The flood engine uses a separate hydraulic connectivity graph; water cannot enter other rooms through ordinary doors or leak across masonry boundaries without a deliberately authored culvert. A three-shutter bank divides six normally submerged cells from three downstream surge cells, and the source and receiving outfall are labeled as **off-sheet continuations**, not invented surveyed passages.
 
-The south service gallery has three individually assigned handwheel stations. Their accessibility is measured against the dry navigation graph in both normal and surge conditions. The editable SVG includes separately grouped canal-bank masonry, hydraulic terminals, and operating wheels, plus the previously authored shutters and bridge. The Python blueprint validator independently checks the same architectural boundaries, and adversarial tests reject invalid leakage, controls and cross-wall connections.
+The south service gallery has three individually assigned handwheel stations. Their accessibility is measured against the dry navigation graph throughout the staged releases. The editable SVG includes separately grouped canal-bank masonry, hydraulic terminals, and operating wheels, plus the previously authored shutters and bridge. The Python blueprint validator independently checks the same architectural boundaries, and adversarial tests reject invalid leakage, controls and cross-wall connections.
 
-This remains a small functional **map study**, not a complete power facility: an actual headrace, penstock, discharge culvert, hydraulic gradient, operating transmissions, and calibrated gate heights have not yet been designed. See [engineering research and design constraints](research/2026-11-19-bounded-waterworks-architecture.md). Inspect the [Riftwater Lock vector master](tiles/riftwater_lock.svg) and [surge study](examples/riftwater_surge.svg) at full size before evaluating their architectural legibility.
+This remains a small functional **map study**, not a complete power facility: an actual headrace, separate turbine pit, penstock, discharge culvert, hydraulic gradient, operating transmissions, and calibrated gate heights have not yet been designed. See [engineering research and design constraints](research/2026-11-19-bounded-waterworks-architecture.md). Inspect the [Riftwater Lock vector master](tiles/riftwater_lock.svg) and [surge study](examples/riftwater_surge.svg) at full size before evaluating their architectural legibility.
 

@@ -245,6 +245,7 @@
     "bridged_water_cells": 0,
     "elevated_cells": 0,
     "ramp_edges": 0,
+    "barrier_edges": 0,
     "travel": {
       "dry": {
         "accessible_floor_cells": 116,
@@ -712,6 +713,7 @@
     "bridged_water_cells": 0,
     "elevated_cells": 0,
     "ramp_edges": 0,
+    "barrier_edges": 0,
     "travel": {
       "dry": {
         "accessible_floor_cells": 245,
@@ -1128,6 +1130,7 @@
     "bridged_water_cells": 0,
     "elevated_cells": 0,
     "ramp_edges": 0,
+    "barrier_edges": 0,
     "travel": {
       "dry": {
         "accessible_floor_cells": 226,
@@ -1660,6 +1663,7 @@
     "bridged_water_cells": 0,
     "elevated_cells": 0,
     "ramp_edges": 0,
+    "barrier_edges": 0,
     "travel": {
       "dry": {
         "accessible_floor_cells": 173,
@@ -2128,6 +2132,7 @@
     "bridged_water_cells": 0,
     "elevated_cells": 0,
     "ramp_edges": 0,
+    "barrier_edges": 0,
     "travel": {
       "dry": {
         "accessible_floor_cells": 163,
@@ -2458,7 +2463,7 @@
     ],
     "access_profiles": {
       "ordinary": {
-        "accessible_floor_cells": 153,
+        "accessible_floor_cells": 151,
         "accessible_chambers": [
           "cellar",
           "office",
@@ -2472,7 +2477,7 @@
         "longest_shortest_portal_distance": 38
       },
       "unlocked": {
-        "accessible_floor_cells": 176,
+        "accessible_floor_cells": 174,
         "accessible_chambers": [
           "archive",
           "cellar",
@@ -2488,7 +2493,7 @@
         "longest_shortest_portal_distance": 38
       },
       "all": {
-        "accessible_floor_cells": 182,
+        "accessible_floor_cells": 180,
         "accessible_chambers": [
           "archive",
           "cellar",
@@ -2695,9 +2700,10 @@
     "bridged_water_cells": 2,
     "elevated_cells": 12,
     "ramp_edges": 1,
+    "barrier_edges": 2,
     "travel": {
       "dry": {
-        "accessible_floor_cells": 153,
+        "accessible_floor_cells": 151,
         "reachable_portals": 8
       },
       "wading": {

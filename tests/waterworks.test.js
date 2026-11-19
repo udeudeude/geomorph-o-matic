@@ -3,7 +3,7 @@ const {test}=require("node:test"),assert=require("node:assert/strict");
 const fs=require("node:fs"),path=require("node:path");
 const {buildCells}=require("../assemble"),{doorEdges}=require("../audit");
 const {gateModel,applyGateStates}=require("../hydraulic-control");
-const {waterwayModel,hydraulicCanalGraph,controlModel,controlAudit}=require("../waterworks");
+const {waterwayModel,hydraulicCanalGraph,sluiceImpact,controlModel,controlAudit}=require("../waterworks");
 const {floodStages,floodAudit}=require("../flood-stages");
 const {makeSvg}=require("../render");
 const tiles=JSON.parse(fs.readFileSync(path.join(__dirname,"../blueprints.json"),"utf8")).tiles;
@@ -42,8 +42,8 @@ test("three independent handwheels are dry and reachable in both flood states",(
   for(const c of audit)assert.equal(c.dry_portal_approaches,8,c.gate+" at "+state.id);
  }
  const audit=floodAudit(owner,doors,tile.terrain,tile.vertical,tile.hydrology);
- assert.equal(audit.length,2);
- assert.equal(audit[1].control_access.length,3);
+ assert.equal(audit.length,4);
+ assert.equal(audit[3].control_access.length,3);
 });
 
 test("bad race and control geometry is rejected before vector output",()=>{
@@ -57,6 +57,24 @@ test("bad race and control geometry is rejected before vector output",()=>{
  assert.throws(()=>controlModel(owner,doors,{...hydro,controls:hydro.controls.map((c,i)=>i===0?{...c,at:[10,9]}:c)},tile.terrain),/dry service-gallery/);
 });
 
+test("three stone-partitioned sluice branches produce distinct useful flood states",()=>{
+ const states=floodStages(owner,doors,tile.terrain,tile.hydrology);
+ assert.deepEqual([...states.keys()],["normal","west_release","center_release","surge"]);
+ assert.deepEqual([...states.values()].map(s=>s.terrain.water.length),[6,7,8,9]);
+ const impact=sluiceImpact(owner,doors,tile.hydrology,tile.terrain);
+ assert.deepEqual(impact.map(g=>g.newly_accessible_canals),[["9,11"],["10,11"],["11,11"]]);
+ assert.equal(new Set(impact.flatMap(g=>g.newly_accessible_canals)).size,3);
+ const model=waterwayModel(owner,doors,tile.hydrology,tile.terrain);
+ assert.equal(model.partitions.size,2);
+ for(const barrier of model.partitions)assert.ok(model.walls.has(barrier));
+ assert.throws(()=>waterwayModel(owner,doors,tile.hydrology,
+  {...tile.terrain,barriers:[]}),/do not isolate independent/);
+ assert.throws(()=>waterwayModel(owner,doors,
+  {...tile.hydrology,isolated_shutters:"definitely"},tile.terrain),/Invalid isolated-shutter/);
+ const normal=makeSvg(tile);
+ assert.match(normal,/id="masonry-partitions"/);
+ assert.equal((normal.match(/data-blocks-edge=/g)||[]).length,2);
+});
 test("stone walls isolate canals unless a specific culvert cuts the boundary",()=>{
  const zones=new Map([["2,5","pond"],["3,5","hall"]]);
  const terrain={water:[[2,5]]};
@@ -81,5 +99,5 @@ test("waterworks appears in independent reproducible vector layers",()=>{
   assert.equal((svg.match(/data-controls-gate=/g)||[]).length,3);
  }
  assert.equal(normal,makeSvg(tile));
- assert.equal((surge.match(/data-state="open"/g)||[]).length,1);
+ assert.equal((surge.match(/data-state="open"/g)||[]).length,3);
 });

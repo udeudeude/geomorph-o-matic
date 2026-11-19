@@ -48,6 +48,12 @@
 <g id="elevation-labels" fill="#705b47" font-family="sans-serif" font-size="10" font-weight="600" text-anchor="middle">
 <text x="240.0" y="64.6">+1</text>
 </g>
+<g id="masonry-partitions" fill="none" stroke-linecap="square">
+<path data-blocks-edge="10,11|11,11" d="M264,264v24" stroke="#e4dfd2" stroke-width="6"/>
+<path d="M264,264v24" stroke="#3c4241" stroke-width="3.3"/>
+<path data-blocks-edge="10,11|9,11" d="M240,264v24" stroke="#e4dfd2" stroke-width="6"/>
+<path d="M240,264v24" stroke="#3c4241" stroke-width="3.3"/>
+</g>
 <g id="level-ramps" fill="none" stroke="#87664e" stroke-width="2.2" stroke-linecap="round">
 <path d="M252,108L252,132"/>
 </g>

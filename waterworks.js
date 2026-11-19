@@ -35,7 +35,7 @@ function waterwayModel(owner,doors=[],hydrology={},terrain={}) {
   if (canal.has(k) || PORTALS.includes(k)) throw Error("Repeated or boundary waterway channel");
   canal.add(k);
  }
- const {water} = terrainModel(owner,terrain);
+ const {water,barriers} = terrainModel(owner,terrain);
  for (const p of water) if (!canal.has(p)) throw Error("Existing water outside engineered waterway");
  const inlet = coordinate(owner,hydrology.intake,"intake");
  const outlet = coordinate(owner,hydrology.outlet,"outlet");
@@ -64,10 +64,55 @@ function waterwayModel(owner,doors=[],hydrology={},terrain={}) {
    if (canal.has(q)&&owner.get(p)!==owner.get(q)&&!culverts.has(EDGE(p,q)))walls.add(EDGE(p,q));
   }
  }
+ // These are full-height architectural dividers, not merely painted lines.
+ // They remain impermeable even when every sluice is lifted.
+ const gateEdges=new Set(gates.map(g=>g.edge));
+ for(const edge of barriers){
+  if(gateEdges.has(edge)||culverts.has(edge))throw Error("Masonry partition cannot overlap sluice or culvert");
+  const [a,b]=edge.split("|");
+  if(canal.has(a)&&canal.has(b))walls.add(edge);
+ }
  const allOpen = new Map(gates.map(g => [g.id,"open"]));
  if (!distances(hydraulicCanalGraph(canal,gates,allOpen,walls),inlet).has(outlet))
   throw Error("Engineered waterway cannot connect intake to outlet");
- return {canal,inlet,outlet,walls,culverts};
+ if(hydrology.isolated_shutters!==undefined && typeof hydrology.isolated_shutters!=="boolean")
+  throw Error("Invalid isolated-shutter contract");
+ if(hydrology.isolated_shutters){
+  if(gates.length<2)throw Error("Isolated shutters require multiple independently controlled branches");
+  const shut=new Map(gates.map(g=>[g.id,"closed"]));
+  const headwater=new Set(distances(hydraulicCanalGraph(canal,gates,shut,walls),inlet).keys());
+  const claimed=new Set();
+  for(const gate of gates){
+   const states=new Map(gates.map(g=>[g.id,g.id===gate.id?"open":"closed"]));
+   const reached=distances(hydraulicCanalGraph(canal,gates,states,walls),inlet);
+   const fresh=[...reached.keys()].filter(p=>!headwater.has(p));
+   if(!fresh.length||fresh.some(p=>claimed.has(p)))
+    throw Error("Sluices do not isolate independent downstream receiving pockets");
+   for(const p of fresh)claimed.add(p);
+  }
+ }
+ return {canal,inlet,outlet,walls,culverts,partitions:new Set([...barriers].filter(e=>{
+  const [a,b]=e.split("|");return canal.has(a)&&canal.has(b);
+ }))};
+}
+// Potential reachability if exactly one shutter is lifted from an all-shut bank.
+ // This is a hydraulic access test, not a simulation of flow velocity or head.
+function sluiceImpact(owner,doors=[],hydrology={},terrain={}) {
+ const model=waterwayModel(owner,doors,hydrology,terrain);
+ if(!model)return [];
+ const gates=gateModel(owner,doors,hydrology.gates||[]);
+ const shut=new Map(gates.map(g=>[g.id,"closed"]));
+ const headwater=new Set(distances(hydraulicCanalGraph(model.canal,gates,shut,model.walls),model.inlet).keys());
+ const result=[];
+ for(const gate of gates){
+  const states=new Map(gates.map(g=>[g.id,g.id===gate.id?"open":"closed"]));
+  const graph=hydraulicCanalGraph(model.canal,gates,states,model.walls);
+  const seen=distances(graph,model.inlet);
+  const newlyAccessible=[...seen.keys()].filter(p=>!headwater.has(p)).sort();
+  result.push({gate:gate.id,newly_accessible_canals:newlyAccessible,
+   potential_new_cells:newlyAccessible.length});
+ }
+ return result;
 }
 function controlModel(owner,doors=[],hydrology={},terrain={}) {
  if (hydrology.controls === undefined) return [];
@@ -149,4 +194,4 @@ function waterworksSvg(owner,doors=[],hydrology={},terrain={},cellSize=24) {
  }
  return out;
 }
-module.exports={waterwayModel,hydraulicCanalGraph,controlModel,controlAudit,waterworksSvg};
+module.exports={waterwayModel,hydraulicCanalGraph,sluiceImpact,controlModel,controlAudit,waterworksSvg};

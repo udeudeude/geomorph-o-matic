@@ -2484,7 +2484,7 @@
       "family": "Floodworks",
       "geometry": "row-runs",
       "wall_style": "cavern",
-      "description": "Abandoned floodworks: a six-cell upstream turbine pool meets a three-shutter bank above a receiving sump; the center gate admits a three-cell surge. The canal is sealed against neighboring pedestrian corridors. Its upstream intake adit and downstream tailrace are labeled but continue beyond the mapped level, not invented as surveyed passages. Three handwheels occupy the dry south operating gallery. A dry lower bridge, independent overhead gantry and two inspection circuits offer alternate crossings.",
+      "description": "Abandoned sluice works: a six-cell upstream basin feeds three masonry-isolated receiving pockets through independently controlled shutters. Dry operating handwheels flank the southern gallery; an upper inspection gantry and a lower bridge create separate crossings. The compact basin is NOT dimensioned for a turbine. The intake adit, machinery and downstream tailrace remain uncharted beyond this tile.",
       "rooms": [
         [
           "office",
@@ -2539,7 +2539,7 @@
         ],
         [
           "turbine",
-          "Broken turbine pool",
+          "Partitioned sluice basin",
           {
             "rows": [
               [
@@ -3325,21 +3325,61 @@
               5
             ]
           ]
+        ],
+        "barriers": [
+          [
+            [
+              9,
+              11
+            ],
+            [
+              10,
+              11
+            ]
+          ],
+          [
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              11
+            ]
+          ]
         ]
       },
       "hydrology": {
         "stages": [
           {
-            "id": "surge",
+            "id": "west_release",
             "add_water": [
               [
                 9,
                 11
-              ],
+              ]
+            ],
+            "surface_level": 1,
+            "gate_states": {
+              "west_shutter": "open"
+            }
+          },
+          {
+            "id": "center_release",
+            "add_water": [
               [
                 10,
                 11
-              ],
+              ]
+            ],
+            "surface_level": 1,
+            "gate_states": {
+              "center_shutter": "open"
+            }
+          },
+          {
+            "id": "surge",
+            "add_water": [
               [
                 11,
                 11
@@ -3347,7 +3387,7 @@
             ],
             "surface_level": 1,
             "gate_states": {
-              "center_shutter": "open"
+              "east_shutter": "open"
             }
           }
         ],
@@ -3466,7 +3506,8 @@
               14
             ]
           }
-        ]
+        ],
+        "isolated_shutters": true
       },
       "vertical": {
         "decks": [

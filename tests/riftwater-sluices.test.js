@@ -19,13 +19,17 @@ test("three contiguous sluices seal the entire downstream turbine basin",()=>{
   ...rift.hydrology,stages:[{id:"surge",add_water:[[9,11],[10,11],[11,11]],surface_level:1}]
  }),/hydraulic path/);
 });
-test("center shutter floods lower basin while flanking bays remain sealed",()=>{
+test("distinct sluice pockets flood in a deliberate three-step release",()=>{
  const stages=floodStages(owner,doors,rift.terrain,rift.hydrology);
  assert.equal(stages.get("normal").terrain.water.length,6);
+ assert.equal(stages.get("west_release").terrain.water.length,7);
+ assert.equal(stages.get("center_release").terrain.water.length,8);
  assert.equal(stages.get("surge").terrain.water.length,9);
  assert.deepEqual(stages.get("normal").closed_gates,["west_shutter","center_shutter","east_shutter"]);
- assert.deepEqual(stages.get("surge").closed_gates,["west_shutter","east_shutter"]);
- assert.deepEqual(stages.get("surge").gate_states,{west_shutter:"closed",center_shutter:"open",east_shutter:"closed"});
+ assert.deepEqual(stages.get("west_release").closed_gates,["center_shutter","east_shutter"]);
+ assert.deepEqual(stages.get("center_release").closed_gates,["east_shutter"]);
+ assert.deepEqual(stages.get("surge").closed_gates,[]);
+ assert.deepEqual(stages.get("surge").gate_states,{west_shutter:"open",center_shutter:"open",east_shutter:"open"});
  assert.equal(floodAudit(owner,doors,rift.terrain,rift.vertical,rift.hydrology)[1].reachable_portals,8);
 });
 test("vector master and surge sheet depict correct gate states in editable layers",()=>{
@@ -34,8 +38,8 @@ test("vector master and surge sheet depict correct gate states in editable layer
  const surge=makeSvg(scenario);
  assert.match(normal,/id="sluice-gates"/);
  assert.equal((normal.match(/data-state="closed"/g)||[]).length,3);
- assert.equal((surge.match(/data-state="closed"/g)||[]).length,2);
- assert.equal((surge.match(/data-state="open"/g)||[]).length,1);
+ assert.equal((surge.match(/data-state="closed"/g)||[]).length,0);
+ assert.equal((surge.match(/data-state="open"/g)||[]).length,3);
  assert.match(surge,/data-gate-id="center_shutter" data-state="open"/);
  assert.equal(surge,makeSvg(scenario));
  assert.throws(()=>makeSvg({...rift,hydrology:{...rift.hydrology,render_gate_states:{not_a_gate:"open"}}}),/Unknown gate/);

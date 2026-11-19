@@ -23,6 +23,21 @@ test("dry water is impassable; bridges remain traversable; wading changes access
  spec.bridges=[[2,0]];
  assert.equal(route(terrainGraph(cells,doors,spec),"0,0","4,0").length,5);
 });
+test("masonry partitions are impermeable in both movement graphs and editable art",()=>{
+ const cells=grid(4,3,[1]),spec={barriers:[[[1,1],[2,1]]]};
+ const dry=terrainGraph(cells,[],spec),wading=terrainGraph(cells,[],spec,"ordinary","wading");
+ assert.equal(route(dry,"0,1","3,1"),null);
+ assert.equal(route(wading,"0,1","3,1"),null);
+ assert.equal(terrainModel(cells,spec).barriers.size,1);
+ assert.match(terrainSvg(cells,spec).join(""),/id="masonry-partitions"/);
+ for(const barriers of [
+  [[[1,1],[2,1]],[[2,1],[1,1]]],
+  [[[1,1],[3,1]]],
+  [[[1,1],[1,7]]]
+ ])assert.throws(()=>terrainModel(cells,{barriers}));
+ assert.throws(()=>terrainModel(cells,{barriers:[[[1,1],[2,1]]],
+  elevations:[[1,[[2,1]]]],ramps:[[[1,1],[2,1]]]}),/overlapping ramp/);
+});
 test("height changes are impassable without authored ramps",()=>{
  const cells=grid(4,1),spec={elevations:[[1,[[2,0],[3,0]]]]};
  assert.equal(route(terrainGraph(cells,[],spec),"0,0","3,0"),null);
