@@ -245,6 +245,7 @@ def validate_waterworks(tile, cells):
     lower_cells = lower_pickups = 0
     if lower is not None:
         assert isinstance(lower, dict) and type(lower.get('level')) is int and lower['level'] == -1, (tile['id'], 'invalid lower level')
+        assert lower.get('hydraulic_separation') == 'vented_free_fall', (tile['id'], 'lower drain may backflow without a vented free-fall air break')
         raw = lower.get('cells')
         assert isinstance(raw, list) and len(raw) >= 3, (tile['id'], 'short lower collector')
         route = []
