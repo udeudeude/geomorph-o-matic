@@ -35,6 +35,7 @@ jobs:
           node foundation-clearance.js reports/buried-clearance.json
           node print-review.js examples/riftwater_print_letter.svg
           node print-review.js examples/fallen_choir_print_letter.svg fallen_choir
+          node choir-levels-plate.js examples/fallen_choir_levels.svg
       - name: Check editable vector XML and complete generated plate set
         run: |
           python3 - <<'PY'
@@ -52,7 +53,7 @@ jobs:
       - name: Commit verified generated assets on same-repository push
         if: github.event_name == 'push'
         run: |
-          git add tiles/ examples/assembly_fallen_choir_2x2.svg examples/fallen_choir_print_letter.svg examples/assembly_3x3.svg examples/riftwater_section.svg examples/riftwater_surge.svg examples/riftwater_profile.svg examples/riftwater_tailrace_plate.svg examples/subfloor_pair_plate.svg examples/postern_outfall_section.svg examples/receiving_annex_plate.svg examples/riftwater_maintenance_plate.svg examples/riftwater_print_letter.svg reports/topology.json reports/print-scale.json reports/buried-clearance.json reports/gearbox-access.json
+          git add tiles/ examples/assembly_fallen_choir_2x2.svg examples/fallen_choir_print_letter.svg examples/fallen_choir_levels.svg examples/assembly_3x3.svg examples/riftwater_section.svg examples/riftwater_surge.svg examples/riftwater_profile.svg examples/riftwater_tailrace_plate.svg examples/subfloor_pair_plate.svg examples/postern_outfall_section.svg examples/receiving_annex_plate.svg examples/riftwater_maintenance_plate.svg examples/riftwater_print_letter.svg reports/topology.json reports/print-scale.json reports/buried-clearance.json reports/gearbox-access.json
           if ! git diff --cached --quiet; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -60,7 +61,7 @@ jobs:
             git push origin HEAD:${GITHUB_REF_NAME}
           fi
       - name: Verify tracked SVG masters and audit are reproducible
-        run: git diff --exit-code -- tiles/ examples/assembly_fallen_choir_2x2.svg examples/fallen_choir_print_letter.svg examples/assembly_3x3.svg examples/riftwater_section.svg examples/riftwater_surge.svg examples/riftwater_profile.svg examples/riftwater_tailrace_plate.svg examples/subfloor_pair_plate.svg examples/postern_outfall_section.svg examples/riftwater_maintenance_plate.svg examples/riftwater_print_letter.svg reports/topology.json reports/print-scale.json reports/buried-clearance.json reports/gearbox-access.json
+        run: git diff --exit-code -- tiles/ examples/assembly_fallen_choir_2x2.svg examples/fallen_choir_print_letter.svg examples/fallen_choir_levels.svg examples/assembly_3x3.svg examples/riftwater_section.svg examples/riftwater_surge.svg examples/riftwater_profile.svg examples/riftwater_tailrace_plate.svg examples/subfloor_pair_plate.svg examples/postern_outfall_section.svg examples/riftwater_maintenance_plate.svg examples/riftwater_print_letter.svg reports/topology.json reports/print-scale.json reports/buried-clearance.json reports/gearbox-access.json
       - name: Upload vector studies and inspection report
         uses: actions/upload-artifact@v4
         with:
@@ -70,6 +71,7 @@ jobs:
             examples/assembly_irregular_3x3.svg
             examples/assembly_fallen_choir_2x2.svg
             examples/fallen_choir_print_letter.svg
+            examples/fallen_choir_levels.svg
             examples/assembly_3x3.svg
             examples/riftwater_section.svg
             examples/riftwater_surge.svg

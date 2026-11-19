@@ -40,8 +40,15 @@ function terrainModel(owner,spec={}){
   if(barriers.has(k)||ramps.has(k))throw Error("Duplicate masonry partition or overlapping ramp");
   barriers.add(k);
  }
+ const ruins=new Set();
+ for(const e of spec.ruins||[]){
+  if(!Array.isArray(e)||e.length!==2)throw Error("Invalid fallen-masonry edge");
+  const a=coordinate(e[0],"ruin"),b=coordinate(e[1],"ruin"),k=EDGE(a,b);
+  if(!barriers.has(k)||ruins.has(k))throw Error("Fallen masonry must be a unique blocked wall edge");
+  ruins.add(k);
+ }
  for(const p of PORTALS)if(owner.has(p)&&(water.has(p)||heights.has(p)))throw Error("Terrain cannot change standard edge portal");
- return {water,bridges,heights,ramps,barriers};
+ return {water,bridges,heights,ramps,barriers,ruins};
 }
 function terrainGraph(owner,doors,spec={},access="ordinary",travel="dry"){
  if(!["dry","wading"].includes(travel))throw Error("Unknown terrain travel mode");
@@ -64,7 +71,7 @@ function terrainAudit(owner,doors,spec={},portals=PORTALS){
   results[travel]={accessible_floor_cells:seen.size,reachable_portals:portals.filter(p=>seen.has(p)).length};
  }
  return {water_cells:model.water.size,bridged_water_cells:model.bridges.size,
-  elevated_cells:model.heights.size,ramp_edges:model.ramps.size,barrier_edges:model.barriers.size,travel:results};
+  elevated_cells:model.heights.size,ramp_edges:model.ramps.size,barrier_edges:model.barriers.size,ruined_wall_edges:model.ruins.size,travel:results};
 }
 // Each layer is independently editable in exported SVG.
 function terrainSvg(owner,spec={},cellSize=24){
@@ -126,16 +133,33 @@ function terrainSvg(owner,spec={},cellSize=24){
   out.push("</g>");
  }
  if(model.barriers.size){
-  out.push('<g id="masonry-partitions" fill="none" stroke-linecap="square">');
+  const intact=[],fallen=[];
   for(const e of [...model.barriers].sort()){
-   const [a,b]=e.split("|").map(xy);
-   const x=(a[0]!==b[0]?Math.max(a[0],b[0]):a[0])*cellSize;
-   const y=(a[1]!==b[1]?Math.max(a[1],b[1]):a[1])*cellSize;
-   const d=a[0]!==b[0]?'M'+x+','+y+'v'+cellSize:'M'+x+','+y+'h'+cellSize;
-   out.push('<path data-blocks-edge="'+e+'" d="'+d+'" stroke="#e4dfd2" stroke-width="6"/>');
-   out.push('<path d="'+d+'" stroke="#3c4241" stroke-width="3.3"/>');
+   const [a,b]=e.split("|").map(xy),vertical=a[0]!==b[0];
+   const x=(vertical?Math.max(a[0],b[0]):a[0])*cellSize;
+   const y=(vertical?a[1]:Math.max(a[1],b[1]))*cellSize;
+   const d=vertical?'M'+x+','+y+'v'+cellSize:'M'+x+','+y+'h'+cellSize;
+   if(!model.ruins.has(e)){
+    intact.push('<path data-blocks-edge="'+e+'" d="'+d+'" stroke="#e4dfd2" stroke-width="6"/>');
+    intact.push('<path d="'+d+'" stroke="#3c4241" stroke-width="3.3"/>');
+   }else{
+    // Rubble changes traversability at this edge, never in unrelated cells.
+    const n=v=>Number(v.toFixed(2)),p=(fraction,side)=>{
+     const along=cellSize*fraction,offset=cellSize*side;
+     return vertical?[n(x+offset),n(y+along)]:[n(x+along),n(y+offset)];
+    };
+    const points=[[0,0],[.19,-.09],[.38,.07],[.58,-.11],[.79,.07],[1,0]].map(([u,v])=>p(u,v));
+    const jag='M'+points.map(q=>q.join(',')).join('L');
+    fallen.push('<path data-blocks-edge="'+e+'" d="'+jag+'" stroke="#f1ede3" stroke-width="7"/>');
+    fallen.push('<path d="'+jag+'" stroke="#333836" stroke-width="3"/>');
+    for(const [u,v] of [[.27,.18],[.70,-.19]]){
+     const [cx,cy]=p(u,v),z=cellSize*.11;
+     fallen.push('<path d="M'+n(cx-z)+','+n(cy-z/2)+'l'+n(z*1.5)+','+n(-z/2)+' '+n(z*.45)+','+n(z*1.3)+'z" fill="#c9c3b8" stroke="#726e65" stroke-width=".8"/>');
+    }
+   }
   }
-  out.push("</g>");
+  if(intact.length)out.push('<g id="masonry-partitions" fill="none" stroke-linecap="square">',...intact,'</g>');
+  if(fallen.length)out.push('<g id="collapsed-masonry" stroke-linejoin="round">',...fallen,'</g>');
  }
  if(model.ramps.size){
   out.push('<g id="level-ramps" fill="none" stroke="#87664e" stroke-width="2.2" stroke-linecap="round">');
