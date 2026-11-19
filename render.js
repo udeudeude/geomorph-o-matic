@@ -2,6 +2,7 @@
 const fs=require("node:fs");
 const path=require("node:path");
 const {shapeCells,shapeBounds}=require("./geometry");
+const {naturalWallPaths,rockHachurePaths}=require("./cave-contours");
 function makeSvg(tile) {
   const N=20,S=24,L=N*S,portal=new Set(["4,0","15,0","0,4","19,4","0,15","19,15","4,19","15,19"]);
   const key=(x,y)=>`${x},${y}`,edge=(a,b)=>[a,b].sort().join("|");
@@ -37,6 +38,8 @@ function makeSvg(tile) {
     if(owner.get(key(...a))!==id||owner.get(key(...b))!=="hall")throw Error("Door mismatch: "+id);
     doors.set(edge(key(...a),key(...b)),{a,b,kind});
   }
+  const cave=tile.wall_style==="cavern";
+  const naturalEdges=[];
   const outline=[];
   const dirs=[[1,0],[-1,0],[0,1],[0,-1]];
   const seen=new Set();
@@ -47,6 +50,11 @@ function makeSvg(tile) {
       if(qz&&qz===z||doors.has(e)||seen.has(e))continue;
       if(qz)seen.add(e);
       else if((x+dx<0||x+dx>=20||y+dy<0||y+dy>=20)&&portal.has(p))continue;
+      if(cave&&!qz){
+        const a=dx===1?[x+1,y,x+1,y+1,1,0]:dx===-1?[x,y,x,y+1,-1,0]:dy===1?[x,y+1,x+1,y+1,0,1]:[x,y,x+1,y,0,-1];
+        naturalEdges.push(a);
+        continue;
+      }
       if(dx===1)outline.push(["V",x+1,y,y+1]);
       else if(dx===-1)outline.push(["V",x,y,y+1]);
       else if(dy===1)outline.push(["H",y,x,x+1]);
@@ -73,7 +81,7 @@ function makeSvg(tile) {
     `<rect width="${L}" height="${L}" fill="#e7e3d9"/>`,
     `<g id="rock-texture" fill="none" stroke="#aaa59a" stroke-width=".8" opacity=".45">`];
   // Restrained stone etching only near carved rock; deterministic across renders.
-  for(let y=0;y<N;y++)for(let x=0;x<N;x++){
+  if(!cave)for(let y=0;y<N;y++)for(let x=0;x<N;x++){
     if(owner.has(key(x,y)))continue;
     if(!dirs.some(([dx,dy])=>owner.has(key(x+dx,y+dy))))continue;
     for(let n=0;n<3;n++){let X=x*S+4+n*6,Y=y*S+3+((x*7+y*3+n*5)%8);parts.push(`<path d="M${X},${Y}l6,6"/>`)}
@@ -119,7 +127,17 @@ function makeSvg(tile) {
   for(const [kind,coord] of tile.features)shape(kind,coord);
   parts.push(`</g><g id="stone-walls" fill="none" stroke-linecap="square" stroke-linejoin="round">`);
   for(const path of strokes)parts.push(`<path d="${path}" stroke="#8e8a80" opacity=".32" stroke-width="5.5"/><path d="${path}" stroke="#303332" stroke-width="2.8"/>`);
-  parts.push(`</g><g id="explicit-doors" fill="none" stroke="#484743">`);
+  parts.push(`</g>`);
+  if(cave){
+    parts.push(`<g id="rock-hachures" fill="none" stroke="#79776d" stroke-width="1" opacity=".65">`);
+    for(const p of rockHachurePaths(naturalEdges))parts.push(`<path d="${p}"/>`);
+    parts.push(`</g><g id="cavern-walls" fill="none" stroke-linecap="round" stroke-linejoin="round">`);
+    for(const p of naturalWallPaths(naturalEdges)){
+      parts.push(`<path d="${p}" stroke="#8e8a80" stroke-width="5.5" opacity=".32"/><path d="${p}" stroke="#303332" stroke-width="2.8"/>`);
+    }
+    parts.push(`</g>`);
+  }
+  parts.push(`<g id="explicit-doors" fill="none" stroke="#484743">`);
   for(const {a,b,kind} of doors.values()){
     const vertical=a[0]!==b[0];
     const X=(vertical?Math.max(a[0],b[0]):a[0])*S,Y=(vertical?a[1]:Math.max(a[1],b[1]))*S;

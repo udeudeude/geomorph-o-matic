@@ -1855,7 +1855,8 @@
             ]
           ]
         ]
-      ]
+      ],
+      "wall_style": "cavern"
     },
     {
       "id": "sunken_orrery",

@@ -51,6 +51,22 @@
     ],
     "notes": [
       "Secret-only chamber west_chapel is a discovery, not an alternative circulation route"
+    ],
+    "substantial_hall_circuits": 1,
+    "minor_hall_islands": 0,
+    "hall_encircled_obstacles": [
+      {
+        "area": 36,
+        "bounding_box": [
+          7,
+          7,
+          12,
+          12
+        ],
+        "adjacent_hall_cells": 24,
+        "chamber_ids": [],
+        "substantial": true
+      }
     ]
   },
   {
@@ -105,7 +121,61 @@
         "normally_accessible": true
       }
     ],
-    "notes": []
+    "notes": [],
+    "substantial_hall_circuits": 4,
+    "minor_hall_islands": 0,
+    "hall_encircled_obstacles": [
+      {
+        "area": 24,
+        "bounding_box": [
+          8,
+          12,
+          11,
+          17
+        ],
+        "adjacent_hall_cells": 20,
+        "chamber_ids": [
+          "gate"
+        ],
+        "substantial": true
+      },
+      {
+        "area": 9,
+        "bounding_box": [
+          9,
+          8,
+          17,
+          8
+        ],
+        "adjacent_hall_cells": 20,
+        "chamber_ids": [],
+        "substantial": true
+      },
+      {
+        "area": 6,
+        "bounding_box": [
+          2,
+          8,
+          7,
+          8
+        ],
+        "adjacent_hall_cells": 14,
+        "chamber_ids": [],
+        "substantial": true
+      },
+      {
+        "area": 4,
+        "bounding_box": [
+          8,
+          10,
+          11,
+          10
+        ],
+        "adjacent_hall_cells": 10,
+        "chamber_ids": [],
+        "substantial": true
+      }
+    ]
   },
   {
     "id": "bone_galleries",
@@ -154,7 +224,37 @@
         "normally_accessible": true
       }
     ],
-    "notes": []
+    "notes": [],
+    "substantial_hall_circuits": 2,
+    "minor_hall_islands": 0,
+    "hall_encircled_obstacles": [
+      {
+        "area": 47,
+        "bounding_box": [
+          7,
+          12,
+          14,
+          17
+        ],
+        "adjacent_hall_cells": 28,
+        "chamber_ids": [
+          "royal"
+        ],
+        "substantial": true
+      },
+      {
+        "area": 5,
+        "bounding_box": [
+          7,
+          10,
+          11,
+          10
+        ],
+        "adjacent_hall_cells": 12,
+        "chamber_ids": [],
+        "substantial": true
+      }
+    ]
   },
   {
     "id": "basalt_rift",
@@ -223,7 +323,51 @@
         "normally_accessible": true
       }
     ],
-    "notes": []
+    "notes": [],
+    "substantial_hall_circuits": 3,
+    "minor_hall_islands": 0,
+    "hall_encircled_obstacles": [
+      {
+        "area": 6,
+        "bounding_box": [
+          9,
+          15,
+          11,
+          16
+        ],
+        "adjacent_hall_cells": 10,
+        "chamber_ids": [
+          "shrine"
+        ],
+        "substantial": true
+      },
+      {
+        "area": 6,
+        "bounding_box": [
+          13,
+          10,
+          15,
+          11
+        ],
+        "adjacent_hall_cells": 10,
+        "chamber_ids": [
+          "cistern"
+        ],
+        "substantial": true
+      },
+      {
+        "area": 4,
+        "bounding_box": [
+          6,
+          10,
+          7,
+          11
+        ],
+        "adjacent_hall_cells": 8,
+        "chamber_ids": [],
+        "substantial": true
+      }
+    ]
   },
   {
     "id": "sunken_orrery",
@@ -278,6 +422,60 @@
         "normally_accessible": true
       }
     ],
-    "notes": []
+    "notes": [],
+    "substantial_hall_circuits": 1,
+    "minor_hall_islands": 3,
+    "hall_encircled_obstacles": [
+      {
+        "area": 62,
+        "bounding_box": [
+          6,
+          6,
+          13,
+          13
+        ],
+        "adjacent_hall_cells": 32,
+        "chamber_ids": [
+          "engine"
+        ],
+        "substantial": true
+      },
+      {
+        "area": 3,
+        "bounding_box": [
+          15,
+          7,
+          17,
+          7
+        ],
+        "adjacent_hall_cells": 8,
+        "chamber_ids": [],
+        "substantial": false
+      },
+      {
+        "area": 2,
+        "bounding_box": [
+          6,
+          15,
+          6,
+          16
+        ],
+        "adjacent_hall_cells": 6,
+        "chamber_ids": [],
+        "substantial": false
+      },
+      {
+        "area": 1,
+        "bounding_box": [
+          6,
+          4,
+          6,
+          4
+        ],
+        "adjacent_hall_cells": 4,
+        "chamber_ids": [],
+        "substantial": false
+      }
+    ]
   }
 ]

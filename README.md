@@ -52,3 +52,9 @@ These audits do not establish artistic excellence; use them to identify where to
 ## New irregular-footprint studies (November 2026)
 Two additional source blueprints are now encoded in [blueprints.json](blueprints.json): **The Basalt Rift** (seven chambers, including naturalistic lobes and two bypasses) and **The Sunken Orrery** (five chambers, an octagonal central court and surrounding service ring). [geometry.js](geometry.js) adds validated row-run room footprints shared by rendering, assembly and the audit. These remain **studies**, not finished tiles. Run `node render.js` to generate their SVG masters locally; CI also publishes both in the `irregular-vector-studies` artifact. See [research note](research/2026-11-18-irregular-chambers.md) and [new tests](tests/irregular.test.js).
 
+
+## Research-backed cave cartography and honest loop metrics
+
+The Basalt Rift now requests smoothly rounded, joined cave-facing wall contours with outwards-facing rock hachures; its underlying walkable cells and the eight rotation-invariant portals stay unchanged. Render with `node render.js`. New vector layers include `cavern-walls` and `rock-hachures`.
+
+The topology audit now separately records `substantial_hall_circuits` (large fully encircled barriers or rooms), avoiding the misleading claim that every 2-by-2 hallway grid face constitutes a meaningful alternate route. The old `hall_cycle_rank` remains for comparison but is **not** a measure of real navigational choices. These new metrics are deliberately conservative. [Research and validation criteria](research/2026-11-18-cave-cartography-topology.md).
