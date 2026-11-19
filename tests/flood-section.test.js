@@ -8,17 +8,18 @@ const rift=JSON.parse(fs.readFileSync(path.join(__dirname,"../blueprints.json"),
 const owner=buildCells(rift),doors=doorEdges(rift);
 test("authored flood stages are cumulative, reachable, and preserve edge portals",()=>{
  const stages=floodStages(owner,doors,rift.terrain,rift.hydrology);
- assert.deepEqual([...stages.keys()],["normal","surge"]);
+ assert.deepEqual([...stages.keys()],["normal","west_release","center_release","surge"]);
+ assert.deepEqual([...stages.values()].map(s=>s.terrain.water.length),[6,7,8,9]);
  assert.equal(stages.get("normal").terrain.water.length,6);
  assert.equal(stages.get("surge").terrain.water.length,9);
- assert.equal(stages.get("surge").new_cells,3);
+ assert.equal(stages.get("surge").new_cells,1);
  const report=floodAudit(owner,doors,rift.terrain,rift.vertical,rift.hydrology);
- assert.equal(report.length,2);
+ assert.equal(report.length,4);
  assert.equal(report[0].reachable_portals,8);
- assert.equal(report[1].reachable_portals,8);
- assert.ok(report[1].turbine_lower_north_south===null||
-  report[1].turbine_lower_north_south>report[0].turbine_lower_north_south);
- assert.ok(report[1].accessible_base_cells<=report[0].accessible_base_cells);
+ assert.ok(report.every(s=>s.reachable_portals===8));
+ assert.ok(report[3].turbine_lower_north_south===null||
+  report[3].turbine_lower_north_south>report[0].turbine_lower_north_south);
+ assert.ok(report[3].accessible_base_cells<=report[0].accessible_base_cells);
 });
 test("flood contract rejects disconnected, repeated, and boundary water cells",()=>{
  const bad=[
