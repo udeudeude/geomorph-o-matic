@@ -1,14 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 675" role="img" aria-label="Two-level hydraulic works technical plate">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 735" role="img" aria-label="Two-level hydraulic works technical plate">
 <title>The Riftwater Lock | Controlled underfloor drainage study</title>
 <rect width="1080" height="675" fill="#f5f1e8"/>
 <text x="66" y="43" font-family="Georgia,serif" font-size="25" fill="#293837">The Riftwater Lock / LOWER RACE</text>
-<text x="66" y="69" font-family="sans-serif" font-size="13" fill="#515d5a">Plan coordinates: 2.5 feet per half-cell. Panels crop tile columns 6–15 and rows 7–18.</text>
+<text x="66" y="69" font-family="sans-serif" font-size="13" fill="#515d5a">Plan coordinates: 2.5 feet per half-cell. Panels crop tile columns 6–15 and rows 7–19.</text>
 <text x="66" y="100" font-family="sans-serif" font-size="16" font-weight="700" fill="#344846">01   UPPER SLUICE CHANNEL · level 0</text>
 <text x="590" y="100" font-family="sans-serif" font-size="16" font-weight="700" fill="#344846">02   SUBFLOOR TAILRACE · assumed level −1</text>
 <g id="plan-scale" fill="none" stroke="#344846" stroke-width="1.4"><path d="M944 61h68 M944 56v10 M1012 56v10"/><text x="944" y="51" fill="#344846" stroke="none" font-family="sans-serif" font-size="10">0</text><text x="987" y="51" fill="#344846" stroke="none" font-family="sans-serif" font-size="10">5 ft</text></g>
 <defs><marker id="downstream-arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6Z" fill="#315e6c"/></marker></defs>
 <g id="upper-hydraulic-plan" transform="translate(66 143)">
-<rect x="0" y="0" width="340" height="408" fill="#e9e5da" stroke="#5b655f" stroke-width="1.8"/>
+<rect x="0" y="0" width="340" height="442" fill="#e9e5da" stroke="#5b655f" stroke-width="1.8"/>
 <g id="upper-floor-context" stroke="none">
 <rect data-zone="hall" x="0" y="0" width="34" height="34" fill="#fffdf6"/>
 <rect data-zone="hall" x="34" y="0" width="34" height="34" fill="#fffdf6"/>
@@ -81,6 +81,7 @@
 <rect data-zone="vault" x="136" y="374" width="34" height="34" fill="#f8f1e4"/>
 <rect data-zone="vault" x="170" y="374" width="34" height="34" fill="#f8f1e4"/>
 <rect data-zone="hall" x="306" y="374" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="306" y="408" width="34" height="34" fill="#fffdf6"/>
 </g><g id="upper-rock-boundaries" fill="none" stroke="#575b55" stroke-width="2.2">
 <path d="M0,34h34"/>
 <path d="M0,0h34"/>
@@ -181,6 +182,9 @@
 <path d="M204,374v34"/>
 <path d="M170,408h34"/>
 <path d="M306,374v34"/>
+<path d="M340,408v34"/>
+<path d="M306,408v34"/>
+<path d="M306,442h34"/>
 </g>
 <g stroke="#c8c6be" stroke-width=".7" fill="none" opacity=".7">
 <path d="M34,0V408"/>
@@ -203,6 +207,7 @@
 <path d="M0,306H340"/>
 <path d="M0,340H340"/>
 <path d="M0,374H340"/>
+<path d="M0,408H340"/>
 </g>
 <g id="upper-water-and-sumps">
 <rect x="136" y="102" width="34" height="34" fill="#9fc8d0" stroke="#748481" stroke-width="1.1"/>
@@ -228,7 +233,7 @@
 <text x="127" y="75" font-size="15" font-family="sans-serif" font-weight="700" fill="#315e6c">I</text>
 </g></g>
 <g id="subfloor-collection-plan" transform="translate(586 143)">
-<rect x="0" y="0" width="340" height="408" fill="#e9e5da" stroke="#5b655f" stroke-width="1.8"/>
+<rect x="0" y="0" width="340" height="442" fill="#e9e5da" stroke="#5b655f" stroke-width="1.8"/>
 <g id="vault-foundation-conflict" fill="#dbc3a6" fill-opacity=".4" stroke="#b18a5e" stroke-width=".65">
 <rect data-overhead-vault="9,16" x="102" y="306" width="34" height="34"/>
 <path d="M102,340l34,-34" fill="none" stroke-width=".8"/>
@@ -274,9 +279,10 @@
 <path d="M0,306H340"/>
 <path d="M0,340H340"/>
 <path d="M0,374H340"/>
+<path d="M0,408H340"/>
 </g>
 <g id="subfloor-directed-tailrace" fill="none" stroke="#315e6c" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
-<polyline points="119,153 153,153 187,153 187,187 187,221 187,255 187,289 187,323 187,357 187,391" data-level="-1" data-direction="toward-terminus"/>
+<polyline points="119,153 153,153 187,153 187,187 187,221 187,255 187,289 187,323 187,357 187,391 187,425" data-level="-1" data-direction="toward-terminus"/>
 </g><g id="subfloor-flow-arrows" fill="none" stroke="#315e6c" stroke-width="2.2" marker-end="url(#downstream-arrow)">
 <path d="M119,153L153,153"/>
 <path d="M187,153L187,187"/>
@@ -287,10 +293,10 @@
 <g data-drain-from="west_shutter"><circle cx="119" cy="153" r="12" fill="#fffdf6" stroke="#315e6c" stroke-width="2.2"/><text x="119" y="157" fill="#315e6c" font-weight="700">W</text></g>
 <g data-drain-from="center_shutter"><circle cx="153" cy="153" r="12" fill="#fffdf6" stroke="#315e6c" stroke-width="2.2"/><text x="153" y="157" fill="#315e6c" font-weight="700">C</text></g>
 <g data-drain-from="east_shutter"><circle cx="187" cy="153" r="12" fill="#fffdf6" stroke="#315e6c" stroke-width="2.2"/><text x="187" y="157" fill="#315e6c" font-weight="700">E</text></g>
-<g id="lower-tailrace-terminus" data-continuation="unmapped"><rect x="174" y="378" width="26" height="26" fill="#f4e6c9" stroke="#315e6c" stroke-width="2"/><text x="187" y="395" fill="#315e6c" font-weight="700">T</text></g>
+<g id="lower-tailrace-terminus" data-continuation="matched-underfloor-seam"><rect x="174" y="412" width="26" height="26" fill="#f4e6c9" stroke="#315e6c" stroke-width="2"/><text x="187" y="429" fill="#315e6c" font-weight="700">S</text></g>
 </g></g>
-<text x="66" y="585" font-family="sans-serif" font-size="12" fill="#444d49">Blue = existing headwater; tan = dry sumps; dark = closed gates/partitions. Pale ochre on lower plan = vault overhead.</text>
-<text x="66" y="609" font-family="sans-serif" font-size="12" fill="#444d49">W / C / E: separate vertical drop shafts from west / center / east shutter pockets; T: uncharted onward outfall.</text>
-<text x="66" y="637" font-family="sans-serif" font-size="12" fill="#685c4c">Lower line is a centerline, not tunnel width; level, foundation clearance, invert grade and discharge are unverified.</text>
-<text x="66" y="655" font-family="sans-serif" font-size="11" fill="#685c4c">Free-fall vented drops assume an unsurcharged tailrace; no reverse flow modeled. All eight surface exits remain unchanged.</text>
+<text x="66" y="644" font-family="sans-serif" font-size="12" fill="#444d49">Blue = existing headwater; tan = dry sumps; dark = closed gates/partitions. Pale ochre on lower plan = vault overhead.</text>
+<text x="66" y="666" font-family="sans-serif" font-size="12" fill="#444d49">W / C / E: separate vertical drop shafts from west / center / east shutter pockets; S: matched seam into Postern relay; true outfall remains uncharted.</text>
+<text x="66" y="690" font-family="sans-serif" font-size="12" fill="#685c4c">Lower line is a centerline, not tunnel width; invert levels are assumed, foundations and discharge unverified.</text>
+<text x="66" y="713" font-family="sans-serif" font-size="11" fill="#685c4c">Vented drops require unsurcharged tailwater; no flow rate modeled. Eight surface exits unchanged.</text>
 </svg>
