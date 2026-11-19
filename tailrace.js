@@ -16,6 +16,7 @@ function tailraceModel(owner,doors=[],hydrology={},terrain={}){
  if(hydrology.tailrace===undefined)return null;
  const spec=hydrology.tailrace;
  if(!spec||Array.isArray(spec)||typeof spec!=="object"||spec.level!==-1||
+    spec.hydraulic_separation!=="vented_free_fall"||
     !Array.isArray(spec.cells)||spec.cells.length<3||
     !Array.isArray(spec.pickups)||!spec.pickups.length)
   throw Error("Invalid lower tailrace specification");
