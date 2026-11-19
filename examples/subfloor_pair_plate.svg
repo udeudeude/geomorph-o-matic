@@ -3,8 +3,9 @@
 <rect width="1100" height="990" fill="#f5f1e8"/>
 <text x="74" y="46" font-size="25" font-family="Georgia,serif" fill="#263b3a">UNDERFLOOR CONNECTION / TWO-TILE STUDY</text>
 <text x="74" y="72" font-size="12" font-family="sans-serif" fill="#4c605c">Exact specialized lower-level seam, independent of the eight standard surface entrances.</text>
-<text x="74" y="126" font-size="17" font-weight="700" font-family="sans-serif" fill="#294c53">01  SUBFLOOR PLAN + UPPER FOUNDATION CONTEXT</text>
-<text x="520" y="126" font-size="17" font-weight="700" font-family="sans-serif" fill="#294c53">02  ASSUMED INVERT GRADE / NOT A SURVEY</text>
+<text x="74" y="126" font-size="17" font-weight="700" font-family="sans-serif" fill="#294c53">01  SUBFLOOR / FOUNDATION PLAN</text>
+<text x="520" y="126" font-size="17" font-weight="700" font-family="sans-serif" fill="#294c53">02  INVERT GRADE / NOT SURVEYED</text>
+<g id="subfloor-plan-orientation" fill="none" stroke="#35575e" stroke-width="1.8"><path d="M88 112V89l-6 8 M88 89l6 8"/><text x="80" y="85" fill="#35575e" stroke="none" font-size="11" font-family="sans-serif">N</text><path d="M380 105h38 M380 100v10 M418 100v10"/><text x="380" y="96" fill="#35575e" stroke="none" font-size="10" font-family="sans-serif">5 ft</text></g>
 <g id="subfloor-two-tile-plan" transform="translate(74 153)">
 <g data-tile="riftwater_lock" transform="translate(0 0)">
 <rect width="380" height="380" fill="#d8d5cc" stroke="#3b4d4b" stroke-width="2"/>
@@ -215,7 +216,7 @@
 <path d="M323,0v380 M0,323h380"/>
 <path d="M342,0v380 M0,342h380"/>
 <path d="M361,0v380 M0,361h380"/>
-</g></g>
+</g><rect x="9" y="9" width="197" height="22" rx="3" fill="#f8f5ee" opacity=".96"/><text x="16" y="24" font-size="11" fill="#244d55" font-weight="700" font-family="sans-serif">THE RIFTWATER LOCK / LEVEL -1</text></g>
 <g data-tile="postern_bastion" transform="translate(0 380)">
 <rect width="380" height="380" fill="#d8d5cc" stroke="#3b4d4b" stroke-width="2"/>
 <g id="foundation-context-1" opacity=".66">
@@ -484,7 +485,7 @@
 <path d="M323,0v380 M0,323h380"/>
 <path d="M342,0v380 M0,342h380"/>
 <path d="M361,0v380 M0,361h380"/>
-</g></g>
+</g><rect x="9" y="9" width="197" height="22" rx="3" fill="#f8f5ee" opacity=".96"/><text x="16" y="24" font-size="11" fill="#244d55" font-weight="700" font-family="sans-serif">POSTERN BASTION / LEVEL -1</text></g>
 <g id="lower-level-centerlines" fill="none" stroke="#1d6274" stroke-linecap="round" stroke-linejoin="round" stroke-width="8">
 <polyline data-lower-run="releasing-collector" points="180.5,218.5 199.5,218.5 218.5,218.5 218.5,237.5 218.5,256.5 218.5,275.5 218.5,294.5 218.5,313.5 218.5,332.5 218.5,351.5 218.5,370.5"/>
 <polyline data-lower-run="receiving-relay" points="218.5,389.5 218.5,408.5 218.5,427.5 218.5,446.5 218.5,465.5 218.5,484.5 218.5,503.5 218.5,522.5 218.5,541.5"/>
