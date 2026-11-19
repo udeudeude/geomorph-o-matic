@@ -6,10 +6,10 @@
     "millimetres_per_vector_unit": 0.265,
     "font_samples": 0,
     "type_below_2_2_mm": 0,
-    "stroke_samples": 197,
-    "strokes_below_0_15_mm": 10,
+    "stroke_samples": 187,
+    "strokes_below_0_15_mm": 0,
     "minimum_type_mm": null,
-    "minimum_stroke_mm": 0.132,
+    "minimum_stroke_mm": 0.212,
     "requires_visual_review": true
   },
   {
@@ -19,10 +19,10 @@
     "millimetres_per_vector_unit": 0.265,
     "font_samples": 0,
     "type_below_2_2_mm": 0,
-    "stroke_samples": 186,
-    "strokes_below_0_15_mm": 10,
+    "stroke_samples": 176,
+    "strokes_below_0_15_mm": 0,
     "minimum_type_mm": null,
-    "minimum_stroke_mm": 0.132,
+    "minimum_stroke_mm": 0.159,
     "requires_visual_review": true
   },
   {
@@ -32,10 +32,10 @@
     "millimetres_per_vector_unit": 0.265,
     "font_samples": 0,
     "type_below_2_2_mm": 0,
-    "stroke_samples": 173,
-    "strokes_below_0_15_mm": 10,
+    "stroke_samples": 163,
+    "strokes_below_0_15_mm": 0,
     "minimum_type_mm": null,
-    "minimum_stroke_mm": 0.132,
+    "minimum_stroke_mm": 0.212,
     "requires_visual_review": true
   },
   {
@@ -45,10 +45,10 @@
     "millimetres_per_vector_unit": 0.265,
     "font_samples": 0,
     "type_below_2_2_mm": 0,
-    "stroke_samples": 125,
-    "strokes_below_0_15_mm": 10,
+    "stroke_samples": 115,
+    "strokes_below_0_15_mm": 0,
     "minimum_type_mm": null,
-    "minimum_stroke_mm": 0.132,
+    "minimum_stroke_mm": 0.212,
     "requires_visual_review": true
   },
   {
@@ -58,10 +58,10 @@
     "millimetres_per_vector_unit": 0.265,
     "font_samples": 0,
     "type_below_2_2_mm": 0,
-    "stroke_samples": 269,
-    "strokes_below_0_15_mm": 10,
+    "stroke_samples": 259,
+    "strokes_below_0_15_mm": 0,
     "minimum_type_mm": null,
-    "minimum_stroke_mm": 0.132,
+    "minimum_stroke_mm": 0.212,
     "requires_visual_review": true
   },
   {
@@ -71,10 +71,10 @@
     "millimetres_per_vector_unit": 0.265,
     "font_samples": 3,
     "type_below_2_2_mm": 0,
-    "stroke_samples": 127,
-    "strokes_below_0_15_mm": 10,
+    "stroke_samples": 126,
+    "strokes_below_0_15_mm": 0,
     "minimum_type_mm": 2.381,
-    "minimum_stroke_mm": 0.132,
+    "minimum_stroke_mm": 0.212,
     "requires_visual_review": true
   }
 ]
