@@ -67,7 +67,180 @@
         "chamber_ids": [],
         "substantial": true
       }
-    ]
+    ],
+    "access_profiles": {
+      "ordinary": {
+        "accessible_floor_cells": 116,
+        "accessible_chambers": [
+          "east_cell",
+          "east_chapel",
+          "west_cell"
+        ],
+        "reachable_portals": 8,
+        "connected_portal_pairs": 28,
+        "inaccessible_portal_pairs": 0,
+        "mean_portal_distance": 23.43,
+        "longest_shortest_portal_distance": 30
+      },
+      "unlocked": {
+        "accessible_floor_cells": 128,
+        "accessible_chambers": [
+          "east_cell",
+          "east_chapel",
+          "reliquary",
+          "west_cell"
+        ],
+        "reachable_portals": 8,
+        "connected_portal_pairs": 28,
+        "inaccessible_portal_pairs": 0,
+        "mean_portal_distance": 23.43,
+        "longest_shortest_portal_distance": 30
+      },
+      "all": {
+        "accessible_floor_cells": 137,
+        "accessible_chambers": [
+          "east_cell",
+          "east_chapel",
+          "reliquary",
+          "west_cell",
+          "west_chapel"
+        ],
+        "reachable_portals": 8,
+        "connected_portal_pairs": 28,
+        "inaccessible_portal_pairs": 0,
+        "mean_portal_distance": 23.43,
+        "longest_shortest_portal_distance": 30
+      }
+    },
+    "chamber_route_roles": [
+      {
+        "room": "east_cell",
+        "door_count": 1,
+        "door_kinds": [
+          "door"
+        ],
+        "role": "destination",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      },
+      {
+        "room": "east_chapel",
+        "door_count": 1,
+        "door_kinds": [
+          "door"
+        ],
+        "role": "destination",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      },
+      {
+        "room": "reliquary",
+        "door_count": 1,
+        "door_kinds": [
+          "locked"
+        ],
+        "role": "destination",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      },
+      {
+        "room": "west_cell",
+        "door_count": 1,
+        "door_kinds": [
+          "door"
+        ],
+        "role": "destination",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      },
+      {
+        "room": "west_chapel",
+        "door_count": 1,
+        "door_kinds": [
+          "secret"
+        ],
+        "role": "destination",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      }
+    ],
+    "ordinary_through_rooms": [],
+    "gated_through_rooms": []
   },
   {
     "id": "postern_bastion",
@@ -175,7 +348,185 @@
         "chamber_ids": [],
         "substantial": true
       }
-    ]
+    ],
+    "access_profiles": {
+      "ordinary": {
+        "accessible_floor_cells": 245,
+        "accessible_chambers": [
+          "barracks",
+          "captain",
+          "gate",
+          "stores",
+          "toll"
+        ],
+        "reachable_portals": 8,
+        "connected_portal_pairs": 28,
+        "inaccessible_portal_pairs": 0,
+        "mean_portal_distance": 26.14,
+        "longest_shortest_portal_distance": 36
+      },
+      "unlocked": {
+        "accessible_floor_cells": 245,
+        "accessible_chambers": [
+          "barracks",
+          "captain",
+          "gate",
+          "stores",
+          "toll"
+        ],
+        "reachable_portals": 8,
+        "connected_portal_pairs": 28,
+        "inaccessible_portal_pairs": 0,
+        "mean_portal_distance": 26.14,
+        "longest_shortest_portal_distance": 36
+      },
+      "all": {
+        "accessible_floor_cells": 245,
+        "accessible_chambers": [
+          "barracks",
+          "captain",
+          "gate",
+          "stores",
+          "toll"
+        ],
+        "reachable_portals": 8,
+        "connected_portal_pairs": 28,
+        "inaccessible_portal_pairs": 0,
+        "mean_portal_distance": 26.14,
+        "longest_shortest_portal_distance": 36
+      }
+    },
+    "chamber_route_roles": [
+      {
+        "room": "barracks",
+        "door_count": 1,
+        "door_kinds": [
+          "door"
+        ],
+        "role": "destination",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      },
+      {
+        "room": "captain",
+        "door_count": 1,
+        "door_kinds": [
+          "door"
+        ],
+        "role": "destination",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      },
+      {
+        "room": "gate",
+        "door_count": 2,
+        "door_kinds": [
+          "door",
+          "locked"
+        ],
+        "role": "no_portal_shortcut",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      },
+      {
+        "room": "stores",
+        "door_count": 1,
+        "door_kinds": [
+          "door"
+        ],
+        "role": "destination",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      },
+      {
+        "room": "toll",
+        "door_count": 2,
+        "door_kinds": [
+          "door",
+          "secret"
+        ],
+        "role": "no_portal_shortcut",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      }
+    ],
+    "ordinary_through_rooms": [],
+    "gated_through_rooms": []
   },
   {
     "id": "bone_galleries",
@@ -254,6 +605,162 @@
         "chamber_ids": [],
         "substantial": true
       }
+    ],
+    "access_profiles": {
+      "ordinary": {
+        "accessible_floor_cells": 226,
+        "accessible_chambers": [
+          "kings",
+          "royal",
+          "shelves",
+          "unquiet"
+        ],
+        "reachable_portals": 8,
+        "connected_portal_pairs": 28,
+        "inaccessible_portal_pairs": 0,
+        "mean_portal_distance": 26.07,
+        "longest_shortest_portal_distance": 32
+      },
+      "unlocked": {
+        "accessible_floor_cells": 226,
+        "accessible_chambers": [
+          "kings",
+          "royal",
+          "shelves",
+          "unquiet"
+        ],
+        "reachable_portals": 8,
+        "connected_portal_pairs": 28,
+        "inaccessible_portal_pairs": 0,
+        "mean_portal_distance": 26.07,
+        "longest_shortest_portal_distance": 32
+      },
+      "all": {
+        "accessible_floor_cells": 226,
+        "accessible_chambers": [
+          "kings",
+          "royal",
+          "shelves",
+          "unquiet"
+        ],
+        "reachable_portals": 8,
+        "connected_portal_pairs": 28,
+        "inaccessible_portal_pairs": 0,
+        "mean_portal_distance": 25.14,
+        "longest_shortest_portal_distance": 31
+      }
+    },
+    "chamber_route_roles": [
+      {
+        "room": "kings",
+        "door_count": 2,
+        "door_kinds": [
+          "door",
+          "door"
+        ],
+        "role": "no_portal_shortcut",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      },
+      {
+        "room": "royal",
+        "door_count": 2,
+        "door_kinds": [
+          "door",
+          "locked"
+        ],
+        "role": "no_portal_shortcut",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      },
+      {
+        "room": "shelves",
+        "door_count": 2,
+        "door_kinds": [
+          "door",
+          "door"
+        ],
+        "role": "ordinary_through_route",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 1,
+            "maximum_detour": 10
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 1,
+            "maximum_detour": 10
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 1,
+            "maximum_detour": 10
+          }
+        }
+      },
+      {
+        "room": "unquiet",
+        "door_count": 2,
+        "door_kinds": [
+          "door",
+          "secret"
+        ],
+        "role": "secret_route",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 4,
+            "maximum_detour": 10
+          }
+        }
+      }
+    ],
+    "ordinary_through_rooms": [
+      "shelves"
+    ],
+    "gated_through_rooms": [
+      "unquiet"
     ]
   },
   {
@@ -367,6 +874,244 @@
         "chamber_ids": [],
         "substantial": true
       }
+    ],
+    "access_profiles": {
+      "ordinary": {
+        "accessible_floor_cells": 173,
+        "accessible_chambers": [
+          "cistern",
+          "falls",
+          "fungi",
+          "lookout",
+          "throat",
+          "vent"
+        ],
+        "reachable_portals": 8,
+        "connected_portal_pairs": 28,
+        "inaccessible_portal_pairs": 0,
+        "mean_portal_distance": 27.29,
+        "longest_shortest_portal_distance": 31
+      },
+      "unlocked": {
+        "accessible_floor_cells": 179,
+        "accessible_chambers": [
+          "cistern",
+          "falls",
+          "fungi",
+          "lookout",
+          "shrine",
+          "throat",
+          "vent"
+        ],
+        "reachable_portals": 8,
+        "connected_portal_pairs": 28,
+        "inaccessible_portal_pairs": 0,
+        "mean_portal_distance": 27.29,
+        "longest_shortest_portal_distance": 31
+      },
+      "all": {
+        "accessible_floor_cells": 179,
+        "accessible_chambers": [
+          "cistern",
+          "falls",
+          "fungi",
+          "lookout",
+          "shrine",
+          "throat",
+          "vent"
+        ],
+        "reachable_portals": 8,
+        "connected_portal_pairs": 28,
+        "inaccessible_portal_pairs": 0,
+        "mean_portal_distance": 26.64,
+        "longest_shortest_portal_distance": 31
+      }
+    },
+    "chamber_route_roles": [
+      {
+        "room": "cistern",
+        "door_count": 1,
+        "door_kinds": [
+          "door"
+        ],
+        "role": "destination",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      },
+      {
+        "room": "falls",
+        "door_count": 2,
+        "door_kinds": [
+          "door",
+          "door"
+        ],
+        "role": "ordinary_through_route",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 2,
+            "maximum_detour": 14
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 2,
+            "maximum_detour": 14
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 2,
+            "maximum_detour": 14
+          }
+        }
+      },
+      {
+        "room": "fungi",
+        "door_count": 2,
+        "door_kinds": [
+          "door",
+          "door"
+        ],
+        "role": "no_portal_shortcut",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      },
+      {
+        "room": "lookout",
+        "door_count": 1,
+        "door_kinds": [
+          "door"
+        ],
+        "role": "destination",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      },
+      {
+        "room": "shrine",
+        "door_count": 1,
+        "door_kinds": [
+          "locked"
+        ],
+        "role": "destination",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      },
+      {
+        "room": "throat",
+        "door_count": 2,
+        "door_kinds": [
+          "door",
+          "secret"
+        ],
+        "role": "secret_route",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 2,
+            "maximum_detour": 14
+          }
+        }
+      },
+      {
+        "room": "vent",
+        "door_count": 1,
+        "door_kinds": [
+          "door"
+        ],
+        "role": "destination",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      }
+    ],
+    "ordinary_through_rooms": [
+      "falls"
+    ],
+    "gated_through_rooms": [
+      "throat"
     ]
   },
   {
@@ -476,6 +1221,184 @@
         "chamber_ids": [],
         "substantial": false
       }
-    ]
+    ],
+    "access_profiles": {
+      "ordinary": {
+        "accessible_floor_cells": 163,
+        "accessible_chambers": [
+          "apse",
+          "choir",
+          "descent",
+          "engine"
+        ],
+        "reachable_portals": 8,
+        "connected_portal_pairs": 28,
+        "inaccessible_portal_pairs": 0,
+        "mean_portal_distance": 24.14,
+        "longest_shortest_portal_distance": 34
+      },
+      "unlocked": {
+        "accessible_floor_cells": 169,
+        "accessible_chambers": [
+          "apse",
+          "charts",
+          "choir",
+          "descent",
+          "engine"
+        ],
+        "reachable_portals": 8,
+        "connected_portal_pairs": 28,
+        "inaccessible_portal_pairs": 0,
+        "mean_portal_distance": 24.14,
+        "longest_shortest_portal_distance": 34
+      },
+      "all": {
+        "accessible_floor_cells": 169,
+        "accessible_chambers": [
+          "apse",
+          "charts",
+          "choir",
+          "descent",
+          "engine"
+        ],
+        "reachable_portals": 8,
+        "connected_portal_pairs": 28,
+        "inaccessible_portal_pairs": 0,
+        "mean_portal_distance": 24.14,
+        "longest_shortest_portal_distance": 34
+      }
+    },
+    "chamber_route_roles": [
+      {
+        "room": "apse",
+        "door_count": 1,
+        "door_kinds": [
+          "door"
+        ],
+        "role": "destination",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      },
+      {
+        "room": "charts",
+        "door_count": 1,
+        "door_kinds": [
+          "locked"
+        ],
+        "role": "destination",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      },
+      {
+        "room": "choir",
+        "door_count": 1,
+        "door_kinds": [
+          "door"
+        ],
+        "role": "destination",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      },
+      {
+        "room": "descent",
+        "door_count": 1,
+        "door_kinds": [
+          "door"
+        ],
+        "role": "destination",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      },
+      {
+        "room": "engine",
+        "door_count": 4,
+        "door_kinds": [
+          "door",
+          "door",
+          "locked",
+          "secret"
+        ],
+        "role": "no_portal_shortcut",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      }
+    ],
+    "ordinary_through_rooms": [],
+    "gated_through_rooms": []
   }
 ]
