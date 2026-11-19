@@ -20,10 +20,10 @@ test("buried collector turns west of the pressure vault instead of crossing its 
 });
 test("receiver dogleg avoids the toll room and barracks foundation footprints",()=>{
  const a=requireBuriedFoundationClearance(sink);
- assert.equal(a.route_cells,12);
+ assert.equal(a.route_cells,23);
  assert.equal(a.overlaps.length,0);
  assert.equal(a.accepted_drops.length,0);
- assert.equal(sink.hydrology.subfloor_relay.cells.at(-1).join(","),"9,8");
+ assert.equal(sink.hydrology.subfloor_relay.cells.at(-1).join(","),"19,9");
 });
 test("a route beneath the vault is rejected even if its nominal grade looks downhill",()=>{
  const bad=copy(source);

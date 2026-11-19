@@ -15,7 +15,7 @@ class LowerConduitContracts(unittest.TestCase):
         source = validate(RIFT)
         receiver = validate(POSTERN)
         self.assertEqual(source["lower_tailrace_cells"], 16)
-        self.assertEqual(receiver["lower_relay_cells"], 12)
+        self.assertEqual(receiver["lower_relay_cells"], 23)
         self.assertEqual(RIFT["hydrology"]["tailrace"]["terminus"], [6, 19])
         self.assertEqual(POSTERN["hydrology"]["subfloor_relay"]["cells"][0], [6, 0])
         # Both connect at x=6 without claiming a ninth surface doorway.
@@ -43,7 +43,7 @@ class LowerConduitContracts(unittest.TestCase):
                     validate(bad)
 
     def test_reject_false_boundary_relay_and_unearned_discharge(self):
-        for damage in ("mismatch", "missing_edge", "branched", "loop", "outfall", "grade"):
+        for damage in ("mismatch", "missing_edge", "branched", "loop", "outfall", "grade", "lip", "unmapped", "highwater"):
             with self.subTest(damage=damage):
                 bad = copy.deepcopy(POSTERN)
                 m = bad["hydrology"]["subfloor_relay"]
@@ -57,6 +57,12 @@ class LowerConduitContracts(unittest.TestCase):
                     m["cells"].append([11, 7])
                 elif damage == "outfall":
                     m["discharge_status"] = "complete"
+                elif damage == "lip":
+                    m["outfall"]["exit_edge"]["offset"] = 11
+                elif damage == "unmapped":
+                    m["outfall"]["receiver_documentation"] = "proven"
+                elif damage == "highwater":
+                    m["outfall"]["water_levels_ft"]["high"] = -9
                 else:
                     m["grade"]["inverts_ft"][4] = -9
                 with self.assertRaises(AssertionError):

@@ -39,11 +39,14 @@ test("postern lower conduit is an actual paired continuation, not an invented ni
  const source=interfaceForTile(rift),sink=interfaceForTile(postern);
  assert.equal(source.role,"out");
  assert.equal(sink.role,"in");
- assert.equal(relayModel(postern).terminus,"9,8");
+ assert.equal(relayModel(postern).terminus,"19,9");
+ assert.equal(relayModel(postern).outfall.states[1].interpretation,"potential_backwater");
  const measured=verifySubfloorLayout(grid("riftwater_lock","postern_bastion"),data);
  assert.equal(measured.matched_seams.length,1);
  assert.equal(measured.matched_seams[0].seam_fall_ft.toFixed(2),"0.05");
  assert.equal(measured.matched_seams[0].offset,6);
+ assert.equal(measured.outfalls.length,1);
+ assert.equal(measured.outfalls[0].side,"E");
 });
 test("quarter-turn lower openings mate only at the rotated physical coordinate",()=>{
  const reverse=verifySubfloorLayout(grid("postern_bastion","riftwater_lock",2,2),data);
@@ -75,7 +78,7 @@ test("matched architectural plate is editable and identifies the unfinished down
  assert.match(a,/data-seam-offset="6"/);
  assert.match(a,/id="foundation-adjacency-flags"/);
  assert.match(a,/Direct room-footprint overlaps: 0/);
- assert.match(a,/Uncharted outfall/);
+ assert.match(a,/Outfall lip/);
  assert.match(a,/NOT a walking route/);
  assert.match(a,/air gap 7.75 ft/);
 });

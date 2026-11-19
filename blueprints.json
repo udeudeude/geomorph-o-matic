@@ -895,7 +895,7 @@
         "subfloor_relay": {
           "level": -1,
           "role": "receiving_relay",
-          "discharge_status": "unmapped_internal_outfall",
+          "discharge_status": "external_lip_receiver_unmapped",
           "entry_edge": {
             "kind": "underfloor_tailrace",
             "side": "N",
@@ -949,11 +949,55 @@
             [
               9,
               8
+            ],
+            [
+              9,
+              9
+            ],
+            [
+              10,
+              9
+            ],
+            [
+              11,
+              9
+            ],
+            [
+              12,
+              9
+            ],
+            [
+              13,
+              9
+            ],
+            [
+              14,
+              9
+            ],
+            [
+              15,
+              9
+            ],
+            [
+              16,
+              9
+            ],
+            [
+              17,
+              9
+            ],
+            [
+              18,
+              9
+            ],
+            [
+              19,
+              9
             ]
           ],
           "terminus": [
-            9,
-            8
+            19,
+            9
           ],
           "grade": {
             "inverts_ft": [
@@ -968,7 +1012,18 @@
               -11.7,
               -11.75,
               -11.8,
-              -11.85
+              -11.85,
+              -11.9,
+              -11.95,
+              -12,
+              -12.05,
+              -12.1,
+              -12.15,
+              -12.2,
+              -12.25,
+              -12.3,
+              -12.35,
+              -12.4
             ],
             "crown_ft": -8,
             "max_tailwater_ft": -8.75
@@ -1009,8 +1064,44 @@
                 ]
               ],
               "nominal_clear_diameter_ft": 1.5
+            },
+            {
+              "kind": "bolted_cleanout_riser",
+              "at": [
+                9,
+                9
+              ],
+              "surface": [
+                9,
+                9
+              ],
+              "branch": [
+                [
+                  9,
+                  9
+                ]
+              ],
+              "nominal_clear_diameter_ft": 1.5
             }
-          ]
+          ],
+          "outfall": {
+            "kind": "masonry_arch_lip",
+            "exit_edge": {
+              "kind": "subfloor_outfall",
+              "side": "E",
+              "offset": 9
+            },
+            "at": [
+              19,
+              9
+            ],
+            "nominal_clear_width_ft": 2,
+            "receiver_documentation": "unmapped_external_watercourse",
+            "water_levels_ft": {
+              "ordinary": -9,
+              "high": -7.5
+            }
+          }
         }
       }
     },
