@@ -541,26 +541,36 @@
 <path d="M384,0V480 M0,384H480" stroke="#b9b6ae" stroke-width=".95"/>
 <path d="M432,0V480 M0,432H480" stroke="#b9b6ae" stroke-width=".95"/>
 </g>
-<g id="water-terrain-1-0" fill="#86b8c3" fill-opacity=".64" stroke="none">
-<rect x="240" y="216" width="24" height="24"/>
-<rect x="264" y="240" width="24" height="24"/>
-<rect x="264" y="216" width="24" height="24"/>
-<rect x="288" y="240" width="24" height="24"/>
-<rect x="288" y="216" width="24" height="24"/>
-<rect x="360" y="312" width="24" height="24"/>
-<rect x="360" y="336" width="24" height="24"/>
-<rect x="384" y="312" width="24" height="24"/>
-<rect x="384" y="336" width="24" height="24"/>
-<rect x="144" y="216" width="24" height="24"/>
-<rect x="168" y="216" width="24" height="24"/>
-<rect x="192" y="216" width="24" height="24"/>
-<rect x="216" y="216" width="24" height="24"/>
+<g id="water-terrain-1-0" fill="#a6cbd0" fill-opacity=".8" stroke="#6b959b" stroke-width="1.1" fill-rule="evenodd">
+<path d="M252,216L264,216L288,216L307.68,216Q312,216 312,220.32L312,240L312,259.68Q312,264 307.68,264L288,264L268.32,264Q264,264 264,259.68L264,244.32Q264,240 259.68,240L240,240L216,240L192,240L168,240L148.32,240Q144,240 144,235.68L144,220.32Q144,216 148.32,216L168,216L192,216L216,216L240,216L252,216Z"/>
+<path d="M372,312L384,312L403.68,312Q408,312 408,316.32L408,336L408,355.68Q408,360 403.68,360L384,360L364.32,360Q360,360 360,355.68L360,336L360,316.32Q360,312 364.32,312L372,312Z"/>
 </g>
 <g id="dry-bridges-1-0" fill="#d5c6a4" stroke="#635f54" stroke-width=".9">
 <rect x="264" y="220.32" width="24" height="15.36"/>
 <path d="M270,220.32v15.36"/>
 <path d="M276,220.32v15.36"/>
 <path d="M282,220.32v15.36"/>
+</g>
+<g id="cave-breakdown-chokes-1-0" stroke-linejoin="round" stroke-linecap="round">
+<path data-blocks-edge="5,10|5,11" d="M120,264L124.32,260.64L128.4,266.88L132.96,260.16L137.52,266.88L141.12,261.84L144,264" fill="none" stroke="#e8e1d4" stroke-width="8"/>
+<path d="M120,264L124.32,260.64L128.4,266.88L132.96,260.16L137.52,266.88L141.12,261.84L144,264" fill="none" stroke="#424541" stroke-width="3"/>
+<path d="M122.88,270.96l1.68,-3.6 2.88,2.4z" fill="#b8b5ab" stroke="#77766c" stroke-width=".85"/>
+<path d="M129.12,258l1.68,-3.6 2.88,2.4z" fill="#b8b5ab" stroke="#77766c" stroke-width=".85"/>
+<path d="M135.84,271.68l1.68,-3.6 2.88,2.4z" fill="#b8b5ab" stroke="#77766c" stroke-width=".85"/>
+</g>
+<g id="cave-geomorphology-1-0">
+<g data-geology="breakdown" data-cell="9,17"><path d="M219,425L222,416 227,412 232,415 237,422 233,428 223,429Z" fill="#d5d0c4" stroke="#575b55" stroke-width="1.2"/><path d="M222,416L227,421 232,415 M227,421L233,428 M223,429L227,421" stroke="#8b877c" stroke-width=".75" fill="none"/></g>
+<g data-geology="breakdown" data-cell="10,17"><path d="M243,425L246,416 251,412 256,415 261,422 257,428 247,429Z" fill="#d5d0c4" stroke="#575b55" stroke-width="1.2"/><path d="M246,416L251,421 256,415 M251,421L257,428 M247,429L251,421" stroke="#8b877c" stroke-width=".75" fill="none"/></g>
+<g data-geology="breakdown" data-cell="10,18"><path d="M243,449L246,440 251,436 256,439 261,446 257,452 247,453Z" fill="#d5d0c4" stroke="#575b55" stroke-width="1.2"/><path d="M246,440L251,445 256,439 M251,445L257,452 M247,453L251,445" stroke="#8b877c" stroke-width=".75" fill="none"/></g>
+<g data-geology="flowstone" data-cell="15,3"><path d="M363,78Q368,74 372,79T381,78 M363,82Q368,78 372,83T381,82 M363,86Q368,82 372,87T381,86 M364,90Q368,87 372,91T380,90" fill="none" stroke="#7a786b" stroke-width="1.25"/></g>
+<g data-geology="flowstone" data-cell="16,3"><path d="M387,78Q392,74 396,79T405,78 M387,82Q392,78 396,83T405,82 M387,86Q392,82 396,87T405,86 M388,90Q392,87 396,91T404,90" fill="none" stroke="#7a786b" stroke-width="1.25"/></g>
+<g data-geology="flowstone" data-cell="15,4"><path d="M363,102Q368,98 372,103T381,102 M363,106Q368,102 372,107T381,106 M363,110Q368,106 372,111T381,110 M364,114Q368,111 372,115T380,114" fill="none" stroke="#7a786b" stroke-width="1.25"/></g>
+<g data-geology="gravel" data-cell="3,13"><ellipse cx="84" cy="324" rx="9" ry="7" fill="#e5e0d4" fill-opacity=".45" stroke="none"/><path d="M77,321l3,-2 2,3 M85,318l3,2 -2,2 M79,328l2,-2 3,2 M87,328l3,-2" fill="none" stroke="#928879" stroke-width="1.15" stroke-linecap="round"/></g>
+<g data-geology="gravel" data-cell="4,14"><ellipse cx="108" cy="348" rx="9" ry="7" fill="#e5e0d4" fill-opacity=".45" stroke="none"/><path d="M101,345l3,-2 2,3 M109,342l3,2 -2,2 M103,352l2,-2 3,2 M111,352l3,-2" fill="none" stroke="#928879" stroke-width="1.15" stroke-linecap="round"/></g>
+<g data-geology="gravel" data-cell="4,15"><ellipse cx="108" cy="372" rx="9" ry="7" fill="#e5e0d4" fill-opacity=".45" stroke="none"/><path d="M101,369l3,-2 2,3 M109,366l3,2 -2,2 M103,376l2,-2 3,2 M111,376l3,-2" fill="none" stroke="#928879" stroke-width="1.15" stroke-linecap="round"/></g>
+<g data-geology="scallops" data-cell="8,7"><path d="M195,174q5,-4 10,0 M198,180q5,-4 10,0 M201,186q5,-4 10,0" fill="none" stroke="#8b8a7b" stroke-width="1.1"/></g>
+<g data-geology="scallops" data-cell="10,8"><path d="M243,198q5,-4 10,0 M246,204q5,-4 10,0 M249,210q5,-4 10,0" fill="none" stroke="#8b8a7b" stroke-width="1.1"/></g>
+<g data-geology="scallops" data-cell="9,11"><path d="M219,270q5,-4 10,0 M222,276q5,-4 10,0 M225,282q5,-4 10,0" fill="none" stroke="#8b8a7b" stroke-width="1.1"/></g>
 </g>
 <g id="features-1-0">
 <path d="M75,88l5,-10 9,4 3,8 -9,3z" fill="#bbb8ad" stroke="#6d6a61"/>

@@ -96,6 +96,32 @@ def validate_terrain(tile, cells):
         edge = pair(a, b)
         assert edge in barriers and edge not in ruins, (tile['id'], 'fallen masonry must block a unique edge')
         ruins.add(edge)
+    chokes = set()
+    assert isinstance(spec.get('chokes', []), list), (tile['id'], 'invalid choke collection')
+    for item in spec.get('chokes', []):
+        assert isinstance(item, list) and len(item) == 2, (tile['id'], 'invalid cave choke')
+        a, b = (next(iter(coords([p], 'choke'))) for p in item)
+        edge = pair(a, b)
+        assert (abs(a[0]-b[0])+abs(a[1]-b[1]) == 1
+                and a not in PORTALS and b not in PORTALS
+                and a not in water and b not in water
+                and levels.get(a, 0) == levels.get(b, 0)
+                and edge not in ramps and edge not in barriers and edge not in chokes), (tile['id'], 'invalid blocked cave edge')
+        assert tile.get('wall_style') == 'cavern', (tile['id'], 'chokes only belong in caves')
+        chokes.add(edge)
+    details = tile.get('cave_details', {})
+    assert isinstance(details, dict), (tile['id'], 'invalid cave detail specification')
+    seen_details = set()
+    ladder_cells = {tuple(item['at']) for item in tile.get('vertical', {}).get('links', [])}
+    for kind, points in details.items():
+        assert kind in ('breakdown', 'flowstone', 'gravel', 'scallops'), (tile['id'], 'unknown cave detail', kind)
+        assert tile.get('wall_style') == 'cavern', (tile['id'], 'cave symbols in worked dungeon')
+        for p in coords(points, 'cave detail'):
+            x, y = p
+            assert (0 < x < SIZE - 1 and 0 < y < SIZE - 1
+                    and p not in water and p not in bridge
+                    and p not in ladder_cells and p not in seen_details), (tile['id'], 'unsafe cave symbol position', p)
+            seen_details.add(p)
     assert not ((water | set(levels)) & PORTALS), (tile['id'], 'terrain changes tile edge')
     remaining = set(bridge)
     while remaining:
@@ -114,7 +140,8 @@ def validate_terrain(tile, cells):
         ys = {p[1] for p in group}
         assert len(xs) == 1 or len(ys) == 1, (tile['id'], 'bent bridge span')
         assert len(group) == max(len(xs), len(ys)), (tile['id'], 'disconnected bridge span')
-    return {'water_cells': len(water), 'bridges': len(bridge), 'raised_cells': len(levels), 'ramps': len(ramps), 'barriers': len(barriers), 'ruined_wall_edges':len(ruins)}
+    return {'water_cells': len(water), 'bridges': len(bridge), 'raised_cells': len(levels), 'ramps': len(ramps), 'barriers': len(barriers), 'ruined_wall_edges':len(ruins),
+            'cave_choke_edges': len(chokes), 'cave_detail_cells': len(seen_details)}
 
 
 def validate_vertical(tile, cells):

@@ -5070,7 +5070,7 @@
       "title": "The Hollow Causeway",
       "family": "Fractured limestone cave",
       "geometry": "hand-composed natural passage and mine-era intervention",
-      "description": "A split subterranean stream divides a collapsed limestone hall. A narrow plank crossing is outflanked by a higher calcite traverse reached by two fixed ladders; a dry outer circuit and several alcoves supply alternative approaches.",
+      "description": "A split subterranean stream divides a collapsed limestone hall. A fresh breakdown choke closes the western cleft, forcing a longer dry detour; a narrow plank crossing and a ladder-accessible bedrock traverse offer two distinct shorter alternatives. Abandoned drainage passages preserve scallops, gravel and flowstone.",
       "wall_style": "cavern",
       "rooms": [
         [
@@ -5727,6 +5727,18 @@
             11,
             9
           ]
+        ],
+        "chokes": [
+          [
+            [
+              5,
+              10
+            ],
+            [
+              5,
+              11
+            ]
+          ]
         ]
       },
       "vertical": {
@@ -5802,7 +5814,65 @@
             ]
           ]
         ]
-      ]
+      ],
+      "cave_details": {
+        "flowstone": [
+          [
+            15,
+            3
+          ],
+          [
+            16,
+            3
+          ],
+          [
+            15,
+            4
+          ]
+        ],
+        "breakdown": [
+          [
+            9,
+            17
+          ],
+          [
+            10,
+            17
+          ],
+          [
+            10,
+            18
+          ]
+        ],
+        "gravel": [
+          [
+            3,
+            13
+          ],
+          [
+            4,
+            14
+          ],
+          [
+            4,
+            15
+          ]
+        ],
+        "scallops": [
+          [
+            8,
+            7
+          ],
+          [
+            10,
+            8
+          ],
+          [
+            9,
+            11
+          ]
+        ]
+      }
     }
   ]
 }

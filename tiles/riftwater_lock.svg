@@ -15,13 +15,8 @@
 <path d="M384,0V480 M0,384H480" stroke="#b9b6ae" stroke-width=".95"/>
 <path d="M432,0V480 M0,432H480" stroke="#b9b6ae" stroke-width=".95"/>
 </g>
-<g id="water-terrain" fill="#86b8c3" fill-opacity=".64" stroke="none">
-<rect x="240" y="240" width="24" height="24"/>
-<rect x="240" y="216" width="24" height="24"/>
-<rect x="264" y="240" width="24" height="24"/>
-<rect x="264" y="216" width="24" height="24"/>
-<rect x="216" y="240" width="24" height="24"/>
-<rect x="216" y="216" width="24" height="24"/>
+<g id="water-terrain" fill="#a6cbd0" fill-opacity=".8" stroke="#6b959b" stroke-width="1.1" fill-rule="evenodd">
+<path d="M252,264L264,264L283.68,264Q288,264 288,259.68L288,240L288,220.32Q288,216 283.68,216L264,216L240,216L220.32,216Q216,216 216,220.32L216,240L216,259.68Q216,264 220.32,264L240,264L252,264Z"/>
 </g>
 <g id="dry-bridges" fill="#d5c6a4" stroke="#635f54" stroke-width=".9">
 <rect x="244.32" y="216" width="15.36" height="48"/>

@@ -4,7 +4,8 @@ const path=require("node:path");
 const {shapeCells,shapeBounds}=require("./geometry");
 const {masonryHatchPaths}=require("./ink-hatching");
 const {organicWallPaths,rockHachurePaths}=require("./cave-contours");
-const {terrainSvg}=require("./terrain");
+const {terrainSvg,terrainModel}=require("./terrain");
+const {caveDetailSvg}=require("./cave-illustration");
 const {verticalSvg}=require("./vertical");
 const {gateSvg}=require("./hydraulic-control");
 const {waterworksSvg}=require("./waterworks");
@@ -99,7 +100,9 @@ function makeSvg(tile,{grid="full"}={}) {
   for(let i=1;i<N;i++){if(grid==="full"&&i%2)continue;const k=i*S,stroke=i%2?"#d8d5cb":"#b9b6ae",sw=i%2?".5":".95";parts.push(`<path d="M${k},0V${L} M0,${k}H${L}" stroke="${stroke}" stroke-width="${sw}"/>`)}
   parts.push(`</g>`);
   if(!cave)parts.push(`<g id="masonry-hachures" fill="none" stroke="#514e46" stroke-width="1.15" opacity=".68"><path d="${masonryHatchPaths(owner,S,N)}"/></g>`);
-  for(const layer of terrainSvg(owner,tile.terrain||{}))parts.push(layer);
+  for(const layer of terrainSvg(owner,tile.terrain||{},S,cave?"cavern":"masonry"))parts.push(layer);
+  if(cave)for(const layer of caveDetailSvg(owner,terrainModel(owner,tile.terrain||{}),
+   tile.vertical||{},tile.cave_details||{},S,N))parts.push(layer);
   for(const layer of waterworksSvg(owner,[...doors.values()],tile.hydrology||{},tile.terrain||{}))parts.push(layer);
   for(const layer of tailraceSymbolsSvg(owner,[...doors.values()],tile.hydrology||{},tile.terrain||{}))parts.push(layer);
   parts.push(`<g id="features">`);

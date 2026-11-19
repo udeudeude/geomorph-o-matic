@@ -23,9 +23,17 @@ The eighth original study moves away from repetitive right-angle masonry. Six ha
 limestone chambers connect through ten **unframed natural throats**, without drawing
 imaginary hinged doors. The ordinary dry route across the flooded rift uses a narrow
 plank bridge, while a distinct upper rock traverse supplies a tested ladder-accessible
-alternative. An outer dry circuit offers a longer bypass. All eight conventional edge
-mouths remain rotation-compatible. A single sealed discovery is explicitly drawn,
-rather than turning every cave threshold into a door.
+alternative. A newly mapped breakdown choke now physically blocks one western
+cleft edge, forcing a substantial detour rather than merely adding decoration.
+All eight conventional edge mouths remain rotation-compatible. A single sealed
+discovery is explicitly drawn, rather than turning every cave threshold into a door.
+
+The cave's water is rendered as continuous, curved shorelines from the canonical
+wet-cell union (not blue grid rectangles). Its twelve authored dry-floor deposit
+symbols distinguish loose breakdown, flowstone, gravel and erosion scallops.
+Unlike the blocked choke edge, those deposits do not alter movement; their
+positions are checked independently in JavaScript and Python. The symbol
+vocabulary is documented in [cave cartography and geology research](research/2026-11-19-cave-relief-and-shorelines.md).
 
 Inspect the [editable cave SVG](tiles/hollow_causeway.svg),
 [mixed architectural assembly](examples/assembly_hollow_2x2.svg),
