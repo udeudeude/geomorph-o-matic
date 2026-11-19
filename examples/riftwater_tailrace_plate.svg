@@ -5,10 +5,184 @@
 <text x="66" y="69" font-family="sans-serif" font-size="13" fill="#515d5a">Plan coordinates: 2.5 feet per half-cell. Panels crop tile columns 6–15 and rows 7–18.</text>
 <text x="66" y="100" font-family="sans-serif" font-size="16" font-weight="700" fill="#344846">01   UPPER SLUICE CHANNEL · level 0</text>
 <text x="590" y="100" font-family="sans-serif" font-size="16" font-weight="700" fill="#344846">02   SUBFLOOR TAILRACE · assumed level −1</text>
+<g id="plan-scale" fill="none" stroke="#344846" stroke-width="1.4"><path d="M944 61h68 M944 56v10 M1012 56v10"/><text x="944" y="51" fill="#344846" stroke="none" font-family="sans-serif" font-size="10">0</text><text x="987" y="51" fill="#344846" stroke="none" font-family="sans-serif" font-size="10">5 ft</text></g>
 <defs><marker id="downstream-arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6Z" fill="#315e6c"/></marker></defs>
 <g id="upper-hydraulic-plan" transform="translate(66 143)">
-<rect x="0" y="0" width="340" height="408" fill="#fffcf4" stroke="#5b655f" stroke-width="1.8"/>
-<g stroke="#dbd7cc" stroke-width=".8" fill="none">
+<rect x="0" y="0" width="340" height="408" fill="#e9e5da" stroke="#5b655f" stroke-width="1.8"/>
+<g id="upper-floor-context" stroke="none">
+<rect data-zone="hall" x="0" y="0" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="34" y="0" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="68" y="0" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="102" y="0" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="136" y="0" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="238" y="0" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="34" y="34" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="136" y="34" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="238" y="34" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="0" y="68" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="34" y="68" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="turbine" x="102" y="68" width="34" height="34" fill="#f8f1e4"/>
+<rect data-zone="turbine" x="136" y="68" width="34" height="34" fill="#f8f1e4"/>
+<rect data-zone="turbine" x="170" y="68" width="34" height="34" fill="#f8f1e4"/>
+<rect data-zone="hall" x="238" y="68" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="272" y="68" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="306" y="68" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="0" y="102" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="34" y="102" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="turbine" x="68" y="102" width="34" height="34" fill="#f8f1e4"/>
+<rect data-zone="turbine" x="102" y="102" width="34" height="34" fill="#f8f1e4"/>
+<rect data-zone="turbine" x="136" y="102" width="34" height="34" fill="#f8f1e4"/>
+<rect data-zone="turbine" x="170" y="102" width="34" height="34" fill="#f8f1e4"/>
+<rect data-zone="turbine" x="204" y="102" width="34" height="34" fill="#f8f1e4"/>
+<rect data-zone="hall" x="238" y="102" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="306" y="102" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="0" y="136" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="turbine" x="102" y="136" width="34" height="34" fill="#f8f1e4"/>
+<rect data-zone="turbine" x="136" y="136" width="34" height="34" fill="#f8f1e4"/>
+<rect data-zone="turbine" x="170" y="136" width="34" height="34" fill="#f8f1e4"/>
+<rect data-zone="hall" x="238" y="136" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="306" y="136" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="0" y="170" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="34" y="170" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="68" y="170" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="102" y="170" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="136" y="170" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="238" y="170" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="272" y="170" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="306" y="170" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="0" y="204" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="136" y="204" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="238" y="204" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="0" y="238" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="136" y="238" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="170" y="238" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="204" y="238" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="238" y="238" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="272" y="238" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="306" y="238" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="0" y="272" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="136" y="272" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="238" y="272" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="306" y="272" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="0" y="306" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="vault" x="102" y="306" width="34" height="34" fill="#f8f1e4"/>
+<rect data-zone="vault" x="136" y="306" width="34" height="34" fill="#f8f1e4"/>
+<rect data-zone="vault" x="170" y="306" width="34" height="34" fill="#f8f1e4"/>
+<rect data-zone="hall" x="238" y="306" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="272" y="306" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="hall" x="306" y="306" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="vault" x="68" y="340" width="34" height="34" fill="#f8f1e4"/>
+<rect data-zone="vault" x="102" y="340" width="34" height="34" fill="#f8f1e4"/>
+<rect data-zone="vault" x="136" y="340" width="34" height="34" fill="#f8f1e4"/>
+<rect data-zone="vault" x="170" y="340" width="34" height="34" fill="#f8f1e4"/>
+<rect data-zone="vault" x="204" y="340" width="34" height="34" fill="#f8f1e4"/>
+<rect data-zone="hall" x="306" y="340" width="34" height="34" fill="#fffdf6"/>
+<rect data-zone="vault" x="102" y="374" width="34" height="34" fill="#f8f1e4"/>
+<rect data-zone="vault" x="136" y="374" width="34" height="34" fill="#f8f1e4"/>
+<rect data-zone="vault" x="170" y="374" width="34" height="34" fill="#f8f1e4"/>
+<rect data-zone="hall" x="306" y="374" width="34" height="34" fill="#fffdf6"/>
+</g><g id="upper-rock-boundaries" fill="none" stroke="#575b55" stroke-width="2.2">
+<path d="M0,34h34"/>
+<path d="M0,0h34"/>
+<path d="M34,0h34"/>
+<path d="M68,34h34"/>
+<path d="M102,34h34"/>
+<path d="M102,0h34"/>
+<path d="M170,0v34"/>
+<path d="M136,0h34"/>
+<path d="M272,0v34"/>
+<path d="M238,0v34"/>
+<path d="M68,34v34"/>
+<path d="M34,34v34"/>
+<path d="M170,34v34"/>
+<path d="M136,34v34"/>
+<path d="M272,34v34"/>
+<path d="M238,34v34"/>
+<path d="M0,68h34"/>
+<path d="M68,68v34"/>
+<path d="M102,68v34"/>
+<path d="M102,68h34"/>
+<path d="M204,68v34"/>
+<path d="M170,68h34"/>
+<path d="M238,68v34"/>
+<path d="M272,102h34"/>
+<path d="M272,68h34"/>
+<path d="M306,68h34"/>
+<path d="M34,136h34"/>
+<path d="M68,136h34"/>
+<path d="M68,102h34"/>
+<path d="M204,136h34"/>
+<path d="M204,102h34"/>
+<path d="M272,102v34"/>
+<path d="M306,102v34"/>
+<path d="M34,136v34"/>
+<path d="M102,136v34"/>
+<path d="M204,136v34"/>
+<path d="M170,170h34"/>
+<path d="M272,136v34"/>
+<path d="M238,136v34"/>
+<path d="M340,136v34"/>
+<path d="M306,136v34"/>
+<path d="M34,204h34"/>
+<path d="M34,170h34"/>
+<path d="M68,204h34"/>
+<path d="M68,170h34"/>
+<path d="M102,204h34"/>
+<path d="M170,170v34"/>
+<path d="M238,170v34"/>
+<path d="M272,204h34"/>
+<path d="M272,170h34"/>
+<path d="M306,204h34"/>
+<path d="M34,204v34"/>
+<path d="M0,204v34"/>
+<path d="M170,204v34"/>
+<path d="M136,204v34"/>
+<path d="M272,204v34"/>
+<path d="M238,204v34"/>
+<path d="M34,238v34"/>
+<path d="M136,238v34"/>
+<path d="M170,272h34"/>
+<path d="M170,238h34"/>
+<path d="M204,272h34"/>
+<path d="M204,238h34"/>
+<path d="M272,272h34"/>
+<path d="M272,238h34"/>
+<path d="M340,238v34"/>
+<path d="M306,238h34"/>
+<path d="M34,272v34"/>
+<path d="M0,272v34"/>
+<path d="M170,272v34"/>
+<path d="M136,272v34"/>
+<path d="M272,272v34"/>
+<path d="M238,272v34"/>
+<path d="M340,272v34"/>
+<path d="M306,272v34"/>
+<path d="M34,306v34"/>
+<path d="M0,340h34"/>
+<path d="M102,306v34"/>
+<path d="M102,306h34"/>
+<path d="M204,306v34"/>
+<path d="M170,306h34"/>
+<path d="M238,306v34"/>
+<path d="M238,340h34"/>
+<path d="M272,340h34"/>
+<path d="M272,306h34"/>
+<path d="M340,306v34"/>
+<path d="M68,340v34"/>
+<path d="M68,374h34"/>
+<path d="M68,340h34"/>
+<path d="M238,340v34"/>
+<path d="M204,374h34"/>
+<path d="M204,340h34"/>
+<path d="M306,340v34"/>
+<path d="M102,374v34"/>
+<path d="M102,408h34"/>
+<path d="M136,408h34"/>
+<path d="M204,374v34"/>
+<path d="M170,408h34"/>
+<path d="M306,374v34"/>
+</g>
+<g stroke="#c8c6be" stroke-width=".7" fill="none" opacity=".7">
 <path d="M34,0V408"/>
 <path d="M68,0V408"/>
 <path d="M102,0V408"/>
@@ -54,8 +228,32 @@
 <text x="127" y="75" font-size="15" font-family="sans-serif" font-weight="700" fill="#315e6c">I</text>
 </g></g>
 <g id="subfloor-collection-plan" transform="translate(586 143)">
-<rect x="0" y="0" width="340" height="408" fill="#fffcf4" stroke="#5b655f" stroke-width="1.8"/>
-<g stroke="#dbd7cc" stroke-width=".8" fill="none">
+<rect x="0" y="0" width="340" height="408" fill="#e9e5da" stroke="#5b655f" stroke-width="1.8"/>
+<g id="vault-foundation-conflict" fill="#dbc3a6" fill-opacity=".4" stroke="#b18a5e" stroke-width=".65">
+<rect data-overhead-vault="9,16" x="102" y="306" width="34" height="34"/>
+<path d="M102,340l34,-34" fill="none" stroke-width=".8"/>
+<rect data-overhead-vault="10,16" x="136" y="306" width="34" height="34"/>
+<path d="M136,340l34,-34" fill="none" stroke-width=".8"/>
+<rect data-overhead-vault="11,16" x="170" y="306" width="34" height="34"/>
+<path d="M170,340l34,-34" fill="none" stroke-width=".8"/>
+<rect data-overhead-vault="8,17" x="68" y="340" width="34" height="34"/>
+<path d="M68,374l34,-34" fill="none" stroke-width=".8"/>
+<rect data-overhead-vault="9,17" x="102" y="340" width="34" height="34"/>
+<path d="M102,374l34,-34" fill="none" stroke-width=".8"/>
+<rect data-overhead-vault="10,17" x="136" y="340" width="34" height="34"/>
+<path d="M136,374l34,-34" fill="none" stroke-width=".8"/>
+<rect data-overhead-vault="11,17" x="170" y="340" width="34" height="34"/>
+<path d="M170,374l34,-34" fill="none" stroke-width=".8"/>
+<rect data-overhead-vault="12,17" x="204" y="340" width="34" height="34"/>
+<path d="M204,374l34,-34" fill="none" stroke-width=".8"/>
+<rect data-overhead-vault="9,18" x="102" y="374" width="34" height="34"/>
+<path d="M102,408l34,-34" fill="none" stroke-width=".8"/>
+<rect data-overhead-vault="10,18" x="136" y="374" width="34" height="34"/>
+<path d="M136,408l34,-34" fill="none" stroke-width=".8"/>
+<rect data-overhead-vault="11,18" x="170" y="374" width="34" height="34"/>
+<path d="M170,408l34,-34" fill="none" stroke-width=".8"/>
+</g>
+<g stroke="#c8c6be" stroke-width=".7" fill="none" opacity=".7">
 <path d="M34,0V408"/>
 <path d="M68,0V408"/>
 <path d="M102,0V408"/>
@@ -91,7 +289,7 @@
 <g data-drain-from="east_shutter"><circle cx="187" cy="153" r="12" fill="#fffdf6" stroke="#315e6c" stroke-width="2.2"/><text x="187" y="157" fill="#315e6c" font-weight="700">E</text></g>
 <g id="lower-tailrace-terminus" data-continuation="unmapped"><rect x="174" y="378" width="26" height="26" fill="#f4e6c9" stroke="#315e6c" stroke-width="2"/><text x="187" y="395" fill="#315e6c" font-weight="700">T</text></g>
 </g></g>
-<text x="66" y="585" font-family="sans-serif" font-size="12" fill="#444d49">Filled blue: existing headwater. Tan: initially dry sumps. Thick bars: closed shutters and full-height partitions.</text>
+<text x="66" y="585" font-family="sans-serif" font-size="12" fill="#444d49">Blue = existing headwater; tan = dry sumps; dark = closed gates/partitions. Pale ochre on lower plan = vault overhead.</text>
 <text x="66" y="609" font-family="sans-serif" font-size="12" fill="#444d49">W / C / E: separate vertical drop shafts from west / center / east shutter pockets; T: uncharted onward outfall.</text>
 <text x="66" y="637" font-family="sans-serif" font-size="12" fill="#685c4c">Lower level, shaft clearances, invert elevations, channel grade, roof structure and hydraulic discharge are design assumptions.</text>
 <text x="66" y="655" font-family="sans-serif" font-size="11" fill="#685c4c">Free-fall vented drops assume an unsurcharged tailrace; no reverse flow modeled. All eight surface exits remain unchanged.</text>
