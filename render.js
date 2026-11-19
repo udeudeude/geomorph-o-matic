@@ -127,8 +127,8 @@ function makeSvg(tile) {
   for(const [kind,coord] of tile.features)shape(kind,coord);
   parts.push(`</g><g id="stone-walls" fill="none" stroke-linecap="square" stroke-linejoin="round">`);
   for(const path of strokes)parts.push(`<path d="${path}" stroke="#8e8a80" opacity=".32" stroke-width="5.5"/><path d="${path}" stroke="#303332" stroke-width="2.8"/>`);
-  parts.push(`</g>`);
   if(cave){
+    parts.push(`</g>`);
     parts.push(`<g id="rock-hachures" fill="none" stroke="#79776d" stroke-width="1" opacity=".65">`);
     for(const p of rockHachurePaths(naturalEdges))parts.push(`<path d="${p}"/>`);
     parts.push(`</g><g id="cavern-walls" fill="none" stroke-linecap="round" stroke-linejoin="round">`);
@@ -137,7 +137,7 @@ function makeSvg(tile) {
     }
     parts.push(`</g>`);
   }
-  parts.push(`<g id="explicit-doors" fill="none" stroke="#484743">`);
+  parts.push(cave?`<g id="explicit-doors" fill="none" stroke="#484743">`:`</g><g id="explicit-doors" fill="none" stroke="#484743">`);
   for(const {a,b,kind} of doors.values()){
     const vertical=a[0]!==b[0];
     const X=(vertical?Math.max(a[0],b[0]):a[0])*S,Y=(vertical?a[1]:Math.max(a[1],b[1]))*S;
