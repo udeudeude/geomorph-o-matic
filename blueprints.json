@@ -4211,6 +4211,682 @@
           }
         ]
       }
+    },
+    {
+      "id": "fallen_choir",
+      "title": "The Fallen Choir",
+      "family": "Ruinous bell abbey",
+      "geometry": "row-runs",
+      "description": "A fractured bell nave offers a direct four-sided crossing, while its staggered vestry walk, western ambulatory, eastern watch and crypt form longer alternative journeys. Sealed undertaker's cache and listening cell reward searching rather than blocking ordinary traversal.",
+      "rooms": [
+        [
+          "bell_nave",
+          "Fallen bell nave",
+          {
+            "rows": [
+              [
+                7,
+                8,
+                11
+              ],
+              [
+                8,
+                7,
+                12
+              ],
+              [
+                9,
+                7,
+                12
+              ],
+              [
+                10,
+                7,
+                12
+              ],
+              [
+                11,
+                8,
+                11
+              ],
+              [
+                12,
+                9,
+                10
+              ]
+            ]
+          }
+        ],
+        [
+          "north_vestry",
+          "Ribbed vestry",
+          {
+            "rows": [
+              [
+                2,
+                8,
+                10
+              ],
+              [
+                3,
+                7,
+                11
+              ],
+              [
+                4,
+                8,
+                10
+              ]
+            ]
+          }
+        ],
+        [
+          "pulpit",
+          "Stranded pulpit",
+          {
+            "rows": [
+              [
+                8,
+                2,
+                4
+              ],
+              [
+                9,
+                2,
+                4
+              ],
+              [
+                10,
+                3,
+                4
+              ]
+            ]
+          }
+        ],
+        [
+          "chime_room",
+          "Chime chamber",
+          {
+            "rows": [
+              [
+                8,
+                15,
+                17
+              ],
+              [
+                9,
+                15,
+                17
+              ],
+              [
+                10,
+                16,
+                17
+              ]
+            ]
+          }
+        ],
+        [
+          "crypt",
+          "Canted crypt",
+          {
+            "rows": [
+              [
+                16,
+                8,
+                11
+              ],
+              [
+                17,
+                7,
+                12
+              ],
+              [
+                18,
+                8,
+                11
+              ]
+            ]
+          }
+        ],
+        [
+          "undertaker_cache",
+          "Undertaker's cache",
+          {
+            "rows": [
+              [
+                11,
+                2,
+                4
+              ],
+              [
+                12,
+                2,
+                4
+              ]
+            ]
+          }
+        ],
+        [
+          "watch",
+          "Listening cell",
+          {
+            "rows": [
+              [
+                11,
+                16,
+                17
+              ],
+              [
+                12,
+                15,
+                17
+              ]
+            ]
+          }
+        ]
+      ],
+      "routes": [
+        {
+          "id": "northwest",
+          "points": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              5,
+              6
+            ]
+          ],
+          "reason": "Hand-composed architectural circulation"
+        },
+        {
+          "id": "northeast",
+          "points": [
+            [
+              15,
+              0
+            ],
+            [
+              15,
+              2
+            ],
+            [
+              14,
+              2
+            ],
+            [
+              14,
+              6
+            ]
+          ],
+          "reason": "Hand-composed architectural circulation"
+        },
+        {
+          "id": "west_up",
+          "points": [
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              5,
+              6
+            ]
+          ],
+          "reason": "Hand-composed architectural circulation"
+        },
+        {
+          "id": "west_down",
+          "points": [
+            [
+              0,
+              15
+            ],
+            [
+              1,
+              15
+            ],
+            [
+              1,
+              14
+            ],
+            [
+              5,
+              14
+            ]
+          ],
+          "reason": "Hand-composed architectural circulation"
+        },
+        {
+          "id": "east_up",
+          "points": [
+            [
+              19,
+              4
+            ],
+            [
+              18,
+              4
+            ],
+            [
+              18,
+              6
+            ],
+            [
+              14,
+              6
+            ]
+          ],
+          "reason": "Hand-composed architectural circulation"
+        },
+        {
+          "id": "east_down",
+          "points": [
+            [
+              19,
+              15
+            ],
+            [
+              18,
+              15
+            ],
+            [
+              18,
+              14
+            ],
+            [
+              14,
+              14
+            ]
+          ],
+          "reason": "Hand-composed architectural circulation"
+        },
+        {
+          "id": "southwest",
+          "points": [
+            [
+              4,
+              19
+            ],
+            [
+              4,
+              18
+            ],
+            [
+              5,
+              18
+            ],
+            [
+              5,
+              14
+            ]
+          ],
+          "reason": "Hand-composed architectural circulation"
+        },
+        {
+          "id": "southeast",
+          "points": [
+            [
+              15,
+              19
+            ],
+            [
+              15,
+              18
+            ],
+            [
+              14,
+              18
+            ],
+            [
+              14,
+              14
+            ]
+          ],
+          "reason": "Hand-composed architectural circulation"
+        },
+        {
+          "id": "west_ambulatory",
+          "points": [
+            [
+              5,
+              6
+            ],
+            [
+              5,
+              14
+            ]
+          ],
+          "reason": "Hand-composed architectural circulation"
+        },
+        {
+          "id": "east_ambulatory",
+          "points": [
+            [
+              14,
+              6
+            ],
+            [
+              14,
+              14
+            ]
+          ],
+          "reason": "Hand-composed architectural circulation"
+        },
+        {
+          "id": "staggered_north_walk",
+          "points": [
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              6
+            ],
+            [
+              7,
+              5
+            ],
+            [
+              12,
+              5
+            ],
+            [
+              12,
+              6
+            ],
+            [
+              14,
+              6
+            ]
+          ],
+          "reason": "Hand-composed architectural circulation"
+        },
+        {
+          "id": "south_ambulatory",
+          "points": [
+            [
+              5,
+              14
+            ],
+            [
+              14,
+              14
+            ]
+          ],
+          "reason": "Hand-composed architectural circulation"
+        },
+        {
+          "id": "vestry_approach",
+          "points": [
+            [
+              9,
+              5
+            ],
+            [
+              9,
+              6
+            ]
+          ],
+          "reason": "Hand-composed architectural circulation"
+        },
+        {
+          "id": "nave_south",
+          "points": [
+            [
+              10,
+              13
+            ],
+            [
+              10,
+              14
+            ]
+          ],
+          "reason": "Hand-composed architectural circulation"
+        },
+        {
+          "id": "crypt_approach",
+          "points": [
+            [
+              9,
+              14
+            ],
+            [
+              9,
+              15
+            ]
+          ],
+          "reason": "Hand-composed architectural circulation"
+        },
+        {
+          "id": "north_bypass",
+          "points": [
+            [
+              5,
+              4
+            ],
+            [
+              6,
+              4
+            ],
+            [
+              6,
+              6
+            ]
+          ],
+          "reason": "Hand-composed architectural circulation"
+        },
+        {
+          "id": "eastern_cloister_spur",
+          "points": [
+            [
+              14,
+              12
+            ],
+            [
+              13,
+              12
+            ],
+            [
+              13,
+              14
+            ]
+          ],
+          "reason": "Hand-composed architectural circulation"
+        },
+        {
+          "id": "nave_west",
+          "points": [
+            [
+              5,
+              9
+            ],
+            [
+              6,
+              9
+            ]
+          ],
+          "reason": "Hand-composed architectural circulation"
+        },
+        {
+          "id": "nave_east",
+          "points": [
+            [
+              13,
+              9
+            ],
+            [
+              14,
+              9
+            ]
+          ],
+          "reason": "Hand-composed architectural circulation"
+        }
+      ],
+      "doors": [
+        [
+          "bell_nave",
+          "N",
+          9,
+          "door"
+        ],
+        [
+          "bell_nave",
+          "S",
+          10,
+          "door"
+        ],
+        [
+          "bell_nave",
+          "W",
+          9,
+          "door"
+        ],
+        [
+          "bell_nave",
+          "E",
+          9,
+          "door"
+        ],
+        [
+          "north_vestry",
+          "S",
+          9,
+          "locked"
+        ],
+        [
+          "pulpit",
+          "E",
+          9,
+          "door"
+        ],
+        [
+          "chime_room",
+          "W",
+          9,
+          "door"
+        ],
+        [
+          "crypt",
+          "N",
+          9,
+          "door"
+        ],
+        [
+          "undertaker_cache",
+          "E",
+          11,
+          "secret"
+        ],
+        [
+          "watch",
+          "W",
+          12,
+          "secret"
+        ]
+      ],
+      "features": [
+        [
+          "bell",
+          [
+            9,
+            9
+          ]
+        ],
+        [
+          "columns",
+          [
+            [
+              8,
+              8
+            ],
+            [
+              11,
+              8
+            ],
+            [
+              8,
+              10
+            ],
+            [
+              11,
+              10
+            ]
+          ]
+        ],
+        [
+          "rubble",
+          [
+            [
+              8,
+              9
+            ],
+            [
+              11,
+              10
+            ]
+          ]
+        ],
+        [
+          "altar",
+          [
+            8,
+            3,
+            9,
+            3
+          ]
+        ],
+        [
+          "table",
+          [
+            2,
+            8,
+            3,
+            8
+          ]
+        ],
+        [
+          "barrels",
+          [
+            [
+              16,
+              8
+            ],
+            [
+              17,
+              9
+            ]
+          ]
+        ],
+        [
+          "sarcophagus",
+          [
+            9,
+            17,
+            10,
+            17
+          ]
+        ]
+      ]
     }
   ]
 }

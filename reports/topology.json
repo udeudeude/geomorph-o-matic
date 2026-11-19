@@ -2897,5 +2897,507 @@
         ]
       }
     }
+  },
+  {
+    "id": "fallen_choir",
+    "floor_cells": 177,
+    "corridor_cells": 97,
+    "doors": 10,
+    "standard_doors": 7,
+    "locked_doors": 1,
+    "secret_doors": 2,
+    "hall_cycle_rank": 6,
+    "hall_chokepoint_count": 47,
+    "normal_portals_reachable": 8,
+    "fully_connected": true,
+    "normally_accessible_floor_fraction": 0.876,
+    "chambers": [
+      {
+        "room": "bell_nave",
+        "doors": [
+          "door",
+          "door",
+          "door",
+          "door"
+        ],
+        "normally_accessible": true
+      },
+      {
+        "room": "north_vestry",
+        "doors": [
+          "locked"
+        ],
+        "normally_accessible": false
+      },
+      {
+        "room": "pulpit",
+        "doors": [
+          "door"
+        ],
+        "normally_accessible": true
+      },
+      {
+        "room": "chime_room",
+        "doors": [
+          "door"
+        ],
+        "normally_accessible": true
+      },
+      {
+        "room": "crypt",
+        "doors": [
+          "door"
+        ],
+        "normally_accessible": true
+      },
+      {
+        "room": "undertaker_cache",
+        "doors": [
+          "secret"
+        ],
+        "normally_accessible": false
+      },
+      {
+        "room": "watch",
+        "doors": [
+          "secret"
+        ],
+        "normally_accessible": false
+      }
+    ],
+    "notes": [
+      "Secret-only chamber undertaker_cache is a discovery, not an alternative circulation route",
+      "Secret-only chamber watch is a discovery, not an alternative circulation route"
+    ],
+    "substantial_hall_circuits": 1,
+    "minor_hall_islands": 0,
+    "hall_encircled_obstacles": [
+      {
+        "area": 54,
+        "bounding_box": [
+          6,
+          6,
+          13,
+          13
+        ],
+        "adjacent_hall_cells": 29,
+        "chamber_ids": [
+          "bell_nave"
+        ],
+        "substantial": true
+      }
+    ],
+    "access_profiles": {
+      "ordinary": {
+        "accessible_floor_cells": 155,
+        "accessible_chambers": [
+          "bell_nave",
+          "chime_room",
+          "crypt",
+          "pulpit"
+        ],
+        "reachable_portals": 8,
+        "connected_portal_pairs": 28,
+        "inaccessible_portal_pairs": 0,
+        "mean_portal_distance": 22.86,
+        "longest_shortest_portal_distance": 30
+      },
+      "unlocked": {
+        "accessible_floor_cells": 166,
+        "accessible_chambers": [
+          "bell_nave",
+          "chime_room",
+          "crypt",
+          "north_vestry",
+          "pulpit"
+        ],
+        "reachable_portals": 8,
+        "connected_portal_pairs": 28,
+        "inaccessible_portal_pairs": 0,
+        "mean_portal_distance": 22.86,
+        "longest_shortest_portal_distance": 30
+      },
+      "all": {
+        "accessible_floor_cells": 177,
+        "accessible_chambers": [
+          "bell_nave",
+          "chime_room",
+          "crypt",
+          "north_vestry",
+          "pulpit",
+          "undertaker_cache",
+          "watch"
+        ],
+        "reachable_portals": 8,
+        "connected_portal_pairs": 28,
+        "inaccessible_portal_pairs": 0,
+        "mean_portal_distance": 22.86,
+        "longest_shortest_portal_distance": 30
+      }
+    },
+    "chamber_route_roles": [
+      {
+        "room": "bell_nave",
+        "door_count": 4,
+        "door_kinds": [
+          "door",
+          "door",
+          "door",
+          "door"
+        ],
+        "role": "no_portal_shortcut",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      },
+      {
+        "room": "chime_room",
+        "door_count": 1,
+        "door_kinds": [
+          "door"
+        ],
+        "role": "destination",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      },
+      {
+        "room": "crypt",
+        "door_count": 1,
+        "door_kinds": [
+          "door"
+        ],
+        "role": "destination",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      },
+      {
+        "room": "north_vestry",
+        "door_count": 1,
+        "door_kinds": [
+          "locked"
+        ],
+        "role": "destination",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      },
+      {
+        "room": "pulpit",
+        "door_count": 1,
+        "door_kinds": [
+          "door"
+        ],
+        "role": "destination",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      },
+      {
+        "room": "undertaker_cache",
+        "door_count": 1,
+        "door_kinds": [
+          "secret"
+        ],
+        "role": "destination",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      },
+      {
+        "room": "watch",
+        "door_count": 1,
+        "door_kinds": [
+          "secret"
+        ],
+        "role": "destination",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      }
+    ],
+    "ordinary_through_rooms": [],
+    "gated_through_rooms": [],
+    "water_cells": 0,
+    "bridged_water_cells": 0,
+    "elevated_cells": 0,
+    "ramp_edges": 0,
+    "barrier_edges": 0,
+    "travel": {
+      "dry": {
+        "accessible_floor_cells": 155,
+        "reachable_portals": 8
+      },
+      "wading": {
+        "accessible_floor_cells": 155,
+        "reachable_portals": 8
+      }
+    },
+    "route_resilience": {
+      "ordinary": {
+        "reachable_pairs": 28,
+        "meaningful_reroute_pairs": 24,
+        "reroute_fraction": 0.857,
+        "examples": [
+          {
+            "from": "4,0",
+            "to": "15,0",
+            "distance": 23,
+            "resilient": true,
+            "alternate": {
+              "distance": 29,
+              "extra_steps": 6,
+              "separated_cells": 12,
+              "obstruction": "8,5"
+            }
+          },
+          {
+            "from": "4,0",
+            "to": "4,19",
+            "distance": 21,
+            "resilient": true,
+            "alternate": {
+              "distance": 31,
+              "extra_steps": 10,
+              "separated_cells": 14,
+              "obstruction": "5,8"
+            }
+          },
+          {
+            "from": "4,0",
+            "to": "15,19",
+            "distance": 30,
+            "resilient": true,
+            "alternate": {
+              "distance": 30,
+              "extra_steps": 0,
+              "separated_cells": 9,
+              "obstruction": "8,5"
+            }
+          },
+          {
+            "from": "4,0",
+            "to": "0,15",
+            "distance": 21,
+            "resilient": true,
+            "alternate": {
+              "distance": 31,
+              "extra_steps": 10,
+              "separated_cells": 14,
+              "obstruction": "5,8"
+            }
+          }
+        ]
+      },
+      "unlocked": {
+        "reachable_pairs": 28,
+        "meaningful_reroute_pairs": 24,
+        "reroute_fraction": 0.857,
+        "examples": [
+          {
+            "from": "4,0",
+            "to": "15,0",
+            "distance": 23,
+            "resilient": true,
+            "alternate": {
+              "distance": 29,
+              "extra_steps": 6,
+              "separated_cells": 12,
+              "obstruction": "8,5"
+            }
+          },
+          {
+            "from": "4,0",
+            "to": "4,19",
+            "distance": 21,
+            "resilient": true,
+            "alternate": {
+              "distance": 31,
+              "extra_steps": 10,
+              "separated_cells": 14,
+              "obstruction": "5,8"
+            }
+          },
+          {
+            "from": "4,0",
+            "to": "15,19",
+            "distance": 30,
+            "resilient": true,
+            "alternate": {
+              "distance": 30,
+              "extra_steps": 0,
+              "separated_cells": 9,
+              "obstruction": "8,5"
+            }
+          },
+          {
+            "from": "4,0",
+            "to": "0,15",
+            "distance": 21,
+            "resilient": true,
+            "alternate": {
+              "distance": 31,
+              "extra_steps": 10,
+              "separated_cells": 14,
+              "obstruction": "5,8"
+            }
+          }
+        ]
+      },
+      "all": {
+        "reachable_pairs": 28,
+        "meaningful_reroute_pairs": 24,
+        "reroute_fraction": 0.857,
+        "examples": [
+          {
+            "from": "4,0",
+            "to": "15,0",
+            "distance": 23,
+            "resilient": true,
+            "alternate": {
+              "distance": 29,
+              "extra_steps": 6,
+              "separated_cells": 12,
+              "obstruction": "8,5"
+            }
+          },
+          {
+            "from": "4,0",
+            "to": "4,19",
+            "distance": 21,
+            "resilient": true,
+            "alternate": {
+              "distance": 31,
+              "extra_steps": 10,
+              "separated_cells": 14,
+              "obstruction": "5,8"
+            }
+          },
+          {
+            "from": "4,0",
+            "to": "15,19",
+            "distance": 30,
+            "resilient": true,
+            "alternate": {
+              "distance": 30,
+              "extra_steps": 0,
+              "separated_cells": 9,
+              "obstruction": "8,5"
+            }
+          },
+          {
+            "from": "4,0",
+            "to": "0,15",
+            "distance": 21,
+            "resilient": true,
+            "alternate": {
+              "distance": 31,
+              "extra_steps": 10,
+              "separated_cells": 14,
+              "obstruction": "5,8"
+            }
+          }
+        ]
+      }
+    }
   }
 ]

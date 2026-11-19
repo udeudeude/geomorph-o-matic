@@ -1,0 +1,25 @@
+{
+  "title": "The Fallen Choir: A Curated Four-Morph Junction",
+  "rows": [
+    [
+      {
+        "id": "fallen_choir",
+        "turn": 0
+      },
+      {
+        "id": "salt_cloister",
+        "turn": 1
+      }
+    ],
+    [
+      {
+        "id": "basalt_rift",
+        "turn": 3
+      },
+      {
+        "id": "bone_galleries",
+        "turn": 2
+      }
+    ]
+  ]
+}

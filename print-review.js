@@ -63,7 +63,9 @@ if(require.main===module){
  const report=data.tiles.map(t=>printScaleAudit(t));
  const out=path.join(__dirname,"reports/print-scale.json");
  fs.mkdirSync(path.dirname(out),{recursive:true});fs.writeFileSync(out,JSON.stringify(report,null,2)+"\n");
- const tile=data.tiles.find(t=>t.id==="riftwater_lock");
+ const selected=process.argv[3]||"riftwater_lock";
+ const tile=data.tiles.find(t=>t.id===selected);
+ if(!tile)throw Error("Unknown print-proof tile: "+selected);
  const dest=path.resolve(process.argv[2]||path.join(__dirname,"examples/riftwater_print_letter.svg"));
  fs.mkdirSync(path.dirname(dest),{recursive:true});fs.writeFileSync(dest,letterProof(tile));
  console.log("Print audit and US Letter proof generated: "+dest);
