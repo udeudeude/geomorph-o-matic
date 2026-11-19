@@ -91,7 +91,7 @@ function makeTailracePlate(tile){
   '<text x="66" y="585" font-family="sans-serif" font-size="12" fill="#444d49">Filled blue: existing headwater. Tan: initially dry sumps. Thick bars: closed shutters and full-height partitions.</text>',
   '<text x="66" y="609" font-family="sans-serif" font-size="12" fill="#444d49">W / C / E: separate vertical drop shafts from west / center / east shutter pockets; T: uncharted onward outfall.</text>',
   '<text x="66" y="637" font-family="sans-serif" font-size="12" fill="#685c4c">Lower level, shaft clearances, invert elevations, channel grade, roof structure and hydraulic discharge are design assumptions.</text>',
-  '<text x="66" y="655" font-family="sans-serif" font-size="11" fill="#685c4c">Drainage is directed downstream only. This plate does not add pedestrian passages or change the eight modular surface exits.</text>',
+  '<text x="66" y="655" font-family="sans-serif" font-size="11" fill="#685c4c">Free-fall vented drops assume an unsurcharged tailrace; no reverse flow modeled. All eight surface exits remain unchanged.</text>',
   '</svg>');
  return out.join("\n")+"\n";
 }
