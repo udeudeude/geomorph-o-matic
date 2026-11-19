@@ -107,8 +107,8 @@ height and 1.5-inch shaft diameter are design assumptions**, not measurements.
 Non-walkable mechanisms appear only on the new [editable technical plate](examples/riftwater_maintenance_plate.svg),
 not as false walkable passages in the main map.
 
-Both lower watercourses now have **inspectable sealed cleanouts at every turn**.
-The crowded Riftwater gallery requires a 7.5-foot lateral buried service spur
+Both lower watercourses now have **five sealed cleanouts at every turn, including the wet turbine pickup elbow**.
+The turbine pickup elbow and crowded Riftwater gallery each require a 7.5-foot buried inspection spur. The latter
 to place one dry hatch clear of the center winch. Postern gains a real one-cell
 corridor niche to reach its previously inaccessible buried cleanout. These are
 **bolted covers, not traversable shafts**. The [design record](research/2026-11-19-mechanical-access.md)
