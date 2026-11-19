@@ -75,6 +75,20 @@ function waterwayModel(owner,doors=[],hydrology={},terrain={}) {
  const allOpen = new Map(gates.map(g => [g.id,"open"]));
  if (!distances(hydraulicCanalGraph(canal,gates,allOpen,walls),inlet).has(outlet))
   throw Error("Engineered waterway cannot connect intake to outlet");
+ if(hydrology.isolated_shutters!==undefined && typeof hydrology.isolated_shutters!=="boolean")
+  throw Error("Invalid isolated-shutter contract");
+ if(hydrology.isolated_shutters){
+  if(gates.length<2)throw Error("Isolated shutters require multiple independently controlled branches");
+  const claimed=new Set();
+  for(const gate of gates){
+   const states=new Map(gates.map(g=>[g.id,g.id===gate.id?"open":"closed"]));
+   const reached=distances(hydraulicCanalGraph(canal,gates,states,walls),inlet);
+   const fresh=[...reached].filter(p=>!water.has(p));
+   if(!fresh.length||fresh.some(p=>claimed.has(p)))
+    throw Error("Sluices do not isolate independent downstream receiving pockets");
+   for(const p of fresh)claimed.add(p);
+  }
+ }
  return {canal,inlet,outlet,walls,culverts,partitions:new Set([...barriers].filter(e=>{
   const [a,b]=e.split("|");return canal.has(a)&&canal.has(b);
  }))};
