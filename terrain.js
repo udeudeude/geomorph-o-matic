@@ -8,7 +8,7 @@ const PORTALS=["4,0","15,0","4,19","15,19","0,4","0,15","19,4","19,15"];
 function terrainModel(owner,spec={}){
  if(!(owner instanceof Map))throw Error("Terrain requires occupied floor Map");
  if(!spec||Array.isArray(spec)||typeof spec!=="object")throw Error("Invalid terrain definition");
- const water=new Set(),bridges=new Set(),heights=new Map(),ramps=new Set();
+ const water=new Set(),bridges=new Set(),heights=new Map(),ramps=new Set(),barriers=new Set();
  const coordinate=(p,description)=>{
   if(!Array.isArray(p)||p.length!==2||p.some(n=>!Number.isInteger(n))||
      p.some(n=>n<0||n>=20)||!owner.has(POS(p)))throw Error("Invalid "+description+" coordinate");
@@ -28,8 +28,20 @@ function terrainModel(owner,spec={}){
      Math.abs((heights.get(a)||0)-(heights.get(b)||0))!==1)throw Error("Ramp must join adjacent distinct levels");
   const k=EDGE(a,b);if(ramps.has(k))throw Error("Duplicate ramp");ramps.add(k);
  }
+ // Full-height masonry partitions block BOTH walking and hydraulic flow.
+ // They must be genuine occupied edges, not portal seams or duplicate ramps.
+ if(!Array.isArray(spec.barriers||[]))throw Error("Terrain barriers must be an array");
+ for(const e of spec.barriers||[]){
+  if(!Array.isArray(e)||e.length!==2)throw Error("Invalid masonry partition");
+  const a=coordinate(e[0],"barrier"),b=coordinate(e[1],"barrier");
+  if(Math.abs(e[0][0]-e[1][0])+Math.abs(e[0][1]-e[1][1])!==1||
+     PORTALS.includes(a)||PORTALS.includes(b))throw Error("Masonry partition must join interior neighbors");
+  const k=EDGE(a,b);
+  if(barriers.has(k)||ramps.has(k))throw Error("Duplicate masonry partition or overlapping ramp");
+  barriers.add(k);
+ }
  for(const p of PORTALS)if(owner.has(p)&&(water.has(p)||heights.has(p)))throw Error("Terrain cannot change standard edge portal");
- return {water,bridges,heights,ramps};
+ return {water,bridges,heights,ramps,barriers};
 }
 function terrainGraph(owner,doors,spec={},access="ordinary",travel="dry"){
  if(!["dry","wading"].includes(travel))throw Error("Unknown terrain travel mode");
@@ -37,6 +49,7 @@ function terrainGraph(owner,doors,spec={},access="ordinary",travel="dry"){
  for(const [p,adj] of graph){
   if(travel==="dry"&&model.water.has(p)&&!model.bridges.has(p)){graph.set(p,[]);continue}
   graph.set(p,adj.filter(q=>{
+   if(model.barriers.has(EDGE(p,q)))return false;
    if(travel==="dry"&&model.water.has(q)&&!model.bridges.has(q))return false;
    return (model.heights.get(p)||0)===(model.heights.get(q)||0)||model.ramps.has(EDGE(p,q));
   }));
@@ -51,7 +64,7 @@ function terrainAudit(owner,doors,spec={},portals=PORTALS){
   results[travel]={accessible_floor_cells:seen.size,reachable_portals:portals.filter(p=>seen.has(p)).length};
  }
  return {water_cells:model.water.size,bridged_water_cells:model.bridges.size,
-  elevated_cells:model.heights.size,ramp_edges:model.ramps.size,travel:results};
+  elevated_cells:model.heights.size,ramp_edges:model.ramps.size,barrier_edges:model.barriers.size,travel:results};
 }
 // Each layer is independently editable in exported SVG.
 function terrainSvg(owner,spec={},cellSize=24){
@@ -109,6 +122,18 @@ function terrainSvg(owner,spec={},cellSize=24){
    const cx=topRow.reduce((n,p)=>n+p[0]+.5,0)/topRow.length*cellSize;
    const cy=(top+.69)*cellSize;
    out.push('<text x="'+cx.toFixed(1)+'" y="'+cy.toFixed(1)+'">'+(level>0?"+":"")+level+'</text>');
+  }
+  out.push("</g>");
+ }
+ if(model.barriers.size){
+  out.push('<g id="masonry-partitions" fill="none" stroke-linecap="square">');
+  for(const e of [...model.barriers].sort()){
+   const [a,b]=e.split("|").map(xy);
+   const x=(a[0]!==b[0]?Math.max(a[0],b[0]):a[0])*cellSize;
+   const y=(a[1]!==b[1]?Math.max(a[1],b[1]):a[1])*cellSize;
+   const d=a[0]!==b[0]?'M'+x+','+y+'v'+cellSize:'M'+x+','+y+'h'+cellSize;
+   out.push('<path data-blocks-edge="'+e+'" d="'+d+'" stroke="#e4dfd2" stroke-width="6"/>');
+   out.push('<path d="'+d+'" stroke="#3c4241" stroke-width="3.3"/>');
   }
   out.push("</g>");
  }
