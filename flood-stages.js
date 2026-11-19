@@ -5,6 +5,7 @@ const {terrainModel,terrainGraph}=require("./terrain");
 const {distances}=require("./route-analysis");
 const {buildVerticalGraph}=require("./vertical");
 const {gateModel,applyGateStates,hydraulicGraph}=require("./hydraulic-control");
+const {waterwayModel,hydraulicCanalGraph,controlModel,controlAudit}=require("./waterworks");
 const POS=p=>p.join(",");
 const PORTALS=["4,0","15,0","4,19","15,19","0,4","0,15","19,4","19,15"];
 const ORDER=(a,b)=>{const [ax,ay]=a.split(",").map(Number),[bx,by]=b.split(",").map(Number);return ay-by||ax-bx};
@@ -13,6 +14,8 @@ function floodStages(owner,doors=[],terrain={},hydrology={}){
   throw Error("Invalid flood-stage definition");
  const baseline=terrainModel(owner,terrain),water=new Set(baseline.water);
  const gates=gateModel(owner,doors,hydrology.gates||[]);
+ const waterway=waterwayModel(owner,doors,hydrology,terrain);
+ controlModel(owner,doors,hydrology,terrain);
  let gateState=applyGateStates(gates),lastLevel=-Infinity;
  const closed=()=>gates.filter(g=>gateState.get(g.id)==="closed").map(g=>g.id);
  const stages=new Map([["normal",{id:"normal",new_cells:0,closed_gates:closed(),gate_states:Object.fromEntries(gateState),terrain:{...terrain,water:[...water].sort(ORDER).map(p=>p.split(",").map(Number))}}]]);
@@ -25,12 +28,13 @@ function floodStages(owner,doors=[],terrain={},hydrology={}){
       stage.surface_level<0||stage.surface_level<lastLevel)throw Error("Invalid or falling flood waterline");
    lastLevel=stage.surface_level;
   }
-  const passages=hydraulicGraph(owner,doors,gates,nextState);
+  const passages=waterway?hydraulicCanalGraph(waterway.canal,gates,nextState):hydraulicGraph(owner,doors,gates,nextState);
   const additions=new Set();
   for(const p of stage.add_water){
    if(!Array.isArray(p)||p.length!==2||p.some(n=>!Number.isInteger(n))||
     p.some(n=>n<0||n>=20)||!owner.has(POS(p)))throw Error("Flooding outside occupied floor");
    const k=POS(p);
+   if(waterway&&!waterway.canal.has(k))throw Error("Flood stage outside engineered waterway");
    if(water.has(k)||additions.has(k))throw Error("Duplicate or already submerged stage cell");
    if(stage.surface_level!==undefined && (baseline.heights.get(k)||0)>=stage.surface_level)
     throw Error("Flood level does not overtop cell elevation");
@@ -58,6 +62,7 @@ function floodAudit(owner,doors=[],terrain={},vertical={},hydrology={}){
   const reachable=distances(graph,"4,0,0"),baseReachable=distances(lower,"4,0");
   const portals=PORTALS.filter(p=>reachable.has(p+",0"));
   result.push({id:state.id,new_water_cells:state.new_cells,closed_gates:state.closed_gates,
+   control_access:controlAudit(owner,doors,hydrology,state.terrain),
    surface_level:state.surface_level??null,water_cells:state.terrain.water.length,
    accessible_base_cells:baseReachable.size,accessible_stacked_cells:reachable.size,
    reachable_portals:portals.length,
