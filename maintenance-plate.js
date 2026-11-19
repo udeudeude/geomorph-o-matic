@@ -15,12 +15,12 @@ function makeMaintenancePlate(data){
  if(!source||!receiver)throw Error("Maintenance plate needs source and receiver");
  const owner=buildCells(source),drives=transmissionModel(source,owner);
  const sourceAccess=inspectionModel(source),sinkAccess=inspectionModel(receiver);
- if(drives.length!==3||sourceAccess.length!==2||sinkAccess.length!==2)
+ if(drives.length!==3||sourceAccess.length!==3||sinkAccess.length!==2)
   throw Error("Mechanism plate needs the three authored drives and four inspection bends");
  const footprints=new Set(source.rooms.flatMap(([,,shape])=>shapeCells(shape).map(K)));
  const canals=new Set(source.hydrology.channels.map(K));
  const out=[
-  '<svg xmlns="http://www.w3.org/2000/svg" width="11in" height="8.5in" viewBox="0 0 1210 935" role="img" aria-label="Riftwater Lock mechanism and buried inspection access architectural study">',
+  '<svg xmlns="http://www.w3.org/2000/svg" width="11in" height="8.5in" viewBox="0 0 1210 935" role="img" aria-label="Riftwater Lock mechanism and five buried inspection access architectural study">',
   '<title>Riftwater Lock | Sluice transmission and lower maintenance plate</title>',
   '<rect width="1210" height="935" fill="#f5f1e8"/>',
   '<text x="70" y="48" font-family="Georgia,serif" font-size="26" fill="#203f42">RIFTWATER LOCK / SERVICE ENGINEERING</text>',
@@ -117,7 +117,7 @@ function makeMaintenancePlate(data){
  out.push('<text x="553" y="684" font-size="16" font-weight="700" fill="#284a4f">03  BURIED BENDS / SEALED CLEANOUTS</text>');
  const access=[...sourceAccess.map(a=>["RIFTWATER",a]),...sinkAccess.map(a=>["POSTERN",a])];
  access.forEach(([name,a],i)=>{
-  const y=718+i*37;
+  const y=707+i*34;
   out.push('<circle cx="567" cy="'+(y-4)+'" r="5" fill="#a46a45"/>');
   out.push('<text x="585" y="'+y+'" font-size="12" fill="#293c39">'+name+' bend '+K(a.at)+' → dry cover '+K(a.surface)+
    ' · '+a.branch_length_ft.toFixed(1)+' ft lateral branch</text>');
