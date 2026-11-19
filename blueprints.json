@@ -876,7 +876,76 @@
             18
           ]
         ]
-      ]
+      ],
+      "hydrology": {
+        "subfloor_relay": {
+          "level": -1,
+          "role": "receiving_relay",
+          "discharge_status": "unmapped_internal_outfall",
+          "entry_edge": {
+            "kind": "underfloor_tailrace",
+            "side": "N",
+            "offset": 11
+          },
+          "cells": [
+            [
+              11,
+              0
+            ],
+            [
+              11,
+              1
+            ],
+            [
+              11,
+              2
+            ],
+            [
+              11,
+              3
+            ],
+            [
+              11,
+              4
+            ],
+            [
+              11,
+              5
+            ],
+            [
+              11,
+              6
+            ],
+            [
+              11,
+              7
+            ],
+            [
+              11,
+              8
+            ]
+          ],
+          "terminus": [
+            11,
+            8
+          ],
+          "grade": {
+            "inverts_ft": [
+              -11.05,
+              -11.1,
+              -11.15,
+              -11.2,
+              -11.25,
+              -11.3,
+              -11.35,
+              -11.4,
+              -11.45
+            ],
+            "crown_ft": -8,
+            "max_tailwater_ft": -8.75
+          }
+        }
+      }
     },
     {
       "id": "bone_galleries",
@@ -3551,6 +3620,10 @@
             [
               11,
               18
+            ],
+            [
+              11,
+              19
             ]
           ],
           "pickups": [
@@ -3569,8 +3642,32 @@
           ],
           "terminus": [
             11,
-            18
-          ]
+            19
+          ],
+          "boundary_edge": {
+            "kind": "underfloor_tailrace",
+            "side": "S",
+            "offset": 11
+          },
+          "grade": {
+            "inverts_ft": [
+              -10.5,
+              -10.55,
+              -10.6,
+              -10.65,
+              -10.7,
+              -10.75,
+              -10.8,
+              -10.85,
+              -10.9,
+              -10.95,
+              -11
+            ],
+            "crown_ft": -8,
+            "max_tailwater_ft": -8.75,
+            "drop_lip_ft": -1,
+            "minimum_air_gap_ft": 4
+          }
         }
       },
       "vertical": {
