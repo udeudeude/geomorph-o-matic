@@ -43,6 +43,12 @@
 <g id="elevation-labels" fill="#705b47" font-family="sans-serif" font-size="10" font-weight="600" text-anchor="middle">
 <text x="240.0" y="64.6">+1</text>
 </g>
+<g id="masonry-partitions" fill="none" stroke-linecap="square">
+<path data-blocks-edge="10,11|11,11" d="M264,264v24" stroke="#e4dfd2" stroke-width="6"/>
+<path d="M264,264v24" stroke="#3c4241" stroke-width="3.3"/>
+<path data-blocks-edge="10,11|9,11" d="M240,264v24" stroke="#e4dfd2" stroke-width="6"/>
+<path d="M240,264v24" stroke="#3c4241" stroke-width="3.3"/>
+</g>
 <g id="level-ramps" fill="none" stroke="#87664e" stroke-width="2.2" stroke-linecap="round">
 <path d="M252,108L252,132"/>
 </g>
@@ -689,11 +695,11 @@
 <path d="M312,240l17,17" stroke="#8a745f" stroke-width="1.6"/>
 </g>
 <g id="sluice-gates" fill="none" stroke-linejoin="round" stroke-linecap="square">
-<g data-gate-id="west_shutter" data-state="closed" transform="translate(216 264)">
-<title>west shutter (closed)</title>
+<g data-gate-id="west_shutter" data-state="open" transform="translate(216 264)">
+<title>west shutter (open)</title>
 <path d="M0 -6V6 M24 -6V6" stroke="#454541" stroke-width="2.6"/>
-<rect x="2" y="-3.5" width="20" height="7" fill="#585852" stroke="#272f30" stroke-width="1.5"/>
-<path d="M5 -1.2H19 M5 1.2H19" stroke="#c4bcab" stroke-width=".85"/>
+<rect x="2" y="-13" width="20" height="4.5" fill="#d5c4a5" stroke="#403f39" stroke-width="1.5"/>
+<path d="M12 -8V-3" stroke="#4d5653" stroke-width="1.35" stroke-dasharray="2 2"/>
 </g>
 <g data-gate-id="center_shutter" data-state="open" transform="translate(240 264)">
 <title>center shutter (open)</title>
@@ -701,11 +707,11 @@
 <rect x="2" y="-13" width="20" height="4.5" fill="#d5c4a5" stroke="#403f39" stroke-width="1.5"/>
 <path d="M12 -8V-3" stroke="#4d5653" stroke-width="1.35" stroke-dasharray="2 2"/>
 </g>
-<g data-gate-id="east_shutter" data-state="closed" transform="translate(264 264)">
-<title>east shutter (closed)</title>
+<g data-gate-id="east_shutter" data-state="open" transform="translate(264 264)">
+<title>east shutter (open)</title>
 <path d="M0 -6V6 M24 -6V6" stroke="#454541" stroke-width="2.6"/>
-<rect x="2" y="-3.5" width="20" height="7" fill="#585852" stroke="#272f30" stroke-width="1.5"/>
-<path d="M5 -1.2H19 M5 1.2H19" stroke="#c4bcab" stroke-width=".85"/>
+<rect x="2" y="-13" width="20" height="4.5" fill="#d5c4a5" stroke="#403f39" stroke-width="1.5"/>
+<path d="M12 -8V-3" stroke="#4d5653" stroke-width="1.35" stroke-dasharray="2 2"/>
 </g>
 </g>
 <g id="overhead-decks" fill="#d6b88e" fill-opacity=".52" stroke="none">
