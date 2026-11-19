@@ -15,6 +15,7 @@ class MaintenanceEngineeringTests(unittest.TestCase):
         a=validate(SOURCE)
         b=validate(RECEIVER)
         self.assertEqual(a['maintenance_drives'],3)
+        self.assertEqual(a['gearboxes'],5)
         self.assertEqual(a['inspection_covers'],3)
         self.assertEqual(b['inspection_covers'],2)
         self.assertEqual(a['service_spurs_ft'],15.0)
@@ -29,6 +30,24 @@ class MaintenanceEngineeringTests(unittest.TestCase):
     def test_reject_shared_mechanism_route(self):
         bad=copy.deepcopy(SOURCE)
         bad['hydrology']['transmissions'][0]['path'][1]=[11,14]
+        with self.assertRaises(AssertionError):
+            validate(bad)
+
+    def test_reject_ungeared_corner(self):
+        bad=copy.deepcopy(SOURCE)
+        bad['hydrology']['transmissions'][1]['gearboxes'].pop()
+        with self.assertRaises(AssertionError):
+            validate(bad)
+
+    def test_reject_unserviceable_gearbox(self):
+        bad=copy.deepcopy(SOURCE)
+        bad['hydrology']['transmissions'][2]['gearboxes'][0]['service_from']=[12,11]
+        with self.assertRaises(AssertionError):
+            validate(bad)
+
+    def test_reject_unsafe_wheel_overlap(self):
+        bad=copy.deepcopy(SOURCE)
+        bad['hydrology']['transmissions'][0]['gearboxes'][0]['shutdown_required']=False
         with self.assertRaises(AssertionError):
             validate(bad)
 

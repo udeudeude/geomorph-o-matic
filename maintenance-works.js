@@ -55,6 +55,32 @@ function transmissionModel(tile,owner=buildCells(tile),doors=doorEdges(tile)){
      new Set(supports.map(K)).size!==supports.length||
      supports.some(p=>!valid(p)||!item.path.slice(1,-1).some(q=>eq(p,q))))
    throw Error("Transmission requires distinct intermediate wall/ceiling bearings");
+  // A rigid shaft cannot turn a right angle: every bend needs a gear train.
+  const turns=bendKeys(item.path),gearboxes=item.gearboxes;
+  if(!Array.isArray(gearboxes)||gearboxes.length!==turns.length)
+   throw Error("Every drive turn needs a right-angle gearbox");
+  const boxesSeen=new Set(),controlsAt=new Map(controls.map(c=>[K(c.at),c.id]));
+  const wet=new Set((tile.terrain?.water||[]).map(K));
+  for(const box of gearboxes){
+   if(!box||box.kind!=="recessed_bevel_gearbox"||
+      !valid(box.at)||!valid(box.service_from)||
+      !Number.isFinite(box.housing_width_ft)||
+      box.housing_width_ft<0.75||box.housing_width_ft>2||
+      box.access!=="sealed_overhead_service_panel"||
+      typeof box.shutdown_required!=="boolean")
+    throw Error("Invalid gearbox housing or service assumption");
+   const at=K(box.at),entry=K(box.service_from);
+   if(!turns.includes(at)||boxesSeen.has(at)||
+      !step(box.at,box.service_from)||
+      (owner.has(at)&&owner.get(at)!=="hall")||
+      owner.get(entry)!=="hall"||wet.has(entry))
+    throw Error("Gearbox turn lacks a dry, adjacent hallway service face");
+   const occupied=controlsAt.get(entry);
+   if(occupied && (occupied!==item.control||!box.shutdown_required))
+    throw Error("Gearbox panel conflicts with another control or lacks shutdown lockout");
+   if(!occupied&&box.shutdown_required)throw Error("Gearbox shutdown flag has no modeled wheel interference");
+   boxesSeen.add(at);
+  }
   for(const p of item.path){
    const k=K(p);
    if(reserved.has(k))throw Error("Mechanism centerlines collide at "+k+" between "+reserved.get(k)+" and "+item.id);
@@ -63,7 +89,7 @@ function transmissionModel(tile,owner=buildCells(tile),doors=doorEdges(tile)){
   seen.add(item.id);
   result.push({id:item.id,control:item.control,gate:item.gate,path:item.path,
    axis_ft:item.shaft_axis_ft,diameter_in:item.shaft_diameter_in,
-   bores:authored,bearings:supports,gate_rack:gate.b,
+   bores:authored,bearings:supports,gearboxes:gearboxes.map(g=>({...g})),gate_rack:gate.b,
    clearance_status:"assumed ceiling-level centerlines; headroom, bearings, masonry penetrations and force not certified"});
  }
  if(new Set(result.map(m=>m.gate)).size!==gates.length)throw Error("Duplicate shutter transmission");

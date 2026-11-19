@@ -3890,6 +3890,22 @@
                 9,
                 12
               ]
+            ],
+            "gearboxes": [
+              {
+                "kind": "recessed_bevel_gearbox",
+                "at": [
+                  9,
+                  14
+                ],
+                "housing_width_ft": 1.5,
+                "service_from": [
+                  10,
+                  14
+                ],
+                "access": "sealed_overhead_service_panel",
+                "shutdown_required": true
+              }
             ]
           },
           {
@@ -3936,6 +3952,36 @@
                 10,
                 12
               ]
+            ],
+            "gearboxes": [
+              {
+                "kind": "recessed_bevel_gearbox",
+                "at": [
+                  11,
+                  13
+                ],
+                "housing_width_ft": 1.5,
+                "service_from": [
+                  11,
+                  14
+                ],
+                "access": "sealed_overhead_service_panel",
+                "shutdown_required": true
+              },
+              {
+                "kind": "recessed_bevel_gearbox",
+                "at": [
+                  10,
+                  13
+                ],
+                "housing_width_ft": 1.5,
+                "service_from": [
+                  10,
+                  12
+                ],
+                "access": "sealed_overhead_service_panel",
+                "shutdown_required": false
+              }
             ]
           },
           {
@@ -3990,6 +4036,36 @@
                 11,
                 12
               ]
+            ],
+            "gearboxes": [
+              {
+                "kind": "recessed_bevel_gearbox",
+                "at": [
+                  12,
+                  12
+                ],
+                "housing_width_ft": 1.5,
+                "service_from": [
+                  13,
+                  12
+                ],
+                "access": "sealed_overhead_service_panel",
+                "shutdown_required": false
+              },
+              {
+                "kind": "recessed_bevel_gearbox",
+                "at": [
+                  11,
+                  12
+                ],
+                "housing_width_ft": 1.5,
+                "service_from": [
+                  10,
+                  12
+                ],
+                "access": "sealed_overhead_service_panel",
+                "shutdown_required": false
+              }
             ]
           }
         ]
