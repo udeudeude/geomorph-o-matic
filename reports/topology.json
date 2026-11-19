@@ -245,6 +245,7 @@
     "bridged_water_cells": 0,
     "elevated_cells": 0,
     "ramp_edges": 0,
+    "barrier_edges": 0,
     "travel": {
       "dry": {
         "accessible_floor_cells": 116,
@@ -712,6 +713,7 @@
     "bridged_water_cells": 0,
     "elevated_cells": 0,
     "ramp_edges": 0,
+    "barrier_edges": 0,
     "travel": {
       "dry": {
         "accessible_floor_cells": 245,
@@ -1128,6 +1130,7 @@
     "bridged_water_cells": 0,
     "elevated_cells": 0,
     "ramp_edges": 0,
+    "barrier_edges": 0,
     "travel": {
       "dry": {
         "accessible_floor_cells": 226,
@@ -1660,6 +1663,7 @@
     "bridged_water_cells": 0,
     "elevated_cells": 0,
     "ramp_edges": 0,
+    "barrier_edges": 0,
     "travel": {
       "dry": {
         "accessible_floor_cells": 173,
@@ -2128,6 +2132,7 @@
     "bridged_water_cells": 0,
     "elevated_cells": 0,
     "ramp_edges": 0,
+    "barrier_edges": 0,
     "travel": {
       "dry": {
         "accessible_floor_cells": 163,
@@ -2695,6 +2700,7 @@
     "bridged_water_cells": 2,
     "elevated_cells": 12,
     "ramp_edges": 1,
+    "barrier_edges": 0,
     "travel": {
       "dry": {
         "accessible_floor_cells": 153,
