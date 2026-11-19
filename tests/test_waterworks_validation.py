@@ -103,6 +103,34 @@ class WaterworksValidationTests(unittest.TestCase):
         self.assertEqual(result["engineered_channel_cells"], 9)
         self.assertEqual(result["sluice_controls"], 3)
 
+    def test_lower_tailrace_requires_single_directed_route_and_one_drop_per_gate(self):
+        tiles = json.loads((ROOT / "blueprints.json").read_text())["tiles"]
+        rift = next(t for t in tiles if t["id"] == "riftwater_lock")
+        report = validate(rift)
+        self.assertEqual(report["lower_tailrace_cells"], 10)
+        self.assertEqual(report["lower_tailrace_pickups"], 3)
+        for kind in ("missing_drop", "headwater_bypass", "loop", "jump",
+                     "false_level", "wrong_outfall", "boundary"):
+            bad = copy.deepcopy(rift)
+            spec = bad["hydrology"]["tailrace"]
+            if kind == "missing_drop":
+                spec["pickups"].pop()
+            elif kind == "headwater_bypass":
+                spec["pickups"][0] = [10, 10]
+            elif kind == "loop":
+                spec["cells"].append([11, 17])
+            elif kind == "jump":
+                spec["cells"].pop(5)
+            elif kind == "false_level":
+                spec["level"] = 0
+            elif kind == "wrong_outfall":
+                spec["terminus"] = [10, 18]
+            elif kind == "boundary":
+                spec["cells"][5] = [0, 13]
+            with self.subTest(kind=kind), self.assertRaises(AssertionError):
+                validate(bad)
+
+
 
 if __name__ == "__main__":
     unittest.main()
