@@ -3914,5 +3914,512 @@
         ]
       }
     }
+  },
+  {
+    "id": "scoured_siphon",
+    "floor_cells": 214,
+    "corridor_cells": 114,
+    "doors": 12,
+    "standard_doors": 0,
+    "open_passages": 11,
+    "locked_doors": 0,
+    "secret_doors": 1,
+    "hall_cycle_rank": 8,
+    "hall_chokepoint_count": 52,
+    "normal_portals_reachable": 8,
+    "fully_connected": true,
+    "normally_accessible_floor_fraction": 1,
+    "chambers": [
+      {
+        "room": "confluence",
+        "doors": [
+          "opening",
+          "opening",
+          "opening",
+          "opening"
+        ],
+        "normally_accessible": true
+      },
+      {
+        "room": "old_tube",
+        "doors": [
+          "opening"
+        ],
+        "normally_accessible": true
+      },
+      {
+        "room": "shelf",
+        "doors": [
+          "opening",
+          "opening"
+        ],
+        "normally_accessible": true
+      },
+      {
+        "room": "slot",
+        "doors": [
+          "opening"
+        ],
+        "normally_accessible": true
+      },
+      {
+        "room": "silt",
+        "doors": [
+          "opening",
+          "opening"
+        ],
+        "normally_accessible": true
+      },
+      {
+        "room": "eclipse",
+        "doors": [
+          "opening",
+          "secret"
+        ],
+        "normally_accessible": true
+      }
+    ],
+    "notes": [],
+    "substantial_hall_circuits": 2,
+    "minor_hall_islands": 1,
+    "hall_encircled_obstacles": [
+      {
+        "area": 31,
+        "bounding_box": [
+          8,
+          7,
+          13,
+          12
+        ],
+        "adjacent_hall_cells": 21,
+        "chamber_ids": [
+          "confluence"
+        ],
+        "substantial": true
+      },
+      {
+        "area": 15,
+        "bounding_box": [
+          2,
+          9,
+          6,
+          11
+        ],
+        "adjacent_hall_cells": 16,
+        "chamber_ids": [
+          "slot"
+        ],
+        "substantial": true
+      },
+      {
+        "area": 3,
+        "bounding_box": [
+          15,
+          11,
+          17,
+          11
+        ],
+        "adjacent_hall_cells": 8,
+        "chamber_ids": [],
+        "substantial": false
+      }
+    ],
+    "access_profiles": {
+      "ordinary": {
+        "accessible_floor_cells": 207,
+        "accessible_chambers": [
+          "confluence",
+          "eclipse",
+          "old_tube",
+          "shelf",
+          "silt",
+          "slot"
+        ],
+        "reachable_portals": 8,
+        "connected_portal_pairs": 28,
+        "inaccessible_portal_pairs": 0,
+        "mean_portal_distance": 26.86,
+        "longest_shortest_portal_distance": 38
+      },
+      "unlocked": {
+        "accessible_floor_cells": 207,
+        "accessible_chambers": [
+          "confluence",
+          "eclipse",
+          "old_tube",
+          "shelf",
+          "silt",
+          "slot"
+        ],
+        "reachable_portals": 8,
+        "connected_portal_pairs": 28,
+        "inaccessible_portal_pairs": 0,
+        "mean_portal_distance": 26.86,
+        "longest_shortest_portal_distance": 38
+      },
+      "all": {
+        "accessible_floor_cells": 207,
+        "accessible_chambers": [
+          "confluence",
+          "eclipse",
+          "old_tube",
+          "shelf",
+          "silt",
+          "slot"
+        ],
+        "reachable_portals": 8,
+        "connected_portal_pairs": 28,
+        "inaccessible_portal_pairs": 0,
+        "mean_portal_distance": 26.86,
+        "longest_shortest_portal_distance": 38
+      }
+    },
+    "chamber_route_roles": [
+      {
+        "room": "confluence",
+        "door_count": 4,
+        "door_kinds": [
+          "opening",
+          "opening",
+          "opening",
+          "opening"
+        ],
+        "role": "ordinary_through_route",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 1,
+            "maximum_detour": 2
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 1,
+            "maximum_detour": 2
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 1,
+            "maximum_detour": 2
+          }
+        }
+      },
+      {
+        "room": "eclipse",
+        "door_count": 2,
+        "door_kinds": [
+          "opening",
+          "secret"
+        ],
+        "role": "no_portal_shortcut",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      },
+      {
+        "room": "old_tube",
+        "door_count": 1,
+        "door_kinds": [
+          "opening"
+        ],
+        "role": "destination",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      },
+      {
+        "room": "shelf",
+        "door_count": 2,
+        "door_kinds": [
+          "opening",
+          "opening"
+        ],
+        "role": "no_portal_shortcut",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      },
+      {
+        "room": "silt",
+        "door_count": 2,
+        "door_kinds": [
+          "opening",
+          "opening"
+        ],
+        "role": "ordinary_through_route",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 1,
+            "maximum_detour": 12
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 1,
+            "maximum_detour": 12
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 1,
+            "maximum_detour": 12
+          }
+        }
+      },
+      {
+        "room": "slot",
+        "door_count": 1,
+        "door_kinds": [
+          "opening"
+        ],
+        "role": "destination",
+        "impact": {
+          "ordinary": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "unlocked": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          },
+          "all": {
+            "essential_pairs": 0,
+            "shortcut_pairs": 0,
+            "maximum_detour": 0
+          }
+        }
+      }
+    ],
+    "ordinary_through_rooms": [
+      "confluence",
+      "silt"
+    ],
+    "gated_through_rooms": [],
+    "water_cells": 8,
+    "bridged_water_cells": 1,
+    "elevated_cells": 18,
+    "ramp_edges": 2,
+    "barrier_edges": 0,
+    "ruined_wall_edges": 0,
+    "cave_choke_edges": 1,
+    "travel": {
+      "dry": {
+        "accessible_floor_cells": 207,
+        "reachable_portals": 8
+      },
+      "wading": {
+        "accessible_floor_cells": 214,
+        "reachable_portals": 8
+      }
+    },
+    "route_resilience": {
+      "ordinary": {
+        "reachable_pairs": 28,
+        "meaningful_reroute_pairs": 24,
+        "reroute_fraction": 0.857,
+        "examples": [
+          {
+            "from": "4,0",
+            "to": "15,0",
+            "distance": 31,
+            "resilient": true,
+            "alternate": {
+              "distance": 43,
+              "extra_steps": 12,
+              "separated_cells": 12,
+              "obstruction": "13,6"
+            }
+          },
+          {
+            "from": "4,0",
+            "to": "4,19",
+            "distance": 29,
+            "resilient": true,
+            "alternate": {
+              "distance": 31,
+              "extra_steps": 2,
+              "separated_cells": 4,
+              "obstruction": "7,7"
+            }
+          },
+          {
+            "from": "4,0",
+            "to": "0,15",
+            "distance": 27,
+            "resilient": true,
+            "alternate": {
+              "distance": 33,
+              "extra_steps": 6,
+              "separated_cells": 8,
+              "obstruction": "7,7"
+            }
+          },
+          {
+            "from": "4,0",
+            "to": "19,4",
+            "distance": 25,
+            "resilient": true,
+            "alternate": {
+              "distance": 37,
+              "extra_steps": 12,
+              "separated_cells": 12,
+              "obstruction": "13,6"
+            }
+          }
+        ]
+      },
+      "unlocked": {
+        "reachable_pairs": 28,
+        "meaningful_reroute_pairs": 24,
+        "reroute_fraction": 0.857,
+        "examples": [
+          {
+            "from": "4,0",
+            "to": "15,0",
+            "distance": 31,
+            "resilient": true,
+            "alternate": {
+              "distance": 43,
+              "extra_steps": 12,
+              "separated_cells": 12,
+              "obstruction": "13,6"
+            }
+          },
+          {
+            "from": "4,0",
+            "to": "4,19",
+            "distance": 29,
+            "resilient": true,
+            "alternate": {
+              "distance": 31,
+              "extra_steps": 2,
+              "separated_cells": 4,
+              "obstruction": "7,7"
+            }
+          },
+          {
+            "from": "4,0",
+            "to": "0,15",
+            "distance": 27,
+            "resilient": true,
+            "alternate": {
+              "distance": 33,
+              "extra_steps": 6,
+              "separated_cells": 8,
+              "obstruction": "7,7"
+            }
+          },
+          {
+            "from": "4,0",
+            "to": "19,4",
+            "distance": 25,
+            "resilient": true,
+            "alternate": {
+              "distance": 37,
+              "extra_steps": 12,
+              "separated_cells": 12,
+              "obstruction": "13,6"
+            }
+          }
+        ]
+      },
+      "all": {
+        "reachable_pairs": 28,
+        "meaningful_reroute_pairs": 24,
+        "reroute_fraction": 0.857,
+        "examples": [
+          {
+            "from": "4,0",
+            "to": "15,0",
+            "distance": 31,
+            "resilient": true,
+            "alternate": {
+              "distance": 43,
+              "extra_steps": 12,
+              "separated_cells": 12,
+              "obstruction": "13,6"
+            }
+          },
+          {
+            "from": "4,0",
+            "to": "4,19",
+            "distance": 29,
+            "resilient": true,
+            "alternate": {
+              "distance": 31,
+              "extra_steps": 2,
+              "separated_cells": 4,
+              "obstruction": "7,7"
+            }
+          },
+          {
+            "from": "4,0",
+            "to": "0,15",
+            "distance": 27,
+            "resilient": true,
+            "alternate": {
+              "distance": 33,
+              "extra_steps": 6,
+              "separated_cells": 8,
+              "obstruction": "7,7"
+            }
+          },
+          {
+            "from": "4,0",
+            "to": "19,4",
+            "distance": 25,
+            "resilient": true,
+            "alternate": {
+              "distance": 37,
+              "extra_steps": 12,
+              "separated_cells": 12,
+              "obstruction": "13,6"
+            }
+          }
+        ]
+      }
+    }
   }
 ]
