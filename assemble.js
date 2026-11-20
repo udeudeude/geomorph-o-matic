@@ -49,10 +49,12 @@ function verifyLayout(layout,data){
   const a=rows[y][x];
   if(x+1<width){
    const b=rows[y][x+1];
+   if((a.tile.seam_profile||"legacy")!==(b.tile.seam_profile||"legacy"))throw Error(`Incompatible east-west seam families ${x},${y}`);
    if(edgeMask(a.tile,a.turn,"E")!==edgeMask(b.tile,b.turn,"W"))throw Error(`East-west seam mismatch ${x},${y}`);
   }
   if(y+1<rows.length){
    const b=rows[y+1][x];
+   if((a.tile.seam_profile||"legacy")!==(b.tile.seam_profile||"legacy"))throw Error(`Incompatible north-south seam families ${x},${y}`);
    if(edgeMask(a.tile,a.turn,"S")!==edgeMask(b.tile,b.turn,"N"))throw Error(`North-south seam mismatch ${x},${y}`);
   }
  }

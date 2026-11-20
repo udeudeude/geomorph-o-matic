@@ -66,17 +66,19 @@ function specimenWideFloor(){
  }
  return m;
 }
-function report(data){
+function report(data,wideData={tiles:[]}){
  return {units:"feet",cell_width_feet:WIDTH_FEET_PER_CELL,
   caution:"The wide specimen is a synthetic interface proof, NOT a designed dungeon or compatible with legacy tiles.",
   legacy_tiles:data.tiles.map(t=>inspectTile(t,"legacy")),
-  wide_interface_specimen:inspectFloor(specimenWideFloor(),"cave-wide-v1")};
+  wide_interface_specimen:inspectFloor(specimenWideFloor(),"cave-wide-v1"),
+  designed_wide_tiles:wideData.tiles.map(t=>inspectTile(t,"cave-wide-v1"))};
 }
 if(require.main===module){
  const data=JSON.parse(fs.readFileSync(path.join(__dirname,"blueprints.json"),"utf8"));
  const output=path.resolve(process.argv[2]||path.join(__dirname,"reports/seam-families.json"));
  fs.mkdirSync(path.dirname(output),{recursive:true});
- fs.writeFileSync(output,JSON.stringify(report(data),null,2)+"\n");
+ const wideData=JSON.parse(fs.readFileSync(path.join(__dirname,"wide-blueprints.json"),"utf8"));
+ fs.writeFileSync(output,JSON.stringify(report(data,wideData),null,2)+"\n");
  console.log("Wrote "+output);
 }
 module.exports={WIDTH_FEET_PER_CELL,PROFILES,boundaryCell,rotateFloor,inspectFloor,inspectTile,specimenWideFloor,report};

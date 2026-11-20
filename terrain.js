@@ -10,6 +10,7 @@ function terrainModel(owner,spec={}){
  if(!(owner instanceof Map))throw Error("Terrain requires occupied floor Map");
  if(!spec||Array.isArray(spec)||typeof spec!=="object")throw Error("Invalid terrain definition");
  const water=new Set(),bridges=new Set(),heights=new Map(),ramps=new Set(),barriers=new Set(),chokes=new Set();
+ const boundaryFloor=new Set([...owner.keys()].filter(p=>{const [x,y]=p.split(",").map(Number);return x===0||x===19||y===0||y===19;}));
  const coordinate=(p,description)=>{
   if(!Array.isArray(p)||p.length!==2||p.some(n=>!Number.isInteger(n))||
      p.some(n=>n<0||n>=20)||!owner.has(POS(p)))throw Error("Invalid "+description+" coordinate");
@@ -36,7 +37,7 @@ function terrainModel(owner,spec={}){
   if(!Array.isArray(e)||e.length!==2)throw Error("Invalid masonry partition");
   const a=coordinate(e[0],"barrier"),b=coordinate(e[1],"barrier");
   if(Math.abs(e[0][0]-e[1][0])+Math.abs(e[0][1]-e[1][1])!==1||
-     PORTALS.includes(a)||PORTALS.includes(b))throw Error("Masonry partition must join interior neighbors");
+     boundaryFloor.has(a)||boundaryFloor.has(b))throw Error("Masonry partition must join interior neighbors");
   const k=EDGE(a,b);
   if(barriers.has(k)||ramps.has(k))throw Error("Duplicate masonry partition or overlapping ramp");
   barriers.add(k);
@@ -55,13 +56,13 @@ function terrainModel(owner,spec={}){
   if(!Array.isArray(e)||e.length!==2)throw Error("Invalid cave choke");
   const a=coordinate(e[0],"choke"),b=coordinate(e[1],"choke"),k=EDGE(a,b);
   if(Math.abs(e[0][0]-e[1][0])+Math.abs(e[0][1]-e[1][1])!==1||
-     PORTALS.includes(a)||PORTALS.includes(b)||chokes.has(k)||
+     boundaryFloor.has(a)||boundaryFloor.has(b)||chokes.has(k)||
      barriers.has(k)||ramps.has(k)||water.has(a)||water.has(b)||
      (heights.get(a)||0)!==(heights.get(b)||0))
    throw Error("Cave choke must block a unique dry interior edge");
   chokes.add(k);
  }
- for(const p of PORTALS)if(owner.has(p)&&(water.has(p)||heights.has(p)))throw Error("Terrain cannot change standard edge portal");
+ for(const p of boundaryFloor)if(water.has(p)||heights.has(p))throw Error("Terrain cannot change standard edge portal");
  return {water,bridges,heights,ramps,barriers,ruins,chokes};
 }
 function terrainGraph(owner,doors,spec={},access="ordinary",travel="dry"){
