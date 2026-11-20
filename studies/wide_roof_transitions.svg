@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="26in" height="12.875in" viewBox="0 0 2080 1030" role="img" aria-label="Hypothetical ceiling clearance along real cave walking routes">
+<title>Unfolded entrance-to-constriction roof profiles, three wide-mouth volcanic cave studies</title>
+<rect width="2080" height="1030" fill="#f0ede4"/>
+<text x="40" y="50" font-family="Georgia,serif" font-size="30" fill="#293c35">WIDE CAVE / ENTRANCE TO ROOF PINCH</text>
+<text x="42" y="74" font-family="sans-serif" font-size="13" fill="#52685d">UNFOLDED WALKING ROUTE · 2.5 FT PER STATION · BOTH AXES 24 PX/FT · LOCAL CLEARANCE ONLY</text>
+<g id="route-profile-braided_lava" font-family="sans-serif">
+<rect x="32" y="105" width="2016" height="290" fill="#faf9f4" stroke="#a4b4a7"/>
+<text x="55" y="134" font-family="Georgia,serif" font-size="19" fill="#293c35">BRAIDED LAVA</text>
+<text x="55" y="152" font-size="11" fill="#657b6f">From north five-foot entrance to real low-ceiling cell · 27.5 ft actual route distance</text>
+<path d="M117,331v7" stroke="#50665b"/>
+<text x="117" y="354" font-size="10" text-anchor="middle" fill="#596d60">4,0</text>
+<path d="M297,331v7" stroke="#50665b"/>
+<text x="297" y="354" font-size="10" text-anchor="middle" fill="#596d60">4,3</text>
+<path d="M477,331v7" stroke="#50665b"/>
+<text x="477" y="354" font-size="10" text-anchor="middle" fill="#596d60">5,5</text>
+<path d="M657,331v7" stroke="#50665b"/>
+<text x="657" y="354" font-size="10" text-anchor="middle" fill="#596d60">7,6</text>
+<path d="M777,331v7" stroke="#50665b"/>
+<text x="777" y="354" font-size="10" text-anchor="middle" fill="#596d60">9,6</text>
+<circle cx="777" cy="245" r="6" fill="#9d543c"/>
+<path d="M117,329H777" fill="none" stroke="#35463a" stroke-width="2.4"/>
+<polyline data-route-ceiling="braided_lava" points="117,173 177,173 237,161 297,149 357,137 417,137 477,137 537,137 597,137 657,137 717,137 777,245" fill="none" stroke="#a47a49" stroke-width="2.5"/>
+<path d="M117,185H777" stroke="#a0aba2" stroke-dasharray="5 5" fill="none"/>
+<text x="117" y="379" font-size="11" fill="#5b685d">Red: authored low roof. Dashed: 6-foot standing threshold, not a legal clearance rule.</text>
+</g>
+<g id="route-profile-sagging_sheet" font-family="sans-serif">
+<rect x="32" y="408" width="2016" height="290" fill="#faf9f4" stroke="#a4b4a7"/>
+<text x="55" y="437" font-family="Georgia,serif" font-size="19" fill="#293c35">SAGGING SHEET</text>
+<text x="55" y="455" font-size="11" fill="#657b6f">From north five-foot entrance to real low-ceiling cell · 42.5 ft actual route distance</text>
+<path d="M117,634v7" stroke="#50665b"/>
+<text x="117" y="657" font-size="10" text-anchor="middle" fill="#596d60">4,0</text>
+<path d="M297,634v7" stroke="#50665b"/>
+<text x="297" y="657" font-size="10" text-anchor="middle" fill="#596d60">4,3</text>
+<path d="M477,634v7" stroke="#50665b"/>
+<text x="477" y="657" font-size="10" text-anchor="middle" fill="#596d60">3,5</text>
+<path d="M657,634v7" stroke="#50665b"/>
+<text x="657" y="657" font-size="10" text-anchor="middle" fill="#596d60">3,8</text>
+<path d="M837,634v7" stroke="#50665b"/>
+<text x="837" y="657" font-size="10" text-anchor="middle" fill="#596d60">5,9</text>
+<path d="M1017,634v7" stroke="#50665b"/>
+<text x="1017" y="657" font-size="10" text-anchor="middle" fill="#596d60">7,8</text>
+<path d="M1137,634v7" stroke="#50665b"/>
+<text x="1137" y="657" font-size="10" text-anchor="middle" fill="#596d60">7,6</text>
+<circle cx="1137" cy="512" r="6" fill="#9d543c"/>
+<path d="M117,632H1137" fill="none" stroke="#35463a" stroke-width="2.4"/>
+<polyline data-route-ceiling="sagging_sheet" points="117,476 177,476 237,476 297,476 357,476 417,476 477,476 537,476 597,476 657,476 717,476 777,476 837,476 897,476 957,476 1017,476 1077,476 1137,512" fill="none" stroke="#a47a49" stroke-width="2.5"/>
+<path d="M117,488H1137" stroke="#a0aba2" stroke-dasharray="5 5" fill="none"/>
+<text x="117" y="682" font-size="11" fill="#5b685d">Red: authored low roof. Dashed: 6-foot standing threshold, not a legal clearance rule.</text>
+</g>
+<g id="route-profile-split_spine" font-family="sans-serif">
+<rect x="32" y="711" width="2016" height="290" fill="#faf9f4" stroke="#a4b4a7"/>
+<text x="55" y="740" font-family="Georgia,serif" font-size="19" fill="#293c35">SPLIT SPINE</text>
+<text x="55" y="758" font-size="11" fill="#657b6f">From north five-foot entrance to real low-ceiling cell · 75 ft actual route distance</text>
+<path d="M117,937v7" stroke="#50665b"/>
+<text x="117" y="960" font-size="10" text-anchor="middle" fill="#596d60">4,0</text>
+<path d="M297,937v7" stroke="#50665b"/>
+<text x="297" y="960" font-size="10" text-anchor="middle" fill="#596d60">4,3</text>
+<path d="M477,937v7" stroke="#50665b"/>
+<text x="477" y="960" font-size="10" text-anchor="middle" fill="#596d60">4,6</text>
+<path d="M657,937v7" stroke="#50665b"/>
+<text x="657" y="960" font-size="10" text-anchor="middle" fill="#596d60">7,6</text>
+<path d="M837,937v7" stroke="#50665b"/>
+<text x="837" y="960" font-size="10" text-anchor="middle" fill="#596d60">10,6</text>
+<path d="M1017,937v7" stroke="#50665b"/>
+<text x="1017" y="960" font-size="10" text-anchor="middle" fill="#596d60">12,7</text>
+<path d="M1197,937v7" stroke="#50665b"/>
+<text x="1197" y="960" font-size="10" text-anchor="middle" fill="#596d60">12,10</text>
+<path d="M1377,937v7" stroke="#50665b"/>
+<text x="1377" y="960" font-size="10" text-anchor="middle" fill="#596d60">11,12</text>
+<path d="M1557,937v7" stroke="#50665b"/>
+<text x="1557" y="960" font-size="10" text-anchor="middle" fill="#596d60">9,13</text>
+<path d="M1737,937v7" stroke="#50665b"/>
+<text x="1737" y="960" font-size="10" text-anchor="middle" fill="#596d60">7,12</text>
+<path d="M1917,937v7" stroke="#50665b"/>
+<text x="1917" y="960" font-size="10" text-anchor="middle" fill="#596d60">7,9</text>
+<circle cx="1917" cy="851" r="6" fill="#9d543c"/>
+<path d="M117,935H1917" fill="none" stroke="#35463a" stroke-width="2.4"/>
+<polyline data-route-ceiling="split_spine" points="117,779 177,779 237,767 297,755 357,755 417,755 477,755 537,755 597,755 657,755 717,755 777,755 837,755 897,755 957,755 1017,755 1077,755 1137,755 1197,755 1257,755 1317,755 1377,755 1437,755 1497,755 1557,755 1617,755 1677,755 1737,755 1797,755 1857,755 1917,851" fill="none" stroke="#a47a49" stroke-width="2.5"/>
+<path d="M117,791H1917" stroke="#a0aba2" stroke-dasharray="5 5" fill="none"/>
+<text x="117" y="985" font-size="11" fill="#5b685d">Red: authored low roof. Dashed: 6-foot standing threshold, not a legal clearance rule.</text>
+</g>
+<text x="42" y="1020" font-family="sans-serif" font-size="11" fill="#795a48">DESIGN HYPOTHESIS, NOT SURVEY DATA. Distances follow winding walkable passages; roof heights above local floor only. No roof stability inferred.</text>
+</svg>

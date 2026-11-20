@@ -26,6 +26,7 @@ jobs:
           node cave-rock-ribs.js reports/cave-rock-ribs.json
           node wide-cave.js
           node wide-headroom.js
+          node wide-roof-transitions.js
           node wide-vertical-datum.js
           node wide-seam-crowns.js
           node wide-posture-assembly.js
@@ -73,7 +74,7 @@ jobs:
       - name: Commit verified generated assets on same-repository push
         if: github.event_name == 'push'
         run: |
-          git add studies/*.svg reports/wide-lava-routes.json reports/sheetflow-routes.json reports/spine-routes.json reports/wide-assembly-routes.json reports/wide-roof-clearance.json reports/sheetflow-bench-grade.json reports/wide-seam-crowns.json reports/wide-posture-assembly.json tiles/ examples/assembly_fallen_choir_2x2.svg examples/fallen_choir_print_letter.svg examples/assembly_hollow_2x2.svg examples/hollow_causeway_print_letter.svg examples/assembly_scoured_2x2.svg examples/assembly_lantern_2x2.svg examples/scoured_siphon_print_letter.svg examples/lantern_sink_print_letter.svg examples/fallen_choir_levels.svg examples/scoured_siphon_profiles.svg examples/basalt_rift_webs.svg examples/cave_section_envelopes.svg examples/assembly_3x3.svg examples/riftwater_section.svg examples/riftwater_surge.svg examples/riftwater_profile.svg examples/riftwater_tailrace_plate.svg examples/subfloor_pair_plate.svg examples/postern_outfall_section.svg examples/receiving_annex_plate.svg examples/riftwater_maintenance_plate.svg examples/riftwater_print_letter.svg reports/topology.json reports/cave-passage-widths.json reports/cave-axes.json reports/cave-rock-ribs.json reports/seam-families.json reports/cave-section-envelopes.json reports/print-scale.json reports/buried-clearance.json reports/gearbox-access.json
+          git add studies/*.svg reports/wide-lava-routes.json reports/sheetflow-routes.json reports/spine-routes.json reports/wide-assembly-routes.json reports/wide-roof-clearance.json reports/wide-roof-transitions.json reports/sheetflow-bench-grade.json reports/wide-seam-crowns.json reports/wide-posture-assembly.json tiles/ examples/assembly_fallen_choir_2x2.svg examples/fallen_choir_print_letter.svg examples/assembly_hollow_2x2.svg examples/hollow_causeway_print_letter.svg examples/assembly_scoured_2x2.svg examples/assembly_lantern_2x2.svg examples/scoured_siphon_print_letter.svg examples/lantern_sink_print_letter.svg examples/fallen_choir_levels.svg examples/scoured_siphon_profiles.svg examples/basalt_rift_webs.svg examples/cave_section_envelopes.svg examples/assembly_3x3.svg examples/riftwater_section.svg examples/riftwater_surge.svg examples/riftwater_profile.svg examples/riftwater_tailrace_plate.svg examples/subfloor_pair_plate.svg examples/postern_outfall_section.svg examples/receiving_annex_plate.svg examples/riftwater_maintenance_plate.svg examples/riftwater_print_letter.svg reports/topology.json reports/cave-passage-widths.json reports/cave-axes.json reports/cave-rock-ribs.json reports/seam-families.json reports/cave-section-envelopes.json reports/print-scale.json reports/buried-clearance.json reports/gearbox-access.json
           if ! git diff --cached --quiet; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -81,7 +82,7 @@ jobs:
             git push origin HEAD:${GITHUB_REF_NAME}
           fi
       - name: Verify tracked SVG masters and audit are reproducible
-        run: git diff --exit-code -- studies/ reports/wide-lava-routes.json reports/sheetflow-routes.json reports/spine-routes.json reports/wide-assembly-routes.json reports/wide-roof-clearance.json reports/sheetflow-bench-grade.json reports/wide-seam-crowns.json reports/wide-posture-assembly.json tiles/ examples/assembly_fallen_choir_2x2.svg examples/fallen_choir_print_letter.svg examples/assembly_hollow_2x2.svg examples/hollow_causeway_print_letter.svg examples/assembly_scoured_2x2.svg examples/assembly_lantern_2x2.svg examples/scoured_siphon_print_letter.svg examples/lantern_sink_print_letter.svg examples/fallen_choir_levels.svg examples/scoured_siphon_profiles.svg examples/basalt_rift_webs.svg examples/cave_section_envelopes.svg examples/assembly_3x3.svg examples/riftwater_section.svg examples/riftwater_surge.svg examples/riftwater_profile.svg examples/riftwater_tailrace_plate.svg examples/subfloor_pair_plate.svg examples/postern_outfall_section.svg examples/riftwater_maintenance_plate.svg examples/riftwater_print_letter.svg reports/topology.json reports/cave-passage-widths.json reports/cave-axes.json reports/cave-rock-ribs.json reports/seam-families.json reports/cave-section-envelopes.json reports/print-scale.json reports/buried-clearance.json reports/gearbox-access.json
+        run: git diff --exit-code -- studies/ reports/wide-lava-routes.json reports/sheetflow-routes.json reports/spine-routes.json reports/wide-assembly-routes.json reports/wide-roof-clearance.json reports/wide-roof-transitions.json reports/sheetflow-bench-grade.json reports/wide-seam-crowns.json reports/wide-posture-assembly.json tiles/ examples/assembly_fallen_choir_2x2.svg examples/fallen_choir_print_letter.svg examples/assembly_hollow_2x2.svg examples/hollow_causeway_print_letter.svg examples/assembly_scoured_2x2.svg examples/assembly_lantern_2x2.svg examples/scoured_siphon_print_letter.svg examples/lantern_sink_print_letter.svg examples/fallen_choir_levels.svg examples/scoured_siphon_profiles.svg examples/basalt_rift_webs.svg examples/cave_section_envelopes.svg examples/assembly_3x3.svg examples/riftwater_section.svg examples/riftwater_surge.svg examples/riftwater_profile.svg examples/riftwater_tailrace_plate.svg examples/subfloor_pair_plate.svg examples/postern_outfall_section.svg examples/riftwater_maintenance_plate.svg examples/riftwater_print_letter.svg reports/topology.json reports/cave-passage-widths.json reports/cave-axes.json reports/cave-rock-ribs.json reports/seam-families.json reports/cave-section-envelopes.json reports/print-scale.json reports/buried-clearance.json reports/gearbox-access.json
       - name: Upload vector studies and inspection report
         uses: actions/upload-artifact@v4
         with:
@@ -115,6 +116,7 @@ jobs:
             reports/wide-lava-routes.json
             reports/sheetflow-bench-grade.json
             reports/wide-seam-crowns.json
+            reports/wide-roof-transitions.json
             reports/wide-posture-assembly.json
             reports/sheetflow-routes.json reports/spine-routes.json reports/wide-assembly-routes.json
             reports/cave-passage-widths.json

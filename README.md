@@ -1,5 +1,12 @@
 # Geomorph-o-matic
 
+## Plan-registered wide-cave entrance crown transitions (November 20, 2026)
+
+The three [wide-mouth cave masters](studies/) now include separately editable contours for a *hypothetical* entry-to-vault roof transition. Each modular opening preserves a 6.5-foot local crown for the full five-foot inward envelope, before the ceiling assumption rises in bounded half-foot increments into the taller Braided Lava and Split-Spine vaults. The much lower authored roof pinch points are deliberately retained. A [route-unfolded, scale-consistent vector profile](studies/wide_roof_transitions.svg) and [underlying station/height report](reports/wide-roof-transitions.json) follow real walkable passages, not invented straight section cuts.
+
+[Primary cave-survey research, modeling decisions, and open geological objections](research/2026-11-20-wide-roof-entrance-transitions.md). Regenerate with `node wide-roof-transitions.js`; separate JavaScript and independent Python regression tests check height changes and occupied-floor paths. **These are unsurveyed local clearances, not actual roof elevations or stability claims.** Physical inspection and the Sheetflow bench's absolute vertical datum remain unresolved.
+
+
 Original, modular, editable dungeon cartography. **Architectural studies, not yet a finished collection.**
 
 ## Wide cave raised-bench grade and assembled headroom review (November 20, 2026)
