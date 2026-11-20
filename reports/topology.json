@@ -3917,15 +3917,15 @@
   },
   {
     "id": "scoured_siphon",
-    "floor_cells": 225,
-    "corridor_cells": 125,
+    "floor_cells": 227,
+    "corridor_cells": 127,
     "doors": 12,
     "standard_doors": 0,
     "open_passages": 11,
     "locked_doors": 0,
     "secret_doors": 1,
-    "hall_cycle_rank": 21,
-    "hall_chokepoint_count": 45,
+    "hall_cycle_rank": 23,
+    "hall_chokepoint_count": 44,
     "normal_portals_reachable": 8,
     "fully_connected": true,
     "normally_accessible_floor_fraction": 1,
@@ -4038,7 +4038,7 @@
     ],
     "access_profiles": {
       "ordinary": {
-        "accessible_floor_cells": 218,
+        "accessible_floor_cells": 220,
         "accessible_chambers": [
           "confluence",
           "eclipse",
@@ -4054,7 +4054,7 @@
         "longest_shortest_portal_distance": 38
       },
       "unlocked": {
-        "accessible_floor_cells": 218,
+        "accessible_floor_cells": 220,
         "accessible_chambers": [
           "confluence",
           "eclipse",
@@ -4070,7 +4070,7 @@
         "longest_shortest_portal_distance": 38
       },
       "all": {
-        "accessible_floor_cells": 218,
+        "accessible_floor_cells": 220,
         "accessible_chambers": [
           "confluence",
           "eclipse",
@@ -4258,11 +4258,11 @@
     "cave_choke_edges": 1,
     "travel": {
       "dry": {
-        "accessible_floor_cells": 218,
+        "accessible_floor_cells": 220,
         "reachable_portals": 8
       },
       "wading": {
-        "accessible_floor_cells": 225,
+        "accessible_floor_cells": 227,
         "reachable_portals": 8
       }
     },
