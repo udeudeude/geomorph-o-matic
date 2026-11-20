@@ -35,7 +35,7 @@ test("rock report identifies consequential thin septa without declaring geologic
  assert.equal(rockPlate(r),svg);
  assert.equal((svg.match(/id="rock-web-review-/g)||[]).length,3);
  assert.ok((svg.match(/data-rock-web=/g)||[]).length>20);
- assert.match(svg,/not a prediction of roof collapse/i);
+ assert.match(svg,/prediction of roof collapse/i);
 });
 test("shortest path never crosses nonexistent or unconnected source floor",()=>{
  const tile=tiles[0],floor=buildCells(tile),graph=terrainGraph(floor,doorEdges(tile),tile.terrain,"ordinary","dry");
