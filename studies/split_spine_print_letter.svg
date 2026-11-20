@@ -51,6 +51,14 @@
 <g data-geology="gravel" data-cell="10,15"><ellipse cx="252" cy="372" rx="9" ry="7" fill="#e5e0d4" fill-opacity=".45" stroke="none"/><path d="M245,369l3,-2 2,3 M253,366l3,2 -2,2 M247,376l2,-2 3,2 M255,376l3,-2" fill="none" stroke="#928879" stroke-width="1.15" stroke-linecap="round"/></g>
 <g data-geology="gravel" data-cell="13,12"><ellipse cx="324" cy="300" rx="9" ry="7" fill="#e5e0d4" fill-opacity=".45" stroke="none"/><path d="M317,297l3,-2 2,3 M325,294l3,2 -2,2 M319,304l2,-2 3,2 M327,304l3,-2" fill="none" stroke="#928879" stroke-width="1.15" stroke-linecap="round"/></g>
 </g>
+<g id="ceiling-clearance" fill="none" stroke="#876d52" stroke-linecap="round">
+<title>Hypothetical low-ceiling zones; dashed marks denote overhead clearance, not walls</title>
+<g data-roof-zone="western_septum_squeeze" data-assumed-clearance-feet="3.5">
+<path d="M144,216L168,216 M144,240L168,240 M144,216L144,240 M168,216L192,216 M192,216L192,240 M168,240L192,240" stroke-width="1.4" stroke-dasharray="2 4" opacity=".85"/>
+<path data-roof-cell="6,9" d="M151.44,222l6,12 m3.3600000000000003,-12l4.800000000000001,9.600000000000001" stroke-width="1.25" opacity=".8"/>
+<path data-roof-cell="7,9" d="M175.44,222l6,12 m3.3600000000000003,-12l4.800000000000001,9.600000000000001" stroke-width="1.25" opacity=".8"/>
+</g>
+</g>
 <g id="features">
 </g><g id="stone-walls" fill="none" stroke-linecap="square" stroke-linejoin="round">
 <path d="M216,72H264" stroke="#8e8a80" opacity=".32" stroke-width="5.5"/><path d="M216,72H264" stroke="#303332" stroke-width="2.8"/>

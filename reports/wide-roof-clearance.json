@@ -1,0 +1,195 @@
+{
+  "stage": "unreleased conceptual headroom studies",
+  "cave_count": 3,
+  "half_cell_feet": 2.5,
+  "posture_minima": {
+    "standing": 6,
+    "crouching": 4,
+    "crawling": 2.5
+  },
+  "reports": [
+    {
+      "tile": "braided_lava",
+      "status": "unreleased geometric headroom hypothesis",
+      "evidence": "fictional roof-clearance assumptions; plan locations are registered to actual occupied floor",
+      "baseline_clearance_feet": 8,
+      "low_roof_zones": [
+        {
+          "id": "upper_feeder_roof_drape",
+          "interpretation": "A localized drooped upper feeder roof restricts upright travel; the deeper confluence and lower distributary remain viable.",
+          "clearance_feet": 3.5,
+          "cells": [
+            "9,6",
+            "10,6"
+          ]
+        }
+      ],
+      "postures": {
+        "standing": {
+          "minimum_assumed_clearance_feet": 6,
+          "reachable_floor_cells": 185,
+          "reachable_mouth_cells": 16,
+          "reachable_mouth_pairs": 120,
+          "unreachable_mouth_pairs": 0,
+          "mouth_pairs_with_longer_traversal": 16,
+          "longest_extra_walk_half_cells": 8
+        },
+        "crouching": {
+          "minimum_assumed_clearance_feet": 4,
+          "reachable_floor_cells": 185,
+          "reachable_mouth_cells": 16,
+          "reachable_mouth_pairs": 120,
+          "unreachable_mouth_pairs": 0,
+          "mouth_pairs_with_longer_traversal": 16,
+          "longest_extra_walk_half_cells": 8
+        },
+        "crawling": {
+          "minimum_assumed_clearance_feet": 2.5,
+          "reachable_floor_cells": 187,
+          "reachable_mouth_cells": 16,
+          "reachable_mouth_pairs": 120,
+          "unreachable_mouth_pairs": 0,
+          "mouth_pairs_with_longer_traversal": 0,
+          "longest_extra_walk_half_cells": 0
+        }
+      },
+      "selected_traversals": [
+        {
+          "from": "0,4",
+          "to": "19,4",
+          "crawling_half_cells": 23,
+          "standing_half_cells": 31
+        },
+        {
+          "from": "4,0",
+          "to": "14,0",
+          "crawling_half_cells": 22,
+          "standing_half_cells": 30
+        }
+      ],
+      "limitations": "No measured cave roof, geological stability or real-world access classification. Posture thresholds are gameplay scenarios."
+    },
+    {
+      "tile": "sagging_sheet",
+      "status": "unreleased geometric headroom hypothesis",
+      "evidence": "fictional roof-clearance assumptions; plan locations are registered to actual occupied floor",
+      "baseline_clearance_feet": 6.5,
+      "low_roof_zones": [
+        {
+          "id": "western_sheet_sag",
+          "interpretation": "Cooling sheet-flow roof settles across the west interior throat while neighboring inflated passages retain an assumed higher vault.",
+          "clearance_feet": 5,
+          "cells": [
+            "7,6",
+            "8,6"
+          ]
+        }
+      ],
+      "postures": {
+        "standing": {
+          "minimum_assumed_clearance_feet": 6,
+          "reachable_floor_cells": 236,
+          "reachable_mouth_cells": 16,
+          "reachable_mouth_pairs": 120,
+          "unreachable_mouth_pairs": 0,
+          "mouth_pairs_with_longer_traversal": 12,
+          "longest_extra_walk_half_cells": 2
+        },
+        "crouching": {
+          "minimum_assumed_clearance_feet": 4,
+          "reachable_floor_cells": 238,
+          "reachable_mouth_cells": 16,
+          "reachable_mouth_pairs": 120,
+          "unreachable_mouth_pairs": 0,
+          "mouth_pairs_with_longer_traversal": 0,
+          "longest_extra_walk_half_cells": 0
+        },
+        "crawling": {
+          "minimum_assumed_clearance_feet": 2.5,
+          "reachable_floor_cells": 238,
+          "reachable_mouth_cells": 16,
+          "reachable_mouth_pairs": 120,
+          "unreachable_mouth_pairs": 0,
+          "mouth_pairs_with_longer_traversal": 0,
+          "longest_extra_walk_half_cells": 0
+        }
+      },
+      "selected_traversals": [
+        {
+          "from": "0,4",
+          "to": "19,4",
+          "crawling_half_cells": 29,
+          "standing_half_cells": 31
+        },
+        {
+          "from": "4,0",
+          "to": "14,0",
+          "crawling_half_cells": 30,
+          "standing_half_cells": 32
+        }
+      ],
+      "limitations": "No measured cave roof, geological stability or real-world access classification. Posture thresholds are gameplay scenarios."
+    },
+    {
+      "tile": "split_spine",
+      "status": "unreleased geometric headroom hypothesis",
+      "evidence": "fictional roof-clearance assumptions; plan locations are registered to actual occupied floor",
+      "baseline_clearance_feet": 7.5,
+      "low_roof_zones": [
+        {
+          "id": "western_septum_squeeze",
+          "interpretation": "A low relict western lava conduit pinches beneath a hypothetical crust shelf, leaving its side pocket crawl-accessible.",
+          "clearance_feet": 3.5,
+          "cells": [
+            "6,9",
+            "7,9"
+          ]
+        }
+      ],
+      "postures": {
+        "standing": {
+          "minimum_assumed_clearance_feet": 6,
+          "reachable_floor_cells": 208,
+          "reachable_mouth_cells": 16,
+          "reachable_mouth_pairs": 120,
+          "unreachable_mouth_pairs": 0,
+          "mouth_pairs_with_longer_traversal": 0,
+          "longest_extra_walk_half_cells": 0
+        },
+        "crouching": {
+          "minimum_assumed_clearance_feet": 4,
+          "reachable_floor_cells": 208,
+          "reachable_mouth_cells": 16,
+          "reachable_mouth_pairs": 120,
+          "unreachable_mouth_pairs": 0,
+          "mouth_pairs_with_longer_traversal": 0,
+          "longest_extra_walk_half_cells": 0
+        },
+        "crawling": {
+          "minimum_assumed_clearance_feet": 2.5,
+          "reachable_floor_cells": 223,
+          "reachable_mouth_cells": 16,
+          "reachable_mouth_pairs": 120,
+          "unreachable_mouth_pairs": 0,
+          "mouth_pairs_with_longer_traversal": 0,
+          "longest_extra_walk_half_cells": 0
+        }
+      },
+      "selected_traversals": [
+        {
+          "from": "0,4",
+          "to": "19,4",
+          "crawling_half_cells": 19,
+          "standing_half_cells": 19
+        },
+        {
+          "from": "4,0",
+          "to": "14,0",
+          "crawling_half_cells": 18,
+          "standing_half_cells": 18
+        }
+      ],
+      "limitations": "No measured cave roof, geological stability or real-world access classification. Posture thresholds are gameplay scenarios."
+    }
+  ]
+}
