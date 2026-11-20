@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16in" height="10in" viewBox="0 0 1300 800" role="img" aria-label="Four plan-registered cave passage transverse design sections">
+<title>Four fictional cave passage envelopes | plan-registered transverse studies</title>
+<rect width="1300" height="800" fill="#ece9df"/>
+<text x="34" y="52" font-family="Georgia,serif" font-size="32" fill="#2b3830">CAVE PASSAGE ENVELOPES</text>
+<text x="35" y="75" font-family="sans-serif" font-size="13" fill="#56635a" letter-spacing="1.2">AUTHOR-SPECIFIED ROOF SCENARIOS  /  WIDTHS REGISTERED TO CANONICAL FLOOR PLANS</text>
+<path d="M34 92H1265 M34 768H1265" stroke="#abb3aa"/>
+<g id="transverse-relict_upstream" transform="translate(34 124)" font-family="sans-serif">
+<rect width="607" height="286" fill="#f9f6ee" stroke="#abb2a8"/>
+<text x="18" y="28" font-size="15" font-family="Georgia,serif" fill="#29352f" font-weight="bold">SCOURED SIPHON  /  RELICT UPSTREAM</text>
+<text x="18" y="45" font-size="10.5" fill="#5c6b60">relict solution conduit; broad upper pocket</text>
+<path d="M 194.5 145.5 Q 202.75 107 222 107 Q 239.6 107 249.5 63 Q 257.75 19 277 19 Q 294.6 19 304.5 41 Q 312.75 63 332 63 L 359.5 116.9 L 359.5 217 L 194.5 217 Z" fill="#e9ede5" stroke="none"/>
+<path d="M 194.5 145.5 Q 202.75 107 222 107 Q 239.6 107 249.5 63 Q 257.75 19 277 19 Q 294.6 19 304.5 41 Q 312.75 63 332 63 L 359.5 116.9" fill="none" stroke="#526259" stroke-dasharray="5 3" stroke-width="2.2"/>
+<path d="M194.5,217H359.5" stroke="#303c36" stroke-width="2.5"/>
+<path d="M194.5,107v110m-5,-110h10 m-10,110h10" stroke="#a4583c" stroke-width="1.1" fill="none"/>
+<text x="185.5" y="162" font-size="10" text-anchor="end" fill="#a4583c">5 ft</text>
+<path d="M194.5,226v8H359.5v-8" fill="none" stroke="#53635a"/>
+<text x="277" y="248" text-anchor="middle" fill="#273a30" font-size="12" font-weight="bold">7.5 ft clear in plan</text>
+<text x="18" y="271" font-size="10.5" fill="#7a5140">Dashed roof = unverified scenario; 1:1 vertical/horizontal within panel.</text>
+<path data-plan-cell="0" d="M194.5,217v-6" stroke="#737d70"/>
+<text x="222" y="264" font-size="9.5" text-anchor="middle" fill="#626d63">5 ft roof</text>
+<path data-plan-cell="1" d="M249.5,217v-6" stroke="#737d70"/>
+<text x="277" y="264" font-size="9.5" text-anchor="middle" fill="#626d63">9 ft roof</text>
+<path data-plan-cell="2" d="M304.5,217v-6" stroke="#737d70"/>
+<text x="332" y="264" font-size="9.5" text-anchor="middle" fill="#626d63">7 ft roof</text>
+</g>
+<g id="transverse-relict_downstream" transform="translate(669 124)" font-family="sans-serif">
+<rect width="607" height="286" fill="#f9f6ee" stroke="#abb2a8"/>
+<text x="18" y="28" font-size="15" font-family="Georgia,serif" fill="#29352f" font-weight="bold">SCOURED SIPHON  /  RELICT DOWNSTREAM</text>
+<text x="18" y="45" font-size="10.5" fill="#5c6b60">narrower surviving dry keyhole</text>
+<path d="M 222 124.05 Q 230.25 74 249.5 74 Q 267.1 74 277 57.5 Q 285.25 41 304.5 41 L 332 102.6 L 332 217 L 222 217 Z" fill="#e9ede5" stroke="none"/>
+<path d="M 222 124.05 Q 230.25 74 249.5 74 Q 267.1 74 277 57.5 Q 285.25 41 304.5 41 L 332 102.6" fill="none" stroke="#526259" stroke-dasharray="5 3" stroke-width="2.2"/>
+<path d="M222,217H332" stroke="#303c36" stroke-width="2.5"/>
+<path d="M222,107v110m-5,-110h10 m-10,110h10" stroke="#a4583c" stroke-width="1.1" fill="none"/>
+<text x="213" y="162" font-size="10" text-anchor="end" fill="#a4583c">5 ft</text>
+<path d="M222,226v8H332v-8" fill="none" stroke="#53635a"/>
+<text x="277" y="248" text-anchor="middle" fill="#273a30" font-size="12" font-weight="bold">5 ft clear in plan</text>
+<text x="18" y="271" font-size="10.5" fill="#7a5140">Dashed roof = unverified scenario; 1:1 vertical/horizontal within panel.</text>
+<path data-plan-cell="0" d="M222,217v-6" stroke="#737d70"/>
+<text x="249.5" y="264" font-size="9.5" text-anchor="middle" fill="#626d63">6.5 ft roof</text>
+<path data-plan-cell="1" d="M277,217v-6" stroke="#737d70"/>
+<text x="304.5" y="264" font-size="9.5" text-anchor="middle" fill="#626d63">8 ft roof</text>
+</g>
+<g id="transverse-basalt_upper_squeeze" transform="translate(34 442)" font-family="sans-serif">
+<rect width="607" height="286" fill="#f9f6ee" stroke="#abb2a8"/>
+<text x="18" y="28" font-size="15" font-family="Georgia,serif" fill="#29352f" font-weight="bold">BASALT RIFT  /  BASALT UPPER SQUEEZE</text>
+<text x="18" y="45" font-size="10.5" fill="#5c6b60">constricted volcanic distributary, not the main tube</text>
+<path d="M 249.5 152.65 Q 257.75 118 277 118 L 304.5 152.65 L 304.5 217 L 249.5 217 Z" fill="#e9ede5" stroke="none"/>
+<path d="M 249.5 152.65 Q 257.75 118 277 118 L 304.5 152.65" fill="none" stroke="#526259" stroke-dasharray="5 3" stroke-width="2.2"/>
+<path d="M249.5,217H304.5" stroke="#303c36" stroke-width="2.5"/>
+<path d="M249.5,107v110m-5,-110h10 m-10,110h10" stroke="#a4583c" stroke-width="1.1" fill="none"/>
+<text x="240.5" y="162" font-size="10" text-anchor="end" fill="#a4583c">5 ft</text>
+<path d="M249.5,226v8H304.5v-8" fill="none" stroke="#53635a"/>
+<text x="277" y="248" text-anchor="middle" fill="#273a30" font-size="12" font-weight="bold">2.5 ft clear in plan</text>
+<text x="18" y="271" font-size="10.5" fill="#7a5140">Dashed roof = unverified scenario; 1:1 vertical/horizontal within panel.</text>
+<path data-plan-cell="0" d="M249.5,217v-6" stroke="#737d70"/>
+<text x="277" y="264" font-size="9.5" text-anchor="middle" fill="#626d63">4.5 ft roof</text>
+</g>
+<g id="transverse-north_joint_splay" transform="translate(669 442)" font-family="sans-serif">
+<rect width="607" height="286" fill="#f9f6ee" stroke="#abb2a8"/>
+<text x="18" y="28" font-size="15" font-family="Georgia,serif" fill="#29352f" font-weight="bold">LANTERN SINK  /  NORTH JOINT SPLAY</text>
+<text x="18" y="45" font-size="10.5" fill="#5c6b60">bedding and joint-controlled solution passage</text>
+<path d="M 222 131.2 Q 230.25 85 249.5 85 Q 267.1 85 277 63 Q 285.25 41 304.5 41 L 332 102.6 L 332 217 L 222 217 Z" fill="#e9ede5" stroke="none"/>
+<path d="M 222 131.2 Q 230.25 85 249.5 85 Q 267.1 85 277 63 Q 285.25 41 304.5 41 L 332 102.6" fill="none" stroke="#526259" stroke-dasharray="5 3" stroke-width="2.2"/>
+<path d="M222,217H332" stroke="#303c36" stroke-width="2.5"/>
+<path d="M222,107v110m-5,-110h10 m-10,110h10" stroke="#a4583c" stroke-width="1.1" fill="none"/>
+<text x="213" y="162" font-size="10" text-anchor="end" fill="#a4583c">5 ft</text>
+<path d="M222,226v8H332v-8" fill="none" stroke="#53635a"/>
+<text x="277" y="248" text-anchor="middle" fill="#273a30" font-size="12" font-weight="bold">5 ft clear in plan</text>
+<text x="18" y="271" font-size="10.5" fill="#7a5140">Dashed roof = unverified scenario; 1:1 vertical/horizontal within panel.</text>
+<path data-plan-cell="0" d="M222,217v-6" stroke="#737d70"/>
+<text x="249.5" y="264" font-size="9.5" text-anchor="middle" fill="#626d63">6 ft roof</text>
+<path data-plan-cell="1" d="M277,217v-6" stroke="#737d70"/>
+<text x="304.5" y="264" font-size="9.5" text-anchor="middle" fill="#626d63">8 ft roof</text>
+</g>
+<text x="35" y="781" font-family="sans-serif" font-size="10.5" fill="#65594d">Not a cave survey. Floor widths are derived from actual map cells; ceiling assumptions need measured evidence.</text>
+</svg>

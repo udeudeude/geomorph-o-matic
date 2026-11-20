@@ -1,0 +1,119 @@
+{
+  "units": "feet",
+  "scale_note": "2.5 feet per plan half-cell; transverse diagrams use equal horizontal and vertical scale",
+  "design_only": "Headroom values are explicit fictional assumptions, not measured cave data, human safety ratings or evidence of roof stability",
+  "sections": [
+    {
+      "tile": "scoured_siphon",
+      "id": "relict_upstream",
+      "section_at": [
+        8,
+        3
+      ],
+      "across": "E-W",
+      "from": [
+        7,
+        3
+      ],
+      "to": [
+        9,
+        3
+      ],
+      "width_feet": 7.5,
+      "roof_height_over_floor_feet": [
+        5,
+        9,
+        7
+      ],
+      "sampled_axis_headroom_feet": 9,
+      "minimum_edge_sample_headroom_feet": 5,
+      "maximum_sample_headroom_feet": 9,
+      "example_central_posture": "standing design allowance",
+      "geological_intent": "relict solution conduit; broad upper pocket",
+      "height_evidence": "hypothetical authored section; not measured; roof strength and continuity unknown"
+    },
+    {
+      "tile": "scoured_siphon",
+      "id": "relict_downstream",
+      "section_at": [
+        8,
+        4
+      ],
+      "across": "E-W",
+      "from": [
+        8,
+        4
+      ],
+      "to": [
+        9,
+        4
+      ],
+      "width_feet": 5,
+      "roof_height_over_floor_feet": [
+        6.5,
+        8
+      ],
+      "sampled_axis_headroom_feet": 6.5,
+      "minimum_edge_sample_headroom_feet": 6.5,
+      "maximum_sample_headroom_feet": 8,
+      "example_central_posture": "standing design allowance",
+      "geological_intent": "narrower surviving dry keyhole",
+      "height_evidence": "hypothetical authored section; not measured; roof strength and continuity unknown"
+    },
+    {
+      "tile": "basalt_rift",
+      "id": "basalt_upper_squeeze",
+      "section_at": [
+        8,
+        8
+      ],
+      "across": "N-S",
+      "from": [
+        8,
+        8
+      ],
+      "to": [
+        8,
+        8
+      ],
+      "width_feet": 2.5,
+      "roof_height_over_floor_feet": [
+        4.5
+      ],
+      "sampled_axis_headroom_feet": 4.5,
+      "minimum_edge_sample_headroom_feet": 4.5,
+      "maximum_sample_headroom_feet": 4.5,
+      "example_central_posture": "crouching design allowance",
+      "geological_intent": "constricted volcanic distributary, not the main tube",
+      "height_evidence": "hypothetical authored section; not measured; roof strength and continuity unknown"
+    },
+    {
+      "tile": "lantern_sink",
+      "id": "north_joint_splay",
+      "section_at": [
+        6,
+        4
+      ],
+      "across": "E-W",
+      "from": [
+        6,
+        4
+      ],
+      "to": [
+        7,
+        4
+      ],
+      "width_feet": 5,
+      "roof_height_over_floor_feet": [
+        6,
+        8
+      ],
+      "sampled_axis_headroom_feet": 6,
+      "minimum_edge_sample_headroom_feet": 6,
+      "maximum_sample_headroom_feet": 8,
+      "example_central_posture": "standing design allowance",
+      "geological_intent": "bedding and joint-controlled solution passage",
+      "height_evidence": "hypothetical authored section; not measured; roof strength and continuity unknown"
+    }
+  ]
+}
