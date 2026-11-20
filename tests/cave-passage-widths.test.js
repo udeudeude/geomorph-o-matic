@@ -6,8 +6,10 @@ const {audit}=require("../audit");
 const {crossSection,auditCavePassages,report}=require("../cave-passage-widths");
 const data=JSON.parse(fs.readFileSync(path.join(__dirname,"../blueprints.json"),"utf8"));
 const get=id=>data.tiles.find(t=>t.id===id);
-test("two cave plans contain real, independently located dry passage enlargements",()=>{
+test("four cave plans register measured narrow joints and passage enlargements",()=>{
  const expected={
+  hollow_causeway:{eastern_limestone_squeeze:2.5,eastern_joint_return:5},
+  basalt_rift:{western_roof_rib:2.5,eastern_roof_rib:2.5,southern_spur_bypass:2.5},
   lantern_sink:{north_joint_splay:5,east_bedding_eddy:5,south_scree_refuge:7.5},
   scoured_siphon:{upstream_relict_tube:7.5,downstream_relict_tube:5,southern_undercut:10,eastern_backwater:5}
  };

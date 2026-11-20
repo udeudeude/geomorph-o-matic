@@ -55,3 +55,30 @@ test("all cave-axis reports are stable and explicitly limited to fictional plan 
   assert.match(t.interpretation,/not instrument-surveyed/);
  }
 });
+
+test("Hollow Causeway's eastern limestone rib breaks an actual 32.5-foot shaft",()=>{
+ const t=tile("hollow_causeway"),floor=buildCells(t),runs=axialRuns(t),graph=terrainGraph(floor,doorEdges(t),t.terrain);
+ for(const k of ["14,9","14,10","14,11"])assert.equal(floor.get(k),"hall","Dogleg must be open rock floor: "+k);
+ assert.equal(floor.has("13,10"),false,"The limestone rib must genuinely occupy the old straight shaft");
+ assert.equal(auditAxes(t).longest_run_half_cells,8,"The former 13-cell shaft must not survive another route");
+ assert.ok(!runs.some(r=>r.axis==="north-south"&&r.from[0]===13&&r.from[1]<=6&&r.to[1]>=18));
+ assert.ok(distances(graph,"19,15").has("13,8"),"Eastern mouth still reaches the rift without walking across flooded rock");
+ assert.equal(audit(t).normal_portals_reachable,8);
+ assert.equal(audit(t).fully_connected,true);
+ for(let turn=0;turn<4;turn++)for(const side of ["N","E","S","W"])assert.equal(edgeMask(t,turn,side),"4,15");
+});
+test("Basalt Rift has two real offset upper passages and a southern basalt spur",()=>{
+ const t=tile("basalt_rift"),floor=buildCells(t),runs=axialRuns(t),graph=terrainGraph(floor,doorEdges(t),t.terrain);
+ for(const k of ["8,8","13,8","7,18"])assert.equal(floor.get(k),"hall","The new basalt passage must be traversable: "+k);
+ for(const k of ["8,9","13,9","7,17"])assert.equal(floor.has(k),false,"The rock rib must not merely be a decorative line: "+k);
+ assert.equal(auditAxes(t).longest_run_half_cells,10,"Both former 12-cell east-west strips must be broken");
+ assert.ok(!runs.some(r=>r.axis==="east-west"&&r.from[1]===9&&r.from[0]<=5&&r.to[0]>=16));
+ assert.ok(!runs.some(r=>r.axis==="east-west"&&r.from[1]===17&&r.from[0]<=4&&r.to[0]>=15));
+ assert.ok(distances(graph,"0,4").has("19,4"),"The two upper basalt passages must still meet");
+ assert.ok(distances(graph,"4,19").has("15,19"),"The lower rock-spur bypass must remain traversable");
+ const checked=audit(t);
+ assert.equal(checked.normal_portals_reachable,8);
+ assert.equal(checked.fully_connected,true);
+ assert.ok(checked.hall_cycle_rank>=3);
+ for(let turn=0;turn<4;turn++)for(const side of ["N","E","S","W"])assert.equal(edgeMask(t,turn,side),"4,15");
+});

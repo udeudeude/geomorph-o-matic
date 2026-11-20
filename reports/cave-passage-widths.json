@@ -7,8 +7,63 @@
       "id": "basalt_rift",
       "interpretation": "fictional floor-plan clearance; no measured ceiling, wall thickness or survey grade",
       "standard_seam_throat_feet": 2.5,
-      "walkable_passage_cells": 119,
-      "measured_sections": []
+      "walkable_passage_cells": 125,
+      "measured_sections": [
+        {
+          "id": "western_roof_rib",
+          "at": [
+            8,
+            8
+          ],
+          "across": "N-S",
+          "from": [
+            8,
+            8
+          ],
+          "to": [
+            8,
+            8
+          ],
+          "clear_half_cells": 1,
+          "clear_feet": 2.5
+        },
+        {
+          "id": "eastern_roof_rib",
+          "at": [
+            13,
+            8
+          ],
+          "across": "N-S",
+          "from": [
+            13,
+            8
+          ],
+          "to": [
+            13,
+            8
+          ],
+          "clear_half_cells": 1,
+          "clear_feet": 2.5
+        },
+        {
+          "id": "southern_spur_bypass",
+          "at": [
+            7,
+            18
+          ],
+          "across": "N-S",
+          "from": [
+            7,
+            18
+          ],
+          "to": [
+            7,
+            18
+          ],
+          "clear_half_cells": 1,
+          "clear_feet": 2.5
+        }
+      ]
     },
     {
       "id": "riftwater_lock",
@@ -21,8 +76,45 @@
       "id": "hollow_causeway",
       "interpretation": "fictional floor-plan clearance; no measured ceiling, wall thickness or survey grade",
       "standard_seam_throat_feet": 2.5,
-      "walkable_passage_cells": 103,
-      "measured_sections": []
+      "walkable_passage_cells": 105,
+      "measured_sections": [
+        {
+          "id": "eastern_limestone_squeeze",
+          "at": [
+            14,
+            10
+          ],
+          "across": "E-W",
+          "from": [
+            14,
+            10
+          ],
+          "to": [
+            14,
+            10
+          ],
+          "clear_half_cells": 1,
+          "clear_feet": 2.5
+        },
+        {
+          "id": "eastern_joint_return",
+          "at": [
+            13,
+            11
+          ],
+          "across": "E-W",
+          "from": [
+            13,
+            11
+          ],
+          "to": [
+            14,
+            11
+          ],
+          "clear_half_cells": 2,
+          "clear_feet": 5
+        }
+      ]
     },
     {
       "id": "scoured_siphon",
