@@ -46,8 +46,7 @@ class SplitSpineCaveTests(unittest.TestCase):
         for p in BOUNDARY:self.assertIn(p,self.traverse(start=(4,0)))
         for e in self.closed:
             a,b=tuple(e)
-            self.assertEqual(a[1],7)
-            self.assertEqual(b[1],8)
+            self.assertEqual(sorted([a[1],b[1]]),[7,8])
     def test_structurally_walled_chamber_cannot_be_reached_without_its_opening(self):
         altered={e for e in self.doors}
         west={e for e in altered if any(self.floor[p]=="west_sump" for p in e)}
