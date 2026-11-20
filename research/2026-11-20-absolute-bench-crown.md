@@ -1,0 +1,16 @@
+# Sagging Sheetflow: one vertical datum, two roof scenarios (2026-11-20)
+
+## Research and why it matters
+The [United States Geological Survey's *Selected Caves and Lava-Tube Systems, Lava Beds National Monument*](https://npshistory.com/publications/geology/bul/1673/sec3g.htm) describes one-foot-high pahoehoe benches edging a shallow channel in Post Office Cave, but also describes radically different passage cross-sections, including stacked tubes with collapse and low oval conduits. An elevated lava bench does not establish a uniform ceiling overhead. [National Speleological Society cave-cartography judging criteria](https://caves.org/salons/cartography-submissions/cartography-judging-criteria/) call for a reference vertical datum at the dominant entrance, indicated vertical extent, ceiling heights and plan/profile correspondence. These are **reference practices**, not evidence that our fictional cave has been measured.
+
+## Three high-value architectural steps in this change
+1. **Reconcile the actual raised floor with a single elevation datum.** Eight registered cells of Sagging Sheetflow have a one-foot higher floor reached by three real two-riser stair connections. The modular five-foot entrances are at z=0, under a shared hypothetical 6.5-foot absolute roof crown.
+2. **Contrast two geometrically different vault solutions instead of conflating them.** Fixed absolute crown at z=6.5 ft implies only 5.5 ft clearance over the bench; lifting the crown to z=7.5 ft preserves the older 6.5-foot local clearance. In the first scenario a six-foot standing route cannot traverse any of the eight elevated cells; in the second it can. Neither scenario has been silently substituted into existing maps/gameplay assumptions.
+3. **Follow all three real step approaches and draw actual floor-and-ceiling profiles.** Each is graph-derived from the canonical dry corridors, registered to real plan cells, includes two six-inch risers, and compares fixed versus lifted roofs on equal vertical/horizontal scale. Automated JavaScript and independently implemented Python tests check the seam datum, changes in traversability, original step edges, deterministic editable vector elements and rejection of corrupted topology.
+
+## Critical limitations and next moves
+- Both roofs are design **hypotheses**. Geology cannot validate roof loads from a plan view and the original step treads are schematically regular.
+- The new drawing and report are a review study, **not a finished dungeon**, survey, safety determination, accessibility certification or gameplay rule update.
+- **Next**: choose and architecturally author a non-uniform actual roof envelope over the bench, with geological asymmetries and edited ceiling clearances in the canonical master; then independently verify any change to standing posture connectivity.
+- **Next**: use measured cave plans with corresponding longitudinal profiles and cross sections, e.g. Post Office Cave map 15, plate 5, to calibrate plausible curvature and vertical variation. Reconcile true elevations across geomorph seams.
+- **Next**: physically inspect tile printing and playtest whether collapse, overhead contours, and basalt risers remain legible. No physical printing or human playtesting occurred here.
