@@ -46,15 +46,16 @@ test("three distinct grade approaches make the raised bench fully walkable, with
  const floor=buildCells(tile),doors=doorEdges(tile),model=terrainModel(floor,tile.terrain);
  const graph=terrainGraph(floor,doors,tile.terrain);
  assert.equal(model.heights.size,8);
- assert.equal(model.ramps.size,3);
+ assert.equal(model.ramps.size,0);
+ assert.equal(model.steps.size,3);
  assert.equal(distances(graph,"4,0").size,238);
- for(const [a,b] of tile.terrain.ramps){
+ for(const {edge:[a,b]} of tile.terrain.steps){
   const x=a.join(","),y=b.join(",");
   assert.ok(graph.get(x).includes(y),x+" -> "+y);
  }
  assert.ok(!graph.get("17,11").includes("18,11")); // no fabricated climb at un-ramped east ledge
- const noRamps=terrainGraph(floor,doors,{...tile.terrain,ramps:[]});
- assert.ok(distances(noRamps,"4,0").size<238);
+ const noSteps=terrainGraph(floor,doors,{...tile.terrain,steps:[]});
+ assert.ok(distances(noSteps,"4,0").size<238);
 });
 test("mixed assembly proves two genuinely different mapped caves join in four rotated instances",()=>{
  const layout=JSON.parse(fs.readFileSync(path.join(__dirname,"../studies/assembly_wide_mixed_2x2.json"),"utf8"));
@@ -72,7 +73,7 @@ test("mixed assembly proves two genuinely different mapped caves join in four ro
 test("sheetflow is reproducibly rendered and carries an explicitly provisional actual-size print proof",()=>{
  const svg=makeSvg(tile),proof=letterProof(tile);
  assert.equal(svg,makeSvg(tile));
- for(const layer of ["rock-hachures","cavern-walls","cave-geomorphology","cave-breakdown-chokes","elevation-edges","level-ramps"])
+ for(const layer of ["rock-hachures","cavern-walls","cave-geomorphology","cave-breakdown-chokes","elevation-edges","lava-bench-steps"])
   assert.ok(svg.includes('id="'+layer+'"'),layer);
  assert.match(proof,/width="215.9mm" height="279.4mm"/);
  assert.match(proof,/Edge throats are 5 ft clear/);
