@@ -1,0 +1,512 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18in" height="13.875in" viewBox="0 0 1440 1110" role="img" aria-label="Three actual Sagging Sheetflow basalt stair sections, with alternative fixed and lifted absolute crowns">
+<title>Sagging Sheetflow / three real step approaches, two hypothetical roof datum solutions</title>
+<rect width="1440" height="1110" fill="#f3f0e7"/>
+<text x="42" y="52" font-family="Georgia,serif" font-size="30" fill="#2b3b34">SAGGING SHEETFLOW / ABSOLUTE FLOOR AND ROOF DATUM</text>
+<text x="43" y="77" font-family="sans-serif" font-size="13" fill="#59695e">UNRELEASED ARCHITECTURAL OPTIONS: COMMON ROOF CROWN OR ONE-FOOT LIFT OVER A STEPPED BASALT BENCH</text>
+<g id="registered-bench-plan" font-family="sans-serif">
+<rect x="65" y="115" width="435" height="466" fill="#fbfaf6" stroke="#b9bcb5"/>
+<text x="82" y="145" font-size="17" fill="#293c34">01 / PLAN-REGISTERED BENCH</text>
+<g id="registered-floor" fill="#dce2d8" stroke="#f7f6f0" stroke-width=".35">
+<rect data-occupied-plan-cell="0,14" x="95" y="417" width="18" height="18"/>
+<rect data-occupied-plan-cell="0,15" x="95" y="435" width="18" height="18"/>
+<rect data-occupied-plan-cell="0,4" x="95" y="237" width="18" height="18"/>
+<rect data-occupied-plan-cell="0,5" x="95" y="255" width="18" height="18"/>
+<rect data-occupied-plan-cell="1,10" x="113" y="345" width="18" height="18"/>
+<rect data-occupied-plan-cell="1,11" x="113" y="363" width="18" height="18"/>
+<rect data-occupied-plan-cell="1,12" x="113" y="381" width="18" height="18"/>
+<rect data-occupied-plan-cell="1,13" x="113" y="399" width="18" height="18"/>
+<rect data-occupied-plan-cell="1,14" x="113" y="417" width="18" height="18"/>
+<rect data-occupied-plan-cell="1,15" x="113" y="435" width="18" height="18"/>
+<rect data-occupied-plan-cell="1,4" x="113" y="237" width="18" height="18"/>
+<rect data-occupied-plan-cell="1,5" x="113" y="255" width="18" height="18"/>
+<rect data-occupied-plan-cell="1,6" x="113" y="273" width="18" height="18"/>
+<rect data-occupied-plan-cell="1,7" x="113" y="291" width="18" height="18"/>
+<rect data-occupied-plan-cell="1,8" x="113" y="309" width="18" height="18"/>
+<rect data-occupied-plan-cell="1,9" x="113" y="327" width="18" height="18"/>
+<rect data-occupied-plan-cell="10,10" x="275" y="345" width="18" height="18"/>
+<rect data-occupied-plan-cell="10,11" x="275" y="363" width="18" height="18"/>
+<rect data-occupied-plan-cell="10,12" x="275" y="381" width="18" height="18"/>
+<rect data-occupied-plan-cell="10,13" x="275" y="399" width="18" height="18"/>
+<rect data-occupied-plan-cell="10,14" x="275" y="417" width="18" height="18"/>
+<rect data-occupied-plan-cell="10,15" x="275" y="435" width="18" height="18"/>
+<rect data-occupied-plan-cell="10,16" x="275" y="453" width="18" height="18"/>
+<rect data-occupied-plan-cell="10,2" x="275" y="201" width="18" height="18"/>
+<rect data-occupied-plan-cell="10,3" x="275" y="219" width="18" height="18"/>
+<rect data-occupied-plan-cell="10,4" x="275" y="237" width="18" height="18"/>
+<rect data-occupied-plan-cell="10,5" x="275" y="255" width="18" height="18"/>
+<rect data-occupied-plan-cell="10,6" x="275" y="273" width="18" height="18"/>
+<rect data-occupied-plan-cell="11,10" x="293" y="345" width="18" height="18"/>
+<rect data-occupied-plan-cell="11,11" x="293" y="363" width="18" height="18"/>
+<rect data-occupied-plan-cell="11,12" x="293" y="381" width="18" height="18"/>
+<rect data-occupied-plan-cell="11,13" x="293" y="399" width="18" height="18"/>
+<rect data-occupied-plan-cell="11,14" x="293" y="417" width="18" height="18"/>
+<rect data-occupied-plan-cell="11,15" x="293" y="435" width="18" height="18"/>
+<rect data-occupied-plan-cell="11,16" x="293" y="453" width="18" height="18"/>
+<rect data-occupied-plan-cell="11,2" x="293" y="201" width="18" height="18"/>
+<rect data-occupied-plan-cell="11,4" x="293" y="237" width="18" height="18"/>
+<rect data-occupied-plan-cell="11,5" x="293" y="255" width="18" height="18"/>
+<rect data-occupied-plan-cell="11,6" x="293" y="273" width="18" height="18"/>
+<rect data-occupied-plan-cell="12,10" x="311" y="345" width="18" height="18"/>
+<rect data-occupied-plan-cell="12,12" x="311" y="381" width="18" height="18"/>
+<rect data-occupied-plan-cell="12,13" x="311" y="399" width="18" height="18"/>
+<rect data-occupied-plan-cell="12,16" x="311" y="453" width="18" height="18"/>
+<rect data-occupied-plan-cell="12,2" x="311" y="201" width="18" height="18"/>
+<rect data-occupied-plan-cell="12,4" x="311" y="237" width="18" height="18"/>
+<rect data-occupied-plan-cell="12,5" x="311" y="255" width="18" height="18"/>
+<rect data-occupied-plan-cell="12,6" x="311" y="273" width="18" height="18"/>
+<rect data-occupied-plan-cell="12,7" x="311" y="291" width="18" height="18"/>
+<rect data-occupied-plan-cell="12,8" x="311" y="309" width="18" height="18"/>
+<rect data-occupied-plan-cell="12,9" x="311" y="327" width="18" height="18"/>
+<rect data-occupied-plan-cell="13,10" x="329" y="345" width="18" height="18"/>
+<rect data-occupied-plan-cell="13,11" x="329" y="363" width="18" height="18"/>
+<rect data-occupied-plan-cell="13,12" x="329" y="381" width="18" height="18"/>
+<rect data-occupied-plan-cell="13,13" x="329" y="399" width="18" height="18"/>
+<rect data-occupied-plan-cell="13,14" x="329" y="417" width="18" height="18"/>
+<rect data-occupied-plan-cell="13,15" x="329" y="435" width="18" height="18"/>
+<rect data-occupied-plan-cell="13,16" x="329" y="453" width="18" height="18"/>
+<rect data-occupied-plan-cell="13,2" x="329" y="201" width="18" height="18"/>
+<rect data-occupied-plan-cell="13,3" x="329" y="219" width="18" height="18"/>
+<rect data-occupied-plan-cell="13,4" x="329" y="237" width="18" height="18"/>
+<rect data-occupied-plan-cell="13,5" x="329" y="255" width="18" height="18"/>
+<rect data-occupied-plan-cell="13,6" x="329" y="273" width="18" height="18"/>
+<rect data-occupied-plan-cell="13,7" x="329" y="291" width="18" height="18"/>
+<rect data-occupied-plan-cell="13,8" x="329" y="309" width="18" height="18"/>
+<rect data-occupied-plan-cell="13,9" x="329" y="327" width="18" height="18"/>
+<rect data-occupied-plan-cell="14,0" x="347" y="165" width="18" height="18"/>
+<rect data-occupied-plan-cell="14,1" x="347" y="183" width="18" height="18"/>
+<rect data-occupied-plan-cell="14,11" x="347" y="363" width="18" height="18"/>
+<rect data-occupied-plan-cell="14,12" x="347" y="381" width="18" height="18"/>
+<rect data-occupied-plan-cell="14,13" x="347" y="399" width="18" height="18"/>
+<rect data-occupied-plan-cell="14,14" x="347" y="417" width="18" height="18"/>
+<rect data-occupied-plan-cell="14,15" x="347" y="435" width="18" height="18"/>
+<rect data-occupied-plan-cell="14,16" x="347" y="453" width="18" height="18"/>
+<rect data-occupied-plan-cell="14,17" x="347" y="471" width="18" height="18"/>
+<rect data-occupied-plan-cell="14,18" x="347" y="489" width="18" height="18"/>
+<rect data-occupied-plan-cell="14,19" x="347" y="507" width="18" height="18"/>
+<rect data-occupied-plan-cell="14,2" x="347" y="201" width="18" height="18"/>
+<rect data-occupied-plan-cell="14,3" x="347" y="219" width="18" height="18"/>
+<rect data-occupied-plan-cell="14,4" x="347" y="237" width="18" height="18"/>
+<rect data-occupied-plan-cell="14,5" x="347" y="255" width="18" height="18"/>
+<rect data-occupied-plan-cell="14,8" x="347" y="309" width="18" height="18"/>
+<rect data-occupied-plan-cell="14,9" x="347" y="327" width="18" height="18"/>
+<rect data-occupied-plan-cell="15,0" x="365" y="165" width="18" height="18"/>
+<rect data-occupied-plan-cell="15,1" x="365" y="183" width="18" height="18"/>
+<rect data-occupied-plan-cell="15,11" x="365" y="363" width="18" height="18"/>
+<rect data-occupied-plan-cell="15,12" x="365" y="381" width="18" height="18"/>
+<rect data-occupied-plan-cell="15,14" x="365" y="417" width="18" height="18"/>
+<rect data-occupied-plan-cell="15,15" x="365" y="435" width="18" height="18"/>
+<rect data-occupied-plan-cell="15,16" x="365" y="453" width="18" height="18"/>
+<rect data-occupied-plan-cell="15,17" x="365" y="471" width="18" height="18"/>
+<rect data-occupied-plan-cell="15,18" x="365" y="489" width="18" height="18"/>
+<rect data-occupied-plan-cell="15,19" x="365" y="507" width="18" height="18"/>
+<rect data-occupied-plan-cell="15,2" x="365" y="201" width="18" height="18"/>
+<rect data-occupied-plan-cell="15,3" x="365" y="219" width="18" height="18"/>
+<rect data-occupied-plan-cell="15,4" x="365" y="237" width="18" height="18"/>
+<rect data-occupied-plan-cell="15,5" x="365" y="255" width="18" height="18"/>
+<rect data-occupied-plan-cell="15,7" x="365" y="291" width="18" height="18"/>
+<rect data-occupied-plan-cell="15,8" x="365" y="309" width="18" height="18"/>
+<rect data-occupied-plan-cell="15,9" x="365" y="327" width="18" height="18"/>
+<rect data-occupied-plan-cell="16,11" x="383" y="363" width="18" height="18"/>
+<rect data-occupied-plan-cell="16,12" x="383" y="381" width="18" height="18"/>
+<rect data-occupied-plan-cell="16,13" x="383" y="399" width="18" height="18"/>
+<rect data-occupied-plan-cell="16,14" x="383" y="417" width="18" height="18"/>
+<rect data-occupied-plan-cell="16,15" x="383" y="435" width="18" height="18"/>
+<rect data-occupied-plan-cell="16,4" x="383" y="237" width="18" height="18"/>
+<rect data-occupied-plan-cell="16,5" x="383" y="255" width="18" height="18"/>
+<rect data-occupied-plan-cell="16,7" x="383" y="291" width="18" height="18"/>
+<rect data-occupied-plan-cell="16,8" x="383" y="309" width="18" height="18"/>
+<rect data-occupied-plan-cell="16,9" x="383" y="327" width="18" height="18"/>
+<rect data-occupied-plan-cell="17,10" x="401" y="345" width="18" height="18"/>
+<rect data-occupied-plan-cell="17,11" x="401" y="363" width="18" height="18"/>
+<rect data-occupied-plan-cell="17,12" x="401" y="381" width="18" height="18"/>
+<rect data-occupied-plan-cell="17,13" x="401" y="399" width="18" height="18"/>
+<rect data-occupied-plan-cell="17,14" x="401" y="417" width="18" height="18"/>
+<rect data-occupied-plan-cell="17,15" x="401" y="435" width="18" height="18"/>
+<rect data-occupied-plan-cell="17,4" x="401" y="237" width="18" height="18"/>
+<rect data-occupied-plan-cell="17,5" x="401" y="255" width="18" height="18"/>
+<rect data-occupied-plan-cell="17,7" x="401" y="291" width="18" height="18"/>
+<rect data-occupied-plan-cell="17,8" x="401" y="309" width="18" height="18"/>
+<rect data-occupied-plan-cell="18,10" x="419" y="345" width="18" height="18"/>
+<rect data-occupied-plan-cell="18,11" x="419" y="363" width="18" height="18"/>
+<rect data-occupied-plan-cell="18,12" x="419" y="381" width="18" height="18"/>
+<rect data-occupied-plan-cell="18,13" x="419" y="399" width="18" height="18"/>
+<rect data-occupied-plan-cell="18,14" x="419" y="417" width="18" height="18"/>
+<rect data-occupied-plan-cell="18,15" x="419" y="435" width="18" height="18"/>
+<rect data-occupied-plan-cell="18,4" x="419" y="237" width="18" height="18"/>
+<rect data-occupied-plan-cell="18,5" x="419" y="255" width="18" height="18"/>
+<rect data-occupied-plan-cell="18,6" x="419" y="273" width="18" height="18"/>
+<rect data-occupied-plan-cell="18,7" x="419" y="291" width="18" height="18"/>
+<rect data-occupied-plan-cell="18,8" x="419" y="309" width="18" height="18"/>
+<rect data-occupied-plan-cell="18,9" x="419" y="327" width="18" height="18"/>
+<rect data-occupied-plan-cell="19,14" x="437" y="417" width="18" height="18"/>
+<rect data-occupied-plan-cell="19,15" x="437" y="435" width="18" height="18"/>
+<rect data-occupied-plan-cell="19,4" x="437" y="237" width="18" height="18"/>
+<rect data-occupied-plan-cell="19,5" x="437" y="255" width="18" height="18"/>
+<rect data-occupied-plan-cell="2,10" x="131" y="345" width="18" height="18"/>
+<rect data-occupied-plan-cell="2,11" x="131" y="363" width="18" height="18"/>
+<rect data-occupied-plan-cell="2,12" x="131" y="381" width="18" height="18"/>
+<rect data-occupied-plan-cell="2,14" x="131" y="417" width="18" height="18"/>
+<rect data-occupied-plan-cell="2,15" x="131" y="435" width="18" height="18"/>
+<rect data-occupied-plan-cell="2,4" x="131" y="237" width="18" height="18"/>
+<rect data-occupied-plan-cell="2,5" x="131" y="255" width="18" height="18"/>
+<rect data-occupied-plan-cell="2,6" x="131" y="273" width="18" height="18"/>
+<rect data-occupied-plan-cell="2,7" x="131" y="291" width="18" height="18"/>
+<rect data-occupied-plan-cell="2,8" x="131" y="309" width="18" height="18"/>
+<rect data-occupied-plan-cell="3,10" x="149" y="345" width="18" height="18"/>
+<rect data-occupied-plan-cell="3,11" x="149" y="363" width="18" height="18"/>
+<rect data-occupied-plan-cell="3,12" x="149" y="381" width="18" height="18"/>
+<rect data-occupied-plan-cell="3,13" x="149" y="399" width="18" height="18"/>
+<rect data-occupied-plan-cell="3,14" x="149" y="417" width="18" height="18"/>
+<rect data-occupied-plan-cell="3,15" x="149" y="435" width="18" height="18"/>
+<rect data-occupied-plan-cell="3,4" x="149" y="237" width="18" height="18"/>
+<rect data-occupied-plan-cell="3,5" x="149" y="255" width="18" height="18"/>
+<rect data-occupied-plan-cell="3,6" x="149" y="273" width="18" height="18"/>
+<rect data-occupied-plan-cell="3,7" x="149" y="291" width="18" height="18"/>
+<rect data-occupied-plan-cell="3,8" x="149" y="309" width="18" height="18"/>
+<rect data-occupied-plan-cell="3,9" x="149" y="327" width="18" height="18"/>
+<rect data-occupied-plan-cell="4,0" x="167" y="165" width="18" height="18"/>
+<rect data-occupied-plan-cell="4,1" x="167" y="183" width="18" height="18"/>
+<rect data-occupied-plan-cell="4,11" x="167" y="363" width="18" height="18"/>
+<rect data-occupied-plan-cell="4,12" x="167" y="381" width="18" height="18"/>
+<rect data-occupied-plan-cell="4,13" x="167" y="399" width="18" height="18"/>
+<rect data-occupied-plan-cell="4,14" x="167" y="417" width="18" height="18"/>
+<rect data-occupied-plan-cell="4,15" x="167" y="435" width="18" height="18"/>
+<rect data-occupied-plan-cell="4,16" x="167" y="453" width="18" height="18"/>
+<rect data-occupied-plan-cell="4,17" x="167" y="471" width="18" height="18"/>
+<rect data-occupied-plan-cell="4,18" x="167" y="489" width="18" height="18"/>
+<rect data-occupied-plan-cell="4,19" x="167" y="507" width="18" height="18"/>
+<rect data-occupied-plan-cell="4,2" x="167" y="201" width="18" height="18"/>
+<rect data-occupied-plan-cell="4,3" x="167" y="219" width="18" height="18"/>
+<rect data-occupied-plan-cell="4,4" x="167" y="237" width="18" height="18"/>
+<rect data-occupied-plan-cell="4,5" x="167" y="255" width="18" height="18"/>
+<rect data-occupied-plan-cell="4,6" x="167" y="273" width="18" height="18"/>
+<rect data-occupied-plan-cell="4,7" x="167" y="291" width="18" height="18"/>
+<rect data-occupied-plan-cell="4,8" x="167" y="309" width="18" height="18"/>
+<rect data-occupied-plan-cell="4,9" x="167" y="327" width="18" height="18"/>
+<rect data-occupied-plan-cell="5,0" x="185" y="165" width="18" height="18"/>
+<rect data-occupied-plan-cell="5,1" x="185" y="183" width="18" height="18"/>
+<rect data-occupied-plan-cell="5,12" x="185" y="381" width="18" height="18"/>
+<rect data-occupied-plan-cell="5,13" x="185" y="399" width="18" height="18"/>
+<rect data-occupied-plan-cell="5,14" x="185" y="417" width="18" height="18"/>
+<rect data-occupied-plan-cell="5,15" x="185" y="435" width="18" height="18"/>
+<rect data-occupied-plan-cell="5,16" x="185" y="453" width="18" height="18"/>
+<rect data-occupied-plan-cell="5,17" x="185" y="471" width="18" height="18"/>
+<rect data-occupied-plan-cell="5,18" x="185" y="489" width="18" height="18"/>
+<rect data-occupied-plan-cell="5,19" x="185" y="507" width="18" height="18"/>
+<rect data-occupied-plan-cell="5,2" x="185" y="201" width="18" height="18"/>
+<rect data-occupied-plan-cell="5,3" x="185" y="219" width="18" height="18"/>
+<rect data-occupied-plan-cell="5,4" x="185" y="237" width="18" height="18"/>
+<rect data-occupied-plan-cell="5,5" x="185" y="255" width="18" height="18"/>
+<rect data-occupied-plan-cell="5,6" x="185" y="273" width="18" height="18"/>
+<rect data-occupied-plan-cell="5,8" x="185" y="309" width="18" height="18"/>
+<rect data-occupied-plan-cell="5,9" x="185" y="327" width="18" height="18"/>
+<rect data-occupied-plan-cell="6,12" x="203" y="381" width="18" height="18"/>
+<rect data-occupied-plan-cell="6,13" x="203" y="399" width="18" height="18"/>
+<rect data-occupied-plan-cell="6,14" x="203" y="417" width="18" height="18"/>
+<rect data-occupied-plan-cell="6,15" x="203" y="435" width="18" height="18"/>
+<rect data-occupied-plan-cell="6,16" x="203" y="453" width="18" height="18"/>
+<rect data-occupied-plan-cell="6,4" x="203" y="237" width="18" height="18"/>
+<rect data-occupied-plan-cell="6,5" x="203" y="255" width="18" height="18"/>
+<rect data-occupied-plan-cell="6,8" x="203" y="309" width="18" height="18"/>
+<rect data-occupied-plan-cell="6,9" x="203" y="327" width="18" height="18"/>
+<rect data-occupied-plan-cell="7,10" x="221" y="345" width="18" height="18"/>
+<rect data-occupied-plan-cell="7,11" x="221" y="363" width="18" height="18"/>
+<rect data-occupied-plan-cell="7,12" x="221" y="381" width="18" height="18"/>
+<rect data-occupied-plan-cell="7,13" x="221" y="399" width="18" height="18"/>
+<rect data-occupied-plan-cell="7,14" x="221" y="417" width="18" height="18"/>
+<rect data-occupied-plan-cell="7,15" x="221" y="435" width="18" height="18"/>
+<rect data-occupied-plan-cell="7,16" x="221" y="453" width="18" height="18"/>
+<rect data-occupied-plan-cell="7,2" x="221" y="201" width="18" height="18"/>
+<rect data-occupied-plan-cell="7,3" x="221" y="219" width="18" height="18"/>
+<rect data-occupied-plan-cell="7,4" x="221" y="237" width="18" height="18"/>
+<rect data-occupied-plan-cell="7,5" x="221" y="255" width="18" height="18"/>
+<rect data-occupied-plan-cell="7,6" x="221" y="273" width="18" height="18"/>
+<rect data-occupied-plan-cell="7,7" x="221" y="291" width="18" height="18"/>
+<rect data-occupied-plan-cell="7,8" x="221" y="309" width="18" height="18"/>
+<rect data-occupied-plan-cell="7,9" x="221" y="327" width="18" height="18"/>
+<rect data-occupied-plan-cell="8,10" x="239" y="345" width="18" height="18"/>
+<rect data-occupied-plan-cell="8,11" x="239" y="363" width="18" height="18"/>
+<rect data-occupied-plan-cell="8,12" x="239" y="381" width="18" height="18"/>
+<rect data-occupied-plan-cell="8,16" x="239" y="453" width="18" height="18"/>
+<rect data-occupied-plan-cell="8,2" x="239" y="201" width="18" height="18"/>
+<rect data-occupied-plan-cell="8,4" x="239" y="237" width="18" height="18"/>
+<rect data-occupied-plan-cell="8,6" x="239" y="273" width="18" height="18"/>
+<rect data-occupied-plan-cell="8,7" x="239" y="291" width="18" height="18"/>
+<rect data-occupied-plan-cell="8,8" x="239" y="309" width="18" height="18"/>
+<rect data-occupied-plan-cell="8,9" x="239" y="327" width="18" height="18"/>
+<rect data-occupied-plan-cell="9,10" x="257" y="345" width="18" height="18"/>
+<rect data-occupied-plan-cell="9,11" x="257" y="363" width="18" height="18"/>
+<rect data-occupied-plan-cell="9,12" x="257" y="381" width="18" height="18"/>
+<rect data-occupied-plan-cell="9,13" x="257" y="399" width="18" height="18"/>
+<rect data-occupied-plan-cell="9,14" x="257" y="417" width="18" height="18"/>
+<rect data-occupied-plan-cell="9,15" x="257" y="435" width="18" height="18"/>
+<rect data-occupied-plan-cell="9,16" x="257" y="453" width="18" height="18"/>
+<rect data-occupied-plan-cell="9,2" x="257" y="201" width="18" height="18"/>
+<rect data-occupied-plan-cell="9,3" x="257" y="219" width="18" height="18"/>
+<rect data-occupied-plan-cell="9,4" x="257" y="237" width="18" height="18"/>
+<rect data-occupied-plan-cell="9,5" x="257" y="255" width="18" height="18"/>
+</g>
+<g id="actual-rock-boundary" fill="none" stroke="#44584c" stroke-width="1.8">
+<path d="M95,417h18"/>
+<path d="M95,417v18"/>
+<path d="M95,453h18"/>
+<path d="M95,435v18"/>
+<path d="M95,237h18"/>
+<path d="M95,237v18"/>
+<path d="M95,273h18"/>
+<path d="M95,255v18"/>
+<path d="M113,345v18"/>
+<path d="M113,363v18"/>
+<path d="M113,381v18"/>
+<path d="M131,399v18"/>
+<path d="M113,399v18"/>
+<path d="M113,453h18"/>
+<path d="M113,237h18"/>
+<path d="M113,273v18"/>
+<path d="M113,291v18"/>
+<path d="M113,309v18"/>
+<path d="M131,327v18"/>
+<path d="M113,327v18"/>
+<path d="M275,345h18"/>
+<path d="M275,471h18"/>
+<path d="M275,201h18"/>
+<path d="M293,219v18"/>
+<path d="M275,291h18"/>
+<path d="M275,273v18"/>
+<path d="M293,345h18"/>
+<path d="M311,363v18"/>
+<path d="M311,417v18"/>
+<path d="M311,435v18"/>
+<path d="M293,471h18"/>
+<path d="M293,201h18"/>
+<path d="M293,219h18"/>
+<path d="M293,237h18"/>
+<path d="M293,291h18"/>
+<path d="M311,363h18"/>
+<path d="M311,381h18"/>
+<path d="M311,417h18"/>
+<path d="M311,453h18"/>
+<path d="M311,471h18"/>
+<path d="M311,201h18"/>
+<path d="M311,219h18"/>
+<path d="M311,237h18"/>
+<path d="M311,291v18"/>
+<path d="M311,309v18"/>
+<path d="M311,327v18"/>
+<path d="M347,345v18"/>
+<path d="M329,363v18"/>
+<path d="M329,417v18"/>
+<path d="M329,435v18"/>
+<path d="M329,471h18"/>
+<path d="M329,201h18"/>
+<path d="M329,219v18"/>
+<path d="M347,273v18"/>
+<path d="M347,291v18"/>
+<path d="M347,165h18"/>
+<path d="M347,165v18"/>
+<path d="M347,183v18"/>
+<path d="M347,363h18"/>
+<path d="M365,399v18"/>
+<path d="M347,471v18"/>
+<path d="M347,489v18"/>
+<path d="M347,525h18"/>
+<path d="M347,507v18"/>
+<path d="M347,273h18"/>
+<path d="M347,309h18"/>
+<path d="M347,345h18"/>
+<path d="M365,165h18"/>
+<path d="M383,165v18"/>
+<path d="M383,183v18"/>
+<path d="M365,363h18"/>
+<path d="M365,399h18"/>
+<path d="M365,417h18"/>
+<path d="M383,453v18"/>
+<path d="M383,471v18"/>
+<path d="M383,489v18"/>
+<path d="M383,507v18"/>
+<path d="M365,525h18"/>
+<path d="M383,201v18"/>
+<path d="M383,219v18"/>
+<path d="M365,273h18"/>
+<path d="M365,291h18"/>
+<path d="M365,291v18"/>
+<path d="M365,345h18"/>
+<path d="M383,363h18"/>
+<path d="M383,399v18"/>
+<path d="M383,453h18"/>
+<path d="M383,237h18"/>
+<path d="M383,273h18"/>
+<path d="M383,291h18"/>
+<path d="M401,327v18"/>
+<path d="M383,345h18"/>
+<path d="M401,345h18"/>
+<path d="M401,345v18"/>
+<path d="M401,453h18"/>
+<path d="M401,237h18"/>
+<path d="M401,273h18"/>
+<path d="M401,291h18"/>
+<path d="M401,327h18"/>
+<path d="M437,345v18"/>
+<path d="M437,363v18"/>
+<path d="M437,381v18"/>
+<path d="M437,399v18"/>
+<path d="M419,453h18"/>
+<path d="M419,237h18"/>
+<path d="M437,273v18"/>
+<path d="M419,273v18"/>
+<path d="M437,291v18"/>
+<path d="M437,309v18"/>
+<path d="M437,327v18"/>
+<path d="M419,327v18"/>
+<path d="M437,417h18"/>
+<path d="M455,417v18"/>
+<path d="M455,435v18"/>
+<path d="M437,453h18"/>
+<path d="M437,237h18"/>
+<path d="M455,237v18"/>
+<path d="M455,255v18"/>
+<path d="M437,273h18"/>
+<path d="M131,345h18"/>
+<path d="M131,399h18"/>
+<path d="M131,417h18"/>
+<path d="M131,453h18"/>
+<path d="M131,237h18"/>
+<path d="M131,327h18"/>
+<path d="M167,345v18"/>
+<path d="M149,399v18"/>
+<path d="M149,453h18"/>
+<path d="M149,237h18"/>
+<path d="M149,327v18"/>
+<path d="M167,165h18"/>
+<path d="M167,165v18"/>
+<path d="M167,183v18"/>
+<path d="M167,363h18"/>
+<path d="M185,363v18"/>
+<path d="M167,453v18"/>
+<path d="M167,471v18"/>
+<path d="M167,489v18"/>
+<path d="M167,525h18"/>
+<path d="M167,507v18"/>
+<path d="M167,201v18"/>
+<path d="M167,219v18"/>
+<path d="M185,291v18"/>
+<path d="M167,345h18"/>
+<path d="M185,165h18"/>
+<path d="M203,165v18"/>
+<path d="M203,183v18"/>
+<path d="M185,381h18"/>
+<path d="M203,471v18"/>
+<path d="M203,489v18"/>
+<path d="M203,507v18"/>
+<path d="M185,525h18"/>
+<path d="M203,201v18"/>
+<path d="M203,219v18"/>
+<path d="M203,273v18"/>
+<path d="M185,291h18"/>
+<path d="M185,309h18"/>
+<path d="M185,345h18"/>
+<path d="M203,381h18"/>
+<path d="M203,471h18"/>
+<path d="M203,237h18"/>
+<path d="M203,273h18"/>
+<path d="M203,309h18"/>
+<path d="M203,345h18"/>
+<path d="M221,345v18"/>
+<path d="M221,363v18"/>
+<path d="M239,399v18"/>
+<path d="M239,417v18"/>
+<path d="M239,435v18"/>
+<path d="M221,471h18"/>
+<path d="M221,201h18"/>
+<path d="M221,201v18"/>
+<path d="M239,219v18"/>
+<path d="M221,219v18"/>
+<path d="M239,255v18"/>
+<path d="M221,273v18"/>
+<path d="M221,291v18"/>
+<path d="M239,399h18"/>
+<path d="M239,453h18"/>
+<path d="M239,471h18"/>
+<path d="M239,201h18"/>
+<path d="M239,219h18"/>
+<path d="M239,237h18"/>
+<path d="M239,255h18"/>
+<path d="M239,273h18"/>
+<path d="M257,273v18"/>
+<path d="M257,291v18"/>
+<path d="M257,309v18"/>
+<path d="M257,327v18"/>
+<path d="M257,345h18"/>
+<path d="M257,399v18"/>
+<path d="M257,417v18"/>
+<path d="M257,435v18"/>
+<path d="M257,471h18"/>
+<path d="M257,201h18"/>
+<path d="M257,219v18"/>
+<path d="M257,273h18"/>
+<path d="M257,255v18"/>
+</g>
+<rect data-bench-cell="15,11" x="365" y="363" width="18" height="18" fill="#ad9070" stroke="#f8f6f0" stroke-width="1"/>
+<rect data-bench-cell="16,11" x="383" y="363" width="18" height="18" fill="#ad9070" stroke="#f8f6f0" stroke-width="1"/>
+<rect data-bench-cell="17,11" x="401" y="363" width="18" height="18" fill="#ad9070" stroke="#f8f6f0" stroke-width="1"/>
+<rect data-bench-cell="15,12" x="365" y="381" width="18" height="18" fill="#ad9070" stroke="#f8f6f0" stroke-width="1"/>
+<rect data-bench-cell="16,12" x="383" y="381" width="18" height="18" fill="#ad9070" stroke="#f8f6f0" stroke-width="1"/>
+<rect data-bench-cell="17,12" x="401" y="381" width="18" height="18" fill="#ad9070" stroke="#f8f6f0" stroke-width="1"/>
+<rect data-bench-cell="16,13" x="383" y="399" width="18" height="18" fill="#ad9070" stroke="#f8f6f0" stroke-width="1"/>
+<rect data-bench-cell="17,13" x="401" y="399" width="18" height="18" fill="#ad9070" stroke="#f8f6f0" stroke-width="1"/>
+<path data-real-stair="step_1" d="M356,390L374,390" stroke="#b35032" stroke-width="4"/>
+<path data-real-stair="step_2" d="M428,390L410,390" stroke="#b35032" stroke-width="4"/>
+<path data-real-stair="step_3" d="M392,426L392,408" stroke="#b35032" stroke-width="4"/>
+<text x="84" y="557" font-size="11" fill="#637365">Brown: +1 ft bench. Red: three genuine traversable step edges.</text>
+</g>
+<g id="roof-legend" font-family="sans-serif">
+<path d="M560 125h65" stroke="#405e55" stroke-width="3"/><text x="637" y="130" font-size="13" fill="#405e55">Floor at z=0/+1 ft</text>
+<path d="M835 125h65" stroke="#9d7146" stroke-width="3"/><text x="913" y="130" font-size="13" fill="#70553e">Fixed roof at z=6.5 ft</text>
+<path d="M1140 125h65" stroke="#57767d" stroke-width="3" stroke-dasharray="6 5"/><text x="1211" y="130" font-size="13" fill="#57767d">Lifted roof to z=7.5 ft</text>
+</g>
+<g id="absolute-step_1" font-family="sans-serif">
+<rect x="555" y="170" width="845" height="260" fill="#fffdf8" stroke="#b7c1ba"/>
+<text x="575" y="199" font-size="16" font-family="Georgia,serif" fill="#30483c">02 / STEP 1 : 60 ft from north mouth to approach</text>
+<text x="575" y="218" font-size="11" fill="#536b5e">All axes 24 px/foot; aligned floor and roof share z=0. Local profile of real dry passage.</text>
+<text x="613" y="405" font-size="10" text-anchor="middle" fill="#62736a">12,12</text>
+<text x="673" y="405" font-size="10" text-anchor="middle" fill="#62736a">13,12</text>
+<text x="733" y="405" font-size="10" text-anchor="middle" fill="#62736a">14,12</text>
+<text x="793" y="405" font-size="10" text-anchor="middle" fill="#62736a">15,12</text>
+<text x="853" y="405" font-size="10" text-anchor="middle" fill="#62736a">15,11</text>
+<path d="M613,374L673,374L733,374H748v-12H778v-12H793L853,350" fill="none" stroke="#405e55" stroke-width="3" data-floor-profile="step_1"/>
+<path d="M613,218 L673,218 L733,218 L793,218 L853,218" fill="none" stroke="#9d7146" stroke-width="2.5" data-fixed-roof="step_1"/>
+<path d="M613,218 L673,218 L733,218 L793,194 L853,194" fill="none" stroke="#57767d" stroke-width="2.5" stroke-dasharray="6 5" data-lifted-roof="step_1"/>
+<text x="577" y="418" font-size="11" fill="#82614c">Fixed: 5.5 ft clearance over bench. Lifted: 6.5 ft. Neither is a measured section.</text>
+</g>
+<g id="absolute-step_2" font-family="sans-serif">
+<rect x="555" y="458" width="845" height="260" fill="#fffdf8" stroke="#b7c1ba"/>
+<text x="575" y="487" font-size="16" font-family="Georgia,serif" fill="#30483c">03 / STEP 2 : 80 ft from north mouth to approach</text>
+<text x="575" y="506" font-size="11" fill="#536b5e">All axes 24 px/foot; aligned floor and roof share z=0. Local profile of real dry passage.</text>
+<text x="613" y="693" font-size="10" text-anchor="middle" fill="#62736a">18,14</text>
+<text x="673" y="693" font-size="10" text-anchor="middle" fill="#62736a">18,13</text>
+<text x="733" y="693" font-size="10" text-anchor="middle" fill="#62736a">18,12</text>
+<text x="793" y="693" font-size="10" text-anchor="middle" fill="#62736a">17,12</text>
+<text x="853" y="693" font-size="10" text-anchor="middle" fill="#62736a">16,12</text>
+<path d="M613,662L673,662L733,662H748v-12H778v-12H793L853,638" fill="none" stroke="#405e55" stroke-width="3" data-floor-profile="step_2"/>
+<path d="M613,506 L673,506 L733,506 L793,506 L853,506" fill="none" stroke="#9d7146" stroke-width="2.5" data-fixed-roof="step_2"/>
+<path d="M613,506 L673,506 L733,506 L793,482 L853,482" fill="none" stroke="#57767d" stroke-width="2.5" stroke-dasharray="6 5" data-lifted-roof="step_2"/>
+<text x="577" y="706" font-size="11" fill="#82614c">Fixed: 5.5 ft clearance over bench. Lifted: 6.5 ft. Neither is a measured section.</text>
+</g>
+<g id="absolute-step_3" font-family="sans-serif">
+<rect x="555" y="746" width="845" height="260" fill="#fffdf8" stroke="#b7c1ba"/>
+<text x="575" y="775" font-size="16" font-family="Georgia,serif" fill="#30483c">04 / STEP 3 : 70 ft from north mouth to approach</text>
+<text x="575" y="794" font-size="11" fill="#536b5e">All axes 24 px/foot; aligned floor and roof share z=0. Local profile of real dry passage.</text>
+<text x="613" y="981" font-size="10" text-anchor="middle" fill="#62736a">14,14</text>
+<text x="673" y="981" font-size="10" text-anchor="middle" fill="#62736a">15,14</text>
+<text x="733" y="981" font-size="10" text-anchor="middle" fill="#62736a">16,14</text>
+<text x="793" y="981" font-size="10" text-anchor="middle" fill="#62736a">16,13</text>
+<text x="853" y="981" font-size="10" text-anchor="middle" fill="#62736a">16,12</text>
+<path d="M613,950L673,950L733,950H748v-12H778v-12H793L853,926" fill="none" stroke="#405e55" stroke-width="3" data-floor-profile="step_3"/>
+<path d="M613,794 L673,794 L733,794 L793,794 L853,794" fill="none" stroke="#9d7146" stroke-width="2.5" data-fixed-roof="step_3"/>
+<path d="M613,794 L673,794 L733,794 L793,770 L853,770" fill="none" stroke="#57767d" stroke-width="2.5" stroke-dasharray="6 5" data-lifted-roof="step_3"/>
+<text x="577" y="994" font-size="11" fill="#82614c">Fixed: 5.5 ft clearance over bench. Lifted: 6.5 ft. Neither is a measured section.</text>
+</g>
+<text x="52" y="1044" font-family="Georgia,serif" font-size="19" fill="#354c40">ARCHITECTURAL CONFLICT REVEALED, NOT SILENTLY RESOLVED</text>
+<text x="52" y="1071" font-family="sans-serif" font-size="13" fill="#56665b">A one-foot higher floor under a continuous crown reduces clearance. Keeping 6.5 ft of local headroom requires the roof to rise.</text>
+<text x="52" y="1093" font-family="sans-serif" font-size="12" fill="#7d5d44">Hypothetical fictional cave sections; no measured elevation, bearing, roof stability or certified accessible route.</text>
+</svg>
