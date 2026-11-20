@@ -53,6 +53,24 @@ function cycleRank(adj){
  return edges-adj.size+components;
 }
 
+// The raw grid cycle rank counts every 2x2 floor patch as a loop.
+// Those microscopic squares are NOT distinct adventure routes. In a planar
+// unit-square grid graph each occupied 2x2 is one bounded elementary face.
+// Subtracting them leaves cycles enclosing actual omitted floor/rock areas.
+function elementaryFloorFaces(hall){
+ let count=0;
+ for(const p of hall.keys()){
+  const[x,y]=split(p);
+  if(hall.has(key([x+1,y]))&&hall.has(key([x,y+1]))&&hall.has(key([x+1,y+1])))count++;
+ }
+ return count;
+}
+function nontrivialHallLoopRank(hall){
+ const loops=cycleRank(hall)-elementaryFloorFaces(hall);
+ if(loops<0)throw Error("Invalid planar hall adjacency");
+ return loops;
+}
+
 function chokepoints(hall){
  const critical=[];
  for(const p of hall.keys()){
@@ -74,7 +92,8 @@ function audit(tile){
   normally_accessible:[...owner].some(([p,z])=>z===id&&ordinarily.has(p))}));
  return{id:tile.id,floor_cells:owner.size,corridor_cells:hall.size,doors:doors.length,
   standard_doors:doors.filter(d=>d.kind==="door").length,open_passages:doors.filter(d=>d.kind==="opening").length,locked_doors:doors.filter(d=>d.kind==="locked").length,secret_doors:doors.filter(d=>d.kind==="secret").length,
-  hall_cycle_rank:cycleRank(hall),hall_chokepoint_count:chokepoints(hall).length,
+  hall_cycle_rank:cycleRank(hall),hall_elementary_square_faces:elementaryFloorFaces(hall),
+  hall_nontrivial_loop_rank:nontrivialHallLoopRank(hall),hall_chokepoint_count:chokepoints(hall).length,
   normal_portals_reachable:[...portals].filter(p=>ordinarily.has(p)).length,fully_connected:fully.size===owner.size,
   normally_accessible_floor_fraction:Number((ordinarily.size/owner.size).toFixed(3)),
   chambers:visibility,notes:visibility.filter(r=>r.doors.length===1&&r.doors[0]==="secret").map(r=>`Secret-only chamber ${r.room} is a discovery, not an alternative circulation route`),
@@ -85,4 +104,4 @@ function audit(tile){
   ...routeDiversity(owner,doors,[...portals],tile.terrain||{})};
 }
 if(require.main===module){const data=JSON.parse(fs.readFileSync(path.join(__dirname,"blueprints.json"),"utf8"));const results=data.tiles.map(audit);if(results.some(r=>!r.fully_connected||r.normal_portals_reachable!==8))throw Error("A tile has inaccessible floor or stranded exits");fs.mkdirSync(path.join(__dirname,"reports"),{recursive:true});fs.writeFileSync(path.join(__dirname,"reports/topology.json"),JSON.stringify(results,null,2)+"\n");for(const r of results)console.log(r.id+": "+r.hall_cycle_rank+" cycles, "+r.hall_chokepoint_count+" exit-separating cells");}
-module.exports={audit,cycleRank,adjacency,chokepoints,reachable,ownerMap,doorEdges};
+module.exports={audit,cycleRank,elementaryFloorFaces,nontrivialHallLoopRank,adjacency,chokepoints,reachable,ownerMap,doorEdges};
