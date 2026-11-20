@@ -19,7 +19,7 @@ test("Basalt plate registers two actual five-foot rock webs to the canonical map
  assert.match(svg,/id="rib-section-western_distributary_web"/);
  assert.match(svg,/id="rib-section-eastern_distributary_web"/);
  assert.match(svg,/5 ft/);
- assert.match(svg,/canonical plan/i);
+ assert.match(svg,/canonical dungeon plan/i);
  assert.match(svg,/ceiling sketches are not vertically scaled/);
  assert.doesNotMatch(svg,/<image\b/i,"Do not flatten editorial vector plate");
 });
