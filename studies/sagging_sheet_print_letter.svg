@@ -45,10 +45,13 @@
 <path d="M134.4,132.72l1.68,-3.6 2.88,2.4z" fill="#b8b5ab" stroke="#77766c" stroke-width=".85"/>
 <path d="M148.08,139.44l1.68,-3.6 2.88,2.4z" fill="#b8b5ab" stroke="#77766c" stroke-width=".85"/>
 </g>
-<g id="level-ramps" fill="none" stroke="#87664e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-<path data-uphill-cell="15,12" d="M352.32,300L369.12,300 M363.36,303.36L369.12,300L363.36,296.64"/>
-<path data-uphill-cell="16,13" d="M396,343.68L396,326.88 M399.36,332.64L396,326.88L392.64,332.64"/>
-<path data-uphill-cell="17,12" d="M439.68,300L422.88,300 M428.64,296.64L422.88,300L428.64,303.36"/>
+<g id="lava-bench-steps" fill="none" stroke="#76583c" stroke-width="2.1" stroke-linecap="round">
+<path data-step-edge="14,12|15,12" data-riser="1" data-uphill-cell="15,12" d="M356,292.32L356,307.68"/>
+<path data-step-edge="14,12|15,12" data-riser="2" data-uphill-cell="15,12" d="M364,292.32L364,307.68"/>
+<path data-step-edge="16,13|16,14" data-riser="1" data-uphill-cell="16,13" d="M388.32,340L403.68,340"/>
+<path data-step-edge="16,13|16,14" data-riser="2" data-uphill-cell="16,13" d="M388.32,332L403.68,332"/>
+<path data-step-edge="17,12|18,12" data-riser="1" data-uphill-cell="17,12" d="M436,307.68L436,292.32"/>
+<path data-step-edge="17,12|18,12" data-riser="2" data-uphill-cell="17,12" d="M428,307.68L428,292.32"/>
 </g>
 <g id="cave-geomorphology">
 <g data-geology="breakdown" data-cell="5,4"><path d="M123,113L126,104 131,100 136,103 141,110 137,116 127,117Z" fill="#d5d0c4" stroke="#575b55" stroke-width="1.2"/><path d="M126,104L131,109 136,103 M131,109L137,116 M127,117L131,109" stroke="#8b877c" stroke-width=".75" fill="none"/></g>

@@ -13,6 +13,8 @@
   "blocked_edges": 2,
   "raised_floor_cells": 8,
   "grade_transition_edges": 3,
+  "step_risers": 6,
+  "bench_rise_feet": 1,
   "northern_before_half_cells": 17,
   "northern_after_half_cells": 31,
   "northern_detour_half_cells": 14,

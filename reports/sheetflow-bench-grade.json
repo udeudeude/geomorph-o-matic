@@ -1,9 +1,9 @@
 {
   "tile": "sagging_sheet",
   "status": "unreleased schematic vertical-datum sensitivity study",
-  "basis": "Eight genuine raised plan cells and three actual terrain ramp edges",
-  "datum": "Adjacent ordinary-floor surface z=0 ft for this study only; actual level-one rise and absolute roof elevation unknown",
-  "existing_roof_assumption": "6.5 ft above LOCAL floor, not a surveyed absolute ceiling",
+  "basis": "Eight raised floor cells and three actual two-riser natural basalt stepways",
+  "datum": "Model now assigns one foot above local ordinary floor to the bench. Absolute roof datum and field geometry remain unknown",
+  "existing_roof_assumption": "6.5 ft above LOCAL floor in the interior; an explicitly matching 6.5 ft crown is separately specified at all modular mouths",
   "alternative_fixed_roof_hypothesis": "ONLY for comparing candidates: hold roof at z=6.5 ft above ordinary floor across the bench. This is not encoded in the master and not asserted as geological fact.",
   "baseline_local_clearance_feet": 6.5,
   "half_cell_plan_feet": 2.5,
@@ -55,7 +55,11 @@
       "from_level": 1,
       "to_level": 0,
       "plan_run_feet": 2.5,
-      "kind": "modeled walking connection; physical construction unresolved"
+      "kind": "two-riser natural basalt stepway, not a ramp",
+      "rise_feet": 1,
+      "risers": 2,
+      "individual_riser_feet": 0.5,
+      "tread_depth_feet": 1.25
     },
     {
       "from": [
@@ -69,7 +73,11 @@
       "from_level": 1,
       "to_level": 0,
       "plan_run_feet": 2.5,
-      "kind": "modeled walking connection; physical construction unresolved"
+      "kind": "two-riser natural basalt stepway, not a ramp",
+      "rise_feet": 1,
+      "risers": 2,
+      "individual_riser_feet": 0.5,
+      "tread_depth_feet": 1.25
     },
     {
       "from": [
@@ -83,43 +91,47 @@
       "from_level": 1,
       "to_level": 0,
       "plan_run_feet": 2.5,
-      "kind": "modeled walking connection; physical construction unresolved"
+      "kind": "two-riser natural basalt stepway, not a ramp",
+      "rise_feet": 1,
+      "risers": 2,
+      "individual_riser_feet": 0.5,
+      "tread_depth_feet": 1.25
     }
   ],
   "candidates": [
     {
       "hypothetical_bench_rise_feet": 0.25,
-      "grade_per_single_2_5ft_transition_percent": 10,
-      "grade_exceeds_study_limit": false,
+      "counterfactual_ramp_grade_percent": 10,
+      "counterfactual_ramp_exceeds_limit": false,
       "implied_raised_floor_headroom_feet_if_roof_crown_stays_fixed": 6.25,
       "standing_six_foot_passage_if_roof_crown_stays_fixed": true,
-      "interpretation": "Single-edge grade meets comparison criterion; actual roughness and construction are still unknown."
+      "interpretation": "Only a hypothetical smooth ramp would meet the comparison; the authored bench instead has discrete steps."
     },
     {
       "hypothetical_bench_rise_feet": 0.5,
-      "grade_per_single_2_5ft_transition_percent": 20,
-      "grade_exceeds_study_limit": true,
+      "counterfactual_ramp_grade_percent": 20,
+      "counterfactual_ramp_exceeds_limit": true,
       "implied_raised_floor_headroom_feet_if_roof_crown_stays_fixed": 6,
       "standing_six_foot_passage_if_roof_crown_stays_fixed": true,
-      "interpretation": "Single-edge walking ramp fails chosen grade criterion; redesign as longer approach, steps, or separately modeled scramble."
+      "interpretation": "A continuous ramp this short would exceed the chosen design comparison; the actual map now encodes discrete stone risers instead."
     },
     {
       "hypothetical_bench_rise_feet": 1,
-      "grade_per_single_2_5ft_transition_percent": 40,
-      "grade_exceeds_study_limit": true,
+      "counterfactual_ramp_grade_percent": 40,
+      "counterfactual_ramp_exceeds_limit": true,
       "implied_raised_floor_headroom_feet_if_roof_crown_stays_fixed": 5.5,
       "standing_six_foot_passage_if_roof_crown_stays_fixed": false,
-      "interpretation": "Single-edge walking ramp fails chosen grade criterion; redesign as longer approach, steps, or separately modeled scramble."
+      "interpretation": "A continuous ramp this short would exceed the chosen design comparison; the actual map now encodes discrete stone risers instead."
     },
     {
       "hypothetical_bench_rise_feet": 2,
-      "grade_per_single_2_5ft_transition_percent": 80,
-      "grade_exceeds_study_limit": true,
+      "counterfactual_ramp_grade_percent": 80,
+      "counterfactual_ramp_exceeds_limit": true,
       "implied_raised_floor_headroom_feet_if_roof_crown_stays_fixed": 4.5,
       "standing_six_foot_passage_if_roof_crown_stays_fixed": false,
-      "interpretation": "Single-edge walking ramp fails chosen grade criterion; redesign as longer approach, steps, or separately modeled scramble."
+      "interpretation": "A continuous ramp this short would exceed the chosen design comparison; the actual map now encodes discrete stone risers instead."
     }
   ],
-  "recommended_action": "Do not represent a 1-2 ft bench rise as three effortless 2.5 ft ramps. Re-author longer landings, stairs, or explicit scrambles after a coherent vault and floor datum is selected.",
+  "recommended_action": "Three steps are now modeled as two 0.5-ft risers over 2.5 feet each. Verify the conceptual headroom and physical-size step symbols; do not infer an accessible route or cave-stability guarantee.",
   "no_structural_claim": "No surveyed height, roof thickness, bearing capacity, regulatory access grade or tested construction."
 }
