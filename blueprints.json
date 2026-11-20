@@ -6209,15 +6209,35 @@
               18
             ],
             [
-              8,
+              7,
               18
+            ],
+            [
+              7,
+              17
+            ],
+            [
+              8,
+              17
+            ],
+            [
+              8,
+              16
+            ],
+            [
+              9,
+              16
+            ],
+            [
+              9,
+              13
             ],
             [
               8,
               13
             ]
           ],
-          "reason": "Individually composed joint-guided cave link; fictional plan, not an instrument survey"
+          "reason": "Offset abandoned stream tube; joint-to-bedding transitions change walkable plan, not just drawing"
         },
         {
           "id": "se_exit",
@@ -6235,11 +6255,23 @@
               18
             ],
             [
+              11,
+              18
+            ],
+            [
+              11,
+              16
+            ],
+            [
+              12,
+              16
+            ],
+            [
               12,
               13
             ]
           ],
-          "reason": "Individually composed joint-guided cave link; fictional plan, not an instrument survey"
+          "reason": "Offset abandoned stream tube; joint-to-bedding transitions change walkable plan, not just drawing"
         },
         {
           "id": "western_knuckle",
@@ -6975,14 +7007,26 @@
             ],
             [
               6,
-              6
+              2
+            ],
+            [
+              7,
+              2
+            ],
+            [
+              7,
+              4
+            ],
+            [
+              6,
+              4
             ],
             [
               6,
               8
             ]
           ],
-          "reason": "Hand-authored passage following a distinct geological joint or reused pilgrim approach"
+          "reason": "Dogleg around surviving bedrock and pilgrim masonry; real plan cells and intact thresholds"
         },
         {
           "id": "ne",
@@ -7122,8 +7166,32 @@
               18
             ],
             [
-              7,
+              6,
               18
+            ],
+            [
+              6,
+              17
+            ],
+            [
+              7,
+              17
+            ],
+            [
+              7,
+              16
+            ],
+            [
+              8,
+              16
+            ],
+            [
+              8,
+              15
+            ],
+            [
+              7,
+              15
             ],
             [
               7,
@@ -7134,7 +7202,7 @@
               13
             ]
           ],
-          "reason": "Hand-authored passage following a distinct geological joint or reused pilgrim approach"
+          "reason": "Dogleg around surviving bedrock and pilgrim masonry; real plan cells and intact thresholds"
         },
         {
           "id": "se",

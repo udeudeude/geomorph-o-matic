@@ -19,6 +19,10 @@ These are editable vector drawings, not flattened images. The separate floor, gr
 
 
 
+## Joint-guided passage revisions and axial-corridor audit (November 19, 2026)
+
+Scoured Siphon's two southern approaches and Lantern Sink's northwest/southwest entries now use authored lateral doglegs, protecting their actual dry connections, bridge, collapses, three rock-bench ramps and unchanged rotation-compatible mouths. The independent [cave axial-strip diagnostic](cave-axes.js) and [generated report](reports/cave-axes.json) expose still-straight hall runs rather than masking them under curved lines. [Research, decisions and limitations](research/2026-11-19-cave-axis-composition.md). All work remains provisional.
+
 ## Plan-width reconstruction: cave approaches (November 19, 2026)
 
 [Scoured Siphon](tiles/scoured_siphon.svg) and [Lantern Sink](tiles/lantern_sink.svg) now have **19 additional authored floor cells** across asymmetric dry approaches, erosion pockets, and widened channel remnants, rather than merely smoothing rectangular walls. The existing eight 2.5-foot exterior throats, water crossings and blocked passages stay unchanged.

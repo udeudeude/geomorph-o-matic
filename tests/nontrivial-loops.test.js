@@ -28,8 +28,8 @@ test("a rock island with a genuine walkaround route survives suppression of tiny
 test("real cave width additions report distinct floor squares and genuine circuits",()=>{
  const scoured=audit(data.tiles.find(t=>t.id==="scoured_siphon"));
  const lantern=audit(data.tiles.find(t=>t.id==="lantern_sink"));
- assert.equal(scoured.hall_cycle_rank,23);
- assert.equal(scoured.hall_elementary_square_faces,19);
+ assert.equal(scoured.hall_cycle_rank,21);
+ assert.equal(scoured.hall_elementary_square_faces,17);
  assert.equal(scoured.hall_nontrivial_loop_rank,4);
  assert.equal(lantern.hall_cycle_rank,15);
  assert.equal(lantern.hall_elementary_square_faces,13);
