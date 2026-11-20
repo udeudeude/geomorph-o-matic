@@ -7,13 +7,14 @@ const {doorEdges}=require("./audit");
 const {terrainGraph}=require("./terrain");
 const {distances}=require("./route-analysis");
 const {inspectTile,boundaryCell}=require("./seam-profiles");
+const {applyAbsoluteVault}=require("./wide-vault-datum");
 
 const WIDTH_FEET=2.5;
 const POSTURES=Object.freeze({standing:6,crouching:4,crawling:2.5});
 const key=([x,y])=>x+","+y;
 const xy=s=>s.split(",").map(Number);
 const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
-function roofModel(owner,scenario,profile="cave-wide-v1"){
+function roofModel(owner,scenario,profile="cave-wide-v1",terrain){
   if(!(owner instanceof Map))throw Error("Roof scenario requires the canonical floor Map");
   if(!scenario||scenario.status!=="hypothetical"||!Number.isFinite(scenario.baseline_feet)||
       scenario.baseline_feet<6||scenario.baseline_feet>25||
@@ -83,11 +84,11 @@ function roofModel(owner,scenario,profile="cave-wide-v1"){
     zones.push({id:zone.id,interpretation:zone.interpretation,
       clearance_feet:zone.clearance_feet,cells:[...cells].sort((a,b)=>{const [x,y]=xy(a),[u,v]=xy(b);return y-v||x-u;})});
   }
-  return {baseline_feet:scenario.baseline_feet,mouth_crown_feet:scenario.mouth_crown_feet,clearances:floors,zones,
+  return applyAbsoluteVault(owner,scenario,terrain,{baseline_feet:scenario.baseline_feet,mouth_crown_feet:scenario.mouth_crown_feet,clearances:floors,zones,
     throat_transition_feet_per_half_cell:taperRate??null,
     tapered_cells:tapered.filter(x=>!occupied.has(x.cell)).sort((a,b)=>a.distance_from_mouth_half_cells-b.distance_from_mouth_half_cells||a.cell.localeCompare(b.cell)),
     mouth_distances:mouthDistances,
-    status:"hypothetical design geometry, not measured or physically verified"};
+    status:"hypothetical design geometry, not measured or physically verified"});
 }
 function headroomGraph(graph,model,requiredFeet){
   if(!(graph instanceof Map)||!Number.isFinite(requiredFeet)||requiredFeet<=0)
@@ -98,7 +99,7 @@ function headroomGraph(graph,model,requiredFeet){
 }
 function analyze(tile){
   const floor=buildCells(tile),seams=inspectTile(tile,"cave-wide-v1");
-  const roof=roofModel(floor,tile.roof_scenario,tile.seam_profile);
+  const roof=roofModel(floor,tile.roof_scenario,tile.seam_profile,tile.terrain);
   const walking=terrainGraph(floor,doorEdges(tile),tile.terrain||{},"ordinary","dry");
   const mouths=seams.mouths.flatMap(m=>m.offsets.map(n=>key(boundaryCell(m.side,n))));
   const reference=headroomGraph(walking,roof,POSTURES.crawling);
@@ -138,9 +139,9 @@ function analyze(tile){
     postures,selected_traversals:examples,
     limitations:"No measured cave roof, geological stability or real-world access classification. Posture thresholds are gameplay scenarios."};
 }
-function ceilingSvg(owner,scenario,scale=24){
+function ceilingSvg(owner,scenario,scale=24,terrain){
   if(!scenario)return [];
-  const roof=roofModel(owner,scenario);
+  const roof=roofModel(owner,scenario,"cave-wide-v1",terrain);
   const out=['<g id="ceiling-clearance" fill="none" stroke="#876d52" stroke-linecap="round">',
     '<title>Hypothetical low-ceiling zones; dashed marks denote overhead clearance, not walls</title>'];
   for(const zone of roof.zones){
@@ -162,6 +163,20 @@ function ceilingSvg(owner,scenario,scale=24){
       const [x,y]=xy(p),a=x*scale,b=y*scale;
       out.push('<path data-roof-cell="'+p+'" d="M'+(a+scale*.31)+','+(b+scale*.25)+'l'+(scale*.25)+','+(scale*.5)+
         ' m'+(scale*.14)+','+(-scale*.5)+'l'+(scale*.2)+','+(scale*.4)+'" stroke-width="1.25" opacity=".8"/>');
+    }
+    out.push('</g>');
+  }
+  if(roof.absolute_vault_zones){
+    out.push('<g id="absolute-bench-vault" fill="none" stroke="#728b71" stroke-width="1" stroke-dasharray="4 3">');
+    for(const zone of roof.absolute_vault_zones)for(const p of zone.cells){
+      const [x,y]=xy(p),z=roof.absolute_roof_elevations_feet.get(p);
+      for(const [dx,dy,d] of [[1,0,"M"+((x+1)*scale)+","+(y*scale)+"v"+scale],[-1,0,"M"+(x*scale)+","+(y*scale)+"v"+scale],[0,1,"M"+(x*scale)+"," + ((y+1)*scale)+"h"+scale],[0,-1,"M"+(x*scale)+","+(y*scale)+"h"+scale]]){
+        const q=key([x+dx,y+dy]);if(roof.absolute_roof_elevations_feet.get(q)!==z)
+          out.push('<path data-absolute-roof-cell="'+p+'" data-roof-elevation-feet="'+z+'" d="'+d+'"/>');
+      }
+    }
+    for(const p of roof.bench_cells_below_standing_clearance){const [x,y]=xy(p);
+      out.push('<path data-stooped-bench-cell="'+p+'" d="M'+(x+.25)*scale+','+(y+.4)*scale+'l'+(.5*scale)+',0m-'+(.5*scale)+','+(.2*scale)+'l'+(.5*scale)+',0" stroke="#9d593b" stroke-width="1.5" stroke-dasharray="none"/>');
     }
     out.push('</g>');
   }

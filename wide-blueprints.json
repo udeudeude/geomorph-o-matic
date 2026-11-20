@@ -671,7 +671,7 @@
       "geometry": "row-runs",
       "wall_style": "cavern",
       "seam_profile": "cave-wide-v1",
-      "description": "A contrasting low sheet-flow cave with six asymmetric interconnected vesicles and a doglegged southern transfer around surviving basalt ribs, a drained central basin, and a surviving elevated basalt bench approached by three distinct two-riser basalt stepways. A double-width northwest ceiling fall interrupts an axial route, forcing a verified detour without disconnecting the eight five-foot modular mouths. All roof clearances and formation stages remain hypothetical.",
+      "description": "A contrasting low sheet-flow cave with six asymmetric interconnected vesicles and a doglegged southern transfer around surviving basalt ribs, a drained central basin, and a surviving elevated basalt bench approached by three distinct two-riser basalt stepways. A double-width northwest ceiling fall interrupts an axial route, forcing a verified detour without disconnecting the eight five-foot modular mouths. All roof clearances and formation stages remain hypothetical. A nonuniform hypothetical absolute roof envelope now registers the raised bench to the unchanged seam datum, leaving the eastern tail locally stooped.",
       "rooms": [
         [
           "crown",
@@ -1893,7 +1893,89 @@
           }
         ],
         "mouth_crown_feet": 6.5,
-        "throat_transition_feet_per_half_cell": 0.5
+        "throat_transition_feet_per_half_cell": 0.5,
+        "absolute_vault": {
+          "status": "hypothetical",
+          "datum": "ordinary_floor_zero_feet",
+          "bench_rise_feet": 1,
+          "maximum_adjacent_crown_change_feet": 0.5,
+          "zones": [
+            {
+              "id": "inflated_bench_vault",
+              "roof_elevation_feet": 7.5,
+              "cells": [
+                [
+                  16,
+                  11
+                ],
+                [
+                  16,
+                  12
+                ]
+              ],
+              "interpretation": "An asymmetric remnant inflated sheet lobe forms a high central roof over the bench."
+            },
+            {
+              "id": "deflated_bench_shelf",
+              "roof_elevation_feet": 7,
+              "cells": [
+                [
+                  14,
+                  11
+                ],
+                [
+                  14,
+                  12
+                ],
+                [
+                  15,
+                  11
+                ],
+                [
+                  15,
+                  12
+                ],
+                [
+                  16,
+                  13
+                ],
+                [
+                  16,
+                  14
+                ],
+                [
+                  17,
+                  10
+                ],
+                [
+                  17,
+                  11
+                ],
+                [
+                  17,
+                  12
+                ],
+                [
+                  17,
+                  14
+                ],
+                [
+                  18,
+                  11
+                ],
+                [
+                  18,
+                  12
+                ],
+                [
+                  18,
+                  13
+                ]
+              ],
+              "interpretation": "A lower perimeter crown connects the central inflation to the original six-and-a-half-foot envelope; the eastern tail remains too low for standing."
+            }
+          ]
+        }
       }
     },
     {
