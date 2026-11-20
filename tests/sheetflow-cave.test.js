@@ -17,7 +17,10 @@ test("sheetflow is a second, spatially distinct six-chamber five-foot-mouth plan
  assert.notDeepEqual(tile.rooms.map(r=>r[2]),original.rooms.map(r=>r[2]));
  assert.equal(tile.rooms.length,6);
  assert.equal(tile.doors.length,18);
- assert.equal(buildCells(tile).size,240);
+ assert.equal(buildCells(tile).size,238);
+ const occupied=buildCells(tile);
+ assert.ok(!occupied.has('8,15')&&!occupied.has('12,15'));
+ assert.ok(occupied.has('8,16')&&occupied.has('12,16'));
  assert.equal(inspectTile(tile,"cave-wide-v1").clear_openings,8);
  for(let turn=0;turn<4;turn++)for(const side of ["N","S","E","W"])
   assert.equal(edgeMask(tile,turn,side),"4,5,14,15");
@@ -44,14 +47,14 @@ test("three distinct grade approaches make the raised bench fully walkable, with
  const graph=terrainGraph(floor,doors,tile.terrain);
  assert.equal(model.heights.size,8);
  assert.equal(model.ramps.size,3);
- assert.equal(distances(graph,"4,0").size,240);
+ assert.equal(distances(graph,"4,0").size,238);
  for(const [a,b] of tile.terrain.ramps){
   const x=a.join(","),y=b.join(",");
   assert.ok(graph.get(x).includes(y),x+" -> "+y);
  }
  assert.ok(!graph.get("17,11").includes("18,11")); // no fabricated climb at un-ramped east ledge
  const noRamps=terrainGraph(floor,doors,{...tile.terrain,ramps:[]});
- assert.ok(distances(noRamps,"4,0").size<240);
+ assert.ok(distances(noRamps,"4,0").size<238);
 });
 test("mixed assembly proves two genuinely different mapped caves join in four rotated instances",()=>{
  const layout=JSON.parse(fs.readFileSync(path.join(__dirname,"../studies/assembly_wide_mixed_2x2.json"),"utf8"));
