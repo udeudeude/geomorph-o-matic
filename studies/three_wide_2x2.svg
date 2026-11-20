@@ -48,6 +48,44 @@
 <path data-roof-cell="9,6" d="M223.44,150l6,12 m3.3600000000000003,-12l4.800000000000001,9.600000000000001" stroke-width="1.25" opacity=".8"/>
 <path data-roof-cell="10,6" d="M247.44,150l6,12 m3.3600000000000003,-12l4.800000000000001,9.600000000000001" stroke-width="1.25" opacity=".8"/>
 </g>
+<g id="absolute-cave-vault-0-0" fill="none" stroke="#728b71" stroke-width="1" stroke-dasharray="4 3">
+<path data-absolute-roof-cell="10,8" data-roof-elevation-feet="8.5" d="M240,192v24"/>
+<path data-absolute-roof-cell="10,8" data-roof-elevation-feet="8.5" d="M240,192h24"/>
+<path data-absolute-roof-cell="11,8" data-roof-elevation-feet="8.5" d="M264,216h24"/>
+<path data-absolute-roof-cell="11,8" data-roof-elevation-feet="8.5" d="M264,192h24"/>
+<path data-absolute-roof-cell="12,8" data-roof-elevation-feet="8.5" d="M312,192v24"/>
+<path data-absolute-roof-cell="12,8" data-roof-elevation-feet="8.5" d="M288,216h24"/>
+<path data-absolute-roof-cell="12,8" data-roof-elevation-feet="8.5" d="M288,192h24"/>
+<path data-absolute-roof-cell="10,9" data-roof-elevation-feet="8.5" d="M264,216v24"/>
+<path data-absolute-roof-cell="10,9" data-roof-elevation-feet="8.5" d="M240,216v24"/>
+<path data-absolute-roof-cell="13,9" data-roof-elevation-feet="8.5" d="M336,216v24"/>
+<path data-absolute-roof-cell="13,9" data-roof-elevation-feet="8.5" d="M312,216v24"/>
+<path data-absolute-roof-cell="13,9" data-roof-elevation-feet="8.5" d="M312,240h24"/>
+<path data-absolute-roof-cell="13,9" data-roof-elevation-feet="8.5" d="M312,216h24"/>
+<path data-absolute-roof-cell="10,10" data-roof-elevation-feet="8.5" d="M240,240v24"/>
+<path data-absolute-roof-cell="10,10" data-roof-elevation-feet="8.5" d="M240,264h24"/>
+<path data-absolute-roof-cell="11,10" data-roof-elevation-feet="8.5" d="M264,240h24"/>
+<path data-absolute-roof-cell="12,10" data-roof-elevation-feet="8.5" d="M312,240v24"/>
+<path data-absolute-roof-cell="12,10" data-roof-elevation-feet="8.5" d="M288,240h24"/>
+<path data-absolute-roof-cell="11,11" data-roof-elevation-feet="8.5" d="M264,264v24"/>
+<path data-absolute-roof-cell="11,11" data-roof-elevation-feet="8.5" d="M264,288h24"/>
+<path data-absolute-roof-cell="12,11" data-roof-elevation-feet="8.5" d="M312,264v24"/>
+<path data-absolute-roof-cell="12,11" data-roof-elevation-feet="8.5" d="M288,288h24"/>
+<path data-absolute-roof-cell="11,9" data-roof-elevation-feet="9" d="M264,216v24"/>
+<path data-absolute-roof-cell="11,9" data-roof-elevation-feet="9" d="M264,240h24"/>
+<path data-absolute-roof-cell="11,9" data-roof-elevation-feet="9" d="M264,216h24"/>
+<path data-absolute-roof-cell="12,9" data-roof-elevation-feet="9" d="M312,216v24"/>
+<path data-absolute-roof-cell="12,9" data-roof-elevation-feet="9" d="M288,240h24"/>
+<path data-absolute-roof-cell="12,9" data-roof-elevation-feet="9" d="M288,216h24"/>
+<path data-absolute-roof-cell="3,8" data-roof-elevation-feet="8.5" d="M72,192v24"/>
+<path data-absolute-roof-cell="3,8" data-roof-elevation-feet="8.5" d="M72,192h24"/>
+<path data-absolute-roof-cell="4,8" data-roof-elevation-feet="8.5" d="M120,192v24"/>
+<path data-absolute-roof-cell="4,8" data-roof-elevation-feet="8.5" d="M96,192h24"/>
+<path data-absolute-roof-cell="3,9" data-roof-elevation-feet="8.5" d="M72,216v24"/>
+<path data-absolute-roof-cell="3,9" data-roof-elevation-feet="8.5" d="M72,240h24"/>
+<path data-absolute-roof-cell="4,9" data-roof-elevation-feet="8.5" d="M120,216v24"/>
+<path data-absolute-roof-cell="4,9" data-roof-elevation-feet="8.5" d="M96,240h24"/>
+</g>
 <g id="roof-entry-transitions-0-0" fill="none" stroke="#52776d" stroke-width=".9" stroke-dasharray="3 5">
 <title>Hypothetical local ceiling-height contours from modular mouths into cave vaults; not walls or elevation survey</title>
 <path data-crown-transition-edge="3,13|3,14" data-local-clearance-feet="8|7.5" d="M72,336h24"/>
@@ -505,6 +543,48 @@
 <path data-roof-cell="6,9" d="M151.44,222l6,12 m3.3600000000000003,-12l4.800000000000001,9.600000000000001" stroke-width="1.25" opacity=".8"/>
 <path data-roof-cell="7,9" d="M175.44,222l6,12 m3.3600000000000003,-12l4.800000000000001,9.600000000000001" stroke-width="1.25" opacity=".8"/>
 </g>
+<g id="absolute-cave-vault-1-0" fill="none" stroke="#728b71" stroke-width="1" stroke-dasharray="4 3">
+<path data-absolute-roof-cell="8,4" data-roof-elevation-feet="8" d="M216,96v24"/>
+<path data-absolute-roof-cell="8,4" data-roof-elevation-feet="8" d="M192,96v24"/>
+<path data-absolute-roof-cell="8,4" data-roof-elevation-feet="8" d="M192,96h24"/>
+<path data-absolute-roof-cell="9,3" data-roof-elevation-feet="8" d="M216,72v24"/>
+<path data-absolute-roof-cell="9,3" data-roof-elevation-feet="8" d="M216,96h24"/>
+<path data-absolute-roof-cell="9,3" data-roof-elevation-feet="8" d="M216,72h24"/>
+<path data-absolute-roof-cell="9,5" data-roof-elevation-feet="8" d="M216,120h24"/>
+<path data-absolute-roof-cell="11,4" data-roof-elevation-feet="8" d="M264,96v24"/>
+<path data-absolute-roof-cell="11,4" data-roof-elevation-feet="8" d="M264,120h24"/>
+<path data-absolute-roof-cell="11,4" data-roof-elevation-feet="8" d="M264,96h24"/>
+<path data-absolute-roof-cell="10,3" data-roof-elevation-feet="8" d="M264,72v24"/>
+<path data-absolute-roof-cell="10,3" data-roof-elevation-feet="8" d="M240,96h24"/>
+<path data-absolute-roof-cell="10,3" data-roof-elevation-feet="8" d="M240,72h24"/>
+<path data-absolute-roof-cell="10,5" data-roof-elevation-feet="8" d="M264,120v24"/>
+<path data-absolute-roof-cell="10,5" data-roof-elevation-feet="8" d="M240,120h24"/>
+<path data-absolute-roof-cell="9,6" data-roof-elevation-feet="8" d="M216,144v24"/>
+<path data-absolute-roof-cell="9,6" data-roof-elevation-feet="8" d="M216,168h24"/>
+<path data-absolute-roof-cell="10,6" data-roof-elevation-feet="8" d="M240,168h24"/>
+<path data-absolute-roof-cell="11,6" data-roof-elevation-feet="8" d="M288,144v24"/>
+<path data-absolute-roof-cell="11,6" data-roof-elevation-feet="8" d="M264,168h24"/>
+<path data-absolute-roof-cell="11,6" data-roof-elevation-feet="8" d="M264,144h24"/>
+<path data-absolute-roof-cell="8,5" data-roof-elevation-feet="8" d="M192,120v24"/>
+<path data-absolute-roof-cell="8,5" data-roof-elevation-feet="8" d="M192,144h24"/>
+<path data-absolute-roof-cell="12,4" data-roof-elevation-feet="8" d="M312,96v24"/>
+<path data-absolute-roof-cell="12,4" data-roof-elevation-feet="8" d="M288,120h24"/>
+<path data-absolute-roof-cell="12,4" data-roof-elevation-feet="8" d="M288,96h24"/>
+<path data-absolute-roof-cell="9,4" data-roof-elevation-feet="8.5" d="M216,96v24"/>
+<path data-absolute-roof-cell="9,4" data-roof-elevation-feet="8.5" d="M216,120h24"/>
+<path data-absolute-roof-cell="9,4" data-roof-elevation-feet="8.5" d="M216,96h24"/>
+<path data-absolute-roof-cell="10,4" data-roof-elevation-feet="8.5" d="M264,96v24"/>
+<path data-absolute-roof-cell="10,4" data-roof-elevation-feet="8.5" d="M240,120h24"/>
+<path data-absolute-roof-cell="10,4" data-roof-elevation-feet="8.5" d="M240,96h24"/>
+<path data-absolute-roof-cell="10,14" data-roof-elevation-feet="8" d="M240,336v24"/>
+<path data-absolute-roof-cell="10,14" data-roof-elevation-feet="8" d="M240,336h24"/>
+<path data-absolute-roof-cell="11,14" data-roof-elevation-feet="8" d="M288,336v24"/>
+<path data-absolute-roof-cell="11,14" data-roof-elevation-feet="8" d="M264,336h24"/>
+<path data-absolute-roof-cell="10,15" data-roof-elevation-feet="8" d="M240,360v24"/>
+<path data-absolute-roof-cell="10,15" data-roof-elevation-feet="8" d="M240,384h24"/>
+<path data-absolute-roof-cell="11,15" data-roof-elevation-feet="8" d="M288,360v24"/>
+<path data-absolute-roof-cell="11,15" data-roof-elevation-feet="8" d="M264,384h24"/>
+</g>
 <g id="roof-entry-transitions-1-0" fill="none" stroke="#52776d" stroke-width=".9" stroke-dasharray="3 5">
 <title>Hypothetical local ceiling-height contours from modular mouths into cave vaults; not walls or elevation survey</title>
 <path data-crown-transition-edge="4,1|4,2" data-local-clearance-feet="6.5|7" d="M96,48h24"/>
@@ -958,31 +1038,6 @@
 </g>
 <g id="roof-entry-transitions-0-1" fill="none" stroke="#52776d" stroke-width=".9" stroke-dasharray="3 5">
 <title>Hypothetical local ceiling-height contours from modular mouths into cave vaults; not walls or elevation survey</title>
-<path data-crown-transition-edge="15,11|16,11" data-local-clearance-feet="6|6.5" d="M384,264v24"/>
-<path data-crown-transition-edge="16,11|17,11" data-local-clearance-feet="6.5|6" d="M408,264v24"/>
-<path data-crown-transition-edge="17,11|18,11" data-local-clearance-feet="6|7" d="M432,264v24"/>
-<path data-crown-transition-edge="15,12|16,12" data-local-clearance-feet="6|6.5" d="M384,288v24"/>
-<path data-crown-transition-edge="16,12|17,12" data-local-clearance-feet="6.5|6" d="M408,288v24"/>
-<path data-crown-transition-edge="16,12|16,13" data-local-clearance-feet="6.5|6" d="M384,312h24"/>
-<path data-crown-transition-edge="17,12|18,12" data-local-clearance-feet="6|7" d="M432,288v24"/>
-<path data-crown-transition-edge="17,12|17,13" data-local-clearance-feet="6|5.5" d="M408,312h24"/>
-<path data-crown-transition-edge="16,13|17,13" data-local-clearance-feet="6|5.5" d="M408,312v24"/>
-<path data-crown-transition-edge="16,13|16,14" data-local-clearance-feet="6|7" d="M384,336h24"/>
-<path data-crown-transition-edge="17,13|18,13" data-local-clearance-feet="5.5|7" d="M432,312v24"/>
-<path data-crown-transition-edge="17,13|17,14" data-local-clearance-feet="5.5|7" d="M408,336h24"/>
-<path data-crown-transition-edge="17,10|18,10" data-local-clearance-feet="7|6.5" d="M432,240v24"/>
-<path data-crown-transition-edge="17,10|17,11" data-local-clearance-feet="7|6" d="M408,264h24"/>
-<path data-crown-transition-edge="18,10|18,11" data-local-clearance-feet="6.5|7" d="M432,264h24"/>
-<path data-crown-transition-edge="13,11|14,11" data-local-clearance-feet="6.5|7" d="M336,264v24"/>
-<path data-crown-transition-edge="14,11|15,11" data-local-clearance-feet="7|6" d="M360,264v24"/>
-<path data-crown-transition-edge="13,12|14,12" data-local-clearance-feet="6.5|7" d="M336,288v24"/>
-<path data-crown-transition-edge="14,12|15,12" data-local-clearance-feet="7|6" d="M360,288v24"/>
-<path data-crown-transition-edge="14,12|14,13" data-local-clearance-feet="7|6.5" d="M336,312h24"/>
-<path data-crown-transition-edge="18,13|18,14" data-local-clearance-feet="7|6.5" d="M432,336h24"/>
-<path data-crown-transition-edge="15,14|16,14" data-local-clearance-feet="6.5|7" d="M384,336v24"/>
-<path data-crown-transition-edge="16,14|16,15" data-local-clearance-feet="7|6.5" d="M384,360h24"/>
-<path data-crown-transition-edge="17,14|18,14" data-local-clearance-feet="7|6.5" d="M432,336v24"/>
-<path data-crown-transition-edge="17,14|17,15" data-local-clearance-feet="7|6.5" d="M408,360h24"/>
 </g>
 </g>
 <g id="features-0-1">
@@ -1427,6 +1482,48 @@
 <path d="M144,216L168,216 M144,240L168,240 M144,216L144,240 M168,216L192,216 M192,216L192,240 M168,240L192,240" stroke-width="1.4" stroke-dasharray="2 4" opacity=".85"/>
 <path data-roof-cell="6,9" d="M151.44,222l6,12 m3.3600000000000003,-12l4.800000000000001,9.600000000000001" stroke-width="1.25" opacity=".8"/>
 <path data-roof-cell="7,9" d="M175.44,222l6,12 m3.3600000000000003,-12l4.800000000000001,9.600000000000001" stroke-width="1.25" opacity=".8"/>
+</g>
+<g id="absolute-cave-vault-1-1" fill="none" stroke="#728b71" stroke-width="1" stroke-dasharray="4 3">
+<path data-absolute-roof-cell="8,4" data-roof-elevation-feet="8" d="M216,96v24"/>
+<path data-absolute-roof-cell="8,4" data-roof-elevation-feet="8" d="M192,96v24"/>
+<path data-absolute-roof-cell="8,4" data-roof-elevation-feet="8" d="M192,96h24"/>
+<path data-absolute-roof-cell="9,3" data-roof-elevation-feet="8" d="M216,72v24"/>
+<path data-absolute-roof-cell="9,3" data-roof-elevation-feet="8" d="M216,96h24"/>
+<path data-absolute-roof-cell="9,3" data-roof-elevation-feet="8" d="M216,72h24"/>
+<path data-absolute-roof-cell="9,5" data-roof-elevation-feet="8" d="M216,120h24"/>
+<path data-absolute-roof-cell="11,4" data-roof-elevation-feet="8" d="M264,96v24"/>
+<path data-absolute-roof-cell="11,4" data-roof-elevation-feet="8" d="M264,120h24"/>
+<path data-absolute-roof-cell="11,4" data-roof-elevation-feet="8" d="M264,96h24"/>
+<path data-absolute-roof-cell="10,3" data-roof-elevation-feet="8" d="M264,72v24"/>
+<path data-absolute-roof-cell="10,3" data-roof-elevation-feet="8" d="M240,96h24"/>
+<path data-absolute-roof-cell="10,3" data-roof-elevation-feet="8" d="M240,72h24"/>
+<path data-absolute-roof-cell="10,5" data-roof-elevation-feet="8" d="M264,120v24"/>
+<path data-absolute-roof-cell="10,5" data-roof-elevation-feet="8" d="M240,120h24"/>
+<path data-absolute-roof-cell="9,6" data-roof-elevation-feet="8" d="M216,144v24"/>
+<path data-absolute-roof-cell="9,6" data-roof-elevation-feet="8" d="M216,168h24"/>
+<path data-absolute-roof-cell="10,6" data-roof-elevation-feet="8" d="M240,168h24"/>
+<path data-absolute-roof-cell="11,6" data-roof-elevation-feet="8" d="M288,144v24"/>
+<path data-absolute-roof-cell="11,6" data-roof-elevation-feet="8" d="M264,168h24"/>
+<path data-absolute-roof-cell="11,6" data-roof-elevation-feet="8" d="M264,144h24"/>
+<path data-absolute-roof-cell="8,5" data-roof-elevation-feet="8" d="M192,120v24"/>
+<path data-absolute-roof-cell="8,5" data-roof-elevation-feet="8" d="M192,144h24"/>
+<path data-absolute-roof-cell="12,4" data-roof-elevation-feet="8" d="M312,96v24"/>
+<path data-absolute-roof-cell="12,4" data-roof-elevation-feet="8" d="M288,120h24"/>
+<path data-absolute-roof-cell="12,4" data-roof-elevation-feet="8" d="M288,96h24"/>
+<path data-absolute-roof-cell="9,4" data-roof-elevation-feet="8.5" d="M216,96v24"/>
+<path data-absolute-roof-cell="9,4" data-roof-elevation-feet="8.5" d="M216,120h24"/>
+<path data-absolute-roof-cell="9,4" data-roof-elevation-feet="8.5" d="M216,96h24"/>
+<path data-absolute-roof-cell="10,4" data-roof-elevation-feet="8.5" d="M264,96v24"/>
+<path data-absolute-roof-cell="10,4" data-roof-elevation-feet="8.5" d="M240,120h24"/>
+<path data-absolute-roof-cell="10,4" data-roof-elevation-feet="8.5" d="M240,96h24"/>
+<path data-absolute-roof-cell="10,14" data-roof-elevation-feet="8" d="M240,336v24"/>
+<path data-absolute-roof-cell="10,14" data-roof-elevation-feet="8" d="M240,336h24"/>
+<path data-absolute-roof-cell="11,14" data-roof-elevation-feet="8" d="M288,336v24"/>
+<path data-absolute-roof-cell="11,14" data-roof-elevation-feet="8" d="M264,336h24"/>
+<path data-absolute-roof-cell="10,15" data-roof-elevation-feet="8" d="M240,360v24"/>
+<path data-absolute-roof-cell="10,15" data-roof-elevation-feet="8" d="M240,384h24"/>
+<path data-absolute-roof-cell="11,15" data-roof-elevation-feet="8" d="M288,360v24"/>
+<path data-absolute-roof-cell="11,15" data-roof-elevation-feet="8" d="M264,384h24"/>
 </g>
 <g id="roof-entry-transitions-1-1" fill="none" stroke="#52776d" stroke-width=".9" stroke-dasharray="3 5">
 <title>Hypothetical local ceiling-height contours from modular mouths into cave vaults; not walls or elevation survey</title>

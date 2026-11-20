@@ -24,7 +24,7 @@ def route(tile,minimum_feet):
             cut.update(tuple(p) for p in zone["cells"])
     vault=scenario.get("absolute_vault")
     if vault:
-        floor_z={tuple(p):z*vault["bench_rise_feet"] for z,cells in tile["terrain"]["elevations"] for p in cells}
+        floor_z={tuple(p):z*vault["bench_rise_feet"] for z,cells in tile["terrain"].get("elevations",[]) for p in cells}
         roof_z={p:scenario["baseline_feet"] for p in occupied}
         for zone in vault["zones"]:
             for p in zone["cells"]:roof_z[tuple(p)]=zone["roof_elevation_feet"]

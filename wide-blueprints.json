@@ -661,7 +661,100 @@
           }
         ],
         "mouth_crown_feet": 6.5,
-        "throat_transition_feet_per_half_cell": 0.5
+        "throat_transition_feet_per_half_cell": 0.5,
+        "absolute_vault": {
+          "status": "hypothetical",
+          "datum": "ordinary_floor_zero_feet",
+          "bench_rise_feet": 0,
+          "maximum_adjacent_crown_change_feet": 0.5,
+          "zones": [
+            {
+              "id": "braided_confluence_shoulder",
+              "roof_elevation_feet": 8.5,
+              "cells": [
+                [
+                  10,
+                  8
+                ],
+                [
+                  11,
+                  8
+                ],
+                [
+                  12,
+                  8
+                ],
+                [
+                  10,
+                  9
+                ],
+                [
+                  13,
+                  9
+                ],
+                [
+                  10,
+                  10
+                ],
+                [
+                  11,
+                  10
+                ],
+                [
+                  12,
+                  10
+                ],
+                [
+                  11,
+                  11
+                ],
+                [
+                  12,
+                  11
+                ]
+              ],
+              "interpretation": "Surviving thickened roof shoulder surrounding the paired confluence crest, physically above the same ordinary floor datum."
+            },
+            {
+              "id": "braided_confluence_crest",
+              "roof_elevation_feet": 9,
+              "cells": [
+                [
+                  11,
+                  9
+                ],
+                [
+                  12,
+                  9
+                ]
+              ],
+              "interpretation": "Two-cell high vault preserved above an intersecting braided feeder; enclosed by half-foot lower roof shoulders."
+            },
+            {
+              "id": "western_relict_blister",
+              "roof_elevation_feet": 8.5,
+              "cells": [
+                [
+                  3,
+                  8
+                ],
+                [
+                  4,
+                  8
+                ],
+                [
+                  3,
+                  9
+                ],
+                [
+                  4,
+                  9
+                ]
+              ],
+              "interpretation": "Separate lateral blister preserves a modest higher roof above the western relict tube."
+            }
+          ]
+        }
       }
     },
     {
@@ -2790,7 +2883,104 @@
           }
         ],
         "mouth_crown_feet": 6.5,
-        "throat_transition_feet_per_half_cell": 0.5
+        "throat_transition_feet_per_half_cell": 0.5,
+        "absolute_vault": {
+          "status": "hypothetical",
+          "datum": "ordinary_floor_zero_feet",
+          "bench_rise_feet": 0,
+          "maximum_adjacent_crown_change_feet": 0.5,
+          "zones": [
+            {
+              "id": "north_lobe_shoulders",
+              "roof_elevation_feet": 8,
+              "cells": [
+                [
+                  8,
+                  4
+                ],
+                [
+                  9,
+                  3
+                ],
+                [
+                  9,
+                  5
+                ],
+                [
+                  11,
+                  4
+                ],
+                [
+                  10,
+                  3
+                ],
+                [
+                  10,
+                  5
+                ],
+                [
+                  9,
+                  6
+                ],
+                [
+                  10,
+                  6
+                ],
+                [
+                  11,
+                  6
+                ],
+                [
+                  8,
+                  5
+                ],
+                [
+                  12,
+                  4
+                ]
+              ],
+              "interpretation": "Uneven preserved basalt shoulders surrounding an offset north blister arch; the central rock spine remains solid."
+            },
+            {
+              "id": "north_lobe_arch",
+              "roof_elevation_feet": 8.5,
+              "cells": [
+                [
+                  9,
+                  4
+                ],
+                [
+                  10,
+                  4
+                ]
+              ],
+              "interpretation": "Crest of the north blister, locally roofed over and never linked through the solid central basalt spine."
+            },
+            {
+              "id": "south_drainback_arch",
+              "roof_elevation_feet": 8,
+              "cells": [
+                [
+                  10,
+                  14
+                ],
+                [
+                  11,
+                  14
+                ],
+                [
+                  10,
+                  15
+                ],
+                [
+                  11,
+                  15
+                ]
+              ],
+              "interpretation": "Smaller independent crown bulge over the south drainback rather than a mechanically identical second arch."
+            }
+          ]
+        }
       }
     }
   ]

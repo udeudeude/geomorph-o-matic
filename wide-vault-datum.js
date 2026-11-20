@@ -1,6 +1,7 @@
 "use strict";
 // A spatially authored, hypothetical absolute roof surface, registered to the
-// canonical level-one bench. Unlike local headroom, a crown is a z elevation.
+// canonical volcanic floor datum, including Sheetflow's level-one bench.
+// Unlike local headroom, a crown is a z elevation.
 const {terrainModel}=require("./terrain");
 const {boundaryCell}=require("./seam-profiles");
 const key=p=>p.join(",");
@@ -9,17 +10,20 @@ function applyAbsoluteVault(owner,scenario,terrain,base){
  const spec=scenario.absolute_vault;
  if(!spec)return base;
  if(!terrain||spec.datum!=="ordinary_floor_zero_feet"||
-    spec.status!=="hypothetical"||spec.bench_rise_feet!==1||
+    spec.status!=="hypothetical"||![0,1].includes(spec.bench_rise_feet)||
     spec.maximum_adjacent_crown_change_feet!==0.5||
     !Array.isArray(spec.zones)||spec.zones.length<2)
   throw Error("Invalid authored absolute vault datum");
  const model=terrainModel(owner,terrain);
  const floorZ=new Map([...owner.keys()].map(p=>[p,(model.heights.get(p)||0)*spec.bench_rise_feet]));
  const elevated=[...floorZ].filter(([,z])=>z>0);
- if(elevated.length!==8||elevated.some(([,z])=>z!==1)||
-    model.steps.size!==3||model.ramps.size!==0||
-    terrain.steps.some(s=>s.rise_feet!==1||s.risers!==2))
-  throw Error("Absolute vault requires the registered eight-cell one-foot bench and three real stairs");
+ if(spec.bench_rise_feet===1){
+  if(elevated.length!==8||elevated.some(([,z])=>z!==1)||
+     model.steps.size!==3||model.ramps.size!==0||
+     terrain.steps.some(s=>s.rise_feet!==1||s.risers!==2))
+    throw Error("Absolute vault requires the registered eight-cell one-foot bench and three real stairs");
+ }else if(elevated.length||model.steps.size||model.ramps.size)
+   throw Error("Flat-datum vault cannot silently absorb raised terrain or stair edges");
  const protectedMouths=new Set();
  for(const side of ["N","E","S","W"])for(const o of [4,5,14,15])for(let depth=0;depth<2;depth++)
   protectedMouths.add(key(boundaryCell(side,o,depth)));
@@ -46,7 +50,7 @@ function applyAbsoluteVault(owner,scenario,terrain,base){
   zones.push({id:zone.id,roof_elevation_feet:zone.roof_elevation_feet,cells,interpretation:zone.interpretation});
  }
  const lowBench=elevated.filter(([p])=>roofZ.get(p)-floorZ.get(p)<6);
- if(!lowBench.length||lowBench.length===elevated.length)
+ if(elevated.length&&(!lowBench.length||lowBench.length===elevated.length))
   throw Error("Authored bench must create both upright and crouching-only regions");
  for(const [p,z] of roofZ){
   if(!Number.isFinite(z)||z-floorZ.get(p)<2.5)

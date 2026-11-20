@@ -20,8 +20,8 @@ function inspectCrowns(layout,data=source()){
    const [a,b]=rotateCell(xy(p),tile.turn),q=key(x*SIZE+a,y*SIZE+b);
    if(floor.has(q))throw Error("Overlapping wide cave floor");
    // Level indices are not treated as vertical feet in the interior.
-   floor.set(q,localTerrain.heights.get(p)||0);
-   roof.set(q,localRoof.clearances.get(p));
+   floor.set(q,localRoof.floor_elevations_feet?.get(p)??(localTerrain.heights.get(p)||0));
+   roof.set(q,localRoof.absolute_roof_elevations_feet?.get(p)??localRoof.clearances.get(p));
    kind.set(q,tile.id);
   }
  }

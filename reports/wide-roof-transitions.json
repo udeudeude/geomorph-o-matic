@@ -224,7 +224,7 @@
           "intentional_abrupt_pinch": true
         }
       ],
-      "limitations": "Hypothetical local headroom only; no roof elevation datum, actual surveyed section, roof support/stability or physical site claim."
+      "limitations": "Hypothetical local headroom over authored floor elevations; all three caverns now also have a fictional absolute z datum, but no surveyed section, roof support or physical stability assessment."
     },
     {
       "tile": "sagging_sheet",
@@ -549,7 +549,7 @@
           "intentional_abrupt_pinch": true
         }
       ],
-      "limitations": "Hypothetical local headroom only; no roof elevation datum, actual surveyed section, roof support/stability or physical site claim."
+      "limitations": "Hypothetical local headroom over authored floor elevations; all three caverns now also have a fictional absolute z datum, but no surveyed section, roof support or physical stability assessment."
     },
     {
       "tile": "split_spine",
@@ -689,7 +689,7 @@
             6
           ],
           "route_distance_feet": 27.5,
-          "local_clearance_feet": 7.5,
+          "local_clearance_feet": 8,
           "type": "interior_vault"
         },
         {
@@ -699,7 +699,7 @@
             6
           ],
           "route_distance_feet": 30,
-          "local_clearance_feet": 7.5,
+          "local_clearance_feet": 8,
           "type": "interior_vault"
         },
         {
@@ -709,7 +709,7 @@
             6
           ],
           "route_distance_feet": 32.5,
-          "local_clearance_feet": 7.5,
+          "local_clearance_feet": 8,
           "type": "interior_vault"
         },
         {
@@ -957,8 +957,8 @@
         {
           "from_station": 10,
           "to_station": 11,
-          "ceiling_change_feet": 0,
-          "local_crown_change_percent": 0,
+          "ceiling_change_feet": 0.5,
+          "local_crown_change_percent": 20,
           "intentional_abrupt_pinch": false
         },
         {
@@ -978,8 +978,8 @@
         {
           "from_station": 13,
           "to_station": 14,
-          "ceiling_change_feet": 0,
-          "local_crown_change_percent": 0,
+          "ceiling_change_feet": -0.5,
+          "local_crown_change_percent": 20,
           "intentional_abrupt_pinch": false
         },
         {
@@ -1095,7 +1095,7 @@
           "intentional_abrupt_pinch": true
         }
       ],
-      "limitations": "Hypothetical local headroom only; no roof elevation datum, actual surveyed section, roof support/stability or physical site claim."
+      "limitations": "Hypothetical local headroom over authored floor elevations; all three caverns now also have a fictional absolute z datum, but no surveyed section, roof support or physical stability assessment."
     }
   ]
 }
