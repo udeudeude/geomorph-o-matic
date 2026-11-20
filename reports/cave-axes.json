@@ -8,7 +8,7 @@
       "interpretation": "Dry traversable straight hall strips in fictional cell plans; not instrument-surveyed passage axes or sightlines",
       "longest_run_half_cells": 10,
       "longest_run_feet": 25,
-      "runs_at_least_15_feet": 6,
+      "runs_at_least_15_feet": 7,
       "runs": [
         {
           "axis": "north-south",
@@ -65,6 +65,19 @@
         {
           "axis": "east-west",
           "from": [
+            5,
+            8
+          ],
+          "to": [
+            10,
+            8
+          ],
+          "clear_run_half_cells": 6,
+          "plan_length_feet": 15
+        },
+        {
+          "axis": "east-west",
+          "from": [
             3,
             12
           ],
@@ -97,6 +110,19 @@
           "to": [
             5,
             7
+          ],
+          "clear_run_half_cells": 5,
+          "plan_length_feet": 12.5
+        },
+        {
+          "axis": "east-west",
+          "from": [
+            12,
+            8
+          ],
+          "to": [
+            16,
+            8
           ],
           "clear_run_half_cells": 5,
           "plan_length_feet": 12.5
@@ -188,19 +214,6 @@
           "to": [
             10,
             5
-          ],
-          "clear_run_half_cells": 4,
-          "plan_length_feet": 10
-        },
-        {
-          "axis": "east-west",
-          "from": [
-            7,
-            8
-          ],
-          "to": [
-            10,
-            8
           ],
           "clear_run_half_cells": 4,
           "plan_length_feet": 10
