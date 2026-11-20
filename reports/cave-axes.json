@@ -6,35 +6,22 @@
     {
       "id": "basalt_rift",
       "interpretation": "Dry traversable straight hall strips in fictional cell plans; not instrument-surveyed passage axes or sightlines",
-      "longest_run_half_cells": 12,
-      "longest_run_feet": 30,
+      "longest_run_half_cells": 10,
+      "longest_run_feet": 25,
       "runs_at_least_15_feet": 6,
       "runs": [
         {
-          "axis": "east-west",
+          "axis": "north-south",
           "from": [
-            5,
-            9
+            12,
+            3
           ],
           "to": [
-            16,
-            9
+            12,
+            12
           ],
-          "clear_run_half_cells": 12,
-          "plan_length_feet": 30
-        },
-        {
-          "axis": "east-west",
-          "from": [
-            4,
-            17
-          ],
-          "to": [
-            15,
-            17
-          ],
-          "clear_run_half_cells": 12,
-          "plan_length_feet": 30
+          "clear_run_half_cells": 10,
+          "plan_length_feet": 25
         },
         {
           "axis": "north-south",
@@ -61,6 +48,19 @@
           ],
           "clear_run_half_cells": 9,
           "plan_length_feet": 22.5
+        },
+        {
+          "axis": "east-west",
+          "from": [
+            8,
+            17
+          ],
+          "to": [
+            15,
+            17
+          ],
+          "clear_run_half_cells": 8,
+          "plan_length_feet": 20
         },
         {
           "axis": "east-west",
@@ -143,12 +143,12 @@
         {
           "axis": "north-south",
           "from": [
-            12,
-            3
+            8,
+            14
           ],
           "to": [
-            12,
-            7
+            8,
+            18
           ],
           "clear_run_half_cells": 5,
           "plan_length_feet": 12.5
@@ -188,6 +188,32 @@
           "to": [
             10,
             5
+          ],
+          "clear_run_half_cells": 4,
+          "plan_length_feet": 10
+        },
+        {
+          "axis": "east-west",
+          "from": [
+            7,
+            8
+          ],
+          "to": [
+            10,
+            8
+          ],
+          "clear_run_half_cells": 4,
+          "plan_length_feet": 10
+        },
+        {
+          "axis": "east-west",
+          "from": [
+            9,
+            9
+          ],
+          "to": [
+            12,
+            9
           ],
           "clear_run_half_cells": 4,
           "plan_length_feet": 10
@@ -273,51 +299,12 @@
         {
           "axis": "north-south",
           "from": [
-            8,
-            9
-          ],
-          "to": [
-            8,
-            12
-          ],
-          "clear_run_half_cells": 4,
-          "plan_length_feet": 10
-        },
-        {
-          "axis": "north-south",
-          "from": [
-            12,
-            9
-          ],
-          "to": [
-            12,
-            12
-          ],
-          "clear_run_half_cells": 4,
-          "plan_length_feet": 10
-        },
-        {
-          "axis": "north-south",
-          "from": [
             3,
             12
           ],
           "to": [
             3,
             15
-          ],
-          "clear_run_half_cells": 4,
-          "plan_length_feet": 10
-        },
-        {
-          "axis": "north-south",
-          "from": [
-            8,
-            14
-          ],
-          "to": [
-            8,
-            17
           ],
           "clear_run_half_cells": 4,
           "plan_length_feet": 10
@@ -635,23 +622,10 @@
     {
       "id": "hollow_causeway",
       "interpretation": "Dry traversable straight hall strips in fictional cell plans; not instrument-surveyed passage axes or sightlines",
-      "longest_run_half_cells": 13,
-      "longest_run_feet": 32.5,
+      "longest_run_half_cells": 8,
+      "longest_run_feet": 20,
       "runs_at_least_15_feet": 10,
       "runs": [
-        {
-          "axis": "north-south",
-          "from": [
-            13,
-            6
-          ],
-          "to": [
-            13,
-            18
-          ],
-          "clear_run_half_cells": 13,
-          "plan_length_feet": 32.5
-        },
         {
           "axis": "east-west",
           "from": [
@@ -661,6 +635,19 @@
           "to": [
             13,
             14
+          ],
+          "clear_run_half_cells": 8,
+          "plan_length_feet": 20
+        },
+        {
+          "axis": "north-south",
+          "from": [
+            13,
+            11
+          ],
+          "to": [
+            13,
+            18
           ],
           "clear_run_half_cells": 8,
           "plan_length_feet": 20
@@ -804,6 +791,19 @@
           "to": [
             1,
             7
+          ],
+          "clear_run_half_cells": 4,
+          "plan_length_feet": 10
+        },
+        {
+          "axis": "north-south",
+          "from": [
+            13,
+            6
+          ],
+          "to": [
+            13,
+            9
           ],
           "clear_run_half_cells": 4,
           "plan_length_feet": 10
