@@ -27,3 +27,7 @@ The reference sites are **fictional horizontal floor-plan widths**, not surveyed
 1. Study actual karst cave plans alongside the source drawings, then redesign **long underlying north-south route axes** rather than only their pockets.
 2. Prototype a *separate* wider-seam geomorph standard if five- to ten-foot compatible portals are required. Do not silently mix incompatible families.
 3. Review physical prints at 100 percent and playtest flooded and dry variations, including ceiling-height and ladder clearance questions. All edited artwork remains provisional.
+
+## Counting choices without exaggerating them
+
+A widened two-by-two walkable floor patch introduces one cycle into the ordinary *cell graph*, but it does **not** create a new meaningful explorer route. We now distinguish all cell-graph cycles from the nontrivial cycles remaining after subtracting elementary four-cell faces. The Scoured Siphon's raw 8-to-23 cycle increase is **mostly small floor squares**: the meaningful count moves from 3 to 4. Lantern Sink's raw 9-to-15 increase leaves its meaningful circuit count at 2. This is a conservative planar-graph proxy, **not** a replacement for actual route playtesting.
