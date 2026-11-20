@@ -2,6 +2,14 @@
 
 Original, modular, editable dungeon cartography. **Architectural studies, not yet a finished collection.**
 
+## Wide cave raised-bench grade and assembled headroom review (November 20, 2026)
+
+The [Sagging Sheetflow datum plate](studies/sheetflow_bench_grade.svg) now registers its eight genuinely raised plan cells and three real access edges. A new [design-envelope report](reports/sheetflow-bench-grade.json) compares hypothetical 0.25-, 0.5-, 1- and 2-foot raises over each 2.5-foot access edge (10%, 20%, 40% and 80% grade), flagging why the taller choices cannot responsibly be treated as ordinary short ramps. The prior 6.5-foot local headroom is **not** silently converted into an absolute roof elevation.
+
+The new [assembly-wide posture report](reports/wide-posture-assembly.json) audits actual navigable standing, crouching and crawling routes across the four rotated wide-mouth caves and all 32 external entrance cells, including whole-seam closures. See [field research, explicitly hypothetical sections and unresolved architectural decisions](research/2026-11-20-bench-datum-posture-assembly.md). These are engineering diagnostics and editable vector studies, **not** measured caves or release-ready maps.
+
+Regenerate with `node wide-vertical-datum.js && node wide-posture-assembly.js`. Tests: `node --test tests/wide-vertical-datum.test.js` and `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_bench_datum.py'`.
+
 ## Browse the editable vector dungeon studies
 
 - [Cloister of Salt](tiles/salt_cloister.svg): enclosed processional circuit around a brine pool, a locked reliquary, and a hidden chapel.

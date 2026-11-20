@@ -1,0 +1,111 @@
+{
+  "layout": "Braided Confluence, Split-Spine Drainback and Sagging Sheetflow | three distinct five-foot-mouth volcanic caves (study only)",
+  "stage": "unreleased assembly posture study",
+  "distinct_designs": [
+    "braided_lava",
+    "sagging_sheet",
+    "split_spine"
+  ],
+  "tile_count": 4,
+  "layout_width_tiles": 2,
+  "layout_height_tiles": 2,
+  "all_walkable_floor_cells": 871,
+  "full_width_intertile_walking_edges": 16,
+  "exterior_mouth_floor_cells": 32,
+  "hypothetical_modes": {
+    "standing": {
+      "minimum_hypothetical_clearance_feet": 6,
+      "floor_cells_admitted": 863,
+      "reachable_floor_cells": 837,
+      "admitted_but_unreachable_floor_cells": 26,
+      "reachable_exterior_mouth_cells": 32,
+      "exterior_mouth_pairs_connected": 496,
+      "closures": [
+        {
+          "seam": "vertical-0-0",
+          "reachable_floor_cells": 837,
+          "exterior_mouth_cells_still_connected": 32
+        },
+        {
+          "seam": "horizontal-0-0",
+          "reachable_floor_cells": 837,
+          "exterior_mouth_cells_still_connected": 32
+        },
+        {
+          "seam": "horizontal-1-0",
+          "reachable_floor_cells": 837,
+          "exterior_mouth_cells_still_connected": 32
+        },
+        {
+          "seam": "vertical-0-1",
+          "reachable_floor_cells": 837,
+          "exterior_mouth_cells_still_connected": 32
+        }
+      ],
+      "closures_preserving_all_exterior_mouths": 4
+    },
+    "crouching": {
+      "minimum_hypothetical_clearance_feet": 4,
+      "floor_cells_admitted": 865,
+      "reachable_floor_cells": 839,
+      "admitted_but_unreachable_floor_cells": 26,
+      "reachable_exterior_mouth_cells": 32,
+      "exterior_mouth_pairs_connected": 496,
+      "closures": [
+        {
+          "seam": "vertical-0-0",
+          "reachable_floor_cells": 839,
+          "exterior_mouth_cells_still_connected": 32
+        },
+        {
+          "seam": "horizontal-0-0",
+          "reachable_floor_cells": 839,
+          "exterior_mouth_cells_still_connected": 32
+        },
+        {
+          "seam": "horizontal-1-0",
+          "reachable_floor_cells": 839,
+          "exterior_mouth_cells_still_connected": 32
+        },
+        {
+          "seam": "vertical-0-1",
+          "reachable_floor_cells": 839,
+          "exterior_mouth_cells_still_connected": 32
+        }
+      ],
+      "closures_preserving_all_exterior_mouths": 4
+    },
+    "crawling": {
+      "minimum_hypothetical_clearance_feet": 2.5,
+      "floor_cells_admitted": 871,
+      "reachable_floor_cells": 871,
+      "admitted_but_unreachable_floor_cells": 0,
+      "reachable_exterior_mouth_cells": 32,
+      "exterior_mouth_pairs_connected": 496,
+      "closures": [
+        {
+          "seam": "vertical-0-0",
+          "reachable_floor_cells": 871,
+          "exterior_mouth_cells_still_connected": 32
+        },
+        {
+          "seam": "horizontal-0-0",
+          "reachable_floor_cells": 871,
+          "exterior_mouth_cells_still_connected": 32
+        },
+        {
+          "seam": "horizontal-1-0",
+          "reachable_floor_cells": 871,
+          "exterior_mouth_cells_still_connected": 32
+        },
+        {
+          "seam": "vertical-0-1",
+          "reachable_floor_cells": 871,
+          "exterior_mouth_cells_still_connected": 32
+        }
+      ],
+      "closures_preserving_all_exterior_mouths": 4
+    }
+  },
+  "caution": "These are fictional local headroom assumptions, not measured roof elevations, guaranteed seam crown continuity, load ratings or physical playtesting."
+}
