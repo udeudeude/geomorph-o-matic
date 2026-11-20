@@ -28,7 +28,7 @@ function routeToPinch(graph,zones,start=ENTRY){
   return result.reverse();
 }
 function assess(tile){
-  const owner=buildCells(tile),roof=roofModel(owner,tile.roof_scenario,tile.seam_profile);
+  const owner=buildCells(tile),roof=roofModel(owner,tile.roof_scenario,tile.seam_profile,tile.terrain);
   const terrain=terrainModel(owner,tile.terrain||{});
   const walking=terrainGraph(owner,doorEdges(tile),tile.terrain||{},"ordinary","dry");
   const route=routeToPinch(walking,roof.zones);

@@ -107,7 +107,7 @@ function makeSvg(tile,{grid="full"}={}) {
   for(const layer of terrainSvg(owner,tile.terrain||{},S,cave?"cavern":"masonry"))parts.push(layer);
   if(cave)for(const layer of caveDetailSvg(owner,terrainModel(owner,tile.terrain||{}),
    tile.vertical||{},tile.cave_details||{},S,N))parts.push(layer);
-  if(cave)for(const layer of ceilingSvg(owner,tile.roof_scenario,S))parts.push(layer);
+  if(cave)for(const layer of ceilingSvg(owner,tile.roof_scenario,S,tile.terrain))parts.push(layer);
   for(const layer of waterworksSvg(owner,[...doors.values()],tile.hydrology||{},tile.terrain||{}))parts.push(layer);
   for(const layer of tailraceSymbolsSvg(owner,[...doors.values()],tile.hydrology||{},tile.terrain||{}))parts.push(layer);
   parts.push(`<g id="features">`);

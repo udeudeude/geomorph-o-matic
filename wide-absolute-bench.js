@@ -30,7 +30,7 @@ function walkTo(graph,start,end){
 function assess(tile){
  if(!tile||tile.id!=="sagging_sheet")throw Error("Absolute bench datum is registered only to Sagging Sheetflow");
  const owner=buildCells(tile),terrain=terrainModel(owner,tile.terrain||{}),
-  roof=roofModel(owner,tile.roof_scenario,tile.seam_profile),
+  roof=roofModel(owner,{...tile.roof_scenario,absolute_vault:undefined},tile.seam_profile),
   graph=terrainGraph(owner,doorEdges(tile),tile.terrain||{},"ordinary","dry");
  const levels=new Map([...owner.keys()].map(p=>[p,terrain.heights.get(p)||0]));
  const elevated=[...levels].filter(([,h])=>h!==0);
@@ -109,7 +109,7 @@ function assess(tile){
   elevated_floor_cells:elevated.map(([p])=>xy(p)).sort((a,b)=>a[1]-b[1]||a[0]-b[0]),
   mouths_checked:mouths.length,approaches,hypotheses,
   adopted_for_gameplay:false,
-  limitations:"Both roof scenarios are authored geometry, not surveyed dimensions. Does not prove roof support or passage stability, and neither scenario replaces the current local-clearance gameplay model."};
+  limitations:"Both roof scenarios are authored geometry, not surveyed dimensions. Does not prove roof support or passage stability, and neither of these two bounding hypotheses is the spatially authored canonical bench vault."};
 }
 function plate(r){
  const W=1440,H=1110,left=42,planX=95,planY=165,planPitch=18,lines=[

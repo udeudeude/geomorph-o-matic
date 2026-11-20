@@ -15,7 +15,7 @@ function inspectCrowns(layout,data=source()){
  for(let y=0;y<height;y++)for(let x=0;x<width;x++){
   const tile=rows[y][x],owner=buildCells(tile.tile);
   const localTerrain=terrainModel(owner,tile.tile.terrain||{});
-  const localRoof=roofModel(owner,tile.tile.roof_scenario,tile.tile.seam_profile);
+  const localRoof=roofModel(owner,tile.tile.roof_scenario,tile.tile.seam_profile,tile.tile.terrain);
   for(const p of owner.keys()){
    const [a,b]=rotateCell(xy(p),tile.turn),q=key(x*SIZE+a,y*SIZE+b);
    if(floor.has(q))throw Error("Overlapping wide cave floor");
