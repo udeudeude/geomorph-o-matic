@@ -1,3 +1,7 @@
+## Spatially authored absolute roof over Sagging Sheetflow (November 20, 2026)
+
+The [canonical editable cave](studies/sagging_sheet.svg) now uses a shared absolute roof-and-floor datum instead of treating local clearance over its raised bench as a roof elevation. A nonuniform fictional inflated lobe yields 7.5-, 7- and 6.5-foot roof elevations, with one authentic 5.5-foot standing-restricted bench cell. The original five-foot modular throats remain at the common 6.5-foot roof datum. A new [registered section plate](studies/sheetflow_authored_vault.svg), [geometry and travel report](reports/sheetflow-authored-vault.json), [geology research and critique](research/2026-11-20-sheetflow-authored-vault.md), and separate JavaScript/Python tests audit the actual geometry. Regenerate with `node wide-vault-plate.js`. **The roof heights are hypothetical, and the maps are not finished or structurally verified.**
+
 # Geomorph-o-matic
 
 ## Plan-registered wide-cave entrance crown transitions (November 20, 2026)

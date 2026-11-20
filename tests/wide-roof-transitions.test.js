@@ -24,12 +24,13 @@ test("real occupied cave corridors carry a bounded mouth-to-vault roof taper wit
    assert.ok(reached.has(key(mouth)),tile.id+" "+mouth);
   }
   const zoned=new Set(roof.zones.flatMap(z=>z.cells));
-  for(const [p,height] of roof.clearances){
+  for(const [p,localHeight] of roof.clearances){
+   const height=roof.absolute_roof_elevations_feet?.get(p)??localHeight;
    if(zoned.has(p))continue;
    const [x,y]=p.split(",").map(Number);
    for(const q of [[x+1,y],[x,y+1]].map(key)){
     if(!roof.clearances.has(q)||zoned.has(q))continue;
-    assert.ok(Math.abs(height-roof.clearances.get(q))<=.5, tile.id+" "+p+" "+q);
+    assert.ok(Math.abs(height-(roof.absolute_roof_elevations_feet?.get(q)??roof.clearances.get(q)))<=.5, tile.id+" "+p+" "+q);
    }
   }
  }
