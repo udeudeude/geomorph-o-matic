@@ -14,7 +14,7 @@ const CUTS={
   {id:"upstream_relict_tube",at:[8,3],across:"E-W"},
   {id:"downstream_relict_tube",at:[8,4],across:"E-W"},
   {id:"southern_undercut",at:[9,13],across:"N-S"},
-  {id:"eastern_backwater",at:[17,10],across:"N-S"}
+  {id:"eastern_backwater",at:[17,9],across:"E-W"}
  ]
 };
 const key=(x,y)=>x+","+y;
