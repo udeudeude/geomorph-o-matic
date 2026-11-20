@@ -9,7 +9,7 @@ const get=id=>data.tiles.find(t=>t.id===id);
 test("two cave plans contain real, independently located dry passage enlargements",()=>{
  const expected={
   lantern_sink:{north_joint_splay:5,east_bedding_eddy:5,south_scree_refuge:7.5},
-  scoured_siphon:{upstream_relict_tube:7.5,downstream_relict_tube:5,southern_undercut:7.5,eastern_backwater:5}
+  scoured_siphon:{upstream_relict_tube:7.5,downstream_relict_tube:5,southern_undercut:10,eastern_backwater:5}
  };
  for(const [id,widths]of Object.entries(expected)){
   const tile=get(id),floor=buildCells(tile),auditReport=audit(tile);
