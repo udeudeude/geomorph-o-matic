@@ -73,7 +73,7 @@
       "tile": "sagging_sheet",
       "status": "unreleased geometric headroom hypothesis",
       "evidence": "fictional roof-clearance assumptions; plan locations are registered to actual occupied floor",
-      "baseline_clearance_feet": 8,
+      "baseline_clearance_feet": 6.5,
       "low_roof_zones": [
         {
           "id": "western_sheet_sag",
@@ -134,7 +134,7 @@
       "tile": "split_spine",
       "status": "unreleased geometric headroom hypothesis",
       "evidence": "fictional roof-clearance assumptions; plan locations are registered to actual occupied floor",
-      "baseline_clearance_feet": 8,
+      "baseline_clearance_feet": 7.5,
       "low_roof_zones": [
         {
           "id": "western_septum_squeeze",
