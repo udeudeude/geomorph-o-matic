@@ -35,7 +35,7 @@ class WideHeadroomIndependentTests(unittest.TestCase):
             floor=occupancy(tile)
             scenario=tile["roof_scenario"]
             self.assertEqual(scenario["status"],"hypothetical")
-            self.assertEqual(scenario["baseline_feet"],8)
+            self.assertEqual(scenario["baseline_feet"],{"braided_lava":8,"sagging_sheet":6.5,"split_spine":7.5}[tile["id"]])
             for zone in scenario["zones"]:
                 self.assertEqual(len(zone["cells"]),2)
                 for pair in zone["cells"]:
