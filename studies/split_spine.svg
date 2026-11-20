@@ -50,6 +50,43 @@
 <path data-roof-cell="6,9" d="M151.44,222l6,12 m3.3600000000000003,-12l4.800000000000001,9.600000000000001" stroke-width="1.25" opacity=".8"/>
 <path data-roof-cell="7,9" d="M175.44,222l6,12 m3.3600000000000003,-12l4.800000000000001,9.600000000000001" stroke-width="1.25" opacity=".8"/>
 </g>
+<g id="roof-entry-transitions" fill="none" stroke="#52776d" stroke-width=".9" stroke-dasharray="3 5">
+<title>Hypothetical local ceiling-height contours from modular mouths into cave vaults; not walls or elevation survey</title>
+<path data-crown-transition-edge="4,1|4,2" data-local-clearance-feet="6.5|7" d="M96,48h24"/>
+<path data-crown-transition-edge="5,1|5,2" data-local-clearance-feet="6.5|7" d="M120,48h24"/>
+<path data-crown-transition-edge="14,1|14,2" data-local-clearance-feet="6.5|7" d="M336,48h24"/>
+<path data-crown-transition-edge="15,1|15,2" data-local-clearance-feet="6.5|7" d="M360,48h24"/>
+<path data-crown-transition-edge="4,2|4,3" data-local-clearance-feet="7|7.5" d="M96,72h24"/>
+<path data-crown-transition-edge="5,2|5,3" data-local-clearance-feet="7|7.5" d="M120,72h24"/>
+<path data-crown-transition-edge="14,2|14,3" data-local-clearance-feet="7|7.5" d="M336,72h24"/>
+<path data-crown-transition-edge="15,2|15,3" data-local-clearance-feet="7|7.5" d="M360,72h24"/>
+<path data-crown-transition-edge="1,4|2,4" data-local-clearance-feet="6.5|7" d="M48,96v24"/>
+<path data-crown-transition-edge="2,4|3,4" data-local-clearance-feet="7|7.5" d="M72,96v24"/>
+<path data-crown-transition-edge="16,4|17,4" data-local-clearance-feet="7.5|7" d="M408,96v24"/>
+<path data-crown-transition-edge="17,4|18,4" data-local-clearance-feet="7|6.5" d="M432,96v24"/>
+<path data-crown-transition-edge="1,5|2,5" data-local-clearance-feet="6.5|7" d="M48,120v24"/>
+<path data-crown-transition-edge="2,5|3,5" data-local-clearance-feet="7|7.5" d="M72,120v24"/>
+<path data-crown-transition-edge="16,5|17,5" data-local-clearance-feet="7.5|7" d="M408,120v24"/>
+<path data-crown-transition-edge="17,5|18,5" data-local-clearance-feet="7|6.5" d="M432,120v24"/>
+<path data-crown-transition-edge="1,14|2,14" data-local-clearance-feet="6.5|7" d="M48,336v24"/>
+<path data-crown-transition-edge="2,14|3,14" data-local-clearance-feet="7|7.5" d="M72,336v24"/>
+<path data-crown-transition-edge="16,14|17,14" data-local-clearance-feet="7.5|7" d="M408,336v24"/>
+<path data-crown-transition-edge="17,14|18,14" data-local-clearance-feet="7|6.5" d="M432,336v24"/>
+<path data-crown-transition-edge="1,15|2,15" data-local-clearance-feet="6.5|7" d="M48,360v24"/>
+<path data-crown-transition-edge="2,15|3,15" data-local-clearance-feet="7|7.5" d="M72,360v24"/>
+<path data-crown-transition-edge="16,15|17,15" data-local-clearance-feet="7.5|7" d="M408,360v24"/>
+<path data-crown-transition-edge="17,15|18,15" data-local-clearance-feet="7|6.5" d="M432,360v24"/>
+<path data-crown-transition-edge="4,16|4,17" data-local-clearance-feet="7.5|7" d="M96,408h24"/>
+<path data-crown-transition-edge="5,16|5,17" data-local-clearance-feet="7.5|7" d="M120,408h24"/>
+<path data-crown-transition-edge="14,16|14,17" data-local-clearance-feet="7.5|7" d="M336,408h24"/>
+<path data-crown-transition-edge="15,16|15,17" data-local-clearance-feet="7.5|7" d="M360,408h24"/>
+<path data-crown-transition-edge="4,17|4,18" data-local-clearance-feet="7|6.5" d="M96,432h24"/>
+<path data-crown-transition-edge="5,17|6,17" data-local-clearance-feet="7|7.5" d="M144,408v24"/>
+<path data-crown-transition-edge="5,17|5,18" data-local-clearance-feet="7|6.5" d="M120,432h24"/>
+<path data-crown-transition-edge="13,17|14,17" data-local-clearance-feet="7.5|7" d="M336,408v24"/>
+<path data-crown-transition-edge="14,17|14,18" data-local-clearance-feet="7|6.5" d="M336,432h24"/>
+<path data-crown-transition-edge="15,17|15,18" data-local-clearance-feet="7|6.5" d="M360,432h24"/>
+</g>
 </g>
 <g id="features">
 </g><g id="stone-walls" fill="none" stroke-linecap="square" stroke-linejoin="round">

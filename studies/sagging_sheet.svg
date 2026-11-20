@@ -64,6 +64,9 @@
 <path data-roof-cell="7,6" d="M175.44,150l6,12 m3.3600000000000003,-12l4.800000000000001,9.600000000000001" stroke-width="1.25" opacity=".8"/>
 <path data-roof-cell="8,6" d="M199.44,150l6,12 m3.3600000000000003,-12l4.800000000000001,9.600000000000001" stroke-width="1.25" opacity=".8"/>
 </g>
+<g id="roof-entry-transitions" fill="none" stroke="#52776d" stroke-width=".9" stroke-dasharray="3 5">
+<title>Hypothetical local ceiling-height contours from modular mouths into cave vaults; not walls or elevation survey</title>
+</g>
 </g>
 <g id="features">
 </g><g id="stone-walls" fill="none" stroke-linecap="square" stroke-linejoin="round">

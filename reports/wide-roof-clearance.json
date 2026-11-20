@@ -25,6 +25,15 @@
           ]
         }
       ],
+      "entrance_to_vault_transition": {
+        "feet_rise_per_half_cell": 0.5,
+        "modeled_transition_cells": 32,
+        "clearance_bands_feet": [
+          7,
+          7.5
+        ],
+        "interpretation": "A bounded fictional throat-to-vault roof transition, not a measurement of physical roof inclination."
+      },
       "postures": {
         "standing": {
           "minimum_assumed_clearance_feet": 6,
@@ -87,6 +96,12 @@
           ]
         }
       ],
+      "entrance_to_vault_transition": {
+        "feet_rise_per_half_cell": 0.5,
+        "modeled_transition_cells": 0,
+        "clearance_bands_feet": [],
+        "interpretation": "A bounded fictional throat-to-vault roof transition, not a measurement of physical roof inclination."
+      },
       "postures": {
         "standing": {
           "minimum_assumed_clearance_feet": 6,
@@ -149,6 +164,14 @@
           ]
         }
       ],
+      "entrance_to_vault_transition": {
+        "feet_rise_per_half_cell": 0.5,
+        "modeled_transition_cells": 16,
+        "clearance_bands_feet": [
+          7
+        ],
+        "interpretation": "A bounded fictional throat-to-vault roof transition, not a measurement of physical roof inclination."
+      },
       "postures": {
         "standing": {
           "minimum_assumed_clearance_feet": 6,
