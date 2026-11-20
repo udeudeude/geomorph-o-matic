@@ -6454,6 +6454,20 @@
             ]
           ],
           "reason": "Undercut along the eastern return passage"
+        },
+        {
+          "id": "southern_undercut_splay",
+          "points": [
+            [
+              9,
+              15
+            ],
+            [
+              10,
+              15
+            ]
+          ],
+          "reason": "Dry remnant channel extends the south undercut into an asymmetric three-half-cell-wide plan section"
         }
       ],
       "doors": [
