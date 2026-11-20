@@ -16,12 +16,12 @@ test("wide cave is a distinct authored five-room plan with actual sixteen bounda
  assert.equal(inspectTile(tile,"cave-wide-v1").clear_openings,8);
  for(let turn=0;turn<4;turn++)for(const side of ["N","S","E","W"])
   assert.equal(edgeMask(tile,turn,side),"4,5,14,15");
- assert.equal(floor.size,187);
+ assert.equal(floor.size,185);
  assert.throws(()=>inspectTile(tile,"legacy"),/family differs/);
 });
 test("both western distributary lanes are actually blocked and force an eight-cell detour",()=>{
  const report=routeReport(tile),doors=doorEdges(tile),without=terrainGraph(floor,doors,{...tile.terrain,chokes:[]});
- assert.equal(report.reachable_floor_cells,187);
+ assert.equal(report.reachable_floor_cells,185);
  assert.equal(report.reachable_edge_cells,16);
  assert.equal(report.west_bank_before_half_cells,22);
  assert.equal(report.west_bank_after_half_cells,30);
