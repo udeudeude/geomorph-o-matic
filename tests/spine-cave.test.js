@@ -64,7 +64,7 @@ test("three distinct wide cave designs join in a rotated four-tile composition w
  const svg=assemble(layout,data,id=>makeSvg(data.tiles.find(t=>t.id===id)));
  for(const name of ["The Split-Spine Drainback","The Sagging Sheetflow","The Braided Lava Confluence"])
   assert.ok(svg.includes(name),name);
- const ids=[...svg.matchAll(/\\bid="([^"]+)"/g)].map(m=>m[1]);
+ const ids=[...svg.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
  assert.equal(ids.length,new Set(ids).size,"Repeated master SVG identifiers must be isolated per instance");
 });
 test("third design retains editable volcanic layers and truthful actual-size print proof",()=>{
