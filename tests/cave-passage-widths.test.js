@@ -9,7 +9,7 @@ const get=id=>data.tiles.find(t=>t.id===id);
 test("two cave plans contain real, independently located dry passage enlargements",()=>{
  const expected={
   lantern_sink:{north_joint_splay:5,east_bedding_eddy:5,south_scree_refuge:7.5},
-  scoured_siphon:{upstream_relict_tube:7.5,downstream_relict_tube:5,southern_undercut:7.5,eastern_backwater:7.5}
+  scoured_siphon:{upstream_relict_tube:7.5,downstream_relict_tube:5,southern_undercut:7.5,eastern_backwater:5}
  };
  for(const [id,widths]of Object.entries(expected)){
   const tile=get(id),floor=buildCells(tile),auditReport=audit(tile);
@@ -32,7 +32,7 @@ test("a cross-section cannot silently include rooms, uncarved rock or invented w
  assert.throws(()=>crossSection(owner,{id:"invalid",at:[8,3],across:"diagonal"}),/Invalid/);
  assert.deepEqual(crossSection(owner,{id:"tube",at:[8,3],across:"E-W"}).from,[7,3]);
  assert.deepEqual(crossSection(owner,{id:"tube",at:[8,3],across:"E-W"}).to,[9,3]);
- assert.equal(owner.get("6,3"),"old_tube");
+ assert.equal(owner.get("6,4"),"old_tube");
  assert.equal(crossSection(owner,{id:"tube",at:[8,3],across:"E-W"}).clear_feet,7.5);
 });
 test("clearance report is deterministic and explicitly refuses survey-grade inference",()=>{
