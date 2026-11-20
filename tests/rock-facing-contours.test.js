@@ -51,7 +51,7 @@ test("irregular cave hachures lean into rock instead of making uniform fencepost
   return m.slice(1).map(Number);
  });
  for(const [x1,y1,x2,y2] of top){
-  assert.ok(y2<y1 && y1<120 && y2>108,"top cave needles must stay in exterior rock");
+  assert.ok(y2<y1 && y1<120 && y2>104,"top cave needles must stay in exterior rock despite curved-wall recession");
   assert.ok(Math.abs(x2-x1)>1,"needles must lean rather than form repeating perpendicular ticks");
  }
  assert.ok(new Set(paths.map(p=>p.slice(0,9))).size>2);

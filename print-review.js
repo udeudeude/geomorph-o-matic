@@ -16,6 +16,8 @@ function printScaleAudit(tile,{squareInches=0.5}={}){
  const smallType=type.filter(x=>x*mmPerUnit<2.2);
  const hairlines=strokes.filter(x=>x*mmPerUnit<0.15);
  return {tile:tile.id,full_square_inches:squareInches,tile_width_mm:num(squareInches*254),
+  half_cell_width_feet:2.5,standard_edge_throat_feet:2.5,
+  standard_edge_throat_print_mm:num(squareInches*25.4/2),
   millimetres_per_vector_unit:num(mmPerUnit),font_samples:type.length,
   type_below_2_2_mm:smallType.length,stroke_samples:strokes.length,
   strokes_below_0_15_mm:hairlines.length,
@@ -40,7 +42,7 @@ function letterProof(tile,{squareInches=0.5}={}){
  '<g id="proof-head" font-family="sans-serif" fill="#272b29">',
  '<text x="76" y="53" font-size="23" font-family="Georgia,serif">'+esc(tile.title)+'</text>',
  '<text x="76" y="82" font-size="13">Geomorph-o-matic | Architectural print inspection, not final artwork</text>',
- '<text x="76" y="102" font-size="12">US Letter | Actual size / 100% | 1 square = '+squareInches+' in | Tile = '+num(width/96)+' in</text>',
+ '<text x="76" y="102" font-size="12">US Letter | Actual size / 100% | 5-foot square = '+squareInches+' in | Tile = '+num(width/96)+' in</text>',
  '</g><g id="print-map">',nested,'</g>',
  '<g id="print-scale" font-family="sans-serif" font-size="12" fill="#313735">',
  '<text x="76" y="'+num(barY-20)+'">10-foot scale bar (two standard squares)</text>',
@@ -50,7 +52,7 @@ function letterProof(tile,{squareInches=0.5}={}){
  '<text x="'+num(barX+bar)+'" y="'+num(barY+37)+'" text-anchor="end">10 ft</text>',
  '</g>',
  '<g id="print-review-footer" fill="#5a605c" font-family="sans-serif" font-size="12">',
- '<text x="76" y="988">Print at 100%; disable fit-to-page. Check entrances, bridge lines and stair markings.</text>',
+ '<text x="76" y="988">Print at 100%. Edge throats are 2.5 ft clear, only half a grid square.</text>',
  '<text x="76" y="1010">Automated typography check: '+small+' directly sized text elements below 2.2 mm.</text>',
  '<text x="76" y="1031">Visual clarity must be assessed from a physical test print.</text>',
  '</g></svg>'

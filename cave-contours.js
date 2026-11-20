@@ -77,29 +77,44 @@ function naturalWallPaths(segments,{cellSize=24,gridSize=20,radius=0.2}={}){
 // Input is [x1,y1,x2,y2,outwardDx,outwardDy], outward from traversable floor.
 // Variable, rock-facing needle marks. Each mark starts just beyond the wall,
 // points into unoccupied rock and leans along the joint; no grid-fence ticks.
-function rockHachurePaths(segments,{cellSize=24,gridSize=20}={}){
+// The hachures must start at the *drawn* organic contour, not the invisible
+// rectilinear cell edge. Sample the same cubic used for the wall, then point
+// the needle out of traversable space. Border seams remain untouched.
+function rockHachurePaths(segments,{cellSize=24,gridSize=20,curvature=.18,irregularity=.17}={}){
  if(!(cellSize>0)||!Number.isInteger(gridSize)||gridSize<2)throw Error("Invalid cave hachure scale");
  const paths=[],N=v=>Number(v.toFixed(2)),hash=s=>{
   let h=2166136261;
   for(let i=0;i<s.length;i++)h=Math.imul(h^s.charCodeAt(i),16777619)>>>0;
   return h;
  };
- for(const[x1,y1,x2,y2,nx,ny]of segments){
-  if(!Number.isInteger(nx)||!Number.isInteger(ny)||Math.abs(nx)+Math.abs(ny)!==1)throw Error("Invalid rock-facing normal");
-  const cx=(x1+x2)/2,cy=(y1+y2)/2;
-  if(cx<=0||cy<=0||cx>=gridSize||cy>=gridSize)continue;
-  const dx=x2-x1,dy=y2-y1,len=Math.hypot(dx,dy);
-  if(!len)throw Error("Zero-length rock edge");
-  const tx=dx/len,ty=dy/len,h=hash([x1,y1,x2,y2,nx,ny].join(","));
-  for(let j=0;j<2;j++){
-   const fraction=((h >>> (j*9))&63)/63;
-   const t=(j===0?.15:.58)+fraction*.22;
-   const length=cellSize*(.19+.17*((h>>>(j*7+4))&31)/31);
-   const lean=cellSize*((j===0?-.14:.12)+(.06*fraction));
-   const a=[(x1+t*dx)*cellSize+nx*1.6,(y1+t*dy)*cellSize+ny*1.6];
-   const b=[a[0]+nx*length+tx*lean,a[1]+ny*length+ty*lean];
-   if(b.some(v=>v<0||v>gridSize*cellSize))continue;
-   paths.push("M"+N(a[0])+","+N(a[1])+"L"+N(b[0])+","+N(b[1]));
+ const cubic=(a,p,q,b,t)=>{
+  const u=1-t;return [0,1].map(k=>u*u*u*a[k]+3*u*u*t*p[k]+3*u*t*t*q[k]+t*t*t*b[k]);
+ };
+ const tangent=(a,p,q,b,t)=>{
+  const u=1-t;return [0,1].map(k=>3*u*u*(p[k]-a[k])+6*u*t*(q[k]-p[k])+3*t*t*(b[k]-q[k]));
+ };
+ for(const chain of organicWallGeometry(segments,{cellSize,gridSize,curvature,irregularity})){
+  for(const edge of chain.edges){
+   if(edge.border||!edge.normal)continue;
+   const [a,b]=[edge.a,edge.b],h=hash(edge.key);
+   for(let j=0;j<2;j++){
+    const fraction=((h >>> (j*9))&63)/63;
+    const t=(j===0?.15:.58)+fraction*.22;
+    const point=edge.curved?cubic(a,edge.p,edge.q,b,t):
+     [a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t];
+    const v=edge.curved?tangent(a,edge.p,edge.q,b,t):[b[0]-a[0],b[1]-a[1]];
+    const length=Math.hypot(...v);if(length<1e-6)throw Error("Degenerate organic wall tangent");
+    const tx=v[0]/length,ty=v[1]/length;
+    // Select the perpendicular in the canonical rock-facing direction.
+    let nx=-ty,ny=tx;
+    if(nx*edge.normal[0]+ny*edge.normal[1]<0){nx=-nx;ny=-ny;}
+    const stroke=cellSize*(.19+.17*((h>>>(j*7+4))&31)/31);
+    const lean=cellSize*((j===0?-.14:.12)+(.06*fraction));
+    const start=[point[0]+nx*1.6,point[1]+ny*1.6];
+    const end=[start[0]+nx*stroke+tx*lean,start[1]+ny*stroke+ty*lean];
+    if([...start,...end].some(v=>v<0||v>gridSize*cellSize))continue;
+    paths.push("M"+N(start[0])+","+N(start[1])+"L"+N(end[0])+","+N(end[1]));
+   }
   }
  }
  return paths;
@@ -140,7 +155,9 @@ function rockFacingOffsets(segments,{cellSize=24,gridSize=20,irregularity=.13}={
  return moved;
 }
 
-function organicWallPaths(segments,{cellSize=24,gridSize=20,curvature=0.18,irregularity=0.17}={}){
+// One canonical curve model drives both the visible cave boundary and its
+// etched rock marks. All edge endpoints on the external 20-cell seam stay exact.
+function organicWallGeometry(segments,{cellSize=24,gridSize=20,curvature=0.18,irregularity=0.17}={}){
  if(!(cellSize>0)||!Number.isInteger(gridSize)||gridSize<2||
     curvature<0||curvature>0.22||irregularity<0||irregularity>0.18)throw Error("Unsafe organic wall controls");
  const border=([x,y])=>x===0||y===0||x===gridSize||y===gridSize;
@@ -159,25 +176,33 @@ function organicWallPaths(segments,{cellSize=24,gridSize=20,curvature=0.18,irreg
  return chainsFromEdges(segments).map(chain=>{
   const closed=coordinate(chain[0])===coordinate(chain[chain.length-1]);
   const pts=closed?chain.slice(0,-1):chain;
-  if(pts.length<2)return "";
-  const n=pts.length;
+  if(pts.length<2)return null;
+  const n=pts.length,edges=[];
   let d="M"+commands(cp(pts[0]));
   for(let i=0;i<(closed?n:n-1);i++){
    const a=pts[i],b=pts[(i+1)%n],A=cp(a),B=cp(b);
-   if(border(a)||border(b)){d+="L"+commands(B);continue;}
+   const k=edgeKey(a,b),normal=facing.get(k);
+   if(border(a)||border(b)){
+    edges.push({a:A,b:B,border:true,curved:false,normal,key:k});
+    d+="L"+commands(B);continue;
+   }
    const prev=cp(pts[i===0?(closed?n-1:0):i-1]);
    const next=cp(pts[i+2<n?i+2:(closed?(i+2)%n:n-1)]);
-   const outward=facing.get(edgeKey(a,b));
    const length=Math.hypot(B[0]-A[0],B[1]-A[1]);
+   if(length<1e-6)throw Error("Degenerate organic wall edge");
    const wobble=irregularity*cellSize*(.25+.55*hash(a,b));
-   const normal=outward||[-(B[1]-A[1])/length,(B[0]-A[0])/length];
-   const p=[A[0]+curvature*(B[0]-prev[0])+normal[0]*wobble,
-    A[1]+curvature*(B[1]-prev[1])+normal[1]*wobble];
-   const q=[B[0]-curvature*(next[0]-A[0])+normal[0]*wobble,
-    B[1]-curvature*(next[1]-A[1])+normal[1]*wobble];
+   const outward=normal||[-(B[1]-A[1])/length,(B[0]-A[0])/length];
+   const p=[A[0]+curvature*(B[0]-prev[0])+outward[0]*wobble,
+    A[1]+curvature*(B[1]-prev[1])+outward[1]*wobble];
+   const q=[B[0]-curvature*(next[0]-A[0])+outward[0]*wobble,
+    B[1]-curvature*(next[1]-A[1])+outward[1]*wobble];
+   edges.push({a:A,b:B,p,q,border:false,curved:true,normal,key:k});
    d+="C"+commands(p)+" "+commands(q)+" "+commands(B);
   }
-  return d+(closed?"Z":"");
+  return {path:d+(closed?"Z":""),edges,closed};
  }).filter(Boolean);
 }
-module.exports={chainsFromEdges,naturalWallPaths,organicWallPaths,rockFacingOffsets,rockHachurePaths};
+function organicWallPaths(segments,opts={}){
+ return organicWallGeometry(segments,opts).map(g=>g.path);
+}
+module.exports={chainsFromEdges,naturalWallPaths,organicWallPaths,organicWallGeometry,rockFacingOffsets,rockHachurePaths};

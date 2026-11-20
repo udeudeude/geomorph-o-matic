@@ -4,7 +4,7 @@
 <g id="proof-head" font-family="sans-serif" fill="#272b29">
 <text x="76" y="53" font-size="23" font-family="Georgia,serif">The Fallen Choir</text>
 <text x="76" y="82" font-size="13">Geomorph-o-matic | Architectural print inspection, not final artwork</text>
-<text x="76" y="102" font-size="12">US Letter | Actual size / 100% | 1 square = 0.5 in | Tile = 5 in</text>
+<text x="76" y="102" font-size="12">US Letter | Actual size / 100% | 5-foot square = 0.5 in | Tile = 5 in</text>
 </g><g id="print-map">
 <svg x="168" y="130" width="480" height="480" viewBox="0 0 480 480" role="group">
 <title>The Fallen Choir</title>
@@ -658,7 +658,7 @@
 <text x="456" y="721" text-anchor="end">10 ft</text>
 </g>
 <g id="print-review-footer" fill="#5a605c" font-family="sans-serif" font-size="12">
-<text x="76" y="988">Print at 100%; disable fit-to-page. Check entrances, bridge lines and stair markings.</text>
+<text x="76" y="988">Print at 100%. Edge throats are 2.5 ft clear, only half a grid square.</text>
 <text x="76" y="1010">Automated typography check: 0 directly sized text elements below 2.2 mm.</text>
 <text x="76" y="1031">Visual clarity must be assessed from a physical test print.</text>
 </g></svg>

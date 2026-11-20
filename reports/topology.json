@@ -3432,7 +3432,7 @@
   },
   {
     "id": "hollow_causeway",
-    "floor_cells": 200,
+    "floor_cells": 209,
     "corridor_cells": 103,
     "doors": 11,
     "standard_doors": 0,
@@ -3514,7 +3514,7 @@
     ],
     "access_profiles": {
       "ordinary": {
-        "accessible_floor_cells": 184,
+        "accessible_floor_cells": 197,
         "accessible_chambers": [
           "blind_fissure",
           "dry_lung",
@@ -3530,7 +3530,7 @@
         "longest_shortest_portal_distance": 41
       },
       "unlocked": {
-        "accessible_floor_cells": 184,
+        "accessible_floor_cells": 197,
         "accessible_chambers": [
           "blind_fissure",
           "dry_lung",
@@ -3546,7 +3546,7 @@
         "longest_shortest_portal_distance": 41
       },
       "all": {
-        "accessible_floor_cells": 184,
+        "accessible_floor_cells": 197,
         "accessible_chambers": [
           "blind_fissure",
           "dry_lung",
@@ -3732,11 +3732,11 @@
     "cave_choke_edges": 1,
     "travel": {
       "dry": {
-        "accessible_floor_cells": 184,
+        "accessible_floor_cells": 197,
         "reachable_portals": 8
       },
       "wading": {
-        "accessible_floor_cells": 200,
+        "accessible_floor_cells": 209,
         "reachable_portals": 8
       }
     },
