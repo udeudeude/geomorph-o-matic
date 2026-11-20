@@ -10,9 +10,11 @@ const {doorEdges}=require("./audit");
 const {terrainGraph}=require("./terrain");
 const {POSTURES,roofModel,headroomGraph}=require("./wide-headroom");
 const {distances}=require("./route-analysis");
+const {inspectCrowns}=require("./wide-seam-crowns");
 const OFFSETS=[4,5,14,15],SIZE=20,xy=s=>s.split(",").map(Number),key=(x,y)=>x+","+y;
 function analyzePostures(layout,data=source()){
  const rows=verifyLayout(layout,data),width=rows[0].length,height=rows.length;
+ const registeredCrown=inspectCrowns(layout,data);
  const seams=[];
  const global=(p,x,y,turn)=>{
   const [a,b]=rotateCell(typeof p==="string"?xy(p):p,turn);
@@ -81,8 +83,12 @@ function analyzePostures(layout,data=source()){
  return {layout:layout.title||"Three wide caves",stage:"unreleased assembly posture study",
   distinct_designs:[...types].sort(),tile_count:width*height,layout_width_tiles:width,layout_height_tiles:height,
   all_walkable_floor_cells:base.size,full_width_intertile_walking_edges:seams.length,
-  exterior_mouth_floor_cells:mouths.length,hypothetical_modes:traversals,
-  caution:"These are fictional local headroom assumptions, not measured roof elevations, guaranteed seam crown continuity, load ratings or physical playtesting."};
+  exterior_mouth_floor_cells:mouths.length,
+  vertical_interface:{registered_crown_feet:registeredCrown.common_mouth_crown_feet,
+   checked_crown_pairs:registeredCrown.checked_crown_pairs,
+   checked_exterior_throat_cells:registeredCrown.checked_exterior_throat_cells},
+  hypothetical_modes:traversals,
+  caution:"These are fictional local headroom assumptions, not measured roof elevations, unmodeled interior ceiling continuity, load ratings or physical playtesting."};
 }
 function generate(file=path.join(__dirname,"reports/wide-posture-assembly.json")){
  const layout=JSON.parse(fs.readFileSync(path.join(__dirname,"studies/assembly_three_wide_2x2.json"),"utf8"));
