@@ -26,7 +26,7 @@ These are deliberate changes to authored room silhouettes and true walkable floo
 
 ## Physical-scale correction
 
-The ten-square-wide tile prints at 0.5 inch per **5-foot** standard square, with **20 half-square cells** across. Therefore an unexpanded single-half-cell edge throat is **2.5 feet** wide and prints at **0.25 inch / 6.35 millimetres**, not five feet wide. This is narrow but plausible for a squeeze, service gallery or pedestrian cave throat. Calling it a five-foot doorway would be physically inaccurate. The print audit and proof label now disclose the actual dimension, without silently widening any modular interface or pretending the whole tile is accessible to all modes of movement.
+Dyson's [2018 cave geomorphs](https://dysonlogos.blog/2018/06/25/vault-of-the-cave-morphs/) instead use **two full squares** at each entrance. Our half-square mouth is therefore four times narrower in grid squares; interchangeability with those particular Dyson cave morphs should **not** be claimed. Enlarging our standard mouths would be a new, incompatible geomorph family, not a small ink correction.\n\nThe ten-square-wide tile prints at 0.5 inch per **5-foot** standard square, with **20 half-square cells** across. Therefore an unexpanded single-half-cell edge throat is **2.5 feet** wide and prints at **0.25 inch / 6.35 millimetres**, not five feet wide. This is narrow but plausible for a squeeze, service gallery or pedestrian cave throat. Calling it a five-foot doorway would be physically inaccurate. The print audit and proof label now disclose the actual dimension, without silently widening any modular interface or pretending the whole tile is accessible to all modes of movement.
 
 ## Remaining design liabilities
 
