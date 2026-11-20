@@ -1,0 +1,28 @@
+# Joint-guided passages, not square-tube corridors
+19 November 2026 | Cartographic revision | Provisional work
+
+## The research question
+
+A natural-cave map need not be meandering everywhere. Solution passages can follow joints and bedding planes; straight stretches make sense where the geology justifies them. But an uninterrupted, uniform, right-angled shaft repeated in every cave drawing is a procedural fingerprint. Curved ink alone does not repair its underlying geometry.
+
+- [Dyson Logos, Vault of the Cave Morphs (2018)](https://dysonlogos.blog/2018/06/25/vault-of-the-cave-morphs/) uses sharply varied chamber shapes, branching and deliberately wide (two conventional squares) mouths. Our legacy 2.5-foot standard entrances are a *different, noninterchangeable* system.
+- [National Speleological Society cartography criteria](https://caves.org/salons/cartography-submissions/cartography-judging-criteria/) emphasize immediate entrance recognition, heavy wall-line hierarchy, coherent profiles and clearly represented changes in passage geometry. These fictional maps should not claim professional survey accuracy.
+- [British Cave Research Association survey grading](https://bcra.org.uk/surveying/) distinguishes memory sketches from measured passage details. A designer-selected 2.5-foot pixel or a recomposed dogleg is *not* a Grade 5 survey observation.
+
+## Two authored corrections
+
+**Scoured Siphon:** Both southern approach axes have been recomposed. The southwest abandoned watercourse winds alongside the silt chamber, cuts into an existing undercut, and arrives at the confluence from a lateral branch instead of one continuous straight tube. The southeast route bends around a rock rib while retaining the original constructed/open threshold into Eclipse. These are changes to walkable floor masks, not drawing filters. They preserve the mapped water, bridge, ramps, rockfall and eight exact outside mouths.
+
+**Lantern Sink:** The northwest joint entrance jogs around intact bedrock near the dry vestibule, then returns to its existing link with the northern gallery. The southwest pilgrimage approach now makes a dry lateral dogleg beside the sealed chamber instead of continuing a single uninterrupted shaft. Both changes retain the two secret room thresholds and the three distinct raised-bench ramps. The original twelve-half-cell straight hall strip is shortened in the authored plan, not visually hidden under wavy contours.
+
+## A deliberately skeptical diagnostic
+
+Run \`node cave-axes.js reports/cave-axes.json\` to calculate maximal **dry, traversable straight hall strips**, splitting at water without bridges, blocked collapse edges, full partitions and inaccessible level transitions. This is a useful detector of grid-first composition, not a claim that uninterrupted halls are artificial, nor a sightline test. A wet cave may have a long straight joint-controlled passage; sometimes that is exactly right.
+
+The report complements \`cave-passage-widths.js\`. The width audit estimates horizontal cross-cuts; the axis audit measures uninterrupted axial strips. Neither knows ceiling clearance or authentic geology. Their purpose is to catch unintended assumptions *before* a map is presented as finished.
+
+## Next tests and unresolved architectural questions
+
+1. **Research:** compare published joint-controlled cave plans, transverse sections, roof heights and flood stages with these particular passages; record which corridors are relict stream tubes and which are later pilgrim works.
+2. Physically print both maps at true scale and inspect whether the hall edges and natural passages remain legible under the hatchwork. A screen-only renderer test is insufficient.
+3. Resolve bridge-bearing rock, gallery headroom, slope grades, and accessibility through the 2.5-foot modular seam. Evaluate an explicitly separate wide-mouth family rather than widening only some legacy tiles.

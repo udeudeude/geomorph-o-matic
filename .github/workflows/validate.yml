@@ -22,6 +22,7 @@ jobs:
           node assemble.js
           node audit.js
           node cave-passage-widths.js reports/cave-passage-widths.json
+          node cave-axes.js reports/cave-axes.json
           node assemble.js examples/assembly_irregular_3x3.json examples/assembly_irregular_3x3.svg
           node assemble.js examples/assembly_fallen_choir_2x2.json examples/assembly_fallen_choir_2x2.svg
           node assemble.js examples/assembly_hollow_2x2.json examples/assembly_hollow_2x2.svg
@@ -61,7 +62,7 @@ jobs:
       - name: Commit verified generated assets on same-repository push
         if: github.event_name == 'push'
         run: |
-          git add tiles/ examples/assembly_fallen_choir_2x2.svg examples/fallen_choir_print_letter.svg examples/assembly_hollow_2x2.svg examples/hollow_causeway_print_letter.svg examples/assembly_scoured_2x2.svg examples/assembly_lantern_2x2.svg examples/scoured_siphon_print_letter.svg examples/lantern_sink_print_letter.svg examples/fallen_choir_levels.svg examples/scoured_siphon_profiles.svg examples/assembly_3x3.svg examples/riftwater_section.svg examples/riftwater_surge.svg examples/riftwater_profile.svg examples/riftwater_tailrace_plate.svg examples/subfloor_pair_plate.svg examples/postern_outfall_section.svg examples/receiving_annex_plate.svg examples/riftwater_maintenance_plate.svg examples/riftwater_print_letter.svg reports/topology.json reports/cave-passage-widths.json reports/print-scale.json reports/buried-clearance.json reports/gearbox-access.json
+          git add tiles/ examples/assembly_fallen_choir_2x2.svg examples/fallen_choir_print_letter.svg examples/assembly_hollow_2x2.svg examples/hollow_causeway_print_letter.svg examples/assembly_scoured_2x2.svg examples/assembly_lantern_2x2.svg examples/scoured_siphon_print_letter.svg examples/lantern_sink_print_letter.svg examples/fallen_choir_levels.svg examples/scoured_siphon_profiles.svg examples/assembly_3x3.svg examples/riftwater_section.svg examples/riftwater_surge.svg examples/riftwater_profile.svg examples/riftwater_tailrace_plate.svg examples/subfloor_pair_plate.svg examples/postern_outfall_section.svg examples/receiving_annex_plate.svg examples/riftwater_maintenance_plate.svg examples/riftwater_print_letter.svg reports/topology.json reports/cave-passage-widths.json reports/cave-axes.json reports/print-scale.json reports/buried-clearance.json reports/gearbox-access.json
           if ! git diff --cached --quiet; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -69,7 +70,7 @@ jobs:
             git push origin HEAD:${GITHUB_REF_NAME}
           fi
       - name: Verify tracked SVG masters and audit are reproducible
-        run: git diff --exit-code -- tiles/ examples/assembly_fallen_choir_2x2.svg examples/fallen_choir_print_letter.svg examples/assembly_hollow_2x2.svg examples/hollow_causeway_print_letter.svg examples/assembly_scoured_2x2.svg examples/assembly_lantern_2x2.svg examples/scoured_siphon_print_letter.svg examples/lantern_sink_print_letter.svg examples/fallen_choir_levels.svg examples/scoured_siphon_profiles.svg examples/assembly_3x3.svg examples/riftwater_section.svg examples/riftwater_surge.svg examples/riftwater_profile.svg examples/riftwater_tailrace_plate.svg examples/subfloor_pair_plate.svg examples/postern_outfall_section.svg examples/riftwater_maintenance_plate.svg examples/riftwater_print_letter.svg reports/topology.json reports/cave-passage-widths.json reports/print-scale.json reports/buried-clearance.json reports/gearbox-access.json
+        run: git diff --exit-code -- tiles/ examples/assembly_fallen_choir_2x2.svg examples/fallen_choir_print_letter.svg examples/assembly_hollow_2x2.svg examples/hollow_causeway_print_letter.svg examples/assembly_scoured_2x2.svg examples/assembly_lantern_2x2.svg examples/scoured_siphon_print_letter.svg examples/lantern_sink_print_letter.svg examples/fallen_choir_levels.svg examples/scoured_siphon_profiles.svg examples/assembly_3x3.svg examples/riftwater_section.svg examples/riftwater_surge.svg examples/riftwater_profile.svg examples/riftwater_tailrace_plate.svg examples/subfloor_pair_plate.svg examples/postern_outfall_section.svg examples/riftwater_maintenance_plate.svg examples/riftwater_print_letter.svg reports/topology.json reports/cave-passage-widths.json reports/cave-axes.json reports/print-scale.json reports/buried-clearance.json reports/gearbox-access.json
       - name: Upload vector studies and inspection report
         uses: actions/upload-artifact@v4
         with:
@@ -99,6 +100,7 @@ jobs:
             examples/riftwater_print_letter.svg
             reports/topology.json
             reports/cave-passage-widths.json
+            reports/cave-axes.json
             reports/print-scale.json
             reports/buried-clearance.json
             reports/gearbox-access.json
