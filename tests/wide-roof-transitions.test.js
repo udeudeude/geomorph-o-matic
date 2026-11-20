@@ -13,7 +13,7 @@ const key=p=>p.join(",");
 
 test("real occupied cave corridors carry a bounded mouth-to-vault roof taper without losing standing mouths",()=>{
  for(const tile of tiles){
-  const owner=buildCells(tile),roof=roofModel(owner,tile.roof_scenario,tile.seam_profile);
+  const owner=buildCells(tile),roof=roofModel(owner,tile.roof_scenario,tile.seam_profile,tile.terrain);
   assert.equal(roof.throat_transition_feet_per_half_cell,0.5);
   assert.equal(roof.clearances.size,owner.size);
   const floor=terrainGraph(owner,doorEdges(tile),tile.terrain||{},"ordinary","dry");
@@ -37,7 +37,7 @@ test("real occupied cave corridors carry a bounded mouth-to-vault roof taper wit
 test("braided and split-spine roofs genuinely rise within actual passages; flat sheetflow is explicitly flat",()=>{
  const expected={braided_lava:[7,7.5],sagging_sheet:[],split_spine:[7]};
  for(const tile of tiles){
-  const roof=roofModel(buildCells(tile),tile.roof_scenario);
+  const roof=roofModel(buildCells(tile),tile.roof_scenario,tile.seam_profile,tile.terrain);
   assert.deepEqual([...new Set(roof.tapered_cells.map(s=>s.clearance_feet))].sort((a,b)=>a-b),expected[tile.id]);
   assert.ok(roof.tapered_cells.every(s=>s.distance_from_mouth_half_cells>0));
   for(const p of roof.zones[0].cells)assert.equal(roof.clearances.get(p),tile.roof_scenario.zones[0].clearance_feet);
@@ -61,7 +61,7 @@ test("profile walks real dry graph edges, documents abrupt constrictions, and do
  }
 });
 test("cannot fake a walkable roof profile across disconnected routes",()=>{
- const tile=tiles[0],floor=buildCells(tile),roof=roofModel(floor,tile.roof_scenario);
+ const tile=tiles[0],floor=buildCells(tile),roof=roofModel(floor,tile.roof_scenario,tile.seam_profile,tile.terrain);
  const graph=terrainGraph(floor,doorEdges(tile),tile.terrain,"ordinary","dry");
  assert.ok(routeToPinch(graph,roof.zones).length>4);
  assert.throws(()=>routeToPinch(new Map([["4,0",[]]]),roof.zones),/not reachable/);
@@ -74,8 +74,8 @@ test("roof contours and real-distance vector profiles are deterministic and rema
  for(const tile of tiles){
   assert.ok(svg.includes('id="route-profile-'+tile.id+'"'));
   assert.ok(svg.includes('data-route-ceiling="'+tile.id+'"'));
-  const roof=roofModel(buildCells(tile),tile.roof_scenario);
-  const marks=ceilingSvg(buildCells(tile),tile.roof_scenario).join("\n");
+  const roof=roofModel(buildCells(tile),tile.roof_scenario,tile.seam_profile,tile.terrain);
+  const marks=ceilingSvg(buildCells(tile),tile.roof_scenario,24,tile.terrain).join("\n");
   assert.match(marks,/id="roof-entry-transitions"/);
   assert.match(makeSvg(tile),/id="roof-entry-transitions"/);
   if(roof.tapered_cells.length)assert.match(marks,/data-crown-transition-edge=/);

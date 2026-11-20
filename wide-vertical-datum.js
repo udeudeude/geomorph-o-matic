@@ -16,7 +16,7 @@ const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"
 function assessBench(tile,rises=CANDIDATE_RISES){
  if(!tile||tile.id!=="sagging_sheet")throw Error("Bench study must register to Sagging Sheetflow");
  const floor=buildCells(tile),terrain=terrainModel(floor,tile.terrain||{});
- const roof=roofModel(floor,tile.roof_scenario,tile.seam_profile);
+ const roof=roofModel(floor,{...tile.roof_scenario,absolute_vault:undefined},tile.seam_profile);
  const raised=[...terrain.heights].filter(([,z])=>z===1).map(([p])=>p).sort();
  if(raised.length!==8||terrain.heights.size!==8||terrain.steps.size!==3||terrain.ramps.size!==0)
    throw Error("Changed bench topology: expected eight raised cells and three transition edges");

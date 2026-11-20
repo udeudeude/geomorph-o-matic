@@ -10,7 +10,7 @@ OFFSETS={4,5,14,15}
 PORTALS={(x,y) for x in OFFSETS for y in (0,19)} | {(x,y) for x in (0,19) for y in OFFSETS}
 EXPECTED={
     "braided_lava":(187,185,185,23,31),
-    "sagging_sheet":(238,236,238,29,31),
+    "sagging_sheet":(238,235,238,29,31),
     "split_spine":(223,208,208,None,None),
 }
 
@@ -22,6 +22,13 @@ def route(tile,minimum_feet):
     for zone in scenario["zones"]:
         if zone["clearance_feet"]<minimum_feet:
             cut.update(tuple(p) for p in zone["cells"])
+    vault=scenario.get("absolute_vault")
+    if vault:
+        floor_z={tuple(p):z*vault["bench_rise_feet"] for z,cells in tile["terrain"]["elevations"] for p in cells}
+        roof_z={p:scenario["baseline_feet"] for p in occupied}
+        for zone in vault["zones"]:
+            for p in zone["cells"]:roof_z[tuple(p)]=zone["roof_elevation_feet"]
+        cut.update(p for p in occupied if roof_z[p]-floor_z.get(p,0)<minimum_feet)
     included={p:v for p,v in occupied.items() if p not in cut}
     blocked={edge(tuple(a),tuple(b)) for a,b in tile["terrain"].get("chokes",[])}
     raised={tuple(p) for level,cells in tile["terrain"].get("elevations",[]) for p in cells}
@@ -50,6 +57,7 @@ class WideHeadroomIndependentTests(unittest.TestCase):
             for threshold,required in ((6,standing_count),(4,crouching_count),(2.5,floor_count)):
                 admitted,walk=route(tile,threshold)
                 excluded=sum(len(z["cells"]) for z in tile["roof_scenario"]["zones"] if z["clearance_feet"]<threshold)
+                if tile["id"]=="sagging_sheet" and threshold==6:excluded+=1
                 self.assertEqual(len(admitted),floor_count-excluded,(tile["id"],threshold))
                 visited=walk((4,0))
                 self.assertEqual(len(visited),required,(tile["id"],threshold))

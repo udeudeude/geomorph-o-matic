@@ -10,13 +10,13 @@ const {roofModel,headroomGraph,analyze,ceilingSvg,plate,POSTURES}=require("../wi
 const wide=source().tiles;
 const expected={
  braided_lava:{floor:187,standing:185,crouching:185,changed:16,from:23,to:31,low:3.5,baseline:8},
- sagging_sheet:{floor:238,standing:236,crouching:238,changed:12,from:29,to:31,low:5,baseline:6.5},
+ sagging_sheet:{floor:238,standing:235,crouching:238,changed:12,from:29,to:31,low:5,baseline:6.5},
  split_spine:{floor:223,standing:208,crouching:208,changed:0,low:3.5,baseline:7.5}
 };
 test("all three authored ceiling restrictions register to genuinely occupied cave geometry",()=>{
  assert.equal(wide.length,3);
  for(const tile of wide){
-  const floor=buildCells(tile),model=roofModel(floor,tile.roof_scenario);
+  const floor=buildCells(tile),model=roofModel(floor,tile.roof_scenario,tile.seam_profile,tile.terrain);
   assert.equal(model.clearances.size,expected[tile.id].floor);
   assert.equal(model.zones.length,1);
   assert.equal(model.zones[0].cells.length,2);
@@ -43,10 +43,10 @@ test("assumed low ceilings have measurable navigation consequences, without dama
 });
 test("headroom filters only genuine walkable links and preserves original collapse and grade rules",()=>{
  for(const tile of wide){
-  const floor=buildCells(tile),roof=roofModel(floor,tile.roof_scenario);
+  const floor=buildCells(tile),roof=roofModel(floor,tile.roof_scenario,tile.seam_profile,tile.terrain);
   const full=terrainGraph(floor,doorEdges(tile),tile.terrain,"ordinary","dry");
   const stand=headroomGraph(full,roof,POSTURES.standing);
-  assert.equal(stand.size,floor.size-2,"Only two low-roof floor cells are excluded");
+  assert.equal(stand.size,floor.size-2-(tile.id==="sagging_sheet"?1:0),"One additional stooped bench cell is excluded");
   assert.equal(distances(stand,"4,0").size,expected[tile.id].standing,
     "A constriction can make further admitted floor unreachable");
   for(const [p,neighbors] of stand)for(const q of neighbors){
@@ -66,12 +66,12 @@ test("roof scenarios reject fabricated floors, disconnected zones, non-walkable 
    {...scenario,zones:[{...scenario.zones[0],cells:[[4,0],[5,0]]}]},
    {...scenario,zones:[{...scenario.zones[0],cells:[[9,6],[9,6]]}]},
    {...scenario,zones:[scenario.zones[0],scenario.zones[0]]}
- ])assert.throws(()=>roofModel(floor,changed),/Invalid|Low roof/);
+ ])assert.throws(()=>roofModel(floor,changed,tile.seam_profile,tile.terrain),/Invalid|Low roof/);
  assert.throws(()=>headroomGraph(new Map(),{clearances:new Map()},0),/Invalid headroom/);
 });
 test("editable cave ceiling marks are registered to the same floor cells and remain separate from barriers",()=>{
  for(const tile of wide){
-  const floor=buildCells(tile),svg=makeSvg(tile),marks=ceilingSvg(floor,tile.roof_scenario).join("\n");
+  const floor=buildCells(tile),svg=makeSvg(tile),marks=ceilingSvg(floor,tile.roof_scenario,24,tile.terrain).join("\n");
   assert.match(svg,/id="ceiling-clearance"/);
   for(const [x,y] of tile.roof_scenario.zones[0].cells)
    assert.ok(svg.includes('data-roof-cell="'+x+','+y+'"'));

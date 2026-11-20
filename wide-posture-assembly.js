@@ -25,7 +25,7 @@ function analyzePostures(layout,data=source()){
    const c=rows[y][x],owner=buildCells(c.tile);
    inspectTile(c.tile,"cave-wide-v1");types.add(c.id);
    const local=terrainGraph(owner,doorEdges(c.tile),c.tile.terrain||{},"ordinary","dry");
-   const roof=roofModel(owner,c.tile.roof_scenario,c.tile.seam_profile);
+   const roof=roofModel(owner,c.tile.roof_scenario,c.tile.seam_profile,c.tile.terrain);
    for(const [p,adj] of local){
      const at=global(p,x,y,c.turn);
      if(base.has(at)||roofHeights.has(at))throw Error("Overlapping rotated floor");
