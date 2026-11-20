@@ -648,7 +648,7 @@
       "geometry": "row-runs",
       "wall_style": "cavern",
       "seam_profile": "cave-wide-v1",
-      "description": "A contrasting low sheet-flow cave with six asymmetric interconnected vesicles, a drained central basin, and a surviving elevated basalt bench approached by three transitions. A double-width northwest ceiling fall interrupts an axial route, forcing a verified detour without disconnecting the eight five-foot modular mouths. All roof clearances and formation stages remain hypothetical.",
+      "description": "A contrasting low sheet-flow cave with six asymmetric interconnected vesicles and a doglegged southern transfer around surviving basalt ribs, a drained central basin, and a surviving elevated basalt bench approached by three transitions. A double-width northwest ceiling fall interrupts an axial route, forcing a verified detour without disconnecting the eight five-foot modular mouths. All roof clearances and formation stages remain hypothetical.",
       "rooms": [
         [
           "crown",
@@ -1452,11 +1452,39 @@
               15
             ],
             [
+              7,
+              15
+            ]
+          ],
+          "reason": "offset low gallery around surviving basalt ribs"
+        },
+        {
+          "id": "sheet_15_09",
+          "points": [
+            [
+              9,
+              15
+            ],
+            [
+              11,
+              15
+            ]
+          ],
+          "reason": "offset low gallery around surviving basalt ribs"
+        },
+        {
+          "id": "sheet_15_13",
+          "points": [
+            [
+              13,
+              15
+            ],
+            [
               19,
               15
             ]
           ],
-          "reason": "drained sheet-flow floor, row-run occupation"
+          "reason": "offset low gallery around surviving basalt ribs"
         },
         {
           "id": "sheet_16_04",
