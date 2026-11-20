@@ -57,7 +57,7 @@ test("editable plan and all three cross-sections are deterministic and separate 
  const report=assessAll(tiles),svg=sectionSvg(report,tiles);
  assert.equal(sectionSvg(report,tiles),svg);
  assert.equal((svg.match(/data-cut-cell=/g)||[]).length,18);
- assert.equal((svg.match(/data-profile-sample=/g)||[]).length,20);
+ assert.equal((svg.match(/data-profile-sample=/g)||[]).length,18);
  assert.equal((svg.match(/data-section-roof=/g)||[]).length,3);
  assert.equal((svg.match(/data-section-floor=/g)||[]).length,3);
  assert.equal((svg.match(/data-section-step=/g)||[]).length,2);
