@@ -56,6 +56,10 @@ test("editable SVG is deterministic, follows registered step cells and declares 
  const r=assess(tile),svg=plate(r);
  assert.equal(svg,plate(r));
  assert.match(svg,/ABSOLUTE FLOOR AND ROOF DATUM/);
+ assert.match(svg,/id="registered-floor"/);
+ assert.match(svg,/id="actual-rock-boundary"/);
+ assert.equal((svg.match(/data-occupied-plan-cell=/g)||[]).length,238);
+
  for(const a of r.approaches){
   for(const id of ["data-real-stair","data-floor-profile","data-fixed-roof","data-lifted-roof"])
    assert.ok(svg.includes(id+'="'+a.id+'"'));
