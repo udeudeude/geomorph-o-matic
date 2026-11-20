@@ -2,6 +2,7 @@
 const fs=require("node:fs");
 const path=require("node:path");
 const {shapeCells,shapeBounds}=require("./geometry");
+const {spec:seamSpec,boundaryCell}=require("./seam-profiles");
 const {masonryHatchPaths}=require("./ink-hatching");
 const {organicWallPaths,rockHachurePaths}=require("./cave-contours");
 const {terrainSvg,terrainModel}=require("./terrain");
@@ -13,7 +14,9 @@ const {tailraceSymbolsSvg}=require("./tailrace");
 const {maintenanceSymbolsSvg,transmissionModel}=require("./maintenance-works");
 function makeSvg(tile,{grid="full"}={}) {
   if(!["full","half"].includes(grid))throw Error("Invalid map grid");
-  const N=20,S=24,L=N*S,portal=new Set(["4,0","15,0","0,4","19,4","0,15","19,15","4,19","15,19"]);
+  const N=20,S=24,L=N*S;
+  const openings=seamSpec(tile.seam_profile||"legacy").mouths.flat();
+  const portal=new Set(["N","E","S","W"].flatMap(side=>openings.map(offset=>boundaryCell(side,offset).join(","))));
   const key=(x,y)=>`${x},${y}`,edge=(a,b)=>[a,b].sort().join("|");
   const owner=new Map(),rooms=new Map();
   for(const [id,name,shape] of tile.rooms){
@@ -35,7 +38,7 @@ function makeSvg(tile,{grid="full"}={}) {
     }
   }
   const boundary=[...owner.keys()].filter(p=>{const [x,y]=p.split(",").map(Number);return x===0||x===19||y===0||y===19;});
-  if(boundary.length!==8||boundary.some(p=>!portal.has(p)))throw Error("Invalid boundary openings: "+tile.id);
+  if(boundary.length!==portal.size||boundary.some(p=>!portal.has(p)))throw Error("Invalid boundary openings: "+tile.id);
   const doors=new Map();
   for(const [id,side,n,kind] of tile.doors){
     const r=rooms.get(id);let a,b;

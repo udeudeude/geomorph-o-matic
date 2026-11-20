@@ -598,7 +598,7 @@
 <text x="456" y="721" text-anchor="end">10 ft</text>
 </g>
 <g id="print-review-footer" fill="#5a605c" font-family="sans-serif" font-size="12">
-<text x="76" y="988">Print at 100%. Edge throats are 2.5 ft clear, only half a grid square.</text>
+<text x="76" y="988">Print at 100%. Edge throats are 2.5 ft clear (6.35 mm on paper).</text>
 <text x="76" y="1010">Automated typography check: 0 directly sized text elements below 2.2 mm.</text>
 <text x="76" y="1031">Visual clarity must be assessed from a physical test print.</text>
 </g></svg>

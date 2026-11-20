@@ -2,6 +2,7 @@
 // A true-size US Letter *proof* with an audit of small strokes and type.
 // SVG viewBox units are 96 per inch for physical output; no rasterization.
 const {makeSvg}=require("./render");
+const {spec:seamSpec}=require("./seam-profiles");
 const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 const num=n=>Number(n.toFixed(3));
 function validateScale(squareInches){
@@ -10,14 +11,14 @@ function validateScale(squareInches){
 }
 function printScaleAudit(tile,{squareInches=0.5}={}){
  validateScale(squareInches);
- const svg=makeSvg(tile),mmPerUnit=squareInches*25.4/48; // 48 vector units/full square
+ const svg=makeSvg(tile),mouthCells=seamSpec(tile.seam_profile||"legacy").mouths[0].length,mmPerUnit=squareInches*25.4/48; // 48 vector units/full square
  const type=[...svg.matchAll(/font-size="([0-9.]+)"/g)].map(x=>Number(x[1]));
  const strokes=[...svg.matchAll(/stroke-width="([0-9.]+)"/g)].map(x=>Number(x[1]));
  const smallType=type.filter(x=>x*mmPerUnit<2.2);
  const hairlines=strokes.filter(x=>x*mmPerUnit<0.15);
  return {tile:tile.id,full_square_inches:squareInches,tile_width_mm:num(squareInches*254),
-  half_cell_width_feet:2.5,standard_edge_throat_feet:2.5,
-  standard_edge_throat_print_mm:num(squareInches*25.4/2),
+  half_cell_width_feet:2.5,standard_edge_throat_feet:mouthCells*2.5,
+  standard_edge_throat_print_mm:num(squareInches*25.4*mouthCells/2),
   millimetres_per_vector_unit:num(mmPerUnit),font_samples:type.length,
   type_below_2_2_mm:smallType.length,stroke_samples:strokes.length,
   strokes_below_0_15_mm:hairlines.length,
@@ -52,7 +53,7 @@ function letterProof(tile,{squareInches=0.5}={}){
  '<text x="'+num(barX+bar)+'" y="'+num(barY+37)+'" text-anchor="end">10 ft</text>',
  '</g>',
  '<g id="print-review-footer" fill="#5a605c" font-family="sans-serif" font-size="12">',
- '<text x="76" y="988">Print at 100%. Edge throats are 2.5 ft clear, only half a grid square.</text>',
+ '<text x="76" y="988">Print at 100%. Edge throats are '+info.standard_edge_throat_feet+' ft clear ('+(info.standard_edge_throat_print_mm)+' mm on paper).</text>',
  '<text x="76" y="1010">Automated typography check: '+small+' directly sized text elements below 2.2 mm.</text>',
  '<text x="76" y="1031">Visual clarity must be assessed from a physical test print.</text>',
  '</g></svg>'

@@ -1,0 +1,645 @@
+{
+  "schema_version": 1,
+  "cell_units": "2.5 feet per half-cell",
+  "status": "architectural study, not released",
+  "tiles": [
+    {
+      "id": "braided_lava",
+      "title": "The Braided Lava Confluence",
+      "family": "Lava tube: anastomosing distributaries and collapsed western feeder",
+      "geometry": "row-runs",
+      "wall_style": "cavern",
+      "seam_profile": "cave-wide-v1",
+      "description": "Braided lava distributaries join around a remnant central core and four lateral pockets. A genuine two-lane western roof-fall obstruction forces travel through the confluence or around the eastern conduit. Exact five-foot modular mouths are maintained for five feet inward. Roof heights, rock stability, and lava history are conjectural.",
+      "rooms": [
+        [
+          "confluence",
+          "Lava confluence",
+          {
+            "rows": [
+              [
+                8,
+                9,
+                11
+              ],
+              [
+                9,
+                8,
+                11
+              ],
+              [
+                10,
+                8,
+                11
+              ],
+              [
+                11,
+                9,
+                11
+              ]
+            ]
+          }
+        ],
+        [
+          "west_vent",
+          "Steam bell",
+          {
+            "rows": [
+              [
+                7,
+                2,
+                4
+              ],
+              [
+                8,
+                2,
+                5
+              ],
+              [
+                9,
+                3,
+                4
+              ]
+            ]
+          }
+        ],
+        [
+          "east_vent",
+          "Cooling chimney",
+          {
+            "rows": [
+              [
+                7,
+                15,
+                17
+              ],
+              [
+                8,
+                14,
+                17
+              ],
+              [
+                9,
+                15,
+                17
+              ]
+            ]
+          }
+        ],
+        [
+          "west_slag",
+          "Tumbled slag sump",
+          {
+            "rows": [
+              [
+                11,
+                2,
+                3
+              ],
+              [
+                12,
+                2,
+                4
+              ],
+              [
+                13,
+                3,
+                4
+              ]
+            ]
+          }
+        ],
+        [
+          "east_slag",
+          "Collapsed lava shelf",
+          {
+            "rows": [
+              [
+                11,
+                16,
+                17
+              ],
+              [
+                12,
+                15,
+                17
+              ],
+              [
+                13,
+                15,
+                16
+              ]
+            ]
+          }
+        ]
+      ],
+      "routes": [
+        {
+          "id": "northwest_mouth_4",
+          "points": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "reason": "northwest_mouth_4"
+        },
+        {
+          "id": "southwest_mouth_4",
+          "points": [
+            [
+              4,
+              14
+            ],
+            [
+              4,
+              19
+            ]
+          ],
+          "reason": "southwest_mouth_4"
+        },
+        {
+          "id": "northwest_mouth_5",
+          "points": [
+            [
+              5,
+              0
+            ],
+            [
+              5,
+              5
+            ]
+          ],
+          "reason": "northwest_mouth_5"
+        },
+        {
+          "id": "southwest_mouth_5",
+          "points": [
+            [
+              5,
+              14
+            ],
+            [
+              5,
+              19
+            ]
+          ],
+          "reason": "southwest_mouth_5"
+        },
+        {
+          "id": "northeast_mouth_14",
+          "points": [
+            [
+              14,
+              0
+            ],
+            [
+              14,
+              5
+            ]
+          ],
+          "reason": "northeast_mouth_14"
+        },
+        {
+          "id": "southeast_mouth_14",
+          "points": [
+            [
+              14,
+              14
+            ],
+            [
+              14,
+              19
+            ]
+          ],
+          "reason": "southeast_mouth_14"
+        },
+        {
+          "id": "northeast_mouth_15",
+          "points": [
+            [
+              15,
+              0
+            ],
+            [
+              15,
+              5
+            ]
+          ],
+          "reason": "northeast_mouth_15"
+        },
+        {
+          "id": "southeast_mouth_15",
+          "points": [
+            [
+              15,
+              14
+            ],
+            [
+              15,
+              19
+            ]
+          ],
+          "reason": "southeast_mouth_15"
+        },
+        {
+          "id": "west_upper_4",
+          "points": [
+            [
+              0,
+              4
+            ],
+            [
+              7,
+              4
+            ]
+          ],
+          "reason": "west_upper_4"
+        },
+        {
+          "id": "east_upper_4",
+          "points": [
+            [
+              12,
+              4
+            ],
+            [
+              19,
+              4
+            ]
+          ],
+          "reason": "east_upper_4"
+        },
+        {
+          "id": "west_upper_5",
+          "points": [
+            [
+              0,
+              5
+            ],
+            [
+              7,
+              5
+            ]
+          ],
+          "reason": "west_upper_5"
+        },
+        {
+          "id": "east_upper_5",
+          "points": [
+            [
+              12,
+              5
+            ],
+            [
+              19,
+              5
+            ]
+          ],
+          "reason": "east_upper_5"
+        },
+        {
+          "id": "west_lower_14",
+          "points": [
+            [
+              0,
+              14
+            ],
+            [
+              7,
+              14
+            ]
+          ],
+          "reason": "west_lower_14"
+        },
+        {
+          "id": "east_lower_14",
+          "points": [
+            [
+              12,
+              14
+            ],
+            [
+              19,
+              14
+            ]
+          ],
+          "reason": "east_lower_14"
+        },
+        {
+          "id": "west_lower_15",
+          "points": [
+            [
+              0,
+              15
+            ],
+            [
+              7,
+              15
+            ]
+          ],
+          "reason": "west_lower_15"
+        },
+        {
+          "id": "east_lower_15",
+          "points": [
+            [
+              12,
+              15
+            ],
+            [
+              19,
+              15
+            ]
+          ],
+          "reason": "east_lower_15"
+        },
+        {
+          "id": "west_distributary_6",
+          "points": [
+            [
+              6,
+              5
+            ],
+            [
+              6,
+              14
+            ]
+          ],
+          "reason": "west_distributary_6"
+        },
+        {
+          "id": "west_distributary_7",
+          "points": [
+            [
+              7,
+              5
+            ],
+            [
+              7,
+              14
+            ]
+          ],
+          "reason": "west_distributary_7"
+        },
+        {
+          "id": "east_distributary_12",
+          "points": [
+            [
+              12,
+              5
+            ],
+            [
+              12,
+              14
+            ]
+          ],
+          "reason": "east_distributary_12"
+        },
+        {
+          "id": "east_distributary_13",
+          "points": [
+            [
+              13,
+              5
+            ],
+            [
+              13,
+              14
+            ]
+          ],
+          "reason": "east_distributary_13"
+        },
+        {
+          "id": "north_crosscut",
+          "points": [
+            [
+              6,
+              6
+            ],
+            [
+              13,
+              6
+            ]
+          ],
+          "reason": "north_crosscut"
+        },
+        {
+          "id": "south_crosscut",
+          "points": [
+            [
+              6,
+              13
+            ],
+            [
+              13,
+              13
+            ]
+          ],
+          "reason": "south_crosscut"
+        },
+        {
+          "id": "confluence_north",
+          "points": [
+            [
+              10,
+              6
+            ],
+            [
+              10,
+              7
+            ]
+          ],
+          "reason": "confluence_north"
+        },
+        {
+          "id": "confluence_south",
+          "points": [
+            [
+              10,
+              12
+            ],
+            [
+              10,
+              13
+            ]
+          ],
+          "reason": "confluence_south"
+        },
+        {
+          "id": "west_vent_access",
+          "points": [
+            [
+              6,
+              9
+            ],
+            [
+              7,
+              9
+            ]
+          ],
+          "reason": "west_vent_access"
+        },
+        {
+          "id": "east_vent_access",
+          "points": [
+            [
+              12,
+              9
+            ],
+            [
+              13,
+              9
+            ]
+          ],
+          "reason": "east_vent_access"
+        },
+        {
+          "id": "west_slag_access",
+          "points": [
+            [
+              5,
+              12
+            ],
+            [
+              7,
+              12
+            ]
+          ],
+          "reason": "west_slag_access"
+        },
+        {
+          "id": "east_slag_access",
+          "points": [
+            [
+              12,
+              12
+            ],
+            [
+              14,
+              12
+            ]
+          ],
+          "reason": "east_slag_access"
+        }
+      ],
+      "doors": [
+        [
+          "confluence",
+          "N",
+          10,
+          "opening"
+        ],
+        [
+          "confluence",
+          "S",
+          10,
+          "opening"
+        ],
+        [
+          "confluence",
+          "W",
+          9,
+          "opening"
+        ],
+        [
+          "confluence",
+          "E",
+          10,
+          "opening"
+        ],
+        [
+          "west_vent",
+          "E",
+          8,
+          "opening"
+        ],
+        [
+          "east_vent",
+          "W",
+          8,
+          "opening"
+        ],
+        [
+          "west_slag",
+          "E",
+          12,
+          "opening"
+        ],
+        [
+          "east_slag",
+          "W",
+          12,
+          "opening"
+        ]
+      ],
+      "features": [],
+      "terrain": {
+        "chokes": [
+          [
+            [
+              6,
+              10
+            ],
+            [
+              6,
+              11
+            ]
+          ],
+          [
+            [
+              7,
+              10
+            ],
+            [
+              7,
+              11
+            ]
+          ]
+        ]
+      },
+      "cave_details": {
+        "breakdown": [
+          [
+            6,
+            9
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            13,
+            10
+          ]
+        ],
+        "gravel": [
+          [
+            9,
+            9
+          ],
+          [
+            15,
+            9
+          ],
+          [
+            7,
+            7
+          ],
+          [
+            12,
+            7
+          ]
+        ]
+      }
+    }
+  ]
+}

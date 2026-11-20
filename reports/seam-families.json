@@ -835,5 +835,90 @@
     "modular_family_compatible_with": [
       "cave-wide-v1"
     ]
-  }
+  },
+  "designed_wide_tiles": [
+    {
+      "profile": "cave-wide-v1",
+      "rotations_checked": 4,
+      "mouths": [
+        {
+          "side": "N",
+          "offsets": [
+            4,
+            5
+          ],
+          "clear_feet": 5,
+          "minimum_inward_depth_feet": 5
+        },
+        {
+          "side": "N",
+          "offsets": [
+            14,
+            15
+          ],
+          "clear_feet": 5,
+          "minimum_inward_depth_feet": 5
+        },
+        {
+          "side": "E",
+          "offsets": [
+            4,
+            5
+          ],
+          "clear_feet": 5,
+          "minimum_inward_depth_feet": 5
+        },
+        {
+          "side": "E",
+          "offsets": [
+            14,
+            15
+          ],
+          "clear_feet": 5,
+          "minimum_inward_depth_feet": 5
+        },
+        {
+          "side": "S",
+          "offsets": [
+            4,
+            5
+          ],
+          "clear_feet": 5,
+          "minimum_inward_depth_feet": 5
+        },
+        {
+          "side": "S",
+          "offsets": [
+            14,
+            15
+          ],
+          "clear_feet": 5,
+          "minimum_inward_depth_feet": 5
+        },
+        {
+          "side": "W",
+          "offsets": [
+            4,
+            5
+          ],
+          "clear_feet": 5,
+          "minimum_inward_depth_feet": 5
+        },
+        {
+          "side": "W",
+          "offsets": [
+            14,
+            15
+          ],
+          "clear_feet": 5,
+          "minimum_inward_depth_feet": 5
+        }
+      ],
+      "clear_openings": 8,
+      "modular_family_compatible_with": [
+        "cave-wide-v1"
+      ],
+      "tile": "braided_lava"
+    }
+  ]
 }
