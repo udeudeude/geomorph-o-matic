@@ -122,6 +122,26 @@ function plate(r){
   '<rect x="'+(planX-30)+'" y="115" width="435" height="466" fill="#fbfaf6" stroke="#b9bcb5"/>',
   '<text x="'+(planX-13)+'" y="145" font-size="17" fill="#293c34">01 / PLAN-REGISTERED BENCH</text>'
  ];
+ // Reconstruct the entire canonical occupied floor rather than displaying a
+ // floating patch of raised cells. The outline is made of real rock/floor edges.
+ const mapTile=source().tiles.find(t=>t.id===r.tile),occupied=buildCells(mapTile);
+ lines.push('<g id="registered-floor" fill="#dce2d8" stroke="#f7f6f0" stroke-width=".35">');
+ for(const p of [...occupied.keys()].sort()){
+  const [gx,gy]=xy(p);
+  lines.push('<rect data-occupied-plan-cell="'+p+'" x="'+(planX+gx*planPitch)+'" y="'+(planY+gy*planPitch)+
+   '" width="'+planPitch+'" height="'+planPitch+'"/>');
+ }
+ lines.push('</g>','<g id="actual-rock-boundary" fill="none" stroke="#44584c" stroke-width="1.8">');
+ for(const p of [...occupied.keys()].sort()){
+  const [gx,gy]=xy(p),x=planX+gx*planPitch,y=planY+gy*planPitch;
+  for(const [other,d] of [
+   [[gx,gy-1],'M'+x+','+y+'h'+planPitch],
+   [[gx+1,gy],'M'+(x+planPitch)+','+y+'v'+planPitch],
+   [[gx,gy+1],'M'+x+','+(y+planPitch)+'h'+planPitch],
+   [[gx-1,gy],'M'+x+','+y+'v'+planPitch]
+  ])if(!occupied.has(key(other)))lines.push('<path d="'+d+'"/>');
+ }
+ lines.push('</g>');
  for(const p of r.elevated_floor_cells){
   lines.push('<rect data-bench-cell="'+key(p)+'" x="'+(planX+p[0]*planPitch)+'" y="'+(planY+p[1]*planPitch)+
    '" width="'+planPitch+'" height="'+planPitch+'" fill="#ad9070" stroke="#f8f6f0" stroke-width="1"/>');
