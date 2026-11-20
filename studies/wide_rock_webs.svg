@@ -229,7 +229,7 @@
 <rect x="30" y="300" width="17" height="17" fill="#626d67" stroke="#9eaaa2" stroke-width=".32"/>
 <rect x="47" y="300" width="17" height="17" fill="#626d67" stroke="#9eaaa2" stroke-width=".32"/>
 <rect x="64" y="300" width="17" height="17" fill="#fffcf2" stroke="#9eaaa2" stroke-width=".32"/>
-<rect x="81" y="300" width="17" height="17" fill="#fffcf2" stroke="#9eaaa2" stroke-width=".32"/>
+<rect x="81" y="300" width="17" height="17" fill="#626d67" stroke="#9eaaa2" stroke-width=".32"/>
 <rect x="98" y="300" width="17" height="17" fill="#626d67" stroke="#9eaaa2" stroke-width=".32"/>
 <rect x="115" y="300" width="17" height="17" fill="#626d67" stroke="#9eaaa2" stroke-width=".32"/>
 <rect x="132" y="300" width="17" height="17" fill="#fffcf2" stroke="#9eaaa2" stroke-width=".32"/>
@@ -243,7 +243,7 @@
 <rect x="268" y="300" width="17" height="17" fill="#626d67" stroke="#9eaaa2" stroke-width=".32"/>
 <rect x="285" y="300" width="17" height="17" fill="#626d67" stroke="#9eaaa2" stroke-width=".32"/>
 <rect x="302" y="300" width="17" height="17" fill="#fffcf2" stroke="#9eaaa2" stroke-width=".32"/>
-<rect x="319" y="300" width="17" height="17" fill="#fffcf2" stroke="#9eaaa2" stroke-width=".32"/>
+<rect x="319" y="300" width="17" height="17" fill="#626d67" stroke="#9eaaa2" stroke-width=".32"/>
 <rect x="336" y="300" width="17" height="17" fill="#626d67" stroke="#9eaaa2" stroke-width=".32"/>
 <rect x="353" y="300" width="17" height="17" fill="#626d67" stroke="#9eaaa2" stroke-width=".32"/>
 <rect x="30" y="317" width="17" height="17" fill="#626d67" stroke="#9eaaa2" stroke-width=".32"/>
@@ -419,9 +419,7 @@
 <circle data-rock-web="braided_lava:8,8" data-priority="local-partition" cx="174.5" cy="257.5" r="3.3" fill="#8cb1a4" stroke="#223c38" stroke-width=".7"/>
 <circle data-rock-web="braided_lava:5,9" data-priority="local-partition" cx="123.5" cy="274.5" r="3.3" fill="#8cb1a4" stroke="#223c38" stroke-width=".7"/>
 <circle data-rock-web="braided_lava:14,9" data-priority="local-partition" cx="276.5" cy="274.5" r="3.3" fill="#8cb1a4" stroke="#223c38" stroke-width=".7"/>
-<circle data-rock-web="braided_lava:3,10" data-priority="long-bypass" cx="89.5" cy="291.5" r="6.3" fill="#d19b3e" stroke="#223c38" stroke-width=".7"/>
 <circle data-rock-web="braided_lava:16,10" data-priority="long-bypass" cx="310.5" cy="291.5" r="6.3" fill="#d19b3e" stroke="#223c38" stroke-width=".7"/>
-<circle data-rock-web="braided_lava:17,10" data-priority="long-bypass" cx="327.5" cy="291.5" r="6.3" fill="#d19b3e" stroke="#223c38" stroke-width=".7"/>
 <circle data-rock-web="braided_lava:8,11" data-priority="long-bypass" cx="174.5" cy="308.5" r="6.3" fill="#d19b3e" stroke="#223c38" stroke-width=".7"/>
 <circle data-rock-web="braided_lava:9,12" data-priority="local-partition" cx="191.5" cy="325.5" r="3.3" fill="#8cb1a4" stroke="#223c38" stroke-width=".7"/>
 <circle data-rock-web="braided_lava:11,12" data-priority="local-partition" cx="225.5" cy="325.5" r="3.3" fill="#8cb1a4" stroke="#223c38" stroke-width=".7"/>
@@ -429,7 +427,7 @@
 <circle data-rock-web="braided_lava:5,13" data-priority="local-partition" cx="123.5" cy="342.5" r="3.3" fill="#8cb1a4" stroke="#223c38" stroke-width=".7"/>
 <circle data-rock-web="braided_lava:14,13" data-priority="local-partition" cx="276.5" cy="342.5" r="3.3" fill="#8cb1a4" stroke="#223c38" stroke-width=".7"/>
 <circle data-rock-web="braided_lava:17,13" data-priority="long-bypass" cx="327.5" cy="342.5" r="6.3" fill="#d19b3e" stroke="#223c38" stroke-width=".7"/>
-<text x="30" y="484" font-size="12" fill="#354a40">27 thin cross sections / 12 long-bypass reviews</text>
+<text x="30" y="484" font-size="12" fill="#354a40">25 thin cross sections / 10 long-bypass reviews</text>
 <text x="30" y="503" font-size="11" fill="#596f61">White: occupied cave · Dark: solid rock · Gold: review</text>
 </g>
 <g id="rock-web-review-sagging_sheet" font-family="sans-serif">

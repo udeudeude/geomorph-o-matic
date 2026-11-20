@@ -9,27 +9,27 @@
     "split_spine"
   ],
   "tile_instances": 4,
-  "occupied_floor_cells": 871,
-  "reachable_floor_cells": 871,
+  "occupied_floor_cells": 869,
+  "reachable_floor_cells": 869,
   "distinct_internal_joining_seams": 4,
   "actual_walkable_intertile_edges": 16,
   "exterior_edge_cells": 32,
   "whole_seam_closures_with_alternate_routes": [
     {
       "seam": "vertical-0-0",
-      "connected_floor_cells_after_full_seam_closure": 871
+      "connected_floor_cells_after_full_seam_closure": 869
     },
     {
       "seam": "horizontal-0-0",
-      "connected_floor_cells_after_full_seam_closure": 871
+      "connected_floor_cells_after_full_seam_closure": 869
     },
     {
       "seam": "horizontal-1-0",
-      "connected_floor_cells_after_full_seam_closure": 871
+      "connected_floor_cells_after_full_seam_closure": 869
     },
     {
       "seam": "vertical-0-1",
-      "connected_floor_cells_after_full_seam_closure": 871
+      "connected_floor_cells_after_full_seam_closure": 869
     }
   ],
   "units": "2.5-foot half-cells",

@@ -37,7 +37,7 @@
       "postures": {
         "standing": {
           "minimum_assumed_clearance_feet": 6,
-          "reachable_floor_cells": 185,
+          "reachable_floor_cells": 183,
           "reachable_mouth_cells": 16,
           "reachable_mouth_pairs": 120,
           "unreachable_mouth_pairs": 0,
@@ -46,7 +46,7 @@
         },
         "crouching": {
           "minimum_assumed_clearance_feet": 4,
-          "reachable_floor_cells": 185,
+          "reachable_floor_cells": 183,
           "reachable_mouth_cells": 16,
           "reachable_mouth_pairs": 120,
           "unreachable_mouth_pairs": 0,
@@ -55,7 +55,7 @@
         },
         "crawling": {
           "minimum_assumed_clearance_feet": 2.5,
-          "reachable_floor_cells": 187,
+          "reachable_floor_cells": 185,
           "reachable_mouth_cells": 16,
           "reachable_mouth_pairs": 120,
           "unreachable_mouth_pairs": 0,

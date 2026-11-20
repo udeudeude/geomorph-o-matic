@@ -5,11 +5,11 @@
   "tiles": [
     {
       "tile": "braided_lava",
-      "source_floor_cells": 187,
+      "source_floor_cells": 185,
       "audited_interior_bounds": "x,y=2..17 only; excludes the protected modular throat zone",
       "minimum_sampled_web_width_feet": 2.5,
-      "narrow_web_cross_sections": 27,
-      "long_bypass_cross_sections": 12,
+      "narrow_web_cross_sections": 25,
+      "long_bypass_cross_sections": 10,
       "disconnected_banks": 0,
       "limitations": "Detects one-cell rock separations between genuine occupied plan cells. A single rock cell may contribute two cross sections. Bypass routes include actual traversability restrictions; these figures establish neither rock bearing, thermal history, ceiling thickness nor geological hazard.",
       "cross_sections": [
@@ -309,27 +309,6 @@
         },
         {
           "rock_cell": [
-            3,
-            10
-          ],
-          "axis": "north-south",
-          "opposite_floor_cells": [
-            [
-              3,
-              9
-            ],
-            [
-              3,
-              11
-            ]
-          ],
-          "rock_web_plan_width_feet": 2.5,
-          "walking_bypass_half_cells": 22,
-          "walking_bypass_feet": 55,
-          "priority": "long-bypass"
-        },
-        {
-          "rock_cell": [
             16,
             10
           ],
@@ -347,27 +326,6 @@
           "rock_web_plan_width_feet": 2.5,
           "walking_bypass_half_cells": 12,
           "walking_bypass_feet": 30,
-          "priority": "long-bypass"
-        },
-        {
-          "rock_cell": [
-            17,
-            10
-          ],
-          "axis": "north-south",
-          "opposite_floor_cells": [
-            [
-              17,
-              9
-            ],
-            [
-              17,
-              11
-            ]
-          ],
-          "rock_web_plan_width_feet": 2.5,
-          "walking_bypass_half_cells": 14,
-          "walking_bypass_feet": 35,
           "priority": "long-bypass"
         },
         {
