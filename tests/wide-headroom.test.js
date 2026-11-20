@@ -9,9 +9,9 @@ const {makeSvg}=require("../render");
 const {roofModel,headroomGraph,analyze,ceilingSvg,plate,POSTURES}=require("../wide-headroom");
 const wide=source().tiles;
 const expected={
- braided_lava:{floor:187,standing:185,crouching:185,changed:16,from:23,to:31,low:3.5},
- sagging_sheet:{floor:238,standing:236,crouching:238,changed:12,from:29,to:31,low:5},
- split_spine:{floor:223,standing:208,crouching:208,changed:0,low:3.5}
+ braided_lava:{floor:187,standing:185,crouching:185,changed:16,from:23,to:31,low:3.5,baseline:8},
+ sagging_sheet:{floor:238,standing:236,crouching:238,changed:12,from:29,to:31,low:5,baseline:6.5},
+ split_spine:{floor:223,standing:208,crouching:208,changed:0,low:3.5,baseline:7.5}
 };
 test("all three authored ceiling restrictions register to genuinely occupied cave geometry",()=>{
  assert.equal(wide.length,3);
@@ -21,7 +21,7 @@ test("all three authored ceiling restrictions register to genuinely occupied cav
   assert.equal(model.zones.length,1);
   assert.equal(model.zones[0].cells.length,2);
   assert.equal(model.zones[0].clearance_feet,expected[tile.id].low);
-  assert.equal(model.baseline_feet,8);
+  assert.equal(model.baseline_feet,expected[tile.id].baseline);
   for(const p of model.zones[0].cells)assert.ok(floor.has(p),p);
  }
 });
