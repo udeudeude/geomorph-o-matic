@@ -56,11 +56,11 @@ test("three distinct wide cave designs join in a rotated four-tile composition w
  const report=examineAssembly(layout,data);
  assert.equal(report.authored_tile_types.length,3);
  assert.equal(report.tile_instances,4);
- assert.equal(report.occupied_floor_cells,871);
- assert.equal(report.reachable_floor_cells,871);
+ assert.equal(report.occupied_floor_cells,869);
+ assert.equal(report.reachable_floor_cells,869);
  assert.equal(report.actual_walkable_intertile_edges,16);
  assert.equal(report.exterior_edge_cells,32);
- assert.ok(report.whole_seam_closures_with_alternate_routes.every(x=>x.connected_floor_cells_after_full_seam_closure===871));
+ assert.ok(report.whole_seam_closures_with_alternate_routes.every(x=>x.connected_floor_cells_after_full_seam_closure===869));
  const svg=assemble(layout,data,id=>makeSvg(data.tiles.find(t=>t.id===id)));
  for(const name of ["The Split-Spine Drainback","The Sagging Sheetflow","The Braided Lava Confluence"])
   assert.ok(svg.includes(name),name);

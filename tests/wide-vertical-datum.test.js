@@ -54,7 +54,7 @@ test("editable bench engineering plate has actual registered cell geometry and c
 });
 test("posture-aware mixed layout checks every rotated seam and all exterior mouths",()=>{
  const r=analyzePostures(layout,data);
- assert.equal(r.all_walkable_floor_cells,871);
+ assert.equal(r.all_walkable_floor_cells,869);
  assert.equal(r.tile_count,4);
  assert.equal(r.distinct_designs.length,3);
  assert.equal(r.full_width_intertile_walking_edges,16);
@@ -66,15 +66,15 @@ test("posture-aware mixed layout checks every rotated seam and all exterior mout
    assert.equal(m.closures.length,4);
    assert.ok(m.reachable_floor_cells<=m.floor_cells_admitted);
  }
- assert.equal(r.hypothetical_modes.crawling.reachable_floor_cells,871);
+ assert.equal(r.hypothetical_modes.crawling.reachable_floor_cells,869);
  assert.ok(r.hypothetical_modes.standing.floor_cells_admitted<=863);
- assert.ok(r.hypothetical_modes.standing.reachable_floor_cells<871);
+ assert.ok(r.hypothetical_modes.standing.reachable_floor_cells<869);
 });
 test("posture-aware graphs are rotation-safe and reject low ceiling at an external wide mouth",()=>{
  const rotated=structuredClone(layout);
  for(const row of rotated.rows)for(const cell of row)cell.turn=(cell.turn+1)%4;
  const r=analyzePostures(rotated,data);
- assert.equal(r.hypothetical_modes.crawling.reachable_floor_cells,871);
+ assert.equal(r.hypothetical_modes.crawling.reachable_floor_cells,869);
  assert.equal(r.hypothetical_modes.standing.reachable_exterior_mouth_cells,32);
  const broken=structuredClone(data),tile=broken.tiles.find(t=>t.id==="braided_lava");
  tile.roof_scenario.zones[0].cells=[[4,0],[5,0]];

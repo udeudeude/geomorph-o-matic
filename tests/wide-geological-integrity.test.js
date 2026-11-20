@@ -37,6 +37,14 @@ test("rock report identifies consequential thin septa without declaring geologic
  assert.ok((svg.match(/data-rock-web=/g)||[]).length>20);
  assert.match(svg,/prediction of roof collapse/i);
 });
+test("two relict chambers now preserve genuine five-foot rock webs without faking passage closures",()=>{
+ const cave=tiles.find(t=>t.id==="braided_lava"),floor=buildCells(cave);
+ for(const x of [3,17]){
+  assert.ok(floor.has(x+",9")&&floor.has(x+",12"));
+  assert.ok(!floor.has(x+",10")&&!floor.has(x+",11"),"two whole 2.5-foot solid rock cells separate the passages");
+ }
+ assert.equal(floor.size,185);
+});
 test("shortest path never crosses nonexistent or unconnected source floor",()=>{
  const tile=tiles[0],floor=buildCells(tile),graph=terrainGraph(floor,doorEdges(tile),tile.terrain,"ordinary","dry");
  assert.deepEqual(shortestPath(graph,"4,0","4,0"),["4,0"]);
