@@ -25,7 +25,7 @@ Inspect the [four-orientation assembly](studies/braided_lava_2x2.svg), [100% siz
 
 ### Contrasting sheet-flow wide-mouth cave (November 20, 2026)
 
-[The Sagging Sheetflow](studies/sagging_sheet.svg) is a **second individually authored** five-foot-mouth study with six asymmetric volcanic vesicle chambers, 18 natural thresholds, a drained central basin, and a raised eight-cell basalt bench with three modeled traversable approaches. A real two-lane roof fall forces a northern traversal from **17 to 31 half-cell steps** without stranding any of its 240 walkable cells. This contrasts with Braided Lava's braided feeder geometry rather than merely repeating it.
+[The Sagging Sheetflow](studies/sagging_sheet.svg) is a **second individually authored** five-foot-mouth study with six asymmetric volcanic vesicle chambers, 18 natural thresholds, a drained central basin, and a raised eight-cell basalt bench with three modeled traversable approaches. A real two-lane roof fall forces a northern traversal from **17 to 31 half-cell steps** without stranding any of its 238 walkable cells. This contrasts with Braided Lava's braided feeder geometry rather than merely repeating it.
 
 Examine the [mixed two-design four-tile assembly](studies/wide_mixed_2x2.svg), the [true-size sheetflow print proof](studies/sagging_sheet_print_letter.svg), the [independent route and elevation report](reports/sheetflow-routes.json), and the [published geological research and explicit design limitations](research/2026-11-20-sagging-sheetflow.md). The assembly **reuses two distinct designs**, not four. Modeled elevation indices are not measured heights; roof clearance, actual print quality and playtesting are still outstanding. **Neither map is finished.**
 
