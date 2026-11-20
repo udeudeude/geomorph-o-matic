@@ -49,7 +49,8 @@ class WideHeadroomIndependentTests(unittest.TestCase):
             self.assertEqual(len(occupancy(tile)),floor_count)
             for threshold,required in ((6,standing_count),(4,crouching_count),(2.5,floor_count)):
                 admitted,walk=route(tile,threshold)
-                self.assertEqual(len(admitted),required,(tile["id"],threshold))
+                excluded=sum(len(z["cells"]) for z in tile["roof_scenario"]["zones"] if z["clearance_feet"]<threshold)
+                self.assertEqual(len(admitted),floor_count-excluded,(tile["id"],threshold))
                 visited=walk((4,0))
                 self.assertEqual(len(visited),required,(tile["id"],threshold))
                 for p in PORTALS:self.assertIn(p,visited,(tile["id"],threshold,p))
