@@ -17,13 +17,21 @@ Original, modular, editable dungeon cartography. **Architectural studies, not ye
 
 These are editable vector drawings, not flattened images. The separate floor, grid, rock, doors, structural walls and architectural features are grouped in the SVG document.
 
+## Actual separate 5-foot entrance study: Braided Lava Confluence (November 20, 2026)
+
+[The Braided Lava Confluence](studies/braided_lava.svg) is the first individually authored **wide-mouth** (5-foot clear) cave prototype. It is deliberately separate from the ten legacy masters: five irregular cave chambers, 28 passage runs, eight authentic double-width mouths and a fully blocked two-lane lava-collapse edge. Its western route changes from **22 to 30 half-cell steps** because of actual blocked floor connections. Both the cave and its seams remain valid through all rotations.
+
+Inspect the [four-orientation assembly](studies/braided_lava_2x2.svg), [100% size print proof](studies/braided_lava_print_letter.svg), [reproducible route report](reports/wide-lava-routes.json), and [geological source research plus shortcomings](research/2026-11-20-braided-wide-lava.md). The demonstration repeats one prototype four times; it is not a diverse four-cave set. Its roofs, stability, and paper legibility remain unverified. **Not a finished dungeon.**
+
+Regenerate with `node wide-cave.js`; test with `node --test tests/wide-cave.test.js` and `PYTHONPATH=. python3 -m unittest tests.test_wide_cave`. Legacy 2.5-foot and wide 5-foot tiles deliberately cannot be assembled together.
+
 
 
 ## Cave design envelopes and independent wide openings (November 20, 2026)
 
 The [new cave cross-section plate](examples/cave_section_envelopes.svg) derives four **actual transverse floor widths** (7.5, 5, 2.5, and 5 feet) from Scoured Siphon, Basalt Rift, and Lantern Sink. The hypothetical roof heights are individually authored, **not measured**, and registered to those exact floor cuts. Any altered width or misplaced section fails the [envelope audit](reports/cave-section-envelopes.json) and independent tests.
 
-A new [modular seam contract](seam-profiles.js) verifies the existing eight 2.5-foot mouths and separately tests a **5-foot-mouth interface with two full-width occupied cells extending inward**. The [compatibility report](reports/seam-families.json) explicitly treats the two families as incompatible. The wider study is a synthetic interface specimen, *not* a completed new map. [Design research and limitations](research/2026-11-20-cave-seam-envelopes.md). These experiments do not make the collection release-ready.
+A new [modular seam contract](seam-profiles.js) verifies the existing eight 2.5-foot mouths and separately tests a **5-foot-mouth interface with two full-width occupied cells extending inward**. The [compatibility report](reports/seam-families.json) explicitly treats the two families as incompatible. The synthetic **interface-only** fixture remains as a regression test; the separately authored Braided Lava Confluence is now a real, though unfinished, wide-mouth prototype. [Design research and limitations](research/2026-11-20-cave-seam-envelopes.md). These experiments do not make the collection release-ready.
 
 ## Basalt rock-web integrity and interpretive sections (November 20, 2026)
 
