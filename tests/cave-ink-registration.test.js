@@ -39,7 +39,7 @@ test("every etching needle starts directly outside the actual organic wall",()=>
  const hatch=rockHachurePaths(segments);
  assert.equal(chains.length,1);assert.equal(hatch.length,40);
  for(const d of hatch){
-  const m=/^M([\\d.]+),([\\d.]+)L([\\d.]+),([\\d.]+)$/.exec(d);
+  const m=/^M([-0-9.]+),([-0-9.]+)L([-0-9.]+),([-0-9.]+)$/.exec(d);
   assert.ok(m,"malformed needle "+d);
   const start=[+m[1],+m[2]],end=[+m[3],+m[4]];
   const nearest=nearCurve(start,edges);
