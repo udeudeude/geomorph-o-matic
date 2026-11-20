@@ -1,0 +1,125 @@
+{
+  "tile": "sagging_sheet",
+  "status": "unreleased schematic vertical-datum sensitivity study",
+  "basis": "Eight genuine raised plan cells and three actual terrain ramp edges",
+  "datum": "Adjacent ordinary-floor surface z=0 ft for this study only; actual level-one rise and absolute roof elevation unknown",
+  "existing_roof_assumption": "6.5 ft above LOCAL floor, not a surveyed absolute ceiling",
+  "alternative_fixed_roof_hypothesis": "ONLY for comparing candidates: hold roof at z=6.5 ft above ordinary floor across the bench. This is not encoded in the master and not asserted as geological fact.",
+  "baseline_local_clearance_feet": 6.5,
+  "half_cell_plan_feet": 2.5,
+  "design_comparison_grade_limit_percent": 12.5,
+  "raised_floor_cells": [
+    [
+      15,
+      11
+    ],
+    [
+      15,
+      12
+    ],
+    [
+      16,
+      11
+    ],
+    [
+      16,
+      12
+    ],
+    [
+      16,
+      13
+    ],
+    [
+      17,
+      11
+    ],
+    [
+      17,
+      12
+    ],
+    [
+      17,
+      13
+    ]
+  ],
+  "grade_edges": [
+    {
+      "from": [
+        15,
+        12
+      ],
+      "to": [
+        14,
+        12
+      ],
+      "from_level": 1,
+      "to_level": 0,
+      "plan_run_feet": 2.5,
+      "kind": "modeled walking connection; physical construction unresolved"
+    },
+    {
+      "from": [
+        17,
+        12
+      ],
+      "to": [
+        18,
+        12
+      ],
+      "from_level": 1,
+      "to_level": 0,
+      "plan_run_feet": 2.5,
+      "kind": "modeled walking connection; physical construction unresolved"
+    },
+    {
+      "from": [
+        16,
+        13
+      ],
+      "to": [
+        16,
+        14
+      ],
+      "from_level": 1,
+      "to_level": 0,
+      "plan_run_feet": 2.5,
+      "kind": "modeled walking connection; physical construction unresolved"
+    }
+  ],
+  "candidates": [
+    {
+      "hypothetical_bench_rise_feet": 0.25,
+      "grade_per_single_2_5ft_transition_percent": 10,
+      "grade_exceeds_study_limit": false,
+      "implied_raised_floor_headroom_feet_if_roof_crown_stays_fixed": 6.25,
+      "standing_six_foot_passage_if_roof_crown_stays_fixed": true,
+      "interpretation": "Single-edge grade meets comparison criterion; actual roughness and construction are still unknown."
+    },
+    {
+      "hypothetical_bench_rise_feet": 0.5,
+      "grade_per_single_2_5ft_transition_percent": 20,
+      "grade_exceeds_study_limit": true,
+      "implied_raised_floor_headroom_feet_if_roof_crown_stays_fixed": 6,
+      "standing_six_foot_passage_if_roof_crown_stays_fixed": true,
+      "interpretation": "Single-edge walking ramp fails chosen grade criterion; redesign as longer approach, steps, or separately modeled scramble."
+    },
+    {
+      "hypothetical_bench_rise_feet": 1,
+      "grade_per_single_2_5ft_transition_percent": 40,
+      "grade_exceeds_study_limit": true,
+      "implied_raised_floor_headroom_feet_if_roof_crown_stays_fixed": 5.5,
+      "standing_six_foot_passage_if_roof_crown_stays_fixed": false,
+      "interpretation": "Single-edge walking ramp fails chosen grade criterion; redesign as longer approach, steps, or separately modeled scramble."
+    },
+    {
+      "hypothetical_bench_rise_feet": 2,
+      "grade_per_single_2_5ft_transition_percent": 80,
+      "grade_exceeds_study_limit": true,
+      "implied_raised_floor_headroom_feet_if_roof_crown_stays_fixed": 4.5,
+      "standing_six_foot_passage_if_roof_crown_stays_fixed": false,
+      "interpretation": "Single-edge walking ramp fails chosen grade criterion; redesign as longer approach, steps, or separately modeled scramble."
+    }
+  ],
+  "recommended_action": "Do not represent a 1-2 ft bench rise as three effortless 2.5 ft ramps. Re-author longer landings, stairs, or explicit scrambles after a coherent vault and floor datum is selected.",
+  "no_structural_claim": "No surveyed height, roof thickness, bearing capacity, regulatory access grade or tested construction."
+}
