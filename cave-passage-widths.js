@@ -5,6 +5,15 @@ const fs=require("node:fs"),path=require("node:path");
 const {buildCells,edgeMask}=require("./assemble");
 const HALF_CELL_FEET=2.5;
 const CUTS={
+ hollow_causeway:[
+  {id:"eastern_limestone_squeeze",at:[14,10],across:"E-W"},
+  {id:"eastern_joint_return",at:[13,11],across:"E-W"}
+ ],
+ basalt_rift:[
+  {id:"western_roof_rib",at:[8,8],across:"N-S"},
+  {id:"eastern_roof_rib",at:[13,8],across:"N-S"},
+  {id:"southern_spur_bypass",at:[7,18],across:"N-S"}
+ ],
  lantern_sink:[
   {id:"north_joint_splay",at:[6,4],across:"E-W"},
   {id:"east_bedding_eddy",at:[16,7],across:"N-S"},

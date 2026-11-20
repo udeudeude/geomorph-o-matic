@@ -1510,7 +1510,7 @@
       "title": "The Basalt Rift",
       "family": "Volcanic fault sanctuary",
       "geometry": "row-runs",
-      "description": "Fault-cut grotto with a flood chamber, hidden connection, and shrine reached by alternative passages.",
+      "description": "Fault-cut grotto with a flood chamber, hidden connection, and shrine reached by alternative passages. The west and east upper passages fork around preserved basalt tongues, and the southern approach sidesteps a rock spur; the main tube remains straight where the volcanic interpretation warrants it.",
       "rooms": [
         [
           "throat",
@@ -1745,11 +1745,27 @@
               9
             ],
             [
+              7,
+              9
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9,
+              8
+            ],
+            [
+              9,
+              9
+            ],
+            [
               10,
               9
             ]
           ],
-          "reason": "western top"
+          "reason": "An upper passage branch skirts an intact basalt roof-support rib; this remains fictional plan geometry, not a surveyed lava tube."
         },
         {
           "id": "eastern_top",
@@ -1775,11 +1791,27 @@
               9
             ],
             [
+              14,
+              9
+            ],
+            [
+              14,
+              8
+            ],
+            [
+              12,
+              8
+            ],
+            [
+              12,
+              9
+            ],
+            [
               10,
               9
             ]
           ],
-          "reason": "eastern top"
+          "reason": "An east-wall branch skirts the corresponding roof-support rib before joining the central lava conduit."
         },
         {
           "id": "western_low",
@@ -1853,8 +1885,16 @@
               17
             ],
             [
-              8,
+              6,
               17
+            ],
+            [
+              6,
+              18
+            ],
+            [
+              8,
+              18
             ],
             [
               8,
@@ -1865,7 +1905,7 @@
               14
             ]
           ],
-          "reason": "southern left"
+          "reason": "The southern approach skirts a surviving basalt spur below the shrine instead of following an uninterrupted straight floor strip."
         },
         {
           "id": "southern_right",
@@ -5070,7 +5110,7 @@
       "title": "The Hollow Causeway",
       "family": "Fractured limestone cave",
       "geometry": "Joint-controlled chambers, undercut southwest collapse rim, fossil-passage scallops and twin dry crossings of a flooded limestone fissure",
-      "description": "An asymmetrical, undercut limestone rift with a southwest-scoured collapse pocket, widened fossil tube, splayed resurgence inlet, flowstone organ niche and a concealed freshwater pocket. Two independent dry traverses cross the submerged fissure: a supported plank bridge and an upper stone arch reached by ladders. A true breakdown choke forces a detour without sealing standard mouths. Cave silhouettes and ink contours are hand-composed around immutable modular portals.",
+      "description": "An asymmetrical, undercut limestone rift with a southwest-scoured collapse pocket, widened fossil tube, splayed resurgence inlet, flowstone organ niche and a concealed freshwater pocket. Two independent dry traverses cross the submerged fissure: a supported plank bridge and an upper stone arch reached by ladders. A true breakdown choke forces a detour without sealing standard mouths. Cave silhouettes and ink contours are hand-composed around immutable modular portals. The eastern relict passage now doglegs around a real, intact limestone rib, while preserving every seam and the optional freshwater discovery.",
       "wall_style": "cavern",
       "rooms": [
         [
@@ -5399,10 +5439,26 @@
             ],
             [
               13,
+              11
+            ],
+            [
+              14,
+              11
+            ],
+            [
+              14,
+              9
+            ],
+            [
+              13,
+              9
+            ],
+            [
+              13,
               8
             ]
           ],
-          "reason": "Hand-composed exploration route; survey-grade concept, not surveyed dimensions"
+          "reason": "The narrow relict stream passage skirts an intact limestone rib before rejoining the eastern gallery; floor geometry defines the constriction, not ink-only smoothing."
         },
         {
           "id": "southwest_mouth",

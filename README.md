@@ -19,6 +19,10 @@ These are editable vector drawings, not flattened images. The separate floor, gr
 
 
 
+## Limestone ribs and basalt splays (November 19, 2026)
+
+[Hollow Causeway](tiles/hollow_causeway.svg) now makes an actual narrow eastern dogleg around intact limestone instead of presenting a 32.5-foot straight shaft. [Basalt Rift](tiles/basalt_rift.svg) now has two branching upper passages and a southern spur bypass, preserving a geologically intentional main lava tube. The maximum straight hall strips are **20 feet** and **25 feet**, respectively, down from **32.5 feet** and **30 feet**. Five new [floor-plan clearance sections](reports/cave-passage-widths.json) measure actual half-cell throats, while route and rotation tests guard connectivity and editable map regeneration. [Research and unresolved physical constraints](research/2026-11-19-karst-bends-and-basalt-splays.md). **These are provisional drawings, not surveyed caves.**
+
 ## Joint-guided passage revisions and axial-corridor audit (November 19, 2026)
 
 Scoured Siphon's two southern approaches and Lantern Sink's northwest/southwest entries now use authored lateral doglegs, protecting their actual dry connections, bridge, collapses, three rock-bench ramps and unchanged rotation-compatible mouths. The independent [cave axial-strip diagnostic](cave-axes.js) and [generated report](reports/cave-axes.json) expose still-straight hall runs rather than masking them under curved lines. [Research, decisions and limitations](research/2026-11-19-cave-axis-composition.md). All work remains provisional.
