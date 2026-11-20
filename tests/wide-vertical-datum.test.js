@@ -12,6 +12,7 @@ test("sheetflow vertical sensitivities register to all 8 authored raised cells a
  const r=assessBench(sheet);
  assert.equal(r.raised_floor_cells.length,8);
  assert.equal(r.grade_edges.length,3);
+ assert.deepEqual(r.grade_edges.map(e=>[e.rise_feet,e.risers,e.individual_riser_feet,e.tread_depth_feet]),[[1,2,.5,1.25],[1,2,.5,1.25],[1,2,.5,1.25]]);
  assert.equal(r.design_comparison_grade_limit_percent,12.5);
  const owner=buildCells(sheet),raised=new Set(r.raised_floor_cells.map(p=>p.join(",")));
  for(const cell of r.raised_floor_cells)assert.ok(owner.has(cell.join(",")));
@@ -26,15 +27,15 @@ test("sheetflow vertical sensitivities register to all 8 authored raised cells a
 test("grade sensitivity distinguishes 3-inch grade from 1-2-foot unsupported ramp assumptions",()=>{
  const r=assessBench(sheet);
  assert.deepEqual(CANDIDATE_RISES,[0.25,0.5,1,2]);
- assert.deepEqual(r.candidates.map(s=>s.grade_per_single_2_5ft_transition_percent),[10,20,40,80]);
- assert.deepEqual(r.candidates.map(s=>s.grade_exceeds_study_limit),[false,true,true,true]);
+ assert.deepEqual(r.candidates.map(s=>s.counterfactual_ramp_grade_percent),[10,20,40,80]);
+ assert.deepEqual(r.candidates.map(s=>s.counterfactual_ramp_exceeds_limit),[false,true,true,true]);
  assert.deepEqual(r.candidates.map(s=>s.implied_raised_floor_headroom_feet_if_roof_crown_stays_fixed),
   [6.25,6,5.5,4.5]);
  assert.equal(DESIGN_GRADE_LIMIT_PERCENT,12.5);
  assert.match(r.alternative_fixed_roof_hypothesis,/not encoded in the master/);
 });
 test("datum verifier detects fictional access edges or displaced low-ceiling zones",()=>{
- const lost=structuredClone(sheet);lost.terrain.ramps.pop();
+ const lost=structuredClone(sheet);lost.terrain.steps.pop();
  assert.throws(()=>assessBench(lost),/Changed bench topology/);
  const displaced=structuredClone(sheet);
  displaced.roof_scenario.zones[0].cells=[[15,11],[16,11]];
