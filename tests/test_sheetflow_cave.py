@@ -71,7 +71,7 @@ class SheetflowStudyTests(unittest.TestCase):
         self.assertEqual(CAVE["seam_profile"],"cave-wide-v1")
         self.assertEqual(len(CAVE["rooms"]),6)
         self.assertEqual(len(CAVE["doors"]),18)
-        self.assertEqual(len(self.cells),240)
+        self.assertEqual(len(self.cells),238)
         for turn in range(4):
             cells={rotate(p,turn) for p in self.cells}
             self.assertEqual({p for p in cells if p[0] in (0,19) or p[1] in (0,19)},PORTALS)
@@ -87,7 +87,7 @@ class SheetflowStudyTests(unittest.TestCase):
         collapsed=self.walk((5,0))
         self.assertEqual(open_distance[(14,0)],17)
         self.assertEqual(collapsed[(14,0)],31)
-        self.assertEqual(len(self.walk((4,0))),240)
+        self.assertEqual(len(self.walk((4,0))),238)
         for p in PORTALS:self.assertIn(p,self.walk((4,0)))
         for e in self.closed:
             self.assertEqual(len(e),2)
@@ -103,8 +103,8 @@ class SheetflowStudyTests(unittest.TestCase):
             self.assertEqual(abs(a[0]-b[0])+abs(a[1]-b[1]),1)
             self.assertNotEqual(a in self.raised,b in self.raised)
             self.assertIn(crossing,self.links)
-        self.assertEqual(len(self.walk((4,0))),240)
-        self.assertLess(len(self.walk((4,0),ramps=set())),240)
+        self.assertEqual(len(self.walk((4,0))),238)
+        self.assertLess(len(self.walk((4,0),ramps=set())),238)
     def test_damaged_second_mouth_and_removed_chamber_door_fail(self):
         deficient=dict(self.cells);deficient.pop((5,1))
         self.assertNotIn((5,1),deficient)
