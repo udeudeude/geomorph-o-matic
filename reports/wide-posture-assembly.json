@@ -20,30 +20,30 @@
   "hypothetical_modes": {
     "standing": {
       "minimum_hypothetical_clearance_feet": 6,
-      "floor_cells_admitted": 863,
-      "reachable_floor_cells": 837,
+      "floor_cells_admitted": 862,
+      "reachable_floor_cells": 836,
       "admitted_but_unreachable_floor_cells": 26,
       "reachable_exterior_mouth_cells": 32,
       "exterior_mouth_pairs_connected": 496,
       "closures": [
         {
           "seam": "vertical-0-0",
-          "reachable_floor_cells": 837,
+          "reachable_floor_cells": 836,
           "exterior_mouth_cells_still_connected": 32
         },
         {
           "seam": "horizontal-0-0",
-          "reachable_floor_cells": 837,
+          "reachable_floor_cells": 836,
           "exterior_mouth_cells_still_connected": 32
         },
         {
           "seam": "horizontal-1-0",
-          "reachable_floor_cells": 837,
+          "reachable_floor_cells": 836,
           "exterior_mouth_cells_still_connected": 32
         },
         {
           "seam": "vertical-0-1",
-          "reachable_floor_cells": 837,
+          "reachable_floor_cells": 836,
           "exterior_mouth_cells_still_connected": 32
         }
       ],

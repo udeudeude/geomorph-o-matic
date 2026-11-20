@@ -352,5 +352,5 @@
     }
   },
   "adopted_for_gameplay": false,
-  "limitations": "Both roof scenarios are authored geometry, not surveyed dimensions. Does not prove roof support or passage stability, and neither scenario replaces the current local-clearance gameplay model."
+  "limitations": "Both roof scenarios are authored geometry, not surveyed dimensions. Does not prove roof support or passage stability, and neither of these two bounding hypotheses is the spatially authored canonical bench vault."
 }

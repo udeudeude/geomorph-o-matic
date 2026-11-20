@@ -1,0 +1,316 @@
+{
+  "tile": "sagging_sheet",
+  "status": "unreleased hypothetical canonical vault, not a measured cave",
+  "datum": "z=0 at all five-foot modular mouths; bench floor z=+1 ft",
+  "floor_count": 238,
+  "bench": [
+    {
+      "cell": [
+        15,
+        11
+      ],
+      "floor_z_feet": 1,
+      "roof_z_feet": 7,
+      "clear_feet": 6
+    },
+    {
+      "cell": [
+        16,
+        11
+      ],
+      "floor_z_feet": 1,
+      "roof_z_feet": 7.5,
+      "clear_feet": 6.5
+    },
+    {
+      "cell": [
+        17,
+        11
+      ],
+      "floor_z_feet": 1,
+      "roof_z_feet": 7,
+      "clear_feet": 6
+    },
+    {
+      "cell": [
+        15,
+        12
+      ],
+      "floor_z_feet": 1,
+      "roof_z_feet": 7,
+      "clear_feet": 6
+    },
+    {
+      "cell": [
+        16,
+        12
+      ],
+      "floor_z_feet": 1,
+      "roof_z_feet": 7.5,
+      "clear_feet": 6.5
+    },
+    {
+      "cell": [
+        17,
+        12
+      ],
+      "floor_z_feet": 1,
+      "roof_z_feet": 7,
+      "clear_feet": 6
+    },
+    {
+      "cell": [
+        16,
+        13
+      ],
+      "floor_z_feet": 1,
+      "roof_z_feet": 7,
+      "clear_feet": 6
+    },
+    {
+      "cell": [
+        17,
+        13
+      ],
+      "floor_z_feet": 1,
+      "roof_z_feet": 6.5,
+      "clear_feet": 5.5
+    }
+  ],
+  "roof_crown_histogram_feet": {
+    "5": 2,
+    "7": 13,
+    "6.5": 221,
+    "7.5": 2
+  },
+  "accessible_from_north": {
+    "standing": 235,
+    "crouching": 238,
+    "crawling": 238
+  },
+  "sections": [
+    {
+      "id": "stair_1",
+      "approach_length_feet": 60,
+      "lower_cell": [
+        14,
+        12
+      ],
+      "upper_cell": [
+        15,
+        12
+      ],
+      "samples": [
+        {
+          "cell": [
+            11,
+            12
+          ],
+          "distance_feet": 0,
+          "floor_z_feet": 0,
+          "roof_z_feet": 6.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "cell": [
+            12,
+            12
+          ],
+          "distance_feet": 2.5,
+          "floor_z_feet": 0,
+          "roof_z_feet": 6.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "cell": [
+            13,
+            12
+          ],
+          "distance_feet": 5,
+          "floor_z_feet": 0,
+          "roof_z_feet": 6.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "cell": [
+            14,
+            12
+          ],
+          "distance_feet": 7.5,
+          "floor_z_feet": 0,
+          "roof_z_feet": 7,
+          "local_clearance_feet": 7
+        },
+        {
+          "cell": [
+            15,
+            12
+          ],
+          "distance_feet": 10,
+          "floor_z_feet": 1,
+          "roof_z_feet": 7,
+          "local_clearance_feet": 6
+        },
+        {
+          "cell": [
+            15,
+            11
+          ],
+          "distance_feet": 12.5,
+          "floor_z_feet": 1,
+          "roof_z_feet": 7,
+          "local_clearance_feet": 6
+        }
+      ]
+    },
+    {
+      "id": "stair_2",
+      "approach_length_feet": 70,
+      "lower_cell": [
+        18,
+        12
+      ],
+      "upper_cell": [
+        17,
+        12
+      ],
+      "samples": [
+        {
+          "cell": [
+            15,
+            12
+          ],
+          "distance_feet": 0,
+          "floor_z_feet": 1,
+          "roof_z_feet": 7,
+          "local_clearance_feet": 6
+        },
+        {
+          "cell": [
+            16,
+            12
+          ],
+          "distance_feet": 2.5,
+          "floor_z_feet": 1,
+          "roof_z_feet": 7.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "cell": [
+            17,
+            12
+          ],
+          "distance_feet": 5,
+          "floor_z_feet": 1,
+          "roof_z_feet": 7,
+          "local_clearance_feet": 6
+        },
+        {
+          "cell": [
+            18,
+            12
+          ],
+          "distance_feet": 7.5,
+          "floor_z_feet": 0,
+          "roof_z_feet": 7,
+          "local_clearance_feet": 7
+        },
+        {
+          "cell": [
+            17,
+            12
+          ],
+          "distance_feet": 10,
+          "floor_z_feet": 1,
+          "roof_z_feet": 7,
+          "local_clearance_feet": 6
+        },
+        {
+          "cell": [
+            16,
+            12
+          ],
+          "distance_feet": 12.5,
+          "floor_z_feet": 1,
+          "roof_z_feet": 7.5,
+          "local_clearance_feet": 6.5
+        }
+      ]
+    },
+    {
+      "id": "stair_3",
+      "approach_length_feet": 70,
+      "lower_cell": [
+        16,
+        14
+      ],
+      "upper_cell": [
+        16,
+        13
+      ],
+      "samples": [
+        {
+          "cell": [
+            13,
+            14
+          ],
+          "distance_feet": 0,
+          "floor_z_feet": 0,
+          "roof_z_feet": 6.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "cell": [
+            14,
+            14
+          ],
+          "distance_feet": 2.5,
+          "floor_z_feet": 0,
+          "roof_z_feet": 6.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "cell": [
+            15,
+            14
+          ],
+          "distance_feet": 5,
+          "floor_z_feet": 0,
+          "roof_z_feet": 6.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "cell": [
+            16,
+            14
+          ],
+          "distance_feet": 7.5,
+          "floor_z_feet": 0,
+          "roof_z_feet": 7,
+          "local_clearance_feet": 7
+        },
+        {
+          "cell": [
+            16,
+            13
+          ],
+          "distance_feet": 10,
+          "floor_z_feet": 1,
+          "roof_z_feet": 7,
+          "local_clearance_feet": 6
+        },
+        {
+          "cell": [
+            16,
+            12
+          ],
+          "distance_feet": 12.5,
+          "floor_z_feet": 1,
+          "roof_z_feet": 7.5,
+          "local_clearance_feet": 6.5
+        }
+      ]
+    }
+  ],
+  "limitations": "Plan-registered invented elevation model; no load, roof thickness, survey-grade cross-section, physical print review or playtest."
+}

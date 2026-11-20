@@ -105,7 +105,7 @@
       "postures": {
         "standing": {
           "minimum_assumed_clearance_feet": 6,
-          "reachable_floor_cells": 236,
+          "reachable_floor_cells": 235,
           "reachable_mouth_cells": 16,
           "reachable_mouth_pairs": 120,
           "unreachable_mouth_pairs": 0,

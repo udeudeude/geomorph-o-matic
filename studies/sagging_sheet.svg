@@ -64,8 +64,70 @@
 <path data-roof-cell="7,6" d="M175.44,150l6,12 m3.3600000000000003,-12l4.800000000000001,9.600000000000001" stroke-width="1.25" opacity=".8"/>
 <path data-roof-cell="8,6" d="M199.44,150l6,12 m3.3600000000000003,-12l4.800000000000001,9.600000000000001" stroke-width="1.25" opacity=".8"/>
 </g>
+<g id="absolute-bench-vault" fill="none" stroke="#728b71" stroke-width="1" stroke-dasharray="4 3">
+<path data-absolute-roof-cell="16,11" data-roof-elevation-feet="7.5" d="M408,264v24"/>
+<path data-absolute-roof-cell="16,11" data-roof-elevation-feet="7.5" d="M384,264v24"/>
+<path data-absolute-roof-cell="16,11" data-roof-elevation-feet="7.5" d="M384,264h24"/>
+<path data-absolute-roof-cell="16,12" data-roof-elevation-feet="7.5" d="M408,288v24"/>
+<path data-absolute-roof-cell="16,12" data-roof-elevation-feet="7.5" d="M384,288v24"/>
+<path data-absolute-roof-cell="16,12" data-roof-elevation-feet="7.5" d="M384,312h24"/>
+<path data-absolute-roof-cell="14,11" data-roof-elevation-feet="7" d="M336,264v24"/>
+<path data-absolute-roof-cell="14,11" data-roof-elevation-feet="7" d="M336,264h24"/>
+<path data-absolute-roof-cell="14,12" data-roof-elevation-feet="7" d="M336,288v24"/>
+<path data-absolute-roof-cell="14,12" data-roof-elevation-feet="7" d="M336,312h24"/>
+<path data-absolute-roof-cell="15,11" data-roof-elevation-feet="7" d="M384,264v24"/>
+<path data-absolute-roof-cell="15,11" data-roof-elevation-feet="7" d="M360,264h24"/>
+<path data-absolute-roof-cell="15,12" data-roof-elevation-feet="7" d="M384,288v24"/>
+<path data-absolute-roof-cell="15,12" data-roof-elevation-feet="7" d="M360,312h24"/>
+<path data-absolute-roof-cell="16,13" data-roof-elevation-feet="7" d="M408,312v24"/>
+<path data-absolute-roof-cell="16,13" data-roof-elevation-feet="7" d="M384,312v24"/>
+<path data-absolute-roof-cell="16,13" data-roof-elevation-feet="7" d="M384,312h24"/>
+<path data-absolute-roof-cell="16,14" data-roof-elevation-feet="7" d="M384,336v24"/>
+<path data-absolute-roof-cell="16,14" data-roof-elevation-feet="7" d="M384,360h24"/>
+<path data-absolute-roof-cell="17,10" data-roof-elevation-feet="7" d="M432,240v24"/>
+<path data-absolute-roof-cell="17,10" data-roof-elevation-feet="7" d="M408,240v24"/>
+<path data-absolute-roof-cell="17,10" data-roof-elevation-feet="7" d="M408,240h24"/>
+<path data-absolute-roof-cell="17,11" data-roof-elevation-feet="7" d="M408,264v24"/>
+<path data-absolute-roof-cell="17,12" data-roof-elevation-feet="7" d="M408,288v24"/>
+<path data-absolute-roof-cell="17,12" data-roof-elevation-feet="7" d="M408,312h24"/>
+<path data-absolute-roof-cell="17,14" data-roof-elevation-feet="7" d="M432,336v24"/>
+<path data-absolute-roof-cell="17,14" data-roof-elevation-feet="7" d="M408,360h24"/>
+<path data-absolute-roof-cell="17,14" data-roof-elevation-feet="7" d="M408,336h24"/>
+<path data-absolute-roof-cell="18,11" data-roof-elevation-feet="7" d="M456,264v24"/>
+<path data-absolute-roof-cell="18,11" data-roof-elevation-feet="7" d="M432,264h24"/>
+<path data-absolute-roof-cell="18,12" data-roof-elevation-feet="7" d="M456,288v24"/>
+<path data-absolute-roof-cell="18,13" data-roof-elevation-feet="7" d="M456,312v24"/>
+<path data-absolute-roof-cell="18,13" data-roof-elevation-feet="7" d="M432,312v24"/>
+<path data-absolute-roof-cell="18,13" data-roof-elevation-feet="7" d="M432,336h24"/>
+<path data-stooped-bench-cell="17,13" d="M414,321.6l12,0m-12,4.800000000000001l12,0" stroke="#9d593b" stroke-width="1.5" stroke-dasharray="none"/>
+</g>
 <g id="roof-entry-transitions" fill="none" stroke="#52776d" stroke-width=".9" stroke-dasharray="3 5">
 <title>Hypothetical local ceiling-height contours from modular mouths into cave vaults; not walls or elevation survey</title>
+<path data-crown-transition-edge="15,11|16,11" data-local-clearance-feet="6|6.5" d="M384,264v24"/>
+<path data-crown-transition-edge="16,11|17,11" data-local-clearance-feet="6.5|6" d="M408,264v24"/>
+<path data-crown-transition-edge="17,11|18,11" data-local-clearance-feet="6|7" d="M432,264v24"/>
+<path data-crown-transition-edge="15,12|16,12" data-local-clearance-feet="6|6.5" d="M384,288v24"/>
+<path data-crown-transition-edge="16,12|17,12" data-local-clearance-feet="6.5|6" d="M408,288v24"/>
+<path data-crown-transition-edge="16,12|16,13" data-local-clearance-feet="6.5|6" d="M384,312h24"/>
+<path data-crown-transition-edge="17,12|18,12" data-local-clearance-feet="6|7" d="M432,288v24"/>
+<path data-crown-transition-edge="17,12|17,13" data-local-clearance-feet="6|5.5" d="M408,312h24"/>
+<path data-crown-transition-edge="16,13|17,13" data-local-clearance-feet="6|5.5" d="M408,312v24"/>
+<path data-crown-transition-edge="16,13|16,14" data-local-clearance-feet="6|7" d="M384,336h24"/>
+<path data-crown-transition-edge="17,13|18,13" data-local-clearance-feet="5.5|7" d="M432,312v24"/>
+<path data-crown-transition-edge="17,13|17,14" data-local-clearance-feet="5.5|7" d="M408,336h24"/>
+<path data-crown-transition-edge="17,10|18,10" data-local-clearance-feet="7|6.5" d="M432,240v24"/>
+<path data-crown-transition-edge="17,10|17,11" data-local-clearance-feet="7|6" d="M408,264h24"/>
+<path data-crown-transition-edge="18,10|18,11" data-local-clearance-feet="6.5|7" d="M432,264h24"/>
+<path data-crown-transition-edge="13,11|14,11" data-local-clearance-feet="6.5|7" d="M336,264v24"/>
+<path data-crown-transition-edge="14,11|15,11" data-local-clearance-feet="7|6" d="M360,264v24"/>
+<path data-crown-transition-edge="13,12|14,12" data-local-clearance-feet="6.5|7" d="M336,288v24"/>
+<path data-crown-transition-edge="14,12|15,12" data-local-clearance-feet="7|6" d="M360,288v24"/>
+<path data-crown-transition-edge="14,12|14,13" data-local-clearance-feet="7|6.5" d="M336,312h24"/>
+<path data-crown-transition-edge="18,13|18,14" data-local-clearance-feet="7|6.5" d="M432,336h24"/>
+<path data-crown-transition-edge="15,14|16,14" data-local-clearance-feet="6.5|7" d="M384,336v24"/>
+<path data-crown-transition-edge="16,14|16,15" data-local-clearance-feet="7|6.5" d="M384,360h24"/>
+<path data-crown-transition-edge="17,14|18,14" data-local-clearance-feet="7|6.5" d="M432,336v24"/>
+<path data-crown-transition-edge="17,14|17,15" data-local-clearance-feet="7|6.5" d="M408,360h24"/>
 </g>
 </g>
 <g id="features">
