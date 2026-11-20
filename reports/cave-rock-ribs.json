@@ -1,0 +1,153 @@
+{
+  "units": "feet",
+  "half_cell_feet": 2.5,
+  "scope": "Registered horizontal-plan rock separations between dry passages; not engineering evidence",
+  "cave_tiles": [
+    {
+      "id": "basalt_rift",
+      "sections": [
+        {
+          "id": "western_distributary_web",
+          "across": "E-W",
+          "rock_cells": [
+            [
+              7,
+              9
+            ],
+            [
+              8,
+              9
+            ]
+          ],
+          "rock_half_cells": 2,
+          "rock_plan_thickness_feet": 5,
+          "floor_flanks": [
+            [
+              6,
+              9
+            ],
+            [
+              9,
+              9
+            ]
+          ],
+          "interpretation": "solid rock in fictional horizontal plan only; roof thickness, strength and headroom unknown"
+        },
+        {
+          "id": "eastern_distributary_web",
+          "across": "E-W",
+          "rock_cells": [
+            [
+              13,
+              9
+            ],
+            [
+              14,
+              9
+            ]
+          ],
+          "rock_half_cells": 2,
+          "rock_plan_thickness_feet": 5,
+          "floor_flanks": [
+            [
+              12,
+              9
+            ],
+            [
+              15,
+              9
+            ]
+          ],
+          "interpretation": "solid rock in fictional horizontal plan only; roof thickness, strength and headroom unknown"
+        },
+        {
+          "id": "southern_bypass_spur",
+          "across": "E-W",
+          "rock_cells": [
+            [
+              7,
+              17
+            ]
+          ],
+          "rock_half_cells": 1,
+          "rock_plan_thickness_feet": 2.5,
+          "floor_flanks": [
+            [
+              6,
+              17
+            ],
+            [
+              8,
+              17
+            ]
+          ],
+          "interpretation": "solid rock in fictional horizontal plan only; roof thickness, strength and headroom unknown"
+        }
+      ]
+    },
+    {
+      "id": "riftwater_lock",
+      "sections": []
+    },
+    {
+      "id": "hollow_causeway",
+      "sections": [
+        {
+          "id": "eastern_solution_rib",
+          "across": "N-S",
+          "rock_cells": [
+            [
+              13,
+              10
+            ]
+          ],
+          "rock_half_cells": 1,
+          "rock_plan_thickness_feet": 2.5,
+          "floor_flanks": [
+            [
+              13,
+              9
+            ],
+            [
+              13,
+              11
+            ]
+          ],
+          "interpretation": "solid rock in fictional horizontal plan only; roof thickness, strength and headroom unknown"
+        }
+      ]
+    },
+    {
+      "id": "scoured_siphon",
+      "sections": []
+    },
+    {
+      "id": "lantern_sink",
+      "sections": [
+        {
+          "id": "northwest_bedding_partition",
+          "across": "N-S",
+          "rock_cells": [
+            [
+              6,
+              3
+            ]
+          ],
+          "rock_half_cells": 1,
+          "rock_plan_thickness_feet": 2.5,
+          "floor_flanks": [
+            [
+              6,
+              2
+            ],
+            [
+              6,
+              4
+            ]
+          ],
+          "interpretation": "solid rock in fictional horizontal plan only; roof thickness, strength and headroom unknown"
+        }
+      ]
+    }
+  ]
+}

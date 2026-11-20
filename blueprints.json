@@ -1510,7 +1510,7 @@
       "title": "The Basalt Rift",
       "family": "Volcanic fault sanctuary",
       "geometry": "row-runs",
-      "description": "Fault-cut grotto with a flood chamber, hidden connection, and shrine reached by alternative passages. The west and east upper passages fork around preserved basalt tongues, and the southern approach sidesteps a rock spur; the main tube remains straight where the volcanic interpretation warrants it.",
+      "description": "Fault-cut grotto with a flood chamber, hidden connection, and shrine reached by alternative passages. Two upper distributaries wind around wider, preserved two-cell basalt rock webs, while the southern approach sidesteps a volcanic spur. The central main tube remains comparatively straight where lava flow morphology warrants it. All rock thicknesses and ceiling clearances are fictional plan geometry.",
       "rooms": [
         [
           "throat",
@@ -1745,11 +1745,11 @@
               9
             ],
             [
-              7,
+              6,
               9
             ],
             [
-              7,
+              6,
               8
             ],
             [
@@ -1765,7 +1765,7 @@
               9
             ]
           ],
-          "reason": "An upper passage branch skirts an intact basalt roof-support rib; this remains fictional plan geometry, not a surveyed lava tube."
+          "reason": "The distributary skirts a genuinely two-cell-thick basalt web: the former (7,9) passage is now rock and the displaced dry floor is (6,8). Its roof-bearing capacity remains unverified."
         },
         {
           "id": "eastern_top",
@@ -1791,11 +1791,11 @@
               9
             ],
             [
-              14,
+              15,
               9
             ],
             [
-              14,
+              15,
               8
             ],
             [
@@ -1811,7 +1811,7 @@
               9
             ]
           ],
-          "reason": "An east-wall branch skirts the corresponding roof-support rib before joining the central lava conduit."
+          "reason": "The eastern distributary skirts a two-cell-thick basalt web through actual floor relocation, not a decorative ink line. No surveyed thickness or vault strength is implied."
         },
         {
           "id": "western_low",
