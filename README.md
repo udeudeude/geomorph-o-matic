@@ -23,6 +23,12 @@ These are editable vector drawings, not flattened images. The separate floor, gr
 
 Inspect the [four-orientation assembly](studies/braided_lava_2x2.svg), [100% size print proof](studies/braided_lava_print_letter.svg), [reproducible route report](reports/wide-lava-routes.json), and [geological source research plus shortcomings](research/2026-11-20-braided-wide-lava.md). The demonstration repeats one prototype four times; it is not a diverse four-cave set. Its roofs, stability, and paper legibility remain unverified. **Not a finished dungeon.**
 
+### Contrasting sheet-flow wide-mouth cave (November 20, 2026)
+
+[The Sagging Sheetflow](studies/sagging_sheet.svg) is a **second individually authored** five-foot-mouth study with six asymmetric volcanic vesicle chambers, 18 natural thresholds, a drained central basin, and a raised eight-cell basalt bench with three modeled traversable approaches. A real two-lane roof fall forces a northern traversal from **17 to 31 half-cell steps** without stranding any of its 240 walkable cells. This contrasts with Braided Lava's braided feeder geometry rather than merely repeating it.
+
+Examine the [mixed two-design four-tile assembly](studies/wide_mixed_2x2.svg), the [true-size sheetflow print proof](studies/sagging_sheet_print_letter.svg), the [independent route and elevation report](reports/sheetflow-routes.json), and the [published geological research and explicit design limitations](research/2026-11-20-sagging-sheetflow.md). The assembly **reuses two distinct designs**, not four. Modeled elevation indices are not measured heights; roof clearance, actual print quality and playtesting are still outstanding. **Neither map is finished.**
+
 Regenerate with `node wide-cave.js`; test with `node --test tests/wide-cave.test.js` and `PYTHONPATH=. python3 -m unittest tests.test_wide_cave`. Legacy 2.5-foot and wide 5-foot tiles deliberately cannot be assembled together.
 
 
