@@ -19,6 +19,12 @@ These are editable vector drawings, not flattened images. The separate floor, gr
 
 
 
+## Cave design envelopes and independent wide openings (November 20, 2026)
+
+The [new cave cross-section plate](examples/cave_section_envelopes.svg) derives four **actual transverse floor widths** (7.5, 5, 2.5, and 5 feet) from Scoured Siphon, Basalt Rift, and Lantern Sink. The hypothetical roof heights are individually authored, **not measured**, and registered to those exact floor cuts. Any altered width or misplaced section fails the [envelope audit](reports/cave-section-envelopes.json) and independent tests.
+
+A new [modular seam contract](seam-profiles.js) verifies the existing eight 2.5-foot mouths and separately tests a **5-foot-mouth interface with two full-width occupied cells extending inward**. The [compatibility report](reports/seam-families.json) explicitly treats the two families as incompatible. The wider study is a synthetic interface specimen, *not* a completed new map. [Design research and limitations](research/2026-11-20-cave-seam-envelopes.md). These experiments do not make the collection release-ready.
+
 ## Basalt rock-web integrity and interpretive sections (November 20, 2026)
 
 [Basalt Rift](tiles/basalt_rift.svg) now bends two upper distributaries around **genuine 5-foot-wide rock bands in the fictional plan**, each doubled from the previous 2.5 feet. The editable [rock-web study plate](examples/basalt_rift_webs.svg) registers two horizontal transects to the source plan; dashed vault shapes are explicitly *not* measured sections. A new [rock separation audit](reports/cave-rock-ribs.json) confirms the solid cells remain between dry routes and flags remaining thin cave partitions without claiming structural bearing or measured headroom. [Geological research, rationale, and unresolved constraints](research/2026-11-20-basalt-rock-webs.md).

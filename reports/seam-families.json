@@ -1,0 +1,839 @@
+{
+  "units": "feet",
+  "cell_width_feet": 2.5,
+  "caution": "The wide specimen is a synthetic interface proof, NOT a designed dungeon or compatible with legacy tiles.",
+  "legacy_tiles": [
+    {
+      "profile": "legacy",
+      "rotations_checked": 4,
+      "mouths": [
+        {
+          "side": "N",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "N",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "E",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "E",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "S",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "S",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "W",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "W",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        }
+      ],
+      "clear_openings": 8,
+      "modular_family_compatible_with": [
+        "legacy"
+      ],
+      "tile": "salt_cloister"
+    },
+    {
+      "profile": "legacy",
+      "rotations_checked": 4,
+      "mouths": [
+        {
+          "side": "N",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "N",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "E",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "E",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "S",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "S",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "W",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "W",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        }
+      ],
+      "clear_openings": 8,
+      "modular_family_compatible_with": [
+        "legacy"
+      ],
+      "tile": "postern_bastion"
+    },
+    {
+      "profile": "legacy",
+      "rotations_checked": 4,
+      "mouths": [
+        {
+          "side": "N",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "N",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "E",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "E",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "S",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "S",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "W",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "W",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        }
+      ],
+      "clear_openings": 8,
+      "modular_family_compatible_with": [
+        "legacy"
+      ],
+      "tile": "bone_galleries"
+    },
+    {
+      "profile": "legacy",
+      "rotations_checked": 4,
+      "mouths": [
+        {
+          "side": "N",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "N",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "E",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "E",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "S",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "S",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "W",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "W",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        }
+      ],
+      "clear_openings": 8,
+      "modular_family_compatible_with": [
+        "legacy"
+      ],
+      "tile": "basalt_rift"
+    },
+    {
+      "profile": "legacy",
+      "rotations_checked": 4,
+      "mouths": [
+        {
+          "side": "N",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "N",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "E",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "E",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "S",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "S",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "W",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "W",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        }
+      ],
+      "clear_openings": 8,
+      "modular_family_compatible_with": [
+        "legacy"
+      ],
+      "tile": "sunken_orrery"
+    },
+    {
+      "profile": "legacy",
+      "rotations_checked": 4,
+      "mouths": [
+        {
+          "side": "N",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "N",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "E",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "E",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "S",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "S",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "W",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "W",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        }
+      ],
+      "clear_openings": 8,
+      "modular_family_compatible_with": [
+        "legacy"
+      ],
+      "tile": "riftwater_lock"
+    },
+    {
+      "profile": "legacy",
+      "rotations_checked": 4,
+      "mouths": [
+        {
+          "side": "N",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "N",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "E",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "E",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "S",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "S",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "W",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "W",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        }
+      ],
+      "clear_openings": 8,
+      "modular_family_compatible_with": [
+        "legacy"
+      ],
+      "tile": "fallen_choir"
+    },
+    {
+      "profile": "legacy",
+      "rotations_checked": 4,
+      "mouths": [
+        {
+          "side": "N",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "N",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "E",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "E",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "S",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "S",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "W",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "W",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        }
+      ],
+      "clear_openings": 8,
+      "modular_family_compatible_with": [
+        "legacy"
+      ],
+      "tile": "hollow_causeway"
+    },
+    {
+      "profile": "legacy",
+      "rotations_checked": 4,
+      "mouths": [
+        {
+          "side": "N",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "N",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "E",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "E",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "S",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "S",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "W",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "W",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        }
+      ],
+      "clear_openings": 8,
+      "modular_family_compatible_with": [
+        "legacy"
+      ],
+      "tile": "scoured_siphon"
+    },
+    {
+      "profile": "legacy",
+      "rotations_checked": 4,
+      "mouths": [
+        {
+          "side": "N",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "N",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "E",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "E",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "S",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "S",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "W",
+          "offsets": [
+            4
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        },
+        {
+          "side": "W",
+          "offsets": [
+            15
+          ],
+          "clear_feet": 2.5,
+          "minimum_inward_depth_feet": 2.5
+        }
+      ],
+      "clear_openings": 8,
+      "modular_family_compatible_with": [
+        "legacy"
+      ],
+      "tile": "lantern_sink"
+    }
+  ],
+  "wide_interface_specimen": {
+    "profile": "cave-wide-v1",
+    "rotations_checked": 4,
+    "mouths": [
+      {
+        "side": "N",
+        "offsets": [
+          4,
+          5
+        ],
+        "clear_feet": 5,
+        "minimum_inward_depth_feet": 5
+      },
+      {
+        "side": "N",
+        "offsets": [
+          14,
+          15
+        ],
+        "clear_feet": 5,
+        "minimum_inward_depth_feet": 5
+      },
+      {
+        "side": "E",
+        "offsets": [
+          4,
+          5
+        ],
+        "clear_feet": 5,
+        "minimum_inward_depth_feet": 5
+      },
+      {
+        "side": "E",
+        "offsets": [
+          14,
+          15
+        ],
+        "clear_feet": 5,
+        "minimum_inward_depth_feet": 5
+      },
+      {
+        "side": "S",
+        "offsets": [
+          4,
+          5
+        ],
+        "clear_feet": 5,
+        "minimum_inward_depth_feet": 5
+      },
+      {
+        "side": "S",
+        "offsets": [
+          14,
+          15
+        ],
+        "clear_feet": 5,
+        "minimum_inward_depth_feet": 5
+      },
+      {
+        "side": "W",
+        "offsets": [
+          4,
+          5
+        ],
+        "clear_feet": 5,
+        "minimum_inward_depth_feet": 5
+      },
+      {
+        "side": "W",
+        "offsets": [
+          14,
+          15
+        ],
+        "clear_feet": 5,
+        "minimum_inward_depth_feet": 5
+      }
+    ],
+    "clear_openings": 8,
+    "modular_family_compatible_with": [
+      "cave-wide-v1"
+    ]
+  }
+}
