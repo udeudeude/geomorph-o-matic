@@ -1,0 +1,356 @@
+{
+  "tile": "sagging_sheet",
+  "stage": "unreleased hypothetical architectural alternatives",
+  "datum": "z=0 at ordinary floor and all sixteen 5-foot mouths; bench floor z=+1 foot",
+  "sources": "Plan geometry, registered lava step edges and local clearances in wide-blueprints.json",
+  "half_cell_feet": 2.5,
+  "vertical_and_horizontal_pixels_per_foot": 24,
+  "elevated_floor_cells": [
+    [
+      15,
+      11
+    ],
+    [
+      16,
+      11
+    ],
+    [
+      17,
+      11
+    ],
+    [
+      15,
+      12
+    ],
+    [
+      16,
+      12
+    ],
+    [
+      17,
+      12
+    ],
+    [
+      16,
+      13
+    ],
+    [
+      17,
+      13
+    ]
+  ],
+  "mouths_checked": 16,
+  "approaches": [
+    {
+      "id": "step_1",
+      "lower_cell": [
+        14,
+        12
+      ],
+      "raised_cell": [
+        15,
+        12
+      ],
+      "entrance_to_lower_route_feet": 60,
+      "rise_feet": 1,
+      "risers": 2,
+      "tread_depth_feet": 1.25,
+      "samples": [
+        {
+          "station": 0,
+          "cell": [
+            12,
+            12
+          ],
+          "distance_feet": 0,
+          "floor_elevation_feet": 0,
+          "fixed_roof_elevation_feet": 6.5,
+          "lifted_roof_elevation_feet": 6.5,
+          "fixed_local_clearance_feet": 6.5,
+          "lifted_local_clearance_feet": 6.5
+        },
+        {
+          "station": 1,
+          "cell": [
+            13,
+            12
+          ],
+          "distance_feet": 2.5,
+          "floor_elevation_feet": 0,
+          "fixed_roof_elevation_feet": 6.5,
+          "lifted_roof_elevation_feet": 6.5,
+          "fixed_local_clearance_feet": 6.5,
+          "lifted_local_clearance_feet": 6.5
+        },
+        {
+          "station": 2,
+          "cell": [
+            14,
+            12
+          ],
+          "distance_feet": 5,
+          "floor_elevation_feet": 0,
+          "fixed_roof_elevation_feet": 6.5,
+          "lifted_roof_elevation_feet": 6.5,
+          "fixed_local_clearance_feet": 6.5,
+          "lifted_local_clearance_feet": 6.5
+        },
+        {
+          "station": 3,
+          "cell": [
+            15,
+            12
+          ],
+          "distance_feet": 7.5,
+          "floor_elevation_feet": 1,
+          "fixed_roof_elevation_feet": 6.5,
+          "lifted_roof_elevation_feet": 7.5,
+          "fixed_local_clearance_feet": 5.5,
+          "lifted_local_clearance_feet": 6.5
+        },
+        {
+          "station": 4,
+          "cell": [
+            15,
+            11
+          ],
+          "distance_feet": 10,
+          "floor_elevation_feet": 1,
+          "fixed_roof_elevation_feet": 6.5,
+          "lifted_roof_elevation_feet": 7.5,
+          "fixed_local_clearance_feet": 5.5,
+          "lifted_local_clearance_feet": 6.5
+        }
+      ],
+      "step_sample_index": 3
+    },
+    {
+      "id": "step_2",
+      "lower_cell": [
+        18,
+        12
+      ],
+      "raised_cell": [
+        17,
+        12
+      ],
+      "entrance_to_lower_route_feet": 80,
+      "rise_feet": 1,
+      "risers": 2,
+      "tread_depth_feet": 1.25,
+      "samples": [
+        {
+          "station": 0,
+          "cell": [
+            18,
+            14
+          ],
+          "distance_feet": 0,
+          "floor_elevation_feet": 0,
+          "fixed_roof_elevation_feet": 6.5,
+          "lifted_roof_elevation_feet": 6.5,
+          "fixed_local_clearance_feet": 6.5,
+          "lifted_local_clearance_feet": 6.5
+        },
+        {
+          "station": 1,
+          "cell": [
+            18,
+            13
+          ],
+          "distance_feet": 2.5,
+          "floor_elevation_feet": 0,
+          "fixed_roof_elevation_feet": 6.5,
+          "lifted_roof_elevation_feet": 6.5,
+          "fixed_local_clearance_feet": 6.5,
+          "lifted_local_clearance_feet": 6.5
+        },
+        {
+          "station": 2,
+          "cell": [
+            18,
+            12
+          ],
+          "distance_feet": 5,
+          "floor_elevation_feet": 0,
+          "fixed_roof_elevation_feet": 6.5,
+          "lifted_roof_elevation_feet": 6.5,
+          "fixed_local_clearance_feet": 6.5,
+          "lifted_local_clearance_feet": 6.5
+        },
+        {
+          "station": 3,
+          "cell": [
+            17,
+            12
+          ],
+          "distance_feet": 7.5,
+          "floor_elevation_feet": 1,
+          "fixed_roof_elevation_feet": 6.5,
+          "lifted_roof_elevation_feet": 7.5,
+          "fixed_local_clearance_feet": 5.5,
+          "lifted_local_clearance_feet": 6.5
+        },
+        {
+          "station": 4,
+          "cell": [
+            16,
+            12
+          ],
+          "distance_feet": 10,
+          "floor_elevation_feet": 1,
+          "fixed_roof_elevation_feet": 6.5,
+          "lifted_roof_elevation_feet": 7.5,
+          "fixed_local_clearance_feet": 5.5,
+          "lifted_local_clearance_feet": 6.5
+        }
+      ],
+      "step_sample_index": 3
+    },
+    {
+      "id": "step_3",
+      "lower_cell": [
+        16,
+        14
+      ],
+      "raised_cell": [
+        16,
+        13
+      ],
+      "entrance_to_lower_route_feet": 70,
+      "rise_feet": 1,
+      "risers": 2,
+      "tread_depth_feet": 1.25,
+      "samples": [
+        {
+          "station": 0,
+          "cell": [
+            14,
+            14
+          ],
+          "distance_feet": 0,
+          "floor_elevation_feet": 0,
+          "fixed_roof_elevation_feet": 6.5,
+          "lifted_roof_elevation_feet": 6.5,
+          "fixed_local_clearance_feet": 6.5,
+          "lifted_local_clearance_feet": 6.5
+        },
+        {
+          "station": 1,
+          "cell": [
+            15,
+            14
+          ],
+          "distance_feet": 2.5,
+          "floor_elevation_feet": 0,
+          "fixed_roof_elevation_feet": 6.5,
+          "lifted_roof_elevation_feet": 6.5,
+          "fixed_local_clearance_feet": 6.5,
+          "lifted_local_clearance_feet": 6.5
+        },
+        {
+          "station": 2,
+          "cell": [
+            16,
+            14
+          ],
+          "distance_feet": 5,
+          "floor_elevation_feet": 0,
+          "fixed_roof_elevation_feet": 6.5,
+          "lifted_roof_elevation_feet": 6.5,
+          "fixed_local_clearance_feet": 6.5,
+          "lifted_local_clearance_feet": 6.5
+        },
+        {
+          "station": 3,
+          "cell": [
+            16,
+            13
+          ],
+          "distance_feet": 7.5,
+          "floor_elevation_feet": 1,
+          "fixed_roof_elevation_feet": 6.5,
+          "lifted_roof_elevation_feet": 7.5,
+          "fixed_local_clearance_feet": 5.5,
+          "lifted_local_clearance_feet": 6.5
+        },
+        {
+          "station": 4,
+          "cell": [
+            16,
+            12
+          ],
+          "distance_feet": 10,
+          "floor_elevation_feet": 1,
+          "fixed_roof_elevation_feet": 6.5,
+          "lifted_roof_elevation_feet": 7.5,
+          "fixed_local_clearance_feet": 5.5,
+          "lifted_local_clearance_feet": 6.5
+        }
+      ],
+      "step_sample_index": 3
+    }
+  ],
+  "hypotheses": {
+    "fixed": {
+      "interpretation": "Assume 6.5-foot roof elevation above ordinary floor continues over the elevated lava bench.",
+      "bench_floor_elevation_feet": 1,
+      "bench_roof_elevation_feet": 6.5,
+      "bench_local_clearance_feet": 5.5,
+      "modes": {
+        "standing": {
+          "minimum_clearance_feet": 6,
+          "admitted_cells": 228,
+          "reachable_cells": 228,
+          "reachable_wide_mouth_cells": 16,
+          "elevated_bench_cells_admitted": 0
+        },
+        "crouching": {
+          "minimum_clearance_feet": 4,
+          "admitted_cells": 238,
+          "reachable_cells": 238,
+          "reachable_wide_mouth_cells": 16,
+          "elevated_bench_cells_admitted": 8
+        },
+        "crawling": {
+          "minimum_clearance_feet": 2.5,
+          "admitted_cells": 238,
+          "reachable_cells": 238,
+          "reachable_wide_mouth_cells": 16,
+          "elevated_bench_cells_admitted": 8
+        }
+      }
+    },
+    "lifted": {
+      "interpretation": "Assume roof elevation increases by one foot over the elevated bench, preserving 6.5 feet of local clearance.",
+      "bench_floor_elevation_feet": 1,
+      "bench_roof_elevation_feet": 7.5,
+      "bench_local_clearance_feet": 6.5,
+      "modes": {
+        "standing": {
+          "minimum_clearance_feet": 6,
+          "admitted_cells": 236,
+          "reachable_cells": 236,
+          "reachable_wide_mouth_cells": 16,
+          "elevated_bench_cells_admitted": 8
+        },
+        "crouching": {
+          "minimum_clearance_feet": 4,
+          "admitted_cells": 238,
+          "reachable_cells": 238,
+          "reachable_wide_mouth_cells": 16,
+          "elevated_bench_cells_admitted": 8
+        },
+        "crawling": {
+          "minimum_clearance_feet": 2.5,
+          "admitted_cells": 238,
+          "reachable_cells": 238,
+          "reachable_wide_mouth_cells": 16,
+          "elevated_bench_cells_admitted": 8
+        }
+      }
+    }
+  },
+  "adopted_for_gameplay": false,
+  "limitations": "Both roof scenarios are authored geometry, not surveyed dimensions. Does not prove roof support or passage stability, and neither scenario replaces the current local-clearance gameplay model."
+}

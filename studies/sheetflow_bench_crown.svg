@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18in" height="13.875in" viewBox="0 0 1440 1110" role="img" aria-label="Three actual Sagging Sheetflow basalt stair sections, with alternative fixed and lifted absolute crowns">
+<title>Sagging Sheetflow / three real step approaches, two hypothetical roof datum solutions</title>
+<rect width="1440" height="1110" fill="#f3f0e7"/>
+<text x="42" y="52" font-family="Georgia,serif" font-size="30" fill="#2b3b34">SAGGING SHEETFLOW / ABSOLUTE FLOOR AND ROOF DATUM</text>
+<text x="43" y="77" font-family="sans-serif" font-size="13" fill="#59695e">UNRELEASED ARCHITECTURAL OPTIONS: COMMON ROOF CROWN OR ONE-FOOT LIFT OVER A STEPPED BASALT BENCH</text>
+<g id="registered-bench-plan" font-family="sans-serif">
+<rect x="65" y="115" width="435" height="466" fill="#fbfaf6" stroke="#b9bcb5"/>
+<text x="82" y="145" font-size="17" fill="#293c34">01 / PLAN-REGISTERED BENCH</text>
+<rect data-bench-cell="15,11" x="365" y="363" width="18" height="18" fill="#ad9070" stroke="#f8f6f0" stroke-width="1"/>
+<rect data-bench-cell="16,11" x="383" y="363" width="18" height="18" fill="#ad9070" stroke="#f8f6f0" stroke-width="1"/>
+<rect data-bench-cell="17,11" x="401" y="363" width="18" height="18" fill="#ad9070" stroke="#f8f6f0" stroke-width="1"/>
+<rect data-bench-cell="15,12" x="365" y="381" width="18" height="18" fill="#ad9070" stroke="#f8f6f0" stroke-width="1"/>
+<rect data-bench-cell="16,12" x="383" y="381" width="18" height="18" fill="#ad9070" stroke="#f8f6f0" stroke-width="1"/>
+<rect data-bench-cell="17,12" x="401" y="381" width="18" height="18" fill="#ad9070" stroke="#f8f6f0" stroke-width="1"/>
+<rect data-bench-cell="16,13" x="383" y="399" width="18" height="18" fill="#ad9070" stroke="#f8f6f0" stroke-width="1"/>
+<rect data-bench-cell="17,13" x="401" y="399" width="18" height="18" fill="#ad9070" stroke="#f8f6f0" stroke-width="1"/>
+<path data-real-stair="step_1" d="M356,390L374,390" stroke="#b35032" stroke-width="4"/>
+<path data-real-stair="step_2" d="M428,390L410,390" stroke="#b35032" stroke-width="4"/>
+<path data-real-stair="step_3" d="M392,426L392,408" stroke="#b35032" stroke-width="4"/>
+<text x="84" y="557" font-size="11" fill="#637365">Brown: +1 ft bench. Red: three genuine traversable step edges.</text>
+</g>
+<g id="roof-legend" font-family="sans-serif">
+<path d="M560 125h65" stroke="#405e55" stroke-width="3"/><text x="637" y="130" font-size="13" fill="#405e55">Floor at z=0/+1 ft</text>
+<path d="M835 125h65" stroke="#9d7146" stroke-width="3"/><text x="913" y="130" font-size="13" fill="#70553e">Fixed roof at z=6.5 ft</text>
+<path d="M1140 125h65" stroke="#57767d" stroke-width="3" stroke-dasharray="6 5"/><text x="1211" y="130" font-size="13" fill="#57767d">Lifted roof to z=7.5 ft</text>
+</g>
+<g id="absolute-step_1" font-family="sans-serif">
+<rect x="555" y="170" width="845" height="260" fill="#fffdf8" stroke="#b7c1ba"/>
+<text x="575" y="199" font-size="16" font-family="Georgia,serif" fill="#30483c">02 / STEP 1 : 60 ft from north mouth to approach</text>
+<text x="575" y="218" font-size="11" fill="#536b5e">All axes 24 px/foot; aligned floor and roof share z=0. Local profile of real dry passage.</text>
+<text x="613" y="405" font-size="10" text-anchor="middle" fill="#62736a">12,12</text>
+<text x="673" y="405" font-size="10" text-anchor="middle" fill="#62736a">13,12</text>
+<text x="733" y="405" font-size="10" text-anchor="middle" fill="#62736a">14,12</text>
+<text x="793" y="405" font-size="10" text-anchor="middle" fill="#62736a">15,12</text>
+<text x="853" y="405" font-size="10" text-anchor="middle" fill="#62736a">15,11</text>
+<path d="M613,374L673,374L733,374H748v-12H778v-12H793L853,350" fill="none" stroke="#405e55" stroke-width="3" data-floor-profile="step_1"/>
+<path d="M613,218 L673,218 L733,218 L793,218 L853,218" fill="none" stroke="#9d7146" stroke-width="2.5" data-fixed-roof="step_1"/>
+<path d="M613,218 L673,218 L733,218 L793,194 L853,194" fill="none" stroke="#57767d" stroke-width="2.5" stroke-dasharray="6 5" data-lifted-roof="step_1"/>
+<text x="577" y="418" font-size="11" fill="#82614c">Fixed: 5.5 ft clearance over bench. Lifted: 6.5 ft. Neither is a measured section.</text>
+</g>
+<g id="absolute-step_2" font-family="sans-serif">
+<rect x="555" y="458" width="845" height="260" fill="#fffdf8" stroke="#b7c1ba"/>
+<text x="575" y="487" font-size="16" font-family="Georgia,serif" fill="#30483c">03 / STEP 2 : 80 ft from north mouth to approach</text>
+<text x="575" y="506" font-size="11" fill="#536b5e">All axes 24 px/foot; aligned floor and roof share z=0. Local profile of real dry passage.</text>
+<text x="613" y="693" font-size="10" text-anchor="middle" fill="#62736a">18,14</text>
+<text x="673" y="693" font-size="10" text-anchor="middle" fill="#62736a">18,13</text>
+<text x="733" y="693" font-size="10" text-anchor="middle" fill="#62736a">18,12</text>
+<text x="793" y="693" font-size="10" text-anchor="middle" fill="#62736a">17,12</text>
+<text x="853" y="693" font-size="10" text-anchor="middle" fill="#62736a">16,12</text>
+<path d="M613,662L673,662L733,662H748v-12H778v-12H793L853,638" fill="none" stroke="#405e55" stroke-width="3" data-floor-profile="step_2"/>
+<path d="M613,506 L673,506 L733,506 L793,506 L853,506" fill="none" stroke="#9d7146" stroke-width="2.5" data-fixed-roof="step_2"/>
+<path d="M613,506 L673,506 L733,506 L793,482 L853,482" fill="none" stroke="#57767d" stroke-width="2.5" stroke-dasharray="6 5" data-lifted-roof="step_2"/>
+<text x="577" y="706" font-size="11" fill="#82614c">Fixed: 5.5 ft clearance over bench. Lifted: 6.5 ft. Neither is a measured section.</text>
+</g>
+<g id="absolute-step_3" font-family="sans-serif">
+<rect x="555" y="746" width="845" height="260" fill="#fffdf8" stroke="#b7c1ba"/>
+<text x="575" y="775" font-size="16" font-family="Georgia,serif" fill="#30483c">04 / STEP 3 : 70 ft from north mouth to approach</text>
+<text x="575" y="794" font-size="11" fill="#536b5e">All axes 24 px/foot; aligned floor and roof share z=0. Local profile of real dry passage.</text>
+<text x="613" y="981" font-size="10" text-anchor="middle" fill="#62736a">14,14</text>
+<text x="673" y="981" font-size="10" text-anchor="middle" fill="#62736a">15,14</text>
+<text x="733" y="981" font-size="10" text-anchor="middle" fill="#62736a">16,14</text>
+<text x="793" y="981" font-size="10" text-anchor="middle" fill="#62736a">16,13</text>
+<text x="853" y="981" font-size="10" text-anchor="middle" fill="#62736a">16,12</text>
+<path d="M613,950L673,950L733,950H748v-12H778v-12H793L853,926" fill="none" stroke="#405e55" stroke-width="3" data-floor-profile="step_3"/>
+<path d="M613,794 L673,794 L733,794 L793,794 L853,794" fill="none" stroke="#9d7146" stroke-width="2.5" data-fixed-roof="step_3"/>
+<path d="M613,794 L673,794 L733,794 L793,770 L853,770" fill="none" stroke="#57767d" stroke-width="2.5" stroke-dasharray="6 5" data-lifted-roof="step_3"/>
+<text x="577" y="994" font-size="11" fill="#82614c">Fixed: 5.5 ft clearance over bench. Lifted: 6.5 ft. Neither is a measured section.</text>
+</g>
+<text x="52" y="1044" font-family="Georgia,serif" font-size="19" fill="#354c40">ARCHITECTURAL CONFLICT REVEALED, NOT SILENTLY RESOLVED</text>
+<text x="52" y="1071" font-family="sans-serif" font-size="13" fill="#56665b">A one-foot higher floor under a continuous crown reduces clearance. Keeping 6.5 ft of local headroom requires the roof to rise.</text>
+<text x="52" y="1093" font-family="sans-serif" font-size="12" fill="#7d5d44">Hypothetical fictional cave sections; no measured elevation, bearing, roof stability or certified accessible route.</text>
+</svg>
