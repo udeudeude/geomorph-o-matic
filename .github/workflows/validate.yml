@@ -107,7 +107,8 @@ jobs:
             examples/riftwater_maintenance_plate.svg
             examples/riftwater_print_letter.svg
             reports/topology.json
-            reports/wide-lava-routes.json reports/sheetflow-routes.json
+            reports/wide-lava-routes.json
+            reports/sheetflow-routes.json
             reports/cave-passage-widths.json
             reports/cave-axes.json
             reports/cave-rock-ribs.json reports/seam-families.json reports/cave-section-envelopes.json
