@@ -66,8 +66,8 @@ class SheetflowStudyTests(unittest.TestCase):
     def walk(self,start,closed=None,ramps=None):
         return navigate(self.cells,self.links,start,self.closed if closed is None else closed,
                         self.raised,self.ramps if ramps is None else ramps)
-    def test_two_authored_cave_patterns_and_exact_rotatable_five_foot_entrances(self):
-        self.assertEqual(len(TILES),2)
+    def test_sheetflow_seams_remain_valid_after_adding_distinct_third_wide_cave(self):
+        self.assertEqual(len(TILES),3)
         self.assertEqual(CAVE["seam_profile"],"cave-wide-v1")
         self.assertEqual(len(CAVE["rooms"]),6)
         self.assertEqual(len(CAVE["doors"]),18)

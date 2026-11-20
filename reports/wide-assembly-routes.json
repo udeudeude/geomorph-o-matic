@@ -1,0 +1,37 @@
+{
+  "stage": "unreleased playable-layout diagnostic, not field playtesting",
+  "layout": "Braided Confluence, Split-Spine Drainback and Sagging Sheetflow | three distinct five-foot-mouth volcanic caves (study only)",
+  "width_tiles": 2,
+  "height_tiles": 2,
+  "authored_tile_types": [
+    "braided_lava",
+    "sagging_sheet",
+    "split_spine"
+  ],
+  "tile_instances": 4,
+  "occupied_floor_cells": 871,
+  "reachable_floor_cells": 871,
+  "distinct_internal_joining_seams": 4,
+  "actual_walkable_intertile_edges": 16,
+  "exterior_edge_cells": 32,
+  "whole_seam_closures_with_alternate_routes": [
+    {
+      "seam": "vertical-0-0",
+      "connected_floor_cells_after_full_seam_closure": 871
+    },
+    {
+      "seam": "horizontal-0-0",
+      "connected_floor_cells_after_full_seam_closure": 871
+    },
+    {
+      "seam": "horizontal-1-0",
+      "connected_floor_cells_after_full_seam_closure": 871
+    },
+    {
+      "seam": "vertical-0-1",
+      "connected_floor_cells_after_full_seam_closure": 871
+    }
+  ],
+  "units": "2.5-foot half-cells",
+  "caution": "No real height, load-bearing strength, physical print inspection or human tabletop playtest established."
+}

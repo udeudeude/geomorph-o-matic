@@ -63,15 +63,42 @@ function sheetReport(tile){
   northern_before_half_cells:prior,northern_after_half_cells:current,northern_detour_half_cells:current-prior,
   print:printScaleAudit(tile)};
 }
+function spineReport(tile){
+ const seams=inspectTile(tile,"cave-wide-v1"),floor=buildCells(tile),doors=doorEdges(tile);
+ const before=terrainGraph(floor,doors,{...tile.terrain,chokes:[]},"ordinary","dry");
+ const after=terrainGraph(floor,doors,tile.terrain,"ordinary","dry");
+ const blocked=terrainModel(floor,tile.terrain).chokes;
+ const start="0,4",target="0,14";
+ const prior=distances(before,start).get(target),current=distances(after,start).get(target);
+ const reached=distances(after,"4,0");
+ const mouths=seams.mouths.flatMap(m=>m.offsets.map(o=>boundaryCell(m.side,o).join(",")));
+ if(prior!==22||current!==34||blocked.size!==3)
+  throw Error("Split-spine collapse must interrupt three actual west-limb traversals and force a twelve-cell detour");
+ if(reached.size!==floor.size||mouths.some(p=>!reached.has(p)))
+  throw Error("Split-spine roof fall strands a cavern cell or wide mouth");
+ for(const e of blocked){
+  const [a,b]=e.split("|");
+  if(!before.get(a)?.includes(b)||after.get(a)?.includes(b)||floor.get(a)!=="hall"||floor.get(b)!=="hall")
+   throw Error("Split-spine breakdown must remove a real walkable hall edge");
+ }
+ return {tile:tile.id,stage:"unreleased architectural study",
+  geology:"fictional basaltic flow branching around preserved central septum; roof and gradient unmeasured",
+  seam_family:"cave-wide-v1",mouths:seams.clear_openings,rotations_checked:seams.rotations_checked,
+  chambers:tile.rooms.length,doors:tile.doors.length,passage_runs:tile.routes.length,
+  floor_cells:floor.size,reachable_floor_cells:reached.size,reachable_edge_cells:mouths.length,
+  roof_fall_blocked_edges:blocked.size,west_before_half_cells:prior,west_after_half_cells:current,
+  west_detour_half_cells:current-prior,print:printScaleAudit(tile)};
+}
 function generate(outputDir=path.join(__dirname,"studies")){
  const data=source(),braided=data.tiles.find(t=>t.id==="braided_lava"),
-   sheet=data.tiles.find(t=>t.id==="sagging_sheet");
- if(!braided||!sheet||data.tiles.length!==2)
-  throw Error("Expected exactly the two independently authored wide cave studies");
- const braidedReport=routeReport(braided),sheetflowReport=sheetReport(sheet);
+   sheet=data.tiles.find(t=>t.id==="sagging_sheet"),spine=data.tiles.find(t=>t.id==="split_spine");
+ if(!braided||!sheet||!spine||data.tiles.length!==3)
+  throw Error("Expected three independently authored wide cave studies");
+ const braidedReport=routeReport(braided),sheetflowReport=sheetReport(sheet),spineReportResult=spineReport(spine);
  const oldLayout=JSON.parse(fs.readFileSync(path.join(__dirname,"studies/assembly_braided_2x2.json"),"utf8"));
  const mixedLayout=JSON.parse(fs.readFileSync(path.join(__dirname,"studies/assembly_wide_mixed_2x2.json"),"utf8"));
- verifyLayout(oldLayout,data);verifyLayout(mixedLayout,data);
+ const threeLayout=JSON.parse(fs.readFileSync(path.join(__dirname,"studies/assembly_three_wide_2x2.json"),"utf8"));
+ verifyLayout(oldLayout,data);verifyLayout(mixedLayout,data);verifyLayout(threeLayout,data);
  fs.mkdirSync(outputDir,{recursive:true});fs.mkdirSync(path.join(__dirname,"reports"),{recursive:true});
  const write=(name,txt)=>fs.writeFileSync(path.join(outputDir,name),txt,"utf8");
  for(const tile of data.tiles){
@@ -80,9 +107,11 @@ function generate(outputDir=path.join(__dirname,"studies")){
  }
  write(braided.id+"_2x2.svg",assemble(oldLayout,data,id=>makeSvg(data.tiles.find(t=>t.id===id))));
  write("wide_mixed_2x2.svg",assemble(mixedLayout,data,id=>makeSvg(data.tiles.find(t=>t.id===id))));
+ write("three_wide_2x2.svg",assemble(threeLayout,data,id=>makeSvg(data.tiles.find(t=>t.id===id))));
  fs.writeFileSync(path.join(__dirname,"reports/wide-lava-routes.json"),JSON.stringify(braidedReport,null,2)+"\n");
  fs.writeFileSync(path.join(__dirname,"reports/sheetflow-routes.json"),JSON.stringify(sheetflowReport,null,2)+"\n");
- return {braided_lava:braidedReport,sagging_sheet:sheetflowReport,assemblies:["braided_lava_2x2.svg","wide_mixed_2x2.svg"]};
+ fs.writeFileSync(path.join(__dirname,"reports/spine-routes.json"),JSON.stringify(spineReportResult,null,2)+"\n");
+ return {braided_lava:braidedReport,sagging_sheet:sheetflowReport,split_spine:spineReportResult,assemblies:["braided_lava_2x2.svg","wide_mixed_2x2.svg","three_wide_2x2.svg"]};
 }
 if(require.main===module){console.log(JSON.stringify(generate(),null,2));}
-module.exports={source,routeReport,sheetReport,generate};
+module.exports={source,routeReport,sheetReport,spineReport,generate};

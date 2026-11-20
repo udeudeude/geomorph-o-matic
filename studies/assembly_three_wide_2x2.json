@@ -1,0 +1,25 @@
+{
+  "title": "Braided Confluence, Split-Spine Drainback and Sagging Sheetflow | three distinct five-foot-mouth volcanic caves (study only)",
+  "rows": [
+    [
+      {
+        "id": "braided_lava",
+        "turn": 0
+      },
+      {
+        "id": "split_spine",
+        "turn": 1
+      }
+    ],
+    [
+      {
+        "id": "sagging_sheet",
+        "turn": 2
+      },
+      {
+        "id": "split_spine",
+        "turn": 3
+      }
+    ]
+  ]
+}

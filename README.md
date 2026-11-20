@@ -29,7 +29,15 @@ Inspect the [four-orientation assembly](studies/braided_lava_2x2.svg), [100% siz
 
 Examine the [mixed two-design four-tile assembly](studies/wide_mixed_2x2.svg), the [true-size sheetflow print proof](studies/sagging_sheet_print_letter.svg), the [independent route and elevation report](reports/sheetflow-routes.json), and the [published geological research and explicit design limitations](research/2026-11-20-sagging-sheetflow.md). The assembly **reuses two distinct designs**, not four. Modeled elevation indices are not measured heights; roof clearance, actual print quality and playtesting are still outstanding. **Neither map is finished.**
 
-Regenerate with `node wide-cave.js`; test with `node --test tests/wide-cave.test.js` and `PYTHONPATH=. python3 -m unittest tests.test_wide_cave`. Legacy 2.5-foot and wide 5-foot tiles deliberately cannot be assembled together.
+### Third wide-mouth cave: Split-Spine Drainback (November 20, 2026)
+
+[The Split-Spine Drainback](studies/split_spine.svg) adds a third **original** five-foot-mouth cavern, with four irregular chambers, a genuine solid-rock axial septum, twin bypasses and eight natural chamber thresholds. Its three blocked west-branch roof-fall edges lengthen a particular dry passage from **22 to 34 half-cell steps** without leaving any of its **223** occupied floor cells or sixteen external throat cells inaccessible.
+
+The [three-design rotated assembly](studies/three_wide_2x2.svg) includes Braided Lava, Sagging Sheetflow and Split-Spine twice. Unlike a simple drawing-seam test, the new [inter-tile route audit](reports/wide-assembly-routes.json) reconstructs ordinary dry walking routes in every rotated module, validates all traversable crossing edges, and checks alternate circuits after entire joining seams close. Inspect the [true-scale print proof](studies/split_spine_print_letter.svg), [independent blocked-route measurements](reports/spine-routes.json) and [geological research and critical limitations](research/2026-11-20-split-spine-three-wide.md).
+
+**Still an architectural study.** Half-cell dimensions are fictional plan measurements; cave headroom, roof stability, gradients, printed legibility and human tabletop playability have not been established.
+
+Regenerate with `node wide-cave.js && node wide-assembly-audit.js`; test with `node --test tests/*.test.js` and `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_*.py'`. Legacy 2.5-foot and wide 5-foot tiles deliberately cannot be assembled together.
 
 
 
