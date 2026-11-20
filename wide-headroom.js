@@ -21,6 +21,9 @@ function roofModel(owner,scenario,profile="cave-wide-v1"){
       scenario.mouth_crown_feet<6||scenario.mouth_crown_feet>scenario.baseline_feet||
       !Array.isArray(scenario.zones)||!scenario.zones.length)
     throw Error("Invalid hypothetical roof scenario");
+  const taperRate=scenario.throat_transition_feet_per_half_cell;
+  if(taperRate!==undefined&&(!Number.isFinite(taperRate)||taperRate<0||taperRate>0.5))
+    throw Error("Invalid hypothetical entrance-to-vault crown transition");
   const floors=new Map([...owner.keys()].map(p=>[p,scenario.baseline_feet]));
   const protectedCells=new Set();
   for(const side of ["N","E","S","W"])for(const o of [4,5,14,15])for(let depth=0;depth<2;depth++)
@@ -29,6 +32,29 @@ function roofModel(owner,scenario,profile="cave-wide-v1"){
   for(const cell of protectedCells){
     if(!owner.has(cell))throw Error("An explicitly modeled five-foot mouth lacks floor");
     floors.set(cell,scenario.mouth_crown_feet);
+  }
+  // Shape the first interior feet of every wide mouth into its larger vault.
+  // Propagate across genuinely occupied adjacent floor, never across bare rock.
+  // These are assumed LOCAL overhead clearances, not surveyed roof elevations.
+  const mouthDistances=new Map([...protectedCells].map(p=>[p,0]));
+  const queue=[...protectedCells];
+  for(let i=0;i<queue.length;i++){
+    const p=queue[i],distance=mouthDistances.get(p),[x,y]=xy(p);
+    for(const q of [[x-1,y],[x+1,y],[x,y-1],[x,y+1]].map(key)){
+      if(!owner.has(q)||mouthDistances.has(q))continue;
+      mouthDistances.set(q,distance+1);
+      queue.push(q);
+    }
+  }
+  if(mouthDistances.size!==owner.size)throw Error("Roof model has floor not connected to any wide mouth");
+  const tapered=[];
+  if(taperRate!==undefined){
+    for(const [p,distance] of mouthDistances){
+      const height=Math.min(scenario.baseline_feet,scenario.mouth_crown_feet+taperRate*distance);
+      floors.set(p,height);
+      if(distance>0&&height<scenario.baseline_feet)
+        tapered.push({cell:p,distance_from_mouth_half_cells:distance,clearance_feet:height});
+    }
   }
   const occupied=new Set(),ids=new Set(),zones=[];
   for(const zone of scenario.zones){
@@ -58,6 +84,9 @@ function roofModel(owner,scenario,profile="cave-wide-v1"){
       clearance_feet:zone.clearance_feet,cells:[...cells].sort((a,b)=>{const [x,y]=xy(a),[u,v]=xy(b);return y-v||x-u;})});
   }
   return {baseline_feet:scenario.baseline_feet,mouth_crown_feet:scenario.mouth_crown_feet,clearances:floors,zones,
+    throat_transition_feet_per_half_cell:taperRate??null,
+    tapered_cells:tapered.filter(x=>!occupied.has(x.cell)).sort((a,b)=>a.distance_from_mouth_half_cells-b.distance_from_mouth_half_cells||a.cell.localeCompare(b.cell)),
+    mouth_distances:mouthDistances,
     status:"hypothetical design geometry, not measured or physically verified"};
 }
 function headroomGraph(graph,model,requiredFeet){
@@ -102,6 +131,10 @@ function analyze(tile){
   return {tile:tile.id,status:"unreleased geometric headroom hypothesis",
     evidence:"fictional roof-clearance assumptions; plan locations are registered to actual occupied floor",
     baseline_clearance_feet:roof.baseline_feet,modeled_mouth_crown_feet:roof.mouth_crown_feet,low_roof_zones:roof.zones,
+    entrance_to_vault_transition:{feet_rise_per_half_cell:roof.throat_transition_feet_per_half_cell,
+      modeled_transition_cells:roof.tapered_cells.length,
+      clearance_bands_feet:[...new Set(roof.tapered_cells.map(c=>c.clearance_feet))].sort((a,b)=>a-b),
+      interpretation:"A bounded fictional throat-to-vault roof transition, not a measurement of physical roof inclination."},
     postures,selected_traversals:examples,
     limitations:"No measured cave roof, geological stability or real-world access classification. Posture thresholds are gameplay scenarios."};
 }
@@ -132,7 +165,24 @@ function ceilingSvg(owner,scenario,scale=24){
     }
     out.push('</g>');
   }
-  out.push('</g>');
+  // Distinct from walls and constrictions: subdued dashed contours where the
+  // authored ceiling height changes between adjacent, occupied floor cells.
+  const pinched=new Set(roof.zones.flatMap(z=>z.cells)),heightEdges=[];
+  for(const [p,h] of roof.clearances){
+    if(pinched.has(p))continue;
+    const [x,y]=xy(p);
+    for(const [dx,dy] of [[1,0],[0,1]]){
+      const q=key([x+dx,y+dy]),other=roof.clearances.get(q);
+      if(other===undefined||pinched.has(q)||other===h)continue;
+      const d=dx?('M'+((x+1)*scale)+','+(y*scale)+'v'+scale):
+        ('M'+(x*scale)+','+((y+1)*scale)+'h'+scale);
+      heightEdges.push('<path data-crown-transition-edge="'+p+'|'+q+
+        '" data-local-clearance-feet="'+h+'|'+other+'" d="'+d+'"/>');
+    }
+  }
+  out.push('<g id="roof-entry-transitions" fill="none" stroke="#52776d" stroke-width=".9" stroke-dasharray="3 5">');
+  out.push('<title>Hypothetical local ceiling-height contours from modular mouths into cave vaults; not walls or elevation survey</title>');
+  out.push(...heightEdges,'</g>','</g>');
   return out;
 }
 function plate(reports){
