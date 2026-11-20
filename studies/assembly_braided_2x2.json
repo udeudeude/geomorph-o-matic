@@ -1,0 +1,25 @@
+{
+  "title": "Braided Lava Confluence | independent wide-mouth assembly study",
+  "rows": [
+    [
+      {
+        "id": "braided_lava",
+        "turn": 0
+      },
+      {
+        "id": "braided_lava",
+        "turn": 1
+      }
+    ],
+    [
+      {
+        "id": "braided_lava",
+        "turn": 3
+      },
+      {
+        "id": "braided_lava",
+        "turn": 2
+      }
+    ]
+  ]
+}
