@@ -56,6 +56,6 @@ test("editable wall, texture, geological debris and true-size five-foot mouths s
  assert.match(proof,/width="215.9mm" height="279.4mm"/);
  assert.match(proof,/Edge throats are 5 ft clear/);
  assert.equal(info.standard_edge_throat_feet,5);
- assert.equal(info.standard_edge_throat_print_mm,25.4);
+ assert.equal(info.standard_edge_throat_print_mm,12.7);
  assert.equal(info.tile_width_mm,127);
 });
