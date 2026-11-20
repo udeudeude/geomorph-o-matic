@@ -10,7 +10,7 @@
       "geometry": "row-runs",
       "wall_style": "cavern",
       "seam_profile": "cave-wide-v1",
-      "description": "Braided lava distributaries join around a remnant central core and four lateral pockets. A genuine two-lane western roof-fall obstruction forces travel through the confluence or around the eastern conduit. Exact five-foot modular mouths are maintained for five feet inward. Roof heights, rock stability, and lava history are conjectural.",
+      "description": "Braided lava distributaries join around a remnant central core and four lateral pockets. A genuine two-lane western roof-fall obstruction forces travel through the confluence or around the eastern conduit. Two western and eastern relict chambers now leave five feet of surviving rock across their most consequential thin one-cell partitions. Exact five-foot modular mouths are maintained for five feet inward. Roof heights, rock stability, and lava history are conjectural.",
       "rooms": [
         [
           "confluence",
@@ -94,7 +94,7 @@
               [
                 11,
                 2,
-                3
+                2
               ],
               [
                 12,
@@ -117,7 +117,7 @@
               [
                 11,
                 16,
-                17
+                16
               ],
               [
                 12,
