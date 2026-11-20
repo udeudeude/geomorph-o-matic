@@ -50,6 +50,48 @@
 <path data-roof-cell="6,9" d="M151.44,222l6,12 m3.3600000000000003,-12l4.800000000000001,9.600000000000001" stroke-width="1.25" opacity=".8"/>
 <path data-roof-cell="7,9" d="M175.44,222l6,12 m3.3600000000000003,-12l4.800000000000001,9.600000000000001" stroke-width="1.25" opacity=".8"/>
 </g>
+<g id="absolute-cave-vault" fill="none" stroke="#728b71" stroke-width="1" stroke-dasharray="4 3">
+<path data-absolute-roof-cell="8,4" data-roof-elevation-feet="8" d="M216,96v24"/>
+<path data-absolute-roof-cell="8,4" data-roof-elevation-feet="8" d="M192,96v24"/>
+<path data-absolute-roof-cell="8,4" data-roof-elevation-feet="8" d="M192,96h24"/>
+<path data-absolute-roof-cell="9,3" data-roof-elevation-feet="8" d="M216,72v24"/>
+<path data-absolute-roof-cell="9,3" data-roof-elevation-feet="8" d="M216,96h24"/>
+<path data-absolute-roof-cell="9,3" data-roof-elevation-feet="8" d="M216,72h24"/>
+<path data-absolute-roof-cell="9,5" data-roof-elevation-feet="8" d="M216,120h24"/>
+<path data-absolute-roof-cell="11,4" data-roof-elevation-feet="8" d="M264,96v24"/>
+<path data-absolute-roof-cell="11,4" data-roof-elevation-feet="8" d="M264,120h24"/>
+<path data-absolute-roof-cell="11,4" data-roof-elevation-feet="8" d="M264,96h24"/>
+<path data-absolute-roof-cell="10,3" data-roof-elevation-feet="8" d="M264,72v24"/>
+<path data-absolute-roof-cell="10,3" data-roof-elevation-feet="8" d="M240,96h24"/>
+<path data-absolute-roof-cell="10,3" data-roof-elevation-feet="8" d="M240,72h24"/>
+<path data-absolute-roof-cell="10,5" data-roof-elevation-feet="8" d="M264,120v24"/>
+<path data-absolute-roof-cell="10,5" data-roof-elevation-feet="8" d="M240,120h24"/>
+<path data-absolute-roof-cell="9,6" data-roof-elevation-feet="8" d="M216,144v24"/>
+<path data-absolute-roof-cell="9,6" data-roof-elevation-feet="8" d="M216,168h24"/>
+<path data-absolute-roof-cell="10,6" data-roof-elevation-feet="8" d="M240,168h24"/>
+<path data-absolute-roof-cell="11,6" data-roof-elevation-feet="8" d="M288,144v24"/>
+<path data-absolute-roof-cell="11,6" data-roof-elevation-feet="8" d="M264,168h24"/>
+<path data-absolute-roof-cell="11,6" data-roof-elevation-feet="8" d="M264,144h24"/>
+<path data-absolute-roof-cell="8,5" data-roof-elevation-feet="8" d="M192,120v24"/>
+<path data-absolute-roof-cell="8,5" data-roof-elevation-feet="8" d="M192,144h24"/>
+<path data-absolute-roof-cell="12,4" data-roof-elevation-feet="8" d="M312,96v24"/>
+<path data-absolute-roof-cell="12,4" data-roof-elevation-feet="8" d="M288,120h24"/>
+<path data-absolute-roof-cell="12,4" data-roof-elevation-feet="8" d="M288,96h24"/>
+<path data-absolute-roof-cell="9,4" data-roof-elevation-feet="8.5" d="M216,96v24"/>
+<path data-absolute-roof-cell="9,4" data-roof-elevation-feet="8.5" d="M216,120h24"/>
+<path data-absolute-roof-cell="9,4" data-roof-elevation-feet="8.5" d="M216,96h24"/>
+<path data-absolute-roof-cell="10,4" data-roof-elevation-feet="8.5" d="M264,96v24"/>
+<path data-absolute-roof-cell="10,4" data-roof-elevation-feet="8.5" d="M240,120h24"/>
+<path data-absolute-roof-cell="10,4" data-roof-elevation-feet="8.5" d="M240,96h24"/>
+<path data-absolute-roof-cell="10,14" data-roof-elevation-feet="8" d="M240,336v24"/>
+<path data-absolute-roof-cell="10,14" data-roof-elevation-feet="8" d="M240,336h24"/>
+<path data-absolute-roof-cell="11,14" data-roof-elevation-feet="8" d="M288,336v24"/>
+<path data-absolute-roof-cell="11,14" data-roof-elevation-feet="8" d="M264,336h24"/>
+<path data-absolute-roof-cell="10,15" data-roof-elevation-feet="8" d="M240,360v24"/>
+<path data-absolute-roof-cell="10,15" data-roof-elevation-feet="8" d="M240,384h24"/>
+<path data-absolute-roof-cell="11,15" data-roof-elevation-feet="8" d="M288,360v24"/>
+<path data-absolute-roof-cell="11,15" data-roof-elevation-feet="8" d="M264,384h24"/>
+</g>
 <g id="roof-entry-transitions" fill="none" stroke="#52776d" stroke-width=".9" stroke-dasharray="3 5">
 <title>Hypothetical local ceiling-height contours from modular mouths into cave vaults; not walls or elevation survey</title>
 <path data-crown-transition-edge="4,1|4,2" data-local-clearance-feet="6.5|7" d="M96,48h24"/>

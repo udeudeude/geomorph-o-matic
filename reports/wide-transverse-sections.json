@@ -1,0 +1,323 @@
+{
+  "stage": "unreleased concept; not a surveyed cave, structural design, or finished geomorph",
+  "cell_width_feet": 2.5,
+  "section_scale_pixels_per_foot": 21,
+  "measurement_type": "exact plan-cell occupancy and authored fictional absolute floor/roof z values",
+  "sections": [
+    {
+      "tile": "braided_lava",
+      "label": "Braided central confluence: asymmetric feeder vault",
+      "cut": {
+        "axis": "west-east",
+        "row": 9,
+        "first_cell": [
+          6,
+          9
+        ],
+        "last_cell": [
+          11,
+          9
+        ]
+      },
+      "actual_floor_cells": 187,
+      "sampled_cells": 6,
+      "horizontal_extent_feet": 15,
+      "physical_datum": "z=0 at each modular exterior floor",
+      "horizontal_and_vertical_pixels_per_foot": 21,
+      "local_clearance_range_feet": [
+        8,
+        9
+      ],
+      "registered_steps": [],
+      "samples": [
+        {
+          "cell": [
+            6,
+            9
+          ],
+          "station_feet": 0,
+          "floor_z_feet": 0,
+          "roof_z_feet": 8,
+          "local_clearance_feet": 8,
+          "authored_vault_zone": null
+        },
+        {
+          "cell": [
+            7,
+            9
+          ],
+          "station_feet": 2.5,
+          "floor_z_feet": 0,
+          "roof_z_feet": 8,
+          "local_clearance_feet": 8,
+          "authored_vault_zone": null
+        },
+        {
+          "cell": [
+            8,
+            9
+          ],
+          "station_feet": 5,
+          "floor_z_feet": 0,
+          "roof_z_feet": 8,
+          "local_clearance_feet": 8,
+          "authored_vault_zone": null
+        },
+        {
+          "cell": [
+            9,
+            9
+          ],
+          "station_feet": 7.5,
+          "floor_z_feet": 0,
+          "roof_z_feet": 8,
+          "local_clearance_feet": 8,
+          "authored_vault_zone": null
+        },
+        {
+          "cell": [
+            10,
+            9
+          ],
+          "station_feet": 10,
+          "floor_z_feet": 0,
+          "roof_z_feet": 8.5,
+          "local_clearance_feet": 8.5,
+          "authored_vault_zone": "braided_confluence_shoulder"
+        },
+        {
+          "cell": [
+            11,
+            9
+          ],
+          "station_feet": 12.5,
+          "floor_z_feet": 0,
+          "roof_z_feet": 9,
+          "local_clearance_feet": 9,
+          "authored_vault_zone": "braided_confluence_crest"
+        }
+      ],
+      "interpretation": "Fictional, actual-plan-cell registered vertical envelope. Lines between samples are schematic, not measured geology."
+    },
+    {
+      "tile": "sagging_sheet",
+      "label": "Inflated sheet: genuine 1-foot bench and two natural stairs",
+      "cut": {
+        "axis": "west-east",
+        "row": 12,
+        "first_cell": [
+          14,
+          12
+        ],
+        "last_cell": [
+          18,
+          12
+        ]
+      },
+      "actual_floor_cells": 238,
+      "sampled_cells": 5,
+      "horizontal_extent_feet": 12.5,
+      "physical_datum": "z=0 at each modular exterior floor",
+      "horizontal_and_vertical_pixels_per_foot": 21,
+      "local_clearance_range_feet": [
+        6,
+        7
+      ],
+      "registered_steps": [
+        {
+          "edge": [
+            [
+              14,
+              12
+            ],
+            [
+              15,
+              12
+            ]
+          ],
+          "rise_feet": 1,
+          "risers": 2
+        },
+        {
+          "edge": [
+            [
+              17,
+              12
+            ],
+            [
+              18,
+              12
+            ]
+          ],
+          "rise_feet": 1,
+          "risers": 2
+        }
+      ],
+      "samples": [
+        {
+          "cell": [
+            14,
+            12
+          ],
+          "station_feet": 0,
+          "floor_z_feet": 0,
+          "roof_z_feet": 7,
+          "local_clearance_feet": 7,
+          "authored_vault_zone": "deflated_bench_shelf"
+        },
+        {
+          "cell": [
+            15,
+            12
+          ],
+          "station_feet": 2.5,
+          "floor_z_feet": 1,
+          "roof_z_feet": 7,
+          "local_clearance_feet": 6,
+          "authored_vault_zone": "deflated_bench_shelf"
+        },
+        {
+          "cell": [
+            16,
+            12
+          ],
+          "station_feet": 5,
+          "floor_z_feet": 1,
+          "roof_z_feet": 7.5,
+          "local_clearance_feet": 6.5,
+          "authored_vault_zone": "inflated_bench_vault"
+        },
+        {
+          "cell": [
+            17,
+            12
+          ],
+          "station_feet": 7.5,
+          "floor_z_feet": 1,
+          "roof_z_feet": 7,
+          "local_clearance_feet": 6,
+          "authored_vault_zone": "deflated_bench_shelf"
+        },
+        {
+          "cell": [
+            18,
+            12
+          ],
+          "station_feet": 10,
+          "floor_z_feet": 0,
+          "roof_z_feet": 7,
+          "local_clearance_feet": 7,
+          "authored_vault_zone": "deflated_bench_shelf"
+        }
+      ],
+      "interpretation": "Fictional, actual-plan-cell registered vertical envelope. Lines between samples are schematic, not measured geology."
+    },
+    {
+      "tile": "split_spine",
+      "label": "Split-spine north blister: crowned side arch",
+      "cut": {
+        "axis": "west-east",
+        "row": 4,
+        "first_cell": [
+          7,
+          4
+        ],
+        "last_cell": [
+          13,
+          4
+        ]
+      },
+      "actual_floor_cells": 223,
+      "sampled_cells": 7,
+      "horizontal_extent_feet": 17.5,
+      "physical_datum": "z=0 at each modular exterior floor",
+      "horizontal_and_vertical_pixels_per_foot": 21,
+      "local_clearance_range_feet": [
+        7.5,
+        8.5
+      ],
+      "registered_steps": [],
+      "samples": [
+        {
+          "cell": [
+            7,
+            4
+          ],
+          "station_feet": 0,
+          "floor_z_feet": 0,
+          "roof_z_feet": 7.5,
+          "local_clearance_feet": 7.5,
+          "authored_vault_zone": null
+        },
+        {
+          "cell": [
+            8,
+            4
+          ],
+          "station_feet": 2.5,
+          "floor_z_feet": 0,
+          "roof_z_feet": 8,
+          "local_clearance_feet": 8,
+          "authored_vault_zone": "north_lobe_shoulders"
+        },
+        {
+          "cell": [
+            9,
+            4
+          ],
+          "station_feet": 5,
+          "floor_z_feet": 0,
+          "roof_z_feet": 8.5,
+          "local_clearance_feet": 8.5,
+          "authored_vault_zone": "north_lobe_arch"
+        },
+        {
+          "cell": [
+            10,
+            4
+          ],
+          "station_feet": 7.5,
+          "floor_z_feet": 0,
+          "roof_z_feet": 8.5,
+          "local_clearance_feet": 8.5,
+          "authored_vault_zone": "north_lobe_arch"
+        },
+        {
+          "cell": [
+            11,
+            4
+          ],
+          "station_feet": 10,
+          "floor_z_feet": 0,
+          "roof_z_feet": 8,
+          "local_clearance_feet": 8,
+          "authored_vault_zone": "north_lobe_shoulders"
+        },
+        {
+          "cell": [
+            12,
+            4
+          ],
+          "station_feet": 12.5,
+          "floor_z_feet": 0,
+          "roof_z_feet": 8,
+          "local_clearance_feet": 8,
+          "authored_vault_zone": "north_lobe_shoulders"
+        },
+        {
+          "cell": [
+            13,
+            4
+          ],
+          "station_feet": 15,
+          "floor_z_feet": 0,
+          "roof_z_feet": 7.5,
+          "local_clearance_feet": 7.5,
+          "authored_vault_zone": null
+        }
+      ],
+      "interpretation": "Fictional, actual-plan-cell registered vertical envelope. Lines between samples are schematic, not measured geology."
+    }
+  ],
+  "limitations": "No three-dimensional roof solid, load capacity, rock overburden, measured ceiling curvature, physical print inspection or tabletop playtest."
+}
