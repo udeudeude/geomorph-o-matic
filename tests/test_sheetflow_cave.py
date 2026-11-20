@@ -62,7 +62,7 @@ class SheetflowStudyTests(unittest.TestCase):
         self.links=entrances(CAVE,self.cells)
         self.closed={edge(tuple(a),tuple(b)) for a,b in CAVE["terrain"]["chokes"]}
         self.raised={tuple(p) for level,group in CAVE["terrain"]["elevations"] for p in group}
-        self.ramps={edge(tuple(a),tuple(b)) for a,b in CAVE["terrain"]["ramps"]}
+        self.ramps={edge(tuple(a),tuple(b)) for item in CAVE["terrain"]["steps"] for a,b in [item["edge"]]}
     def walk(self,start,closed=None,ramps=None):
         return navigate(self.cells,self.links,start,self.closed if closed is None else closed,
                         self.raised,self.ramps if ramps is None else ramps)
