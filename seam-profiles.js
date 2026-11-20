@@ -81,4 +81,4 @@ if(require.main===module){
  fs.writeFileSync(output,JSON.stringify(report(data,wideData),null,2)+"\n");
  console.log("Wrote "+output);
 }
-module.exports={WIDTH_FEET_PER_CELL,PROFILES,boundaryCell,rotateFloor,inspectFloor,inspectTile,specimenWideFloor,report};
+module.exports={WIDTH_FEET_PER_CELL,PROFILES,boundaryCell,rotateFloor,inspectFloor,inspectTile,specimenWideFloor,spec,report};
