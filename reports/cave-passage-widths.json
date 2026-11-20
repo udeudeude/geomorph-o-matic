@@ -1,0 +1,170 @@
+{
+  "units": "feet",
+  "coordinate_units": "2.5-foot floor-plan half-cells",
+  "scope": "Illustrative widths, not instrument-surveyed passage cross-sections",
+  "cave_tiles": [
+    {
+      "id": "basalt_rift",
+      "interpretation": "fictional floor-plan clearance; no measured ceiling, wall thickness or survey grade",
+      "standard_seam_throat_feet": 2.5,
+      "walkable_passage_cells": 119,
+      "measured_sections": []
+    },
+    {
+      "id": "riftwater_lock",
+      "interpretation": "fictional floor-plan clearance; no measured ceiling, wall thickness or survey grade",
+      "standard_seam_throat_feet": 2.5,
+      "walkable_passage_cells": 120,
+      "measured_sections": []
+    },
+    {
+      "id": "hollow_causeway",
+      "interpretation": "fictional floor-plan clearance; no measured ceiling, wall thickness or survey grade",
+      "standard_seam_throat_feet": 2.5,
+      "walkable_passage_cells": 103,
+      "measured_sections": []
+    },
+    {
+      "id": "scoured_siphon",
+      "interpretation": "fictional floor-plan clearance; no measured ceiling, wall thickness or survey grade",
+      "standard_seam_throat_feet": 2.5,
+      "walkable_passage_cells": 127,
+      "measured_sections": [
+        {
+          "id": "upstream_relict_tube",
+          "at": [
+            8,
+            3
+          ],
+          "across": "E-W",
+          "from": [
+            7,
+            3
+          ],
+          "to": [
+            9,
+            3
+          ],
+          "clear_half_cells": 3,
+          "clear_feet": 7.5
+        },
+        {
+          "id": "downstream_relict_tube",
+          "at": [
+            8,
+            4
+          ],
+          "across": "E-W",
+          "from": [
+            8,
+            4
+          ],
+          "to": [
+            9,
+            4
+          ],
+          "clear_half_cells": 2,
+          "clear_feet": 5
+        },
+        {
+          "id": "southern_undercut",
+          "at": [
+            9,
+            13
+          ],
+          "across": "N-S",
+          "from": [
+            9,
+            13
+          ],
+          "to": [
+            9,
+            15
+          ],
+          "clear_half_cells": 3,
+          "clear_feet": 7.5
+        },
+        {
+          "id": "eastern_backwater",
+          "at": [
+            17,
+            9
+          ],
+          "across": "E-W",
+          "from": [
+            16,
+            9
+          ],
+          "to": [
+            17,
+            9
+          ],
+          "clear_half_cells": 2,
+          "clear_feet": 5
+        }
+      ]
+    },
+    {
+      "id": "lantern_sink",
+      "interpretation": "fictional floor-plan clearance; no measured ceiling, wall thickness or survey grade",
+      "standard_seam_throat_feet": 2.5,
+      "walkable_passage_cells": 118,
+      "measured_sections": [
+        {
+          "id": "north_joint_splay",
+          "at": [
+            6,
+            4
+          ],
+          "across": "E-W",
+          "from": [
+            6,
+            4
+          ],
+          "to": [
+            7,
+            4
+          ],
+          "clear_half_cells": 2,
+          "clear_feet": 5
+        },
+        {
+          "id": "east_bedding_eddy",
+          "at": [
+            16,
+            7
+          ],
+          "across": "N-S",
+          "from": [
+            16,
+            6
+          ],
+          "to": [
+            16,
+            7
+          ],
+          "clear_half_cells": 2,
+          "clear_feet": 5
+        },
+        {
+          "id": "south_scree_refuge",
+          "at": [
+            7,
+            17
+          ],
+          "across": "E-W",
+          "from": [
+            6,
+            17
+          ],
+          "to": [
+            8,
+            17
+          ],
+          "clear_half_cells": 3,
+          "clear_feet": 7.5
+        }
+      ]
+    }
+  ]
+}
