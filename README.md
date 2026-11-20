@@ -19,6 +19,12 @@ These are editable vector drawings, not flattened images. The separate floor, gr
 
 
 
+## Plan-width reconstruction: cave approaches (November 19, 2026)
+
+[Scoured Siphon](tiles/scoured_siphon.svg) and [Lantern Sink](tiles/lantern_sink.svg) now have **19 additional authored floor cells** across asymmetric dry approaches, erosion pockets, and widened channel remnants, rather than merely smoothing rectangular walls. The existing eight 2.5-foot exterior throats, water crossings and blocked passages stay unchanged.
+
+[Measured floor-plan sections](reports/cave-passage-widths.json) record real 5- to 7.5-foot internal clearances at named transverse cuts, **not** invented survey-grade ceiling dimensions. [Research and limitations](research/2026-11-19-cave-passage-widths.md). Run `node cave-passage-widths.js` to regenerate the plan-only audit; the continuous verification workflow checks the results. These drawings remain provisional until print inspection and playtesting.
+
 ## Cave-ink correction and true-scale warning (November 19, 2026)
 
 The natural-cave renderer now places rock-facing etching **on the actual curved wall**, rather than along an invisible square-cell boundary. The same cubic geometry drives wall outlines and hachure starts, with separate editable layers and new geometric regression tests. Hollow Causeway has been reshaped in five chamber footprints (nine real additional walkable cells) while retaining its bridge, elevated stone traverse, impassable choke and all eight rotation-compatible edge mouths.
