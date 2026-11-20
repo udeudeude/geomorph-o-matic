@@ -6370,6 +6370,104 @@
             ]
           ],
           "reason": "Individually composed joint-guided cave link; fictional plan, not an instrument survey"
+        },
+        {
+          "id": "upstream_west_wall_recess",
+          "points": [
+            [
+              7,
+              2
+            ],
+            [
+              7,
+              3
+            ]
+          ],
+          "reason": "Irregular west bank of the upper relict tube; maintains a rock barrier to Old Tube"
+        },
+        {
+          "id": "upstream_east_wall_recess",
+          "points": [
+            [
+              9,
+              3
+            ],
+            [
+              9,
+              5
+            ]
+          ],
+          "reason": "Offset east-bank dissolution widening the central shaft to 7.5 feet at one section"
+        },
+        {
+          "id": "west_oxbow_elbow",
+          "points": [
+            [
+              2,
+              7
+            ],
+            [
+              2,
+              7
+            ]
+          ],
+          "reason": "Small rock-cut pocket at west bank elbow, away from the collapse"
+        },
+        {
+          "id": "southern_undercut",
+          "points": [
+            [
+              9,
+              14
+            ],
+            [
+              10,
+              14
+            ]
+          ],
+          "reason": "Splayed abandoned channel at the southern confluence, beyond open water"
+        },
+        {
+          "id": "eastern_backwater",
+          "points": [
+            [
+              16,
+              9
+            ],
+            [
+              17,
+              9
+            ]
+          ],
+          "reason": "Dry side pocket next to the eastern bypass above the confluence"
+        },
+        {
+          "id": "eastern_low_recess",
+          "points": [
+            [
+              17,
+              11
+            ],
+            [
+              17,
+              11
+            ]
+          ],
+          "reason": "Undercut along the eastern return passage"
+        },
+        {
+          "id": "southern_undercut_splay",
+          "points": [
+            [
+              9,
+              15
+            ],
+            [
+              10,
+              15
+            ]
+          ],
+          "reason": "Dry remnant channel extends the south undercut into an asymmetric three-half-cell-wide plan section"
         }
       ],
       "doors": [
@@ -7249,6 +7347,62 @@
             ]
           ],
           "reason": "Hand-authored passage following a distinct geological joint or reused pilgrim approach"
+        },
+        {
+          "id": "north_joint_splay",
+          "points": [
+            [
+              7,
+              4
+            ],
+            [
+              7,
+              5
+            ]
+          ],
+          "reason": "Dry relict passage widens unevenly downstream of its northwestern squeeze"
+        },
+        {
+          "id": "north_roof_recess",
+          "points": [
+            [
+              11,
+              6
+            ],
+            [
+              11,
+              6
+            ]
+          ],
+          "reason": "Shallow recess beside the lantern chamber's high approach"
+        },
+        {
+          "id": "east_bedding_eddy",
+          "points": [
+            [
+              15,
+              7
+            ],
+            [
+              17,
+              7
+            ]
+          ],
+          "reason": "Lateral solution pocket off the eastern pilgrim approach, below the ribbed gallery"
+        },
+        {
+          "id": "south_scree_refuge",
+          "points": [
+            [
+              6,
+              17
+            ],
+            [
+              6,
+              17
+            ]
+          ],
+          "reason": "Walkable recess at the foot of the southwest approach"
         }
       ],
       "doors": [
