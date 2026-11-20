@@ -97,7 +97,7 @@ function plate(r){
   out.push('<path d="M65,'+base+'H115L'+(115+2.5*scaleZ)+','+(base-rise*scaleZ)+'H329" fill="none" stroke="#344b3f" stroke-width="3.5"/>');
   out.push('<path d="M115,'+(base+8)+'v11h'+(2.5*scaleZ)+'v-11" fill="none" stroke="#a35332"/>');
   out.push('<text x="152.5" y="'+(base+34)+'" font-size="12" text-anchor="middle" fill="#a35332">2.5 ft run</text>');
-  out.push('<text x="16" y="235" fill="'+(c.counterfactual_ramp_exceeds_limit?"#a04c31":"#355b45")+'" font-size="13" font-weight="bold">'+c.counterfactual_ramp_grade_percent+'% GRADE'+(c.grade_exceeds_study_limit?" / NOT A WALKING RAMP":" / RAMP ALTERNATIVE")+'</text>');
+  out.push('<text x="16" y="235" fill="'+(c.counterfactual_ramp_exceeds_limit?"#a04c31":"#355b45")+'" font-size="13" font-weight="bold">'+c.counterfactual_ramp_grade_percent+'% GRADE'+(c.counterfactual_ramp_exceeds_limit?" / NOT A WALKING RAMP":" / RAMP ALTERNATIVE")+'</text>');
   out.push('<text x="16" y="254" fill="#4b6257" font-size="11">If roof fixed: '+c.implied_raised_floor_headroom_feet_if_roof_crown_stays_fixed+' ft over bench floor</text>');
   out.push('</g>');
  }
