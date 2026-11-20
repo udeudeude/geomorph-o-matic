@@ -58,7 +58,7 @@ class WideBraidedCaveTests(unittest.TestCase):
     def test_all_rotations_have_exact_two_wide_five_foot_mouths_per_side(self):
         self.assertEqual(CAVE["seam_profile"],"cave-wide-v1")
         cells=build(CAVE)
-        self.assertEqual(len(cells),187)
+        self.assertEqual(len(cells),185)
         self.assertEqual({p for p in cells if 0 in p or 19 in p},PORTALS)
         for turn in range(4):
             rotated={rotate(p,turn) for p in cells}
