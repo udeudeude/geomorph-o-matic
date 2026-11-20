@@ -167,7 +167,8 @@ function ceilingSvg(owner,scenario,scale=24,terrain){
     out.push('</g>');
   }
   if(roof.absolute_vault_zones){
-    out.push('<g id="absolute-bench-vault" fill="none" stroke="#728b71" stroke-width="1" stroke-dasharray="4 3">');
+    out.push('<g id="'+(roof.elevated_bench_cells.length?'absolute-bench-vault':'absolute-cave-vault')+
+      '" fill="none" stroke="#728b71" stroke-width="1" stroke-dasharray="4 3">');
     for(const zone of roof.absolute_vault_zones)for(const p of zone.cells){
       const [x,y]=xy(p),z=roof.absolute_roof_elevations_feet.get(p);
       for(const [dx,dy,d] of [[1,0,"M"+((x+1)*scale)+","+(y*scale)+"v"+scale],[-1,0,"M"+(x*scale)+","+(y*scale)+"v"+scale],[0,1,"M"+(x*scale)+"," + ((y+1)*scale)+"h"+scale],[0,-1,"M"+(x*scale)+","+(y*scale)+"h"+scale]]){
@@ -182,13 +183,15 @@ function ceilingSvg(owner,scenario,scale=24,terrain){
   }
   // Distinct from walls and constrictions: subdued dashed contours where the
   // authored ceiling height changes between adjacent, occupied floor cells.
-  const pinched=new Set(roof.zones.flatMap(z=>z.cells)),heightEdges=[];
+  const pinched=new Set(roof.zones.flatMap(z=>z.cells));
+  const authored=new Set((roof.absolute_vault_zones||[]).flatMap(z=>z.cells));
+  const heightEdges=[];
   for(const [p,h] of roof.clearances){
-    if(pinched.has(p))continue;
+    if(pinched.has(p)||authored.has(p))continue;
     const [x,y]=xy(p);
     for(const [dx,dy] of [[1,0],[0,1]]){
       const q=key([x+dx,y+dy]),other=roof.clearances.get(q);
-      if(other===undefined||pinched.has(q)||other===h)continue;
+      if(other===undefined||pinched.has(q)||authored.has(q)||other===h)continue;
       const d=dx?('M'+((x+1)*scale)+','+(y*scale)+'v'+scale):
         ('M'+(x*scale)+','+((y+1)*scale)+'h'+scale);
       heightEdges.push('<path data-crown-transition-edge="'+p+'|'+q+
