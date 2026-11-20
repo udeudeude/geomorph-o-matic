@@ -639,6 +639,27 @@
             7
           ]
         ]
+      },
+      "roof_scenario": {
+        "status": "hypothetical",
+        "baseline_feet": 8,
+        "zones": [
+          {
+            "id": "upper_feeder_roof_drape",
+            "clearance_feet": 3.5,
+            "cells": [
+              [
+                9,
+                6
+              ],
+              [
+                10,
+                6
+              ]
+            ],
+            "interpretation": "A localized drooped upper feeder roof restricts upright travel; the deeper confluence and lower distributary remain viable."
+          }
+        ]
       }
     },
     {
@@ -1836,6 +1857,27 @@
             9
           ]
         ]
+      },
+      "roof_scenario": {
+        "status": "hypothetical",
+        "baseline_feet": 8,
+        "zones": [
+          {
+            "id": "western_sheet_sag",
+            "clearance_feet": 5,
+            "cells": [
+              [
+                7,
+                6
+              ],
+              [
+                8,
+                6
+              ]
+            ],
+            "interpretation": "Cooling sheet-flow roof settles across the west interior throat while neighboring inflated passages retain an assumed higher vault."
+          }
+        ]
       }
     },
     {
@@ -2627,6 +2669,27 @@
             13,
             12
           ]
+        ]
+      },
+      "roof_scenario": {
+        "status": "hypothetical",
+        "baseline_feet": 8,
+        "zones": [
+          {
+            "id": "western_septum_squeeze",
+            "clearance_feet": 3.5,
+            "cells": [
+              [
+                6,
+                9
+              ],
+              [
+                7,
+                9
+              ]
+            ],
+            "interpretation": "A low relict western lava conduit pinches beneath a hypothetical crust shelf, leaving its side pocket crawl-accessible."
+          }
         ]
       }
     }
