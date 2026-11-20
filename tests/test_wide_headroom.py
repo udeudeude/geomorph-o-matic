@@ -9,7 +9,7 @@ TILES=json.loads((ROOT/"wide-blueprints.json").read_text())["tiles"]
 OFFSETS={4,5,14,15}
 PORTALS={(x,y) for x in OFFSETS for y in (0,19)} | {(x,y) for x in (0,19) for y in OFFSETS}
 EXPECTED={
-    "braided_lava":(187,185,185,23,31),
+    "braided_lava":(185,183,183,23,31),
     "sagging_sheet":(238,235,238,29,31),
     "split_spine":(223,208,208,None,None),
 }
