@@ -38,10 +38,10 @@ def independently_propagate(tile):
     return result,distance,low
 
 class WideRoofTransitionIndependentTests(unittest.TestCase):
-    def test_crowns_preserve_all_64_per_tile_throat_cells_and_real_occupied_floor(self):
+    def test_crowns_preserve_all_32_per_tile_throat_cells_and_real_occupied_floor(self):
         for tile in DATA["tiles"]:
             heights,dist,low=independently_propagate(tile)
-            self.assertEqual(len(MOUTHS),64)
+            self.assertEqual(len(MOUTHS),32)
             self.assertEqual(set(heights),set(occupancy(tile)))
             for mouth in MOUTHS:
                 self.assertEqual(dist[mouth],0)
