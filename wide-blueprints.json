@@ -1860,7 +1860,7 @@
       },
       "roof_scenario": {
         "status": "hypothetical",
-        "baseline_feet": 8,
+        "baseline_feet": 6.5,
         "zones": [
           {
             "id": "western_sheet_sag",
@@ -2673,7 +2673,7 @@
       },
       "roof_scenario": {
         "status": "hypothetical",
-        "baseline_feet": 8,
+        "baseline_feet": 7.5,
         "zones": [
           {
             "id": "western_septum_squeeze",
