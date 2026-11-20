@@ -5069,8 +5069,8 @@
       "id": "hollow_causeway",
       "title": "The Hollow Causeway",
       "family": "Fractured limestone cave",
-      "geometry": "hand-composed natural passage and mine-era intervention",
-      "description": "A split subterranean stream divides a collapsed limestone hall. A fresh breakdown choke closes the western cleft, forcing a longer dry detour; a narrow plank crossing and a ladder-accessible bedrock traverse offer two distinct shorter alternatives. Abandoned drainage passages preserve scallops, gravel and flowstone.",
+      "geometry": "Joint-controlled chambers, undercut southwest collapse rim, fossil-passage scallops and twin dry crossings of a flooded limestone fissure",
+      "description": "An asymmetrical, undercut limestone rift with a southwest-scoured collapse pocket, widened fossil tube, splayed resurgence inlet, flowstone organ niche and a concealed freshwater pocket. Two independent dry traverses cross the submerged fissure: a supported plank bridge and an upper stone arch reached by ladders. A true breakdown choke forces a detour without sealing standard mouths. Cave silhouettes and ink contours are hand-composed around immutable modular portals.",
       "wall_style": "cavern",
       "rooms": [
         [
@@ -5081,7 +5081,7 @@
               [
                 6,
                 8,
-                10
+                11
               ],
               [
                 7,
@@ -5100,17 +5100,17 @@
               ],
               [
                 10,
-                7,
+                6,
                 12
               ],
               [
                 11,
-                8,
+                7,
                 11
               ],
               [
                 12,
-                9,
+                8,
                 10
               ]
             ]
@@ -5123,7 +5123,7 @@
             "rows": [
               [
                 2,
-                3,
+                2,
                 5
               ],
               [
@@ -5139,7 +5139,7 @@
               [
                 5,
                 3,
-                4
+                5
               ]
             ]
           }
@@ -5179,7 +5179,7 @@
             "rows": [
               [
                 12,
-                2,
+                1,
                 4
               ],
               [
@@ -5207,7 +5207,7 @@
             "rows": [
               [
                 12,
-                15,
+                14,
                 17
               ],
               [
@@ -5231,7 +5231,7 @@
               [
                 16,
                 8,
-                10
+                11
               ],
               [
                 17,
