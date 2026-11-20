@@ -65,7 +65,7 @@ function assess(tile){
     maximum_non_pinch_ceiling_change_feet:Math.max(...gradual.map(s=>Math.abs(s.ceiling_change_feet)),0),
     abrupt_pinch_transitions:segments.filter(s=>s.intentional_abrupt_pinch&&Math.abs(s.ceiling_change_feet)>.5).length,
     samples,segments,
-    limitations:"Hypothetical local headroom only; no roof elevation datum, actual surveyed section, roof support/stability or physical site claim."};
+    limitations:"Hypothetical local headroom over authored floor elevations; all three caverns now also have a fictional absolute z datum, but no surveyed section, roof support or physical stability assessment."};
 }
 function plate(reports){
   const pitch=PIXELS_PER_FOOT*CELL_FEET;
