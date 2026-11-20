@@ -640,6 +640,1203 @@
           ]
         ]
       }
+    },
+    {
+      "id": "sagging_sheet",
+      "title": "The Sagging Sheetflow",
+      "family": "Inflated basalt sheet-flow cave: deflated blisters, remnant septa and a raised lava bench",
+      "geometry": "row-runs",
+      "wall_style": "cavern",
+      "seam_profile": "cave-wide-v1",
+      "description": "A contrasting low sheet-flow cave with six asymmetric interconnected vesicles and a doglegged southern transfer around surviving basalt ribs, a drained central basin, and a surviving elevated basalt bench approached by three transitions. A double-width northwest ceiling fall interrupts an axial route, forcing a verified detour without disconnecting the eight five-foot modular mouths. All roof clearances and formation stages remain hypothetical.",
+      "rooms": [
+        [
+          "crown",
+          "Fractured inflated crown",
+          {
+            "rows": [
+              [
+                3,
+                9,
+                10
+              ],
+              [
+                4,
+                9,
+                11
+              ],
+              [
+                5,
+                9,
+                11
+              ],
+              [
+                6,
+                10,
+                11
+              ]
+            ]
+          }
+        ],
+        [
+          "west_vesicle",
+          "West blister chamber",
+          {
+            "rows": [
+              [
+                7,
+                2,
+                4
+              ],
+              [
+                8,
+                2,
+                5
+              ],
+              [
+                9,
+                3,
+                6
+              ]
+            ]
+          }
+        ],
+        [
+          "east_vesicle",
+          "East septum chamber",
+          {
+            "rows": [
+              [
+                7,
+                15,
+                17
+              ],
+              [
+                8,
+                14,
+                17
+              ],
+              [
+                9,
+                14,
+                16
+              ]
+            ]
+          }
+        ],
+        [
+          "central_collapse",
+          "Drained sheetflow basin",
+          {
+            "rows": [
+              [
+                11,
+                8,
+                11
+              ],
+              [
+                12,
+                8,
+                12
+              ],
+              [
+                13,
+                9,
+                12
+              ],
+              [
+                14,
+                9,
+                11
+              ]
+            ]
+          }
+        ],
+        [
+          "west_sump",
+          "Ash-settling pocket",
+          {
+            "rows": [
+              [
+                11,
+                2,
+                4
+              ],
+              [
+                12,
+                2,
+                5
+              ],
+              [
+                13,
+                3,
+                5
+              ]
+            ]
+          }
+        ],
+        [
+          "east_terrace",
+          "Raised basalt bench",
+          {
+            "rows": [
+              [
+                11,
+                15,
+                17
+              ],
+              [
+                12,
+                15,
+                17
+              ],
+              [
+                13,
+                16,
+                17
+              ]
+            ]
+          }
+        ]
+      ],
+      "routes": [
+        {
+          "id": "sheet_00_04",
+          "points": [
+            [
+              4,
+              0
+            ],
+            [
+              5,
+              0
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_00_14",
+          "points": [
+            [
+              14,
+              0
+            ],
+            [
+              15,
+              0
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_01_04",
+          "points": [
+            [
+              4,
+              1
+            ],
+            [
+              5,
+              1
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_01_14",
+          "points": [
+            [
+              14,
+              1
+            ],
+            [
+              15,
+              1
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_02_04",
+          "points": [
+            [
+              4,
+              2
+            ],
+            [
+              5,
+              2
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_02_07",
+          "points": [
+            [
+              7,
+              2
+            ],
+            [
+              15,
+              2
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_03_04",
+          "points": [
+            [
+              4,
+              3
+            ],
+            [
+              5,
+              3
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_03_07",
+          "points": [
+            [
+              7,
+              3
+            ],
+            [
+              7,
+              3
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_03_13",
+          "points": [
+            [
+              13,
+              3
+            ],
+            [
+              15,
+              3
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_04_00",
+          "points": [
+            [
+              0,
+              4
+            ],
+            [
+              8,
+              4
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_04_12",
+          "points": [
+            [
+              12,
+              4
+            ],
+            [
+              19,
+              4
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_05_00",
+          "points": [
+            [
+              0,
+              5
+            ],
+            [
+              7,
+              5
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_05_12",
+          "points": [
+            [
+              12,
+              5
+            ],
+            [
+              19,
+              5
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_06_01",
+          "points": [
+            [
+              1,
+              6
+            ],
+            [
+              5,
+              6
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_06_07",
+          "points": [
+            [
+              7,
+              6
+            ],
+            [
+              8,
+              6
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_06_12",
+          "points": [
+            [
+              12,
+              6
+            ],
+            [
+              13,
+              6
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_06_18",
+          "points": [
+            [
+              18,
+              6
+            ],
+            [
+              18,
+              6
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_07_01",
+          "points": [
+            [
+              1,
+              7
+            ],
+            [
+              1,
+              7
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_07_07",
+          "points": [
+            [
+              7,
+              7
+            ],
+            [
+              8,
+              7
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_07_12",
+          "points": [
+            [
+              12,
+              7
+            ],
+            [
+              13,
+              7
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_07_18",
+          "points": [
+            [
+              18,
+              7
+            ],
+            [
+              18,
+              7
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_08_01",
+          "points": [
+            [
+              1,
+              8
+            ],
+            [
+              1,
+              8
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_08_06",
+          "points": [
+            [
+              6,
+              8
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_08_12",
+          "points": [
+            [
+              12,
+              8
+            ],
+            [
+              13,
+              8
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_08_18",
+          "points": [
+            [
+              18,
+              8
+            ],
+            [
+              18,
+              8
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_09_01",
+          "points": [
+            [
+              1,
+              9
+            ],
+            [
+              1,
+              9
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_09_07",
+          "points": [
+            [
+              7,
+              9
+            ],
+            [
+              8,
+              9
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_09_12",
+          "points": [
+            [
+              12,
+              9
+            ],
+            [
+              13,
+              9
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_09_18",
+          "points": [
+            [
+              18,
+              9
+            ],
+            [
+              18,
+              9
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_10_01",
+          "points": [
+            [
+              1,
+              10
+            ],
+            [
+              3,
+              10
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_10_07",
+          "points": [
+            [
+              7,
+              10
+            ],
+            [
+              13,
+              10
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_10_17",
+          "points": [
+            [
+              17,
+              10
+            ],
+            [
+              18,
+              10
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_11_01",
+          "points": [
+            [
+              1,
+              11
+            ],
+            [
+              1,
+              11
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_11_07",
+          "points": [
+            [
+              7,
+              11
+            ],
+            [
+              7,
+              11
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_11_13",
+          "points": [
+            [
+              13,
+              11
+            ],
+            [
+              14,
+              11
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_11_18",
+          "points": [
+            [
+              18,
+              11
+            ],
+            [
+              18,
+              11
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_12_01",
+          "points": [
+            [
+              1,
+              12
+            ],
+            [
+              1,
+              12
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_12_06",
+          "points": [
+            [
+              6,
+              12
+            ],
+            [
+              7,
+              12
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_12_13",
+          "points": [
+            [
+              13,
+              12
+            ],
+            [
+              14,
+              12
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_12_18",
+          "points": [
+            [
+              18,
+              12
+            ],
+            [
+              18,
+              12
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_13_01",
+          "points": [
+            [
+              1,
+              13
+            ],
+            [
+              1,
+              13
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_13_06",
+          "points": [
+            [
+              6,
+              13
+            ],
+            [
+              7,
+              13
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_13_13",
+          "points": [
+            [
+              13,
+              13
+            ],
+            [
+              14,
+              13
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_13_18",
+          "points": [
+            [
+              18,
+              13
+            ],
+            [
+              18,
+              13
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_14_00",
+          "points": [
+            [
+              0,
+              14
+            ],
+            [
+              7,
+              14
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_14_13",
+          "points": [
+            [
+              13,
+              14
+            ],
+            [
+              19,
+              14
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_15_00",
+          "points": [
+            [
+              0,
+              15
+            ],
+            [
+              7,
+              15
+            ]
+          ],
+          "reason": "offset low gallery around surviving basalt ribs"
+        },
+        {
+          "id": "sheet_15_09",
+          "points": [
+            [
+              9,
+              15
+            ],
+            [
+              11,
+              15
+            ]
+          ],
+          "reason": "offset low gallery around surviving basalt ribs"
+        },
+        {
+          "id": "sheet_15_13",
+          "points": [
+            [
+              13,
+              15
+            ],
+            [
+              19,
+              15
+            ]
+          ],
+          "reason": "offset low gallery around surviving basalt ribs"
+        },
+        {
+          "id": "sheet_16_04",
+          "points": [
+            [
+              4,
+              16
+            ],
+            [
+              15,
+              16
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_17_04",
+          "points": [
+            [
+              4,
+              17
+            ],
+            [
+              5,
+              17
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_17_14",
+          "points": [
+            [
+              14,
+              17
+            ],
+            [
+              15,
+              17
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_18_04",
+          "points": [
+            [
+              4,
+              18
+            ],
+            [
+              5,
+              18
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_18_14",
+          "points": [
+            [
+              14,
+              18
+            ],
+            [
+              15,
+              18
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_19_04",
+          "points": [
+            [
+              4,
+              19
+            ],
+            [
+              5,
+              19
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        },
+        {
+          "id": "sheet_19_14",
+          "points": [
+            [
+              14,
+              19
+            ],
+            [
+              15,
+              19
+            ]
+          ],
+          "reason": "drained sheet-flow floor, row-run occupation"
+        }
+      ],
+      "doors": [
+        [
+          "crown",
+          "N",
+          10,
+          "opening"
+        ],
+        [
+          "crown",
+          "E",
+          4,
+          "opening"
+        ],
+        [
+          "crown",
+          "W",
+          4,
+          "opening"
+        ],
+        [
+          "west_vesicle",
+          "N",
+          3,
+          "opening"
+        ],
+        [
+          "west_vesicle",
+          "E",
+          9,
+          "opening"
+        ],
+        [
+          "west_vesicle",
+          "S",
+          3,
+          "opening"
+        ],
+        [
+          "east_vesicle",
+          "W",
+          8,
+          "opening"
+        ],
+        [
+          "east_vesicle",
+          "E",
+          8,
+          "opening"
+        ],
+        [
+          "central_collapse",
+          "N",
+          9,
+          "opening"
+        ],
+        [
+          "central_collapse",
+          "E",
+          12,
+          "opening"
+        ],
+        [
+          "central_collapse",
+          "S",
+          10,
+          "opening"
+        ],
+        [
+          "central_collapse",
+          "W",
+          12,
+          "opening"
+        ],
+        [
+          "west_sump",
+          "N",
+          3,
+          "opening"
+        ],
+        [
+          "west_sump",
+          "E",
+          12,
+          "opening"
+        ],
+        [
+          "west_sump",
+          "W",
+          12,
+          "opening"
+        ],
+        [
+          "east_terrace",
+          "W",
+          12,
+          "opening"
+        ],
+        [
+          "east_terrace",
+          "E",
+          12,
+          "opening"
+        ],
+        [
+          "east_terrace",
+          "S",
+          16,
+          "opening"
+        ]
+      ],
+      "features": [],
+      "terrain": {
+        "chokes": [
+          [
+            [
+              5,
+              4
+            ],
+            [
+              6,
+              4
+            ]
+          ],
+          [
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              5
+            ]
+          ]
+        ],
+        "elevations": [
+          [
+            1,
+            [
+              [
+                15,
+                11
+              ],
+              [
+                16,
+                11
+              ],
+              [
+                17,
+                11
+              ],
+              [
+                15,
+                12
+              ],
+              [
+                16,
+                12
+              ],
+              [
+                17,
+                12
+              ],
+              [
+                16,
+                13
+              ],
+              [
+                17,
+                13
+              ]
+            ]
+          ]
+        ],
+        "ramps": [
+          [
+            [
+              15,
+              12
+            ],
+            [
+              14,
+              12
+            ]
+          ],
+          [
+            [
+              17,
+              12
+            ],
+            [
+              18,
+              12
+            ]
+          ],
+          [
+            [
+              16,
+              13
+            ],
+            [
+              16,
+              14
+            ]
+          ]
+        ]
+      },
+      "cave_details": {
+        "breakdown": [
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            8,
+            16
+          ],
+          [
+            13,
+            11
+          ]
+        ],
+        "gravel": [
+          [
+            3,
+            12
+          ],
+          [
+            9,
+            13
+          ],
+          [
+            15,
+            12
+          ],
+          [
+            18,
+            8
+          ],
+          [
+            3,
+            9
+          ]
+        ]
+      }
     }
   ]
 }
