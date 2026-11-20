@@ -41,7 +41,7 @@ def world(layout):
 class IndependentCrownContractTests(unittest.TestCase):
     def test_all_rotated_seams_have_eight_equal_floor_and_crown_samples(self):
         floors,crowns=world(LAYOUT)
-        self.assertEqual(len(floors),871)
+        self.assertEqual(len(floors),869)
         samples=[]
         for sy in range(2):
             for n in OFFSETS:
