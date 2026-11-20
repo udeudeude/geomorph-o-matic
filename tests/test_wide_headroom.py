@@ -25,7 +25,7 @@ def route(tile,minimum_feet):
     included={p:v for p,v in occupied.items() if p not in cut}
     blocked={edge(tuple(a),tuple(b)) for a,b in tile["terrain"].get("chokes",[])}
     raised={tuple(p) for level,cells in tile["terrain"].get("elevations",[]) for p in cells}
-    ramps={edge(tuple(a),tuple(b)) for a,b in tile["terrain"].get("ramps",[])}
+    ramps={edge(tuple(a),tuple(b)) for a,b in tile["terrain"].get("ramps",[])} | {edge(tuple(a),tuple(b)) for step in tile["terrain"].get("steps",[]) for a,b in [step["edge"]]}
     walk=lambda start:navigate(included,thresholds,start,blocked,raised,ramps)
     return included,walk
 

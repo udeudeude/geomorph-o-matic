@@ -50,7 +50,7 @@ function sheetReport(tile){
   throw Error("Sheetflow double-width collapse must lengthen the northern route by fourteen half-cells");
  if(accessible.size!==floor.size||edges.some(p=>!accessible.has(p)))
   throw Error("Sheetflow has stranded passage or modular edge mouths");
- if(model.chokes.size!==2||model.heights.size!==8||model.ramps.size!==3)
+ if(model.chokes.size!==2||model.heights.size!==8||model.ramps.size!==0||model.steps.size!==3)
   throw Error("Sheetflow collapse, elevated bench or independent approaches are incomplete");
  for(const blocked of model.chokes)if(before.get(blocked.split("|")[0])?.includes(blocked.split("|")[1])!==true)
   throw Error("Sheetflow roof fall must close an actual ordinary walking edge");
@@ -59,7 +59,7 @@ function sheetReport(tile){
   seam_family:"cave-wide-v1",mouths:seams.clear_openings,rotations_checked:seams.rotations_checked,
   chamber_count:tile.rooms.length,doorway_count:tile.doors.length,floor_cells:floor.size,
   reachable_floor_cells:accessible.size,reachable_edge_cells:edges.length,
-  blocked_edges:model.chokes.size,raised_floor_cells:model.heights.size,grade_transition_edges:model.ramps.size,
+  blocked_edges:model.chokes.size,raised_floor_cells:model.heights.size,grade_transition_edges:model.steps.size,step_risers:[...model.steps.values()].reduce((n,v)=>n+v.risers,0),bench_rise_feet:1,
   northern_before_half_cells:prior,northern_after_half_cells:current,northern_detour_half_cells:current-prior,
   print:printScaleAudit(tile)};
 }

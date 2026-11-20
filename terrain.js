@@ -9,7 +9,7 @@ const PORTALS=["4,0","15,0","4,19","15,19","0,4","0,15","19,4","19,15"];
 function terrainModel(owner,spec={}){
  if(!(owner instanceof Map))throw Error("Terrain requires occupied floor Map");
  if(!spec||Array.isArray(spec)||typeof spec!=="object")throw Error("Invalid terrain definition");
- const water=new Set(),bridges=new Set(),heights=new Map(),ramps=new Set(),barriers=new Set(),chokes=new Set();
+ const water=new Set(),bridges=new Set(),heights=new Map(),ramps=new Set(),steps=new Map(),barriers=new Set(),chokes=new Set();
  // Restrict actual exterior mouths, not every boundary cell of
  // a small routing-test fixture. Real wide profiles have sixteen edge cells.
  const boundaryFloor=new Set([...owner.keys()].filter(p=>{const [x,y]=p.split(",").map(Number);return x===0||x===19||y===0||y===19;}));
@@ -36,6 +36,23 @@ function terrainModel(owner,spec={}){
      Math.abs((heights.get(a)||0)-(heights.get(b)||0))!==1)throw Error("Ramp must join adjacent distinct levels");
   const k=EDGE(a,b);if(ramps.has(k))throw Error("Duplicate ramp");ramps.add(k);
  }
+ // Lava steps are explicit risers with tread depths, not inferred gradual ramps.
+ if(!Array.isArray(spec.steps||[]))throw Error("Steps must be an array");
+ for(const item of spec.steps||[]){
+  if(!item||Array.isArray(item)||!Array.isArray(item.edge)||item.edge.length!==2||
+     !Number.isFinite(item.rise_feet)||item.rise_feet<=0||item.rise_feet>2||
+     !Number.isInteger(item.risers)||item.risers<1||item.risers>3||
+     item.rise_feet/item.risers>0.75||2.5/item.risers<0.8)
+    throw Error("Invalid basalt step dimensions");
+  const [a,b]=item.edge.map(point=>coordinate(point,"step"));
+  if(Math.abs(item.edge[0][0]-item.edge[1][0])+Math.abs(item.edge[0][1]-item.edge[1][1])!==1||
+     Math.abs((heights.get(a)||0)-(heights.get(b)||0))!==1||
+     water.has(a)||water.has(b)||protectedPortals.has(a)||protectedPortals.has(b))
+    throw Error("Basalt step must join adjacent dry interior height levels");
+  const k=EDGE(a,b);
+  if(ramps.has(k)||steps.has(k))throw Error("Duplicate or overlapping step/ramp");
+  steps.set(k,{rise_feet:item.rise_feet,risers:item.risers});
+ }
  // Full-height masonry partitions block BOTH walking and hydraulic flow.
  // They must be genuine occupied edges, not portal seams or duplicate ramps.
  if(!Array.isArray(spec.barriers||[]))throw Error("Terrain barriers must be an array");
@@ -45,7 +62,7 @@ function terrainModel(owner,spec={}){
   if(Math.abs(e[0][0]-e[1][0])+Math.abs(e[0][1]-e[1][1])!==1||
      protectedPortals.has(a)||protectedPortals.has(b))throw Error("Masonry partition must join interior neighbors");
   const k=EDGE(a,b);
-  if(barriers.has(k)||ramps.has(k))throw Error("Duplicate masonry partition or overlapping ramp");
+  if(barriers.has(k)||ramps.has(k)||steps.has(k))throw Error("Duplicate masonry partition or overlapping ramp");
   barriers.add(k);
  }
  const ruins=new Set();
@@ -63,13 +80,13 @@ function terrainModel(owner,spec={}){
   const a=coordinate(e[0],"choke"),b=coordinate(e[1],"choke"),k=EDGE(a,b);
   if(Math.abs(e[0][0]-e[1][0])+Math.abs(e[0][1]-e[1][1])!==1||
      protectedPortals.has(a)||protectedPortals.has(b)||chokes.has(k)||
-     barriers.has(k)||ramps.has(k)||water.has(a)||water.has(b)||
+     barriers.has(k)||ramps.has(k)||steps.has(k)||water.has(a)||water.has(b)||
      (heights.get(a)||0)!==(heights.get(b)||0))
    throw Error("Cave choke must block a unique dry interior edge");
   chokes.add(k);
  }
  for(const p of protectedPortals)if(owner.has(p)&&(water.has(p)||heights.has(p)))throw Error("Terrain cannot change standard edge portal");
- return {water,bridges,heights,ramps,barriers,ruins,chokes};
+ return {water,bridges,heights,ramps,steps,barriers,ruins,chokes};
 }
 function terrainGraph(owner,doors,spec={},access="ordinary",travel="dry"){
  if(!["dry","wading"].includes(travel))throw Error("Unknown terrain travel mode");
@@ -79,7 +96,7 @@ function terrainGraph(owner,doors,spec={},access="ordinary",travel="dry"){
   graph.set(p,adj.filter(q=>{
    if(model.barriers.has(EDGE(p,q))||model.chokes.has(EDGE(p,q)))return false;
    if(travel==="dry"&&model.water.has(q)&&!model.bridges.has(q))return false;
-   return (model.heights.get(p)||0)===(model.heights.get(q)||0)||model.ramps.has(EDGE(p,q));
+   return (model.heights.get(p)||0)===(model.heights.get(q)||0)||model.ramps.has(EDGE(p,q))||model.steps.has(EDGE(p,q));
   }));
  }
  return graph;
@@ -92,7 +109,7 @@ function terrainAudit(owner,doors,spec={},portals=PORTALS){
   results[travel]={accessible_floor_cells:seen.size,reachable_portals:portals.filter(p=>seen.has(p)).length};
  }
  return {water_cells:model.water.size,bridged_water_cells:model.bridges.size,
-  elevated_cells:model.heights.size,ramp_edges:model.ramps.size,barrier_edges:model.barriers.size,ruined_wall_edges:model.ruins.size,cave_choke_edges:model.chokes.size,travel:results};
+  elevated_cells:model.heights.size,ramp_edges:model.ramps.size,step_edges:model.steps.size,barrier_edges:model.barriers.size,ruined_wall_edges:model.ruins.size,cave_choke_edges:model.chokes.size,travel:results};
 }
 // Each layer is independently editable in exported SVG.
 function terrainSvg(owner,spec={},cellSize=24,style="masonry"){
@@ -139,7 +156,7 @@ function terrainSvg(owner,spec={},cellSize=24,style="masonry"){
    for(const [dx,dy] of [[1,0],[-1,0],[0,1],[0,-1]]){
     const q=POS([x+dx,y+dy]);
     if(!owner.has(q)||(model.heights.get(q)||0)===height)continue;
-    const e=EDGE(p,q);if(seen.has(e)||model.ramps.has(e))continue;seen.add(e);
+    const e=EDGE(p,q);if(seen.has(e)||model.ramps.has(e)||model.steps.has(e))continue;seen.add(e);
     const X=(dx===1?x+1:x)*cellSize,Y=(dy===1?y+1:y)*cellSize;
     out.push(dx?'<path d="M'+X+','+Y+'v'+cellSize+'"/>':'<path d="M'+X+','+Y+'h'+cellSize+'"/>');
    }
@@ -222,6 +239,24 @@ function terrainSvg(owner,spec={},cellSize=24,style="masonry"){
    out.push('<path data-uphill-cell="'+POS(upper)+'" d="M'+point(tail)+'L'+point(tip)+' M'+point(left)+'L'+point(tip)+'L'+point(right)+'"/>');
   }
   out.push("</g>");
+ }
+ if(model.steps.size){
+  out.push('<g id="lava-bench-steps" fill="none" stroke="#76583c" stroke-width="2.1" stroke-linecap="round">');
+  const n=v=>Number(v.toFixed(2));
+  for(const [edge,dimensions] of [...model.steps].sort(([a],[b])=>a.localeCompare(b))){
+   const [a,b]=edge.split("|").map(xy);
+   const [low,high]=(model.heights.get(POS(a))||0)<(model.heights.get(POS(b))||0)?[a,b]:[b,a];
+   const lx=(low[0]+.5)*cellSize,ly=(low[1]+.5)*cellSize;
+   const hx=(high[0]+.5)*cellSize,hy=(high[1]+.5)*cellSize;
+   const ux=(hx-lx)/cellSize,uy=(hy-ly)/cellSize;
+   for(let i=0;i<dimensions.risers;i++){
+    const t=(i+1)/(dimensions.risers+1),cx=lx+(hx-lx)*t,cy=ly+(hy-ly)*t;
+    const q=cellSize*.32,dx=-uy*q,dy=ux*q;
+    out.push('<path data-step-edge="'+edge+'" data-riser="'+(i+1)+'" data-uphill-cell="'+POS(high)+
+      '" d="M'+n(cx-dx)+','+n(cy-dy)+'L'+n(cx+dx)+','+n(cy+dy)+'"/>');
+   }
+  }
+  out.push('</g>');
  }
  return out;
 }

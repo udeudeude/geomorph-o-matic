@@ -12,6 +12,11 @@
   "all_walkable_floor_cells": 871,
   "full_width_intertile_walking_edges": 16,
   "exterior_mouth_floor_cells": 32,
+  "vertical_interface": {
+    "registered_crown_feet": 6.5,
+    "checked_crown_pairs": 32,
+    "checked_exterior_throat_cells": 64
+  },
   "hypothetical_modes": {
     "standing": {
       "minimum_hypothetical_clearance_feet": 6,
@@ -107,5 +112,5 @@
       "closures_preserving_all_exterior_mouths": 4
     }
   },
-  "caution": "These are fictional local headroom assumptions, not measured roof elevations, guaranteed seam crown continuity, load ratings or physical playtesting."
+  "caution": "These are fictional local headroom assumptions, not measured roof elevations, unmodeled interior ceiling continuity, load ratings or physical playtesting."
 }

@@ -1,0 +1,35 @@
+{
+  "stage": "unreleased hypothetical vertical interface, not a geotechnical roof guarantee",
+  "layout": "Braided Confluence, Split-Spine Drainback and Sagging Sheetflow | three distinct five-foot-mouth volcanic caves (study only)",
+  "tiles": 4,
+  "checked_intertile_seams": 4,
+  "checked_crown_pairs": 32,
+  "checked_exterior_throat_cells": 64,
+  "canonical_floor_datum_feet": 0,
+  "common_mouth_crown_feet": 6.5,
+  "mouth_clear_width_feet": 5,
+  "inward_envelope_depth_feet": 5,
+  "seams": [
+    {
+      "id": "vertical-0-0",
+      "checked_pairs": 8,
+      "crown_feet": 6.5
+    },
+    {
+      "id": "horizontal-0-0",
+      "checked_pairs": 8,
+      "crown_feet": 6.5
+    },
+    {
+      "id": "horizontal-1-0",
+      "checked_pairs": 8,
+      "crown_feet": 6.5
+    },
+    {
+      "id": "vertical-0-1",
+      "checked_pairs": 8,
+      "crown_feet": 6.5
+    }
+  ],
+  "physical_limitations": "Verifies the fictional shared datum at 2x2 floor cells per mouth and 5 ft inward. No roof thickness, support, gradients away from the seam, geology, legal headroom, or physical inspection is established."
+}

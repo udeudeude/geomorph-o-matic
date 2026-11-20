@@ -21,15 +21,21 @@ class BenchDatumIndependentTests(unittest.TestCase):
             tuple(p): level for level, points in tile["terrain"]["elevations"] for p in points
         }
         self.assertEqual(len(levels), 8)
-        transitions = tile["terrain"]["ramps"]
+        transitions = tile["terrain"]["steps"]
         self.assertEqual(len(transitions), 3)
-        for a, b in transitions:
+        self.assertFalse(tile["terrain"].get("ramps"))
+        for item in transitions:
+            self.assertEqual(item["rise_feet"], 1)
+            self.assertEqual(item["risers"], 2)
+            self.assertEqual(item["rise_feet"]/item["risers"], 0.5)
+            self.assertEqual(2.5/item["risers"], 1.25)
+            a, b = item["edge"]
             a, b = tuple(a), tuple(b)
             self.assertIn(a, occupied)
             self.assertIn(b, occupied)
             self.assertEqual(abs(a[0]-b[0])+abs(a[1]-b[1]), 1)
             self.assertEqual(abs(levels.get(a, 0)-levels.get(b, 0)), 1)
-        self.assertEqual(len({tuple(p) for pair in transitions for p in pair if tuple(p) in levels}), 3)
+        self.assertEqual(len({tuple(p) for item in transitions for p in item["edge"] if tuple(p) in levels}), 3)
 
     def test_grade_and_crown_options_do_not_disguise_levels_as_measured_feet(self):
         tile = TILES["sagging_sheet"]
