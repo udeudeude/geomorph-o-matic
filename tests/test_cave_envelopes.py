@@ -56,7 +56,7 @@ class CaveEnvelopeIndependentTests(unittest.TestCase):
                 (0,4),(0,15),(19,4),(19,15)})
         note = (ROOT / "research" / "2026-11-20-cave-seam-envelopes.md").read_text()
         self.assertIn("Independent, incompatible", note)
-        self.assertIn("not measured", note)
+        self.assertIn("not measured", note.lower())
 
 if __name__ == "__main__":
     unittest.main()
