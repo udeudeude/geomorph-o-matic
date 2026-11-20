@@ -19,6 +19,10 @@ These are editable vector drawings, not flattened images. The separate floor, gr
 
 
 
+## Basalt rock-web integrity and interpretive sections (November 20, 2026)
+
+[Basalt Rift](tiles/basalt_rift.svg) now bends two upper distributaries around **genuine 5-foot-wide rock bands in the fictional plan**, each doubled from the previous 2.5 feet. The editable [rock-web study plate](examples/basalt_rift_webs.svg) registers two horizontal transects to the source plan; dashed vault shapes are explicitly *not* measured sections. A new [rock separation audit](reports/cave-rock-ribs.json) confirms the solid cells remain between dry routes and flags remaining thin cave partitions without claiming structural bearing or measured headroom. [Geological research, rationale, and unresolved constraints](research/2026-11-20-basalt-rock-webs.md).
+
 ## Limestone ribs and basalt splays (November 19, 2026)
 
 [Hollow Causeway](tiles/hollow_causeway.svg) now makes an actual narrow eastern dogleg around intact limestone instead of presenting a 32.5-foot straight shaft. [Basalt Rift](tiles/basalt_rift.svg) now has two branching upper passages and a southern spur bypass, preserving a geologically intentional main lava tube. The maximum straight hall strips are **20 feet** and **25 feet**, respectively, down from **32.5 feet** and **30 feet**. Five new [floor-plan clearance sections](reports/cave-passage-widths.json) measure actual half-cell throats, while route and rotation tests guard connectivity and editable map regeneration. [Research and unresolved physical constraints](research/2026-11-19-karst-bends-and-basalt-splays.md). **These are provisional drawings, not surveyed caves.**
