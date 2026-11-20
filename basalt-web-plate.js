@@ -16,7 +16,7 @@ function samplePanel(sample,label,y){
  const x=651,width=554,height=236,cell=66,left=112,baseY=160;
  const rockStart=left+cell,rockWidth=sample.rock_half_cells*cell,rockEnd=rockStart+rockWidth;
  const total=rockWidth+2*cell;
- const top=y+56;
+ const top=56;
  const out=[
  '<g id="rib-section-'+sample.id+'" transform="translate('+x+' '+y+')" font-family="sans-serif">',
  '<rect width="'+width+'" height="'+height+'" fill="#faf7ef" stroke="#aeb0a7"/>',
