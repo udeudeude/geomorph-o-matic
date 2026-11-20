@@ -79,7 +79,12 @@ test("reshaped Hollow Causeway creates real nonrectangular rock voids without sa
  assert.equal(svg,makeSvg(tile),"artwork is nondeterministic");
  assert.ok(!/NaN|Infinity|undefined/.test(svg));
  assert.match(letterProof(tile),/width="215.9mm" height="279.4mm"/);
- assert.equal(printScaleAudit(tile).tile_width_mm,127);
+ const scale=printScaleAudit(tile);
+ assert.equal(scale.tile_width_mm,127);
+ assert.equal(scale.half_cell_width_feet,2.5);
+ assert.equal(scale.standard_edge_throat_feet,2.5);
+ assert.equal(scale.standard_edge_throat_print_mm,6.35);
+ assert.match(letterProof(tile),/Edge throats are 2.5 ft clear/);
 });
 test("all cave families preserve reproducible wall layers and rotation seams",()=>{
  for(const tile of data.tiles.filter(t=>t.wall_style==="cavern")){
