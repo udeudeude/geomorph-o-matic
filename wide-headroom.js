@@ -49,7 +49,7 @@ function roofModel(owner,scenario,profile="cave-wide-v1"){
     }
     if(seen.size!==cells.size)throw Error("Low-roof zone must be contiguous in the floor plan");
     zones.push({id:zone.id,interpretation:zone.interpretation,
-      clearance_feet:zone.clearance_feet,cells:[...cells].sort()});
+      clearance_feet:zone.clearance_feet,cells:[...cells].sort((a,b)=>{const [x,y]=xy(a),[u,v]=xy(b);return y-v||x-u;})});
   }
   return {baseline_feet:scenario.baseline_feet,clearances:floors,zones,
     status:"hypothetical design geometry, not measured or physically verified"};
