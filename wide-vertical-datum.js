@@ -50,6 +50,7 @@ function assessBench(tile,rises=CANDIDATE_RISES){
   datum:"Adjacent ordinary-floor surface z=0 ft for this study only; actual level-one rise and absolute roof elevation unknown",
   existing_roof_assumption:"6.5 ft above LOCAL floor, not a surveyed absolute ceiling",
   alternative_fixed_roof_hypothesis:"ONLY for comparing candidates: hold roof at z=6.5 ft above ordinary floor across the bench. This is not encoded in the master and not asserted as geological fact.",
+  baseline_local_clearance_feet:roof.baseline_feet,
   half_cell_plan_feet:CELL_FEET,design_comparison_grade_limit_percent:DESIGN_GRADE_LIMIT_PERCENT,
   raised_floor_cells:raised.map(xy),grade_edges:transitions,candidates,
   recommended_action:"Do not represent a 1-2 ft bench rise as three effortless 2.5 ft ramps. Re-author longer landings, stairs, or explicit scrambles after a coherent vault and floor datum is selected.",
@@ -88,7 +89,7 @@ function plate(r){
   out.push('<rect width="382" height="265" fill="#fbfaf6" stroke="#b7bdb4"/>');
   out.push('<text x="16" y="30" font-family="Georgia,serif" font-size="17" fill="#293a31">'+(i+1)+' / RISE '+rise+' FT</text>');
   out.push('<text x="16" y="49" font-size="11" fill="#617167">Fixed-roof comparison only; vertical &amp; horizontal scale 30 px/ft</text>');
-  const roofY=base-r.baseline*scaleZ;
+  const roofY=base-r.baseline_local_clearance_feet*scaleZ;
   out.push('<path d="M65,'+roofY+'H329" stroke="#7c6650" stroke-width="2.5" stroke-dasharray="6 4"/>');
   out.push('<path d="M65,'+base+'H115L'+(115+2.5*scaleZ)+','+(base-rise*scaleZ)+'H329" fill="none" stroke="#344b3f" stroke-width="3.5"/>');
   out.push('<path d="M115,'+(base+8)+'v11h'+(2.5*scaleZ)+'v-11" fill="none" stroke="#a35332"/>');
