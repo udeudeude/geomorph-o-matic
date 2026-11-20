@@ -19,6 +19,12 @@ These are editable vector drawings, not flattened images. The separate floor, gr
 
 
 
+## Cave-ink correction and true-scale warning (November 19, 2026)
+
+The natural-cave renderer now places rock-facing etching **on the actual curved wall**, rather than along an invisible square-cell boundary. The same cubic geometry drives wall outlines and hachure starts, with separate editable layers and new geometric regression tests. Hollow Causeway has been reshaped in five chamber footprints (nine real additional walkable cells) while retaining its bridge, elevated stone traverse, impassable choke and all eight rotation-compatible edge mouths.
+
+**Scale correction:** Each standard half-cell entrance is **2.5 feet clear**, not 5 feet. It occupies one half of a printed 5-foot square, or 6.35 millimetres at the standard print scale. Print proofs now disclose this explicitly. [Editable revised Hollow Causeway](tiles/hollow_causeway.svg) · [true-size proof](examples/hollow_causeway_print_letter.svg) · [research, critique and unresolved dimensional issues](research/2026-11-19-curve-registered-cave-ink.md). These studies still need physical inspection and playtesting.
+
 ## The Lantern Sink (November 19, 2026)
 
 A newly composed limestone-and-pilgrimage ruin geomorph centers on a broad drowned sink. The crossing is physically represented by two bridged water cells; an eastern rock terrace has three registered access ramps, while a blocked western cleft increases the selected dry portal journey from 23 to 35 half-cells. All eight edge mouths survive rotation, and two secret chambers are optional discoveries. Examine the [editable map](tiles/lantern_sink.svg), [mixed assembly](examples/assembly_lantern_2x2.svg), [letter-size print proof](examples/lantern_sink_print_letter.svg) and [research and limitations](research/2026-11-19-lantern-sink.md). Not a finished or surveyed dungeon.
@@ -90,13 +96,13 @@ node render.js
 git diff --exit-code -- tiles/
 ```
 
-The canonical architectural data is in [blueprints.json](blueprints.json). The [JavaScript renderer](render.js) creates the nine SVG masters reproducibly, and [validate.py](validate.py) rejects incompatible edge openings, invented doorways, unconnected halls and disconnected floors. [GitHub Actions](.github/workflows/validate.yml) checks these commands after pushes.
+The canonical architectural data is in [blueprints.json](blueprints.json). The [JavaScript renderer](render.js) creates the ten SVG masters reproducibly, and [validate.py](validate.py) rejects incompatible edge openings, invented doorways, unconnected halls and disconnected floors. [GitHub Actions](.github/workflows/validate.yml) checks these commands after pushes.
 
 ## Geometry
 
-Each morph covers **10 x 10 full squares** subdivided into 20 x 20 half-square cells. A 5-foot-wide opening occupies one half-cell inside the 3rd and 8th full squares on each side. The exact fine-grid opening positions are **4 and 15**; unlike the earlier 5/15 pair they remain aligned through all quarter-turn rotations.
+Each morph covers **10 x 10 full squares** subdivided into 20 x 20 half-square cells. A 2.5-foot-wide opening occupies one half-cell inside the 3rd and 8th full squares on each side. The exact fine-grid opening positions are **4 and 15**; unlike the earlier 5/15 pair they remain aligned through all quarter-turn rotations.
 
-All nine studies have eight standard edge openings and individually authored rooms and passages. Doors, natural openings, secret discoveries and locks vary between settings. Corridor loops are diagnostic, not proof of meaningful alternatives; see the separate route-resilience and chamber-journey audits.
+All ten studies have eight standard edge openings and individually authored rooms and passages. Doors, natural openings, secret discoveries and locks vary between settings. Corridor loops are diagnostic, not proof of meaningful alternatives; see the separate route-resilience and chamber-journey audits.
 
 ## Two-level waterworks study (November 19, 2026)
 
