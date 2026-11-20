@@ -17,6 +17,8 @@ function roofModel(owner,scenario,profile="cave-wide-v1"){
   if(!(owner instanceof Map))throw Error("Roof scenario requires the canonical floor Map");
   if(!scenario||scenario.status!=="hypothetical"||!Number.isFinite(scenario.baseline_feet)||
       scenario.baseline_feet<6||scenario.baseline_feet>25||
+      !Number.isFinite(scenario.mouth_crown_feet)||
+      scenario.mouth_crown_feet<6||scenario.mouth_crown_feet>scenario.baseline_feet||
       !Array.isArray(scenario.zones)||!scenario.zones.length)
     throw Error("Invalid hypothetical roof scenario");
   const floors=new Map([...owner.keys()].map(p=>[p,scenario.baseline_feet]));
@@ -24,6 +26,10 @@ function roofModel(owner,scenario,profile="cave-wide-v1"){
   for(const side of ["N","E","S","W"])for(const o of [4,5,14,15])for(let depth=0;depth<2;depth++)
     protectedCells.add(key(boundaryCell(side,o,depth)));
   if(profile!=="cave-wide-v1")throw Error("Roof scenarios currently require wide mouths");
+  for(const cell of protectedCells){
+    if(!owner.has(cell))throw Error("An explicitly modeled five-foot mouth lacks floor");
+    floors.set(cell,scenario.mouth_crown_feet);
+  }
   const occupied=new Set(),ids=new Set(),zones=[];
   for(const zone of scenario.zones){
     if(!zone||typeof zone.id!=="string"||!/^[a-z][a-z0-9_-]+$/.test(zone.id)||
@@ -51,7 +57,7 @@ function roofModel(owner,scenario,profile="cave-wide-v1"){
     zones.push({id:zone.id,interpretation:zone.interpretation,
       clearance_feet:zone.clearance_feet,cells:[...cells].sort((a,b)=>{const [x,y]=xy(a),[u,v]=xy(b);return y-v||x-u;})});
   }
-  return {baseline_feet:scenario.baseline_feet,clearances:floors,zones,
+  return {baseline_feet:scenario.baseline_feet,mouth_crown_feet:scenario.mouth_crown_feet,clearances:floors,zones,
     status:"hypothetical design geometry, not measured or physically verified"};
 }
 function headroomGraph(graph,model,requiredFeet){
@@ -95,7 +101,7 @@ function analyze(tile){
   }));
   return {tile:tile.id,status:"unreleased geometric headroom hypothesis",
     evidence:"fictional roof-clearance assumptions; plan locations are registered to actual occupied floor",
-    baseline_clearance_feet:roof.baseline_feet,low_roof_zones:roof.zones,
+    baseline_clearance_feet:roof.baseline_feet,modeled_mouth_crown_feet:roof.mouth_crown_feet,low_roof_zones:roof.zones,
     postures,selected_traversals:examples,
     limitations:"No measured cave roof, geological stability or real-world access classification. Posture thresholds are gameplay scenarios."};
 }
