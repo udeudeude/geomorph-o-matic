@@ -27,7 +27,7 @@ test("all rock-web assessments derive from occupied, actually separated cave flo
 });
 test("rock report identifies consequential thin septa without declaring geological stability",()=>{
  const r=analyzeAll(),braided=r.tiles.find(x=>x.tile==="braided_lava");
- const p=braided.cross_sections.find(s=>s.rock_cell.join(",")==="3,10"&&s.axis==="north-south");
+ const p=braided.cross_sections.find(s=>s.rock_cell.join(",")==="2,6"&&s.axis==="north-south");
  assert.ok(p&&p.walking_bypass_half_cells>=8);
  assert.ok(r.tiles.find(x=>x.tile==="sagging_sheet").cross_sections.length>15);
  assert.match(JSON.stringify(r),/not engineering|neither rock bearing/i);
