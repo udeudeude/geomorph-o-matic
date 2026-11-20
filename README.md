@@ -1,3 +1,11 @@
+## Rock-web integrity and real walking-route roof profiles (November 20, 2026)
+
+The three wide-mouth volcanic caverns now have [an editable, plan-registered rock-web audit](studies/wide_rock_webs.svg) with [actual floor/rock and bypass measurements](reports/wide-rock-webs.json). It identifies one-half-cell (2.5-foot) internal rock strips with real occupied cave floor on both sides. **These are geological design-review targets, not structural stability determinations.** Braided Lava has 12 consequential long-bypass cross sections, Sheetflow has eight, and Split-Spine has none under the current review convention.
+
+The new [absolute-floor-and-roof walking sections](studies/wide_absolute_walking_profiles.svg) and [machine-readable path stations](reports/wide-absolute-walking-profiles.json) follow genuine traversable passages with a shared exterior z=0 floor datum. Sheetflow's 70-foot route crosses a real double-riser stair and reaches the elevated low-clearance bench; the other paths lead to individually authored roof crowns. The routes are *unfolded through turns*, not straight geological cross sections, and all heights remain hypothetical.
+
+Regenerate with `node wide-rock-webs.js && node wide-absolute-walking-profiles.js`. See [primary research, explicit limitations, and architectural next steps](research/2026-11-20-rock-webs-and-absolute-routes.md). **Neither the sections nor the geomorphs are finished or structurally verified.**
+
 ## Three registered transverse cave sections (November 20, 2026)
 
 The existing three wide-mouth caverns now have an explicit common **absolute vertical datum** (the exterior ordinary floor is z=0), rather than conflating overhead clearance and roof elevation. Braided Lava has separately authored confluence and western-blister arches (8.5- and 9-foot roof elevations); Split-Spine has a distinct northern arch and lower southern crown (8- and 8.5-foot elevations). Sheetflow keeps its actual 1-foot raised basalt bench, three stair approaches and nonuniform 6.5/7/7.5-foot absolute roof. The occupied cave floors, solid rock spines, roof falls and five-foot seam contracts remain intact.
