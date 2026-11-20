@@ -1,0 +1,893 @@
+{
+  "status": "UNRELEASED fictional architectural study",
+  "horizontal_vertical_pixels_per_foot": 12,
+  "half_cell_distance_feet": 2.5,
+  "shared_datum": "All external floors z=0, all protected crowns z=6.5 ft",
+  "profiles": [
+    {
+      "tile": "braided_lava",
+      "feature": "High roof of the braided confluence",
+      "mode": "ordinary dry walking (crouch where required)",
+      "horizontal_axis": "route distance, deliberately unfolded through plan turns",
+      "physical_datum": "z=0 feet at every modular exterior floor; fictional roof and floor elevations",
+      "route_length_feet": 40,
+      "floor_cells_sampled": 17,
+      "real_stair_crossings": 0,
+      "lowest_local_clearance_feet": 6.5,
+      "ascent_feet": 0,
+      "endpoints": {
+        "start": [
+          4,
+          0
+        ],
+        "end": [
+          11,
+          9
+        ]
+      },
+      "stair_crossings": [],
+      "stations": [
+        {
+          "station": 0,
+          "route_feet": 0,
+          "cell": [
+            4,
+            0
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 6.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "station": 1,
+          "route_feet": 2.5,
+          "cell": [
+            4,
+            1
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 6.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "station": 2,
+          "route_feet": 5,
+          "cell": [
+            4,
+            2
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 7,
+          "local_clearance_feet": 7
+        },
+        {
+          "station": 3,
+          "route_feet": 7.5,
+          "cell": [
+            4,
+            3
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 7.5,
+          "local_clearance_feet": 7.5
+        },
+        {
+          "station": 4,
+          "route_feet": 10,
+          "cell": [
+            4,
+            4
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 8,
+          "local_clearance_feet": 8
+        },
+        {
+          "station": 5,
+          "route_feet": 12.5,
+          "cell": [
+            4,
+            5
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 8,
+          "local_clearance_feet": 8
+        },
+        {
+          "station": 6,
+          "route_feet": 15,
+          "cell": [
+            5,
+            5
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 8,
+          "local_clearance_feet": 8
+        },
+        {
+          "station": 7,
+          "route_feet": 17.5,
+          "cell": [
+            6,
+            5
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 8,
+          "local_clearance_feet": 8
+        },
+        {
+          "station": 8,
+          "route_feet": 20,
+          "cell": [
+            6,
+            6
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 8,
+          "local_clearance_feet": 8
+        },
+        {
+          "station": 9,
+          "route_feet": 22.5,
+          "cell": [
+            6,
+            7
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 8,
+          "local_clearance_feet": 8
+        },
+        {
+          "station": 10,
+          "route_feet": 25,
+          "cell": [
+            6,
+            8
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 8,
+          "local_clearance_feet": 8
+        },
+        {
+          "station": 11,
+          "route_feet": 27.5,
+          "cell": [
+            6,
+            9
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 8,
+          "local_clearance_feet": 8
+        },
+        {
+          "station": 12,
+          "route_feet": 30,
+          "cell": [
+            7,
+            9
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 8,
+          "local_clearance_feet": 8
+        },
+        {
+          "station": 13,
+          "route_feet": 32.5,
+          "cell": [
+            8,
+            9
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 8,
+          "local_clearance_feet": 8
+        },
+        {
+          "station": 14,
+          "route_feet": 35,
+          "cell": [
+            9,
+            9
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 8,
+          "local_clearance_feet": 8
+        },
+        {
+          "station": 15,
+          "route_feet": 37.5,
+          "cell": [
+            10,
+            9
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 8.5,
+          "local_clearance_feet": 8.5
+        },
+        {
+          "station": 16,
+          "route_feet": 40,
+          "cell": [
+            11,
+            9
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 9,
+          "local_clearance_feet": 9
+        }
+      ],
+      "limitations": "Route-folded architectural profile, not a straight geological survey or an overhead rock-solid model. Linear roof joins are diagrammatic."
+    },
+    {
+      "tile": "sagging_sheet",
+      "feature": "Stooped eastern end of the raised basalt bench",
+      "mode": "ordinary dry walking (crouch where required)",
+      "horizontal_axis": "route distance, deliberately unfolded through plan turns",
+      "physical_datum": "z=0 feet at every modular exterior floor; fictional roof and floor elevations",
+      "route_length_feet": 70,
+      "floor_cells_sampled": 29,
+      "real_stair_crossings": 1,
+      "lowest_local_clearance_feet": 5.5,
+      "ascent_feet": 1,
+      "endpoints": {
+        "start": [
+          4,
+          0
+        ],
+        "end": [
+          17,
+          13
+        ]
+      },
+      "stair_crossings": [
+        {
+          "after_station": 25,
+          "from": [
+            14,
+            12
+          ],
+          "to": [
+            15,
+            12
+          ],
+          "rise_feet": 1,
+          "risers": 2
+        }
+      ],
+      "stations": [
+        {
+          "station": 0,
+          "route_feet": 0,
+          "cell": [
+            4,
+            0
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 6.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "station": 1,
+          "route_feet": 2.5,
+          "cell": [
+            4,
+            1
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 6.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "station": 2,
+          "route_feet": 5,
+          "cell": [
+            4,
+            2
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 6.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "station": 3,
+          "route_feet": 7.5,
+          "cell": [
+            4,
+            3
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 6.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "station": 4,
+          "route_feet": 10,
+          "cell": [
+            4,
+            4
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 6.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "station": 5,
+          "route_feet": 12.5,
+          "cell": [
+            3,
+            4
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 6.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "station": 6,
+          "route_feet": 15,
+          "cell": [
+            3,
+            5
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 6.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "station": 7,
+          "route_feet": 17.5,
+          "cell": [
+            3,
+            6
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 6.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "station": 8,
+          "route_feet": 20,
+          "cell": [
+            3,
+            7
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 6.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "station": 9,
+          "route_feet": 22.5,
+          "cell": [
+            3,
+            8
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 6.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "station": 10,
+          "route_feet": 25,
+          "cell": [
+            3,
+            9
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 6.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "station": 11,
+          "route_feet": 27.5,
+          "cell": [
+            3,
+            10
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 6.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "station": 12,
+          "route_feet": 30,
+          "cell": [
+            3,
+            11
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 6.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "station": 13,
+          "route_feet": 32.5,
+          "cell": [
+            3,
+            12
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 6.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "station": 14,
+          "route_feet": 35,
+          "cell": [
+            4,
+            12
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 6.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "station": 15,
+          "route_feet": 37.5,
+          "cell": [
+            5,
+            12
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 6.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "station": 16,
+          "route_feet": 40,
+          "cell": [
+            6,
+            12
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 6.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "station": 17,
+          "route_feet": 42.5,
+          "cell": [
+            7,
+            12
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 6.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "station": 18,
+          "route_feet": 45,
+          "cell": [
+            8,
+            12
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 6.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "station": 19,
+          "route_feet": 47.5,
+          "cell": [
+            9,
+            12
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 6.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "station": 20,
+          "route_feet": 50,
+          "cell": [
+            10,
+            12
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 6.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "station": 21,
+          "route_feet": 52.5,
+          "cell": [
+            11,
+            12
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 6.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "station": 22,
+          "route_feet": 55,
+          "cell": [
+            12,
+            12
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 6.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "station": 23,
+          "route_feet": 57.5,
+          "cell": [
+            13,
+            12
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 6.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "station": 24,
+          "route_feet": 60,
+          "cell": [
+            14,
+            12
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 7,
+          "local_clearance_feet": 7
+        },
+        {
+          "station": 25,
+          "route_feet": 62.5,
+          "cell": [
+            15,
+            12
+          ],
+          "floor_z_feet": 1,
+          "roof_z_feet": 7,
+          "local_clearance_feet": 6
+        },
+        {
+          "station": 26,
+          "route_feet": 65,
+          "cell": [
+            16,
+            12
+          ],
+          "floor_z_feet": 1,
+          "roof_z_feet": 7.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "station": 27,
+          "route_feet": 67.5,
+          "cell": [
+            16,
+            13
+          ],
+          "floor_z_feet": 1,
+          "roof_z_feet": 7,
+          "local_clearance_feet": 6
+        },
+        {
+          "station": 28,
+          "route_feet": 70,
+          "cell": [
+            17,
+            13
+          ],
+          "floor_z_feet": 1,
+          "roof_z_feet": 6.5,
+          "local_clearance_feet": 5.5
+        }
+      ],
+      "limitations": "Route-folded architectural profile, not a straight geological survey or an overhead rock-solid model. Linear roof joins are diagrammatic."
+    },
+    {
+      "tile": "split_spine",
+      "feature": "Lower crown beyond the axial rock spine",
+      "mode": "ordinary dry walking (crouch where required)",
+      "horizontal_axis": "route distance, deliberately unfolded through plan turns",
+      "physical_datum": "z=0 feet at every modular exterior floor; fictional roof and floor elevations",
+      "route_length_feet": 62.5,
+      "floor_cells_sampled": 26,
+      "real_stair_crossings": 0,
+      "lowest_local_clearance_feet": 6.5,
+      "ascent_feet": 0,
+      "endpoints": {
+        "start": [
+          4,
+          0
+        ],
+        "end": [
+          10,
+          15
+        ]
+      },
+      "stair_crossings": [],
+      "stations": [
+        {
+          "station": 0,
+          "route_feet": 0,
+          "cell": [
+            4,
+            0
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 6.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "station": 1,
+          "route_feet": 2.5,
+          "cell": [
+            4,
+            1
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 6.5,
+          "local_clearance_feet": 6.5
+        },
+        {
+          "station": 2,
+          "route_feet": 5,
+          "cell": [
+            4,
+            2
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 7,
+          "local_clearance_feet": 7
+        },
+        {
+          "station": 3,
+          "route_feet": 7.5,
+          "cell": [
+            4,
+            3
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 7.5,
+          "local_clearance_feet": 7.5
+        },
+        {
+          "station": 4,
+          "route_feet": 10,
+          "cell": [
+            4,
+            4
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 7.5,
+          "local_clearance_feet": 7.5
+        },
+        {
+          "station": 5,
+          "route_feet": 12.5,
+          "cell": [
+            4,
+            5
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 7.5,
+          "local_clearance_feet": 7.5
+        },
+        {
+          "station": 6,
+          "route_feet": 15,
+          "cell": [
+            4,
+            6
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 7.5,
+          "local_clearance_feet": 7.5
+        },
+        {
+          "station": 7,
+          "route_feet": 17.5,
+          "cell": [
+            5,
+            6
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 7.5,
+          "local_clearance_feet": 7.5
+        },
+        {
+          "station": 8,
+          "route_feet": 20,
+          "cell": [
+            6,
+            6
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 7.5,
+          "local_clearance_feet": 7.5
+        },
+        {
+          "station": 9,
+          "route_feet": 22.5,
+          "cell": [
+            7,
+            6
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 7.5,
+          "local_clearance_feet": 7.5
+        },
+        {
+          "station": 10,
+          "route_feet": 25,
+          "cell": [
+            8,
+            6
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 7.5,
+          "local_clearance_feet": 7.5
+        },
+        {
+          "station": 11,
+          "route_feet": 27.5,
+          "cell": [
+            9,
+            6
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 8,
+          "local_clearance_feet": 8
+        },
+        {
+          "station": 12,
+          "route_feet": 30,
+          "cell": [
+            10,
+            6
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 8,
+          "local_clearance_feet": 8
+        },
+        {
+          "station": 13,
+          "route_feet": 32.5,
+          "cell": [
+            11,
+            6
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 8,
+          "local_clearance_feet": 8
+        },
+        {
+          "station": 14,
+          "route_feet": 35,
+          "cell": [
+            11,
+            7
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 7.5,
+          "local_clearance_feet": 7.5
+        },
+        {
+          "station": 15,
+          "route_feet": 37.5,
+          "cell": [
+            12,
+            7
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 7.5,
+          "local_clearance_feet": 7.5
+        },
+        {
+          "station": 16,
+          "route_feet": 40,
+          "cell": [
+            12,
+            8
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 7.5,
+          "local_clearance_feet": 7.5
+        },
+        {
+          "station": 17,
+          "route_feet": 42.5,
+          "cell": [
+            12,
+            9
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 7.5,
+          "local_clearance_feet": 7.5
+        },
+        {
+          "station": 18,
+          "route_feet": 45,
+          "cell": [
+            12,
+            10
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 7.5,
+          "local_clearance_feet": 7.5
+        },
+        {
+          "station": 19,
+          "route_feet": 47.5,
+          "cell": [
+            12,
+            11
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 7.5,
+          "local_clearance_feet": 7.5
+        },
+        {
+          "station": 20,
+          "route_feet": 50,
+          "cell": [
+            12,
+            12
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 7.5,
+          "local_clearance_feet": 7.5
+        },
+        {
+          "station": 21,
+          "route_feet": 52.5,
+          "cell": [
+            11,
+            12
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 7.5,
+          "local_clearance_feet": 7.5
+        },
+        {
+          "station": 22,
+          "route_feet": 55,
+          "cell": [
+            11,
+            13
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 7.5,
+          "local_clearance_feet": 7.5
+        },
+        {
+          "station": 23,
+          "route_feet": 57.5,
+          "cell": [
+            10,
+            13
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 7.5,
+          "local_clearance_feet": 7.5
+        },
+        {
+          "station": 24,
+          "route_feet": 60,
+          "cell": [
+            10,
+            14
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 8,
+          "local_clearance_feet": 8
+        },
+        {
+          "station": 25,
+          "route_feet": 62.5,
+          "cell": [
+            10,
+            15
+          ],
+          "floor_z_feet": 0,
+          "roof_z_feet": 8,
+          "local_clearance_feet": 8
+        }
+      ],
+      "limitations": "Route-folded architectural profile, not a straight geological survey or an overhead rock-solid model. Linear roof joins are diagrammatic."
+    }
+  ],
+  "limitations": "Real occupied floor and step topology; fictional height values. Route-unfolded rather than projected straight section; geological roof support, rock thickness and print readability unverified."
+}

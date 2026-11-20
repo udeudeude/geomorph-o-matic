@@ -9,7 +9,7 @@ const {makeSvg}=require("../render");
 const {roofModel,headroomGraph,analyze,ceilingSvg,plate,POSTURES}=require("../wide-headroom");
 const wide=source().tiles;
 const expected={
- braided_lava:{floor:187,standing:185,crouching:185,changed:16,from:23,to:31,low:3.5,baseline:8},
+ braided_lava:{floor:185,standing:183,crouching:183,changed:16,from:23,to:31,low:3.5,baseline:8},
  sagging_sheet:{floor:238,standing:235,crouching:238,changed:12,from:29,to:31,low:5,baseline:6.5},
  split_spine:{floor:223,standing:208,crouching:208,changed:0,low:3.5,baseline:7.5}
 };

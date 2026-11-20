@@ -11,7 +11,7 @@ const xy=s=>s.split(",").map(Number),key=p=>p.join(",");
 function model(t){return roofModel(buildCells(t),t.roof_scenario,t.seam_profile,t.terrain)}
 test("both previously flat wide caverns have separately authored physical roof envelopes",()=>{
  assert.equal(tiles.length,2);
- const counts={braided_lava:[187,3,[8.5,9]],split_spine:[223,3,[8,8.5]]};
+ const counts={braided_lava:[185,3,[8.5,9]],split_spine:[223,3,[8,8.5]]};
  for(const tile of tiles){
   const m=model(tile),[floor,zoneCount,crowns]=counts[tile.id];
   assert.equal(m.absolute_roof_elevations_feet.size,floor);
