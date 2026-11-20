@@ -1,0 +1,1703 @@
+{
+  "status": "UNRELEASED design-quality diagnostic, not engineering",
+  "units": "Each plan cell represents 2.5 feet of horizontal plan distance",
+  "method": "Occupied floor reconstruction; one-rock-cell opposites; shortest actual dry walking bypass using authored doors, falls and stairs",
+  "tiles": [
+    {
+      "tile": "braided_lava",
+      "source_floor_cells": 187,
+      "audited_interior_bounds": "x,y=2..17 only; excludes the protected modular throat zone",
+      "minimum_sampled_web_width_feet": 2.5,
+      "narrow_web_cross_sections": 27,
+      "long_bypass_cross_sections": 12,
+      "disconnected_banks": 0,
+      "limitations": "Detects one-cell rock separations between genuine occupied plan cells. A single rock cell may contribute two cross sections. Bypass routes include actual traversability restrictions; these figures establish neither rock bearing, thermal history, ceiling thickness nor geological hazard.",
+      "cross_sections": [
+        {
+          "rock_cell": [
+            2,
+            6
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              7
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 12,
+          "walking_bypass_feet": 30,
+          "priority": "long-bypass"
+        },
+        {
+          "rock_cell": [
+            3,
+            6
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              7
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 10,
+          "walking_bypass_feet": 25,
+          "priority": "long-bypass"
+        },
+        {
+          "rock_cell": [
+            4,
+            6
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              7
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 8,
+          "walking_bypass_feet": 20,
+          "priority": "long-bypass"
+        },
+        {
+          "rock_cell": [
+            15,
+            6
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              15,
+              5
+            ],
+            [
+              15,
+              7
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 8,
+          "walking_bypass_feet": 20,
+          "priority": "long-bypass"
+        },
+        {
+          "rock_cell": [
+            16,
+            6
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              16,
+              5
+            ],
+            [
+              16,
+              7
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 10,
+          "walking_bypass_feet": 25,
+          "priority": "long-bypass"
+        },
+        {
+          "rock_cell": [
+            17,
+            6
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              17,
+              5
+            ],
+            [
+              17,
+              7
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 12,
+          "walking_bypass_feet": 30,
+          "priority": "long-bypass"
+        },
+        {
+          "rock_cell": [
+            5,
+            7
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              4,
+              7
+            ],
+            [
+              6,
+              7
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            9,
+            7
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              9,
+              6
+            ],
+            [
+              9,
+              8
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            11,
+            7
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              10,
+              7
+            ],
+            [
+              12,
+              7
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            11,
+            7
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              11,
+              6
+            ],
+            [
+              11,
+              8
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            14,
+            7
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              13,
+              7
+            ],
+            [
+              15,
+              7
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            8,
+            8
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              7,
+              8
+            ],
+            [
+              9,
+              8
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            5,
+            9
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              4,
+              9
+            ],
+            [
+              6,
+              9
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            14,
+            9
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              13,
+              9
+            ],
+            [
+              15,
+              9
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            3,
+            10
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              3,
+              9
+            ],
+            [
+              3,
+              11
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 22,
+          "walking_bypass_feet": 55,
+          "priority": "long-bypass"
+        },
+        {
+          "rock_cell": [
+            16,
+            10
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              16,
+              9
+            ],
+            [
+              16,
+              11
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 12,
+          "walking_bypass_feet": 30,
+          "priority": "long-bypass"
+        },
+        {
+          "rock_cell": [
+            17,
+            10
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              17,
+              9
+            ],
+            [
+              17,
+              11
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 14,
+          "walking_bypass_feet": 35,
+          "priority": "long-bypass"
+        },
+        {
+          "rock_cell": [
+            8,
+            11
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              7,
+              11
+            ],
+            [
+              9,
+              11
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 8,
+          "walking_bypass_feet": 20,
+          "priority": "long-bypass"
+        },
+        {
+          "rock_cell": [
+            9,
+            12
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              9,
+              11
+            ],
+            [
+              9,
+              13
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            11,
+            12
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              10,
+              12
+            ],
+            [
+              12,
+              12
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            11,
+            12
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              11,
+              11
+            ],
+            [
+              11,
+              13
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            2,
+            13
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              2,
+              12
+            ],
+            [
+              2,
+              14
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 10,
+          "walking_bypass_feet": 25,
+          "priority": "long-bypass"
+        },
+        {
+          "rock_cell": [
+            5,
+            13
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              4,
+              13
+            ],
+            [
+              6,
+              13
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            5,
+            13
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              5,
+              12
+            ],
+            [
+              5,
+              14
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            14,
+            13
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              13,
+              13
+            ],
+            [
+              15,
+              13
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            14,
+            13
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              14,
+              12
+            ],
+            [
+              14,
+              14
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            17,
+            13
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              17,
+              12
+            ],
+            [
+              17,
+              14
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 10,
+          "walking_bypass_feet": 25,
+          "priority": "long-bypass"
+        }
+      ]
+    },
+    {
+      "tile": "sagging_sheet",
+      "source_floor_cells": 238,
+      "audited_interior_bounds": "x,y=2..17 only; excludes the protected modular throat zone",
+      "minimum_sampled_web_width_feet": 2.5,
+      "narrow_web_cross_sections": 34,
+      "long_bypass_cross_sections": 8,
+      "disconnected_banks": 0,
+      "limitations": "Detects one-cell rock separations between genuine occupied plan cells. A single rock cell may contribute two cross sections. Bypass routes include actual traversability restrictions; these figures establish neither rock bearing, thermal history, ceiling thickness nor geological hazard.",
+      "cross_sections": [
+        {
+          "rock_cell": [
+            6,
+            2
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              5,
+              2
+            ],
+            [
+              7,
+              2
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 20,
+          "walking_bypass_feet": 50,
+          "priority": "long-bypass"
+        },
+        {
+          "rock_cell": [
+            6,
+            3
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              5,
+              3
+            ],
+            [
+              7,
+              3
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 18,
+          "walking_bypass_feet": 45,
+          "priority": "long-bypass"
+        },
+        {
+          "rock_cell": [
+            8,
+            3
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              7,
+              3
+            ],
+            [
+              9,
+              3
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            8,
+            3
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              8,
+              2
+            ],
+            [
+              8,
+              4
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            11,
+            3
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              11,
+              2
+            ],
+            [
+              11,
+              4
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            12,
+            3
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              12,
+              2
+            ],
+            [
+              12,
+              4
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            8,
+            5
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              7,
+              5
+            ],
+            [
+              9,
+              5
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            8,
+            5
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              8,
+              4
+            ],
+            [
+              8,
+              6
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            6,
+            6
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              6
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 12,
+          "walking_bypass_feet": 30,
+          "priority": "long-bypass"
+        },
+        {
+          "rock_cell": [
+            9,
+            6
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              8,
+              6
+            ],
+            [
+              10,
+              6
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 8,
+          "walking_bypass_feet": 20,
+          "priority": "long-bypass"
+        },
+        {
+          "rock_cell": [
+            15,
+            6
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              15,
+              5
+            ],
+            [
+              15,
+              7
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 8,
+          "walking_bypass_feet": 20,
+          "priority": "long-bypass"
+        },
+        {
+          "rock_cell": [
+            16,
+            6
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              16,
+              5
+            ],
+            [
+              16,
+              7
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 8,
+          "walking_bypass_feet": 20,
+          "priority": "long-bypass"
+        },
+        {
+          "rock_cell": [
+            17,
+            6
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              17,
+              5
+            ],
+            [
+              17,
+              7
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 6,
+          "walking_bypass_feet": 15,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            5,
+            7
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              5,
+              6
+            ],
+            [
+              5,
+              8
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 6,
+          "walking_bypass_feet": 15,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            14,
+            7
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              13,
+              7
+            ],
+            [
+              15,
+              7
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            2,
+            9
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              1,
+              9
+            ],
+            [
+              3,
+              9
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            2,
+            9
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              2,
+              8
+            ],
+            [
+              2,
+              10
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            17,
+            9
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              16,
+              9
+            ],
+            [
+              18,
+              9
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            17,
+            9
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              17,
+              8
+            ],
+            [
+              17,
+              10
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            4,
+            10
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              4,
+              9
+            ],
+            [
+              4,
+              11
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            14,
+            10
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              14,
+              9
+            ],
+            [
+              14,
+              11
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 6,
+          "walking_bypass_feet": 15,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            15,
+            10
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              15,
+              9
+            ],
+            [
+              15,
+              11
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 10,
+          "walking_bypass_feet": 25,
+          "priority": "long-bypass"
+        },
+        {
+          "rock_cell": [
+            16,
+            10
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              16,
+              9
+            ],
+            [
+              16,
+              11
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 10,
+          "walking_bypass_feet": 25,
+          "priority": "long-bypass"
+        },
+        {
+          "rock_cell": [
+            12,
+            11
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              11,
+              11
+            ],
+            [
+              13,
+              11
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            12,
+            11
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              12,
+              10
+            ],
+            [
+              12,
+              12
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            2,
+            13
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              1,
+              13
+            ],
+            [
+              3,
+              13
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            2,
+            13
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              2,
+              12
+            ],
+            [
+              2,
+              14
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            8,
+            13
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              7,
+              13
+            ],
+            [
+              9,
+              13
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            15,
+            13
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              14,
+              13
+            ],
+            [
+              16,
+              13
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            15,
+            13
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              15,
+              12
+            ],
+            [
+              15,
+              14
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            8,
+            14
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              7,
+              14
+            ],
+            [
+              9,
+              14
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 6,
+          "walking_bypass_feet": 15,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            12,
+            14
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              11,
+              14
+            ],
+            [
+              13,
+              14
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 6,
+          "walking_bypass_feet": 15,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            8,
+            15
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              7,
+              15
+            ],
+            [
+              9,
+              15
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            12,
+            15
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              11,
+              15
+            ],
+            [
+              13,
+              15
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        }
+      ]
+    },
+    {
+      "tile": "split_spine",
+      "source_floor_cells": 223,
+      "audited_interior_bounds": "x,y=2..17 only; excludes the protected modular throat zone",
+      "minimum_sampled_web_width_feet": 2.5,
+      "narrow_web_cross_sections": 18,
+      "long_bypass_cross_sections": 0,
+      "disconnected_banks": 0,
+      "limitations": "Detects one-cell rock separations between genuine occupied plan cells. A single rock cell may contribute two cross sections. Bypass routes include actual traversability restrictions; these figures establish neither rock bearing, thermal history, ceiling thickness nor geological hazard.",
+      "cross_sections": [
+        {
+          "rock_cell": [
+            6,
+            2
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              5,
+              2
+            ],
+            [
+              7,
+              2
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 6,
+          "walking_bypass_feet": 15,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            13,
+            2
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              12,
+              2
+            ],
+            [
+              14,
+              2
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 6,
+          "walking_bypass_feet": 15,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            6,
+            3
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              5,
+              3
+            ],
+            [
+              7,
+              3
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            8,
+            3
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              7,
+              3
+            ],
+            [
+              9,
+              3
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            8,
+            3
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              8,
+              2
+            ],
+            [
+              8,
+              4
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            11,
+            3
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              10,
+              3
+            ],
+            [
+              12,
+              3
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            11,
+            3
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              11,
+              2
+            ],
+            [
+              11,
+              4
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            13,
+            3
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              12,
+              3
+            ],
+            [
+              14,
+              3
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            11,
+            5
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              10,
+              5
+            ],
+            [
+              12,
+              5
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            11,
+            5
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              11,
+              4
+            ],
+            [
+              11,
+              6
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            15,
+            8
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              14,
+              8
+            ],
+            [
+              16,
+              8
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            15,
+            8
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              15,
+              7
+            ],
+            [
+              15,
+              9
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            5,
+            11
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              5,
+              10
+            ],
+            [
+              5,
+              12
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 6,
+          "walking_bypass_feet": 15,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            15,
+            11
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              15,
+              10
+            ],
+            [
+              15,
+              12
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 6,
+          "walking_bypass_feet": 15,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            8,
+            14
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              7,
+              14
+            ],
+            [
+              9,
+              14
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            8,
+            14
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              8,
+              13
+            ],
+            [
+              8,
+              15
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            11,
+            16
+          ],
+          "axis": "east-west",
+          "opposite_floor_cells": [
+            [
+              10,
+              16
+            ],
+            [
+              12,
+              16
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        },
+        {
+          "rock_cell": [
+            11,
+            16
+          ],
+          "axis": "north-south",
+          "opposite_floor_cells": [
+            [
+              11,
+              15
+            ],
+            [
+              11,
+              17
+            ]
+          ],
+          "rock_web_plan_width_feet": 2.5,
+          "walking_bypass_half_cells": 4,
+          "walking_bypass_feet": 10,
+          "priority": "local-partition"
+        }
+      ]
+    }
+  ],
+  "review_priority": "Investigate long-bypass thin partitions on paper and in a deliberately authored plan revision before treating caves as geologically credible."
+}
