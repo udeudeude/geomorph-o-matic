@@ -46,7 +46,9 @@ test("headroom filters only genuine walkable links and preserves original collap
   const floor=buildCells(tile),roof=roofModel(floor,tile.roof_scenario);
   const full=terrainGraph(floor,doorEdges(tile),tile.terrain,"ordinary","dry");
   const stand=headroomGraph(full,roof,POSTURES.standing);
-  assert.equal(stand.size,expected[tile.id].standing);
+  assert.equal(stand.size,floor.size-2,"Only two low-roof floor cells are excluded");
+  assert.equal(distances(stand,"4,0").size,expected[tile.id].standing,
+    "A constriction can make further admitted floor unreachable");
   for(const [p,neighbors] of stand)for(const q of neighbors){
    assert.ok(full.get(p).includes(q),p+" -> "+q);
    assert.ok(stand.get(q).includes(p),"Headroom should preserve bidirectionality");
