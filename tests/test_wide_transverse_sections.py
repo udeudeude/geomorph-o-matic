@@ -3,7 +3,7 @@ import unittest
 from test_wide_authored_vaults import TILES,independent_roof
 from test_sheetflow_cave import occupancy,edge
 
-CUTS={"braided_lava":(9,6,13),"sagging_sheet":(12,14,18),"split_spine":(4,7,13)}
+CUTS={"braided_lava":(9,6,11),"sagging_sheet":(12,14,18),"split_spine":(4,7,13)}
 class TransverseSectionIndependentTests(unittest.TestCase):
  def test_every_sample_is_real_adjacent_floor_with_a_common_z(self):
   for name,(row,left,right) in CUTS.items():

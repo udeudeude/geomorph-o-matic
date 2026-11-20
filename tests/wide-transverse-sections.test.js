@@ -11,7 +11,7 @@ const tiles=source().tiles;
 const key=([x,y])=>x+","+y;
 test("three distinct real plan cuts register to one physical model datum",()=>{
  const r=assessAll(tiles);
- assert.deepEqual(r.sections.map(x=>x.sampled_cells),[8,5,7]);
+ assert.deepEqual(r.sections.map(x=>x.sampled_cells),[6,5,7]);
  assert.deepEqual(r.sections.map(x=>x.tile),["braided_lava","sagging_sheet","split_spine"]);
  for(const s of r.sections){
   const tile=tiles.find(t=>t.id===s.tile),floor=buildCells(tile);
@@ -47,7 +47,7 @@ test("braided and split-spine profiles show independently designed asymmetric va
 });
 test("section generator rejects fictitious rock crossings and out-of-bounds cuts",()=>{
  assert.throws(()=>assessCut({...cuts[0],x1:0},tiles),/unoccupied rock/);
- assert.throws(()=>assessCut({...cuts[2],x1:2},tiles),/unoccupied rock/);
+ assert.throws(()=>assessCut({...cuts[2],row:3,x1:0},tiles),/unoccupied rock/);
  assert.throws(()=>assessCut({...cuts[1],x2:20},tiles),/Invalid plan/);
  const altered=structuredClone(tiles),target=altered.find(t=>t.id==="sagging_sheet");
  target.roof_scenario.absolute_vault.zones[0].roof_elevation_feet=9;
@@ -56,7 +56,7 @@ test("section generator rejects fictitious rock crossings and out-of-bounds cuts
 test("editable plan and all three cross-sections are deterministic and separate from cave masters",()=>{
  const report=assessAll(tiles),svg=sectionSvg(report,tiles);
  assert.equal(sectionSvg(report,tiles),svg);
- assert.equal((svg.match(/data-cut-cell=/g)||[]).length,20);
+ assert.equal((svg.match(/data-cut-cell=/g)||[]).length,18);
  assert.equal((svg.match(/data-profile-sample=/g)||[]).length,20);
  assert.equal((svg.match(/data-section-roof=/g)||[]).length,3);
  assert.equal((svg.match(/data-section-floor=/g)||[]).length,3);

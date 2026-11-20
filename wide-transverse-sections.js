@@ -10,7 +10,7 @@ const {roofModel}=require("./wide-headroom");
 
 const HALF_CELL_FEET=2.5,PIXELS_PER_FOOT=21;
 const cuts=Object.freeze([
- {tile:"braided_lava",row:9,x1:6,x2:13,
+ {tile:"braided_lava",row:9,x1:6,x2:11,
   label:"Braided central confluence: asymmetric feeder vault"},
  {tile:"sagging_sheet",row:12,x1:14,x2:18,
   label:"Inflated sheet: genuine 1-foot bench and two natural stairs"},

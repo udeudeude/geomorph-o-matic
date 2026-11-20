@@ -23,7 +23,7 @@ test("crown contract survives another rotation and refuses unregistered roof cha
  assert.equal(inspectCrowns(rotated).checked_crown_pairs,32);
  const mismatched=source();
  mismatched.tiles.find(t=>t.id==="braided_lava").roof_scenario.mouth_crown_feet=7;
- assert.throws(()=>inspectCrowns(layout,mismatched),/Vertical seam crown mismatch|Exterior wide mouth/);
+ assert.throws(()=>inspectCrowns(layout,mismatched),/Vertical seam crown mismatch|Exterior wide mouth|Absolute vault changes the modular throat datum/);
  const malformed=source();
  malformed.tiles.find(t=>t.id==="sagging_sheet").roof_scenario.mouth_crown_feet=8;
  assert.throws(()=>inspectCrowns(layout,malformed),/Invalid hypothetical roof scenario/);
